@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 8.256666666666666,
+  "total_tokens": 17715,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-04-22T18:15:28.693047",
+      "success": true,
+      "elapsed_seconds": 8.77,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 5054,
+        "completion_tokens": 1090,
+        "total_tokens": 6144
+      },
+      "prompt_tokens_estimate": 3382,
+      "response_chars": 3072,
+      "turtle_chars": 3058,
+      "validation": {
+        "valid": false,
+        "error": "at line 21 of <>:\nBad syntax (Prefix \"dc:\" not bound) at ^ in:\n\"...b'S00000005972\" ;\\n    obo:RO_0002162 obo:NCBITaxon_9606 ;\\n    '^b'dc:hasVersion assembly:GCF_000001405.26 ;\\n    obo:BFO_000005'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-04-22T18:15:39.243547",
+      "success": true,
+      "elapsed_seconds": 9.5,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 5054,
+        "completion_tokens": 731,
+        "total_tokens": 5785
+      },
+      "prompt_tokens_estimate": 3382,
+      "response_chars": 2060,
+      "turtle_chars": 2046,
+      "validation": {
+        "valid": false,
+        "error": "at line 32 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix hcrm: <http://rdf.biogateway.eu/crm/9606/>.\\n@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/>.\\n@prefix hgene: <http://rdf.biogateway.eu/gene/9606/>.\\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-n"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-04-22T18:15:46.790468",
+      "success": true,
+      "elapsed_seconds": 6.5,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 5054,
+        "completion_tokens": 732,
+        "total_tokens": 5786
+      },
+      "prompt_tokens_estimate": 3382,
+      "response_chars": 2081,
+      "turtle_chars": 2067,
+      "validation": {
+        "valid": false,
+        "error": "at line 22 of <>:\nBad syntax (Prefix \"dc:\" not bound) at ^ in:\n\"...b'S00000005972\" ;\\n    obo:RO_0002162 obo:NCBITaxon_9606 ;\\n    '^b'dc:hasVersion assembly:GCF_000001405.26 ;\\n    obo:BFO_000005'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+@prefix hcrm: <http://rdf.biogateway.eu/crm/9606>. 
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/>. 
+@prefix hgene: <http://rdf.biogateway.eu/gene/9606/>. 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>. 
+@prefix owl: <http://www.w3.org/2002/07/owl#>. 
+@prefix obo: <http://purl.obolibrary.org/obo/>. 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>. 
+@prefix biolink: <https://w3id.org/biolink/vocab/>. 
+@prefix schema: <http://schema.org/>. 
+@prefix sio: <http://semanticscience.org/resource/>. 
+@prefix pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/>. 
+@prefix id_pubmed: <http://identifiers.org/pubmed/>. 
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/>. 
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/>. 
+
+hcrm:SuperEnhancer rdf:type owl:Class ; 
+    rdfs:subClassOf obo:SO_0000727 ; 
+    skos:definition "Super-enhancer located in Homo sapiens chr_name between start_position and end_position" ; 
+    skos:prefLabel "SuperEnhancer" ; 
+    obo:RO_0002162 obo:NCBITaxon_9606 ; 
+    dc:hasVersion assembly:GCF_000001405.26 ; 
+    obo:BFO_0000050 nuccore:chr_ID ; 
+    obo:GENO_0000895 "start_position"^^<http://www.w3.org/2001/XMLSchema#integer> ; 
+    obo:GENO_0000894 "end_position"^^<http://www.w3.org/2001/XMLSchema#integer> .
+
+hcrm:SuperEnhancer#database_name rdf:type hcrm:SuperEnhancer ; 
+    skos:definition "Super-enhancer located in Homo sapiens chr_name between start_position and end_position according to database_name" ; 
+    skos:prefLabel "SuperEnhancer#database_name" ; 
+    obo:TXPO_0003500 obo:BTO_ID ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:CLO_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    schema:evidenceOrigin <https://asntech.org/dbsuper/details.php?se_id=SE_00148> ; 
+    rdfs:isDefinedBy obo:ECO_ID ; 
+    sio:SIO_000772 id_pubmed:24119843 ; 
+    sio:SIO_000253 <https://asntech.org/dbsuper/> .
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:gene_symbol ; 
+
+hgene:gene_symbol skos:closeMatch id_ncbigene:GeneID ; 
+    biolink:category biolink:Gene .
+
+crm2pgene:bgw!SuperEnhancer--hgncsymbol!9606/gene_symbol#database_name rdf:type crm2pgene:bgw!SuperEnhancer--hgncsymbol!9606/gene_symbol ; 
+    skos:prefLabel "bgw!SuperEnhancer--hgncsymbol!9606/gene_symbol#database_name" ; 
+    skos:definition "Association between super-enhancer SuperEnhancer and gene gene_symbol according to database_name" ; 
+    obo:TXPO_0003500 obo:BTO_ID ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:CLO_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:gene_symbol . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:TFs_symbol . 
+
+hgene:TFs_symbol skos:closeMatch id_ncbigene:GeneID ; 
+    biolink:category biolink:TranscriptionFactor . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:disease . 
+
+hgene:disease skos:closeMatch id_ncbigene:DiseaseID ; 
+    biolink:category biolink:Disease . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:mutation . 
+
+hgene:mutation skos:closeMatch id_ncbigene:MutationID ; 
+    biolink:category biolink:Mutation . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enhancer_method . 
+
+hgene:enhancer_method skos:closeMatch id_ncbigene:MethodID ; 
+    biolink:category biolink:Method . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:crossref . 
+
+hgene:crossref skos:closeMatch id_ncbigene:CrossRefID ; 
+    biolink:category biolink:CrossReference . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:score . 
+
+hgene:score skos:closeMatch id_ncbigene:ScoreID ; 
+    biolink:category biolink:Score . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:minimum_ratio . 
+
+hgene:minimum_ratio skos:closeMatch id_ncbigene:RatioID ; 
+    biolink:category biolink:Ratio . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh_PMID . 
+
+hgene:enh_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh2gene_PMID . 
+
+hgene:enh2gene_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:TFs2enh_PMID . 
+
+hgene:TFs2enh_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:disease_PMID . 
+
+hgene:disease_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:mutation_PMID . 
+
+hgene:mutation_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:mutation_method . 
+
+hgene:mutation_method skos:closeMatch id_ncbigene:MethodID ; 
+    biolink:category biolink:Method . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh_method . 
+
+hgene:enh_method skos:closeMatch id_ncbigene:MethodID ; 
+    biolink:category biolink:Method . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:biosample_name . 
+
+hgene:biosample_name skos:closeMatch id_ncbigene:SampleID ; 
+    biolink:category biolink:Sample . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:original_ID . 
+
+hgene:original_ID skos:closeMatch id_ncbigene:OriginalID ; 
+    biolink:category biolink:OriginalID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:refsnp_ID . 
+
+hgene:refsnp_ID skos:closeMatch id_ncbigene:RefSNPID ; 
+    biolink:category biolink:RefSNP . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_chr . 
+
+hgene:orig_chr skos:closeMatch id_ncbigene:ChrID ; 
+    biolink:category biolink:Chromosome . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_start . 
+
+hgene:orig_start skos:closeMatch id_ncbigene:StartID ; 
+    biolink:category biolink:Start . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_end . 
+
+hgene:orig_end skos:closeMatch id_ncbigene:EndID ; 
+    biolink:category biolink:End . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_chr . 
+
+hgene:current_chr skos:closeMatch id_ncbigene:ChrID ; 
+    biolink:category biolink:Chromosome . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_start . 
+
+hgene:current_start skos:closeMatch id_ncbigene:StartID ; 
+    biolink:category biolink:Start . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_end . 
+
+hgene:current_end skos:closeMatch id_ncbigene:EndID ; 
+    biolink:category biolink:End . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_assembly . 
+
+hgene:current_assembly skos:closeMatch id_ncbigene:AssemblyID ; 
+    biolink:category biolink:Assembly . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_assembly . 
+
+hgene:orig_assembly skos:closeMatch id_ncbigene:AssemblyID ; 
+    biolink:category biolink:Assembly . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:score . 
+
+hgene:score skos:closeMatch id_ncbigene:ScoreID ; 
+    biolink:category biolink:Score . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:minimum_ratio . 
+
+hgene:minimum_ratio skos:closeMatch id_ncbigene:RatioID ; 
+    biolink:category biolink:Ratio . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh_PMID . 
+
+hgene:enh_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh2gene_PMID . 
+
+hgene:enh2gene_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:TFs2enh_PMID . 
+
+hgene:TFs2enh_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:disease_PMID . 
+
+hgene:disease_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:mutation_PMID . 
+
+hgene:mutation_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:mutation_method . 
+
+hgene:mutation_method skos:closeMatch id_ncbigene:MethodID ; 
+    biolink:category biolink:Method . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh_method . 
+
+hgene:enh_method skos:closeMatch id_ncbigene:MethodID ; 
+    biolink:category biolink:Method . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:biosample_name . 
+
+hgene:biosample_name skos:closeMatch id_ncbigene:SampleID ; 
+    biolink:category biolink:Sample . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:original_ID . 
+
+hgene:original_ID skos:closeMatch id_ncbigene:OriginalID ; 
+    biolink:category biolink:OriginalID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:refsnp_ID . 
+
+hgene:refsnp_ID skos:closeMatch id_ncbigene:RefSNPID ; 
+    biolink:category biolink:RefSNP . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_chr . 
+
+hgene:orig_chr skos:closeMatch id_ncbigene:ChrID ; 
+    biolink:category biolink:Chromosome . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_start . 
+
+hgene:orig_start skos:closeMatch id_ncbigene:StartID ; 
+    biolink:category biolink:Start . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_end . 
+
+hgene:orig_end skos:closeMatch id_ncbigene:EndID ; 
+    biolink:category biolink:End . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_chr . 
+
+hgene:current_chr skos:closeMatch id_ncbigene:ChrID ; 
+    biolink:category biolink:Chromosome . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_start . 
+
+hgene:current_start skos:closeMatch id_ncbigene:StartID ; 
+    biolink:category biolink:Start . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_end . 
+
+hgene:current_end skos:closeMatch id_ncbigene:EndID ; 
+    biolink:category biolink:End . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:current_assembly . 
+
+hgene:current_assembly skos:closeMatch id_ncbigene:AssemblyID ; 
+    biolink:category biolink:Assembly . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:orig_assembly . 
+
+hgene:orig_assembly skos:closeMatch id_ncbigene:AssemblyID ; 
+    biolink:category biolink:Assembly . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:score . 
+
+hgene:score skos:closeMatch id_ncbigene:ScoreID ; 
+    biolink:category biolink:Score . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:minimum_ratio . 
+
+hgene:minimum_ratio skos:closeMatch id_ncbigene:RatioID ; 
+    biolink:category biolink:Ratio . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh_PMID . 
+
+hgene:enh_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh2gene_PMID . 
+
+hgene:enh2gene_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:TFs2enh_PMID . 
+
+hgene:TFs2enh_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:disease_PMID . 
+
+hgene:disease_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:mutation_PMID . 
+
+hgene:mutation_PMID skos:closeMatch id_ncbigene:PMIDID ; 
+    biolink:category biolink:PMID . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:mutation_method . 
+
+hgene:mutation_method skos:closeMatch id_ncbigene:MethodID ; 
+    biolink:category biolink:Method . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:enh_method . 
+
+hgene:enh_method skos:closeMatch id_ncbigene:MethodID ; 
+    biolink:category biolink:Method . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:biosample_name . 
+
+hgene:biosample_name skos:closeMatch id_ncbigene:SampleID ; 
+    biolink:category biolink:Sample . 
+
+hcrm:SuperEnhancer obo:RO_0002429 hgene:original_ID . 
+
+hgene:original_ID skos:closeMatch id_ncbigene:OriginalID ; 
+    biolink:category biolink:OriginalID . 
+
+hcrm:SuperEnhancer obo:RO_000242

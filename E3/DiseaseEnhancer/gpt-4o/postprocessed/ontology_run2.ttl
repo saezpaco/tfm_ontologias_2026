@@ -1,0 +1,66 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/gene/9606/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+
+hcrm:CRMHS00000001594 rdf:type hcrm:crm_ID ;
+    skos:exactMatch obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr5 between 125315470 and 125318494" ;
+    skos:prefLabel "crm/CRMHS00000001594" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr5 ;
+    obo:GENO_0000895 "125315470"^^xsd:integer ;
+    obo:GENO_0000894 "125318494"^^xsd:integer ;
+    sio:SIO_000772 id_pubmed:25701871 ;
+    sio:SIO_000253 <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000001594--LMNB1> rdf:type <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    rdf:subject hcrm:CRMHS00000001594 ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:LMNB1 ;
+    skos:prefLabel "bgw!CRMHS00000001594--hgncsymbol!9606/LMNB1" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000001594 and gene LMNB1" ;
+    sio:SIO_000772 id_pubmed:25701871 .
+
+hgene:LMNB1 skos:closeMatch id_ncbigene:LMNB1 ;
+    biolink:category biolink:Gene .
+
+hcrm:CRMHS00000005971 rdf:type hcrm:crm_ID ;
+    skos:exactMatch obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr3 between 185781414 and 185799612" ;
+    skos:prefLabel "crm/CRMHS00000005971" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr3 ;
+    obo:GENO_0000895 "185781414"^^xsd:integer ;
+    obo:GENO_0000894 "185799612"^^xsd:integer ;
+    sio:SIO_000772 id_pubmed:21035756 ;
+    sio:SIO_000253 <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000005971--IGF2BP2> rdf:type <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    rdf:subject hcrm:CRMHS00000005971 ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:IGF2BP2 ;
+    skos:prefLabel "bgw!CRMHS00000005971--hgncsymbol!9606/IGF2BP2" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000005971 and gene IGF2BP2" ;
+    sio:SIO_000772 id_pubmed:21035756 .
+
+hgene:IGF2BP2 skos:closeMatch id_ncbigene:IGF2BP2 ;
+    biolink:category biolink:Gene .
+
+# Additional CRM and CRM2GENE instances would follow the same pattern

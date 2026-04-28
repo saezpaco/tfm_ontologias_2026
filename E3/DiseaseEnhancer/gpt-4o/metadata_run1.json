@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-04-28T18:26:27.694545",
+  "success": true,
+  "elapsed_seconds": 17.61,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 5074,
+    "completion_tokens": 1820,
+    "total_tokens": 6894
+  },
+  "prompt_tokens_estimate": 3329,
+  "response_chars": 4992,
+  "turtle_chars": 4978,
+  "validation": {
+    "valid": false,
+    "error": "at line 31 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4o/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4o/response_raw_run1.txt"
+  }
+}

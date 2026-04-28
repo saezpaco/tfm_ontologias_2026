@@ -1,0 +1,214 @@
+@prefix hcrm: <http://rdf.biogateway.eu/crm/9606>. 
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/>. 
+@prefix hgene: <http://rdf.biogateway.eu/gene/9606/>. 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>. 
+@prefix owl: <http://www.w3.org/2002/07/owl#>. 
+@prefix obo: <http://purl.obolibrary.org/obo/>. 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>. 
+@prefix biolink: <https://w3id.org/biolink/vocab/>. 
+@prefix schema: <http://schema.org/>. 
+@prefix sio: <http://semanticscience.org/resource/>. 
+@prefix pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/>. 
+@prefix id_pubmed: <http://identifiers.org/pubmed/>. 
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/>. 
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/>. 
+
+hcrm:crm_ID rdf:type owl:Class ; 
+    rdfs:subClassOf obo:SO_0000727 ; 
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ; 
+    skos:prefLabel "crm/crm_ID" ; 
+    obo:RO_0002162 obo:NCBITaxon_9606 ; 
+    dc:hasVersion assembly:GCF_000001405.26 ; 
+    obo:BFO_0000050 nuccore:chr_ID ; 
+    obo:GENO_0000895 "start_position"^^<http://www.w3.org/2001/XMLSchema#integer> ; 
+    obo:GENO_0000894 "end_position"^^<http://www.w3.org/2001/XMLSchema#integer> .
+
+hcrm:CRMHS00000005752 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 16039967 ; 
+    obo:GENO_0000894 16040344 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000005752> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000005795 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 62685569 ; 
+    obo:GENO_0000894 62685884 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000005795> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000006044 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 159102636 ; 
+    obo:GENO_0000894 159102934 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000006044> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000006141 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 53256663 ; 
+    obo:GENO_0000894 53257187 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000006141> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000076612 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 183272316 ; 
+    obo:GENO_0000894 183272732 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000076612> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000075686 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 153964078 ; 
+    obo:GENO_0000894 153964385 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000075686> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000077460 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 210252626 ; 
+    obo:GENO_0000894 210252943 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000077460> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000074856 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 100440265 ; 
+    obo:GENO_0000894 100440612 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000074856> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000078767 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 26290036 ; 
+    obo:GENO_0000894 26290528 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000078767> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000079386 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 43888685 ; 
+    obo:GENO_0000894 43888799 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000079386> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000075169 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 111653789 ; 
+    obo:GENO_0000894 111654181 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000075169> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000077513 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 212088562 ; 
+    obo:GENO_0000894 212088783 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000077513> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000076311 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 172697542 ; 
+    obo:GENO_0000894 172697857 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000076311> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000078768 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 26290715 ; 
+    obo:GENO_0000894 26290813 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000078768> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000079528 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 50949724 ; 
+    obo:GENO_0000894 50949728 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000079528> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000075314 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 117077291 ; 
+    obo:GENO_0000894 117077677 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000075314> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000076707 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 185339252 ; 
+    obo:GENO_0000894 185339639 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000076707> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000078906 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 28425679 ; 
+    obo:GENO_0000894 28425924 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000078906> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000078872 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 27979105 ; 
+    obo:GENO_0000894 27979409 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000078872> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000075927 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 160117773 ; 
+    obo:GENO_0000894 160118125 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000075927> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:CRMHS00000077213 rdf:type hcrm:crm_ID ; 
+    obo:GENO_0000895 204831348 ; 
+    obo:GENO_0000894 204831443 ; 
+    obo:TXPO_0003500 obo:CL_ID ; 
+    obo:TXPO_0003500 obo:UBERON_ID ; 
+    skos:exactMatch <http://fantom.gsc.riken.jp/5/CRMHS00000077213> ; 
+    sio:SIO_000772 id_pubmed:24670763 ; 
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .

@@ -1,0 +1,303 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crossrefID;
+        rr:objectMap [
+            rml:reference "crossref"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:originalID;
+        rr:objectMap [
+            rml:reference "original_ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:scoreValue;
+        rr:objectMap [
+            rml:reference "score"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:sourceName;
+        rr:objectMap [
+            rml:reference "source"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:typeName;
+        rr:objectMap [
+            rml:reference "type"
+        ]
+    ].
+
+<#TriplesMapGenomicCoordinate> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#GenomicCoordinate/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentAssembly;
+        rr:objectMap [
+            rml:reference "current_assembly"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentChr;
+        rr:objectMap [
+            rml:reference "current_chr"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origAssembly;
+        rr:objectMap [
+            rml:reference "orig_assembly"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origChr;
+        rr:objectMap [
+            rml:reference "orig_chr"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentEnd;
+        rr:objectMap [
+            rml:reference "current_end"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentStart;
+        rr:objectMap [
+            rml:reference "current_start"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origEnd;
+        rr:objectMap [
+            rml:reference "orig_end"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origStart;
+        rr:objectMap [
+            rml:reference "orig_start"
+        ]
+    ].
+
+<#TriplesMapBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Biosample/{biosample_name}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:biosampleName;
+        rr:objectMap [
+            rml:reference "biosample_name"
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Disease/{disease}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:diseaseName;
+        rr:objectMap [
+            rml:reference "disease"
+        ]
+    ].
+
+<#TriplesMapPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Publication/{TFs2enh_PMID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:publicationID;
+        rr:objectMap [
+            rml:reference "TFs2enh_PMID"
+        ]
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Method/{TFs2enh_method}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:methodName;
+        rr:objectMap [
+            rml:reference "TFs2enh_method"
+        ]
+    ].
+
+<#TriplesMapGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Gene/{hgnc_symbol_target_genes}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:geneSymbol;
+        rr:objectMap [
+            rml:reference "hgnc_symbol_target_genes"
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#TranscriptionFactor/{hgnc_symbol_TFs}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:tfSymbol;
+        rr:objectMap [
+            rml:reference "hgnc_symbol_TFs"
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Enhancer/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crossrefID;
+        rr:objectMap [
+            rml:reference "crossref"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:originalID;
+        rr:objectMap [
+            rml:reference "original_ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:scoreValue;
+        rr:objectMap [
+            rml:reference "score"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:sourceName;
+        rr:objectMap [
+            rml:reference "source"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:typeName;
+        rr:objectMap [
+            rml:reference "type"
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#SuperEnhancer/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crossrefID;
+        rr:objectMap [
+            rml:reference "crossref"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:originalID;
+        rr:objectMap [
+            rml:reference "original_ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:scoreValue;
+        rr:objectMap [
+            rml:reference "score"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:sourceName;
+        rr:objectMap [
+            rml:reference "source"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:typeName;
+        rr:objectMap [
+            rml:reference "type"
+        ]
+    ].
+
+<#TriplesMapCisRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#CisRegulatoryModule/{crm_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crmID;
+        rr:objectMap [
+            rml:reference "crm_ID"
+        ]
+    ].
+
+<#TriplesMapSNP> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#SNP/{refsnp_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:refSnpID;
+        rr:objectMap [
+            rml:reference "refsnp_ID"
+        ]
+    ].

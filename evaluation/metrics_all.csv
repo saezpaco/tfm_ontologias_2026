@@ -1,0 +1,43 @@
+experiment,db_name,model,run,valid_turtle,n_triples,n_classes_generated,n_properties_generated,n_mappings_generated,n_classes_ref,n_properties_ref,n_mappings_ref,classes_matched,precision_classes,recall_classes,f1_classes,properties_matched,precision_properties,recall_properties,f1_properties,mappings_matched,mapping_precision,mapping_recall,n_with_label,coverage_annotations,global_score,file,error
+E1,DiseaseEnhancer,gpt-4o,1,True,42,5,5,4,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,9,180.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4o/ontology_run1.ttl,
+E1,DiseaseEnhancer,gpt-4o,2,True,41,4,5,4,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,9,225.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4o/ontology_run2.ttl,
+E1,DiseaseEnhancer,gpt-4o,3,True,41,4,5,4,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,9,225.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4o/ontology_run3.ttl,
+E1,FANTOM5,gpt-4o,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E1,FANTOM5,gpt-4o,2,True,54,2,8,8,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,10,500.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/ontology_run2.ttl,
+E1,FANTOM5,gpt-4o,3,True,38,3,5,4,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,8,266.6667,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/ontology_run3.ttl,
+E1,FANTOM5,gpt-4o-mini,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o-mini/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E1,HACER,gpt-4o,1,True,50,4,7,2,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,11,275.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4o/ontology_run1.ttl,
+E1,HACER,gpt-4o,2,True,73,6,10,4,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,16,266.6667,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4o/ontology_run2.ttl,
+E1,HACER,gpt-4o,3,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4o/ontology_run3.ttl,No se pudo parsear el Turtle generado
+E1,dbSUPER,gpt-4o,1,True,55,6,6,4,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,11,183.3333,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/ontology_run1.ttl,
+E1,dbSUPER,gpt-4o,2,True,42,4,5,3,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,9,225.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/ontology_run2.ttl,
+E1,dbSUPER,gpt-4o,3,True,69,5,10,3,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,15,300.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/ontology_run3.ttl,
+E1,dbSUPER,gpt-4o-mini,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o-mini/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E2,DiseaseEnhancer,gpt-4o,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4o/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E2,DiseaseEnhancer,gpt-4o,2,True,62,5,12,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,17,340.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4o/ontology_run2.ttl,
+E2,DiseaseEnhancer,gpt-4o,3,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4o/ontology_run3.ttl,No se pudo parsear el Turtle generado
+E2,FANTOM5,gpt-4o,1,True,70,4,11,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,15,375.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/ontology_run1.ttl,
+E2,FANTOM5,gpt-4o,2,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/ontology_run2.ttl,No se pudo parsear el Turtle generado
+E2,FANTOM5,gpt-4o,3,True,51,4,9,4,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,9,225.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/ontology_run3.ttl,
+E2,FANTOM5,gpt-4o-mini,1,True,57,4,9,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,13,325.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o-mini/ontology_run1.ttl,
+E2,HACER,gpt-4o,1,True,52,4,6,7,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0.0,0.0,11,275.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/ontology_run1.ttl,
+E2,HACER,gpt-4o,2,True,50,5,7,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,13,260.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/ontology_run2.ttl,
+E2,HACER,gpt-4o,3,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/ontology_run3.ttl,No se pudo parsear el Turtle generado
+E2,dbSUPER,gpt-4o,1,True,40,3,7,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,10,333.3333,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4o/ontology_run1.ttl,
+E2,dbSUPER,gpt-4o,2,True,55,5,8,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,13,260.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4o/ontology_run2.ttl,
+E2,dbSUPER,gpt-4o,3,True,55,4,8,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,12,300.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4o/ontology_run3.ttl,
+E2,dbSUPER,gpt-4o-mini,1,True,52,4,8,0,6,0,2,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,12,300.0,0,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4o-mini/ontology_run1.ttl,
+E3,DiseaseEnhancer,gpt-4o,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4o/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E3,DiseaseEnhancer,gpt-4o,2,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4o/ontology_run2.ttl,No se pudo parsear el Turtle generado
+E3,DiseaseEnhancer,gpt-4o,3,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4o/ontology_run3.ttl,No se pudo parsear el Turtle generado
+E3,FANTOM5,gpt-4o,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E3,FANTOM5,gpt-4o,2,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o/ontology_run2.ttl,No se pudo parsear el Turtle generado
+E3,FANTOM5,gpt-4o,3,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o/ontology_run3.ttl,No se pudo parsear el Turtle generado
+E3,FANTOM5,gpt-4o-mini,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o-mini/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E3,HACER,gpt-4o,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E3,HACER,gpt-4o,2,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o/ontology_run2.ttl,No se pudo parsear el Turtle generado
+E3,HACER,gpt-4o,3,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o/ontology_run3.ttl,No se pudo parsear el Turtle generado
+E3,dbSUPER,gpt-4o,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/ontology_run1.ttl,No se pudo parsear el Turtle generado
+E3,dbSUPER,gpt-4o,2,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/ontology_run2.ttl,No se pudo parsear el Turtle generado
+E3,dbSUPER,gpt-4o,3,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o/ontology_run3.ttl,No se pudo parsear el Turtle generado
+E3,dbSUPER,gpt-4o-mini,1,False,0,,,,,,,,,,,,,,,,,,,,,/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4o-mini/ontology_run1.ttl,No se pudo parsear el Turtle generado
