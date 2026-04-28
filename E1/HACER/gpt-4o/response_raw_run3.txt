@@ -1,0 +1,86 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology .
+
+### Classes
+:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory Module" ;
+    skos:definition "A genomic region that regulates the expression of a target gene." ;
+    skos:exactMatch obo:SO_0000165 .
+
+:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome defined by a start and end position." .
+
+:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information supporting the existence or function of a biological entity." .
+
+### Object Properties
+:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :GenomicCoordinate ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Associates a CRM with its genomic coordinates." .
+
+:hasEvidence a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Evidence ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Associates a CRM with evidence supporting its function." .
+
+### Datatype Properties
+:chromosome a owl:DatatypeProperty ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the genomic coordinate is located." .
+
+:startPosition a owl:DatatypeProperty ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of the genomic coordinate on the chromosome." .
+
+:endPosition a owl:DatatypeProperty ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of the genomic coordinate on the chromosome." .
+
+:assemblyVersion a owl:DatatypeProperty ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "assembly version" ;
+    skos:definition "The genome assembly version used for the genomic coordinate." .
+
+:minimumRatio a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "minimum ratio" ;
+    skos:definition "The minimum ratio of activity observed for the CRM." .
+
+:score a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "score" ;
+    skos:definition "A score representing the activity level of the CRM." .
+
+:method a owl:DatatypeProperty ;
+    rdfs:domain :Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "method" ;
+    skos:definition "The method used to obtain the evidence." .
+
+:PMID a owl:DatatypeProperty ;
+    rdfs:domain :Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PubMed ID" ;
+    skos:definition "The PubMed ID of the publication providing the evidence." .
+```

@@ -1,0 +1,39 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o-mini",
+  "n_runs": 1,
+  "n_success": 1,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 25.21,
+  "total_tokens": 4319,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o-mini",
+      "run": 1,
+      "timestamp": "2026-04-14T19:13:45.060566",
+      "success": true,
+      "elapsed_seconds": 25.21,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3374,
+        "completion_tokens": 945,
+        "total_tokens": 4319
+      },
+      "prompt_tokens_estimate": 2146,
+      "response_chars": 3339,
+      "turtle_chars": 3339,
+      "validation": {
+        "valid": null,
+        "note": "rdflib no instalado (pip install rdflib)"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o-mini/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o-mini/response_raw_run1.txt"
+      }
+    }
+  ]
+}

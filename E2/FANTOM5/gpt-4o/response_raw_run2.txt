@@ -1,0 +1,104 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    rdfs:comment "Ontology for enhancers identified by CAGE-seq in the FANTOM5 database." .
+
+### Classes ###
+:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:exactMatch <http://example.org/vocab/crm/crm_ID> .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of a cis-regulatory module." .
+
+:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor that interacts with a cis-regulatory module." .
+
+:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with a cis-regulatory module." .
+
+### Object Properties ###
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and its target gene." ;
+    skos:exactMatch <http://example.org/vocab/bgw!crm_ID--hgncsymbol!9606/gene_symbol> .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease." ;
+    skos:exactMatch <http://example.org/vocab/bgw!crm_ID--doid!doid> .
+
+:interactsWithTF a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor." ;
+    skos:exactMatch <http://example.org/vocab/bgw!crm_ID--uniprot!uniprot_ID> .
+
+### Datatype Properties ###
+:chromosome a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "Chromosome where the cis-regulatory module is located." ;
+    skos:exactMatch <http://example.org/vocab/chr_name> .
+
+:startPosition a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start position" ;
+    skos:definition "Start position of the cis-regulatory module on the chromosome." .
+
+:endPosition a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end position" ;
+    skos:definition "End position of the cis-regulatory module on the chromosome." .
+
+:assembly a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "genome assembly" ;
+    skos:definition "Genome assembly version for the cis-regulatory module coordinates." ;
+    skos:exactMatch <http://example.org/vocab/GRCh38> .
+
+:databaseSource a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "database source" ;
+    skos:definition "Database from which the cis-regulatory module information is sourced." ;
+    skos:exactMatch <http://example.org/vocab/database_name> .
+
+:experimentalMethod a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "experimental method" ;
+    skos:definition "Experimental method used to identify the cis-regulatory module." .
+
+:score a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "score" ;
+    skos:definition "Score indicating the confidence or strength of the cis-regulatory module." .
+
+:minimumRatio a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "minimum ratio" ;
+    skos:definition "Minimum ratio value associated with the cis-regulatory module." .
+```

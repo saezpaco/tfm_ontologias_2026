@@ -1,0 +1,39 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o-mini",
+  "n_runs": 1,
+  "n_success": 1,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 17.49,
+  "total_tokens": 3649,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o-mini",
+      "run": 1,
+      "timestamp": "2026-04-16T19:59:30.233133",
+      "success": true,
+      "elapsed_seconds": 17.49,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2781,
+        "completion_tokens": 868,
+        "total_tokens": 3649
+      },
+      "prompt_tokens_estimate": 1655,
+      "response_chars": 3034,
+      "turtle_chars": 3034,
+      "validation": {
+        "valid": null,
+        "note": "rdflib no instalado (pip install rdflib)"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o-mini/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o-mini/response_raw_run1.txt"
+      }
+    }
+  ]
+}

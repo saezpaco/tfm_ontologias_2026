@@ -1,0 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology .
+
+### Classes
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A genomic region that regulates the expression of target genes, often containing multiple binding sites for transcription factors." ;
+    skos:exactMatch obo:SO_0000165 .
+
+<http://example.org/ontology/SuperEnhancer> a owl:Class ;
+    skos:prefLabel "Super Enhancer" ;
+    skos:definition "A large cluster of transcriptional enhancers that drive expression of genes involved in cell identity." ;
+    skos:exactMatch obo:SO_0002180 ;
+    rdfs:subClassOf <http://example.org/ontology/CRM> .
+
+<http://example.org/ontology/CellLine> a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch obo:SO_0000704 .
+
+### Object Properties
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a cis-regulatory module to its target gene." ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Gene> .
+
+<http://example.org/ontology/activeInCellLine> a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the enhancer is active." ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/CellLine> .
+
+### Datatype Properties
+<http://example.org/ontology/genomicCoordinate> a owl:DatatypeProperty ;
+    skos:prefLabel "genomic coordinate" ;
+    skos:definition "The genomic coordinates of the enhancer on a specific assembly." ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/evidencePMID> a owl:DatatypeProperty ;
+    skos:prefLabel "evidence PMID" ;
+    skos:definition "The PubMed ID of the publication providing evidence for the enhancer's activity." ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/score> a owl:DatatypeProperty ;
+    skos:prefLabel "enhancer score" ;
+    skos:definition "A score representing the strength or confidence of the enhancer's activity." ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:float .

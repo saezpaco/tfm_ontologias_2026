@@ -1,0 +1,72 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology ;
+    skos:prefLabel "HACER Ontology" ;
+    skos:definition "Ontology for the Human Active Cis-regulatory Elements database" .
+
+### Classes ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "Protein that binds to specific DNA sequences, thereby controlling the rate of transcription" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/GO_0003700> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene is a sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Disease> a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/DOID_4> .
+
+### Object Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/Gene> ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and its target gene" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002436> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/Disease> ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002458> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002437> .
+
+### Datatype Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasGenomicCoordinates> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasExperimentalEvidence> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Experimental evidence supporting the activity of the cis-regulatory module" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/activeInCellLine> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Cell line in which the cis-regulatory module is active" .

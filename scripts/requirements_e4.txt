@@ -1,0 +1,12 @@
+# Dependencias mínimas para ejecutar scripts/run_ontogenix_experiments.py (E4)
+# y scripts/evaluate_E4_vs_E1-E3.py — NO instala PyQt5, ni morph-kgc, ni
+# el resto del stack GUI de OntoGenix (no los necesitamos).
+
+openai>=1.3
+pandas>=2.0
+numpy>=1.25
+chardet>=5
+python-dotenv>=1.0
+python-dateutil>=2.8
+serpapi>=0.1         # LlmPlanner instancia Searcher aunque no lo usemos
+rdflib>=6.3          # solo para evaluate_E4_vs_E1-E3.py

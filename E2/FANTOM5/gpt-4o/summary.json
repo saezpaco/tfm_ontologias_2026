@@ -1,0 +1,97 @@
+{
+  "experiment": "E2",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 12.6,
+  "total_tokens": 12676,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-04-22T18:13:04.940909",
+      "success": true,
+      "elapsed_seconds": 12.27,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3170,
+        "completion_tokens": 1017,
+        "total_tokens": 4187
+      },
+      "prompt_tokens_estimate": 1992,
+      "response_chars": 3693,
+      "turtle_chars": 3679,
+      "validation": {
+        "valid": true,
+        "n_triples": 70,
+        "n_classes": 4,
+        "n_properties": 11
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-04-22T18:13:18.716804",
+      "success": true,
+      "elapsed_seconds": 12.73,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3170,
+        "completion_tokens": 1135,
+        "total_tokens": 4305
+      },
+      "prompt_tokens_estimate": 1992,
+      "response_chars": 4097,
+      "turtle_chars": 4083,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ed by CAGE-seq in the FANTOM5 database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"Cis-regulatory module'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-04-22T18:13:32.581285",
+      "success": true,
+      "elapsed_seconds": 12.8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3170,
+        "completion_tokens": 1014,
+        "total_tokens": 4184
+      },
+      "prompt_tokens_estimate": 1992,
+      "response_chars": 3357,
+      "turtle_chars": 3343,
+      "validation": {
+        "valid": true,
+        "n_triples": 51,
+        "n_classes": 4,
+        "n_properties": 9
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+owl:Class a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A regulatory DNA sequence that modulates the transcription of target genes." .
+
+owl:Class crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A type of cis-regulatory module that enhances the transcription of associated genes." .
+
+owl:Class crm:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "The specific location of a sequence on a chromosome." .
+
+owl:Class crm:Evidence a owl:Class ;
+    rdfs:label "Experimental Evidence" ;
+    skos:prefLabel "Experimental Evidence" ;
+    skos:definition "Evidence supporting the activity of an enhancer." .
+
+# Properties
+owl:ObjectProperty crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Links an enhancer to its target gene." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0000704 ; # Gene
+
+owl:ObjectProperty crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "has transcription factor" ;
+    skos:prefLabel "has transcription factor" ;
+    skos:definition "Links an enhancer to its interacting transcription factors." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0000704 ; # Gene
+
+owl:DatatypeProperty crm:genomicStart a owl:DatatypeProperty ;
+    rdfs:label "genomic start" ;
+    skos:prefLabel "genomic start" ;
+    skos:definition "The starting position of the enhancer on the chromosome." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+owl:DatatypeProperty crm:genomicEnd a owl:DatatypeProperty ;
+    rdfs:label "genomic end" ;
+    skos:prefLabel "genomic end" ;
+    skos:definition "The ending position of the enhancer on the chromosome." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+owl:DatatypeProperty crm:score a owl:DatatypeProperty ;
+    rdfs:label "score" ;
+    skos:prefLabel "score" ;
+    skos:definition "The score indicating the strength of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty crm:evidenceSource a owl:DatatypeProperty ;
+    rdfs:label "evidence source" ;
+    skos:prefLabel "evidence source" ;
+    skos:definition "The source of the experimental evidence for the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+# Mappings to standard ontologies
+crm:Enhancer skos:exactMatch obo:SO_0000165 . # Enhancer
+crm:GenomicCoordinate skos:exactMatch obo:SO_0000704 . # Genomic Location
+crm:Evidence skos:exactMatch obo:SO_0000705 . # Evidence

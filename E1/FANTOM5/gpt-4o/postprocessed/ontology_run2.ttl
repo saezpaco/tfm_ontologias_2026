@@ -1,0 +1,73 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters and can function in either orientation and in any location relative to the promoter." ;
+    skos:exactMatch obo:SO_0000167 .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory region to its target gene." ;
+    skos:exactMatch obo:RO_0002205 ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range obo:SO_0000704 .
+
+# Datatype Properties
+obo:GENO_0000895 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic start position" ;
+    skos:definition "The start position of a genomic feature on a chromosome." ;
+    skos:exactMatch obo:GENO_0000895 ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000896 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic end position" ;
+    skos:definition "The end position of a genomic feature on a chromosome." ;
+    skos:exactMatch obo:GENO_0000896 ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000897 a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which a genomic feature is located." ;
+    skos:exactMatch obo:GENO_0000897 ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:string .
+
+obo:ECO_0000000 a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Evidence supporting the assertion of a genomic feature." ;
+    skos:exactMatch obo:ECO_0000000 ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000898 a owl:DatatypeProperty ;
+    skos:prefLabel "has assembly version" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    skos:exactMatch obo:GENO_0000898 ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000899 a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "A score representing the confidence or strength of the enhancer activity." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:float .
+
+obo:GENO_0000900 a owl:DatatypeProperty ;
+    skos:prefLabel "has minimum ratio" ;
+    skos:definition "The minimum ratio of enhancer activity observed." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:float .
