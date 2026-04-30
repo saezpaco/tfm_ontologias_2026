@@ -42,6 +42,9 @@ from config import (DATABASES, SCHEMAS, SCHEMA_EXAMPLES, LLM_MODELS,
 
 # ─── Modelos GPT disponibles ──────────────────────────────────────────────────
 GPT_MODELS = {k: v for k, v in LLM_MODELS.items() if v.get("provider") == "openai"}
+OLLAMA_MODELS = {k: v for k, v in LLM_MODELS.items()
+                 if v.get("provider") == "ollama"}
+ALL_MODELS = {**GPT_MODELS, **OLLAMA_MODELS}
 
 # ─── Templates de prompts ─────────────────────────────────────────────────────
 
@@ -230,9 +233,13 @@ def get_rag_fragments(db_name: str) -> str:
 
 # ─── Llamada a la API de OpenAI ───────────────────────────────────────────────
 
-def call_gpt(model_name: str, system_prompt: str, user_prompt: str,
-             params: dict, api_key: str) -> dict:
-    """Llama a la API de OpenAI y devuelve el resultado."""
+def call_llm(model_name: str, system_prompt: str, user_prompt: str,
+             params: dict, api_key: str | None) -> dict:
+    """Llama al LLM (OpenAI u Ollama, según el provider en config.LLM_MODELS).
+
+    Ollama expone una API compatible OpenAI en ``{base_url}/v1`` — usamos el
+    mismo cliente, cambiando ``base_url`` y omitiendo la API key.
+    """
     try:
         import openai
     except ImportError:
@@ -241,11 +248,20 @@ def call_gpt(model_name: str, system_prompt: str, user_prompt: str,
             "error": "Paquete 'openai' no instalado. Ejecuta: pip install openai"
         }
 
-    client = openai.OpenAI(api_key=api_key)
-    start = time.time()
+    cfg = ALL_MODELS.get(model_name, {})
+    provider = cfg.get("provider", "openai")
 
+    if provider == "ollama":
+        base_url = cfg.get("base_url", "http://localhost:11434").rstrip("/")
+        if not base_url.endswith("/v1"):
+            base_url = base_url + "/v1"
+        client = openai.OpenAI(api_key="ollama-no-key", base_url=base_url)
+    else:
+        client = openai.OpenAI(api_key=api_key)
+
+    start = time.time()
     try:
-        response = client.chat.completions.create(
+        kwargs: dict = dict(
             model=model_name,
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -254,8 +270,11 @@ def call_gpt(model_name: str, system_prompt: str, user_prompt: str,
             temperature=params.get("temperature", 0.1),
             top_p=params.get("top_p", 0.9),
             max_tokens=params.get("max_tokens", 4096),
-            seed=params.get("seed", 42),
         )
+        # Ollama ignora 'seed' en algunas versiones; lo enviamos solo en OpenAI
+        if provider == "openai":
+            kwargs["seed"] = params.get("seed", 42)
+        response = client.chat.completions.create(**kwargs)
         elapsed = round(time.time() - start, 2)
         content = response.choices[0].message.content or ""
         usage = response.usage
@@ -265,10 +284,11 @@ def call_gpt(model_name: str, system_prompt: str, user_prompt: str,
             "content": content,
             "elapsed": elapsed,
             "model": model_name,
+            "provider": provider,
             "usage": {
-                "prompt_tokens":     usage.prompt_tokens if usage else None,
-                "completion_tokens": usage.completion_tokens if usage else None,
-                "total_tokens":      usage.total_tokens if usage else None,
+                "prompt_tokens":     getattr(usage, "prompt_tokens", None) if usage else None,
+                "completion_tokens": getattr(usage, "completion_tokens", None) if usage else None,
+                "total_tokens":      getattr(usage, "total_tokens", None) if usage else None,
             },
             "finish_reason": response.choices[0].finish_reason,
         }
@@ -277,10 +297,19 @@ def call_gpt(model_name: str, system_prompt: str, user_prompt: str,
         return {"success": False, "error": "API Key inválida o sin permisos"}
     except openai.RateLimitError:
         return {"success": False, "error": "Rate limit alcanzado. Espera y reintenta."}
+    except openai.APIConnectionError as e:
+        hint = (" — ¿está Ollama corriendo en el host indicado?"
+                if provider == "ollama" else "")
+        return {"success": False,
+                "error": f"Error de conexión: {str(e)[:200]}{hint}"}
     except openai.APIError as e:
         return {"success": False, "error": f"Error API: {str(e)[:200]}"}
     except Exception as e:
         return {"success": False, "error": str(e)[:300]}
+
+
+# Backward compat
+call_gpt = call_llm
 
 
 # ─── Extracción y validación de Turtle ───────────────────────────────────────
@@ -575,8 +604,9 @@ Configurar API key con archivo .env (en carpeta TFM/):
     parser.add_argument('--api-key',   type=str,  default=None,
                         help='OpenAI API key (alternativa a OPENAI_API_KEY env)')
     parser.add_argument('--model',     type=str,  default='gpt-4o-mini',
-                        choices=list(GPT_MODELS.keys()),
-                        help='Modelo GPT (default: gpt-4o-mini)')
+                        choices=list(ALL_MODELS.keys()),
+                        help='Modelo LLM (OpenAI u Ollama, default: '
+                             'gpt-4o-mini)')
     parser.add_argument('--experiment',type=str,  default='E1',
                         choices=list(EXPERIMENTS.keys()) + ['all'],
                         help='Experimento(s) a ejecutar (default: E1)')
@@ -608,18 +638,24 @@ Configurar API key con archivo .env (en carpeta TFM/):
     # ── Selección de experimentos ─────────────────────────────────────────────
     experiments = list(EXPERIMENTS.keys()) if args.experiment == 'all' else [args.experiment]
 
-    # ── API Key ───────────────────────────────────────────────────────────────
+    # ── API Key (solo para modelos OpenAI) ────────────────────────────────────
     api_key = None
+    provider = ALL_MODELS.get(args.model, {}).get("provider", "openai")
     if not args.dry_run:
-        api_key = resolve_api_key(args.api_key)
-        if not api_key:
-            print("  ❌ API Key no encontrada.")
-            print("     Opciones:")
-            print("     1. export OPENAI_API_KEY='sk-...'")
-            print("     2. python run_gpt_experiments.py --api-key 'sk-...'")
-            print("     3. Crear TFM/.env con: OPENAI_API_KEY=sk-...")
-            sys.exit(1)
-        print(f"  ✅ API Key configurada (sk-...{api_key[-4:]})")
+        if provider == "ollama":
+            base = ALL_MODELS[args.model].get("base_url",
+                                              "http://localhost:11434")
+            print(f"  ✅ Provider: Ollama ({base}) — no se necesita API key")
+        else:
+            api_key = resolve_api_key(args.api_key)
+            if not api_key:
+                print("  ❌ API Key no encontrada.")
+                print("     Opciones:")
+                print("     1. export OPENAI_API_KEY='sk-...'")
+                print("     2. python run_gpt_experiments.py --api-key 'sk-...'")
+                print("     3. Crear TFM/.env con: OPENAI_API_KEY=sk-...")
+                sys.exit(1)
+            print(f"  ✅ API Key configurada (sk-...{api_key[-4:]})")
     else:
         print("  ⚠️  MODO DRY-RUN: no se consume API")
 

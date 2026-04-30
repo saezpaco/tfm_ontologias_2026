@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 333.9433333333333,
+  "total_tokens": 16150,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-04-29T02:05:57.704574",
+      "success": true,
+      "elapsed_seconds": 270.06,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 948,
+        "total_tokens": 5044
+      },
+      "prompt_tokens_estimate": 3207,
+      "response_chars": 3092,
+      "turtle_chars": 2461,
+      "validation": {
+        "valid": false,
+        "error": "at line 38 of <>:\nBad syntax (Prefix \"id_ncbigene:\" not bound) at ^ in:\n\"...b'position\"^^xsd:integer .\\n\\nhgene:gene_symbol skos:closeMatch '^b'id_ncbigene:GeneID ;\\n    biolink:category biolink:Gene .\\n\\ncr'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-04-29T02:12:10.951500",
+      "success": true,
+      "elapsed_seconds": 372.2,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 1492,
+        "total_tokens": 5588
+      },
+      "prompt_tokens_estimate": 3207,
+      "response_chars": 4719,
+      "turtle_chars": 3943,
+      "validation": {
+        "valid": false,
+        "error": "at line 45 of <>:\nBad syntax (Prefix \"linkml:\" not bound) at ^ in:\n\"...b'bel \"CRM\" ;\\n    skos:altLabel \"cis-regulatory module\" ;\\n    '^b'linkml:is_a biolink:RegulatoryRegion .\\n\\nnuccore:chr_ID rdf:t'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-04-29T02:18:11.568940",
+      "success": true,
+      "elapsed_seconds": 359.57,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 1422,
+        "total_tokens": 5518
+      },
+      "prompt_tokens_estimate": 3207,
+      "response_chars": 4408,
+      "turtle_chars": 3874,
+      "validation": {
+        "valid": false,
+        "error": "at line 45 of <>:\nBad syntax (Prefix \"linkml:\" not bound) at ^ in:\n\"...b'bel \"CRM\" ;\\n    skos:altLabel \"cis-regulatory module\" ;\\n    '^b'linkml:is_a biolink:RegulatoryRegion .\\n\\nnuccore:chr_ID rdf:t'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

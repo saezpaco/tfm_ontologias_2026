@@ -1,0 +1,308 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology rdf:about "http://example.com/fantom5-enhancers" ;
+    rdfs:label "FANTOM5 Enhancers Ontology" ;
+    rdfs:comment "An ontology for enhancers identified by CAGE-seq in FANTOM5 dataset." ;
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+    skos:definition "A cis-regulatory module that modulates the transcription rate of target genes." ;
+    rdfs:subClassOf obo:SIO_010245 ;  # Biological Region
+
+crm:hasGenomicStart a owl:ObjectProperty ;
+    skos:prefLabel "Has Genomic Start" ;
+    skos:definition "The start position of the enhancer in the genome." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+crm:hasGenomicEnd a owl:ObjectProperty ;
+    skos:prefLabel "Has Genomic End" ;
+    skos:definition "The end position of the enhancer in the genome." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+crm:hasEvidence a owl:ObjectProperty ;
+    skos:prefLabel "Has Evidence" ;
+    skos:definition "Experimental evidence supporting the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceType a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence used to support the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSource a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source of the evidence supporting the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:targetGene a owl:ObjectProperty ;
+    skos:prefLabel "Target Gene" ;
+    skos:definition "A gene that is regulated by the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceConfidence a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Confidence" ;
+    skos:definition "The level of confidence in the evidence supporting the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:evidencePublication a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Publication" ;
+    skos:definition "A publication that reports evidence for the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceMethod a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Method" ;
+    skos:definition "The method used to generate the evidence for the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:evidenceSupportingGenes a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Genes" ;
+    skos:definition "Genes that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingGenes a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Genes" ;
+    skos:definition "Genes that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingRegions a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Regions" ;
+    skos:definition "Genomic regions that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingRegions a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Regions" ;
+    skos:definition "Genomic regions that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingExperiments a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Experiments" ;
+    skos:definition "Experiments that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingExperiments a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Experiments" ;
+    skos:definition "Experiments that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingFactors a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Factors" ;
+    skos:definition "Factors that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingFactors a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Factors" ;
+    skos:definition "Factors that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingPathways a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Pathways" ;
+    skos:definition "Pathways that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingPathways a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Pathways" ;
+    skos:definition "Pathways that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingInteractions a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Interactions" ;
+    skos:definition "Interactions that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingInteractions a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Interactions" ;
+    skos:definition "Interactions that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingTranscriptionFactors a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Transcription Factors" ;
+    skos:definition "Transcription factors that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingTranscriptionFactors a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Transcription Factors" ;
+    skos:definition "Transcription factors that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingChromatinStates a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Chromatin States" ;
+    skos:definition "Chromatin states that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingChromatinStates a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Chromatin States" ;
+    skos:definition "Chromatin states that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingEpigeneticModifications a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Epigenetic Modifications" ;
+    skos:definition "Epigenetic modifications that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingEpigeneticModifications a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Epigenetic Modifications" ;
+    skos:definition "Epigenetic modifications that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingTranscriptionalRegulation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Transcriptional Regulation" ;
+    skos:definition "Transcriptional regulation that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingTranscriptionalRegulation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Transcriptional Regulation" ;
+    skos:definition "Transcriptional regulation that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingPostTranscriptionalRegulation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Post-Transcriptional Regulation" ;
+    skos:definition "Post-transcriptional regulation that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingPostTranscriptionalRegulation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Post-Transcriptional Regulation" ;
+    skos:definition "Post-transcriptional regulation that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingTranslationalRegulation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Translational Regulation" ;
+    skos:definition "Translational regulation that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingTranslationalRegulation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Translational Regulation" ;
+    skos:definition "Translational regulation that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingPostTranslationalModification a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Post-Translational Modification" ;
+    skos:definition "Post-translational modification that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingPostTranslationalModification a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Post-Translational Modification" ;
+    skos:definition "Post-translational modification that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingDegradation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Degradation" ;
+    skos:definition "Degradation that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingDegradation a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Degradation" ;
+    skos:definition "Degradation that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingStability a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Stability" ;
+    skos:definition "Stability that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingStability a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Stability" ;
+    skos:definition "Stability that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingLocalization a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Localization" ;
+    skos:definition "Localization that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingLocalization a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Localization" ;
+    skos:definition "Localization that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingComplexInteractions a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Complex Interactions" ;
+    skos:definition "Complex interactions that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingComplexInteractions a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Complex Interactions" ;
+    skos:definition "Complex interactions that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingFunctionalAssays a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Functional Assays" ;
+    skos:definition "Functional assays that support the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingFunctionalAssays a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Functional Assays" ;
+    skos:definition "Functional assays that contradict the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingTranscriptionalActivity a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Transcriptional Activity" ;
+    skos:definition "Transcriptional activity that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingTranscriptionalActivity a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Transcriptional Activity" ;
+    skos:definition "Transcriptional activity that contradicts the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceSupportingPostTranscriptionalActivity a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Supporting Post-Transcriptional Activity" ;
+    skos:definition "Post-transcriptional activity that supports the existence of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Region
+
+crm:evidenceContradictingPostTranscriptionalActivity a owl:ObjectProperty ;
+    skos:prefLabel "Evidence Contradicting Post-Transcriptional Activity" ;
+    skos:definition "Post-transcriptional

@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/>
+  a owl:Ontology ;
+  rdfs:label "Human Active Cis-regulatory Elements database" .
+
+crm a owl:Class ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm_ID a rdf:Property ;
+  rdfs:label "crm/crm_ID" ;
+  skos:prefLabel "crm#crm_ID#database_name" ;
+  owl:propertyType xsd:string .
+
+chr_name a rdf:Property ;
+  skos:prefLabel "chr_name" ;
+  owl:propertyType xsd:string .
+
+start_position a rdf:Property ;
+  rdfs:label "Start position of the cis-regulatory module" ;
+  owl:propertyType xsd:integer .
+
+end_position a rdf:Property ;
+  rdfs:label "End position of the cis-regulatory module" ;
+  owl:propertyType xsd:integer .
+
+database_name a rdf:Property ;
+  skos:prefLabel "database_name" ;
+  owl:propertyType xsd:string .
+
+hgnc_symbol_target_genes a owl:ObjectProperty ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  rdfs:label "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" ;
+  owl:propertyType obo:HGNC .
+
+hgnc_symbol_TFs a owl:ObjectProperty ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  rdfs:label "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" ;
+  owl:propertyType obo:HGNC .
+
+disease a owl:ObjectProperty ;
+  skos:prefLabel "bgw!crm_ID--doid!doid" ;
+  rdfs:label "Association between cis-regulatory module crm_ID and disease DOID:doid" ;
+  owl:propertyType obo:Disease .
+
+uniprot_ID a owl:ObjectProperty ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+  rdfs:label "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" ;
+  owl:propertyType obo:UniProt .
+
+enhancer_sequence a owl:ObjectProperty ;
+  skos:prefLabel "Enhancer sequence of the cis-regulatory module" ;
+  owl:propertyType xsd:string .
+
+target_genes a owl:ObjectProperty ;
+  rdfs:label "Target genes associated with the cis-regulatory module" ;
+  owl:propertyType obo:HGNC .
+
+transcription_factors a owl:ObjectProperty ;
+  skos:prefLabel "Transcription factors associated with the cis-regulatory module" ;
+  owl:propertyType obo:UniProt .
+
+disease_PMID a rdf:Property ;
+  rdfs:label "PMID of the disease association" ;
+  owl:propertyType xsd:string .
+
+enh2gene_PMID a rdf:Property ;
+  rdfs:label "PMID of the enhancer-gene association" ;
+  owl:propertyType xsd:string .
+
+mutation_PMID a rdf:Property ;
+  rdfs:label "PMID of the mutation associated with the cis-regulatory module" ;
+  owl:propertyType xsd:string .

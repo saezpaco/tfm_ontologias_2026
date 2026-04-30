@@ -1,0 +1,77 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+crm:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    rdfs:subClassOf obo:GO_0003705 .
+
+crm:CisRegulatoryModule a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    rdfs:subClassOf obo:SO_0001849 .
+
+crm:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    rdfs:subClassOf obo:SO_0000704 .
+
+crm:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    rdfs:subClassOf obo:GO_0012501 .
+
+crm:TranscriptionFactorAssociation a owl:ObjectProperty ;
+    skos:prefLabel "Transcription Factor Association" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:TranscriptionFactor .
+
+crm:GeneAssociation a owl:ObjectProperty ;
+    skos:prefLabel "Gene Association" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Gene .
+
+crm:DiseaseAssociation a owl:ObjectProperty ;
+    skos:prefLabel "Disease Association" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Disease .
+
+crm:Database a owl:Class ;
+    skos:prefLabel "Database" ;
+    rdfs:subClassOf obo:GO_0043226 .
+
+crm:CRMID a owl:DatatypeProperty ;
+    skos:prefLabel "CRM ID" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+crm:ChrName a owl:DatatypeProperty ;
+    skos:prefLabel "Chromosome Name" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+crm:StartPosition a owl:DatatypeProperty ;
+    skos:prefLabel "Start Position" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range xsd:integer .
+
+crm:EndPosition a owl:DatatypeProperty ;
+    skos:prefLabel "End Position" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range xsd:integer .
+
+crm:HgncSymbol a owl:DatatypeProperty ;
+    skos:prefLabel "HGNC Symbol" ;
+    rdfs:domain crm:Gene ;
+    rdfs:range xsd:string .
+
+crm:Doid a owl:DatatypeProperty ;
+    skos:prefLabel "DOID" ;
+    rdfs:domain crm:Disease ;
+    rdfs:range xsd:string .
+
+crm:UniprotId a owl:DatatypeProperty ;
+    skos:prefLabel "UniProt ID" ;
+    rdfs:domain crm:TranscriptionFactor ;
+    rdfs:range xsd:string .

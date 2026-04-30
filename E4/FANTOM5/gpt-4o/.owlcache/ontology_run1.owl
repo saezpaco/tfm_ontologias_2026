@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://base_ontology.com#hasPublication"/>
+    <owl:someValuesFrom rdf:resource="https://base_ontology.com#Publication"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://base_ontology.com#targetsGene"/>
+    <owl:someValuesFrom rdf:resource="https://base_ontology.com#Gene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#score">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label>Score</rdfs:label>
+    <skos:definition>Score value</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#biosample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Biosample"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Biosample</rdfs:label>
+    <skos:definition>Type of biosample used</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#disease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Disease"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Disease</rdfs:label>
+    <skos:definition>Disease associated</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://base_ontology.com#regulatedByTF"/>
+    <owl:someValuesFrom rdf:resource="https://base_ontology.com#TranscriptionFactor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#orig_start">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label>Original Start</rdfs:label>
+    <skos:definition>Original start position in genome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#disease_PMID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Disease"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Disease PMID</rdfs:label>
+    <skos:definition>PubMed ID for disease association</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#source">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Source</rdfs:label>
+    <skos:definition>Source of data</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#associatedWithBiosample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="https://base_ontology.com#Biosample"/>
+    <rdfs:label>associated with Biosample</rdfs:label>
+    <skos:definition>Associates a genetic element with a biosample</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#current_assembly">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Current Assembly</rdfs:label>
+    <skos:definition>Current genome assembly version</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#orig_chr">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Original Chromosome</rdfs:label>
+    <skos:definition>Original chromosome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#Disease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Disease</rdfs:label>
+    <skos:definition>A disease</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://base_ontology.com#identifiedByMethod"/>
+    <owl:someValuesFrom rdf:resource="https://base_ontology.com#Method"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#hgnc_symbol_target_genes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Gene"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>HGNC Symbol for Target Genes</rdfs:label>
+    <skos:definition>HGNC symbol for target genes</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#identifiedByMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="https://base_ontology.com#Method"/>
+    <rdfs:label>identified by Method</rdfs:label>
+    <skos:definition>Associates a genetic element with a method used for its identification</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#CisRegulatoryModule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:label>Cis-Regulatory Module</rdfs:label>
+    <skos:definition>A cis-regulatory module</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#enh_PMID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Enhancer PMID</rdfs:label>
+    <skos:definition>PubMed ID for enhancer</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#targetsGene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="https://base_ontology.com#Gene"/>
+    <rdfs:label>targets Gene</rdfs:label>
+    <skos:definition>Associates a genetic element with a gene it targets</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#Gene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Gene</rdfs:label>
+    <skos:definition>A gene</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#minimum_ratio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label>Minimum Ratio</rdfs:label>
+    <skos:definition>Minimum ratio value</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#GeneticElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Genetic Element</rdfs:label>
+    <skos:definition>A genetic element</skos:definition>
+    <rdfs:subClassOf rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b1"/>
+    <rdfs:subClassOf rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b2"/>
+    <rdfs:subClassOf rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b3"/>
+    <rdfs:subClassOf rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b4"/>
+    <rdfs:subClassOf rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b5"/>
+    <rdfs:subClassOf rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b6"/>
+    <rdfs:subClassOf rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#enh2gene_PMID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Enhancer to Gene PMID</rdfs:label>
+    <skos:definition>PubMed ID for enhancer to gene association</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://base_ontology.com#hasGenomicCoordinate"/>
+    <owl:someValuesFrom rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#current_start">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label>Current Start</rdfs:label>
+    <skos:definition>Current start position in genome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#refsnp_ID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Reference SNP ID</rdfs:label>
+    <skos:definition>Reference SNP ID</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#hasPublication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="https://base_ontology.com#Publication"/>
+    <rdfs:label>has Publication</rdfs:label>
+    <skos:definition>Associates a genetic element with a publication</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#current_chr">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Current Chromosome</rdfs:label>
+    <skos:definition>Current chromosome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Type</rdfs:label>
+    <skos:definition>Type of data</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#Enhancer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:label>Enhancer</rdfs:label>
+    <skos:definition>An enhancer</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#hasGenomicCoordinate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:label>has Genomic Coordinate</rdfs:label>
+    <skos:definition>Associates a genetic element with its genomic coordinate</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://base_ontology.com#associatedWithBiosample"/>
+    <owl:someValuesFrom rdf:resource="https://base_ontology.com#Biosample"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#enh_method">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Method"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Enhancer Method</rdfs:label>
+    <skos:definition>Method used for enhancer identification</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#TranscriptionFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Transcription Factor</rdfs:label>
+    <skos:definition>A transcription factor</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#regulatedByTF">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="https://base_ontology.com#TranscriptionFactor"/>
+    <rdfs:label>regulated by TF</rdfs:label>
+    <skos:definition>Associates a genetic element with a transcription factor that regulates it</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#Method">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Method</rdfs:label>
+    <skos:definition>A method</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#mutation_method">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Method"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Mutation Method</rdfs:label>
+    <skos:definition>Method used for mutation identification</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n480ab4e6e71a4544aad7f2737318bf35b3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://base_ontology.com#associatedWithDisease"/>
+    <owl:someValuesFrom rdf:resource="https://base_ontology.com#Disease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#associatedWithDisease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="https://base_ontology.com#Disease"/>
+    <rdfs:label>associated with Disease</rdfs:label>
+    <skos:definition>Associates a genetic element with a disease</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#current_end">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label>Current End</rdfs:label>
+    <skos:definition>Current end position in genome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#orig_assembly">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Original Assembly</rdfs:label>
+    <skos:definition>Original genome assembly version</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#crm_ID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#CisRegulatoryModule"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>CRM ID</rdfs:label>
+    <skos:definition>Cis-regulatory module ID</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#original_ID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Original ID</rdfs:label>
+    <skos:definition>Original ID</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#hgnc_symbol_TFs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#TranscriptionFactor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>HGNC Symbol for TFs</rdfs:label>
+    <skos:definition>HGNC symbol for transcription factors</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#enh2gene_method">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Method"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Enhancer to Gene Method</rdfs:label>
+    <skos:definition>Method used for enhancer to gene association</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#Biosample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Biosample</rdfs:label>
+    <skos:definition>A biosample</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#GenomicCoordinate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Genomic Coordinate</rdfs:label>
+    <skos:definition>A genomic coordinate</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#SuperEnhancer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://base_ontology.com#GeneticElement"/>
+    <rdfs:label>Super Enhancer</rdfs:label>
+    <skos:definition>A super enhancer</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#mutation_PMID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#Publication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>Mutation PMID</rdfs:label>
+    <skos:definition>PubMed ID for mutation</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#orig_end">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://base_ontology.com#GenomicCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label>Original End</rdfs:label>
+    <skos:definition>Original end position in genome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://base_ontology.com#Publication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Publication</rdfs:label>
+    <skos:definition>A publication</skos:definition>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,117 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "dbSUPER" ;
+  skos:definition "Super-enhancers con coordenadas, líneas celulares y genes diana" .
+
+crm:CRM
+  a owl:Class ;
+  rdfs:label "Cis-regulatory module" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm:hasChrName
+  a owl:ObjectProperty ;
+  rdfs:label "chr_name" ;
+  skos:prefLabel "chr_name" ;
+  skos:definition "The chromosome name where the cis-regulatory module is located" ;
+  obo:hasValue <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+crm:hasStartPosition
+  a owl:ObjectProperty ;
+  rdfs:label "start_position" ;
+  skos:prefLabel "start_position" ;
+  skos:definition "The start position of the cis-regulatory module on the chromosome" ;
+  obo:range <http://purl.obolibrary.org/obo/units#base_pair> .
+
+crm:hasEndPosition
+  a owl:ObjectProperty ;
+  rdfs:label "end_position" ;
+  skos:prefLabel "end_position" ;
+  skos:definition "The end position of the cis-regulatory module on the chromosome" ;
+  obo:range <http://purl.obolibrary.org/obo/units#base_pair> .
+
+crm:hasDatabaseName
+  a owl:ObjectProperty ;
+  rdfs:label "database_name" ;
+  skos:prefLabel "database_name" ;
+  skos:definition "The database where the cis-regulatory module is located" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasCrmId
+  a owl:ObjectProperty ;
+  rdfs:label "crm_ID" ;
+  skos:prefLabel "crm/crm_ID" ;
+  skos:definition "The unique identifier of the cis-regulatory module in the database" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasGeneSymbol
+  a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:definition "The gene symbol associated with the cis-regulatory module" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasDisease
+  a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--doid!doid" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid" ;
+  skos:definition "The disease associated with the cis-regulatory module" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+  skos:definition "The transcription factor associated with the cis-regulatory module" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasChrNameExactMatch
+  a owl:ObjectProperty ;
+  rdfs:label "skos:exactMatch" ;
+  skos:prefLabel "skos:exactMatch" ;
+  skos:definition "The exact match of the chromosome name in another database" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasDatabaseNameCloseMatch
+  a owl:ObjectProperty ;
+  rdfs:label "skos:closeMatch" ;
+  skos:prefLabel "skos:closeMatch" ;
+  skos:definition "The close match of the database name in another database" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasCrmIdCloseMatch
+  a owl:ObjectProperty ;
+  rdfs:label "skos:closeMatch" ;
+  skos:prefLabel "skos:closeMatch" ;
+  skos:definition "The close match of the cis-regulatory module identifier in another database" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasGeneSymbolCloseMatch
+  a owl:ObjectProperty ;
+  rdfs:label "skos:closeMatch" ;
+  skos:prefLabel "skos:closeMatch" ;
+  skos:definition "The close match of the gene symbol in another database" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasDiseaseCloseMatch
+  a owl:ObjectProperty ;
+  rdfs:label "skos:closeMatch" ;
+  skos:prefLabel "skos:closeMatch" ;
+  skos:definition "The close match of the disease in another database" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .
+
+crm:hasTranscriptionFactorCloseMatch
+  a owl:ObjectProperty ;
+  rdfs:label "skos:closeMatch" ;
+  skos:prefLabel "skos:closeMatch" ;
+  skos:definition "The close match of the transcription factor in another database" ;
+  obo:range <http://purl.obolibrary.org/obo/units#string> .

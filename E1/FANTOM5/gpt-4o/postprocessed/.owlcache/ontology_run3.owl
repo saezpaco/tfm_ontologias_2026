@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/hasExperimentalEvidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:prefLabel>has experimental evidence</skos:prefLabel>
+    <skos:definition>The type of experimental evidence supporting the existence of the enhancer.</skos:definition>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/hasPMID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:prefLabel>has PMID</skos:prefLabel>
+    <skos:definition>The PubMed ID of the publication providing evidence for the enhancer.</skos:definition>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000167">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel>Enhancer</skos:prefLabel>
+    <skos:definition>A cis-acting sequence that increases the utilization of some eukaryotic promoters and can function in either orientation and in any location (upstream or downstream) relative to the promoter.</skos:definition>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GENE">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel>Gene</skos:prefLabel>
+    <skos:definition>A locatable region of genomic sequence, corresponding to a unit of inheritance, which is associated with regulatory regions, transcribed regions and/or other functional sequence regions.</skos:definition>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002205">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel>regulates expression of</skos:prefLabel>
+    <skos:definition>A relationship between a regulatory element and a gene it regulates.</skos:definition>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/RO_0002205"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GENE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/hasGenomicCoordinate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:prefLabel>has genomic coordinate</skos:prefLabel>
+    <skos:definition>The genomic coordinate of a sequence feature.</skos:definition>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/SO_0000165">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel>Cis-regulatory module</skos:prefLabel>
+    <skos:definition>A region of DNA that regulates the expression of genes.</skos:definition>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/SO_0000165"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/hasScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:prefLabel>has score</skos:prefLabel>
+    <skos:definition>The score assigned to the enhancer based on experimental data.</skos:definition>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+</rdf:RDF>

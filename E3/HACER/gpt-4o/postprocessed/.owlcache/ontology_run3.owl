@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:biolink="https://w3id.org/biolink/vocab/"
+   xmlns:dc1="http://purl.org/dc/terms/"
+   xmlns:obo="http://purl.obolibrary.org/obo/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema1="http://schema.org/"
+   xmlns:sio="http://semanticscience.org/resource/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000074849--MFSD14A">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00000074849"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/MFSD14A"/>
+    <skos:prefLabel>bgw!CRMHS00000074849--MFSD14A</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module CRMHS00000074849 and gene MFSD14A</skos:definition>
+    <obo:TXPO_0003500 rdf:resource="http://purl.obolibrary.org/obo/CLO_0000010"/>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/30247654"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ECO_0000203"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000005752--FAM131C">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00000005752"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/FAM131C"/>
+    <skos:prefLabel>bgw!CRMHS00000005752--FAM131C</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module CRMHS00000005752 and gene FAM131C</skos:definition>
+    <obo:TXPO_0003500 rdf:resource="http://purl.obolibrary.org/obo/CLO_0000010"/>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/30247654"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ECO_0000203"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00000074849">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000727"/>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr1 between 100361995 and 100362218</skos:definition>
+    <skos:prefLabel>CRMHS00000074849</skos:prefLabel>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="https://www.ncbi.nlm.nih.gov/nuccore/chr1"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100361995</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100362218</obo:GENO_0000894>
+    <schema1:evidenceOrigin rdf:resource="http://bioinfo.vanderbilt.edu/AE/HACER/"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ECO_0000203"/>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/30247654"/>
+    <sio:SIO_000253 rdf:resource="http://bioinfo.vanderbilt.edu/AE/HACER/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00000005752">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000727"/>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr1 between 16039967 and 16040344</skos:definition>
+    <skos:prefLabel>CRMHS00000005752</skos:prefLabel>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="https://www.ncbi.nlm.nih.gov/nuccore/chr1"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16039967</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16040344</obo:GENO_0000894>
+    <schema1:evidenceOrigin rdf:resource="http://bioinfo.vanderbilt.edu/AE/HACER/"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ECO_0000203"/>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/30247654"/>
+    <sio:SIO_000253 rdf:resource="http://bioinfo.vanderbilt.edu/AE/HACER/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/gene/9606/FAM131C">
+    <skos:closeMatch rdf:resource="http://identifiers.org/ncbigene/12345"/>
+    <biolink:category rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/gene/9606/MFSD14A">
+    <skos:closeMatch rdf:resource="http://identifiers.org/ncbigene/67890"/>
+    <biolink:category rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </rdf:Description>
+</rdf:RDF>

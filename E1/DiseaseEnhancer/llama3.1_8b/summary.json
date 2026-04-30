@@ -1,0 +1,97 @@
+{
+  "experiment": "E1",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 511.1666666666667,
+  "total_tokens": 13125,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-04-29T02:22:42.885263",
+      "success": true,
+      "elapsed_seconds": 269.57,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3036,
+        "completion_tokens": 1066,
+        "total_tokens": 4102
+      },
+      "prompt_tokens_estimate": 1780,
+      "response_chars": 3782,
+      "turtle_chars": 3782,
+      "validation": {
+        "valid": false,
+        "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'sion.\".\\n</owl:Class>\\n\\n<owl:Class rdf:ID=\"GenomicCoordinate\">'^b'\\n  a owl:Class ;\\n  rdfs:label \"Genomic Coordinate\" ;\\n  skos:'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-04-29T02:38:28.231349",
+      "success": true,
+      "elapsed_seconds": 944.3,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3036,
+        "completion_tokens": 1561,
+        "total_tokens": 4597
+      },
+      "prompt_tokens_estimate": 1780,
+      "response_chars": 5171,
+      "turtle_chars": 5171,
+      "validation": {
+        "valid": true,
+        "n_triples": 102,
+        "n_classes": 3,
+        "n_properties": 14
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-04-29T02:43:48.906262",
+      "success": true,
+      "elapsed_seconds": 319.63,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3036,
+        "completion_tokens": 1390,
+        "total_tokens": 4426
+      },
+      "prompt_tokens_estimate": 1780,
+      "response_chars": 4829,
+      "turtle_chars": 4829,
+      "validation": {
+        "valid": true,
+        "n_triples": 81,
+        "n_classes": 7,
+        "n_properties": 8
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

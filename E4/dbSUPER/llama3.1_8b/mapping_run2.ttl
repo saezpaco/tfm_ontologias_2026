@@ -1,0 +1,98 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rr: <http://www.w3.org/ns/ontology#> .
+@prefix rml: <http://semweb.mcmaster.ca/ont/rml#> .
+@prefix ql: <http://semweb.mcmaster.ca/ont/rml#ql> .
+
+<#TriplesMapClasses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClasses> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClass>;
+        ]
+    ];
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasName;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProperty>;
+        ]
+    ];
+
+<#TriplesMapProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapProperty> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];
+
+<#TriplesMapDatatype> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDatatype> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasSource;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];

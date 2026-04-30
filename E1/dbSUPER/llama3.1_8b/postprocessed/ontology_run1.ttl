@@ -1,0 +1,81 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER#CRM>
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Cis-Regulatory Module"@en ;
+  skos:definition "A region of DNA that regulates gene expression."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"@en ;
+  skos:definition "A coordinate in the genome where a sequence is located."@en .
+
+<http://example.org/dbSUPER#Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"@en ;
+  skos:definition "Data or information that supports a claim or finding."@en .
+
+<http://example.org/dbSUPER#EnhancerSequence>
+  a owl:ObjectProperty ;
+  rdfs:label "enhancer sequence"^^xsd:string ;
+  skos:prefLabel "enhancer sequence"@en ;
+  skos:definition "The DNA sequence of an enhancer region."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinateRange>
+  a owl:ObjectProperty ;
+  rdfs:label "genomic coordinate range"^^xsd:string ;
+  skos:prefLabel "genomic coordinate range"@en ;
+  skos:definition "A range of genomic coordinates where a sequence is located."@en .
+
+<http://example.org/dbSUPER#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "has evidence"^^xsd:string ;
+  skos:prefLabel "has evidence"@en ;
+  skos:definition "The evidence supporting the existence of an enhancer region."@en .
+
+<http://example.org/dbSUPER#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate"^^xsd:string ;
+  skos:prefLabel "has genomic coordinate"@en ;
+  skos:definition "The genomic coordinates where an enhancer sequence is located."@en .
+
+<http://example.org/dbSUPER#hasTargetGene>
+  a owl:ObjectProperty ;
+  rdfs:label "has target gene"^^xsd:string ;
+  skos:prefLabel "has target gene"@en ;
+  skos:definition "The gene that is regulated by an enhancer region."@en .
+
+<http://example.org/dbSUPER#targetGene>
+  a owl:DatatypeProperty ;
+  rdfs:label "target gene"^^xsd:string ;
+  skos:prefLabel "target gene"@en ;
+  skos:definition "The gene that is regulated by an enhancer region."@en .
+
+<http://example.org/dbSUPER#enhancerSequence>
+  a owl:DatatypeProperty ;
+  rdfs:label "enhancer sequence"^^xsd:string ;
+  skos:prefLabel "enhancer sequence"@en ;
+  skos:definition "The DNA sequence of an enhancer region."@en .
+
+<http://example.org/dbSUPER#genomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "genomic coordinate"^^xsd:string ;
+  skos:prefLabel "genomic coordinate"@en ;
+  skos:definition "A coordinate in the genome where a sequence is located."@en .
+
+<http://example.org/dbSUPER#evidence>
+  a owl:DatatypeProperty ;
+  rdfs:label "evidence"^^xsd:string ;
+  skos:prefLabel "evidence"@en ;
+  skos:definition "Data or information that supports a claim or finding."@en .
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000187> .
+skos:closeMatch <http://purl.obolibrary.org/obo/GO_0045896> .

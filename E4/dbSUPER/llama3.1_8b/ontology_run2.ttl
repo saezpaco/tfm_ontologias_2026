@@ -1,0 +1,197 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix base_ontology: <https://base_ontology.com#> .
+
+<owl:Ontology rdf:about="https://base_ontology.com/enhancer_association_ontology">
+
+  <!-- Classes -->
+  <owl:Class rdf:ID="class_entity">
+    <rdfs:label xml:lang="en">Entity</rdfs:label>
+    <rdfs:comment xml:lang="en">A general class for entities.</rdfs:comment>
+    <skos:definition xml:lang="en">An entity is a thing that has existence and can be perceived, either physically or intellectually.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:ID="entity_name">
+    <rdfs:label xml:lang="en">Entity Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for names of entities.</rdfs:comment>
+    <skos:definition xml:lang="en">An entity name is a label or identifier given to an entity.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="enhancer">
+    <rdfs:label xml:lang="en">Enhancer</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for enhancers.</rdfs:comment>
+    <skos:definition xml:lang="en">An enhancer is a type of regulatory element that can increase the transcription of a gene.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="super_enhancer">
+    <rdfs:label xml:lang="en">Super Enhancer</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for super enhancers.</rdfs:comment>
+    <skos:definition xml:lang="en">A super enhancer is a type of regulatory element that can increase the transcription of multiple genes.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="target_gene">
+    <rdfs:label xml:lang="en">Target Gene</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for target genes.</rdfs:comment>
+    <skos:definition xml:lang="en">A target gene is a gene that is regulated by an enhancer or super enhancer.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="transcription_factor">
+    <rdfs:label xml:lang="en">Transcription Factor</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for transcription factors.</rdfs:comment>
+    <skos:definition xml:lang="en">A transcription factor is a protein that regulates the transcription of genes.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="disease_association">
+    <rdfs:label xml:lang="en">Disease Association</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for disease associations.</rdfs:comment>
+    <skos:definition xml:lang="en">A disease association is a relationship between an enhancer or super enhancer and a disease.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="mutation">
+    <rdfs:label xml:lang="en">Mutation</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for mutations.</rdfs:comment>
+    <skos:definition xml:lang="en">A mutation is a change in the DNA sequence of an organism.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="genomic_region">
+    <rdfs:label xml:lang="en">Genomic Region</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for genomic regions.</rdfs:comment>
+    <skos:definition xml:lang="en">A genomic region is a specific part of the genome that contains regulatory elements or genes.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <!-- Object Properties -->
+  <owl:ObjectProperty rdf:ID="associated_with">
+    <rdfs:label xml:lang="en">Associated With</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between enhancers or super enhancers and target genes.</rdfs:comment>
+    <skos:definition xml:lang="en">An association between an enhancer or super enhancer and a target gene.</skos:definition>
+    <owl:domain rdf:resource="#enhancer"/>
+    <owl:domain rdf:resource="#super_enhancer"/>
+    <owl:range rdf:resource="#target_gene"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="regulates">
+    <rdfs:label xml:lang="en">Regulates</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between transcription factors and target genes.</rdfs:comment>
+    <skos:definition xml:lang="en">A regulation relationship between a transcription factor and a target gene.</skos:definition>
+    <owl:domain rdf:resource="#transcription_factor"/>
+    <owl:range rdf:resource="#target_gene"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="associated_disease">
+    <rdfs:label xml:lang="en">Associated Disease</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between disease associations and diseases.</rdfs:comment>
+    <skos:definition xml:lang="en">A disease association relationship between a disease and an enhancer or super enhancer.</skos:definition>
+    <owl:domain rdf:resource="#disease_association"/>
+    <owl:range rdf:resource="#disease"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="mutation_in">
+    <rdfs:label xml:lang="en">Mutation In</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between mutations and genomic regions.</rdfs:comment>
+    <skos:definition xml:lang="en">A mutation relationship between a mutation and a genomic region.</skos:definition>
+    <owl:domain rdf:resource="#mutation"/>
+    <owl:range rdf:resource="#genomic_region"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="located_in">
+    <rdfs:label xml:lang="en">Located In</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between genomic regions and chromosomes.</rdfs:comment>
+    <skos:definition xml:lang="en">A location relationship between a genomic region and a chromosome.</skos:definition>
+    <owl:domain rdf:resource="#genomic_region"/>
+    <owl:range rdf:resource="#chromosome"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_coordinate">
+    <rdfs:label xml:lang="en">Has Coordinate</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between genomic regions and integer coordinates.</rdfs:comment>
+    <skos:definition xml:lang="en">A coordinate relationship between a genomic region and an integer.</skos:definition>
+    <owl:domain rdf:resource="#genomic_region"/>
+    <owl:range xsd:type="xsd:integer"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_score">
+    <rdfs:label xml:lang="en">Has Score</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between enhancers or super enhancers and float scores.</rdfs:comment>
+    <skos:definition xml:lang="en">A score relationship between an enhancer or super enhancer and a float value.</skos:definition>
+    <owl:domain rdf:resource="#enhancer"/>
+    <owl:domain rdf:resource="#super_enhancer"/>
+    <owl:range xsd:type="xsd:float"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_source">
+    <rdfs:label xml:lang="en">Has Source</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between entity names and string sources.</rdfs:comment>
+    <skos:definition xml:lang="en">A source relationship between an entity name and a string value.</skos:definition>
+    <owl:domain rdf:resource="#entity_name"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_type">
+    <rdfs:label xml:lang="en">Has Type</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between entity names and string types.</rdfs:comment>
+    <skos:definition xml:lang="en">A type relationship between an entity name and a string value.</skos:definition>
+    <owl:domain rdf:resource="#entity_name"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:ObjectProperty>
+
+  <!-- Data Properties -->
+  <owl:DatatypeProperty rdf:ID="enhancer_association_type">
+    <rdfs:label xml:lang="en">Enhancer Association Type</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the type of association between an enhancer and a target gene.</rdfs:comment>
+    <skos:definition xml:lang="en">The type of association between an enhancer and a target gene.</skos:definition>
+    <owl:domain rdf:resource="#enhancer"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="target_gene_name">
+    <rdfs:label xml:lang="en">Target Gene Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a target gene.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a target gene.</skos:definition>
+    <owl:domain rdf:resource="#target_gene"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="transcription_factor_name">
+    <rdfs:label xml:lang="en">Transcription Factor Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a transcription factor.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a transcription factor.</skos:definition>
+    <owl:domain rdf:resource="#transcription_factor"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="disease_name">
+    <rdfs:label xml:lang="en">Disease Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a disease.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a disease.</skos:definition>
+    <owl:domain rdf:resource="#disease"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="mutation_type">
+    <rdfs:label xml:lang="en">Mutation Type</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the type of mutation.</rdfs:comment>
+    <skos:definition xml:lang="en">The type of mutation.</skos:definition>
+    <owl:domain rdf:resource="#mutation"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="genomic_region_name">
+    <rdfs:label xml:lang="en">Genomic Region Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a genomic region.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a genomic region.</skos:definition>
+    <owl:domain rdf:resource="#genomic_region"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+</owl:Ontology>

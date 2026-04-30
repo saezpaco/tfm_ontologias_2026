@@ -1,0 +1,73 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER Ontology" ;
+  skos:prefLabel "dbSUPER Ontology" ;
+  skos:definition "Super-enhancers con coordenadas, líneas celulares y genes diana" .
+
+crm:CRM
+  a owl:Class ;
+  rdfs:label "Cis-regulatory module" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm:hasChrName
+  a owl:ObjectProperty ;
+  rdfs:label "Has chromosome name" ;
+  skos:prefLabel "chr_name" ;
+  skos:exactMatch <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+crm:hasStartPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "Has start position" ;
+  xsd:type xsd:int ;
+  skos:prefLabel "start_position" .
+
+crm:hasEndPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "Has end position" ;
+  xsd:type xsd:int ;
+  skos:prefLabel "end_position" .
+
+crm:hasDatabaseName
+  a owl:ObjectProperty ;
+  rdfs:label "Has database name" ;
+  skos:prefLabel "database_name" ;
+  skos:exactMatch <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+crm:isLocatedIn
+  a owl:ObjectProperty ;
+  rdfs:label "Is located in" ;
+  skos:prefLabel "crm#crm_ID#database_name" ;
+  skos:exactMatch <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+crm:hasGeneSymbol
+  a owl:ObjectProperty ;
+  rdfs:label "Has gene symbol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:exactMatch <http://purl.obolibrary.org/obo/HGNC_9606> .
+
+crm:hasDisease
+  a owl:ObjectProperty ;
+  rdfs:label "Has disease" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:exactMatch <http://purl.obolibrary.org/obo/DOID_1234> .
+
+crm:hasTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Has transcription factor" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:exactMatch <http://purl.uniprot.org/uniprot/UniProtKB_1234> .
+
+crm:CisRegulatoryModule
+  a owl:Class ;
+  rdfs:label "Cis-regulatory module" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .

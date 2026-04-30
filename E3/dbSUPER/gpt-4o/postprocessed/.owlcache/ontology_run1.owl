@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:biolink="https://w3id.org/biolink/vocab/"
+   xmlns:dc1="http://purl.org/dc/terms/"
+   xmlns:obo="http://purl.obolibrary.org/obo/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema1="http://schema.org/"
+   xmlns:sio="http://semanticscience.org/resource/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000005972--BCL6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00000005972"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/BCL6"/>
+    <skos:prefLabel>bgw!CRMHS00000005972--BCL6</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module CRMHS00000005972 and gene BCL6</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00000005972">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000727"/>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr3 between 187725358 and 187750675</skos:definition>
+    <skos:prefLabel>CRMHS00000005972</skos:prefLabel>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="https://www.ncbi.nlm.nih.gov/nuccore/chr3"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">187725358</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">187750675</obo:GENO_0000894>
+    <schema1:evidenceOrigin rdf:resource="https://asntech.org/dbsuper/details.php?se_id=SE_00148"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ECO_0000203"/>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/24119843"/>
+    <sio:SIO_000253 rdf:resource="https://asntech.org/dbsuper/"/>
+    <obo:RO_0002429 rdf:resource="http://rdf.biogateway.eu/gene/9606/BCL6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/gene/9606/BCL6">
+    <skos:closeMatch rdf:resource="http://identifiers.org/ncbigene/GeneID"/>
+    <biolink:category rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </rdf:Description>
+</rdf:RDF>

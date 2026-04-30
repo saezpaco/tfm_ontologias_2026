@@ -1,0 +1,102 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER#CRM>
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Cis-Regulatory Module"@en ;
+  skos:definition "A region of DNA that regulates gene expression."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"@en ;
+  skos:definition "A location on the genome."@en .
+
+<http://example.org/dbSUPER#EnhancerSequence>
+  a owl:ObjectProperty ;
+  rdfs:label "enhancer sequence"^^xsd:string ;
+  skos:prefLabel "enhancer sequence"@en ;
+  skos:definition "The DNA sequence of an enhancer region."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinateRange>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate Range"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate Range"@en ;
+  skos:definition "A range of genomic coordinates."@en .
+
+<http://example.org/dbSUPER#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate"^^xsd:string ;
+  skos:prefLabel "has genomic coordinate"@en ;
+  skos:definition "The genomic location of an enhancer region."@en .
+
+<http://example.org/dbSUPER#hasEnhancerSequence>
+  a owl:ObjectProperty ;
+  rdfs:label "has enhancer sequence"^^xsd:string ;
+  skos:prefLabel "has enhancer sequence"@en ;
+  skos:definition "The DNA sequence of an enhancer region."@en .
+
+<http://example.org/dbSUPER#evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"@en ;
+  skos:definition "A statement that supports the existence of an enhancer region."@en .
+
+<http://example.org/dbSUPER#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "has evidence"^^xsd:string ;
+  skos:prefLabel "has evidence"@en ;
+  skos:definition "The evidence supporting the existence of an enhancer region."@en .
+
+<http://example.org/dbSUPER#cellLineActivity>
+  a owl:Class ;
+  rdfs:label "Cell Line Activity"^^xsd:string ;
+  skos:prefLabel "Cell Line Activity"@en ;
+  skos:definition "The activity of a cell line in an enhancer region."@en .
+
+<http://example.org/dbSUPER#hasCellLineActivity>
+  a owl:ObjectProperty ;
+  rdfs:label "has cell line activity"^^xsd:string ;
+  skos:prefLabel "has cell line activity"@en ;
+  skos:definition "The activity of a cell line in an enhancer region."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:label "skos:closeMatch"^^xsd:string ;
+  skos:prefLabel "skos:closeMatch"@en ;
+  skos:definition "A close match to a concept in another ontology."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:label "skos:exactMatch"^^xsd:string ;
+  skos:prefLabel "skos:exactMatch"@en ;
+  skos:definition "An exact match to a concept in another ontology."@en .
+
+<http://example.org/dbSUPER#CRM>
+  skos:closeMatch obo:SO_0000163 ;
+  skos:exactMatch obo:GO_0045975 .
+
+<http://example.org/dbSUPER#GenomicCoordinateRange>
+  skos:closeMatch obo:SO_0000176 ;
+  skos:exactMatch obo:GO_0045974 .
+
+<http://example.org/dbSUPER#hasEnhancerSequence>
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range <http://example.org/dbSUPER#GenomicCoordinateRange> .
+
+<http://example.org/dbSUPER#hasGenomicCoordinate>
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range <http://example.org/dbSUPER#GenomicCoordinate> .
+
+<http://example.org/dbSUPER#evidence>
+  skos:closeMatch obo:SO_0000177 ;
+  skos:exactMatch obo:GO_0045976 .
+
+<http://example.org/dbSUPER#hasEvidence>
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range <http://example.org/dbSUPER#evidence> .

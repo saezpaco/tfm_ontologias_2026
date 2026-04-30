@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-04-29T01:57:16.590847",
+  "success": true,
+  "elapsed_seconds": 347.94,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3238,
+    "completion_tokens": 1527,
+    "total_tokens": 4765
+  },
+  "prompt_tokens_estimate": 1996,
+  "response_chars": 4530,
+  "turtle_chars": 4530,
+  "validation": {
+    "valid": false,
+    "error": "at line 12 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'fs:label \"Human Active Cis-regulatory Elements database\" .\\n\\n'^b'crm a owl:Class ;\\n  skos:prefLabel \"CRM\" ;\\n  skos:definition'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/response_raw_run2.txt"
+  }
+}

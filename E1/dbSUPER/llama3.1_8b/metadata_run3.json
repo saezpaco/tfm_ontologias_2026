@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-04-28T22:58:01.641238",
+  "success": true,
+  "elapsed_seconds": 506.05,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3441,
+    "completion_tokens": 1542,
+    "total_tokens": 4983
+  },
+  "prompt_tokens_estimate": 2146,
+  "response_chars": 5408,
+  "turtle_chars": 5408,
+  "validation": {
+    "valid": false,
+    "error": "at line 67 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'f the genomic coordinate.\"@en ;\\n  obo:range obo:OBONamespace'^b'(\"SO\") .\\n\\n<http://example.org/dbSUPER#EndCoordinate>\\n  a owl'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b/response_raw_run3.txt"
+  }
+}

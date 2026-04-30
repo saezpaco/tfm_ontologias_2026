@@ -61,8 +61,41 @@ os.chdir(ONTOGENIX_ROOT)
 # ──────────────────────── .env con la OPENAI_API_KEY ─────────────────────────
 ENV_PATH = ONTOGENIX_ROOT / "GUI" / ".env"
 
-def ensure_env_file() -> None:
-    """Crea OntoGenix/GUI/.env a partir de OPENAI_API_KEY si no existe."""
+# Lookup de modelos para detectar provider (lazy import para no exigir openai
+# en este punto cuando solo se usa Ollama).
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+try:
+    from config import LLM_MODELS  # noqa: E402
+except Exception:                                                   # noqa: BLE001
+    LLM_MODELS = {}
+
+
+def get_provider(model_name: str) -> str:
+    return LLM_MODELS.get(model_name, {}).get("provider", "openai")
+
+
+def get_base_url(model_name: str) -> str:
+    cfg = LLM_MODELS.get(model_name, {})
+    base = cfg.get("base_url", "http://localhost:11434")
+    if cfg.get("provider") == "ollama" and not base.rstrip("/").endswith("/v1"):
+        base = base.rstrip("/") + "/v1"
+    return base
+
+
+def ensure_env_file(provider: str) -> None:
+    """Crea OntoGenix/GUI/.env. Para Ollama no requiere OPENAI_API_KEY."""
+    if provider == "ollama":
+        # Solo necesitamos un .env válido para que dotenv_values lo lea
+        if ENV_PATH.exists() and ENV_PATH.read_text():
+            return
+        ENV_PATH.parent.mkdir(parents=True, exist_ok=True)
+        ENV_PATH.write_text(
+            'OPENAI_API_KEY="ollama-no-key"\n'
+            'SERP_API_KEY="dummy"\n',
+            encoding="utf-8",
+        )
+        print(f"[INFO] .env (Ollama) creado en {ENV_PATH}")
+        return
     if ENV_PATH.exists() and "OPENAI_API_KEY" in ENV_PATH.read_text():
         return
     api_key = os.environ.get("OPENAI_API_KEY")
@@ -77,7 +110,9 @@ def ensure_env_file() -> None:
     )
     print(f"[INFO] .env creado en {ENV_PATH}")
 
-ensure_env_file()
+
+# Ahora defer ensure_env_file() hasta saber el modelo elegido en argparse
+# (movido a main()). Mantenemos placeholder para compatibilidad.
 
 # ───────────── Imports de OntoGenix (después de configurar paths) ────────────
 # Silenciamos los logs ruidosos
@@ -94,18 +129,26 @@ from GUI.tools.tools import csv_data_preprocessing, dataframe2prettyjson  # noqa
 def build_metadata(api_model: str,
                    seed: int,
                    ontology_extension: str = "ttl",
-                   mapping_extension: str = "ttl") -> tuple[dict, dict, dict]:
+                   mapping_extension: str = "ttl",
+                   num_ctx: int | None = None) -> tuple[dict, dict, dict]:
     """Construye los diccionarios de metadatos para los 3 agentes LLM,
     replicando el contenido de GUI/GuiManager/metadata.json pero con valores
     ya resueltos (sin la interpolación `${...}` que hace MetadataManager)."""
     base = str(ONTOGENIX_ROOT / "GUI")
-    common = {
+    provider = get_provider(api_model)
+    common: dict = {
         "api_key_path": str(ENV_PATH),
-        "client":      "openai",
+        "client":      "ollama" if provider == "ollama" else "openai",
+        "provider":    provider,
         "ssl_cert":    None,
         "model":       api_model,
         "seed":        seed,
     }
+    if provider == "ollama":
+        common["base_url"] = get_base_url(api_model)
+        # 16k tokens por defecto cubre el prompt del OntoMapper (~45k cuando
+        # el CSV es grande, así que recomendamos 32k+ para FANTOM5/dbSUPER).
+        common["num_ctx"] = num_ctx or 32768
     planner_metadata = {
         **common,
         "role": ("You are a powerful ontology engineer that generates the reasoning steps "
@@ -147,7 +190,8 @@ async def run_single_experiment(csv_path: Path,
                                 api_model: str,
                                 seed: int,
                                 skip_mapping: bool = False,
-                                mapping_extension: str = "ttl") -> dict:
+                                mapping_extension: str = "ttl",
+                                num_ctx: int | None = None) -> dict:
     """Ejecuta una sola corrida del pipeline OntoGenix sobre `csv_path`."""
     out_dir.mkdir(parents=True, exist_ok=True)
     meta = {
@@ -161,7 +205,8 @@ async def run_single_experiment(csv_path: Path,
         "errors":          [],
     }
     planner_meta, onto_meta, mapper_meta = build_metadata(
-        api_model=api_model, seed=seed, mapping_extension=mapping_extension
+        api_model=api_model, seed=seed, mapping_extension=mapping_extension,
+        num_ctx=num_ctx,
     )
 
     try:
@@ -262,8 +307,13 @@ async def run_all(databases: list[str],
                   api_model: str,
                   base_seed: int,
                   skip_mapping: bool,
-                  mapping_extension: str) -> None:
-    model_tag = api_model.replace("-2024-05-13", "")  # carpeta "gpt-4o"
+                  mapping_extension: str,
+                  num_ctx: int | None = None) -> None:
+    # Carpeta sanitizada (elimina sufijos OpenAI y reemplaza ':' / '/' para
+    # que sea válida en Mac/Linux). p.ej. "llama3.1:8b" → "llama3.1_8b".
+    model_tag = (api_model.replace("-2024-05-13", "")
+                          .replace(":", "_")
+                          .replace("/", "_"))
     for db in databases:
         csv_path = CSV_INPUT_DIR / f"{db}.csv"
         if not csv_path.exists():
@@ -283,6 +333,7 @@ async def run_all(databases: list[str],
                 seed=base_seed + i - 1,  # seeds 42, 43, 44
                 skip_mapping=skip_mapping,
                 mapping_extension=mapping_extension,
+                num_ctx=num_ctx,
             )
             all_meta.append(meta)
             status = meta["status"]
@@ -312,7 +363,9 @@ def parse_args():
     p.add_argument("--runs",      type=int, default=3,
                    help="Repeticiones por BBDD (default: 3)")
     p.add_argument("--model",     default="gpt-4o-2024-05-13",
-                   help="Modelo OpenAI (default: gpt-4o-2024-05-13)")
+                   help="Modelo (OpenAI o Ollama). Ejemplos: "
+                        "gpt-4o-2024-05-13, llama3.1:8b, qwen2.5-coder:7b. "
+                        "Para Ollama el provider se detecta vía config.py")
     p.add_argument("--seed",      type=int, default=42,
                    help="Semilla base (se incrementa en cada run)")
     p.add_argument("--skip-mapping", action="store_true",
@@ -320,15 +373,24 @@ def parse_args():
     p.add_argument("--mapping-extension", default="ttl",
                    choices=["ttl", "yarrrml"],
                    help="Formato del mapping (default: ttl)")
+    p.add_argument("--num-ctx", type=int, default=None,
+                   help="Tamaño del context window cuando el modelo es "
+                        "Ollama. Default 32768 (necesario para evitar "
+                        "truncamiento del prompt del OntoMapper, que llega "
+                        "a ~45k tokens). Solo afecta a Ollama")
     return p.parse_args()
 
 def main():
     args = parse_args()
+    provider = get_provider(args.model)
+    ensure_env_file(provider)
     RESULTS_ROOT.mkdir(parents=True, exist_ok=True)
     print("╔═════════════════════════════════════════════════════════════")
     print("║ EXPERIMENTO E4  –  OntoGenix pipeline")
     print(f"║ Bases de datos : {args.databases}")
-    print(f"║ Modelo         : {args.model}")
+    print(f"║ Modelo         : {args.model}  ({provider})")
+    if provider == "ollama":
+        print(f"║ Endpoint       : {get_base_url(args.model)}")
     print(f"║ Repeticiones   : {args.runs}  (seeds {args.seed}…{args.seed+args.runs-1})")
     print(f"║ Mapping        : {'skip' if args.skip_mapping else args.mapping_extension}")
     print(f"║ Resultados     : {RESULTS_ROOT}")
@@ -340,6 +402,7 @@ def main():
         base_seed=args.seed,
         skip_mapping=args.skip_mapping,
         mapping_extension=args.mapping_extension,
+        num_ctx=args.num_ctx,
     ))
 
 if __name__ == "__main__":

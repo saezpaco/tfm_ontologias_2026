@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dc1="http://purl.org/dc/terms/"
+   xmlns:obo="http://purl.obolibrary.org/obo/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00000003515">
+    <rdf:type rdf:resource="http://rdf.biogateway.eu/crm/9606/crm_ID"/>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="http://purl.obolibrary.org/obo/SO_0001505GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="http://purl.obolibrary.org/obo/SO_0000340chr_ID"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">start_position</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">end_position</obo:GENO_0000894>
+    <skos:exactMatch rdf:resource="https://example.com/crm/CRMHS00000003515"/>
+    <obo:RO_0002429 rdf:resource="http://rdf.biogateway.eu/gene/9606/TBX5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00000003515"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/TBX5"/>
+    <skos:prefLabel>bgw!CRMHS00000003515--hgncsymbol!9606/TBX5</skos:prefLabel>
+  </rdf:Description>
+</rdf:RDF>

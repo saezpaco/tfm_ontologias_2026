@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/dbSUPER.csv",
+  "api_model": "llama3.1:8b",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-04-30T07:16:41.682157+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.031,
+    "plan_s": 278.488,
+    "plan_chars": 5685,
+    "plan_prompt_chars": 9580,
+    "onto_s": 600.814,
+    "onto_chars": 10716,
+    "onto_prompt_chars": 14645,
+    "map_s": 306.865,
+    "map_chars": 2553,
+    "map_prompt_chars": 19070
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-04-30T07:36:27.880603+00:00",
+  "total_s": 1186.198
+}

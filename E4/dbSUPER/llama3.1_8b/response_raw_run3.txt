@@ -1,0 +1,512 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://base_ontology.com#
+
+**Data Description:**
+
+1. TFs2enh_PMID
+   - type: categorical
+   - short description: PubMed IDs of transcription factors to enhancers associations
+   - possible range: string
+
+2. TFs2enh_method
+   - type: categorical
+   - short description: Methods used for identifying transcription factors to enhancers associations
+   - possible range: string
+
+3. biosample_name
+   - type: text
+   - short description: Names of cell lines or biosamples
+   - possible range: string
+
+4. crm_ID
+   - type: text
+   - short description: IDs of chromatin modification regions
+   - possible range: string
+
+5. crossref
+   - type: text
+   - short description: Cross-reference IDs for external databases
+   - possible range: string
+
+6. current_assembly
+   - type: categorical
+   - short description: Current genome assembly versions
+   - possible range: string
+
+7. current_chr
+   - type: categorical
+   - short description: Current chromosome numbers
+   - possible range: string
+
+8. disease
+   - type: categorical
+   - short description: Disease names associated with enhancers
+   - possible range: string
+
+9. disease_PMID
+   - type: categorical
+   - short description: PubMed IDs of disease associations
+   - possible range: string
+
+10. disease_method
+    - type: categorical
+    - short description: Methods used for identifying disease associations
+    - possible range: string
+
+11. enh2gene_PMID
+    - type: categorical
+    - short description: PubMed IDs of enhancer to gene associations
+    - possible range: string
+
+12. enh2gene_method
+    - type: categorical
+    - short description: Methods used for identifying enhancer to gene associations
+    - possible range: string
+
+13. enh_PMID
+    - type: categorical
+    - short description: PubMed IDs of enhancers
+    - possible range: string
+
+14. enh_method
+    - type: categorical
+    - short description: Methods used for identifying enhancers
+    - possible range: string
+
+15. hgnc_symbol_TFs
+    - type: categorical
+    - short description: Transcription factor symbols from HGNC database
+    - possible range: string
+
+16. hgnc_symbol_target_genes
+    - type: text
+    - short description: Target gene symbols from HGNC database
+    - possible range: string
+
+17. minimum_ratio
+    - type: categorical
+    - short description: Minimum ratio values for enhancer to gene associations
+    - possible range: float
+
+18. mutation_PMID
+    - type: categorical
+    - short description: PubMed IDs of mutations associated with enhancers
+    - possible range: string
+
+19. mutation_method
+    - type: categorical
+    - short description: Methods used for identifying mutations associated with enhancers
+    - possible range: string
+
+20. orig_assembly
+    - type: categorical
+    - short description: Original genome assembly versions
+    - possible range: string
+
+21. orig_chr
+    - type: categorical
+    - short description: Original chromosome numbers
+    - possible range: string
+
+22. original_ID
+    - type: text
+    - short description: IDs of original data sources
+    - possible range: string
+
+23. refsnp_ID
+    - type: categorical
+    - short description: RefSNP IDs for genetic variations
+    - possible range: string
+
+24. score
+    - type: categorical
+    - short description: Scores for enhancer to gene associations
+    - possible range: float
+
+25. source
+    - type: categorical
+    - short description: Sources of data
+    - possible range: string
+
+26. type
+    - type: categorical
+    - short description: Types of genetic elements
+    - possible range: string
+
+27. current_end
+    - type: Numerical
+    - short description: Current end coordinates of genomic regions
+    - possible range: integer
+
+28. current_start
+    - type: Numerical
+    - short description: Current start coordinates of genomic regions
+    - possible range: integer
+
+29. orig_end
+    - type: Numerical
+    - short description: Original end coordinates of genomic regions
+    - possible range: integer
+
+30. orig_start
+    - type: Numerical
+    - short description: Original start coordinates of genomic regions
+    - possible range: integer
+
+**classes:**
+
+1. class_entity
+
+**subclasses:**
+
+1. entity_name: subclass of -> class_entity
+
+2. enhancer: subclass of -> class_entity
+
+3. super_enhancer: subclass of -> class_entity
+
+4. target_gene: subclass of -> class_entity
+
+5. transcription_factor: subclass of -> class_entity
+
+6. disease_association: subclass of -> class_entity
+
+7. mutation: subclass of -> class_entity
+
+8. genomic_region: subclass of -> class_entity
+
+**Object Properties:**
+
+1. associated_with: domain - enhancer, super_enhancer; range - target_gene, transcription_factor
+
+2. regulates: domain - transcription_factor; range - target_gene
+
+3. associated_disease: domain - disease_association; range - disease
+
+4. mutation_in: domain - mutation; range - genomic_region
+
+5. located_in: domain - genomic_region; range - chromosome
+
+6. has_coordinate: domain - genomic_region; range - integer
+
+7. has_score: domain - enhancer, super_enhancer; range - float
+
+8. has_source: domain - entity_name; range - string
+
+9. has_type: domain - entity_name; range - string
+
+**Data Type Properties:**
+
+1. PubMed_ID: domain - TFs2enh_PMID, disease_PMID, enh_PMID, mutation_PMID; range - string
+
+2. method: domain - TFs2enh_method, disease_method, enh_method, mutation_method; range - string
+
+3. chromosome: domain - current_chr, orig_chr; range - string
+
+4. assembly_version: domain - current_assembly, orig_assembly; range - string
+
+5. ID: domain - crm_ID, original_ID, refsnp_ID; range - string
+
+6. name: domain - biosample_name; range - string
+
+7. symbol: domain - hgnc_symbol_TFs, hgnc_symbol_target_genes; range - string
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix base_ontology: <https://base_ontology.com#> .
+
+<owl:Ontology rdf:about="https://base_ontology.com/enhancer_association_ontology">
+
+  <!-- Classes -->
+  <owl:Class rdf:ID="class_entity">
+    <rdfs:label xml:lang="en">Entity</rdfs:label>
+    <rdfs:comment xml:lang="en">A general class for entities.</rdfs:comment>
+    <skos:definition xml:lang="en">An entity is a thing that has existence and can be perceived, either physically or intellectually.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:ID="entity_name">
+    <rdfs:label xml:lang="en">Entity Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for names of entities.</rdfs:comment>
+    <skos:definition xml:lang="en">An entity name is a label or identifier given to an entity.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="enhancer">
+    <rdfs:label xml:lang="en">Enhancer</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for enhancers.</rdfs:comment>
+    <skos:definition xml:lang="en">An enhancer is a type of regulatory element that can increase the transcription of a gene.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="super_enhancer">
+    <rdfs:label xml:lang="en">Super Enhancer</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for super enhancers.</rdfs:comment>
+    <skos:definition xml:lang="en">A super enhancer is a type of regulatory element that can increase the transcription of multiple genes.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="target_gene">
+    <rdfs:label xml:lang="en">Target Gene</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for target genes.</rdfs:comment>
+    <skos:definition xml:lang="en">A target gene is a gene that is regulated by an enhancer or super enhancer.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="transcription_factor">
+    <rdfs:label xml:lang="en">Transcription Factor</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for transcription factors.</rdfs:comment>
+    <skos:definition xml:lang="en">A transcription factor is a protein that regulates the transcription of genes.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="disease_association">
+    <rdfs:label xml:lang="en">Disease Association</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for disease associations.</rdfs:comment>
+    <skos:definition xml:lang="en">A disease association is a relationship between an enhancer or super enhancer and a disease.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="mutation">
+    <rdfs:label xml:lang="en">Mutation</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for mutations.</rdfs:comment>
+    <skos:definition xml:lang="en">A mutation is a change in the DNA sequence of an organism.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:ID="genomic_region">
+    <rdfs:label xml:lang="en">Genomic Region</rdfs:label>
+    <rdfs:comment xml:lang="en">A subclass of entity for genomic regions.</rdfs:comment>
+    <skos:definition xml:lang="en">A genomic region is a specific part of the genome that contains regulatory elements or genes.</skos:definition>
+    <owl:subClassOf rdf:resource="#class_entity"/>
+  </owl:Class>
+
+  <!-- Object Properties -->
+  <owl:ObjectProperty rdf:ID="associated_with">
+    <rdfs:label xml:lang="en">Associated With</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between enhancers or super enhancers and target genes.</rdfs:comment>
+    <skos:definition xml:lang="en">An association between an enhancer or super enhancer and a target gene.</skos:definition>
+    <owl:domain rdf:resource="#enhancer"/>
+    <owl:domain rdf:resource="#super_enhancer"/>
+    <owl:range rdf:resource="#target_gene"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="regulates">
+    <rdfs:label xml:lang="en">Regulates</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between transcription factors and target genes.</rdfs:comment>
+    <skos:definition xml:lang="en">A regulation relationship between a transcription factor and a target gene.</skos:definition>
+    <owl:domain rdf:resource="#transcription_factor"/>
+    <owl:range rdf:resource="#target_gene"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="associated_disease">
+    <rdfs:label xml:lang="en">Associated Disease</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between disease associations and diseases.</rdfs:comment>
+    <skos:definition xml:lang="en">A disease association relationship between a disease and an enhancer or super enhancer.</skos:definition>
+    <owl:domain rdf:resource="#disease_association"/>
+    <owl:range rdf:resource="#disease"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="mutation_in">
+    <rdfs:label xml:lang="en">Mutation In</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between mutations and genomic regions.</rdfs:comment>
+    <skos:definition xml:lang="en">A mutation relationship between a mutation and a genomic region.</skos:definition>
+    <owl:domain rdf:resource="#mutation"/>
+    <owl:range rdf:resource="#genomic_region"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="located_in">
+    <rdfs:label xml:lang="en">Located In</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between genomic regions and chromosomes.</rdfs:comment>
+    <skos:definition xml:lang="en">A location relationship between a genomic region and a chromosome.</skos:definition>
+    <owl:domain rdf:resource="#genomic_region"/>
+    <owl:range rdf:resource="#chromosome"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_coordinate">
+    <rdfs:label xml:lang="en">Has Coordinate</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between genomic regions and integer coordinates.</rdfs:comment>
+    <skos:definition xml:lang="en">A coordinate relationship between a genomic region and an integer.</skos:definition>
+    <owl:domain rdf:resource="#genomic_region"/>
+    <owl:range xsd:type="xsd:integer"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_score">
+    <rdfs:label xml:lang="en">Has Score</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between enhancers or super enhancers and float scores.</rdfs:comment>
+    <skos:definition xml:lang="en">A score relationship between an enhancer or super enhancer and a float value.</skos:definition>
+    <owl:domain rdf:resource="#enhancer"/>
+    <owl:domain rdf:resource="#super_enhancer"/>
+    <owl:range xsd:type="xsd:float"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_source">
+    <rdfs:label xml:lang="en">Has Source</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between entity names and string sources.</rdfs:comment>
+    <skos:definition xml:lang="en">A source relationship between an entity name and a string value.</skos:definition>
+    <owl:domain rdf:resource="#entity_name"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="has_type">
+    <rdfs:label xml:lang="en">Has Type</rdfs:label>
+    <rdfs:comment xml:lang="en">An object property for relationships between entity names and string types.</rdfs:comment>
+    <skos:definition xml:lang="en">A type relationship between an entity name and a string value.</skos:definition>
+    <owl:domain rdf:resource="#entity_name"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:ObjectProperty>
+
+  <!-- Data Properties -->
+  <owl:DatatypeProperty rdf:ID="enhancer_association_type">
+    <rdfs:label xml:lang="en">Enhancer Association Type</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the type of association between an enhancer and a target gene.</rdfs:comment>
+    <skos:definition xml:lang="en">The type of association between an enhancer and a target gene.</skos:definition>
+    <owl:domain rdf:resource="#enhancer"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="target_gene_name">
+    <rdfs:label xml:lang="en">Target Gene Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a target gene.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a target gene.</skos:definition>
+    <owl:domain rdf:resource="#target_gene"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="transcription_factor_name">
+    <rdfs:label xml:lang="en">Transcription Factor Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a transcription factor.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a transcription factor.</skos:definition>
+    <owl:domain rdf:resource="#transcription_factor"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="disease_name">
+    <rdfs:label xml:lang="en">Disease Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a disease.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a disease.</skos:definition>
+    <owl:domain rdf:resource="#disease"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="mutation_type">
+    <rdfs:label xml:lang="en">Mutation Type</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the type of mutation.</rdfs:comment>
+    <skos:definition xml:lang="en">The type of mutation.</skos:definition>
+    <owl:domain rdf:resource="#mutation"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:ID="genomic_region_name">
+    <rdfs:label xml:lang="en">Genomic Region Name</rdfs:label>
+    <rdfs:comment xml:lang="en">A data property for the name of a genomic region.</rdfs:comment>
+    <skos:definition xml:lang="en">The name of a genomic region.</skos:definition>
+    <owl:domain rdf:resource="#genomic_region"/>
+    <owl:range xsd:type="xsd:string"/>
+  </owl:DatatypeProperty>
+
+</owl:Ontology>
+
+################ MAPPING (OntoMapper) #######################
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rr: <http://www.w3.org/ns/ontology#> .
+@prefix rml: <http://semweb.mcmaster.ca/ont/rml#> .
+@prefix ql: <http://semweb.mcmaster.ca/ont/rml#ql> .
+
+<#TriplesMapClasses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClasses> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClass>;
+        ]
+    ];
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasName;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProperty>;
+        ]
+    ];
+
+<#TriplesMapProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapProperty> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];
+
+<#TriplesMapDatatype> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDatatype> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasSource;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rr:predicateObjectMap [
+        rr:predicate ex:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDatatype>;
+        ]
+    ];

@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 308.31,
+  "total_tokens": 13914,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-04-29T02:49:01.576818",
+      "success": true,
+      "elapsed_seconds": 311.62,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3425,
+        "completion_tokens": 1256,
+        "total_tokens": 4681
+      },
+      "prompt_tokens_estimate": 2118,
+      "response_chars": 4169,
+      "turtle_chars": 4169,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'ition \"Ontology for enhancers associated with diseases.\" .\\n\\n'^b'crm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-regulatory module\"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-04-29T02:54:11.178910",
+      "success": true,
+      "elapsed_seconds": 308.55,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3425,
+        "completion_tokens": 1237,
+        "total_tokens": 4662
+      },
+      "prompt_tokens_estimate": 2118,
+      "response_chars": 3811,
+      "turtle_chars": 3811,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'a owl:Ontology ;\\n  rdfs:label \"DiseaseEnhancer Ontology\" .\\n\\n'^b'crm a owl:Class ;\\n  skos:prefLabel \"CRM\" ;\\n  skos:definition'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-04-29T02:59:16.989524",
+      "success": true,
+      "elapsed_seconds": 304.76,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3425,
+        "completion_tokens": 1146,
+        "total_tokens": 4571
+      },
+      "prompt_tokens_estimate": 2118,
+      "response_chars": 3718,
+      "turtle_chars": 3718,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'finition \"An ontology for disease-associated enhancers.\" .\\n\\n'^b'crm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-regulatory Module\"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

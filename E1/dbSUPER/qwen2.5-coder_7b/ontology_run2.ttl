@@ -1,0 +1,64 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Class a owl:Thing ;
+    rdfs:subClassOf owl:Class ;
+    skos:prefLabel "OWL Class" ;
+    skos:definition "A class in the OWL ontology." .
+
+owl:ObjectProperty a owl:Property ;
+    rdfs:subPropertyOf owl:ObjectProperty ;
+    skos:prefLabel "Object Property" ;
+    skos:definition "A property that relates two classes." .
+
+owl:DatatypeProperty a owl:Property ;
+    rdfs:subPropertyOf owl:DatatypeProperty ;
+    skos:prefLabel "Datatype Property" ;
+    skos:definition "A property that relates an individual to a literal value." .
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "CRM Enhancer" ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that functions as an enhancer in the CRM system." ;
+    skos:exactMatch obo:SO_0001827 .
+
+crm:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate that specifies a location within the genome." ;
+    skos:exactMatch obo:SO_0001427 .
+
+crm:StartCoordinate a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+    skos:exactMatch obo:SO_0001427 .
+
+crm:EndCoordinate a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "End Coordinate" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+    skos:exactMatch obo:SO_0001427 .
+
+crm:Evidence a owl:Class ;
+    rdfs:label "Evidence" ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information that supports or confirms the existence of an enhancer." ;
+
+crm:Supports a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Supports" ;
+    skos:definition "Indicates that evidence supports the enhancer." ;
+
+crm:HasCoordinate a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Has Coordinate" ;
+    skos:definition "Indicates that an enhancer has a specific genomic coordinate." ;

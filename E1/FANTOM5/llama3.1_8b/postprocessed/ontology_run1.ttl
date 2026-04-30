@@ -1,0 +1,426 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Ontology" ;
+  skos:prefLabel "FANTOM5 Ontology" ;
+  skos:definition "Ontology for FANTOM5 enhancer data.".
+
+crm:Enhancer
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory region that modulates gene expression.".
+
+crm:GenomicCoordinate
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "The genomic location of an enhancer." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:start
+  a owl:ObjectProperty ;
+  rdfs:label "Start Position" ;
+  skos:prefLabel "Start Position" ;
+  skos:definition "The start position of an enhancer's genomic location." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:integer.
+
+crm:end
+  a owl:ObjectProperty ;
+  rdfs:label "End Position" ;
+  skos:prefLabel "End Position" ;
+  skos:definition "The end position of an enhancer's genomic location." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:integer.
+
+crm:evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E Evidence.
+
+crm:evidenceType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Type" ;
+  skos:prefLabel "Evidence Type" ;
+  skos:definition "The type of evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceType.
+
+crm:evidencePMID
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence PMID" ;
+  skos:prefLabel "Evidence PMID" ;
+  skos:definition "The PubMed ID of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethod
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method" ;
+  skos:prefLabel "Evidence Method" ;
+  skos:definition "The method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceMethodType
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Method Type" ;
+  skos:prefLabel "Evidence Method Type" ;
+  skos:definition "The type of method used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range obo:E EvidenceMethodType.
+
+crm:evidenceSource
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Source" ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string.
+
+crm:evidenceBiosample
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence Biosample" ;
+  skos:prefLabel "Evidence Biosample" ;
+  skos:definition "The biosample used to obtain the evidence supporting an enhancer's activity." ;
+  rdfs:domain crm:Enhancer ;

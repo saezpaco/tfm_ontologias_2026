@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-04-29T09:47:37.429350",
+  "success": true,
+  "elapsed_seconds": 870.66,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 751,
+    "total_tokens": 4847
+  },
+  "prompt_tokens_estimate": 2146,
+  "response_chars": 2463,
+  "turtle_chars": 2449,
+  "validation": {
+    "valid": false,
+    "error": "at line 23 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'property that relates an individual to a literal value.\" .\\n\\n'^b'crm:Enhancer a owl:Class ;\\n    rdfs:label \"CRM Enhancer\" ;\\n '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7b/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7b/response_raw_run2.txt"
+  }
+}

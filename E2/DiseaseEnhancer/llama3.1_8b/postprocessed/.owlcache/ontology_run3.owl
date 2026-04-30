@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hgnc_symbol_target_genes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>HGNC Symbol Target Genes</rdfs:label>
+    <skos:prefLabel>bgw!crm_ID--hgncsymbol!9606/gene_sybmol</skos:prefLabel>
+    <skos:definition>The HGNC symbol of the target genes associated with the CRM.</skos:definition>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/HGNC_0000001"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/bgw_crm_ID_hgnc_symbol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name</rdfs:label>
+    <skos:prefLabel>Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name</skos:prefLabel>
+    <skos:definition>The association between a CRM and its target genes.</skos:definition>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/HGNC_0000001"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/chr_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Chromosome Name</rdfs:label>
+    <skos:prefLabel>chr_name</skos:prefLabel>
+    <skos:definition>The name of the chromosome where the CRM is located.</skos:definition>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/bgw_crm_ID_uniprot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>bgw!crm_ID--uniprot!uniprot_ID</rdfs:label>
+    <skos:prefLabel>Association between cis-regulatory module crm_ID and transcription factor uniprot_ID</skos:prefLabel>
+    <skos:definition>The association between a CRM and its target transcription factors.</skos:definition>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UNIPROT_0000001"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/end_position">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>End Position</rdfs:label>
+    <skos:prefLabel>end_position</skos:prefLabel>
+    <skos:definition>The end position of the CRM on the chromosome.</skos:definition>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/database_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Database Name</rdfs:label>
+    <skos:prefLabel>database_name</skos:prefLabel>
+    <skos:definition>The name of the database where the CRM is stored.</skos:definition>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/start_position">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Start Position</rdfs:label>
+    <skos:prefLabel>start_position</skos:prefLabel>
+    <skos:definition>The start position of the CRM on the chromosome.</skos:definition>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/bgw_crm_ID_uniprot_database_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>bgw!crm_ID--uniprot!uniprot_ID#database_name</rdfs:label>
+    <skos:prefLabel>Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name</skos:prefLabel>
+    <skos:definition>The association between a CRM and its target transcription factors, considering the database name.</skos:definition>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UNIPROT_0000001"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/bgw_crm_ID_doid_database_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>bgw!crm_ID--doid!doid#database_name</rdfs:label>
+    <skos:prefLabel>Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name</skos:prefLabel>
+    <skos:definition>The association between a CRM and a disease, considering the database name.</skos:definition>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/DOID_0000040"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://biocc.hrbmu.edu.cn/DiseaseEnhancer/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>DiseaseEnhancer Ontology</rdfs:label>
+    <skos:prefLabel>DiseaseEnhancer Ontology</skos:prefLabel>
+    <skos:definition>An ontology for disease-associated enhancers.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/bgw_crm_ID_doid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>bgw!crm_ID--doid!doid</rdfs:label>
+    <skos:prefLabel>Association between cis-regulatory module crm_ID and disease DOID:doid</skos:prefLabel>
+    <skos:definition>The association between a CRM and a disease.</skos:definition>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/DOID_0000040"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/CRM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Cis-regulatory Module</rdfs:label>
+    <skos:prefLabel>CRM</skos:prefLabel>
+    <skos:definition>A cis-regulatory module located in Homo sapiens between start_position and end_position.</skos:definition>
+  </rdf:Description>
+</rdf:RDF>

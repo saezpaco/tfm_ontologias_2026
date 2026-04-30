@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/FANTOM5.csv",
+  "api_model": "llama3.1:8b",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-04-30T03:05:46.284534+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.062,
+    "plan_s": 588.457,
+    "plan_chars": 7911,
+    "plan_prompt_chars": 9560,
+    "onto_s": 861.468,
+    "onto_chars": 9306,
+    "onto_prompt_chars": 16851,
+    "map_s": 12203.219,
+    "map_chars": 129865,
+    "map_prompt_chars": 19886
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-04-30T06:53:19.490571+00:00",
+  "total_s": 13653.206
+}

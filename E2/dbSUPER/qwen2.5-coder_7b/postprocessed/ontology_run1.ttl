@@ -1,0 +1,69 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+crm:CRM a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001657> .
+
+crm:Database a owl:Class ;
+    rdfs:label "Database" ;
+    skos:prefLabel "database_name" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001657> .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to DNA and regulates the transcription of genes" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001657> .
+
+crm:Association a owl:ObjectProperty ;
+    rdfs:label "Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" ;
+    owl:domain crm:CRM ;
+    owl:range crm:Gene .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "hgncsymbol!9606/gene_symbol" ;
+    skos:definition "A segment of DNA that codes for a protein or RNA molecule" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001217> .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "doid!doid#database_name" ;
+    skos:definition "A disorder or condition affecting the normal functioning of an organism" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001250> .
+
+crm:TranscriptionFactorAssociation a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" ;
+    owl:domain crm:CRM ;
+    owl:range crm:TranscriptionFactor .
+
+crm:start_position a owl:DatatypeProperty ;
+    rdfs:label "start_position" ;
+    skos:prefLabel "start_position" ;
+    xsd:minInclusive "0"^^xsd:nonNegativeInteger ;
+    xsd:maxInclusive "2147483647"^^xsd:int .
+
+crm:end_position a owl:DatatypeProperty ;
+    rdfs:label "end_position" ;
+    skos:prefLabel "end_position" ;
+    xsd:minInclusive "0"^^xsd:nonNegativeInteger ;
+    xsd:maxInclusive "2147483647"^^xsd:int .
+
+crm:chr_name a owl:DatatypeProperty ;
+    rdfs:label "chr_name" ;
+    skos:prefLabel "chr_name" ;
+    xsd:minLength "1"^^xsd:nonNegativeInteger ;
+    xsd:maxLength "255"^^xsd:string .

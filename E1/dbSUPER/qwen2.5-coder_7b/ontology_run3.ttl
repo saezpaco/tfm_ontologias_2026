@@ -1,0 +1,305 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    skos:prefLabel "CRM Enhancer Ontology" ;
+    skos:definition "An ontology for representing CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    rdfs:subClassOf obo:SO_0001217 ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcription of a CRM gene." .
+
+crm:GenomicCoordinate a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "The chromosomal location of an enhancer." ;
+
+crm:Evidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Supporting evidence for the existence of an enhancer." ;
+
+crm:EvidenceType a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the existence of an enhancer." .
+
+crm:SupportingStudy a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:GO_0008279 ;
+    skos:prefLabel "Supporting Study" ;
+    skos:definition "A study that provides evidence for the existence of an enhancer." ;
+
+crm:PubMedID a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PubMed ID" ;
+    skos:definition "The identifier for a study in PubMed." ;
+
+crm:ExpressionLevel a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "Expression Level" ;
+    skos:definition "The level of expression of an enhancer." ;
+
+crm:RegulatesGene a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 ;
+    skos:prefLabel "Regulates Gene" ;
+    skos:definition "The gene that is regulated by an enhancer." ;
+
+crm:Gene a owl:Class ;
+    rdfs:subClassOf obo:SO_0001217 ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A segment of DNA that codes for a protein or RNA molecule." ;
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:subClassOf obo:GO_0003674 ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to specific DNA sequences and regulates the transcription of genes." ;
+
+crm:RegulatesTranscription a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003674 ;
+    skos:prefLabel "Regulates Transcription" ;
+    skos:definition "The process by which an enhancer controls the transcription of a gene." ;
+
+crm:CellType a owl:Class ;
+    rdfs:subClassOf obo:SO_0001217 ;
+    skos:prefLabel "Cell Type" ;
+    skos:definition "A type of cell with specific characteristics and functions." ;
+
+crm:ExpressionPattern a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 ;
+    skos:prefLabel "Expression Pattern" ;
+    skos:definition "The pattern of expression of an enhancer in different cell types." ;
+
+crm:DevelopmentalStage a owl:Class ;
+    rdfs:subClassOf obo:SO_0001217 ;
+    skos:prefLabel "Developmental Stage" ;
+    skos:definition "A stage in the process of development from an organism's conception to maturity." ;
+
+crm:ExpressionDuringDevelopment a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 ;
+    skos:prefLabel "Expression During Development" ;
+    skos:definition "The expression of an enhancer during different stages of development." ;
+
+crm:Biology a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Biology" ;
+    skos:definition "The study of living organisms and their interactions with the environment." ;
+
+crm:Genetics a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Genetics" ;
+    skos:definition "The branch of biology that deals with heredity and variation in living organisms." ;
+
+crm:MolecularBiology a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Molecular Biology" ;
+    skos:definition "The branch of biology that deals with the structure, function, and interactions of molecules in living organisms." ;
+
+crm:Bioinformatics a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Bioinformatics" ;
+    skos:definition "The application of computer science to biological data analysis." ;
+
+crm:ComputationalBiology a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Computational Biology" ;
+    skos:definition "The use of computational methods and algorithms to solve biological problems." ;
+
+crm:SystemsBiology a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Systems Biology" ;
+    skos:definition "An interdisciplinary approach that uses mathematical and computational tools to study complex biological systems." ;
+
+crm:Proteomics a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Proteomics" ;
+    skos:definition "The large-scale study of proteins, their structures, functions, and interactions." ;
+
+crm:Transcriptomics a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Transcriptomics" ;
+    skos:definition "The large-scale study of RNA molecules, their structures, functions, and interactions." ;
+
+crm:Epigenetics a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Epigenetics" ;
+    skos:definition "The study of heritable changes in gene expression that do not involve alterations to the DNA sequence." ;
+
+crm:Chromatin a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Chromatin" ;
+    skos:definition "The complex of DNA and proteins that makes up chromosomes." ;
+
+crm:Nucleosome a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nucleosome" ;
+    skos:definition "A repeating unit of chromatin consisting of DNA wrapped around histone proteins." ;
+
+crm:HistoneModification a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Histone Modification" ;
+    skos:definition "The addition or removal of chemical groups to histone proteins, which can affect chromatin structure and gene expression." ;
+
+crm:Chromatin remodeling a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Chromatin Remodeling" ;
+    skos:definition "The process by which the structure of chromatin is altered, often involving the movement or exchange of nucleosomes." ;
+
+crm:TranscriptionalRegulation a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Transcriptional Regulation" ;
+    skos:definition "The process by which gene expression is controlled at the level of transcription." ;
+
+crm:PosttranscriptionalRegulation a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Posttranscriptional Regulation" ;
+    skos:definition "The process by which gene expression is controlled after transcription has occurred." ;
+
+crm:TranslationalRegulation a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Translational Regulation" ;
+    skos:definition "The process by which gene expression is controlled at the level of translation." ;
+
+crm:PosttranslationalModification a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Posttranslational Modification" ;
+    skos:definition "The addition or removal of chemical groups to proteins after translation has occurred." ;
+
+crm:ProteinComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Protein Complex" ;
+    skos:definition "A group of two or more proteins that interact with each other to perform a biological function." ;
+
+crm:TranscriptionFactorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Transcription Factor Complex" ;
+    skos:definition "A group of transcription factors that interact with each other to regulate gene expression." ;
+
+crm:NuclearReceptor a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor" ;
+    skos:definition "A type of transcription factor that binds to DNA in the nucleus and regulates gene expression." ;
+
+crm:NuclearReceptorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Complex" ;
+    skos:definition "A group of nuclear receptors that interact with each other to regulate gene expression." ;
+
+crm:Coactivator a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Coactivator" ;
+    skos:definition "A protein that enhances the transcriptional activity of a transcription factor or nuclear receptor." ;
+
+crm:Cofactor a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Cofactor" ;
+    skos:definition "A protein that interacts with a transcription factor, nuclear receptor, or other protein to regulate gene expression." ;
+
+crm:TranscriptionalCorepressor a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Transcriptional Corepressor" ;
+    skos:definition "A protein that represses the transcription of a gene by interacting with a transcription factor or nuclear receptor." ;
+
+crm:NuclearReceptorCorepressor a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Corepressor" ;
+    skos:definition "A protein that represses the transcription of a gene by interacting with a nuclear receptor." ;
+
+crm:NuclearReceptorCoactivator a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Coactivator" ;
+    skos:definition "A protein that enhances the transcriptional activity of a nuclear receptor." ;
+
+crm:NuclearReceptorCofactor a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Cofactor" ;
+    skos:definition "A protein that interacts with a nuclear receptor to regulate gene expression." ;
+
+crm:NuclearReceptorTranscriptionalCorepressor a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Corepressor" ;
+    skos:definition "A protein that represses the transcription of a gene by interacting with a nuclear receptor." ;
+
+crm:NuclearReceptorTranscriptionalCoactivator a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Coactivator" ;
+    skos:definition "A protein that enhances the transcriptional activity of a nuclear receptor." ;
+
+crm:NuclearReceptorTranscriptionalCofactor a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Cofactor" ;
+    skos:definition "A protein that interacts with a nuclear receptor to regulate gene expression." ;
+
+crm:NuclearReceptorTranscriptionalCorepressorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Corepressor Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to repress the transcription of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCoactivatorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Coactivator Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to enhance the transcriptional activity of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCofactorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Cofactor Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to regulate gene expression." ;
+
+crm:NuclearReceptorTranscriptionalCorepressorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Corepressor Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to repress the transcription of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCoactivatorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Coactivator Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to enhance the transcriptional activity of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCofactorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Cofactor Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to regulate gene expression." ;
+
+crm:NuclearReceptorTranscriptionalCorepressorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Corepressor Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to repress the transcription of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCoactivatorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Coactivator Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to enhance the transcriptional activity of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCofactorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Cofactor Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to regulate gene expression." ;
+
+crm:NuclearReceptorTranscriptionalCorepressorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Corepressor Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to repress the transcription of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCoactivatorComplex a owl:Class ;
+    rdfs:subClassOf obo:GO_0008279 ;
+    skos:prefLabel "Nuclear Receptor Transcriptional Coactivator Complex" ;
+    skos:definition "A group of proteins that interact with a nuclear receptor to enhance the transcriptional activity of a gene." ;
+
+crm:NuclearReceptorTranscriptionalCofactorComplex a owl:Class ;
+    rdfs:subClassOf

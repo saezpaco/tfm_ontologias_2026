@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://example.org/Start">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Start Coordinate</rdfs:label>
+    <skos:prefLabel>Start Coordinate</skos:prefLabel>
+    <skos:definition>The start coordinate of the enhancer on the chromosome.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/End">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>End Coordinate</rdfs:label>
+    <skos:prefLabel>End Coordinate</skos:prefLabel>
+    <skos:definition>The end coordinate of the enhancer on the chromosome.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Disease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Associated Disease</rdfs:label>
+    <skos:prefLabel>Associated Disease</skos:prefLabel>
+    <skos:definition>A disease associated with the enhancer's activity.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://example.org/DiseaseType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Evidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Experimental Evidence</rdfs:label>
+    <skos:prefLabel>Experimental Evidence</skos:prefLabel>
+    <skos:definition>The experimental evidence supporting the enhancer's activity.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://example.org/EvidenceType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Chr">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Chromosome</rdfs:label>
+    <skos:prefLabel>Chromosome</skos:prefLabel>
+    <skos:definition>The chromosome where the enhancer is located.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/FANTOM5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>FANTOM5 Enhancers</rdfs:label>
+    <skos:prefLabel>FANTOM5 Enhancers</skos:prefLabel>
+    <skos:definition>Enhancer sequences identified by CAGE-seq in the human genome.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Enhancer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Enhancer</rdfs:label>
+    <skos:prefLabel>Enhancer</skos:prefLabel>
+    <skos:definition>A type of CRM that activates gene expression.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://example.org/CRM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Assembly">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Genome Assembly</rdfs:label>
+    <skos:prefLabel>Genome Assembly</skos:prefLabel>
+    <skos:definition>The genome assembly used to identify the enhancer.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/CAGEseq">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>CAGE-seq Evidence</rdfs:label>
+    <skos:prefLabel>CAGE-seq Evidence</skos:prefLabel>
+    <skos:definition>Evidence from CAGE-seq experiments supporting the enhancer's activity.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://example.org/EvidenceType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/TranscriptionFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Transcription Factor</rdfs:label>
+    <skos:prefLabel>Transcription Factor</skos:prefLabel>
+    <skos:definition>A protein that binds to DNA and regulates gene expression.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://example.org/Gene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/TargetGene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Target Gene</rdfs:label>
+    <skos:prefLabel>Target Gene</skos:prefLabel>
+    <skos:definition>The gene regulated by the enhancer.</skos:definition>
+    <rdfs:domain rdf:resource="http://example.org/Enhancer"/>
+    <rdfs:range rdf:resource="http://example.org/Gene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/GenomicCoordinate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Genomic Coordinate</rdfs:label>
+    <skos:prefLabel>Genomic Coordinate</skos:prefLabel>
+    <skos:definition>A location on the genome.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/DiseaseType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Disease Type</rdfs:label>
+    <skos:prefLabel>Disease Type</skos:prefLabel>
+    <skos:definition>The type of disease associated with the enhancer's activity.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/CRM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Cis-Regulatory Module (CRM)</rdfs:label>
+    <skos:prefLabel>Cis-Regulatory Module</skos:prefLabel>
+    <skos:definition>A region of DNA that regulates gene expression by binding transcription factors.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Gene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Gene</rdfs:label>
+    <skos:prefLabel>Gene</skos:prefLabel>
+    <skos:definition>A unit of heredity that is passed from one generation to the next.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/EvidenceType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Evidence Type</rdfs:label>
+    <skos:prefLabel>Evidence Type</skos:prefLabel>
+    <skos:definition>The type of experimental evidence supporting the enhancer's activity.</skos:definition>
+  </rdf:Description>
+</rdf:RDF>

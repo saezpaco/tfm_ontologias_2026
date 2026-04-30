@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:about="http://example.org/dbSUPER">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>dbSUPER Ontology</rdfs:label>
+    <skos:prefLabel>dbSUPER Ontology</skos:prefLabel>
+    <skos:definition>Super-enhancers con coordenadas, líneas celulares y genes diana</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasChrName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has chromosome name</rdfs:label>
+    <skos:prefLabel>chr_name</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasTranscriptionFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has transcription factor</rdfs:label>
+    <skos:prefLabel>bgw!crm_ID--uniprot!uniprot_ID#database_name</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasEndPosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Has end position</rdfs:label>
+    <xsd:type rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <skos:prefLabel>end_position</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasGeneSymbol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has gene symbol</rdfs:label>
+    <skos:prefLabel>bgw!crm_ID--hgncsymbol!9606/gene_symbol</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/HGNC:TBX5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasDatabaseName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has database name</rdfs:label>
+    <skos:prefLabel>database_name</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has association</rdfs:label>
+    <skos:prefLabel>bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasDiseaseAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has disease association</rdfs:label>
+    <skos:prefLabel>bgw!crm_ID--doid!doid#database_name</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasTranscriptionFactorUniprot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has transcription factor uniprot ID</rdfs:label>
+    <skos:prefLabel>bgw!crm_ID--uniprot!uniprot_ID</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://purl.uniprot.org/uniprot/UniProtKB:P12345"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasStartPosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Has start position</rdfs:label>
+    <xsd:type rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <skos:prefLabel>start_position</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/CRM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Cis-regulatory module</rdfs:label>
+    <skos:prefLabel>CRM</skos:prefLabel>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/isLocatedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Is located in</rdfs:label>
+    <skos:prefLabel>crm#crm_ID#database_name</skos:prefLabel>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasDisease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Has disease</rdfs:label>
+    <skos:prefLabel>bgw!crm_ID--doid!doid</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/DOID:12345"/>
+  </rdf:Description>
+</rdf:RDF>

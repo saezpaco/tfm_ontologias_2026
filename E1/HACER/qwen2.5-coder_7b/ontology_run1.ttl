@@ -1,0 +1,356 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology rdf:about "http://example.com/HACER" ;
+    rdfs:label "Human Active Cis-regulatory Elements database" ;
+    rdfs:comment "A dataset of cis-regulatory elements in human cells." .
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Element" ;
+    skos:definition "A region of DNA that regulates the transcription of one or more genes." ;
+    skos:exactMatch obo:SIO_010245 .  # SIO term for cis-regulatory element
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A position within the genome of an organism." .
+
+crm:Chromosome a owl:Class ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "A linear structure of DNA and associated proteins that carries genetic information in eukaryotic cells." ;
+    skos:exactMatch obo:SO_0000718 .  # SO term for chromosome
+
+crm:Start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start" ;
+    skos:definition "The starting position of the genomic coordinate." .
+
+crm:End a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+
+crm:ChromosomeID a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chromosome ID" ;
+    skos:definition "The identifier of the chromosome containing the genomic coordinate." .
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Supporting information for the presence or function of a cis-regulatory element." ;
+
+crm:PublicationID a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Publication ID" ;
+    skos:definition "The identifier of the publication supporting the evidence." ;
+
+crm:CellType a owl:Class ;
+    skos:prefLabel "Cell Type" ;
+    skos:definition "A type of cell in an organism." ;
+    skos:exactMatch obo:GO_0005575 .  # GO term for cell
+
+crm:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A segment of DNA that codes for a protein or RNA molecule." ;
+    skos:exactMatch obo:SO_0001217 .  # SO term for gene
+
+crm:Regulates a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Gene ;
+    skos:prefLabel "Regulates" ;
+    skos:definition "A relationship indicating that the enhancer regulates the expression of a gene." ;
+
+crm:LocatedIn a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range crm:Chromosome ;
+    skos:prefLabel "Located In" ;
+    skos:definition "A relationship indicating that the genomic coordinate is located on a chromosome." ;
+
+crm:Supports a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supports" ;
+    skos:definition "A relationship indicating that the evidence supports the presence or function of an enhancer." ;
+
+crm:CellType a owl:Class ;
+    skos:prefLabel "Cell Type" ;
+    skos:definition "A type of cell in an organism." ;
+    skos:exactMatch obo:GO_0005575 .  # GO term for cell
+
+crm:GeneExpression a owl:Class ;
+    skos:prefLabel "Gene Expression" ;
+    skos:definition "The process by which a gene is transcribed into mRNA and subsequently translated into protein." ;
+    skos:exactMatch obo:GO_0006351 .  # GO term for gene expression
+
+crm:ExpressionLevel a owl:DatatypeProperty ;
+    rdfs:domain crm:GeneExpression ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Expression Level" ;
+    skos:definition "The level of expression of a gene." ;
+
+crm:RegulatesExpression a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GeneExpression ;
+    skos:prefLabel "Regulates Expression" ;
+    skos:definition "A relationship indicating that the enhancer regulates the expression of a gene." ;
+
+crm:CellTypeExpression a owl:ObjectProperty ;
+    rdfs:domain crm:GeneExpression ;
+    rdfs:range crm:CellType ;
+    skos:prefLabel "Cell Type Expression" ;
+    skos:definition "A relationship indicating that the gene expression is specific to a cell type." ;
+
+crm:Publication a owl:Class ;
+    skos:prefLabel "Publication" ;
+    skos:definition "A scholarly work or report." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:PubmedID a owl:DatatypeProperty ;
+    rdfs:domain crm:Publication ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PubMed ID" ;
+    skos:definition "The identifier of the publication in PubMed." ;
+
+crm:EnhancerExpression a owl:Class ;
+    skos:prefLabel "Enhancer Expression" ;
+    skos:definition "The expression of an enhancer in a specific cell type or context." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:ExpressionContext a owl:DatatypeProperty ;
+    rdfs:domain crm:EnhancerExpression ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Expression Context" ;
+    skos:definition "The context in which the enhancer is expressed." ;
+
+crm:RegulatesCellTypeExpression a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:CellTypeExpression ;
+    skos:prefLabel "Regulates Cell Type Expression" ;
+    skos:definition "A relationship indicating that the enhancer regulates the expression of a gene in a specific cell type." ;
+
+crm:RegulatesGeneExpression a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GeneExpression ;
+    skos:prefLabel "Regulates Gene Expression" ;
+    skos:definition "A relationship indicating that the enhancer regulates the expression of a gene." ;
+
+crm:RegulatesPublication a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Publication ;
+    skos:prefLabel "Regulates Publication" ;
+    skos:definition "A relationship indicating that the enhancer is discussed in a publication." ;
+
+crm:ExpressionPattern a owl:Class ;
+    skos:prefLabel "Expression Pattern" ;
+    skos:definition "The pattern of expression of an enhancer across different cell types or conditions." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:CellTypePattern a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionPattern ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Cell Type Pattern" ;
+    skos:definition "The pattern of expression of an enhancer in different cell types." ;
+
+crm:ConditionPattern a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionPattern ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Condition Pattern" ;
+    skos:definition "The pattern of expression of an enhancer under different conditions." ;
+
+crm:RegulatesExpressionPattern a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionPattern ;
+    skos:prefLabel "Regulates Expression Pattern" ;
+    skos:definition "A relationship indicating that the enhancer regulates the expression pattern of a gene." ;
+
+crm:RegulatesCellTypePattern a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionPattern ;
+    skos:prefLabel "Regulates Cell Type Pattern" ;
+    skos:definition "A relationship indicating that the enhancer regulates the expression pattern of a gene in different cell types." ;
+
+crm:RegulatesConditionPattern a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionPattern ;
+    skos:prefLabel "Regulates Condition Pattern" ;
+    skos:definition "A relationship indicating that the enhancer regulates the expression pattern of a gene under different conditions." ;
+
+crm:EnhancerEvidence a owl:Class ;
+    skos:prefLabel "Enhancer Evidence" ;
+    skos:definition "Supporting evidence for the presence or function of an enhancer." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:EvidenceType a owl:DatatypeProperty ;
+    rdfs:domain crm:EnhancerEvidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the enhancer." ;
+
+crm:RegulatesEnhancerEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:EnhancerEvidence ;
+    skos:prefLabel "Regulates Enhancer Evidence" ;
+    skos:definition "A relationship indicating that the enhancer is supported by evidence of its presence or function." ;
+
+crm:ExpressionData a owl:Class ;
+    skos:prefLabel "Expression Data" ;
+    skos:definition "Experimental data on the expression of genes and enhancers." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:ExperimentType a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionData ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Experiment Type" ;
+    skos:definition "The type of experiment used to generate expression data." ;
+
+crm:RegulatesExpressionData a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionData ;
+    skos:prefLabel "Regulates Expression Data" ;
+    skos:definition "A relationship indicating that the enhancer is associated with expression data." ;
+
+crm:EnhancerFunction a owl:Class ;
+    skos:prefLabel "Enhancer Function" ;
+    skos:definition "The biological function of an enhancer in regulating gene expression." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:FunctionType a owl:DatatypeProperty ;
+    rdfs:domain crm:EnhancerFunction ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Function Type" ;
+    skos:definition "The type of function performed by the enhancer." ;
+
+crm:RegulatesEnhancerFunction a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:EnhancerFunction ;
+    skos:prefLabel "Regulates Enhancer Function" ;
+    skos:definition "A relationship indicating that the enhancer performs a specific function." ;
+
+crm:ExpressionProfile a owl:Class ;
+    skos:prefLabel "Expression Profile" ;
+    skos:definition "The overall pattern of gene expression in a cell type or condition." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:ProfileType a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionProfile ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Profile Type" ;
+    skos:definition "The type of expression profile." ;
+
+crm:RegulatesExpressionProfile a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionProfile ;
+    skos:prefLabel "Regulates Expression Profile" ;
+    skos:definition "A relationship indicating that the enhancer influences the expression profile of a cell type or condition." ;
+
+crm:EnhancerLocalization a owl:Class ;
+    skos:prefLabel "Enhancer Localization" ;
+    skos:definition "The cellular localization of an enhancer." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:LocalizationType a owl:DatatypeProperty ;
+    rdfs:domain crm:EnhancerLocalization ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Localization Type" ;
+    skos:definition "The type of localization of the enhancer." ;
+
+crm:RegulatesEnhancerLocalization a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:EnhancerLocalization ;
+    skos:prefLabel "Regulates Enhancer Localization" ;
+    skos:definition "A relationship indicating that the enhancer is localized in a specific cellular compartment." ;
+
+crm:ExpressionCorrelation a owl:Class ;
+    skos:prefLabel "Expression Correlation" ;
+    skos:definition "The correlation between the expression of two or more genes or enhancers." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:CorrelationType a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionCorrelation ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Correlation Type" ;
+    skos:definition "The type of correlation between expression levels." ;
+
+crm:RegulatesExpressionCorrelation a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionCorrelation ;
+    skos:prefLabel "Regulates Expression Correlation" ;
+    skos:definition "A relationship indicating that the enhancer influences the correlation between expression levels of genes or enhancers." ;
+
+crm:EnhancerInteraction a owl:Class ;
+    skos:prefLabel "Enhancer Interaction" ;
+    skos:definition "An interaction between two or more enhancers." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:InteractionType a owl:DatatypeProperty ;
+    rdfs:domain crm:EnhancerInteraction ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Interaction Type" ;
+    skos:definition "The type of interaction between enhancers." ;
+
+crm:RegulatesEnhancerInteraction a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:EnhancerInteraction ;
+    skos:prefLabel "Regulates Enhancer Interaction" ;
+    skos:definition "A relationship indicating that the enhancer influences the interaction between other enhancers." ;
+
+crm:ExpressionQuantification a owl:Class ;
+    skos:prefLabel "Expression Quantification" ;
+    skos:definition "The quantitative measurement of gene expression levels." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:QuantificationType a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionQuantification ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Quantification Type" ;
+    skos:definition "The type of quantification used to measure expression levels." ;
+
+crm:RegulatesExpressionQuantification a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionQuantification ;
+    skos:prefLabel "Regulates Expression Quantification" ;
+    skos:definition "A relationship indicating that the enhancer influences the quantification of expression levels." ;
+
+crm:EnhancerActivity a owl:Class ;
+    skos:prefLabel "Enhancer Activity" ;
+    skos:definition "The biological activity of an enhancer in regulating gene expression." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:ActivityType a owl:DatatypeProperty ;
+    rdfs:domain crm:EnhancerActivity ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Activity Type" ;
+    skos:definition "The type of activity performed by the enhancer." ;
+
+crm:RegulatesEnhancerActivity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:EnhancerActivity ;
+    skos:prefLabel "Regulates Enhancer Activity" ;
+    skos:definition "A relationship indicating that the enhancer performs a specific activity." ;
+
+crm:ExpressionLocalization a owl:Class ;
+    skos:prefLabel "Expression Localization" ;
+    skos:definition "The cellular localization of gene expression." ;
+    skos:exactMatch obo:GO_0043226 .  # GO term for publication
+
+crm:LocalizationType a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionLocalization ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Localization Type" ;
+    skos:definition "The type of localization of gene expression." ;
+
+crm:RegulatesExpressionLocalization a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExpressionLocalization ;
+    skos:prefLabel "Regulates Expression Localization" ;
+    skos:definition "A relationship indicating that the enhancer influences the localization of gene expression." ;
+
+crm:ExpressionTemporalPattern a owl:Class ;
+    sk

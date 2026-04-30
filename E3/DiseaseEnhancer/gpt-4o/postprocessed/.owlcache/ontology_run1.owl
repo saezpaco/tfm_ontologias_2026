@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:biolink="https://w3id.org/biolink/vocab/"
+   xmlns:dc1="http://purl.org/dc/terms/"
+   xmlns:obo="http://purl.obolibrary.org/obo/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:sio="http://semanticscience.org/resource/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000001594--LMNB1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00000001594"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/LMNB1"/>
+    <skos:prefLabel>bgw!CRMHS00000001594--LMNB1</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module CRMHS00000001594 and gene LMNB1</skos:definition>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/25701871"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000006099--MYC">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00000006099"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/MYC"/>
+    <skos:prefLabel>bgw!CRMHS00000006099--MYC</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module CRMHS00000006099 and gene MYC</skos:definition>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/23832660"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00000001594">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000727"/>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr5 between 125315470 and 125318494</skos:definition>
+    <skos:prefLabel>CRMHS00000001594</skos:prefLabel>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="https://www.ncbi.nlm.nih.gov/nuccore/chr5"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">125315470</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">125318494</obo:GENO_0000894>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/25701871"/>
+    <sio:SIO_000253 rdf:resource="http://biocc.hrbmu.edu.cn/DiseaseEnhancer/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000005971--IGF2BP2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00000005971"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/IGF2BP2"/>
+    <skos:prefLabel>bgw!CRMHS00000005971--IGF2BP2</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module CRMHS00000005971 and gene IGF2BP2</skos:definition>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/21035756"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00000005971">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000727"/>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr3 between 185781414 and 185799612</skos:definition>
+    <skos:prefLabel>CRMHS00000005971</skos:prefLabel>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="https://www.ncbi.nlm.nih.gov/nuccore/chr3"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185781414</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185799612</obo:GENO_0000894>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/21035756"/>
+    <sio:SIO_000253 rdf:resource="http://biocc.hrbmu.edu.cn/DiseaseEnhancer/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00000006099">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000727"/>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr8 between 127386357 and 127404755</skos:definition>
+    <skos:prefLabel>CRMHS00000006099</skos:prefLabel>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="https://www.ncbi.nlm.nih.gov/nuccore/chr8"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127386357</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127404755</obo:GENO_0000894>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/23832660"/>
+    <sio:SIO_000253 rdf:resource="http://biocc.hrbmu.edu.cn/DiseaseEnhancer/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00027685537--PPP3CA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdf:subject rdf:resource="http://rdf.biogateway.eu/crm/9606/CRMHS00027685537"/>
+    <rdf:predicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002429"/>
+    <rdf:object rdf:resource="http://rdf.biogateway.eu/gene/9606/PPP3CA"/>
+    <skos:prefLabel>bgw!CRMHS00027685537--PPP3CA</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module CRMHS00027685537 and gene PPP3CA</skos:definition>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/27869826"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/gene/9606/IGF2BP2">
+    <skos:closeMatch rdf:resource="http://identifiers.org/ncbigene/IGF2BP2"/>
+    <biolink:category rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/9606/CRMHS00027685537">
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000727"/>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr4 between 100161845 and 100162043</skos:definition>
+    <skos:prefLabel>CRMHS00027685537</skos:prefLabel>
+    <obo:RO_0002162 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    <dc1:hasVersion rdf:resource="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26"/>
+    <obo:BFO_0000050 rdf:resource="https://www.ncbi.nlm.nih.gov/nuccore/chr4"/>
+    <obo:GENO_0000895 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100161845</obo:GENO_0000895>
+    <obo:GENO_0000894 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100162043</obo:GENO_0000894>
+    <sio:SIO_000772 rdf:resource="http://identifiers.org/pubmed/27869826"/>
+    <sio:SIO_000253 rdf:resource="http://biocc.hrbmu.edu.cn/DiseaseEnhancer/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/gene/9606/LMNB1">
+    <skos:closeMatch rdf:resource="http://identifiers.org/ncbigene/LMNB1"/>
+    <biolink:category rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/gene/9606/PPP3CA">
+    <skos:closeMatch rdf:resource="http://identifiers.org/ncbigene/PPP3CA"/>
+    <biolink:category rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/gene/9606/MYC">
+    <skos:closeMatch rdf:resource="http://identifiers.org/ncbigene/MYC"/>
+    <biolink:category rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </rdf:Description>
+</rdf:RDF>

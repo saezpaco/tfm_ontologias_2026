@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasTranscriptionFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>has transcription factor</rdfs:label>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://rdf.biogateway.eu/crm/TranscriptionFactor"/>
+    <skos:prefLabel>bgw!crm_ID--uniprot!uniprot_ID#database_name</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module and transcription factor according to database_name</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/Gene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Gene</rdfs:label>
+    <skos:prefLabel>hgncsymbol!9606/gene_symbol</skos:prefLabel>
+    <skos:definition>Gene in Homo sapiens</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/DatabaseName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>database name</rdfs:label>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel>database_name</skos:prefLabel>
+    <skos:definition>Name of the database containing the cis-regulatory module</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/ChrName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>chromosome name</rdfs:label>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel>chr_name</skos:prefLabel>
+    <skos:definition>Chromosome where the cis-regulatory module is located</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/CRM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Cis-regulatory module</rdfs:label>
+    <skos:prefLabel>crm/crm_ID</skos:prefLabel>
+    <skos:definition>Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001856"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/Database">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Database</rdfs:label>
+    <skos:prefLabel>database_name</skos:prefLabel>
+    <skos:definition>Database containing cis-regulatory modules</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/EndPosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>end position</rdfs:label>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:prefLabel>end_position</skos:prefLabel>
+    <skos:definition>End position of the cis-regulatory module on the chromosome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/StartPosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>start position</rdfs:label>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:prefLabel>start_position</skos:prefLabel>
+    <skos:definition>Start position of the cis-regulatory module on the chromosome</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasGene">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>has gene</rdfs:label>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://rdf.biogateway.eu/crm/Gene"/>
+    <skos:prefLabel>bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module and gene according to database_name</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/Disease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Disease</rdfs:label>
+    <skos:prefLabel>doid</skos:prefLabel>
+    <skos:definition>Disease in the Human Phenotype Ontology</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/TranscriptionFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Transcription Factor</rdfs:label>
+    <skos:prefLabel>uniprot_ID</skos:prefLabel>
+    <skos:definition>Transcription factor in UniProt</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdf.biogateway.eu/crm/hasDisease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>has disease</rdfs:label>
+    <rdfs:domain rdf:resource="http://rdf.biogateway.eu/crm/CRM"/>
+    <rdfs:range rdf:resource="http://rdf.biogateway.eu/crm/Disease"/>
+    <skos:prefLabel>bgw!crm_ID--doid!doid#database_name</skos:prefLabel>
+    <skos:definition>Association between cis-regulatory module and disease according to database_name</skos:definition>
+  </rdf:Description>
+</rdf:RDF>

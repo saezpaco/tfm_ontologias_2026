@@ -144,6 +144,15 @@ LLM_MODELS = {
         "context_window": 32768,
         "description": "Mistral 7B - referencia open-source adicional",
     },
+    "qwen2.5-coder:7b": {
+        "provider": "ollama",
+        "base_url": "http://localhost:11434",
+        "context_window": 32768,
+        "description": "Qwen 2.5 Coder 7B - open-source especializado en "
+                       "código (Alibaba). Comparativo con Llama 3.1 8B "
+                       "para medir el efecto de la especialización en "
+                       "código sobre la generación de Turtle.",
+    },
     # Modelos comerciales via API (baseline de comparación)
     "gpt-4o": {
         "provider": "openai",

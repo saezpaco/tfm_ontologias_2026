@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-04-29T01:41:47.853184",
+  "success": true,
+  "elapsed_seconds": 1021.18,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2849,
+    "completion_tokens": 2211,
+    "total_tokens": 5060
+  },
+  "prompt_tokens_estimate": 1658,
+  "response_chars": 7437,
+  "turtle_chars": 7437,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'tion \"Database of human active cis-regulatory elements.\" .\\n\\n'^b'crm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-Regulatory Module '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/response_raw_run3.txt"
+  }
+}

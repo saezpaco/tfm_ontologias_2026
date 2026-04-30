@@ -1,0 +1,76 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    rdfs:subClassOf obo:GO_0003705 .
+
+crm:CisRegulatoryModule a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    rdfs:subClassOf obo:SO_0001218 .
+
+crm:Database a owl:Class ;
+    skos:prefLabel "Database" ;
+    rdfs:subClassOf obo:GO_0043226 .
+
+crm:Association a owl:ObjectProperty ;
+    skos:prefLabel "Association" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Gene .
+
+crm:TranscriptionFactorAssociation a owl:ObjectProperty ;
+    skos:prefLabel "Transcription Factor Association" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:TranscriptionFactor .
+
+crm:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    rdfs:subClassOf obo:SO_0001217 .
+
+crm:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    rdfs:subClassOf obo:GO_0043226 .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "has Transcription Factor" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:TranscriptionFactor .
+
+crm:associatedWithGene a owl:ObjectProperty ;
+    skos:prefLabel "associated With Gene" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Gene .
+
+crm:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "associated With Disease" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Disease .
+
+crm:hasDatabase a owl:ObjectProperty ;
+    skos:prefLabel "has Database" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Database .
+
+crm:hgncSymbol a owl:DatatypeProperty ;
+    skos:prefLabel "HGNC Symbol" ;
+    rdf:type xsd:string .
+
+crm:startPosition a owl:DatatypeProperty ;
+    skos:prefLabel "Start Position" ;
+    rdf:type xsd:integer .
+
+crm:endPosition a owl:DatatypeProperty ;
+    skos:prefLabel "End Position" ;
+    rdf:type xsd:integer .
+
+crm:chrName a owl:DatatypeProperty ;
+    skos:prefLabel "Chromosome Name" ;
+    rdf:type xsd:string .
+
+crm:databaseName a owl:DatatypeProperty ;
+    skos:prefLabel "Database Name" ;
+    rdf:type xsd:string .

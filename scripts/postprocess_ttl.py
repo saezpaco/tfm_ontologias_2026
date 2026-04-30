@@ -76,6 +76,18 @@ CANONICAL_PREFIXES: dict[str, str] = {
     "foaf":        "http://xmlns.com/foaf/0.1/",
     "prov":        "http://www.w3.org/ns/prov#",
     "void":        "http://rdfs.org/ns/void#",
+    # Vocabularios que aparecen en outputs de modelos open-source
+    "linkml":      "https://w3id.org/linkml/",
+    "linkml_meta": "https://w3id.org/linkml/meta/",
+    "pav":         "http://purl.org/pav/",
+    "ro":          "http://www.obolibrary.org/obo/ro.owl#",
+    "iao":         "http://purl.obolibrary.org/obo/iao.owl#",
+    "uberon":      "http://purl.obolibrary.org/obo/UBERON_",
+    "cl":          "http://purl.obolibrary.org/obo/CL_",
+    "edam":        "http://edamontology.org/",
+    "efo":         "http://www.ebi.ac.uk/efo/",
+    "doi":         "https://doi.org/",
+    "orcid":       "https://orcid.org/",
     # Prefijos del dominio cisreg/biogateway propios de los esquemas E3
     "hcrm":        "http://rdf.biogateway.eu/crm/9606/",
     "crm":         "http://rdf.biogateway.eu/crm/",
@@ -273,17 +285,29 @@ def process_file(src: Path, dst: Path) -> dict:
 try:
     from rdflib import Graph as _RDFG  # noqa: F401
     HAS_RDFLIB = True
+    # Silenciar los warnings ruidosos de rdflib sobre literales mal tipados
+    # (p. ej. "start_position"^^xsd:integer). Son alucinaciones del LLM, no
+    # errores del script — los registramos vía parse_ok=0 y seguimos.
+    import logging as _logging
+    import warnings as _warnings
+    _logging.getLogger("rdflib").setLevel(_logging.ERROR)
+    _logging.getLogger("rdflib.term").setLevel(_logging.CRITICAL)
+    _warnings.filterwarnings("ignore", module=r"rdflib(\..*)?")
 except ImportError:
     HAS_RDFLIB = False
 
 
 def parse_ok(path: Path) -> int:
-    """Comprueba si rdflib parsea el TTL. -1 si rdflib no está disponible."""
+    """Comprueba si rdflib parsea el TTL. -1 si rdflib no está disponible.
+    Captura todas las excepciones (incluidos warnings → tracebacks emitidos
+    por rdflib durante la conversión de literales)."""
     if not HAS_RDFLIB:
         return -1
     try:
         from rdflib import Graph
         g = Graph()
+        # rdflib emite tracebacks por stderr para literales mal tipados,
+        # pero no lanza excepción. Solo nos interesa el resultado del parse.
         g.parse(str(path), format="turtle")
         return 1
     except Exception:
@@ -301,12 +325,23 @@ def batch_process(experiments: list[str], model: str = "gpt-4o") -> list[dict]:
         for ttl in sorted(exp_dir.glob(f"*/{model}/ontology_run*.ttl")):
             rel = ttl.relative_to(RESULTS / exp)
             dst = RESULTS / exp / rel.parent / "postprocessed" / ttl.name
-            r = process_file(ttl, dst)
+            try:
+                r = process_file(ttl, dst)
+            except Exception as e:                                   # noqa
+                # Aislar fallos por archivo para no detener el batch
+                print(f"  [WARN] process_file falló en {ttl.name}: "
+                      f"{type(e).__name__}: {str(e)[:200]}",
+                      file=sys.stderr)
+                r = {"src": str(ttl.relative_to(PROJECT_ROOT)),
+                     "dst": "", "size_before": ttl.stat().st_size,
+                     "size_after": 0, "added": [], "unresolved": [],
+                     "n_escaped": 0,
+                     "process_error": f"{type(e).__name__}: {e}"}
             r["experiment"]   = exp
             r["db"]           = ttl.parent.parent.name
             r["run"]          = ttl.stem.replace("ontology_run", "")
             r["parse_before"] = parse_ok(ttl)
-            r["parse_after"]  = parse_ok(dst)
+            r["parse_after"]  = parse_ok(dst) if dst.exists() else -1
             rows.append(r)
             tag = (f"parse {r['parse_before']}→{r['parse_after']}"
                    if HAS_RDFLIB else "parse=N/A (rdflib no instalado)")
@@ -344,11 +379,18 @@ def main() -> None:
     ap.add_argument("--experiments", nargs="+", default=["E1", "E2", "E3"],
                     help="Experimentos a procesar en --batch")
     ap.add_argument("--model", default="gpt-4o",
-                    help="Subdirectorio de modelo (default: gpt-4o)")
+                    help="(Deprecado, use --models) Subdirectorio de modelo")
+    ap.add_argument("--models", nargs="+", default=None,
+                    help="Subdirectorios de modelo a procesar "
+                         "(ej.: gpt-4o llama3.1_8b)")
     args = ap.parse_args()
 
     if args.batch:
-        rows = batch_process(args.experiments, args.model)
+        models = args.models or [args.model]
+        rows: list[dict] = []
+        for m in models:
+            print(f"\n=== Modelo: {m} ===")
+            rows.extend(batch_process(args.experiments, m))
         write_report(rows, RESULTS / "postprocess_report.csv")
         # Resumen
         print()

@@ -1,0 +1,205 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/>
+  a owl:Ontology ;
+  rdfs:label "HACER Ontology" ;
+  skos:prefLabel "HACER Ontology" ;
+  skos:definition "Human Active Cis-regulatory Elements database ontology" .
+
+crm a owl:Class ;
+  rdfs:label "Cis-Regulatory Module" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm_ID a rdf:Property ;
+  rdfs:label "Cis-Regulatory Module ID" ;
+  skos:prefLabel "crm/crm_ID" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ID> ;
+  owl:propertyChainAxiom (
+    (crm_ID a rdf:Property) ,
+    (crm_ID rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+orig_chr a rdf:Property ;
+  rdfs:label "Original Chromosome" ;
+  skos:prefLabel "chr_name" ;
+  owl:propertyChainAxiom (
+    (orig_chr a rdf:Property) ,
+    (orig_chr rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+orig_start a rdf:Property ;
+  rdfs:label "Original Start Position" ;
+  skos:prefLabel "start_position" ;
+  owl:propertyChainAxiom (
+    (orig_start a rdf:Property) ,
+    (orig_start rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+orig_end a rdf:Property ;
+  rdfs:label "Original End Position" ;
+  skos:prefLabel "end_position" ;
+  owl:propertyChainAxiom (
+    (orig_end a rdf:Property) ,
+    (orig_end rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+current_chr a rdf:Property ;
+  rdfs:label "Current Chromosome" ;
+  skos:prefLabel "GRCh38" ;
+  owl:propertyChainAxiom (
+    (current_chr a rdf:Property) ,
+    (current_chr rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+current_start a rdf:Property ;
+  rdfs:label "Current Start Position" ;
+  skos:prefLabel "start_position" ;
+  owl:propertyChainAxiom (
+    (current_start a rdf:Property) ,
+    (current_start rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+current_end a rdf:Property ;
+  rdfs:label "Current End Position" ;
+  skos:prefLabel "end_position" ;
+  owl:propertyChainAxiom (
+    (current_end a rdf:Property) ,
+    (current_end rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+minimum_ratio a rdf:DatatypeProperty ;
+  rdfs:label "Minimum Ratio" ;
+  skos:prefLabel "minimum_ratio" ;
+  owl:propertyChainAxiom (
+    (minimum_ratio a rdf:DatatypeProperty) ,
+    (minimum_ratio rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+score a rdf:DatatypeProperty ;
+  rdfs:label "Score" ;
+  skos:prefLabel "score" ;
+  owl:propertyChainAxiom (
+    (score a rdf:DatatypeProperty) ,
+    (score rdfs:subPropertyOf obo:BFO_0000050)
+  ) .
+
+crm_association a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION> .
+
+crm_association_target a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Target" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TARGET> .
+
+crm_association_disease a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Disease" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_DISEASE> .
+
+crm_association_transcription_factor a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Transcription Factor" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TRANSCRIPTION_FACTOR> .
+
+crm_association_gene a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Gene" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_GENE> .
+
+crm_association_disease_do a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Disease DO" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_DISEASE_DO> .
+
+crm_association_transcription_factor_uniprot a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Transcription Factor UniProt" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TRANSCRIPTION_FACTOR_UNIPROT> .
+
+crm_association_gene_symbol a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Gene Symbol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_GENE_SYMBOL> .
+
+crm_association_disease_do_database a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Disease DO Database" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_DISEASE_DO_DATABASE> .
+
+crm_association_transcription_factor_uniprot_database a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Transcription Factor UniProt Database" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TRANSCRIPTION_FACTOR_UNIPROT_DATABASE> .
+
+crm_association_gene_symbol_database a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Gene Symbol Database" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_GENE_SYMBOL_DATABASE> .
+
+crm_association_disease_do_database_target a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Disease DO Database Target" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_DISEASE_DO_DATABASE_TARGET> .
+
+crm_association_transcription_factor_uniprot_database_target a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Transcription Factor UniProt Database Target" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TRANSCRIPTION_FACTOR_UNIPROT_DATABASE_TARGET> .
+
+crm_association_gene_symbol_database_target a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Gene Symbol Database Target" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_GENE_SYMBOL_DATABASE_TARGET> .
+
+crm_association_disease_do_database_target_value a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Disease DO Database Target Value" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_DISEASE_DO_DATABASE_TARGET_VALUE> .
+
+crm_association_transcription_factor_uniprot_database_target_value a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Transcription Factor UniProt Database Target Value" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TRANSCRIPTION_FACTOR_UNIPROT_DATABASE_TARGET_VALUE> .
+
+crm_association_gene_symbol_database_target_value a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Gene Symbol Database Target Value" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_GENE_SYMBOL_DATABASE_TARGET_VALUE> .
+
+crm_association_disease_do_database_target_value_type a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Disease DO Database Target Value Type" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_DISEASE_DO_DATABASE_TARGET_VALUE_TYPE> .
+
+crm_association_transcription_factor_uniprot_database_target_value_type a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Transcription Factor UniProt Database Target Value Type" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TRANSCRIPTION_FACTOR_UNIPROT_DATABASE_TARGET_VALUE_TYPE> .
+
+crm_association_gene_symbol_database_target_value_type a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Gene Symbol Database Target Value Type" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_GENE_SYMBOL_DATABASE_TARGET_VALUE_TYPE> .
+
+crm_association_disease_do_database_target_value_type_value a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Disease DO Database Target Value Type Value" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_DISEASE_DO_DATABASE_TARGET_VALUE_TYPE_VALUE> .
+
+crm_association_transcription_factor_uniprot_database_target_value_type_value a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Transcription Factor UniProt Database Target Value Type Value" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_TRANSCRIPTION_FACTOR_UNIPROT_DATABASE_TARGET_VALUE_TYPE_VALUE> .
+
+crm_association_gene_symbol_database_target_value_type_value a owl:ObjectProperty ;
+  rdfs:label "Cis-Regulatory Module Association Gene Symbol Database Target Value Type Value" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:exactMatch <http://bioinfo.vanderbilt.edu/AE/HACER#CRM_ASSOCIATION_GENE_SYMBOL_DATABASE_TARGET_VALUE_TYPE_VALUE> .

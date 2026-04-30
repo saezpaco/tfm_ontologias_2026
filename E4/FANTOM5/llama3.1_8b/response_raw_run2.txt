@@ -1,0 +1,5727 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://base_ontology.com#
+
+**Data Description:**
+
+1. TFs2enh_PMID
+   - type: categorical
+   - short description: PubMed IDs associated with transcription factors to enhancers interactions
+   - possible range: string
+
+2. TFs2enh_method
+   - type: categorical
+   - short description: Methods used for identifying transcription factors to enhancers interactions
+   - possible range: string
+
+3. biosample
+   - type: categorical
+   - short description: Cell lines or biosamples associated with the data
+   - possible range: string
+
+4. crm_ID
+   - type: text
+   - short description: IDs of chromatin modification regions
+   - possible range: string
+
+5. crossref
+   - type: categorical
+   - short description: Cross-references to external databases or resources
+   - possible range: string
+
+6. current_assembly
+   - type: categorical
+   - short description: Current genome assembly versions associated with the data
+   - possible range: string
+
+7. current_chr
+   - type: categorical
+   - short description: Chromosome IDs of the current genome assembly
+   - possible range: string
+
+8. disease
+   - type: categorical
+   - short description: Diseases or conditions associated with the data
+   - possible range: string
+
+9. disease_PMID
+   - type: categorical
+   - short description: PubMed IDs associated with disease-related information
+   - possible range: string
+
+10. disease_method
+    - type: categorical
+    - short description: Methods used for identifying disease associations
+    - possible range: string
+
+11. enh2gene_PMID
+    - type: categorical
+    - short description: PubMed IDs associated with enhancer to gene interactions
+    - possible range: string
+
+12. enh2gene_method
+    - type: categorical
+    - short description: Methods used for identifying enhancer to gene interactions
+    - possible range: string
+
+13. enh_PMID
+    - type: categorical
+    - short description: PubMed IDs associated with enhancers
+    - possible range: string
+
+14. enh_method
+    - type: categorical
+    - short description: Methods used for identifying enhancers
+    - possible range: string
+
+15. hgnc_symbol_TFs
+    - type: categorical
+    - short description: HGNC symbols of transcription factors
+    - possible range: string
+
+16. hgnc_symbol_target_genes
+    - type: text
+    - short description: HGNC symbols of target genes
+    - possible range: string
+
+17. minimum_ratio
+    - type: categorical
+    - short description: Minimum ratios associated with the data
+    - possible range: number
+
+18. mutation_PMID
+    - type: categorical
+    - short description: PubMed IDs associated with mutations
+    - possible range: string
+
+19. mutation_method
+    - type: categorical
+    - short description: Methods used for identifying mutations
+    - possible range: string
+
+20. orig_assembly
+    - type: categorical
+    - short description: Original genome assembly versions associated with the data
+    - possible range: string
+
+21. orig_chr
+    - type: categorical
+    - short description: Chromosome IDs of the original genome assembly
+    - possible range: string
+
+22. original_ID
+    - type: categorical
+    - short description: IDs of original chromatin modification regions
+    - possible range: string
+
+23. refsnp_ID
+    - type: categorical
+    - short description: RefSNP IDs associated with the data
+    - possible range: string
+
+24. score
+    - type: categorical
+    - short description: Scores associated with the data
+    - possible range: number
+
+25. source
+    - type: categorical
+    - short description: Sources of the data
+    - possible range: string
+
+26. type
+    - type: categorical
+    - short description: Types of genetic regulatory elements
+    - possible range: string
+
+27. current_end
+    - type: Numerical
+    - short description: End coordinates of the current genome assembly
+    - possible range: integer
+
+28. current_start
+    - type: Numerical
+    - short description: Start coordinates of the current genome assembly
+    - possible range: integer
+
+29. orig_end
+    - type: Numerical
+    - short description: End coordinates of the original genome assembly
+    - possible range: integer
+
+30. orig_start
+    - type: Numerical
+    - short description: Start coordinates of the original genome assembly
+    - possible range: integer
+
+**classes:**
+
+1. class_entity
+
+**subclasses:**
+
+1. entity_name: subclass of -> class_entity
+
+2. enhancer: subclass of -> class_entity
+
+3. super_enhancer: subclass of -> class_entity
+
+4. chromatin_modification_region: subclass of -> class_entity
+
+5. gene: subclass of -> class_entity
+
+6. transcription_factor: subclass of -> class_entity
+
+7. disease_association: subclass of -> class_entity
+
+8. mutation: subclass of -> class_entity
+
+9. genomic_coordinate: subclass of -> class_entity
+
+10. biosample: subclass of -> class_entity
+
+**Object Properties:**
+
+1. has_PMID: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (PubMed ID)
+
+2. has_method: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (method name)
+
+3. is_target_of: domain - range
+   - gene -> transcription_factor
+
+4. is_associated_with: domain - range
+   - disease_association -> disease
+
+5. has_score: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> number (score)
+
+6. has_source: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (source name)
+
+7. has_type: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (type of genetic regulatory element)
+
+8. has_coordinates: domain - range
+   - genomic_coordinate -> integer (start and end coordinates)
+
+9. is_part_of: domain - range
+   - chromatin_modification_region -> enhancer
+
+10. has_refSNP_ID: domain - range
+    - chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate -> string (RefSNP ID)
+
+**Data Type Properties:**
+
+1. has_PMID: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (PubMed ID)
+
+2. has_method: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (method name)
+
+3. is_target_of: domain - range
+   - gene -> transcription_factor
+
+4. is_associated_with: domain - range
+   - disease_association -> disease
+
+5. has_score: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> number (score)
+
+6. has_source: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (source name)
+
+7. has_type: domain - range
+   - enhancer, super_enhancer, chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate, biosample -> string (type of genetic regulatory element)
+
+8. has_coordinates: domain - range
+   - genomic_coordinate -> integer (start and end coordinates)
+
+9. is_part_of: domain - range
+   - chromatin_modification_region -> enhancer
+
+10. has_refSNP_ID: domain - range
+    - chromatin_modification_region, gene, transcription_factor, disease_association, mutation, genomic_coordinate -> string (RefSNP ID)
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.org/ontology#>
+  a owl:Ontology;
+
+  rdfs:comment "Genetic Regulatory Elements Ontology" ;
+  skos:description "This ontology describes the relationships between genetic regulatory elements, including enhancers, super-enhancers, chromatin modification regions, genes, transcription factors, disease associations, mutations, and genomic coordinates." .
+
+<http://example.org/ontology#class_entity>
+  a owl:Class;
+  rdfs:label "Entity" ;
+  skos:description "A general class for entities in the ontology"^^xsd:string.
+
+<http://example.org/ontology#entity_name>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#class_entity> ;
+  rdfs:label "Entity Name" ;
+  skos:description "An entity with a name"^^xsd:string.
+
+<http://example.org/ontology#enhancer>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Enhancer" ;
+  skos:description "A type of genetic regulatory element that enhances gene expression"^^xsd:string.
+
+<http://example.org/ontology#super_enhancer>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Super-Enhancer" ;
+  skos:description "A type of genetic regulatory element that has a higher level of enhancer activity than regular enhancers"^^xsd:string.
+
+<http://example.org/ontology#chromatin_modification_region>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Chromatin Modification Region" ;
+  skos:description "A region of the genome where chromatin modification occurs"^^xsd:string.
+
+<http://example.org/ontology#gene>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Gene" ;
+  skos:description "A unit of heredity that is passed from one generation to the next"^^xsd:string.
+
+<http://example.org/ontology#transcription_factor>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Transcription Factor" ;
+  skos:description "A protein that binds to specific DNA sequences and regulates gene expression"^^xsd:string.
+
+<http://example.org/ontology#disease_association>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Disease Association" ;
+  skos:description "A relationship between a genetic regulatory element and a disease"^^xsd:string.
+
+<http://example.org/ontology#mutation>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Mutation" ;
+  skos:description "A change in the DNA sequence of an organism"^^xsd:string.
+
+<http://example.org/ontology#genomic_coordinate>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:description "A location on the genome where a genetic regulatory element is located"^^xsd:string.
+
+<http://example.org/ontology#biosample>
+  a owl:Class;
+  rdfs:subClassOf <http://example.org/ontology#entity_name> ;
+  rdfs:label "Biosample" ;
+  skos:description "A sample of biological material used in research"^^xsd:string.
+
+<http://example.org/ontology#has_PMID>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has PubMed ID" ;
+  skos:description "A property that relates an entity to its corresponding PubMed ID"^^xsd:string.
+
+<http://example.org/ontology#has_method>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has Method" ;
+  skos:description "A property that relates an entity to the method used to identify it"^^xsd:string.
+
+<http://example.org/ontology#is_target_of>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#gene> ;
+  rdfs:range <http://example.org/ontology#transcription_factor> ;
+  rdfs:label "Is Target Of" ;
+  skos:description "A property that relates a gene to the transcription factor it is targeted by"^^xsd:string.
+
+<http://example.org/ontology#is_associated_with>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#disease_association> ;
+  rdfs:range <http://example.org/ontology#disease> ;
+  rdfs:label "Is Associated With" ;
+  skos:description "A property that relates a disease association to the disease it is associated with"^^xsd:string.
+
+<http://example.org/ontology#has_score>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:float> ;
+  rdfs:label "Has Score" ;
+  skos:description "A property that relates an entity to its corresponding score"^^xsd:string.
+
+<http://example.org/ontology#has_source>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has Source" ;
+  skos:description "A property that relates an entity to its corresponding source"^^xsd:string.
+
+<http://example.org/ontology#has_type>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has Type" ;
+  skos:description "A property that relates an entity to its corresponding type"^^xsd:string.
+
+<http://example.org/ontology#has_coordinates>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#genomic_coordinate> ;
+  rdfs:range <xsd:int> ;
+  rdfs:label "Has Coordinates" ;
+  skos:description "A property that relates a genomic coordinate to its corresponding coordinates"^^xsd:string.
+
+<http://example.org/ontology#is_part_of>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#chromatin_modification_region> ;
+  rdfs:range <http://example.org/ontology#enhancer> ;
+  rdfs:label "Is Part Of" ;
+  skos:description "A property that relates a chromatin modification region to the enhancer it is part of"^^xsd:string.
+
+<http://example.org/ontology#has_refSNP_ID>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has RefSNP ID" ;
+  skos:description "A property that relates an entity to its corresponding RefSNP ID"^^xsd:string.
+
+<http://example.org/ontology#has_PMID>
+  a owl:DatatypeProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has PubMed ID" ;
+  skos:description "A property that relates an entity to its corresponding PubMed ID"^^xsd:string.
+
+<http://example.org/ontology#has_method>
+  a owl:DatatypeProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has Method" ;
+  skos:description "A property that relates an entity to the method used to identify it"^^xsd:string.
+
+<http://example.org/ontology#is_target_of>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#gene> ;
+  rdfs:range <http://example.org/ontology#transcription_factor> ;
+  rdfs:label "Is Target Of" ;
+  skos:description "A property that relates a gene to the transcription factor it is targeted by"^^xsd:string.
+
+<http://example.org/ontology#is_associated_with>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#disease_association> ;
+  rdfs:range <http://example.org/ontology#disease> ;
+  rdfs:label "Is Associated With" ;
+  skos:description "A property that relates a disease association to the disease it is associated with"^^xsd:string.
+
+<http://example.org/ontology#has_score>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:float> ;
+  rdfs:label "Has Score" ;
+  skos:description "A property that relates an entity to its corresponding score"^^xsd:string.
+
+<http://example.org/ontology#has_source>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has Source" ;
+  skos:description "A property that relates an entity to its corresponding source"^^xsd:string.
+
+<http://example.org/ontology#has_type>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has Type" ;
+  skos:description "A property that relates an entity to its corresponding type"^^xsd:string.
+
+<http://example.org/ontology#has_coordinates>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#genomic_coordinate> ;
+  rdfs:range <xsd:int> ;
+  rdfs:label "Has Coordinates" ;
+  skos:description "A property that relates a genomic coordinate to its corresponding coordinates"^^xsd:string.
+
+<http://example.org/ontology#is_part_of>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#chromatin_modification_region> ;
+  rdfs:range <http://example.org/ontology#enhancer> ;
+  rdfs:label "Is Part Of" ;
+  skos:description "A property that relates a chromatin modification region to the enhancer it is part of"^^xsd:string.
+
+<http://example.org/ontology#has_refSNP_ID>
+  a owl:ObjectProperty;
+  rdfs:domain <http://example.org/ontology#class_entity> ;
+  rdfs:range <xsd:string> ;
+  rdfs:label "Has RefSNP ID" ;
+  skos:description "A property that relates an entity to its corresponding RefSNP ID"^^xsd:string.
+
+################ MAPPING (OntoMapper) #######################
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mcmaster.ca/ont/rml#>.
+@prefix ex: <http://example.org/ontology#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Class}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClass> a rr:Trip
