@@ -1,0 +1,209 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-05-09T00:09:20.985009+00:00",
+    "project_root": "/sessions/nifty-beautiful-knuth/mnt/TFM",
+    "git_commit": "(no git repo)"
+  },
+  "python": {
+    "version": "3.10.12",
+    "executable": "/usr/bin/python3",
+    "platform": "Linux-6.8.0-106-generic-aarch64-with-glibc2.35",
+    "machine": "aarch64",
+    "processor": "aarch64",
+    "implementation": "CPython"
+  },
+  "packages": {
+    "openai": "(not installed)",
+    "rdflib": "(not installed)",
+    "owlready2": "(not installed)",
+    "sentence_transformers": "(not installed)",
+    "neo4j": "(not installed)",
+    "requests": "2.33.1",
+    "pandas": "2.3.3",
+    "numpy": "2.2.6",
+    "matplotlib": "3.10.8",
+    "python-docx": "(not installed)",
+    "fastapi": "(not installed)",
+    "uvicorn": "(not installed)"
+  },
+  "model_snapshots": {
+    "gpt-4o": "gpt-4o-2024-05-13",
+    "gpt-4o-mini": "gpt-4o-mini-2024-07-18",
+    "llama3.1:8b": "(local Ollama; pin via 'ollama show llama3.1:8b')",
+    "qwen2.5-coder:7b": "(local Ollama; pin via 'ollama show qwen2.5-coder:7b')"
+  },
+  "generation_params": {
+    "GENERATION_PARAMS": {
+      "temperature": 0.1,
+      "top_p": 0.9,
+      "max_tokens": 4096,
+      "seed": 42
+    },
+    "SAMPLING_PARAMS": {
+      "n_header_rows": 5,
+      "n_sample_rows": 20,
+      "max_tokens_data": 3000,
+      "random_seed": 42
+    },
+    "N_REPETITIONS": 3,
+    "EXPERIMENTS": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "DATABASES": [
+      "dbSUPER",
+      "FANTOM5",
+      "ENdb",
+      "HACER",
+      "DiseaseEnhancer",
+      "SEA",
+      "SCREEN",
+      "EnDisease",
+      "RefSeq",
+      "Ensembl"
+    ]
+  },
+  "input_hashes": {
+    "raw_tsv": {
+      "present": true,
+      "files": {
+        "FANTOM5.tsv": "9f8e861a5e2d753feca0997d3cb3f1c8be8cfdd3c3016fe008218296929bec3f",
+        "dbSUPER.tsv": "af75730b4957e8ce87aa8df84149b4ac8deb05a282ca98d94a264be60723446e"
+      },
+      "n_files": 2
+    },
+    "samples": {
+      "present": true,
+      "files": {
+        "DiseaseEnhancer_sample.tsv": "db3e9fecfdfc4595d1d41ab7a92212ca4e83d9b73395e44a46d800626a0cbd04",
+        "ENdb_sample.tsv": "191c811df9cc6c7aab8c854c9a1443ce8b0f4a8c209cfe93a3997978ba237be4",
+        "EnDisease_sample.tsv": "1425c4e017056ab04a432961d157622bb86749ceea31c26432cb4e20d8c5841e",
+        "Ensembl_sample.tsv": "dfd32451dc21967a552cb0c8d45bd0f121912ca4ef580966eba815e46a3250b0",
+        "FANTOM5_sample.tsv": "1bd46a868406c4e8f5a4ed258da1d8e3a471c7e2e01594d993907fc7f46dba8d",
+        "HACER_sample.tsv": "67d9d8a9142e19cb0e3d2c024cbc183f0194e491d36f688a0a66cbb4dd655b49",
+        "RefSeq_sample.tsv": "b2fe13a75ae40e7a93e5ab9911e271d45894962b5f21c72ac452c1b49640269a",
+        "SCREEN_sample.tsv": "3299185b64a0204c3c2cbaf59dd9444e893d35f51c7a1867037ed4ba943ec7e0",
+        "SEA_sample.tsv": "cd9c7b068960d47cd6fffa37e6b2ab04799d413837ef3657fd858c6100ea78e6",
+        "dbSUPER_sample.tsv": "c34ea05fd2034066cb78d11be3da0e4203eed1e3d72008b56ed8d146f4356a22",
+        "DiseaseEnhancer_sample_prompt.txt": "0c5dad6af6fbf26f17111fd0cf32cb188faf8634688cdedb79333692a9f18fcf",
+        "ENdb_sample_prompt.txt": "a16bfe8f0ec8ccdf5fe7816592c0299ea33a66083fa3ea03551bb151945e5977",
+        "EnDisease_sample_prompt.txt": "2075cad2434da33400f676dabba06c03daf49465c6750bdd76b3f02f4a23362f",
+        "Ensembl_sample_prompt.txt": "000472f82dfebdbc45043849c470f19233f5de4bff256af1fce9baf8dbff688b",
+        "FANTOM5_sample_prompt.txt": "8a6ec0edf2a68f2523aa548537ef0f6ef8bc769e10f2ec5aac79f1e48ce92138",
+        "HACER_sample_prompt.txt": "b0202b2bfdf39f346dabd70ef8f9e37a2c6c4a98ac3ddab308f5c27f63989736",
+        "RefSeq_sample_prompt.txt": "124f9f7318c0d94d18dae98d72e3fe1fb09454dc1a239d51647ddc1467e7c9da",
+        "SCREEN_sample_prompt.txt": "37052c2f77aa21f9bf8172d0d48fc4f8685a5a438d35285c8535b7ddef65e46b",
+        "SEA_sample_prompt.txt": "4527a9143ba9d2c70fde85a8ea4b0a60f4c88a17d537bb3740142a689a333d2e",
+        "dbSUPER_sample_prompt.txt": "bec8a85b33c347b77abb7aa4cd019ab9ea27ee93e1416f7afafb05287b9e3069"
+      },
+      "n_files": 20
+    },
+    "rag_schemas": {
+      "present": true,
+      "files": {
+        "crm.txt": "df5d6d9d714249dd5759fd04c3c43beb3b5674ce60ed3c1e469ab5ff8b902a24",
+        "crm2gene.txt": "7695044614f3493b3c41f1479b3c1ad1397db6f1f498987ed109a8b1a8386b73",
+        "crm2gene_example.txt": "bce0b34ce5a5d66a1782162e50fd9df0897b3a4e0888db494d1efed290d58519",
+        "crm2phen.txt": "226d948cbe62a81e4ab81fbe8ee1d9a4c780e54685b9d44dfee3d2bab0801fe1",
+        "crm2phen_example.txt": "3470e962ad521521d2e862cdfbb0072b160c48077c3ef1ae3cebdb26a2aa1e59",
+        "crm2tfac.txt": "209567eaf694ad946db1d7c92b62ae0d989ea6cbd4ca936c3c68094b47a96958",
+        "crm2tfac_example.txt": "6db030ab3c048dac91c5ca57b3738bd99534e22954d0c8bfdcc5a6d6b8299bd0",
+        "crm_example.txt": "8fd3d4810f213352092eed0498c3c9fc8565e2d52ee2de94aebf4251457adca8"
+      },
+      "n_files": 8
+    },
+    "csv_for_ontogenix": {
+      "present": true,
+      "files": {
+        "DiseaseEnhancer.csv": "7b7bc9d711e43535e29165f76547093306505d1d7f2a609ad27c5df5a2c92e25",
+        "FANTOM5.csv": "0f096e8dfad065adc058128210d89ea79d510671bae0166077a7a9c358962a25",
+        "HACER.csv": "944361e5b8eda9f6ae9a47906ef21b40cc2170d4a365ded34577d50840b3be74",
+        "dbSUPER.csv": "62fb139dba3705aa9c706e6483099ab272e47fa01332daf57cb62bc3dcb7332e"
+      },
+      "n_files": 4
+    },
+    "scripts": {
+      "present": true,
+      "files": {
+        "01_explore_databases.py": "201b0386f458af9d58895a446d952dabf2b5d9a32d55846fb70b6419478defce",
+        "02_sample_databases.py": "60352e264dc3342c18fa5f839c2bf9752e024e1ab0db95397261df71ac799c73",
+        "03_test_llm_connection.py": "a1a1e44115e8eb8cd9886075a1db18d98ed85ee527fa70ef87ea0fd3048fa6bc",
+        "04_run_experiments.py": "3778069974f00adf21d2c5db4d9285408732ca493597c27d098ce7b43bf2e0ca",
+        "05_evaluate_results.py": "5618f6cb0f07a0fbb50a3f29f031ac3b1d5eca27c4814110b710db6812955553",
+        "check_reproducibility.py": "4b3c9fc163f6277a8659ed9037d22b19fcfbc7a5973542981ceb0e881d677740",
+        "config.py": "6fa1b51f7a506d0f9a9ab417952fa77064b22674303556117e72351d13f0ea35",
+        "evaluate_E4_vs_E1-E3.py": "1d03d64ac1d693ab21b4bd980518b705abdff7c9492807fe5107cf08d9023f41",
+        "generate_charts.py": "493ec8be32fa1d86926b955e7f5f3905a2beba07051657967101b9ab99b2b732",
+        "generate_charts_cross.py": "a050ae4f7bc0c92f759545e210690a157ede53d4b958e0cc20a2bfef6d436865",
+        "generate_charts_sensitivity.py": "8dec5eca92a4d3c711f4e1820427869c3275713c8dbc3c61930fc0c651e14f8e",
+        "oquare_eval.py": "d4352993fe2f8f9c32c8694983b034b94d7ef52a528d7c8f665d0a1523ca8692",
+        "postprocess_ttl.py": "5119d157fd68807620091f8e96244cbe037f893a842d53b5536f1cd206d80985",
+        "rag_backend.py": "e7e6c64908c95ab9235c1c5a6590ffa3de9939de6055da39f04ec94b53cfcf4c",
+        "run_gpt_experiments.py": "0381f73c221b9b173ab9ebdb168bf2f88560352dc4124594d2bd0c9e8b888c6b",
+        "run_ontogenix_experiments.py": "b5b8fcb5b22baddd271ccf621466693108d95a2c4b8b4b185f4eb9882e706bc0",
+        "sample_strategies.py": "c4b0f2bfce67f73b92703e7bd394f9ac21dabd6af43635aa942a285fa7b91f1a",
+        "setup_check.py": "179a3dbc41e91ce0cfeb707b37b1ee3df43d0709a3970a25a554e97b7b124448"
+      },
+      "n_files": 18
+    }
+  },
+  "output_counts": {
+    "E1/FANTOM5/gpt-4o_A_head": 2,
+    "E1/FANTOM5/gpt-4o_B_random": 2,
+    "E1/FANTOM5/gpt-4o_C_stratified": 2,
+    "E1/FANTOM5/gpt-4o_D_diversity": 2,
+    "E1/FANTOM5/llama3.1_8b_A_head": 2,
+    "E1/FANTOM5/llama3.1_8b_B_random": 2,
+    "E1/FANTOM5/llama3.1_8b_C_stratified": 2,
+    "E1/FANTOM5/llama3.1_8b_D_diversity": 2,
+    "E1/dbSUPER/gpt-4o_A_head": 2,
+    "E1/dbSUPER/gpt-4o_B_random": 2,
+    "E1/dbSUPER/gpt-4o_C_stratified": 2,
+    "E1/dbSUPER/gpt-4o_D_diversity": 2,
+    "E1/dbSUPER/llama3.1_8b_A_head": 2,
+    "E1/dbSUPER/llama3.1_8b_B_random": 2,
+    "E1/dbSUPER/llama3.1_8b_C_stratified": 2,
+    "E1/dbSUPER/llama3.1_8b_D_diversity": 2,
+    "E3/DiseaseEnhancer/gpt-4o_legacy": 6,
+    "E3/DiseaseEnhancer/gpt-4o_ragapi": 6,
+    "E3/DiseaseEnhancer/llama3.1_8b_legacy": 9,
+    "E3/DiseaseEnhancer/llama3.1_8b_ragapi": 6,
+    "E3/DiseaseEnhancer/llama3.1_8b_ragapi_C1": 6,
+    "E3/DiseaseEnhancer/llama3.1_8b_ragapi_C2": 6,
+    "E3/DiseaseEnhancer/llama3.1_8b_ragapi_C3": 6,
+    "E3/FANTOM5/gpt-4o_legacy": 6,
+    "E3/FANTOM5/gpt-4o_ragapi": 6,
+    "E3/FANTOM5/llama3.1_8b_legacy": 9,
+    "E3/FANTOM5/llama3.1_8b_ragapi": 6,
+    "E3/FANTOM5/llama3.1_8b_ragapi_C1": 6,
+    "E3/FANTOM5/llama3.1_8b_ragapi_C2": 6,
+    "E3/FANTOM5/llama3.1_8b_ragapi_C3": 6,
+    "E3/HACER/gpt-4o_legacy": 6,
+    "E3/HACER/gpt-4o_ragapi": 6,
+    "E3/HACER/llama3.1_8b_legacy": 9,
+    "E3/HACER/llama3.1_8b_ragapi": 6,
+    "E3/HACER/llama3.1_8b_ragapi_C1": 6,
+    "E3/HACER/llama3.1_8b_ragapi_C2": 6,
+    "E3/HACER/llama3.1_8b_ragapi_C3": 6,
+    "E3/dbSUPER/gpt-4o_legacy": 6,
+    "E3/dbSUPER/gpt-4o_ragapi": 6,
+    "E3/dbSUPER/llama3.1_8b_legacy": 9,
+    "E3/dbSUPER/llama3.1_8b_ragapi": 6,
+    "E3/dbSUPER/llama3.1_8b_ragapi_C1": 6,
+    "E3/dbSUPER/llama3.1_8b_ragapi_C2": 6,
+    "E3/dbSUPER/llama3.1_8b_ragapi_C3": 6,
+    "E4/DiseaseEnhancer/llama3.1_8b": 3,
+    "E4/FANTOM5/gpt-4o_A_head": 2,
+    "E4/FANTOM5/gpt-4o_B_random": 2,
+    "E4/FANTOM5/gpt-4o_C_stratified": 2,
+    "E4/FANTOM5/gpt-4o_D_diversity": 2,
+    "E4/FANTOM5/llama3.1_8b": 3,
+    "E4/HACER/llama3.1_8b": 3,
+    "E4/dbSUPER/gpt-4o_A_head": 2,
+    "E4/dbSUPER/gpt-4o_B_random": 2,
+    "E4/dbSUPER/gpt-4o_C_stratified": 2,
+    "E4/dbSUPER/gpt-4o_D_diversity": 2,
+    "E4/dbSUPER/llama3.1_8b": 3
+  }
+}

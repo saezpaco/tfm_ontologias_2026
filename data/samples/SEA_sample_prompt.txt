@@ -1,0 +1,36 @@
+# Base de datos: SEA
+# Descripción: Super-Enhancer Archive
+# Fuente: http://sea.edbc.org/
+# Dimensiones totales: [ver informe de exploración]
+# Número de columnas: 30
+# Filas en esta muestra: 25
+
+# MUESTRA DE DATOS (formato TSV):
+# Nota: '-' indica valor no disponible
+
+crm_ID	orig_chr	orig_start	orig_end	orig_assembly	current_chr	current_start	current_end	current_assembly	minimum_ratio	score	original_ID	crossref	enh_PMID	biosample_name	enh_method	type	source	hgnc_symbol_target_genes	enh2gene_PMID	enh2gene_method	hgnc_symbol_TFs	TFs2enh_PMID	TFs2enh_method	disease	disease_PMID	disease_method	refseq_ID	mutation_PMID	mutation_method
+CRMHS00000006211	chr1	10494291	10531818	hg38	chr1	10494291	10531818	hg38	-	-	1024896	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1024896	31667506	mammary_epithelial_cells	h3k27ac	SE	SEA	PEX14	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000006498	chr1	111718910	111746468	hg38	chr1	111718910	111746468	hg38	-	-	1442767	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1442767	31667506	Right_Atrium	h3k27ac	SE	SEA	INKA2	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000007302	chr1	150144689	150164550	hg38	chr1	150144689	150164550	hg38	-	-	1243529	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1243529	31667506	Ovary	h3k27ac	SE	SEA	PLEKHO1	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000011005	chr1	230119133	230161979	hg38	chr1	230119133	230161979	hg38	-	-	855850	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=855850	31667506	K562	h3k27ac	SE	SEA	GALNT2	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000011393	chr1	235902757	235954849	hg38	chr1	235902757	235954849	hg38	-	-	1024451	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1024451	31667506	mammary_epithelial_cells	h3k27ac	SE	SEA	MIR1537	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000735993	chr12	125080785	125082021	hg38	chr12	125080785	125082021	hg38	-	-	498190	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=498190	31667506	DOHH2	h3k27ac	E	SEA	AACS	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000744434	chr3	43752438	43775695	hg38	chr3	43752438	43775695	hg38	-	-	1759176	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1759176	31667506	thyroid_gland	h3k27ac	E	SEA	ABHD5	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000736643	chr15	67270325	67270431	hg38	chr15	67270325	67270431	hg38	-	-	1089706	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1089706	31667506	Mobilized_CD34_cells	h3k27ac	E	SEA	AAGAB	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000740293	chr16	16340514	16341787	hg38	chr16	16340514	16341787	hg38	-	-	1037059	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1037059	31667506	mammary_epithelial_cells	h3k27ac	E	SEA	ABCC1	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000738820	chr1	94090824	94097929	hg38	chr1	94090824	94097929	hg38	-	-	1444419	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1444419	31667506	Right_Atrium	h3k27ac	E	SEA	ABCA4	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000741584	chr16	14731568	14747649	hg38	chr16	14731568	14747649	hg38	-	-	15391	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=15391	31667506	A549	h3k27ac	E	SEA	ABCC6P2	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000740280	chr16	15951925	15977277	hg38	chr16	15951925	15977277	hg38	-	-	994647	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=994647	31667506	Lung	h3k27ac	E	SEA	ABCC1	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000735514	chr1	33300625	33301798	hg38	chr1	33300625	33301798	hg38	-	-	1772944	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1772944	31667506	thyroid_gland	h3k27ac	E	SEA	A3GALT2	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000736995	chr2	218273062	218273482	hg38	chr2	218273062	218273482	hg38	-	-	1739237	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=1739237	31667506	thoracic_aorta	h3k27ac	E	SEA	AAMP	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000740192	chr16	15951930	16022881	hg38	chr16	15951930	16022881	hg38	-	-	730252	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=730252	31667506	Heart_Right_Ventricle	h3k27ac	E	SEA	ABCC1	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000734741	chr2	93159005	93192566	hg38	chr2	93159005	93192566	hg38	-	-	2279703	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=2279703	31667506	GM15850 LCLs (FRDA)	BRD4	SE	SEA	-	-	-	-	-	-	-	-	-	-	-	-
+CRMHS00000744226	chr3	43851676	43874131	hg38	chr3	43851676	43874131	hg38	-	-	137266	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=137266	31667506	Astrocytes	h3k27ac	SE	SEA	ABHD5	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000734609	chr1	125173486	125184683	hg38	chr1	125173486	125184683	hg38	-	-	2277949	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=2277949	31667506	MDAMB231	BRD4	SE	SEA	-	-	-	-	-	-	-	-	-	-	-	-
+CRMHS00000734598	chr5	47791461	47803493	hg38	chr5	47791461	47803493	hg38	-	-	2276591	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=2276591	31667506	ST1	BRD4	SE	SEA	-	-	-	-	-	-	-	-	-	-	-	-
+CRMHS00000742490	chr21	42227195	42239179	hg38	chr21	42227195	42239179	hg38	-	-	442674	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=442674	31667506	CD8_Primary_Cells	h3k27ac	SE	SEA	ABCG1	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000743798	chr15	89125396	89144746	hg38	chr15	89125396	89144746	hg38	-	-	117207	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=117207	31667506	ascending_aorta	h3k27ac	SE	SEA	ABHD2	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000045937	chr2	27001690	27021023	hg38	chr2	27001690	27021023	hg38	-	-	855941	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=855941	31667506	K562	h3k27ac	SE	SEA	-	-	-	-	-	-	-	-	-	-	-	-
+CRMHS00000734822	chr8	45329381	45387753	hg38	chr8	45329381	45387753	hg38	-	-	2279985	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=2279985	31667506	MOLT4	BRD4	SE	SEA	-	-	-	-	-	-	-	-	-	-	-	-
+CRMHS00000741938	chr12	21878753	21907636	hg38	chr12	21878753	21907636	hg38	-	-	612695	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=612695	31667506	gastrocnemius_medialis	h3k27ac	SE	SEA	ABCC9	31667506	closest	-	-	-	-	-	-	-	-	-
+CRMHS00000735532	chr22	42742145	42756620	hg38	chr22	42742145	42756620	hg38	-	-	63254	http://218.8.241.248:8080/SEA3/DetailInfoAction?species=Human&SEID=63254	31667506	adult_dermal_fibroblasts	h3k27ac	SE	SEA	A4GALT	31667506	closest	-	-	-	-	-	-	-	-	-

@@ -308,14 +308,17 @@ async def run_all(databases: list[str],
                   base_seed: int,
                   skip_mapping: bool,
                   mapping_extension: str,
-                  num_ctx: int | None = None) -> None:
+                  num_ctx: int | None = None,
+                  csv_dir: Path | None = None,
+                  results_suffix: str = "") -> None:
     # Carpeta sanitizada (elimina sufijos OpenAI y reemplaza ':' / '/' para
     # que sea válida en Mac/Linux). p.ej. "llama3.1:8b" → "llama3.1_8b".
     model_tag = (api_model.replace("-2024-05-13", "")
                           .replace(":", "_")
-                          .replace("/", "_"))
+                          .replace("/", "_")) + results_suffix
+    csv_input_dir = csv_dir if csv_dir else CSV_INPUT_DIR
     for db in databases:
-        csv_path = CSV_INPUT_DIR / f"{db}.csv"
+        csv_path = csv_input_dir / f"{db}.csv"
         if not csv_path.exists():
             print(f"[WARN] No existe CSV {csv_path}, salto {db}")
             continue
@@ -378,7 +381,24 @@ def parse_args():
                         "Ollama. Default 32768 (necesario para evitar "
                         "truncamiento del prompt del OntoMapper, que llega "
                         "a ~45k tokens). Solo afecta a Ollama")
+    p.add_argument("--csv-dir", type=Path, default=None,
+                   help="Directorio alternativo donde están los CSV "
+                        "(para análisis de sensibilidad al muestreo). "
+                        "Default: data/csv_for_ontogenix/")
+    p.add_argument("--results-suffix", type=str, default="",
+                   help="Sufijo para la carpeta de resultados, "
+                        "p.ej. '_strategyA'. Útil cuando se comparan "
+                        "varias estrategias de muestreo")
     return p.parse_args()
+
+def _resolve_user_path(p: Path | None) -> Path | None:
+    """Resuelve una ruta del CLI (tras el os.chdir(OntoGenix) inicial).
+    Si es absoluta se devuelve tal cual; si es relativa, se interpreta
+    como relativa al PROJECT_ROOT, NO al cwd actual."""
+    if p is None:
+        return None
+    return p.resolve() if p.is_absolute() else (PROJECT_ROOT / p).resolve()
+
 
 def main():
     args = parse_args()
@@ -403,6 +423,11 @@ def main():
         skip_mapping=args.skip_mapping,
         mapping_extension=args.mapping_extension,
         num_ctx=args.num_ctx,
+        # Resolvemos a absoluto: el script hace os.chdir(OntoGenix) al inicio,
+        # por lo que cualquier ruta relativa pasada por CLI se rompería tras
+        # el chdir. Aceptamos rutas absolutas y rutas relativas al PROJECT_ROOT.
+        csv_dir=_resolve_user_path(args.csv_dir),
+        results_suffix=args.results_suffix,
     ))
 
 if __name__ == "__main__":

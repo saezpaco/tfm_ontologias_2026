@@ -10,3 +10,9 @@ python-dotenv>=1.0
 python-dateutil>=2.8
 serpapi>=0.1         # LlmPlanner instancia Searcher aunque no lo usemos
 rdflib>=6.3          # solo para evaluate_E4_vs_E1-E3.py
+
+# Cliente HTTP del backend RAGannotationAPI (E3 con RAG real).
+# El servicio en sí (Neo4j + sentence-transformers + FastAPI) se levanta
+# desde el repo /Users/franciscosaez/Documents/RAGannotationAPI; aquí solo
+# necesitamos el cliente HTTP.
+requests>=2.31

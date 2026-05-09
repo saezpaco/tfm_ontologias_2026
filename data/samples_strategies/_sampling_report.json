@@ -1,0 +1,150 @@
+[
+  {
+    "strategy": "A_head",
+    "db": "FANTOM5",
+    "n_universe": 65423,
+    "n_sample": 25,
+    "stratify_column": "chrom",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 24,
+        "unique_in_sample": 1,
+        "coverage_ratio": 0.042
+      }
+    },
+    "csv_path": "data/samples_strategies/A_head/FANTOM5.csv",
+    "txt_path": "data/samples_strategies/A_head/FANTOM5_sample_prompt.txt"
+  },
+  {
+    "strategy": "B_random",
+    "db": "FANTOM5",
+    "n_universe": 65423,
+    "n_sample": 25,
+    "stratify_column": "chrom",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 24,
+        "unique_in_sample": 15,
+        "coverage_ratio": 0.625
+      }
+    },
+    "csv_path": "data/samples_strategies/B_random/FANTOM5.csv",
+    "txt_path": "data/samples_strategies/B_random/FANTOM5_sample_prompt.txt"
+  },
+  {
+    "strategy": "C_stratified",
+    "db": "FANTOM5",
+    "n_universe": 65423,
+    "n_sample": 25,
+    "stratify_column": "chrom",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 24,
+        "unique_in_sample": 24,
+        "coverage_ratio": 1.0
+      }
+    },
+    "csv_path": "data/samples_strategies/C_stratified/FANTOM5.csv",
+    "txt_path": "data/samples_strategies/C_stratified/FANTOM5_sample_prompt.txt"
+  },
+  {
+    "strategy": "D_diversity",
+    "db": "FANTOM5",
+    "n_universe": 65423,
+    "n_sample": 25,
+    "stratify_column": "chrom",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 24,
+        "unique_in_sample": 24,
+        "coverage_ratio": 1.0
+      }
+    },
+    "csv_path": "data/samples_strategies/D_diversity/FANTOM5.csv",
+    "txt_path": "data/samples_strategies/D_diversity/FANTOM5_sample_prompt.txt"
+  },
+  {
+    "strategy": "A_head",
+    "db": "dbSUPER",
+    "n_universe": 69205,
+    "n_sample": 25,
+    "stratify_column": "cell_name",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 23,
+        "unique_in_sample": 14,
+        "coverage_ratio": 0.609
+      },
+      "cell_name": {
+        "unique_in_universe": 102,
+        "unique_in_sample": 1,
+        "coverage_ratio": 0.01
+      }
+    },
+    "csv_path": "data/samples_strategies/A_head/dbSUPER.csv",
+    "txt_path": "data/samples_strategies/A_head/dbSUPER_sample_prompt.txt"
+  },
+  {
+    "strategy": "B_random",
+    "db": "dbSUPER",
+    "n_universe": 69205,
+    "n_sample": 25,
+    "stratify_column": "cell_name",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 23,
+        "unique_in_sample": 14,
+        "coverage_ratio": 0.609
+      },
+      "cell_name": {
+        "unique_in_universe": 102,
+        "unique_in_sample": 22,
+        "coverage_ratio": 0.216
+      }
+    },
+    "csv_path": "data/samples_strategies/B_random/dbSUPER.csv",
+    "txt_path": "data/samples_strategies/B_random/dbSUPER_sample_prompt.txt"
+  },
+  {
+    "strategy": "C_stratified",
+    "db": "dbSUPER",
+    "n_universe": 69205,
+    "n_sample": 25,
+    "stratify_column": "cell_name",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 23,
+        "unique_in_sample": 15,
+        "coverage_ratio": 0.652
+      },
+      "cell_name": {
+        "unique_in_universe": 102,
+        "unique_in_sample": 25,
+        "coverage_ratio": 0.245
+      }
+    },
+    "csv_path": "data/samples_strategies/C_stratified/dbSUPER.csv",
+    "txt_path": "data/samples_strategies/C_stratified/dbSUPER_sample_prompt.txt"
+  },
+  {
+    "strategy": "D_diversity",
+    "db": "dbSUPER",
+    "n_universe": 69205,
+    "n_sample": 25,
+    "stratify_column": "cell_name",
+    "coverage": {
+      "chrom": {
+        "unique_in_universe": 23,
+        "unique_in_sample": 23,
+        "coverage_ratio": 1.0
+      },
+      "cell_name": {
+        "unique_in_universe": 102,
+        "unique_in_sample": 25,
+        "coverage_ratio": 0.245
+      }
+    },
+    "csv_path": "data/samples_strategies/D_diversity/dbSUPER.csv",
+    "txt_path": "data/samples_strategies/D_diversity/dbSUPER_sample_prompt.txt"
+  }
+]

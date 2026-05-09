@@ -36,6 +36,7 @@ from datetime import datetime
 
 # ─── Añadir scripts/ al path ─────────────────────────────────────────────────
 sys.path.insert(0, str(Path(__file__).parent))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 from config import (DATABASES, SCHEMAS, SCHEMA_EXAMPLES, LLM_MODELS,
                     GENERATION_PARAMS, EXPERIMENTS, PATHS, N_REPETITIONS)
@@ -161,9 +162,18 @@ Output ONLY valid Turtle code. No explanations, no markdown code blocks."""
 
 # ─── Funciones de carga ───────────────────────────────────────────────────────
 
+# Override global del directorio de muestras (se setea desde main() a partir
+# del flag --samples-dir). None = usar PATHS["samples"] por defecto.
+SAMPLES_DIR_OVERRIDE: Path | None = None
+# Sufijo opcional para carpetas de resultados, p.ej. "_strategyA"
+RESULTS_SUFFIX: str = ""
+
+
 def load_sample(db_name: str) -> str | None:
-    """Carga la muestra de datos para el prompt."""
-    sample_path = PATHS["samples"] / f"{db_name}_sample_prompt.txt"
+    """Carga la muestra de datos para el prompt. Si SAMPLES_DIR_OVERRIDE
+    está definido, lee de allí; si no, del PATHS["samples"] por defecto."""
+    base = SAMPLES_DIR_OVERRIDE if SAMPLES_DIR_OVERRIDE else PATHS["samples"]
+    sample_path = base / f"{db_name}_sample_prompt.txt"
     if sample_path.exists():
         return sample_path.read_text(encoding='utf-8')
     print(f"  ⚠️  Muestra no encontrada: {sample_path}")
@@ -205,8 +215,37 @@ def load_vocabulary() -> str:
     return result
 
 
-def get_rag_fragments(db_name: str) -> str:
-    """Selecciona fragmentos relevantes de la ontología cisreg para el RAG."""
+# ─── RAG: backend seleccionable (api / legacy / auto) ────────────────────────
+#
+# - "legacy" : keyword-match estático sobre data/samples/schemas/*.txt
+#              (la implementación original del TFM)
+# - "api"    : delega en RAGannotationAPI (FastAPI + Neo4j vector index +
+#              sentence-transformers). Ver scripts/rag_backend.py
+# - "auto"   : intenta "api"; si la API no responde, cae a "legacy" con un
+#              warning. Es el modo recomendado: prioriza el RAG real pero
+#              no rompe ejecuciones offline.
+#
+# La selección se hace via CLI (--rag-backend) o variable de entorno
+# RAG_BACKEND. Default: "auto".
+
+RAG_BACKEND: str = os.environ.get("RAG_BACKEND", "auto")
+
+# Parámetros de calibración del RAG (overridables por --rag-top-k etc.).
+# Default None significa "usar el default del cliente / variable de entorno".
+RAG_TOP_K_OVERRIDE:    int | None   = None
+RAG_SCORE_THR_OVERRIDE: float | None = None
+RAG_MAX_CHARS_OVERRIDE: int | None  = None
+
+# Cache del cliente (lazy-init) para no abrir conexiones por cada llamada
+_RAG_CLIENT_CACHE: dict[str, object] = {}
+
+
+def _legacy_rag_fragments(db_name: str) -> str:
+    """RAG legacy: keyword-match sobre 4 esquemas Turtle estáticos.
+
+    Mantiene la implementación original como fallback determinista.
+    Es la firma que estaba en producción antes de la integración de
+    RAGannotationAPI (commit del 23-mar-2026)."""
     selected = []
     priority = ["crm"]  # Base siempre
 
@@ -229,6 +268,77 @@ def get_rag_fragments(db_name: str) -> str:
     if len(result) > 5000:
         result = result[:5000] + "\n# [truncado por límite de contexto]"
     return result
+
+
+def _api_rag_fragments(db_name: str) -> tuple[str, bool]:
+    """RAG via RAGannotationAPI. Devuelve (contexto, ok).
+
+    Usa los overrides RAG_TOP_K_OVERRIDE / RAG_SCORE_THR_OVERRIDE /
+    RAG_MAX_CHARS_OVERRIDE si están definidos (calibración del §10.7.7).
+
+    ok=True si la API respondió y devolvió matches (puede ser un set
+    vacío pero la API funciona); ok=False si la API es inalcanzable."""
+    try:
+        from rag_backend import RAGAnnotationClient, DEFAULT_MAX_CHARS  # noqa: WPS433
+    except ImportError as e:
+        print(f"  ⚠️  rag_backend no disponible ({e}); usando legacy.")
+        return "", False
+
+    # Cache key incluye los overrides para no reusar un cliente con otra config
+    cache_key = (RAG_TOP_K_OVERRIDE, RAG_SCORE_THR_OVERRIDE)
+    client = _RAG_CLIENT_CACHE.get(cache_key)                       # type: ignore[arg-type]
+    if client is None:
+        client = RAGAnnotationClient(
+            top_k=RAG_TOP_K_OVERRIDE,
+            score_threshold=RAG_SCORE_THR_OVERRIDE,
+        )
+        _RAG_CLIENT_CACHE[cache_key] = client                       # type: ignore[index]
+
+    if not client.is_available():                                   # type: ignore[union-attr]
+        return "", False
+
+    sample_text = load_sample(db_name) or ""
+    if not sample_text.strip():
+        return "# [muestra vacía para RAG]", True
+    rag_result = client.retrieve_context(                           # type: ignore[union-attr]
+        sample_text, db_name=db_name,
+        top_k=RAG_TOP_K_OVERRIDE,
+        score_threshold=RAG_SCORE_THR_OVERRIDE,
+    )
+    max_chars = RAG_MAX_CHARS_OVERRIDE if RAG_MAX_CHARS_OVERRIDE \
+        else DEFAULT_MAX_CHARS
+    if rag_result.error and not (rag_result.ontologies or rag_result.mappings):
+        # API responde pero no devuelve nada útil → mejor caer a legacy
+        return rag_result.to_prompt_context(max_chars=max_chars), False
+    return rag_result.to_prompt_context(max_chars=max_chars), True
+
+
+def get_rag_fragments(db_name: str) -> str:
+    """Selecciona fragmentos de contexto RAG según el backend configurado.
+
+    Despachador entre los dos backends:
+      - RAG_BACKEND='legacy' → keyword-match
+      - RAG_BACKEND='api'    → RAGannotationAPI (errores se propagan)
+      - RAG_BACKEND='auto'   → intenta API y cae a legacy si no responde
+    """
+    backend = (RAG_BACKEND or "auto").lower()
+
+    if backend == "legacy":
+        return _legacy_rag_fragments(db_name)
+
+    if backend == "api":
+        ctx, ok = _api_rag_fragments(db_name)
+        if not ok:
+            print(f"  ⚠️  RAG API falló y RAG_BACKEND='api' (fail-fast). "
+                  f"Devolviendo respuesta vacía con detalle del error.")
+        return ctx
+
+    # backend == "auto" (default)
+    ctx, ok = _api_rag_fragments(db_name)
+    if ok:
+        return ctx
+    print(f"  ℹ️  RAG API no disponible para {db_name}, fallback al legacy.")
+    return _legacy_rag_fragments(db_name)
 
 
 # ─── Llamada a la API de OpenAI ───────────────────────────────────────────────
@@ -409,7 +519,7 @@ def run_single(experiment: str, db_name: str, model_name: str,
                run_number: int, api_key: str, dry_run: bool = False) -> dict:
     """Ejecuta un único experimento y guarda los resultados."""
     exp_config = EXPERIMENTS[experiment]
-    safe_model = model_name.replace(':', '_').replace('/', '_')
+    safe_model = model_name.replace(':', '_').replace('/', '_') + RESULTS_SUFFIX
     output_dir = PATHS["results"] / experiment / db_name / safe_model
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -524,7 +634,7 @@ def run_batch(experiment: str, db_names: list[str], model_name: str,
 
         if not dry_run:
             # Resumen por BD
-            safe_model = model_name.replace(':', '_').replace('/', '_')
+            safe_model = model_name.replace(':', '_').replace('/', '_') + RESULTS_SUFFIX
             out_dir = PATHS["results"] / experiment / db_name / safe_model
             summary = {
                 "experiment": experiment,
@@ -615,6 +725,36 @@ Configurar API key con archivo .env (en carpeta TFM/):
                         help='Base(s) de datos (default: dbSUPER)')
     parser.add_argument('--n-runs',    type=int,  default=1,
                         help='Repeticiones por experimento/BD (default: 1)')
+    parser.add_argument('--samples-dir', type=str, default=None,
+                        help='Directorio alternativo donde están los '
+                             '*_sample_prompt.txt (para análisis de '
+                             'sensibilidad al muestreo). Por defecto: '
+                             'data/samples/')
+    parser.add_argument('--results-suffix', type=str, default='',
+                        help='Sufijo para la carpeta de resultados, '
+                             'p.ej. "_strategyA". Útil cuando se '
+                             'comparan varias estrategias de muestreo')
+    parser.add_argument('--rag-backend', type=str, default=None,
+                        choices=['auto', 'api', 'legacy'],
+                        help='Backend RAG a usar en E3. '
+                             '"api"=RAGannotationAPI (FastAPI+Neo4j), '
+                             '"legacy"=keyword-match estático original, '
+                             '"auto"=intenta API y cae a legacy. '
+                             'También configurable con env RAG_BACKEND. '
+                             'Default: auto')
+    parser.add_argument('--rag-top-k', type=int, default=None,
+                        help='Nº de ontologías recuperadas por la API '
+                             'RAG (solo aplica con --rag-backend api). '
+                             'Default: 5 (env RAG_TOP_K)')
+    parser.add_argument('--rag-score-thr', type=float, default=None,
+                        help='Umbral de similitud para mantener matches '
+                             'del RAG semántico (0.0-1.0). Default: 0.4 '
+                             '(env RAG_SCORE_THR)')
+    parser.add_argument('--rag-max-chars', type=int, default=None,
+                        help='Tamaño máximo del bloque de contexto '
+                             'inyectado en el prompt E3. Default: 5000 '
+                             '(env RAG_MAX_CHARS). Reducirlo evita '
+                             'saturar la ventana de modelos compactos')
     parser.add_argument('--dry-run',   action='store_true',
                         help='Construir prompts sin llamar a la API')
     args = parser.parse_args()
@@ -624,10 +764,42 @@ Configurar API key con archivo .env (en carpeta TFM/):
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("="*65)
 
+    # ── Override de directorio de muestras (análisis de sensibilidad) ────────
+    global SAMPLES_DIR_OVERRIDE, RESULTS_SUFFIX, RAG_BACKEND
+    global RAG_TOP_K_OVERRIDE, RAG_SCORE_THR_OVERRIDE, RAG_MAX_CHARS_OVERRIDE
+    if args.rag_backend:
+        RAG_BACKEND = args.rag_backend
+        print(f"  🔎 RAG backend:        {RAG_BACKEND}")
+    else:
+        print(f"  🔎 RAG backend:        {RAG_BACKEND}  (env / default)")
+    if args.rag_top_k is not None:
+        RAG_TOP_K_OVERRIDE = args.rag_top_k
+        print(f"  🔎 RAG top_k:          {RAG_TOP_K_OVERRIDE}")
+    if args.rag_score_thr is not None:
+        RAG_SCORE_THR_OVERRIDE = args.rag_score_thr
+        print(f"  🔎 RAG score_thr:      {RAG_SCORE_THR_OVERRIDE}")
+    if args.rag_max_chars is not None:
+        RAG_MAX_CHARS_OVERRIDE = args.rag_max_chars
+        print(f"  🔎 RAG max_chars:      {RAG_MAX_CHARS_OVERRIDE}")
+    if args.samples_dir:
+        # Aceptamos rutas absolutas o relativas (relativas se interpretan
+        # respecto al PROJECT_ROOT, no al cwd actual, para que funcione
+        # ejecutando el script desde cualquier sitio).
+        p = Path(args.samples_dir)
+        SAMPLES_DIR_OVERRIDE = (p.resolve() if p.is_absolute()
+                                 else (PROJECT_ROOT / p).resolve())
+        if not SAMPLES_DIR_OVERRIDE.is_dir():
+            sys.exit(f"  ❌ --samples-dir no es directorio: {SAMPLES_DIR_OVERRIDE}")
+        print(f"  📁 Samples dir override: {SAMPLES_DIR_OVERRIDE}")
+    if args.results_suffix:
+        RESULTS_SUFFIX = args.results_suffix
+        print(f"  📁 Results suffix:     {RESULTS_SUFFIX}")
+
     # ── Selección de BDs ──────────────────────────────────────────────────────
+    samples_base = SAMPLES_DIR_OVERRIDE or PATHS["samples"]
     if args.db == 'all':
         db_names = [db for db in DATABASES.keys()
-                    if (PATHS["samples"] / f"{db}_sample_prompt.txt").exists()]
+                    if (samples_base / f"{db}_sample_prompt.txt").exists()]
     else:
         db_names = [args.db]
 
