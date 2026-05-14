@@ -1,0 +1,59 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/human_cisreg_module> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/human_gene> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_ncbigene: <https://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://purl.uniprot.org/databases/supernova/> .
+
+# Classes
+hcrm:CisRegModule a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CisRegModule .
+
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super-enhancer" ;
+    skos:closeMatch crm2pgene:SuperEnhancer .
+
+hgene:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch hgene:Gene .
+
+# Properties
+dbsuper:start a rdf:Property ;
+    rdfs:label "Start coordinate" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:int .
+
+dbsuper:stop a rdf:Property ;
+    rdfs:label "Stop coordinate" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:int .
+
+hcrm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "Has target gene" ;
+    rdfs:domain hcrm:CisRegModule ;
+    rdfs:range hgene:Gene .
+
+# Individuals
+SE_00001 a dbsuper:SuperEnhancer ;
+    dbsuper:start 120485363 ;
+    dbsuper:stop 120615071 ;
+    hcrm:hasTargetGene NOTCH2 .
+
+SE_00002 a dbsuper:SuperEnhancer ;
+    dbsuper:start 110838836 ;
+    dbsuper:stop 111112228 ;
+    hcrm:hasTargetGene COL4A2 .

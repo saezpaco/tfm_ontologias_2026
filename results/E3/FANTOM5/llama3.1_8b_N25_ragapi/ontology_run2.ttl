@@ -1,0 +1,63 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+  rdfs:label "Cis-Regulatory Module" .
+
+hcrm:EnhancerSequence a owl:Class ;
+  rdfs:label "Enhancer Sequence" ;
+  rdfs:subClassOf hcrm:CisRegulatoryModule .
+
+hcrm:GenomicCoordinate a owl:Class ;
+  rdfs:label "Genomic Coordinate" .
+
+# Properties
+hcrm:hasEnhancerSequence a owl:ObjectProperty ;
+  rdfs:label "Has Enhancer Sequence" ;
+  rdfs:domain hcrm:CisRegulatoryModule ;
+  rdfs:range hcrm:EnhancerSequence .
+
+hcrm:hasGenomicCoordinate a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate" ;
+  rdfs:domain hcrm:CisRegulatoryModule ;
+  rdfs:range hcrm:GenomicCoordinate .
+
+# Alignments
+hcrm:CisRegulatoryModule skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> .
+hcrm:EnhancerSequence skos:closeMatch <https://schema.org/Country> .
+hcrm:GenomicCoordinate skos:exactMatch <http://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26> .
+
+# New classes and properties
+hcrm:CAGESeqEvidence a owl:Class ;
+  rdfs:label "CAGE-Seq Evidence" ;
+  rdfs:subClassOf hcrm:CisRegulatoryModule .
+
+hcrm:CellLineActivity a owl:Class ;
+  rdfs:label "Cell Line Activity" ;
+  rdfs:subClassOf hcrm:CisRegulatoryModule .
+
+# Alignments for new classes
+hcrm:CAGESeqEvidence skos:closeMatch <https://fantom.gsc.riken.jp/5/> .
+hcrm:CellLineActivity skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+# Object properties for new classes
+hcrm:hasCAGESeqEvidence a owl:ObjectProperty ;
+  rdfs:label "Has CAGE-Seq Evidence" ;
+  rdfs:domain hcrm:CisRegulatoryModule ;
+  rdfs:range hcrm:CAGESeqEvidence .
+
+hcrm:hasCellLineActivity a owl:ObjectProperty ;
+  rdfs:label "Has Cell Line Activity" ;
+  rdfs:domain hcrm:CisRegulatoryModule ;
+  rdfs:range hcrm:CellLineActivity .

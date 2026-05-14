@@ -1,0 +1,93 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+hcrm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+### Properties ###
+:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+:hasActivityScore a owl:DatatypeProperty ;
+    rdfs:label "has activity score" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:integer .
+
+:hasExpressionLevel a owl:DatatypeProperty ;
+    rdfs:label "has expression level" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:float .
+
+### Individuals ###
+<http://example.org/enhancer/chr1:839741-840250> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:839741-840250" ;
+    :hasActivityScore 24 ;
+    :hasExpressionLevel 0.73 .
+
+<http://example.org/enhancer/chr1:840753-841210> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:840753-841210" ;
+    :hasActivityScore 32 ;
+    :hasExpressionLevel 0.110 .
+
+<http://example.org/enhancer/chr1:845485-845678> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:845485-845678" ;
+    :hasActivityScore 2 ;
+    :hasExpressionLevel 0.192 .
+
+<http://example.org/enhancer/chr1:855764-856157> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:855764-856157" ;
+    :hasActivityScore 2 ;
+    :hasExpressionLevel 0.183 .
+
+<http://example.org/enhancer/chr1:856539-856757> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:856539-856757" ;
+    :hasActivityScore 2 ;
+    :hasExpressionLevel 0.203 .
+
+<http://example.org/enhancer/chr1:858256-858648> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:858256-858648" ;
+    :hasActivityScore 5 ;
+    :hasExpressionLevel 0.382 .
+
+<http://example.org/enhancer/chr1:868565-868684> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:868565-868684" ;
+    :hasActivityScore 2 ;
+    :hasExpressionLevel 0.118 .
+
+<http://example.org/enhancer/chr1:918449-918555> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:918449-918555" ;
+    :hasActivityScore 18 ;
+    :hasExpressionLevel 0.105 .
+
+<http://example.org/enhancer/chr1:936652-937138> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:936652-937138" ;
+    :hasActivityScore 7 ;
+    :hasExpressionLevel 0.225 .
+
+<http://example.org/enhancer/chr1:941791-942135> a hcrm:Enhancer ;
+    :hasGenomicCoordinate "chr1:941791-942135" ;
+    :hasActivityScore 2 ;
+    :hasExpressionLevel 0.343 .

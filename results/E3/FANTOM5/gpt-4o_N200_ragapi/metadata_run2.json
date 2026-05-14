@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-05-11T21:09:16.326587",
+  "success": true,
+  "elapsed_seconds": 114.59,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 11301,
+    "completion_tokens": 710,
+    "total_tokens": 12011
+  },
+  "prompt_tokens_estimate": 5249,
+  "response_chars": 2164,
+  "turtle_chars": 2150,
+  "validation": {
+    "valid": true,
+    "n_triples": 32,
+    "n_classes": 2,
+    "n_properties": 4
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_N200_ragapi/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_N200_ragapi/response_raw_run2.txt"
+  }
+}

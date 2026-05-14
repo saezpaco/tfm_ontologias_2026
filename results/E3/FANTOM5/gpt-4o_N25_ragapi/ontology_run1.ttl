@@ -1,0 +1,59 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+
+# Ontology Declaration
+<http://example.org/fantom5> rdf:type owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+# Classes
+<http://example.org/fantom5/Enhancer> rdf:type owl:Class ;
+    rdfs:subClassOf biolink:SequenceFeature ;
+    skos:exactMatch hcrm:9606CRMHS00000003515 ;
+    rdfs:label "Enhancer" .
+
+<http://example.org/fantom5/GenomicLocation> rdf:type owl:Class ;
+    rdfs:subClassOf biolink:GenomicEntity ;
+    rdfs:label "Genomic Location" .
+
+# Properties
+<http://example.org/fantom5/hasGenomicLocation> rdf:type owl:ObjectProperty ;
+    rdfs:domain <http://example.org/fantom5/Enhancer> ;
+    rdfs:range <http://example.org/fantom5/GenomicLocation> ;
+    rdfs:label "has genomic location" .
+
+<http://example.org/fantom5/hasChromosome> rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/fantom5/GenomicLocation> ;
+    rdfs:range xsd:string ;
+    rdfs:label "has chromosome" .
+
+<http://example.org/fantom5/hasStart> rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/fantom5/GenomicLocation> ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has start position" .
+
+<http://example.org/fantom5/hasEnd> rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/fantom5/GenomicLocation> ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has end position" .
+
+# Sample Data Instances
+<http://example.org/fantom5/enhancer1> rdf:type <http://example.org/fantom5/Enhancer> ;
+    <http://example.org/fantom5/hasGenomicLocation> <http://example.org/fantom5/location1> .
+
+<http://example.org/fantom5/location1> rdf:type <http://example.org/fantom5/GenomicLocation> ;
+    <http://example.org/fantom5/hasChromosome> "chr1" ;
+    <http://example.org/fantom5/hasStart> 839741 ;
+    <http://example.org/fantom5/hasEnd> 840250 .

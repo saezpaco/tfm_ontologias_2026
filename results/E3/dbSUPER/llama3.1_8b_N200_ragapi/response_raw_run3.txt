@@ -1,0 +1,70 @@
+Based on the provided data and requirements, I will create the Turtle code that meets all the specifications. Here is the output:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://purl.uniprot.org/databases/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+#   • ontology=crm_example  file=crm_example.ttl  score=0.631
+#   • ontology=crm  file=crm.ttl  score=0.618
+#   • ontology=crm2tfac  file=crm2tfac.ttl  score=0.611
+#   • ontology=crm2tfac_example  file=crm2tfac_example.ttl  score=0.606
+#   • ontology=crm2phen  file=crm2phen.ttl  score=0.606
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+
+# cisreg:Gene (hgene:HGNC)
+<http://purl.obolibrary.org/obo/hgnc#HGNC> a rdfs:Class ;
+    skos:exactMatch <http://www.ncbi.nlm.nih.gov/gene/> .
+
+# cisreg:Transcript (hcrm:HGNC_transcript)
+<http://purl.obolibrary.org/obo/crm2pgene#PGN_T000001> a rdfs:Class ;
+    skos:closeMatch <http://identifiers.org/ncbigene/> .
+
+# cisreg:Protein (assembly:UniProtKB)
+<http://www.uniprot.org/uniprot/> a rdfs:Class ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/hgnc#HGNC> .
+
+# cisreg:RegulatoryElement (hcrm:HGNC_regulatory_element)
+<http://purl.obolibrary.org/obo/crm2pgene#PGN_R000001> a rdfs:Class ;
+    skos:closeMatch <http://identifiers.org/pubmed/> .
+
+# cisreg:TranscriptionFactor (hgene:TF)
+<http://purl.obolibrary.org/obo/hgnc#HGNC_TF> a rdfs:Class ;
+    skos:exactMatch <http://www.ncbi.nlm.nih.gov/gene/> .
+
+# cisreg:RegulatoryRegion (assembly:RegulatoryRegion)
+<http://purl.uniprot.org/regulatoryregion/> a rdfs:Class ;
+    skos:closeMatch <http://identifiers.org/ncbigene/> .
+
+# cisreg:TranscriptionFactorBindingSite (hcrm:HGNC_transcription_factor_binding_site)
+<http://purl.obolibrary.org/obo/crm2pgene#PGN_TBS000001> a rdfs:Class ;
+    skos:closeMatch <http://identifiers.org/pubmed/> .
+
+# cisreg:RegulatoryRegion (assembly:RegulatoryRegion)
+<http://purl.uniprot.org/regulatoryregion/> a rdfs:Class ;
+    skos:closeMatch <http://identifiers.org/ncbigene/> .
+```
+
+Note that I have only included the prefixes and classes that are mentioned in the provided data. If there are any additional prefixes or classes used by the cisreg reference ontology fragments, they should be declared with their full URIs at the top of the document.
+
+Also note that I have assumed that the `cisreg:Gene` class is equivalent to `hgene:HGNC`, and similarly for other classes. This may not always be the case, and you may need to adjust the mappings accordingly.
+
+Please verify that this output meets all the requirements specified in the problem statement.

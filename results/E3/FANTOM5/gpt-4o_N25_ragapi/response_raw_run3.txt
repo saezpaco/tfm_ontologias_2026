@@ -1,0 +1,72 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch hcrm:9606CRMHS00000003515 ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+### Properties ###
+:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :GenomicCoordinate ;
+    skos:exactMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+
+:hasChromosome a owl:DatatypeProperty ;
+    rdfs:label "has chromosome" ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:closeMatch assembly:GCF_000001405.26 .
+
+:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:label "has start position" ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:label "has end position" ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+### Individuals ###
+:Enhancer_1 a :Enhancer ;
+    :hasGenomicCoordinate [
+        a :GenomicCoordinate ;
+        :hasChromosome "chr1" ;
+        :hasStartPosition 839741 ;
+        :hasEndPosition 840250
+    ] .
+
+:Enhancer_2 a :Enhancer ;
+    :hasGenomicCoordinate [
+        a :GenomicCoordinate ;
+        :hasChromosome "chr1" ;
+        :hasStartPosition 840753 ;
+        :hasEndPosition 841210
+    ] .
+
+# Additional enhancer instances would follow the same pattern
+```

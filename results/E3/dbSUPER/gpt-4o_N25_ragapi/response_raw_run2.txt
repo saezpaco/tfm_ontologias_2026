@@ -1,0 +1,76 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://example.org/ontologies/crm#> .
+@prefix crm2pgene: <http://example.org/ontologies/crm2pgene#> .
+@prefix hgene:   <http://example.org/ontologies/hgene#> .
+@prefix assembly: <http://example.org/ontologies/assembly#> .
+@prefix nuccore: <http://example.org/ontologies/nuccore#> .
+@prefix pubmed:  <http://example.org/ontologies/pubmed#> .
+@prefix id_pubmed: <http://example.org/ontologies/id_pubmed#> .
+@prefix id_ncbigene: <http://example.org/ontologies/id_ncbigene#> .
+@prefix dbsuper: <http://asntech.org/dbsuper/> .
+
+# Ontology definition
+<http://asntech.org/dbsuper/ontology> a owl:Ontology ;
+    dc:title "dbSUPER Ontology" ;
+    dc:description "Ontology for representing super-enhancers from the dbSUPER database." ;
+    dc:source <https://asntech.org/dbsuper/> .
+
+# Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:exactMatch hcrm:Enhancer .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch hgene:Gene .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:exactMatch crm2pgene:CellLine .
+
+# Properties
+dbsuper:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    skos:exactMatch hcrm:hasGenomicCoordinate .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:activeInCellLine a owl:ObjectProperty ;
+    rdfs:label "active in cell line" ;
+    skos:exactMatch crm2pgene:activeInCellLine .
+
+dbsuper:hasRank a owl:DatatypeProperty ;
+    rdfs:label "has rank" ;
+    rdfs:range xsd:integer .
+
+# Individuals
+dbsuper:SE_00001 a dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinate [ a hcrm:GenomicCoordinate ;
+        hcrm:chromosome "chr1" ;
+        hcrm:start 120485363 ;
+        hcrm:stop 120615071 ] ;
+    dbsuper:targetsGene dbsuper:NOTCH2 ;
+    dbsuper:activeInCellLine dbsuper:AdiposeNuclei ;
+    dbsuper:hasRank 1 .
+
+dbsuper:NOTCH2 a dbsuper:Gene ;
+    rdfs:label "NOTCH2" ;
+    skos:exactMatch id_ncbigene:4851 .
+
+dbsuper:AdiposeNuclei a dbsuper:CellLine ;
+    rdfs:label "Adipose Nuclei" .
+
+# Repeat similar blocks for other super-enhancers in the sample
+```

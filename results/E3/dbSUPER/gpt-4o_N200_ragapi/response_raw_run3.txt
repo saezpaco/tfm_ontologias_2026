@@ -1,0 +1,76 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://example.org/ontology/crm#> .
+@prefix crm2pgene: <http://example.org/ontology/crm2pgene#> .
+@prefix hgene:   <http://example.org/ontology/hgene#> .
+@prefix assembly: <http://example.org/ontology/assembly#> .
+@prefix nuccore: <http://example.org/ontology/nuccore#> .
+@prefix pubmed:  <http://example.org/ontology/pubmed#> .
+@prefix id_pubmed: <http://example.org/ontology/id_pubmed#> .
+@prefix id_ncbigene: <http://example.org/ontology/id_ncbigene#> .
+@prefix dbsuper: <http://example.org/ontology/dbsuper#> .
+
+dbsuper:SuperEnhancer rdf:type owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:exactMatch hcrm:Enhancer .
+
+dbsuper:hasGenomicCoordinate rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    skos:exactMatch hcrm:hasGenomicLocation .
+
+dbsuper:hasStart rdf:type owl:DatatypeProperty ;
+    rdfs:label "has start" ;
+    rdfs:range xsd:integer ;
+    skos:exactMatch hcrm:start .
+
+dbsuper:hasStop rdf:type owl:DatatypeProperty ;
+    rdfs:label "has stop" ;
+    rdfs:range xsd:integer ;
+    skos:exactMatch hcrm:stop .
+
+dbsuper:hasSEID rdf:type owl:DatatypeProperty ;
+    rdfs:label "has SE ID" ;
+    rdfs:range xsd:string .
+
+dbsuper:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:activeInCellLine rdf:type owl:ObjectProperty ;
+    rdfs:label "active in cell line" ;
+    skos:exactMatch hcrm:activeInCellLine .
+
+dbsuper:hasRank rdf:type owl:DatatypeProperty ;
+    rdfs:label "has rank" ;
+    rdfs:range xsd:integer .
+
+dbsuper:AdiposeNuclei rdf:type owl:NamedIndividual ;
+    rdf:type dbsuper:CellLine ;
+    rdfs:label "Adipose Nuclei" .
+
+dbsuper:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch hgene:Gene .
+
+dbsuper:CellLine rdf:type owl:Class ;
+    rdfs:label "Cell Line" .
+
+# Example individual
+dbsuper:SE_00001 rdf:type dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinate [
+        dbsuper:hasStart 120485363 ;
+        dbsuper:hasStop 120615071 ;
+        assembly:chromosome "chr1"
+    ] ;
+    dbsuper:hasSEID "SE_00001" ;
+    dbsuper:targetsGene hgene:NOTCH2 ;
+    dbsuper:activeInCellLine dbsuper:AdiposeNuclei ;
+    dbsuper:hasRank 1 .

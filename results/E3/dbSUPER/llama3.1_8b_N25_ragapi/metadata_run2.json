@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-05-11T18:52:25.347254",
+  "success": true,
+  "elapsed_seconds": 197.41,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1722,
+    "completion_tokens": 883,
+    "total_tokens": 2605
+  },
+  "prompt_tokens_estimate": 1306,
+  "response_chars": 2915,
+  "turtle_chars": 2109,
+  "validation": {
+    "valid": false,
+    "error": "at line 51 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'm:CisRegModule ;\\n    rdfs:range hgene:Gene .\\n\\n# Individuals\\n'^b'SE_00001 a dbsuper:SuperEnhancer ;\\n    dbsuper:start 1204853'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/response_raw_run2.txt"
+  }
+}

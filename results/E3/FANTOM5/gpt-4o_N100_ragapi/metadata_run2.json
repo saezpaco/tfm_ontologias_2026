@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-05-11T19:20:01.546294",
+  "success": true,
+  "elapsed_seconds": 16.66,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 6397,
+    "completion_tokens": 1196,
+    "total_tokens": 7593
+  },
+  "prompt_tokens_estimate": 3269,
+  "response_chars": 3541,
+  "turtle_chars": 3527,
+  "validation": {
+    "valid": false,
+    "error": "at line 28 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'rdfs:subClassOf biolink:GenomicEntity .\\n\\n### Properties ###\\n'^b':hasGenomicCoordinate a owl:ObjectProperty ;\\n    rdfs:label '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_N100_ragapi/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_N100_ragapi/response_raw_run2.txt"
+  }
+}

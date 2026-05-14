@@ -1,0 +1,38 @@
+Here is the output in valid Turtle format:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgncsymbol: <https://www.genenames.org/> .
+
+<http://example.org/chr1> a rdfs:Resource ;
+  rdfs:label "chr1" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> .
+
+<http://example.org/chr1:839741-840250> a rdfs:Resource ;
+  rdfs:label "chr1:839741-840250" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> .
+
+<http://example.org/436> a rdfs:Resource ;
+  rdfs:label "436" ;
+  skos:exactMatch <https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26> .
+
+<http://example.org/chr1#TBX5> a rdfs:Resource ;
+  rdfs:label "TBX5" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+<http://example.org/chr1#Country> a schema:Country ;
+  rdfs:label "Country" .
+```
+
+Note that I've added the necessary prefix declarations for the cisreg reference ontology fragments. Also, I've used `skos:exactMatch` and `skos:closeMatch` to align the terms with the corresponding cisreg URIs. New classes/properties have been introduced only where cisreg does not cover the concept.

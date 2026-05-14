@@ -1,0 +1,46 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgnc:    <http://www.genenames.org/> .
+@prefix uniprot: <https://www.uniprot.org/> .
+
+<http://rdf.biogateway.eu/crm/9606CRMHS00000003515> a hcrm:HumanChromosomeRegion ;
+  rdfs:label "Human Chromosome Region" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> .
+
+<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26> a schema:Country ;
+  rdfs:label "Country" ;
+  skos:closeMatch <https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26> .
+
+<hgncsymbol:TBX5> a hgnc:HgncSymbol ;
+  rdfs:label "TBX5" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+<uniprot:Q99593> a uniprot:UniprotEntry ;
+  rdfs:label "Q99593" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!CRMHS00000003515--uniprot!Q99593> .
+
+<http://rdf.biogateway.eu/crm/9606CRMHS00000003515> a hcrm:HumanChromosomeRegion ;
+  rdfs:label "Human Chromosome Region" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> .
+
+<https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26> a schema:Country ;
+  rdfs:label "Country" ;
+  skos:closeMatch <https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26> .
+
+<hgncsymbol:TBX5> a hgnc:HgncSymbol ;
+  rdfs:label "TBX5" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+<uniprot:Q99593> a uniprot:UniprotEntry ;
+  rdfs:label "Q99593" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!CRMHS00000003515--uniprot!Q99593> .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-05-11T21:22:39.307730",
+  "success": true,
+  "elapsed_seconds": 139.98,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 1140,
+    "total_tokens": 5236
+  },
+  "prompt_tokens_estimate": 3846,
+  "response_chars": 3613,
+  "turtle_chars": 2742,
+  "validation": {
+    "valid": false,
+    "error": "at line 64 of <>:\nBad syntax (Prefix \"cisreg:\" not bound) at ^ in:\n\"...b'brary.org/obo/crm2pgene#0000012> .\\n\\n# Define new classes and'^b' properties\\ncisreg:Gene a rdfs:Class ;\\n    rdfs:label \"Cisre'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N200_ragapi/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N200_ragapi/response_raw_run1.txt"
+  }
+}

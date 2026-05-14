@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-05-11T21:25:18.881563",
+  "success": true,
+  "elapsed_seconds": 136.87,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 938,
+    "total_tokens": 5034
+  },
+  "prompt_tokens_estimate": 3846,
+  "response_chars": 2895,
+  "turtle_chars": 2153,
+  "validation": {
+    "valid": false,
+    "error": "at line 35 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'bel \"Gene Name\" .\\n\\n# Protein\\nhgene:HGNC:12345 crm2pgene:P000'^b'01 rdf:type biolink:Protein ;\\n    rdfs:label \"Protein Name\" '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N200_ragapi/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N200_ragapi/response_raw_run2.txt"
+  }
+}

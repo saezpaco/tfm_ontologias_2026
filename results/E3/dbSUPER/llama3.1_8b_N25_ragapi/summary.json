@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 175.99666666666667,
+  "total_tokens": 7790,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-05-11T18:48:20.882189",
+      "success": true,
+      "elapsed_seconds": 220.58,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1722,
+        "completion_tokens": 848,
+        "total_tokens": 2570
+      },
+      "prompt_tokens_estimate": 1306,
+      "response_chars": 2786,
+      "turtle_chars": 2103,
+      "validation": {
+        "valid": false,
+        "error": "at line 29 of <>:\nBad syntax (Prefix \"hgene:\" not bound) at ^ in:\n\"...b'bel \"Super Enhancer\" ;\\n    skos:closeMatch crm2pgene:Crm .\\n\\n'^b'hgene:Gene a owl:Class ;\\n    rdfs:label \"Gene\" ;\\n    skos:ex'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-05-11T18:52:25.347254",
+      "success": true,
+      "elapsed_seconds": 197.41,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1722,
+        "completion_tokens": 883,
+        "total_tokens": 2605
+      },
+      "prompt_tokens_estimate": 1306,
+      "response_chars": 2915,
+      "turtle_chars": 2109,
+      "validation": {
+        "valid": false,
+        "error": "at line 51 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'm:CisRegModule ;\\n    rdfs:range hgene:Gene .\\n\\n# Individuals\\n'^b'SE_00001 a dbsuper:SuperEnhancer ;\\n    dbsuper:start 1204853'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-05-11T18:55:27.028658",
+      "success": true,
+      "elapsed_seconds": 110.0,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1722,
+        "completion_tokens": 893,
+        "total_tokens": 2615
+      },
+      "prompt_tokens_estimate": 1306,
+      "response_chars": 2935,
+      "turtle_chars": 2170,
+      "validation": {
+        "valid": false,
+        "error": "at line 48 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'gulatoryModule ;\\n    rdfs:range hgene:Gene .\\n\\n# Individuals\\n'^b'SE_00001 a dbsuper:SuperEnhancer ;\\n    dbsuper:hasGenomicCoo'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25_ragapi/response_raw_run3.txt"
+      }
+    }
+  ]
+}

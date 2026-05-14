@@ -1,0 +1,60 @@
+# ─── Caches y temporales ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.DS_Store
+.owlcache/
+.cache/
+.pytest_cache/
+*.log
+
+# ─── Backups del docx (versiones intermedias) ─────────────────────────
+*.bak_*
+*.bak
+*~
+docs/*.bak_*
+
+# ─── Versiones obsoletas de la memoria ────────────────────────────────
+docs/Indice_TFM_Completo.docx
+docs/Metodologia_TFM_hastaHoy.docx
+docs/TFM_Ontologias_LLM.docx
+
+# ─── Entornos virtuales y dependencias ────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env
+node_modules/
+.npm/
+
+# ─── Clones de proyectos de terceros (no parte del TFM) ───────────────
+OntoGenix/
+skills_install_staging/
+RAGannotationAPI/
+
+# ─── IDE y editores ───────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ─── Sistema operativo ────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Documentos transformados temporales ──────────────────────────────
+*.tmp
+*.temp
+~$*
+
+# ─── Datos brutos (descomenta si NO los quieres en el repo) ───────────
+# data/raw/
+
+# ─── Manifests de reproducibilidad antiguos ───────────────────────────
+results/manifest_*.json
+!results/manifest_v11_final.json
+!results/reproducibility_manifest.json

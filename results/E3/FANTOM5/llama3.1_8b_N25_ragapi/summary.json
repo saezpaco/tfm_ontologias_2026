@@ -1,0 +1,97 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 127.55,
+  "total_tokens": 10024,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-05-11T18:37:10.029042",
+      "success": true,
+      "elapsed_seconds": 69.91,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2548,
+        "completion_tokens": 704,
+        "total_tokens": 3252
+      },
+      "prompt_tokens_estimate": 1668,
+      "response_chars": 2342,
+      "turtle_chars": 1919,
+      "validation": {
+        "valid": true,
+        "n_triples": 28,
+        "n_classes": 4,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_N25_ragapi/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_N25_ragapi/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-05-11T18:39:11.865476",
+      "success": true,
+      "elapsed_seconds": 75.51,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2548,
+        "completion_tokens": 896,
+        "total_tokens": 3444
+      },
+      "prompt_tokens_estimate": 1668,
+      "response_chars": 2957,
+      "turtle_chars": 2404,
+      "validation": {
+        "valid": true,
+        "n_triples": 34,
+        "n_classes": 5,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_N25_ragapi/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_N25_ragapi/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-05-11T18:43:47.629674",
+      "success": true,
+      "elapsed_seconds": 237.23,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2548,
+        "completion_tokens": 780,
+        "total_tokens": 3328
+      },
+      "prompt_tokens_estimate": 1668,
+      "response_chars": 2611,
+      "turtle_chars": 1954,
+      "validation": {
+        "valid": false,
+        "error": "at line 45 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'actMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515>'^b' .\\nskos:closeMatch <https://www.ncbi.nlm.nih.gov/assembly/GC'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_N25_ragapi/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_N25_ragapi/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+Here is the formal OWL ontology schema in Turtle format based on the provided database sample and cisreg reference ontology fragments:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgnc:   <http://www.genenames.org/> .
+@prefix uniprot: <https://www.uniprot.org/uniprot/> .
+
+# Classes
+hcrm:CisRegElement a owl:Class ;
+  rdfs:label "Cis-regulatory element" ;
+  skos:exactMatch hcrm:9606CRMHS00000003515 .
+
+hcrm:CisRegElementLocation a owl:Class ;
+  rdfs:label "Cis-regulatory element location" ;
+  skos:closeMatch schema:PostalAddress .
+
+# Properties
+hcrm:hasCisRegElement a owl:ObjectProperty ;
+  rdfs:domain hcrm:CisRegElement ;
+  rdfs:range hcrm:CisRegElementLocation .
+
+hcrm:hasCisRegElementLocation a owl:ObjectProperty ;
+  rdfs:domain hcrm:CisRegElement ;
+  rdfs:range hcrm:CisRegElementLocation .
+
+# Individuals
+<http://rdf.biogateway.eu/crm/9606CRMHS00000003515> a hcrm:CisRegElement ;
+  hcrm:hasCisRegElementLocation <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+<http://rdf.biogateway.eu/crm/9606CRMHS00000003515> a hcrm:CisRegElement ;
+  hcrm:hasCisRegElementLocation <http://rdf.biogateway.eu/crm2tfac/bgw!CRMHS00000003515--uniprot!Q99593> .
+
+# Alignments
+<http://rdf.biogateway.eu/crm/9606CRMHS00000003515> skos:exactMatch hcrm:9606CRMHS00000003515 .
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> skos:closeMatch hgnc:TBX5 .
+<http://rdf.biogateway.eu/crm2tfac/bgw!CRMHS00000003515--uniprot!Q99593> skos:closeMatch uniprot:Q99593 .
+
+# Additional classes and properties
+hcrm:CisRegElementSequence a owl:Class ;
+  rdfs:label "Cis-regulatory element sequence" ;
+  skos:exactMatch schema:Text .
+
+hcrm:hasCisRegElementSequence a owl:ObjectProperty ;
+  rdfs:domain hcrm:CisRegElement ;
+  rdfs:range hcrm:CisRegElementSequence .
+```
+
+Note that I have only included the classes, properties, and individuals relevant to the provided database sample. The output must start with the required prefix declarations before any other statement.

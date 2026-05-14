@@ -1,0 +1,51 @@
+Here is the formal OWL ontology schema in Turtle format based on the provided database sample and cisreg reference ontology fragments:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgnc:   <http://www.genenames.org/> .
+
+# Classes
+hcrm:CisReg  a owl:Class ;
+    rdfs:label "Cis-Regulatory Element" ;
+    skos:exactMatch hcrm:9606CRMHS00000003515 .
+
+hcrm:CisRegRegion  a owl:Class ;
+    rdfs:label "Cis-Regulatory Region" ;
+    skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+
+# Properties
+hcrm:hasRegion  a owl:ObjectProperty ;
+    rdfs:domain hcrm:CisReg ;
+    rdfs:range hcrm:CisRegRegion ;
+    skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+
+hcrm:hasCoordinate  a owl:ObjectProperty ;
+    rdfs:domain hcrm:CisRegRegion ;
+    rdfs:range xsd:string ;
+    skos:exactMatch schema:PostalAddress .
+
+# Individuals
+hcrm:CRMHS00000003515  a hcrm:CisReg ;
+    rdfs:label "Cis-Regulatory Element" ;
+    hcrm:hasRegion [
+        a hcrm:CisRegRegion ;
+        hcrm:hasCoordinate "chr1:839741-840250"
+    ] .
+
+# Alignments
+hcrm:9606CRMHS00000003515  skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> .
+crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5  skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+```
+
+Note that I have only included the necessary prefixes and classes/properties from the cisreg reference ontology fragments. The output is in valid Turtle format, with every prefix declared at the top of the file.

@@ -1,0 +1,97 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 123.37333333333333,
+  "total_tokens": 14517,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-05-11T20:59:41.151513",
+      "success": true,
+      "elapsed_seconds": 111.0,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3786,
+        "completion_tokens": 1059,
+        "total_tokens": 4845
+      },
+      "prompt_tokens_estimate": 2311,
+      "response_chars": 3384,
+      "turtle_chars": 2601,
+      "validation": {
+        "valid": false,
+        "error": "at line 26 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'xample.org/CisReg_Chr>\\n  rdfs:label \"CisReg Chr\"\\n)\\nowl:Class'^b'(\\n  <http://example.org/CisReg_Gene>\\n  rdfs:label \"CisReg Ge'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100_ragapi/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100_ragapi/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-05-11T21:02:33.902773",
+      "success": true,
+      "elapsed_seconds": 118.0,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3900,
+        "completion_tokens": 768,
+        "total_tokens": 4668
+      },
+      "prompt_tokens_estimate": 2384,
+      "response_chars": 2360,
+      "turtle_chars": 1999,
+      "validation": {
+        "valid": true,
+        "n_triples": 22,
+        "n_classes": 2,
+        "n_properties": 2
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100_ragapi/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100_ragapi/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-05-11T21:05:36.267283",
+      "success": true,
+      "elapsed_seconds": 141.12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3900,
+        "completion_tokens": 1104,
+        "total_tokens": 5004
+      },
+      "prompt_tokens_estimate": 2384,
+      "response_chars": 3428,
+      "turtle_chars": 2764,
+      "validation": {
+        "valid": true,
+        "n_triples": 42,
+        "n_classes": 9,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100_ragapi/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100_ragapi/response_raw_run3.txt"
+      }
+    }
+  ]
+}

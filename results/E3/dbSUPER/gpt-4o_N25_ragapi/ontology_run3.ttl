@@ -1,0 +1,60 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://example.org/ontologies/crm#> .
+@prefix crm2pgene: <http://example.org/ontologies/crm2pgene#> .
+@prefix hgene:   <http://example.org/ontologies/gene#> .
+@prefix assembly: <http://example.org/ontologies/assembly#> .
+@prefix nuccore: <http://example.org/ontologies/nuccore#> .
+@prefix pubmed:  <http://example.org/ontologies/pubmed#> .
+@prefix id_pubmed: <http://example.org/ontologies/id_pubmed#> .
+@prefix id_ncbigene: <http://example.org/ontologies/id_ncbigene#> .
+@prefix dbsuper: <http://asntech.org/dbsuper#> .
+
+dbsuper:SuperEnhancer rdf:type owl:Class ;
+    rdfs:subClassOf hcrm:CisRegulatoryModule ;
+    skos:exactMatch crm2pgene:SuperEnhancer ;
+    rdfs:label "Super Enhancer"@en .
+
+dbsuper:hasGenomicCoordinate rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range assembly:GenomicCoordinate ;
+    skos:exactMatch crm2pgene:hasGenomicCoordinate ;
+    rdfs:label "has genomic coordinate"@en .
+
+dbsuper:hasTargetGene rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range hgene:Gene ;
+    skos:exactMatch crm2pgene:hasTargetGene ;
+    rdfs:label "has target gene"@en .
+
+dbsuper:activeInCellLine rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range schema:CellLine ;
+    skos:exactMatch crm2pgene:activeInCellLine ;
+    rdfs:label "active in cell line"@en .
+
+dbsuper:hasRank rdf:type owl:DatatypeProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has rank"@en .
+
+dbsuper:SE_00001 rdf:type dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinate [ 
+        rdf:type assembly:GenomicCoordinate ;
+        assembly:chromosome "chr1" ;
+        assembly:start 120485363 ;
+        assembly:stop 120615071
+    ] ;
+    dbsuper:hasTargetGene hgene:NOTCH2 ;
+    dbsuper:activeInCellLine schema:AdiposeNuclei ;
+    dbsuper:hasRank 1 .
+
+# Additional instances would follow the same pattern as SE_00001

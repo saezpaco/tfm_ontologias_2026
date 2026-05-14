@@ -1,0 +1,66 @@
+Here is the formal OWL ontology schema in Turtle format based on the provided database sample and cisreg reference ontology fragments:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hcrm#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgene#> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/hcrm_0000010> .
+
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/crm2pgene_0000023> .
+
+hgene:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/hgene_0000010> .
+
+# Properties
+dbsuper:hasGenomicCoordinates a rdf:Property ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+hcrm:hasTargetGene a rdf:Property ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range hgene:Gene .
+
+dbsuper:hasCellLineActivity a rdf:Property ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+# Individuals
+SE_00001 a dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinates "chr1:120485363-120615071" ;
+    hcrm:hasTargetGene <http://identifiers.org/ncbigene/NOTCH2> ;
+    dbsuper:hasCellLineActivity "Adipose Nuclei" .
+
+SE_00002 a dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinates "chr13:110838836-111112228" ;
+    hcrm:hasTargetGene <http://identifiers.org/ncbigene/COL4A2> ;
+    dbsuper:hasCellLineActivity "Adipose Nuclei" .
+
+# ... (add individuals for each row in the database sample)
+```
+
+Note that I've only included a few rows from the database sample to illustrate the structure of the ontology. You'll need to add more individuals for each row in the database.
+
+Also, I've used the `skos:exactMatch` and `skos:closeMatch` properties to align the classes and properties with the cisreg reference ontology fragments. If you need to make any changes or additions, please let me know!
