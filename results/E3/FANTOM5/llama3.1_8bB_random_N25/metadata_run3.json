@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-27T11:22:06.204894",
+  "success": true,
+  "elapsed_seconds": 162.96,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3198,
+    "completion_tokens": 951,
+    "total_tokens": 4149
+  },
+  "prompt_tokens_estimate": 2224,
+  "response_chars": 3004,
+  "turtle_chars": 2585,
+  "validation": {
+    "valid": false,
+    "error": "at line 19 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b'62 obo:NCBITaxon_9606 ; #in taxon \"human\"\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ; #hg38 assembly as reference\\n    '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/response_raw_run3.txt"
+  }
+}

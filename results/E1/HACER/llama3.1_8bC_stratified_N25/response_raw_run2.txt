@@ -1,0 +1,65 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/hacer#CRM>
+  a owl:Class ;
+  rdfs:label "Cis-regulatory Module"^^xsd:string ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A region of DNA that regulates gene expression." ;
+
+<http://example.org/hacer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "The location of the CRM in the genome." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+<http://example.org/hacer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Experimental Evidence" ;
+  skos:definition "The type of evidence supporting the CRM's function." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001077> .
+
+<http://example.org/hacer#hasCellLineActivity>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Cell Line Activity"^^xsd:string ;
+  skos:prefLabel "Cell Line Activity" ;
+  skos:definition "The activity of the CRM in different cell lines." ;
+
+<http://example.org/hacer#hasTargetGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Target Gene"^^xsd:string ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the CRM." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001076> .
+
+<http://example.org/hacer#hasAssociatedDisease>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Associated Disease"^^xsd:string ;
+  skos:prefLabel "Associated Disease" ;
+  skos:definition "The disease associated with the CRM's target gene." ;
+
+<http://example.org/hacer#hasInteractingTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Interacting Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Interacting Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the CRM." ;
+
+<http://example.org/hacer#genomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate Value" ;
+  skos:definition "The value of the genomic coordinate." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+<http://example.org/hacer#evidence>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Experimental Evidence Value" ;
+  skos:definition "The value of the experimental evidence." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001077> .

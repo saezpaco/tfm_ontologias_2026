@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-27T01:37:55.492845",
+  "success": true,
+  "elapsed_seconds": 135.21,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3409,
+    "completion_tokens": 772,
+    "total_tokens": 4181
+  },
+  "prompt_tokens_estimate": 2027,
+  "response_chars": 2460,
+  "turtle_chars": 2460,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' for describing cis-regulatory modules in Homo sapiens.\" .\\n\\n'^b'crm\\n  a owl:Class ;\\n  rdfs:label \"Cis-Regulatory Module\" ;\\n '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bB_random_N50/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bB_random_N50/response_raw_run2.txt"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-29T07:21:38.788715",
+  "success": true,
+  "elapsed_seconds": 1543.96,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 8192,
+    "total_tokens": 12287
+  },
+  "prompt_tokens_estimate": 3547,
+  "response_chars": 30294,
+  "turtle_chars": 30294,
+  "validation": {
+    "valid": false,
+    "error": "at line 680 of <>:\nBad syntax (unterminated URI reference) at ^ in:\n\"b'@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\\n@pref"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bC_stratified_N100/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bC_stratified_N100/response_raw_run1.txt"
+  }
+}

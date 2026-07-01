@@ -1,0 +1,112 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://www.w3.org/ns/sparql#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hgncSymbol;
+        rr:objectMap [
+            rr:column "hgnc_symbol";
+        ]
+    ],
+    [
+        rr:predicate greg:type;
+        rr:objectMap [
+            rr:column "type";
+        ]
+    ],
+    [
+        rr:predicate greg:pmid;
+        rr:objectMap [
+            rr:column "pmid";
+        ]
+    ],
+    [
+        rr:predicate greg:FAIR_URI;
+        rr:objectMap [
+            rr:template "{{type}}_{{hgnc_symbol}}_{FAIR_URI}";
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+
+<#TriplesMapPubMedArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{type}}{FAIR_URI}";
+    ].
+```

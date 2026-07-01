@@ -1,0 +1,69 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+
+# Ontology definition
+<https://asntech.org/dbsuper/ontology> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    dc:description "Ontology for representing super-enhancers from the dbSUPER database." ;
+    dc:source <https://asntech.org/dbsuper/> .
+
+# Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:exactMatch crm2tfac:SuperEnhancer .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" .
+
+# Properties
+dbsuper:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Gene ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:activeInCellLine a owl:ObjectProperty ;
+    rdfs:label "active in cell line" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:CellLine .
+
+dbsuper:hasRank a owl:DatatypeProperty ;
+    rdfs:label "has rank" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:integer .
+
+# Instances (example)
+dbsuper:SE_00001 a dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinate "chr1:120485363-120615071" ;
+    dbsuper:targetsGene <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/NOTCH2> ;
+    dbsuper:activeInCellLine dbsuper:AdiposeNuclei ;
+    dbsuper:hasRank 1 .
+
+dbsuper:AdiposeNuclei a dbsuper:CellLine ;
+    rdfs:label "Adipose Nuclei" .
+
+<http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/NOTCH2> a dbsuper:Gene ;
+    rdfs:label "NOTCH2" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/NOTCH2> .
+```

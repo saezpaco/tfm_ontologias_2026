@@ -1,0 +1,83 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    rdfs:comment "Ontology for enhancers identified by CAGE-seq in the FANTOM5 database." .
+
+### Classes ###
+obo:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+obo:GRCh38 a owl:Class ;
+    skos:prefLabel "GRCh38" ;
+    skos:definition "Genome assembly version GRCh38" .
+
+obo:Database a owl:Class ;
+    skos:prefLabel "Database" ;
+    skos:definition "Database containing enhancer information" .
+
+obo:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "Protein that binds to specific DNA sequences to regulate transcription" .
+
+### Object Properties ###
+obo:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Gene .
+
+obo:hasTranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:TranscriptionFactor .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Disease .
+
+### Datatype Properties ###
+obo:hasGenomicCoordinates a owl:DatatypeProperty ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome name and genomic coordinates of the CRM" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasScore a owl:DatatypeProperty ;
+    skos:prefLabel "score" ;
+    skos:definition "Score indicating the activity level of the enhancer" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:float .
+
+obo:hasMinimumRatio a owl:DatatypeProperty ;
+    skos:prefLabel "minimum_ratio" ;
+    skos:definition "Minimum ratio of enhancer activity" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:float .
+
+obo:hasPMID a owl:DatatypeProperty ;
+    skos:prefLabel "enh_PMID" ;
+    skos:definition "PubMed ID for the publication supporting the enhancer data" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasMethod a owl:DatatypeProperty ;
+    skos:prefLabel "enh_method" ;
+    skos:definition "Method used to identify the enhancer" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasSource a owl:DatatypeProperty ;
+    skos:prefLabel "source" ;
+    skos:definition "Source database of the enhancer information" ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .

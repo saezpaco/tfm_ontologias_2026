@@ -1,0 +1,62 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://example.org/dbSUPER> a owl:Ontology .
+
+### Classes
+:SuperEnhancer a owl:Class ;
+    skos:prefLabel "Super Enhancer" ;
+    skos:definition "A super-enhancer is a large cluster of transcriptional enhancers that drive expression of genes involved in cell identity." ;
+    skos:exactMatch obo:SO_0000165 .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene is a sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein." ;
+    skos:exactMatch obo:SO_0000704 .
+
+:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line is a permanently established cell culture that will proliferate indefinitely given appropriate fresh medium and space." .
+
+### Object Properties
+:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a super-enhancer to its target gene." ;
+    rdfs:domain :SuperEnhancer ;
+    rdfs:range :Gene .
+
+:activeInCellLine a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the super-enhancer is active." ;
+    rdfs:domain :SuperEnhancer ;
+    rdfs:range :CellLine .
+
+### Datatype Properties
+:hasChromosome a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the super-enhancer is located." ;
+    rdfs:domain :SuperEnhancer ;
+    rdfs:range xsd:string .
+
+:hasStartCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has start coordinate" ;
+    skos:definition "The start coordinate of the super-enhancer on the chromosome." ;
+    rdfs:domain :SuperEnhancer ;
+    rdfs:range xsd:integer .
+
+:hasStopCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has stop coordinate" ;
+    skos:definition "The stop coordinate of the super-enhancer on the chromosome." ;
+    rdfs:domain :SuperEnhancer ;
+    rdfs:range xsd:integer .
+
+:hasRank a owl:DatatypeProperty ;
+    skos:prefLabel "has rank" ;
+    skos:definition "The rank of the super-enhancer based on its activity or significance." ;
+    rdfs:domain :SuperEnhancer ;
+    rdfs:range xsd:integer .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-07-01T10:00:37.114379",
+  "success": true,
+  "elapsed_seconds": 99.52,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 872,
+    "total_tokens": 4967
+  },
+  "prompt_tokens_estimate": 4048,
+  "response_chars": 2850,
+  "turtle_chars": 2179,
+  "validation": {
+    "valid": false,
+    "error": "at line 23 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'per/> .\\n\\n# === RECOMMENDED ONTOLOGIES (semantic search) ===\\n'^b'crm2gene  a owl:Ontology ;\\n          rdfs:label \"crm2gene\" ;'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C1/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C1/response_raw_run1.txt"
+  }
+}

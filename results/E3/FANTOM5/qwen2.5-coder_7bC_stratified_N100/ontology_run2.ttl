@@ -1,0 +1,629 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+# Define new classes and properties
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+crm:CISReg a owl:Class ;
+    rdfs:label "CIS Regulatory Element" .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" .
+
+crm:PMID a owl:Class ;
+    rdfs:label "PubMed Identifier" .
+
+crm:SNP a owl:Class ;
+    rdfs:label "Single Nucleotide Polymorphism" .
+
+crm:Assembly a owl:Class ;
+    rdfs:label "Genomic Assembly" .
+
+crm:NucleotideSequence a owl:Class ;
+    rdfs:label "Nucleotide Sequence" .
+
+crm:TranscriptionFactorBindingSite a owl:Class ;
+    rdfs:label "Transcription Factor Binding Site" .
+
+crm:GeneExpression a owl:Class ;
+    rdfs:label "Gene Expression" .
+
+crm:DiseaseAssociation a owl:Class ;
+    rdfs:label "Disease Association" .
+
+crm:SNPAssociation a owl:Class ;
+    rdfs:label "SNP Association" .
+
+crm:AssemblyVersion a owl:Class ;
+    rdfs:label "Assembly Version" .
+
+crm:NucleotideSequenceRegion a owl:Class ;
+    rdfs:label "Nucleotide Sequence Region" .
+
+crm:TranscriptionFactorComplex a owl:Class ;
+    rdfs:label "Transcription Factor Complex" .
+
+crm:GeneRegulation a owl:Class ;
+    rdfs:label "Gene Regulation" .
+
+crm:DiseaseSymptom a owl:Class ;
+    rdfs:label "Disease Symptom" .
+
+crm:SNPType a owl:Class ;
+    rdfs:label "SNP Type" .
+
+crm:TranscriptionFactorActivity a owl:Class ;
+    rdfs:label "Transcription Factor Activity" .
+
+crm:GeneFunction a owl:Class ;
+    rdfs:label "Gene Function" .
+
+crm:DiseaseTreatment a owl:Class ;
+    rdfs:label "Disease Treatment" .
+
+crm:SNPFunctionalImpact a owl:Class ;
+    rdfs:label "SNP Functional Impact" .
+
+crm:TranscriptionFactorInteraction a owl:Class ;
+    rdfs:label "Transcription Factor Interaction" .
+
+crm:GeneExpressionPattern a owl:Class ;
+    rdfs:label "Gene Expression Pattern" .
+
+crm:DiseasePrognosis a owl:Class ;
+    rdfs:label "Disease Prognosis" .
+
+crm:SNPPhenotype a owl:Class ;
+    rdfs:label "SNP Phenotype" .
+
+crm:TranscriptionFactorRegulation a owl:Class ;
+    rdfs:label "Transcription Factor Regulation" .
+
+crm:GeneExpressionQuantification a owl:Class ;
+    rdfs:label "Gene Expression Quantification" .
+
+crm:DiseasePrevention a owl:Class ;
+    rdfs:label "Disease Prevention" .
+
+crm:SNPGenotype a owl:Class ;
+    rdfs:label "SNP Genotype" .
+
+crm:TranscriptionFactorExpression a owl:Class ;
+    rdfs:label "Transcription Factor Expression" .
+
+crm:GeneRegulationNetwork a owl:Class ;
+    rdfs:label "Gene Regulation Network" .
+
+crm:DiseaseOutcome a owl:Class ;
+    rdfs:label "Disease Outcome" .
+
+crm:SNPAlleleFrequency a owl:Class ;
+    rdfs:label "SNP Allele Frequency" .
+
+crm:TranscriptionFactorMotif a owl:Class ;
+    rdfs:label "Transcription Factor Motif" .
+
+crm:GeneExpressionCorrelation a owl:Class ;
+    rdfs:label "Gene Expression Correlation" .
+
+crm:DiseaseRisk a owl:Class ;
+    rdfs:label "Disease Risk" .
+
+crm:SNPConsequence a owl:Class ;
+    rdfs:label "SNP Consequence" .
+
+crm:TranscriptionFactorLocalization a owl:Class ;
+    rdfs:label "Transcription Factor Localization" .
+
+crm:GeneExpressionProfile a owl:Class ;
+    rdfs:label "Gene Expression Profile" .
+
+crm:DiseaseSeverity a owl:Class ;
+    rdfs:label "Disease Severity" .
+
+crm:SNPValidation a owl:Class ;
+    rdfs:label "SNP Validation" .
+
+crm:TranscriptionFactorRegulatoryElement a owl:Class ;
+    rdfs:label "Transcription Factor Regulatory Element" .
+
+crm:GeneExpressionAnalysis a owl:Class ;
+    rdfs:label "Gene Expression Analysis" .
+
+crm:DiseaseGenetics a owl:Class ;
+    rdfs:label "Disease Genetics" .
+
+crm:SNPPhenotypicImpact a owl:Class ;
+    rdfs:label "SNP Phenotypic Impact" .
+
+crm:TranscriptionFactorComplexFormation a owl:Class ;
+    rdfs:label "Transcription Factor Complex Formation" .
+
+crm:GeneExpressionRegulation a owl:Class ;
+    rdfs:label "Gene Expression Regulation" .
+
+crm:DiseasePathogenesis a owl:Class ;
+    rdfs:label "Disease Pathogenesis" .
+
+crm:SNPFunctionalAnnotation a owl:Class ;
+    rdfs:label "SNP Functional Annotation" .
+
+crm:TranscriptionFactorActivityRegulation a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation" .
+
+crm:GeneExpressionQuantificationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Method" .
+
+crm:DiseasePreventionStrategy a owl:Class ;
+    rdfs:label "Disease Prevention Strategy" .
+
+crm:SNPGenotypeDistribution a owl:Class ;
+    rdfs:label "SNP Genotype Distribution" .
+
+crm:TranscriptionFactorExpressionPattern a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern" .
+
+crm:GeneRegulationNetworkAnalysis a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis" .
+
+crm:DiseasePrognosisModel a owl:Class ;
+    rdfs:label "Disease Prognosis Model" .
+
+crm:SNPPhenotypicCorrelation a owl:Class ;
+    rdfs:label "SNP Phenotypic Correlation" .
+
+crm:TranscriptionFactorRegulatoryElementInteraction a owl:Class ;
+    rdfs:label "Transcription Factor Regulatory Element Interaction" .
+
+crm:GeneExpressionPatternAnalysis a owl:Class ;
+    rdfs:label "Gene Expression Pattern Analysis" .
+
+crm:DiseaseSeverityAssessment a owl:Class ;
+    rdfs:label "Disease Severity Assessment" .
+
+crm:SNPValidationMethod a owl:Class ;
+    rdfs:label "SNP Validation Method" .
+
+crm:TranscriptionFactorComplexFormationRegulation a owl:Class ;
+    rdfs:label "Transcription Factor Complex Formation Regulation" .
+
+crm:GeneExpressionRegulationNetwork a owl:Class ;
+    rdfs:label "Gene Expression Regulation Network" .
+
+crm:DiseasePathogenesisModel a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model" .
+
+crm:SNPFunctionalAnnotationMethod a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetwork a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network" .
+
+crm:GeneExpressionQuantificationAnalysis a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis" .
+
+crm:DiseasePreventionStrategyEvaluation a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation" .
+
+crm:SNPGenotypeDistributionAnalysis a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis" .
+
+crm:TranscriptionFactorExpressionPatternAnalysis a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis" .
+
+crm:GeneRegulationNetworkAnalysisMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Method" .
+
+crm:DiseasePrognosisModelValidation a owl:Class ;
+    rdfs:label "Disease Prognosis Model Validation" .
+
+crm:SNPPhenotypicCorrelationAnalysis a owl:Class ;
+    rdfs:label "SNP Phenotypic Correlation Analysis" .
+
+crm:TranscriptionFactorComplexFormationRegulationNetwork a owl:Class ;
+    rdfs:label "Transcription Factor Complex Formation Regulation Network" .
+
+crm:GeneExpressionRegulationNetworkAnalysisMethod a owl:Class ;
+    rdfs:label "Gene Expression Regulation Network Analysis Method" .
+
+crm:DiseasePathogenesisModelValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation" .
+
+crm:SNPFunctionalAnnotationMethodEvaluation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysis a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis" .
+
+crm:GeneExpressionQuantificationAnalysisMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Method" .
+
+crm:DiseasePreventionStrategyEvaluationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method" .
+
+crm:SNPGenotypeDistributionAnalysisMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method" .
+
+crm:GeneRegulationNetworkAnalysisValidation a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation" .
+
+crm:DiseasePrognosisModelValidationMethod a owl:Class ;
+    rdfs:label "Disease Prognosis Model Validation Method" .
+
+crm:SNPPhenotypicCorrelationAnalysisMethod a owl:Class ;
+    rdfs:label "SNP Phenotypic Correlation Analysis Method" .
+
+crm:TranscriptionFactorComplexFormationRegulationNetworkAnalysis a owl:Class ;
+    rdfs:label "Transcription Factor Complex Formation Regulation Network Analysis" .
+
+crm:GeneExpressionRegulationNetworkAnalysisValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Regulation Network Analysis Validation Method" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethod a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method" .
+
+crm:GeneExpressionQuantificationAnalysisValidation a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidation a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidation a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidation a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluation a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethod a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidation a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluation a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidation a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidation a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Genotype Distribution Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorExpressionPatternAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Expression Pattern Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneRegulationNetworkAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Regulation Network Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePathogenesisModelValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Pathogenesis Model Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPFunctionalAnnotationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "SNP Functional Annotation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:TranscriptionFactorActivityRegulationNetworkAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Transcription Factor Activity Regulation Network Analysis Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:GeneExpressionQuantificationAnalysisValidationMethodEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethod a owl:Class ;
+    rdfs:label "Gene Expression Quantification Analysis Validation Method Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:DiseasePreventionStrategyEvaluationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation a owl:Class ;
+    rdfs:label "Disease Prevention Strategy Evaluation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation Method Validation" .
+
+crm:SNPGenotypeDistributionAnalysisMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidationMethodValidation

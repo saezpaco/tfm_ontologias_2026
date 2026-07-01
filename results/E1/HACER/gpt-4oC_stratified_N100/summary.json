@@ -1,0 +1,99 @@
+{
+  "experiment": "E1",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 7.18,
+  "total_tokens": 23642,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T21:26:39.850358",
+      "success": true,
+      "elapsed_seconds": 7.1,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6993,
+        "completion_tokens": 915,
+        "total_tokens": 7908
+      },
+      "prompt_tokens_estimate": 3547,
+      "response_chars": 3089,
+      "turtle_chars": 3089,
+      "validation": {
+        "valid": true,
+        "n_triples": 55,
+        "n_classes": 5,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oC_stratified_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oC_stratified_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T21:26:48.297211",
+      "success": true,
+      "elapsed_seconds": 7.4,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6993,
+        "completion_tokens": 825,
+        "total_tokens": 7818
+      },
+      "prompt_tokens_estimate": 3547,
+      "response_chars": 2779,
+      "turtle_chars": 2779,
+      "validation": {
+        "valid": true,
+        "n_triples": 44,
+        "n_classes": 3,
+        "n_properties": 8
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oC_stratified_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oC_stratified_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T21:26:56.380609",
+      "success": true,
+      "elapsed_seconds": 7.04,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6993,
+        "completion_tokens": 923,
+        "total_tokens": 7916
+      },
+      "prompt_tokens_estimate": 3547,
+      "response_chars": 3193,
+      "turtle_chars": 3179,
+      "validation": {
+        "valid": true,
+        "n_triples": 56,
+        "n_classes": 2,
+        "n_properties": 12
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oC_stratified_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oC_stratified_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

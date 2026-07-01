@@ -23,7 +23,8 @@ import csv, re
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path("/sessions/nifty-beautiful-knuth/mnt/TFM")
+import os
+ROOT = Path(os.environ.get("TFM_ROOT", Path(__file__).resolve().parent.parent))
 RES  = ROOT / "results"
 EVAL = RES / "evaluation"
 EVAL.mkdir(parents=True, exist_ok=True)

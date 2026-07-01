@@ -1,0 +1,118 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+### Data Type Properties
+:pmid a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed identifier for studies or articles." ;
+    rdfs:range xsd:int .
+
+:method a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study or experiment." ;
+    rdfs:range xsd:string .
+
+:chromosomeNumber a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number of the genetic element." ;
+    rdfs:range xsd:int .
+
+:score a owl:DatatypeProperty ;
+    rdfs:label "Score" ;
+    rdfs:comment "A score indicating confidence or significance." ;
+    rdfs:range xsd:float .
+
+### Object Properties
+:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The relationship between a transcription factor and an enhancer." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :TranscriptionFactor .
+
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The relationship between an enhancer and its target genes." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :TargetGene .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The relationship between a genetic element and a disease." ;
+    rdfs:domain :GeneticElement ;
+    rdfs:range :Disease .
+
+:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:label "Occurs In Cell Line Or Biosample" ;
+    rdfs:comment "The relationship between a genetic element and a cell line or biosample." ;
+    rdfs:domain :GeneticElement ;
+    rdfs:range :CellLineOrBiosample .
+
+:involvesMutation a owl:ObjectProperty ;
+    rdfs:label "Involves Mutation" ;
+    rdfs:comment "The relationship between a genetic element and a mutation." ;
+    rdfs:domain :GeneticElement ;
+    rdfs:range :Mutation .
+
+:partOfChromatinRegulatoryModule a owl:ObjectProperty ;
+    rdfs:label "Part Of Chromatin Regulatory Module" ;
+    rdfs:comment "The relationship between an enhancer and its chromatin regulatory module." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :ChromatinRegulatoryModule .
+
+### Classes
+:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A general class representing genetic elements such as enhancers, super-enhancers, and target genes." ;
+    rdfs:subClassOf :TranscriptionFactor ;
+    rdfs:subClassOf :Enhancer ;
+    rdfs:subClassOf :SuperEnhancer ;
+    rdfs:subClassOf :TargetGene ;
+    rdfs:subClassOf :Disease ;
+    rdfs:subClassOf :CellLineOrBiosample ;
+    rdfs:subClassOf :Mutation ;
+    rdfs:subClassOf :ChromatinRegulatoryModule .
+
+:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing transcription factors." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticElement ] ;
+
+:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticElement ] ;
+    rdfs:subClassOf :SuperEnhancer ;
+    rdfs:subPropertyOf :partOfChromatinRegulatoryModule .
+
+:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing super-enhancers." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :Enhancer ] ;
+
+:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticElement ] ;
+
+:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing diseases associated with genetic elements." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticElement ] ;
+
+:CellLineOrBiosample a owl:Class ;
+    rdfs:label "Cell Line Or Biosample" ;
+    rdfs:comment "A class representing cell lines or biosamples where genetic elements occur." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticElement ] ;
+
+:Mutation a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing mutations involving genetic elements." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticElement ] ;
+
+:ChromatinRegulatoryModule a owl:Class ;
+    rdfs:label "Chromatin Regulatory Module" ;
+    rdfs:comment "A class representing chromatin regulatory modules containing enhancers." ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticElement ] .

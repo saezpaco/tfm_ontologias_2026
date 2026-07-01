@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 120.31333333333333,
+  "total_tokens": 15093,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-05T14:48:45.424347",
+      "success": true,
+      "elapsed_seconds": 118.17,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3918,
+        "completion_tokens": 1113,
+        "total_tokens": 5031
+      },
+      "prompt_tokens_estimate": 1658,
+      "response_chars": 3696,
+      "turtle_chars": 3682,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Human Active C'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-05T14:50:46.248838",
+      "success": true,
+      "elapsed_seconds": 119.78,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3918,
+        "completion_tokens": 1113,
+        "total_tokens": 5031
+      },
+      "prompt_tokens_estimate": 1658,
+      "response_chars": 3696,
+      "turtle_chars": 3682,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Human Active C'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-05T14:52:50.275199",
+      "success": true,
+      "elapsed_seconds": 122.99,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3918,
+        "completion_tokens": 1113,
+        "total_tokens": 5031
+      },
+      "prompt_tokens_estimate": 1658,
+      "response_chars": 3696,
+      "turtle_chars": 3682,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Human Active C'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

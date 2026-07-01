@@ -1,0 +1,752 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+**Data Description:**
+1. TFs2enh_PMID: categorical - PubMed ID for transcription factors to enhancer associations - unique values: 1
+2. TFs2enh_method: categorical - Method used for transcription factors to enhancer associations - unique values: 1
+3. biosample_name: text - Name of the biosample - unique values: 45
+4. crm_ID: text - ID of the cis-regulatory module - unique values: 50
+5. crossref: text - Cross-reference ID - unique values: 49
+6. current_assembly: categorical - Current genome assembly version - unique values: 1
+7. current_chr: text - Current chromosome - unique values: 23
+8. disease: categorical - Disease associated - unique values: 1
+9. disease_PMID: categorical - PubMed ID for disease association - unique values: 1
+10. disease_method: categorical - Method used for disease association - unique values: 1
+11. enh2gene_PMID: categorical - PubMed ID for enhancer to gene associations - unique values: 2
+12. enh2gene_method: categorical - Method used for enhancer to gene associations - unique values: 3
+13. enh_PMID: categorical - PubMed ID for enhancer - unique values: 1
+14. enh_method: categorical - Method used for enhancer identification - unique values: 2
+15. hgnc_symbol_TFs: categorical - HGNC symbol for transcription factors - unique values: 1
+16. hgnc_symbol_target_genes: text - HGNC symbol for target genes - unique values: 41
+17. minimum_ratio: categorical - Minimum ratio value - unique values: 1
+18. mutation_PMID: categorical - PubMed ID for mutation - unique values: 2
+19. mutation_method: categorical - Method used for mutation identification - unique values: 2
+20. orig_assembly: categorical - Original genome assembly version - unique values: 1
+21. orig_chr: text - Original chromosome - unique values: 23
+22. original_ID: text - Original ID - unique values: 49
+23. refsnp_ID: text - Reference SNP ID - unique values: 49
+24. score: categorical - Score value - unique values: 5
+25. source: categorical - Source of the data - unique values: 1
+26. type: categorical - Type of the data - unique values: 1
+27. current_end: Numerical - Current end position in the genome - range: 331297 to 230114260
+28. current_start: Numerical - Current start position in the genome - range: 325610 to 230113600
+29. orig_end: Numerical - Original end position in the genome - range: 325086 to 230250007
+30. orig_start: Numerical - Original start position in the genome - range: 319399 to 230249347
+
+**classes:**
+1. GeneticElement
+2. GenomicCoordinate
+3. Biosample
+4. Disease
+5. Method
+6. Publication
+7. TranscriptionFactor
+8. TargetGene
+9. Mutation
+10. Source
+
+**subclasses:**
+1. Enhancer: subclass of -> GeneticElement
+2. SuperEnhancer: subclass of -> GeneticElement
+3. CisRegulatoryModule: subclass of -> GeneticElement
+
+**Object Properties:**
+1. hasGenomicCoordinate: GeneticElement - GenomicCoordinate
+2. associatedWithBiosample: GeneticElement - Biosample
+3. associatedWithDisease: GeneticElement - Disease
+4. identifiedByMethod: GeneticElement - Method
+5. referencedInPublication: GeneticElement - Publication
+6. regulatesTranscriptionFactor: GeneticElement - TranscriptionFactor
+7. targetsGene: GeneticElement - TargetGene
+8. associatedWithMutation: GeneticElement - Mutation
+9. hasSource: GeneticElement - Source
+
+**Data Type Properties:**
+1. biosampleName: Biosample - xsd:string
+2. crmID: CisRegulatoryModule - xsd:string
+3. crossrefID: GeneticElement - xsd:string
+4. currentAssembly: GenomicCoordinate - xsd:string
+5. currentChr: GenomicCoordinate - xsd:string
+6. diseaseName: Disease - xsd:string
+7. diseasePMID: Disease - xsd:string
+8. diseaseMethod: Disease - xsd:string
+9. enh2genePMID: Publication - xsd:string
+10. enh2geneMethod: Method - xsd:string
+11. enhPMID: Publication - xsd:string
+12. enhMethod: Method - xsd:string
+13. hgncSymbolTFs: TranscriptionFactor - xsd:string
+14. hgncSymbolTargetGenes: TargetGene - xsd:string
+15. minimumRatio: GeneticElement - xsd:float
+16. mutationPMID: Mutation - xsd:string
+17. mutationMethod: Mutation - xsd:string
+18. origAssembly: GenomicCoordinate - xsd:string
+19. origChr: GenomicCoordinate - xsd:string
+20. originalID: GeneticElement - xsd:string
+21. refsnpID: GeneticElement - xsd:string
+22. score: GeneticElement - xsd:float
+23. sourceName: Source - xsd:string
+24. typeName: GeneticElement - xsd:string
+25. currentEnd: GenomicCoordinate - xsd:integer
+26. currentStart: GenomicCoordinate - xsd:integer
+27. origEnd: GenomicCoordinate - xsd:integer
+28. origStart: GenomicCoordinate - xsd:integer
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Datatype Properties
+base:biosampleName a owl:DatatypeProperty ;
+    rdfs:domain base:Biosample ;
+    rdfs:range xsd:string ;
+    rdfs:label "biosample name" ;
+    skos:definition "Name of the biosample" .
+
+base:crmID a owl:DatatypeProperty ;
+    rdfs:domain base:CisRegulatoryModule ;
+    rdfs:range xsd:string ;
+    rdfs:label "CRM ID" ;
+    skos:definition "ID of the cis-regulatory module" .
+
+base:crossrefID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "cross-reference ID" ;
+    skos:definition "Cross-reference ID" .
+
+base:currentAssembly a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    rdfs:label "current assembly" ;
+    skos:definition "Current genome assembly version" .
+
+base:currentChr a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    rdfs:label "current chromosome" ;
+    skos:definition "Current chromosome" .
+
+base:diseaseName a owl:DatatypeProperty ;
+    rdfs:domain base:Disease ;
+    rdfs:range xsd:string ;
+    rdfs:label "disease name" ;
+    skos:definition "Disease associated" .
+
+base:diseasePMID a owl:DatatypeProperty ;
+    rdfs:domain base:Disease ;
+    rdfs:range xsd:string ;
+    rdfs:label "disease PMID" ;
+    skos:definition "PubMed ID for disease association" .
+
+base:diseaseMethod a owl:DatatypeProperty ;
+    rdfs:domain base:Disease ;
+    rdfs:range xsd:string ;
+    rdfs:label "disease method" ;
+    skos:definition "Method used for disease association" .
+
+base:enh2genePMID a owl:DatatypeProperty ;
+    rdfs:domain base:Publication ;
+    rdfs:range xsd:string ;
+    rdfs:label "enhancer to gene PMID" ;
+    skos:definition "PubMed ID for enhancer to gene associations" .
+
+base:enh2geneMethod a owl:DatatypeProperty ;
+    rdfs:domain base:Method ;
+    rdfs:range xsd:string ;
+    rdfs:label "enhancer to gene method" ;
+    skos:definition "Method used for enhancer to gene associations" .
+
+base:enhPMID a owl:DatatypeProperty ;
+    rdfs:domain base:Publication ;
+    rdfs:range xsd:string ;
+    rdfs:label "enhancer PMID" ;
+    skos:definition "PubMed ID for enhancer" .
+
+base:enhMethod a owl:DatatypeProperty ;
+    rdfs:domain base:Method ;
+    rdfs:range xsd:string ;
+    rdfs:label "enhancer method" ;
+    skos:definition "Method used for enhancer identification" .
+
+base:hgncSymbolTFs a owl:DatatypeProperty ;
+    rdfs:domain base:TranscriptionFactor ;
+    rdfs:range xsd:string ;
+    rdfs:label "HGNC symbol for transcription factors" ;
+    skos:definition "HGNC symbol for transcription factors" .
+
+base:hgncSymbolTargetGenes a owl:DatatypeProperty ;
+    rdfs:domain base:TargetGene ;
+    rdfs:range xsd:string ;
+    rdfs:label "HGNC symbol for target genes" ;
+    skos:definition "HGNC symbol for target genes" .
+
+base:minimumRatio a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "minimum ratio" ;
+    skos:definition "Minimum ratio value" .
+
+base:mutationPMID a owl:DatatypeProperty ;
+    rdfs:domain base:Mutation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mutation PMID" ;
+    skos:definition "PubMed ID for mutation" .
+
+base:mutationMethod a owl:DatatypeProperty ;
+    rdfs:domain base:Mutation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mutation method" ;
+    skos:definition "Method used for mutation identification" .
+
+base:origAssembly a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    rdfs:label "original assembly" ;
+    skos:definition "Original genome assembly version" .
+
+base:origChr a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    rdfs:label "original chromosome" ;
+    skos:definition "Original chromosome" .
+
+base:originalID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "original ID" ;
+    skos:definition "Original ID" .
+
+base:refsnpID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "reference SNP ID" ;
+    skos:definition "Reference SNP ID" .
+
+base:score a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "score" ;
+    skos:definition "Score value" .
+
+base:sourceName a owl:DatatypeProperty ;
+    rdfs:domain base:Source ;
+    rdfs:range xsd:string ;
+    rdfs:label "source name" ;
+    skos:definition "Source of the data" .
+
+base:typeName a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "type name" ;
+    skos:definition "Type of the data" .
+
+base:currentEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    rdfs:label "current end" ;
+    skos:definition "Current end position in the genome" .
+
+base:currentStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    rdfs:label "current start" ;
+    skos:definition "Current start position in the genome" .
+
+base:origEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    rdfs:label "original end" ;
+    skos:definition "Original end position in the genome" .
+
+base:origStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    rdfs:label "original start" ;
+    skos:definition "Original start position in the genome" .
+
+# Object Properties
+base:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:GenomicCoordinate ;
+    rdfs:label "has genomic coordinate" ;
+    skos:definition "Associates a genetic element with its genomic coordinate" .
+
+base:associatedWithBiosample a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Biosample ;
+    rdfs:label "associated with biosample" ;
+    skos:definition "Associates a genetic element with a biosample" .
+
+base:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Disease ;
+    rdfs:label "associated with disease" ;
+    skos:definition "Associates a genetic element with a disease" .
+
+base:identifiedByMethod a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Method ;
+    rdfs:label "identified by method" ;
+    skos:definition "Associates a genetic element with a method used for its identification" .
+
+base:referencedInPublication a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Publication ;
+    rdfs:label "referenced in publication" ;
+    skos:definition "Associates a genetic element with a publication" .
+
+base:regulatesTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:TranscriptionFactor ;
+    rdfs:label "regulates transcription factor" ;
+    skos:definition "Associates a genetic element with a transcription factor it regulates" .
+
+base:targetsGene a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:TargetGene ;
+    rdfs:label "targets gene" ;
+    skos:definition "Associates a genetic element with a target gene" .
+
+base:associatedWithMutation a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Mutation ;
+    rdfs:label "associated with mutation" ;
+    skos:definition "Associates a genetic element with a mutation" .
+
+base:hasSource a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Source ;
+    rdfs:label "has source" ;
+    skos:definition "Associates a genetic element with its source" .
+
+# Classes
+base:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    skos:definition "A genetic element" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:hasGenomicCoordinate ;
+        owl:someValuesFrom base:GenomicCoordinate
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:associatedWithBiosample ;
+        owl:someValuesFrom base:Biosample
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:associatedWithDisease ;
+        owl:someValuesFrom base:Disease
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:identifiedByMethod ;
+        owl:someValuesFrom base:Method
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:referencedInPublication ;
+        owl:someValuesFrom base:Publication
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:regulatesTranscriptionFactor ;
+        owl:someValuesFrom base:TranscriptionFactor
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:targetsGene ;
+        owl:someValuesFrom base:TargetGene
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:associatedWithMutation ;
+        owl:someValuesFrom base:Mutation
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:hasSource ;
+        owl:someValuesFrom base:Source
+    ] .
+
+base:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:definition "A genomic coordinate" .
+
+base:Biosample a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:definition "A biosample" .
+
+base:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:definition "A disease" .
+
+base:Method a owl:Class ;
+    rdfs:label "Method" ;
+    skos:definition "A method" .
+
+base:Publication a owl:Class ;
+    rdfs:label "Publication" ;
+    skos:definition "A publication" .
+
+base:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:definition "A transcription factor" .
+
+base:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    skos:definition "A target gene" .
+
+base:Mutation a owl:Class ;
+    rdfs:label "Mutation" ;
+    skos:definition "A mutation" .
+
+base:Source a owl:Class ;
+    rdfs:label "Source" ;
+    skos:definition "A source" .
+
+base:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:definition "An enhancer" ;
+    rdfs:subClassOf base:GeneticElement .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:definition "A super enhancer" ;
+    rdfs:subClassOf base:GeneticElement .
+
+base:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:definition "A cis-regulatory module" ;
+    rdfs:subClassOf base:GeneticElement .
+
+################ MAPPING (OntoMapper) #######################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crossrefID;
+        rr:objectMap [
+            rml:reference "crossref"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:minimumRatio;
+        rr:objectMap [
+            rml:reference "minimum_ratio"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:originalID;
+        rr:objectMap [
+            rml:reference "original_ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:refsnpID;
+        rr:objectMap [
+            rml:reference "refsnp_ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [
+            rml:reference "score"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:typeName;
+        rr:objectMap [
+            rml:reference "type"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasGenomicCoordinate;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGenomicCoordinate>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:associatedWithBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBiosample>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:associatedWithDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:identifiedByMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMethod>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:referencedInPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPublication>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:regulatesTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:targetsGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:associatedWithMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasSource;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSource>
+        ]
+    ].
+
+<#TriplesMapGenomicCoordinate> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GenomicCoordinate/{current_chr}_{current_start}_{current_end}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentAssembly;
+        rr:objectMap [
+            rml:reference "current_assembly"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentChr;
+        rr:objectMap [
+            rml:reference "current_chr"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentEnd;
+        rr:objectMap [
+            rml:reference "current_end"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentStart;
+        rr:objectMap [
+            rml:reference "current_start"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origAssembly;
+        rr:objectMap [
+            rml:reference "orig_assembly"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origChr;
+        rr:objectMap [
+            rml:reference "orig_chr"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origEnd;
+        rr:objectMap [
+            rml:reference "orig_end"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origStart;
+        rr:objectMap [
+            rml:reference "orig_start"
+        ]
+    ].
+
+<#TriplesMapBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Biosample/{biosample_name}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:biosampleName;
+        rr:objectMap [
+            rml:reference "biosample_name"
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Disease/{disease}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:diseaseName;
+        rr:objectMap [
+            rml:reference "disease"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:diseasePMID;
+        rr:objectMap [
+            rml:reference "disease_PMID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:diseaseMethod;
+        rr:objectMap [
+            rml:reference "disease_method"
+        ]
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Method/{TFs2enh_method}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enh2geneMethod;
+        rr:objectMap [
+            rml:reference "enh2gene_method"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enhMethod;
+        rr:objectMap [
+            rml:reference "enh_method"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:mutationMethod;
+        rr:objectMap [
+            rml:reference "mutation_method"
+        ]
+    ].
+
+<#TriplesMapPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Publication/{TFs2enh_PMID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enh2genePMID;
+        rr:objectMap [
+            rml:reference "enh2gene_PMID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enhPMID;
+        rr:objectMap [
+            rml:reference "enh_PMID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:mutationPMID;
+        rr:objectMap [
+            rml:reference "mutation_PMID"
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/TranscriptionFactor/{hgnc_symbol_TFs}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hgncSymbolTFs;
+        rr:objectMap [
+            rml:reference "hgnc_symbol_TFs"
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/TargetGene/{hgnc_symbol_target_genes}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hgncSymbolTargetGenes;
+        rr:objectMap [
+            rml:reference "hgnc_symbol_target_genes"
+        ]
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Mutation/{mutation_PMID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:mutationPMID;
+        rr:objectMap [
+            rml:reference "mutation_PMID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:mutationMethod;
+        rr:objectMap [
+            rml:reference "mutation_method"
+        ]
+    ].
+
+<#TriplesMapSource> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Source/{source}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:sourceName;
+        rr:objectMap [
+            rml:reference "source"
+        ]
+    ].

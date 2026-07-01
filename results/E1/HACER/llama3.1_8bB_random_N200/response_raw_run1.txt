@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRMEnhancer>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer"^^xsd:string ;
+  skos:definition "A regulatory element that can interact with transcription factors to regulate gene expression."^^xsd:string .
+
+<http://example.org/genomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "A location on the genome where a regulatory element is found."^^xsd:string .
+
+<http://example.org/evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The source of information that supports the existence of a CRM/Enhancer."^^xsd:string .
+
+<http://example.org/CRMEnhancer>
+  <http://example.org/genomicCoordinate> 
+    [ rdf:type obo:GO_0003674 ] ;
+  <http://example.org/evidence> 
+    [ rdf:type obo:SO_0000313 ] .
+
+<http://example.org/GenomicRegion>
+  a owl:Class ;
+  rdfs:label "Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "A region of the genome that contains regulatory elements."^^xsd:string .
+
+<http://example.org/TranscriptionFactor>
+  a owl:Class ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor"^^xsd:string ;
+  skos:definition "A protein that binds to DNA and regulates gene expression."^^xsd:string .
+
+<http://example.org/CRMEnhancer>
+  <http://example.org/interactsWith> 
+    [ rdf:type obo:GO_0005515 ] ;
+  <http://example.org/regulatesExpressionOf> 
+    [ rdf:type obo:GO_0042592 ] .
+
+Note that the above code is a simplified version of what would be required to fully represent the data. Additional properties and relationships may need to be added depending on the specific requirements of the project.

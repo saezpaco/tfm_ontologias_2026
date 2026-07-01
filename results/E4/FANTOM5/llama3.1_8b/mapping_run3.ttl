@@ -1,0 +1,86 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/formats#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/rml#ql> .
+@prefix base_ontology: <https://base_ontology.com#> .
+
+<#TriplesMapClassEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{class_entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base_ontology:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#LogicalSource>;
+        ]
+    ].
+
+<#TriplesMapClassEntity2> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{class_entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base_ontology:has_enhancer_PMID;
+        rr:objectMap [
+            rr:parentTriplesMap <#LogicalSource>;
+        ]
+    ].
+
+<#TriplesMapClassEntity3> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{class_entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base_ontology:has_enhancer_method;
+        rr:objectMap [
+            rr:parentTriplesMap <#LogicalSource>;
+        ]
+    ].
+
+<#TriplesMapClassEntity4> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{class_entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base_ontology:targets_gene;
+        rr:objectMap [
+            rr:parentTriplesMap <#LogicalSource>;
+        ]
+    ].
+
+<#TriplesMapClassEntity5> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{class_entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base_ontology:associated_with_transcription_factor;
+        rr:objectMap [
+            rr:parentTriplesMap <#LogicalSource>;
+        ]
+    ].
+
+<#LogicalSource> a rml:LogicalSource;
+    rml:source "FANTOM5.csv";
+    rml:referenceFormulation ql:CSV.

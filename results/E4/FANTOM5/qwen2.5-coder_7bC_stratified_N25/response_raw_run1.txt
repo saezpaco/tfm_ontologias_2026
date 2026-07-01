@@ -1,0 +1,493 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#, http://www.w3.org/1999/02/22-rdf-syntax-ns#, http://www.w3.org/2000/01/rdf-schema#, http://www.w3.org/2004/02/skos/core#, http://www.w3.org/2001/XMLSchema# and http://www.w3.org/2002/07/owl#
+
+**Data Description:**
+1. blockCount: type - Number of blocks in the genomic region - Integer
+2. chromEnd: type - End position of the chromosome - Integer
+3. chromStart: type - Start position of the chromosome - Integer
+4. score: type - Score or significance of the element - Float
+5. thickEnd: type - End position of the thick part of the element - Integer
+6. thickStart: type - Start position of the thick part of the element - Integer
+7. blockSizes: type - Sizes of each block in the genomic region - Text
+8. blockStarts: type - Starting positions of each block in the genomic region - Text
+9. chrom: type - Chromosome identifier - Text
+10. itemRgb: type - RGB color code for visualization - Categorical
+11. name: type - Name or identifier of the element - Text
+12. strand: type - Orientation of the element (positive/negative) - Categorical
+
+**Classes:**
+1. GeneticElement
+
+**Subclasses:**
+1. Enhancer subclass of -> GeneticElement
+2. SuperEnhancer subclass of -> Enhancer
+
+**Object Properties:**
+1. hasBlockCount: domain - GeneticElement, range - Integer
+2. hasChromEnd: domain - GeneticElement, range - Integer
+3. hasChromStart: domain - GeneticElement, range - Integer
+4. hasScore: domain - GeneticElement, range - Float
+5. hasThickEnd: domain - GeneticElement, range - Integer
+6. hasThickStart: domain - GeneticElement, range - Integer
+7. hasBlockSizes: domain - GeneticElement, range - Text
+8. hasBlockStarts: domain - GeneticElement, range - Text
+9. hasChrom: domain - GeneticElement, range - Text
+10. hasItemRgb: domain - GeneticElement, range - Categorical
+11. hasName: domain - GeneticElement, range - Text
+12. hasStrand: domain - GeneticElement, range - Categorical
+
+**Data Type Properties:**
+1. count: domain - GeneticElement, range - Integer
+2. max: domain - GeneticElement, range - Float or Integer
+3. mean: domain - GeneticElement, range - Float
+4. min: domain - GeneticElement, range - Float or Integer
+5. non_null_count: domain - GeneticElement, range - Integer
+6. std: domain - GeneticElement, range - Float
+7. type: domain - GeneticElement, range - Categorical (categorical, numerical, text)
+8. unique_count: domain - GeneticElement, range - Integer
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "count" ;
+    rdfs:comment "Number of non-null values in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasCount ;
+        owl:someValuesFrom xsd:integer ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "max" ;
+    rdfs:comment "Maximum value in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasMax ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "mean" ;
+    rdfs:comment "Average value in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasMean ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "min" ;
+    rdfs:comment "Minimum value in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasMin ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "non_null_count" ;
+    rdfs:comment "Number of non-null values in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasNonNullCount ;
+        owl:someValuesFrom xsd:integer ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "std" ;
+    rdfs:comment "Standard deviation of the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasStd ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    rdfs:comment "Type of the dataset (categorical, numerical, text)." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasType ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "unique_count" ;
+    rdfs:comment "Number of unique values in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasUniqueCount ;
+        owl:someValuesFrom xsd:integer ] .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasBlockCount" ;
+    rdfs:comment "Number of blocks in the genomic region." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasChromEnd" ;
+    rdfs:comment "End position of the chromosome." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasChromStart" ;
+    rdfs:comment "Start position of the chromosome." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasScore" ;
+    rdfs:comment "Score or significance of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:float .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasThickEnd" ;
+    rdfs:comment "End position of the thick part of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasThickStart" ;
+    rdfs:comment "Start position of the thick part of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasBlockSizes" ;
+    rdfs:comment "Sizes of each block in the genomic region." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasBlockStarts" ;
+    rdfs:comment "Starting positions of each block in the genomic region." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasChrom" ;
+    rdfs:comment "Chromosome identifier." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasItemRgb" ;
+    rdfs:comment "RGB color code for visualization." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasName" ;
+    rdfs:comment "Name or identifier of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasStrand" ;
+    rdfs:comment "Orientation of the element (positive/negative)." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "GeneticElement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasBlockCount ;
+        owl:someValuesFrom xsd:integer ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasChromEnd ;
+        owl:someValuesFrom xsd:integer ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasChromStart ;
+        owl:someValuesFrom xsd:integer ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasScore ;
+        owl:someValuesFrom xsd:float ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasThickEnd ;
+        owl:someValuesFrom xsd:integer ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasThickStart ;
+        owl:someValuesFrom xsd:integer ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasBlockSizes ;
+        owl:someValuesFrom xsd:string ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasBlockStarts ;
+        owl:someValuesFrom xsd:string ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasChrom ;
+        owl:someValuesFrom xsd:string ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasItemRgb ;
+        owl:someValuesFrom xsd:string ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasName ;
+        owl:someValuesFrom xsd:string ] ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasStrand ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:subClassOf gr:GeneticElement .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    rdfs:subClassOf gr:Enhancer .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockCount;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockCount>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasChromEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromEnd>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasChromStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromStart>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScore>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasThickEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapThickEnd>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasThickStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapThickStart>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasBlockSizes;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockSizes>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasBlockStarts;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockStarts>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasChrom;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChrom>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasItemRgb;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapItemRgb>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasName;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapName>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasStrand;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStrand>;
+        ]
+    ].
+
+<#TriplesMapBlockCount> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockCount;
+        rr:objectMap [
+            rr:template "{{blockCount}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapChromEnd> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasChromEnd;
+        rr:objectMap [
+            rr:template "{{chromEnd}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapChromStart> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasChromStart;
+        rr:objectMap [
+            rr:template "{{chromStart}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasScore;
+        rr:objectMap [
+            rr:template "{{score}}",
+            rr:datatype xsd:float
+        ]
+    ].
+
+<#TriplesMapThickEnd> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasThickEnd;
+        rr:objectMap [
+            rr:template "{{thickEnd}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapThickStart> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasThickStart;
+        rr:objectMap [
+            rr:template "{{thickStart}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapBlockSizes> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockSizes;
+        rr:objectMap [
+            rr:template "{{blockSizes}}"
+        ]
+    ].
+
+<#TriplesMapBlockStarts> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockStarts;
+        rr:objectMap [
+            rr:template "{{blockStarts}}"
+        ]
+    ].
+
+<#TriplesMapChrom> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasChrom;
+        rr:objectMap [
+            rr:template "{{chrom}}"
+        ]
+    ].
+
+<#TriplesMapItemRgb> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasItemRgb;
+        rr:objectMap [
+            rr:template "{{itemRgb}}"
+        ]
+    ].
+
+<#TriplesMapName> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasName;
+        rr:objectMap [
+            rr:template "{{name}}"
+        ]
+    ].
+
+<#TriplesMapStrand> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasStrand;
+        rr:objectMap [
+            rr:template "{{strand}}"
+        ]
+    ].
+```

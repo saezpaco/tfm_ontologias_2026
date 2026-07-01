@@ -1,0 +1,677 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM/enhancer>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "CRM"^^xsd:string ;
+  skos:definition "A chromatin regulatory module is a functional unit of chromatin that regulates gene expression."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "hasGenomicCoordinate"^^xsd:string ;
+  skos:definition "The genomic coordinate of the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "hasEvidence"^^xsd:string ;
+  skos:definition "The evidence supporting the existence of the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#genomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "genomicCoordinate"^^xsd:string ;
+  skos:definition "The genomic coordinate of the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "evidence"^^xsd:string ;
+  skos:definition "The evidence supporting the existence of the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedTo>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To"^^xsd:string ;
+  skos:prefLabel "mappedTo"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromatinState>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin State"^^xsd:string ;
+  skos:prefLabel "hasChromatinState"^^xsd:string ;
+  skos:definition "The chromatin state of the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#chromatinState>
+  a owl:DatatypeProperty ;
+  rdfs:label "Chromatin State"^^xsd:string ;
+  skos:prefLabel "chromatinState"^^xsd:string ;
+  skos:definition "The chromatin state of the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Regulatory Element"^^xsd:string ;
+  skos:prefLabel "transcriptionRegulatoryElement"^^xsd:string ;
+  skos:definition "The transcription regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "hasTranscriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#transcriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "transcriptionFactor"^^xsd:string ;
+  skos:definition "The transcription factor associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "hasRegulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#regulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "regulatoryElement"^^xsd:string ;
+  skos:definition "The regulatory element associated with the CRM."^^xsd:string .
+
+<http://example.org/CRM/enhancer#mappedToGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Mapped To Genomic Region"^^xsd:string ;
+  skos:prefLabel "mappedToGenomicRegion"^^xsd:string ;
+  skos:definition "The genomic region that the CRM is mapped to."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Regulatory Element"^^xsd:string ;
+  skos:

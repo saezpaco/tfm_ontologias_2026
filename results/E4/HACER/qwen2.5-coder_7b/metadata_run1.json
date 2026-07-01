@@ -1,0 +1,24 @@
+{
+  "run": 1,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/HACER.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 42,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-05T17:38:53.236896+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.03,
+    "plan_s": 108.799,
+    "plan_chars": 4026,
+    "plan_prompt_chars": 9549,
+    "onto_s": 175.628,
+    "onto_chars": 6437,
+    "onto_prompt_chars": 12955,
+    "map_s": 162.095,
+    "map_chars": 5777,
+    "map_prompt_chars": 13130
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-05T17:46:19.789253+00:00",
+  "total_s": 446.552
+}

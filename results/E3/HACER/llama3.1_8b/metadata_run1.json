@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-05T13:50:15.897802",
+  "success": true,
+  "elapsed_seconds": 167.53,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 1207,
+    "total_tokens": 5303
+  },
+  "prompt_tokens_estimate": 2583,
+  "response_chars": 3983,
+  "turtle_chars": 3515,
+  "validation": {
+    "valid": false,
+    "error": "at line 25 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' owl:Ontology ;\\n  rdfs:label \"CISREG Reference Ontology\" .\\n\\n'^b'crm2tfac a skos:ConceptScheme ;\\n  rdfs:label \"CRM2TFAC Conce'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b/response_raw_run1.txt"
+  }
+}

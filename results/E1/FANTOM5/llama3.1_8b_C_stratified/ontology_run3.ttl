@@ -1,0 +1,119 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+<owl:Class rdf:about="http://example.org/Crm">
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module (CRM)" ;
+  skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression" .
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/Enhancer">
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A type of CRM that increases transcription rate" ;
+  rdfs:subClassOf <http://example.org/Crm> .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate" ;
+  skos:prefLabel "Has Genomic Coordinate" ;
+  skos:definition "A relationship between an enhancer and its genomic coordinates" .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/genomicCoordinate">
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A point in the genome where an enhancer is located" ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range xsd:string .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/evidencedBy">
+  a owl:ObjectProperty ;
+  rdfs:label "Evidenced By" ;
+  skos:prefLabel "Evidenced By" ;
+  skos:definition "A relationship between an enhancer and the experimental evidence supporting its existence" .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/ExperimentalEvidence">
+  a owl:Class ;
+  rdfs:label "Experimental Evidence" ;
+  skos:prefLabel "Experimental Evidence" ;
+  skos:definition "Data or results from an experiment supporting the existence of an enhancer" .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/targets">
+  a owl:ObjectProperty ;
+  rdfs:label "Targets" ;
+  skos:prefLabel "Targets" ;
+  skos:definition "A relationship between an enhancer and the genes it regulates" .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/TargetGene">
+  a owl:Class ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "A gene regulated by an enhancer" .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "Associated With" ;
+  skos:prefLabel "Associated With" ;
+  skos:definition "A relationship between an enhancer and the diseases it is associated with" .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Disease">
+  a owl:Class ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "A medical condition associated with an enhancer" .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/interactsWith">
+  a owl:ObjectProperty ;
+  rdfs:label "Interacts With" ;
+  skos:prefLabel "Interacts With" ;
+  skos:definition "A relationship between an enhancer and the transcription factors it interacts with" .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactor">
+  a owl:Class ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to an enhancer and regulates gene expression" .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  rdfs:subPropertyOf <obo:SO_0000163> .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/genomicCoordinate">
+  skos:exactMatch obo:SO_0000163 .
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="http://example.org/Enhancer">
+  skos:closeMatch <obo:GO_0045975> .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/evidencedBy">
+  skos:exactMatch obo:SO_0000316 .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/ExperimentalEvidence">
+  skos:closeMatch <obo:GO_0034620> .
+</owl:Class>

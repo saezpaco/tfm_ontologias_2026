@@ -1,0 +1,68 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM/enhancer>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "CRM" ;
+  skos:definition "A chromatin regulatory module is a functional unit of chromatin that regulates gene expression." .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "has_genomic_coordinate" ;
+  skos:definition "A CRM is associated with a specific genomic coordinate." .
+
+<http://example.org/CRM/enhancer#evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "evidence" ;
+  skos:definition "The evidence supporting the existence of a CRM." .
+
+<http://example.org/CRM/enhancer#genomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "genomic_coordinate" ;
+  skos:definition "The genomic coordinate associated with the CRM." ;
+  rdfs:range xsd:string .
+
+<http://example.org/CRM/enhancer#evidenceType>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "evidence_type" ;
+  skos:definition "The type of evidence supporting the existence of the CRM." ;
+  rdfs:range xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "has_genomic_coordinate" ;
+  skos:definition "A CRM is associated with a specific genomic coordinate." .
+
+<http://example.org/CRM/enhancer#evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "evidence" ;
+  skos:definition "The evidence supporting the existence of a CRM." .
+
+<http://purl.obolibrary.org/obo/GO_0000786>
+  a obo:Class ;
+  rdfs:label "Chromatin Regulatory Complex"^^xsd:string ;
+  skos:prefLabel "chromatin_regulatory_complex" ;
+  skos:definition "A chromatin regulatory complex is a functional unit of chromatin that regulates gene expression." .
+
+<http://purl.obolibrary.org/obo/SO_0001786>
+  a obo:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "genomic_coordinate" ;
+  skos:definition "A genomic coordinate is a specific location on the genome." .
+
+<http://example.org/CRM/enhancer> 
+  skos:exactMatch <http://purl.obolibrary.org/obo/GO_0000786> . 
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate> 
+  skos:closeMatch <http://purl.obolibrary.org/obo/SO_0001786> .

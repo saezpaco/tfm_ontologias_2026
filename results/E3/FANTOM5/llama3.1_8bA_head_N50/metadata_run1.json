@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-27T11:04:18.042248",
+  "success": true,
+  "elapsed_seconds": 288.2,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 1857,
+    "total_tokens": 5952
+  },
+  "prompt_tokens_estimate": 2667,
+  "response_chars": 5694,
+  "turtle_chars": 1501,
+  "validation": {
+    "valid": false,
+    "error": "at line 10 of <>:\nBad syntax (Prefix \"skos:\" not bound) at ^ in:\n\"...b'SO_0000727 ; # CRM\\n    rdfs:subClassOf obo:SO_0000727 ;\\n    '^b'skos:definition \"Cis-regulatory module located in Homo sapie'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N50/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N50/response_raw_run1.txt"
+  }
+}

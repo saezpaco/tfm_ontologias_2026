@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=200/HACER.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-28T20:41:22.768727+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.032,
+    "plan_s": 4.004,
+    "plan_chars": 4419,
+    "plan_prompt_chars": 9579,
+    "onto_s": 7.668,
+    "onto_chars": 8770,
+    "onto_prompt_chars": 13378,
+    "map_s": 7.134,
+    "map_chars": 9218,
+    "map_prompt_chars": 15856
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-28T20:41:41.607489+00:00",
+  "total_s": 18.838
+}

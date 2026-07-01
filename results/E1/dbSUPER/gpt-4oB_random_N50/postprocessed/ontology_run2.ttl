@@ -1,0 +1,66 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that increases the transcription of a gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+# Object Properties
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :Gene ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates an enhancer to its target gene." .
+
+:activeInCellLine a owl:ObjectProperty ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :CellLine ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the enhancer is active." .
+
+# Datatype Properties
+:hasChromosome a owl:DatatypeProperty ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the enhancer is located." .
+
+:hasStartCoordinate a owl:DatatypeProperty ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has start coordinate" ;
+    skos:definition "The start coordinate of the enhancer on the chromosome." .
+
+:hasEndCoordinate a owl:DatatypeProperty ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has end coordinate" ;
+    skos:definition "The end coordinate of the enhancer on the chromosome." .
+
+:hasRank a owl:DatatypeProperty ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has rank" ;
+    skos:definition "The rank of the enhancer based on its activity or significance." .
+
+:hasSEID a owl:DatatypeProperty ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has SE ID" ;
+    skos:definition "The unique identifier for the super-enhancer." .

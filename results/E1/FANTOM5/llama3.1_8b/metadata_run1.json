@@ -1,0 +1,29 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-05T12:10:25.179966",
+  "success": true,
+  "elapsed_seconds": 82.76,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2797,
+    "completion_tokens": 1100,
+    "total_tokens": 3897
+  },
+  "prompt_tokens_estimate": 1655,
+  "response_chars": 3714,
+  "turtle_chars": 3714,
+  "validation": {
+    "valid": true,
+    "n_triples": 72,
+    "n_classes": 2,
+    "n_properties": 10
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b/response_raw_run1.txt"
+  }
+}

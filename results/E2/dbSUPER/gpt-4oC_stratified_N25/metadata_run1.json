@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-26T19:49:55.710904",
+  "success": true,
+  "elapsed_seconds": 9.92,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1528,
+    "completion_tokens": 637,
+    "total_tokens": 2165
+  },
+  "prompt_tokens_estimate": 1238,
+  "response_chars": 2119,
+  "turtle_chars": 2105,
+  "validation": {
+    "valid": false,
+    "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'er-enhancers from the dbSUPER database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oC_stratified_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oC_stratified_N25/response_raw_run1.txt"
+  }
+}

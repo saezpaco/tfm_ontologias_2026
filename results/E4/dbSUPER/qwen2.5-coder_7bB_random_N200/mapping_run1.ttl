@@ -1,0 +1,290 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix greg: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TargetGene/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Disease/{{disease_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:CellLineOrBiosample/{{cell_line_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Mutation/{{mutation_id}}{FAIR_URI}";
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+
+<#TriplesMapGeneticRegulatoryElementProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_PMID}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}"
+        ]
+    ].
+
+<#TriplesMapEnhancerProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasChromosomeNumber;
+        rr:objectMap [
+            rr:constant "{{chromosome_number}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasStartPosition;
+        rr:objectMap [
+            rr:constant "{{start_position}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasEndPosition;
+        rr:objectMap [
+            rr:constant "{{end_position}}"
+        ]
+    ].
+
+<#TriplesMapSuperEnhancerProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasChromosomeNumber;
+        rr:objectMap [
+            rr:constant "{{chromosome_number}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasStartPosition;
+        rr:objectMap [
+            rr:constant "{{start_position}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasEndPosition;
+        rr:objectMap [
+            rr:constant "{{end_position}}"
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactorProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_PMID}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}"
+        ]
+    ].
+
+<#TriplesMapTargetGeneProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TargetGene/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_PMID}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}"
+        ]
+    ].
+
+<#TriplesMapDiseaseProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Disease/{{disease_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{disease_pubmed_id}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{disease_method}}"
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosampleProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:CellLineOrBiosample/{{cell_line_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{cell_line_pubmed_id}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{cell_line_method}}"
+        ]
+    ].
+
+<#TriplesMapMutationProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Mutation/{{mutation_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{mutation_pubmed_id}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{mutation_method}}"
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModuleProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{crm_pubmed_id}}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{crm_method}}"
+        ]
+    ].
+```

@@ -1,0 +1,95 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 212.90333333333334,
+  "total_tokens": 13440,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-05-09T00:25:18.832360",
+      "success": true,
+      "elapsed_seconds": 211.02,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3336,
+        "completion_tokens": 1230,
+        "total_tokens": 4566
+      },
+      "prompt_tokens_estimate": 2049,
+      "response_chars": 4426,
+      "turtle_chars": 3619,
+      "validation": {
+        "valid": false,
+        "error": "at line 21 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'refix dbsuper: <http://purl.obolibrary.org/obo/dbsuper#> .\\n\\n'^b'crm:crm_ID rdf:type owl:Class ;\\n           rdfs:label \"cis-r'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-05-09T00:28:52.312523",
+      "success": true,
+      "elapsed_seconds": 175.16,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3336,
+        "completion_tokens": 834,
+        "total_tokens": 4170
+      },
+      "prompt_tokens_estimate": 2049,
+      "response_chars": 2701,
+      "turtle_chars": 2091,
+      "validation": {
+        "valid": false,
+        "error": "at line 48 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' ;\\n    skos:exactMatch hgene:hasTranscript .\\n\\n# Individuals\\n'^b'CRMHS00000005752 a hcrm:CisRegulatoryModule ;\\n    rdfs:comme'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-05-09T00:33:32.936861",
+      "success": true,
+      "elapsed_seconds": 252.53,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3336,
+        "completion_tokens": 1368,
+        "total_tokens": 4704
+      },
+      "prompt_tokens_estimate": 2049,
+      "response_chars": 4352,
+      "turtle_chars": 2519,
+      "validation": {
+        "valid": true,
+        "n_triples": 24,
+        "n_classes": 1,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/response_raw_run3.txt"
+      }
+    }
+  ]
+}

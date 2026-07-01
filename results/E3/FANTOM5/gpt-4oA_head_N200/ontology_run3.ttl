@@ -1,0 +1,97 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix pubmed:  <http://identifiers.org/pubmed/> .
+@prefix assembly: <http://identifiers.org/assembly/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+<http://example.org/ontology/CisRegulatoryModule> a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch crm2phen:bgw!crm_ID--doid!doid .
+
+<http://example.org/ontology/Enhancer> a owl:Class ;
+    rdfs:subClassOf <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:label "Enhancer" .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+<http://example.org/ontology/Disease> a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:bgw!CRMHS00000003515--doid!1682 .
+
+### Properties ###
+<http://example.org/ontology/hasGenomicLocation> a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range assembly: .
+
+<http://example.org/ontology/targetsGene> a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/Gene> ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+<http://example.org/ontology/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/Disease> ;
+    skos:exactMatch crm2phen:bgw!CRMHS00000003515--doid!1682 .
+
+<http://example.org/ontology/hasTranscriptionFactor> a owl:ObjectProperty ;
+    rdfs:label "has transcription factor" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+<http://example.org/ontology/hasEvidence> a owl:DatatypeProperty ;
+    rdfs:label "has evidence" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range pubmed: .
+
+### Individuals ###
+<http://example.org/ontology/CRMHS00000005752> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000005752" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a assembly: ;
+        assembly:chromosome "chr1" ;
+        assembly:start "16039967"^^xsd:integer ;
+        assembly:end "16040344"^^xsd:integer ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    <http://example.org/ontology/targetsGene> hgnc:FAM131C ;
+    <http://example.org/ontology/hasEvidence> pubmed:24670763 .
+
+<http://example.org/ontology/CRMHS00000005795> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000005795" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a assembly: ;
+        assembly:chromosome "chr10" ;
+        assembly:start "62685569"^^xsd:integer ;
+        assembly:end "62685884"^^xsd:integer ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    <http://example.org/ontology/targetsGene> hgnc:ADO ;
+    <http://example.org/ontology/hasEvidence> pubmed:24670763 .
+
+# Additional individuals would be defined similarly...

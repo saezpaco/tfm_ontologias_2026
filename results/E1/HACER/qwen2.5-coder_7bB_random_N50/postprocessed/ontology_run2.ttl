@@ -1,0 +1,156 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" ;
+    skos:prefLabel "HACER" ;
+    skos:definition "A database containing information about cis-regulatory modules (CRM), specifically enhancer sequences that modulate the transcription rate of their target genes in the human genome." ;
+}
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module (CRM) that specifically enhances the transcription rate of its target genes in the human genome." ;
+    skos:exactMatch obo:SO_0001765 .
+
+crm:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A set of coordinates that specify the location of an enhancer sequence within the human genome." ;
+
+crm:ExperimentalEvidence a owl:Class ;
+    rdfs:label "Experimental Evidence" ;
+    skos:prefLabel "Experimental Evidence" ;
+    skos:definition "Data or results from experiments that support the function of an enhancer sequence as a cis-regulatory module." ;
+
+crm:CellLineActivity a owl:Class ;
+    rdfs:label "Cell Line Activity" ;
+    skos:prefLabel "Cell Line Activity" ;
+    skos:definition "The activity of an enhancer sequence in specific cell lines, indicating its potential role in gene regulation." ;
+
+crm:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    skos:prefLabel "Target Gene" ;
+    skos:definition "A gene whose transcription rate is modulated by an enhancer sequence." ;
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A condition or disorder that may be associated with the activity of an enhancer sequence." ;
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to DNA and regulates the transcription of genes, potentially interacting with enhancer sequences." ;
+
+crm:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has Genomic Coordinate" ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "The relationship between an enhancer and its genomic coordinates." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+
+crm:hasExperimentalEvidence a owl:ObjectProperty ;
+    rdfs:label "has Experimental Evidence" ;
+    skos:prefLabel "Experimental Evidence" ;
+    skos:definition "The relationship between an enhancer and the experimental evidence supporting its function." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExperimentalEvidence ;
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:label "has Cell Line Activity" ;
+    skos:prefLabel "Cell Line Activity" ;
+    skos:definition "The relationship between an enhancer and its activity in specific cell lines." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:CellLineActivity ;
+
+crm:regulatesTranscriptionOf a owl:ObjectProperty ;
+    rdfs:label "regulates Transcription Of" ;
+    skos:prefLabel "Regulates Transcription Of" ;
+    skos:definition "The relationship between an enhancer and the genes it regulates." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:TargetGene ;
+
+crm:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated With Disease" ;
+    skos:prefLabel "Associated With Disease" ;
+    skos:definition "The relationship between an enhancer and the diseases it may be associated with." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Disease ;
+
+crm:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "interacts With Transcription Factor" ;
+    skos:prefLabel "Interacts With Transcription Factor" ;
+    skos:definition "The relationship between an enhancer and the transcription factors it interacts with." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:TranscriptionFactor ;
+
+crm:genomicStart a owl:DatatypeProperty ;
+    rdfs:label "Genomic Start" ;
+    skos:prefLabel "Genomic Start" ;
+    skos:definition "The start coordinate of an enhancer sequence within the human genome." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+
+crm:genomicEnd a owl:DatatypeProperty ;
+    rdfs:label "Genomic End" ;
+    skos:prefLabel "Genomic End" ;
+    skos:definition "The end coordinate of an enhancer sequence within the human genome." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+
+crm:evidenceType a owl:DatatypeProperty ;
+    rdfs:label "Evidence Type" ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of experimental evidence supporting the function of an enhancer sequence." ;
+    rdfs:domain crm:ExperimentalEvidence ;
+    rdfs:range xsd:string ;
+
+crm:evidenceDescription a owl:DatatypeProperty ;
+    rdfs:label "Evidence Description" ;
+    skos:prefLabel "Evidence Description" ;
+    skos:definition "A description of the experimental evidence supporting the function of an enhancer sequence." ;
+    rdfs:domain crm:ExperimentalEvidence ;
+    rdfs:range xsd:string ;
+
+crm:cellLineName a owl:DatatypeProperty ;
+    rdfs:label "Cell Line Name" ;
+    skos:prefLabel "Cell Line Name" ;
+    skos:definition "The name of the cell line in which an enhancer sequence has been tested." ;
+    rdfs:domain crm:CellLineActivity ;
+    rdfs:range xsd:string ;
+
+crm:cellLineActivityLevel a owl:DatatypeProperty ;
+    rdfs:label "Cell Line Activity Level" ;
+    skos:prefLabel "Cell Line Activity Level" ;
+    skos:definition "The level of activity observed for an enhancer sequence in a specific cell line." ;
+    rdfs:domain crm:CellLineActivity ;
+    rdfs:range xsd:string ;
+
+crm:targetGeneSymbol a owl:DatatypeProperty ;
+    rdfs:label "Target Gene Symbol" ;
+    skos:prefLabel "Target Gene Symbol" ;
+    skos:definition "The symbol or name of the gene regulated by an enhancer sequence." ;
+    rdfs:domain crm:RegulatesTranscriptionOf ;
+    rdfs:range xsd:string ;
+
+crm:diseaseName a owl:DatatypeProperty ;
+    rdfs:label "Disease Name" ;
+    skos:prefLabel "Disease Name" ;
+    skos:definition "The name of the disease associated with an enhancer sequence." ;
+    rdfs:domain crm:AssociatedWithDisease ;
+    rdfs:range xsd:string ;
+
+crm:transcriptionFactorSymbol a owl:DatatypeProperty ;
+    rdfs:label "Transcription Factor Symbol" ;
+    skos:prefLabel "Transcription Factor Symbol" ;
+    skos:definition "The symbol or name of the transcription factor interacting with an enhancer sequence." ;
+    rdfs:domain crm:InteractsWithTranscriptionFactor ;
+    rdfs:range xsd:string ;
+}

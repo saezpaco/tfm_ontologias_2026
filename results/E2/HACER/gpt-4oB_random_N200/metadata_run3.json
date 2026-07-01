@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:42:45.782131",
+  "success": true,
+  "elapsed_seconds": 6.73,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7263,
+    "completion_tokens": 956,
+    "total_tokens": 8219
+  },
+  "prompt_tokens_estimate": 3880,
+  "response_chars": 3070,
+  "turtle_chars": 3070,
+  "validation": {
+    "valid": true,
+    "n_triples": 42,
+    "n_classes": 4,
+    "n_properties": 6
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oB_random_N200/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oB_random_N200/response_raw_run3.txt"
+  }
+}

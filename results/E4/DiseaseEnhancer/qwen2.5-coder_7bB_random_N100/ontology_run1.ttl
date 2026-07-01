@@ -1,0 +1,127 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty
+    genreg:hasScore ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "The score associated with the relationship." ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty
+    genreg:hasRatio ;
+    rdfs:label "Has Ratio" ;
+    rdfs:comment "The ratio value." ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty
+    genreg:hasStartPosition ;
+    rdfs:label "Has Start Position" ;
+    rdfs:comment "The start position in the assembly." ;
+    rdfs:range xsd:int .
+
+owl:DatatypeProperty
+    genreg:hasEndPosition ;
+    rdfs:label "Has End Position" ;
+    rdfs:comment "The end position in the assembly." ;
+    rdfs:range xsd:int .
+
+owl:ObjectProperty
+    genreg:hasTranscriptionFactor ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The transcription factor associated with the enhancer." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:TranscriptionFactor .
+
+owl:ObjectProperty
+    genreg:hasTargetGene ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The target gene associated with the enhancer." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:Gene .
+
+owl:ObjectProperty
+    genreg:associatedWithDisease ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The disease associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Disease .
+
+owl:ObjectProperty
+    genreg:hasPubMedID ;
+    rdfs:label "Has PubMed ID" ;
+    rdfs:comment "The PubMed ID for the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    genreg:hasMethod ;
+    rdfs:label "Has Method" ;
+    rdfs:comment "The method used in the relationship." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    genreg:hasChromosome ;
+    rdfs:label "Has Chromosome" ;
+    rdfs:comment "The chromosome number in the assembly." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    genreg:hasAssemblyVersion ;
+    rdfs:label "Has Assembly Version" ;
+    rdfs:comment "The genome assembly version." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+genreg:TranscriptionFactor
+    rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A transcription factor involved in genetic regulatory elements." .
+
+genreg:Gene
+    rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:comment "A gene involved in genetic regulatory elements." ;
+
+genreg:Disease
+    rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A disease associated with genetic regulatory elements." ;
+
+genreg:GeneticRegulatoryElement
+    rdf:type owl:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A general class for genetic regulatory elements, including enhancers and super-enhancers." ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty genreg:hasScore ;
+        owl:someValuesFrom xsd:float
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty genreg:hasRatio ;
+        owl:someValuesFrom xsd:float
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty genreg:hasStartPosition ;
+        owl:someValuesFrom xsd:int
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty genreg:hasEndPosition ;
+        owl:someValuesFrom xsd:int
+    ] ;
+
+genreg:Enhancer
+    rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A type of genetic regulatory element that enhances gene expression." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+genreg:SuperEnhancer
+    rdf:type owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A type of genetic regulatory element that is highly active and can enhance multiple genes simultaneously." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .

@@ -1,0 +1,63 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:CRM a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    rdfs:subClassOf obo:SO_0001856 .
+
+crm:hasStart a owl:DatatypeProperty ;
+    rdfs:label "start_position" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start_position" ;
+    skos:definition "The start position of the cis-regulatory module on the chromosome" .
+
+crm:hasEnd a owl:DatatypeProperty ;
+    rdfs:label "end_position" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end_position" ;
+    skos:definition "The end position of the cis-regulatory module on the chromosome" .
+
+crm:hasChromosome a owl:DatatypeProperty ;
+    rdfs:label "chr_name" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "The chromosome name where the cis-regulatory module is located" .
+
+crm:hasDatabase a owl:DatatypeProperty ;
+    rdfs:label "database_name" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "database_name" ;
+    skos:definition "The name of the database where the cis-regulatory module is stored" .
+
+crm:hasGene a owl:ObjectProperty ;
+    rdfs:label "gene" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+crm:hasDisease a owl:ObjectProperty ;
+    rdfs:label "disease" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:DOID_0000001 ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "transcription_factor" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001467 ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+```

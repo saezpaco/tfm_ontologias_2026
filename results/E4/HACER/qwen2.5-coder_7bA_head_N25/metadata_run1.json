@@ -1,0 +1,24 @@
+{
+  "run": 1,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/A_head/N=25/HACER.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 42,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-30T16:12:21.899701+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.023,
+    "plan_s": 126.574,
+    "plan_chars": 3580,
+    "plan_prompt_chars": 9449,
+    "onto_s": 230.795,
+    "onto_chars": 7490,
+    "onto_prompt_chars": 12409,
+    "map_s": 178.334,
+    "map_chars": 4435,
+    "map_prompt_chars": 13737
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-30T16:21:17.626021+00:00",
+  "total_s": 535.726
+}

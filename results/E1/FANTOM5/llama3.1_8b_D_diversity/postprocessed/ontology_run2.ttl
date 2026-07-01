@@ -1,0 +1,77 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+crm:Enhancer
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module (CRM) / Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A region of DNA that modulates the transcription rate of its target genes" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000187> .
+
+crm:GenomicCoordinate
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A point or range of points on the genome where an enhancer is located" .
+
+crm:ChromosomalLocation
+  a owl:ObjectProperty ;
+  rdfs:label "Chromosomal Location" ;
+  skos:prefLabel "Chromosomal Location" ;
+  skos:definition "The chromosome and genomic coordinates where an enhancer is located" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000188> .
+
+crm:StartCoordinate
+  a owl:DatatypeProperty ;
+  rdfs:label "Start Coordinate" ;
+  skos:prefLabel "Start Coordinate" ;
+  skos:definition "The starting point of the genomic coordinates where an enhancer is located" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000189> .
+
+crm:EndCoordinate
+  a owl:DatatypeProperty ;
+  rdfs:label "End Coordinate" ;
+  skos:prefLabel "End Coordinate" ;
+  skos:definition "The ending point of the genomic coordinates where an enhancer is located" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000190> .
+
+crm:Evidence
+  a owl:Class ;
+  rdfs:label "Evidence for Enhancer Activity" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "Experimental evidence supporting the enhancer activity of a region" .
+
+crm:CellLineActivity
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line Activity" ;
+  skos:prefLabel "Cell Line Activity" ;
+  skos:definition "The cell line where an enhancer was found to be active" .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene whose transcription is modulated by an enhancer" .
+  
+crm:DiseaseAssociation
+  a owl:ObjectProperty ;
+  rdfs:label "Disease Association" ;
+  skos:prefLabel "Disease Association" ;
+  skos:definition "A disease associated with the activity of an enhancer" .
+
+crm:TranscriptionFactorInteraction
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a transcription factor and an enhancer" .

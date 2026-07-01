@@ -1,0 +1,85 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer Ontology" ;
+    rdfs:comment "Ontology for enhancers associated with diseases from the DiseaseEnhancer database." .
+
+### Classes ###
+:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in the human genome." .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of a cis-regulatory module." .
+
+:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with a cis-regulatory module." .
+
+:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor interacting with a cis-regulatory module." .
+
+### Object Properties ###
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between a cis-regulatory module and its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002410> .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between a cis-regulatory module and a disease." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002454> .
+
+:interactsWithTF a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between a cis-regulatory module and a transcription factor." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002436> .
+
+### Datatype Properties ###
+:hasGenomicCoordinates a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "The genomic coordinates of a cis-regulatory module." .
+
+:hasScore a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has score" ;
+    skos:definition "The score of a cis-regulatory module indicating its activity." .
+
+:hasPMID a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has PMID" ;
+    skos:definition "The PubMed ID associated with the evidence for a cis-regulatory module." .
+
+### Instances ###
+:CRMHS00000001594 a :CRM ;
+    :hasGenomicCoordinates "chr5:125315470-125318494" ;
+    :hasScore 1.0 ;
+    :hasPMID "25701871" ;
+    :hasTargetGene :LMNB1 ;
+    :associatedWithDisease obo:OMIM_169500, obo:DOID_0060785 .
+
+:LMNB1 a :Gene ;
+    skos:prefLabel "LMNB1" .
+
+obo:OMIM_169500 a :Disease ;
+    skos:prefLabel "Leukodystrophy, autosomal dominant, adult-onset" .
+
+obo:DOID_0060785 a :Disease ;
+    skos:prefLabel "Pelizaeus-Merzbacher disease" .

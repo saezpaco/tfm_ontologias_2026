@@ -1,0 +1,116 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:GeneticRegulatoryElement/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TranscriptionFactor/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Enhancer/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:SuperEnhancer/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TargetGene/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Disease/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:CellLineOrBiosample/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutationStudy> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:MutationStudy/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDiseaseAssociation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:DiseaseAssociation/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTFs2enhInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TFs2enhInteraction/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapenh2geneInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:enh2geneInteraction/{{Entity}}{FAIR_URI}";
+    ].
+
+<#TriplesMapPubMedArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:PubMedArticle/{{Entity}}{FAIR_URI}";
+    ].
+```

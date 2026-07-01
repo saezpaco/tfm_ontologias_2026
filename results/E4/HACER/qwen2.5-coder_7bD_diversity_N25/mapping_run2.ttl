@@ -1,0 +1,278 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Disease/{{disease}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Mutation/{{mutation_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:ChromatinRegulatoryModule/{{FAIR_URI}}";
+    ].
+
+<#TriplesMapGeneticRegulatoryElementProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}";
+        ]
+    ].
+
+<#TriplesMapEnhancerProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}";
+        ]
+    ].
+
+<#TriplesMapSuperEnhancerProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}";
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactorProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_PMID}}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}";
+        ]
+    ].
+
+<#TriplesMapTargetGeneProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_PMID}}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}";
+        ]
+    ].
+
+<#TriplesMapDiseaseProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{disease_PMID}}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{disease_method}}";
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosampleProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{cell_line_biosample_PMID}}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{cell_line_biosample_method}}";
+        ]
+    ].
+
+<#TriplesMapMutationProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Mutation/{{mutation_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{mutation_PMID}}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{mutation_method}}";
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModuleProperties> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:ChromatinRegulatoryModule/{{FAIR_URI}}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{chromatin_regulatory_module_PMID}}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:usesMethod;
+        rr:objectMap [
+            rr:constant "{{chromatin_regulatory_module_method}}";
+        ]
+    ].
+```

@@ -1,0 +1,316 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+**Data Description:**
+1. cell_name: text - name of the cell line or biosample - unique values
+2. chrom: text - chromosome identifier - unique values
+3. gene_symbol: text - symbol of the target gene - unique values
+4. se_id: text - identifier for the super-enhancer - unique values
+5. rank: Numerical - rank of the super-enhancer - 45.0 to 1247.0
+6. start: Numerical - start coordinate of the genomic region - 49148.0 to 187454355.0
+7. stop: Numerical - stop coordinate of the genomic region - 60599.0 to 187468841.0
+
+**classes:**
+1. CellLine
+2. Chromosome
+3. Gene
+4. SuperEnhancer
+5. GenomicRegion
+
+**subclasses:**
+1. CellLine: subclass of -> base:Entity
+2. Chromosome: subclass of -> base:Entity
+3. Gene: subclass of -> base:Entity
+4. SuperEnhancer: subclass of -> base:RegulatoryElement
+5. GenomicRegion: subclass of -> base:Entity
+
+**Object Properties:**
+1. hasChromosome: SuperEnhancer - Chromosome
+2. targetsGene: SuperEnhancer - Gene
+3. locatedIn: SuperEnhancer - GenomicRegion
+4. expressedIn: SuperEnhancer - CellLine
+
+**Data Type Properties:**
+1. cellName: CellLine - xsd:string
+2. chromName: Chromosome - xsd:string
+3. geneSymbol: Gene - xsd:string
+4. seID: SuperEnhancer - xsd:string
+5. rankValue: SuperEnhancer - xsd:float
+6. startCoordinate: GenomicRegion - xsd:float
+7. stopCoordinate: GenomicRegion - xsd:float
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:cellName a owl:DatatypeProperty ;
+    rdfs:domain base:CellLine ;
+    rdfs:range xsd:string ;
+    rdfs:label "Cell Name" ;
+    skos:definition "Name of the cell line or biosample" .
+
+base:chromName a owl:DatatypeProperty ;
+    rdfs:domain base:Chromosome ;
+    rdfs:range xsd:string ;
+    rdfs:label "Chromosome Name" ;
+    skos:definition "Chromosome identifier" .
+
+base:geneSymbol a owl:DatatypeProperty ;
+    rdfs:domain base:Gene ;
+    rdfs:range xsd:string ;
+    rdfs:label "Gene Symbol" ;
+    skos:definition "Symbol of the target gene" .
+
+base:seID a owl:DatatypeProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "Super Enhancer ID" ;
+    skos:definition "Identifier for the super-enhancer" .
+
+base:rankValue a owl:DatatypeProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range xsd:float ;
+    rdfs:label "Rank Value" ;
+    skos:definition "Rank of the super-enhancer" .
+
+base:startCoordinate a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicRegion ;
+    rdfs:range xsd:float ;
+    rdfs:label "Start Coordinate" ;
+    skos:definition "Start coordinate of the genomic region" .
+
+base:stopCoordinate a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicRegion ;
+    rdfs:range xsd:float ;
+    rdfs:label "Stop Coordinate" ;
+    skos:definition "Stop coordinate of the genomic region" .
+
+base:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range base:Chromosome ;
+    rdfs:label "Has Chromosome" ;
+    skos:definition "Associates a super-enhancer with a chromosome" .
+
+base:targetsGene a owl:ObjectProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range base:Gene ;
+    rdfs:label "Targets Gene" ;
+    skos:definition "Associates a super-enhancer with a gene" .
+
+base:locatedIn a owl:ObjectProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range base:GenomicRegion ;
+    rdfs:label "Located In" ;
+    skos:definition "Associates a super-enhancer with a genomic region" .
+
+base:expressedIn a owl:ObjectProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range base:CellLine ;
+    rdfs:label "Expressed In" ;
+    skos:definition "Associates a super-enhancer with a cell line" .
+
+base:CellLine a owl:Class ;
+    rdfs:subClassOf base:Entity ;
+    rdfs:label "Cell Line" ;
+    skos:definition "A cell line or biosample" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:cellName ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:Chromosome a owl:Class ;
+    rdfs:subClassOf base:Entity ;
+    rdfs:label "Chromosome" ;
+    skos:definition "A chromosome identifier" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:chromName ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:Gene a owl:Class ;
+    rdfs:subClassOf base:Entity ;
+    rdfs:label "Gene" ;
+    skos:definition "A target gene" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:geneSymbol ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:subClassOf base:RegulatoryElement ;
+    rdfs:label "Super Enhancer" ;
+    skos:definition "A super-enhancer" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:seID ;
+        owl:allValuesFrom xsd:string
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty base:rankValue ;
+        owl:allValuesFrom xsd:float
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty base:hasChromosome ;
+        owl:allValuesFrom base:Chromosome
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty base:targetsGene ;
+        owl:allValuesFrom base:Gene
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty base:locatedIn ;
+        owl:allValuesFrom base:GenomicRegion
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty base:expressedIn ;
+        owl:allValuesFrom base:CellLine
+    ] .
+
+base:GenomicRegion a owl:Class ;
+    rdfs:subClassOf base:Entity ;
+    rdfs:label "Genomic Region" ;
+    skos:definition "A genomic region" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:startCoordinate ;
+        owl:allValuesFrom xsd:float
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty base:stopCoordinate ;
+        owl:allValuesFrom xsd:float
+    ] .
+
+################ MAPPING (OntoMapper) #######################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#CellLine/{cell_name}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:cellName;
+        rr:objectMap [
+            rml:reference "cell_name"
+        ]
+    ].
+
+<#TriplesMapChromosome> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Chromosome/{chrom}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromName;
+        rr:objectMap [
+            rml:reference "chrom"
+        ]
+    ].
+
+<#TriplesMapGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Gene/{gene_symbol}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:geneSymbol;
+        rr:objectMap [
+            rml:reference "gene_symbol"
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#SuperEnhancer/{se_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:seID;
+        rr:objectMap [
+            rml:reference "se_id"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:rankValue;
+        rr:objectMap [
+            rml:reference "rank"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasChromosome;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosome>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:targetsGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGene>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:locatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGenomicRegion>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:expressedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLine>
+        ]
+    ].
+
+<#TriplesMapGenomicRegion> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#GenomicRegion/{start}_{stop}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:startCoordinate;
+        rr:objectMap [
+            rml:reference "start"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:stopCoordinate;
+        rr:objectMap [
+            rml:reference "stop"
+        ]
+    ].

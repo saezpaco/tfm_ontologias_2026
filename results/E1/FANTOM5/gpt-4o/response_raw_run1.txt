@@ -1,0 +1,69 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology .
+
+### Classes
+
+:CRM a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A genomic region that regulates the expression of target genes, identified as an enhancer in the FANTOM5 database." ;
+    skos:exactMatch obo:SO_0000165 .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch obo:SO_0000704 .
+
+:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to specific DNA sequences, thereby controlling the rate of transcription of genetic information." ;
+    skos:exactMatch obo:GO_0003700 .
+
+:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder or dysfunction in a biological system, often associated with specific genetic mutations." .
+
+### Object Properties
+
+:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a cis-regulatory module to its target gene." ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a cis-regulatory module to a disease it is associated with." ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease .
+
+:interactsWithTF a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates a cis-regulatory module to a transcription factor it interacts with." ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor .
+
+### Datatype Properties
+
+:hasGenomicCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Specifies the genomic coordinates of a cis-regulatory module." ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string .
+
+:hasExperimentalEvidence a owl:DatatypeProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Specifies the type of experimental evidence supporting the identification of a cis-regulatory module." ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string .
+
+:hasScore a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "Specifies the score associated with the identification of a cis-regulatory module." ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float .

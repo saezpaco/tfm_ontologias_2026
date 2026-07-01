@@ -1,0 +1,72 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2phen/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+hcrm:CisRegulatoryModule rdf:type owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+hgene:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+obo:NCIT_C17207 rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+# Properties
+biolink:has_genomic_location rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch <http://rdf.biogateway.eu/assembly/> .
+
+biolink:has_target_gene rdf:type owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+biolink:has_transcription_factor rdf:type owl:ObjectProperty ;
+    rdfs:label "has transcription factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+biolink:has_disease_association rdf:type owl:ObjectProperty ;
+    rdfs:label "has disease association" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Example individual
+hcrm:CRMHS00000079551 rdf:type hcrm:CisRegulatoryModule ;
+    biolink:has_genomic_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 51622556 ;
+        assembly:end 51623091 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:OSBPL9 ;
+    dc:source <http://bioinfo.vanderbilt.edu/AE/HACER/> ;
+    pubmed:has_reference id_pubmed:30247654 .
+
+hgene:OSBPL9 rdf:type hgene:Gene ;
+    rdfs:label "OSBPL9" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/OSBPL9> .
+```

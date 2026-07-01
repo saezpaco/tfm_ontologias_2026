@@ -173,12 +173,15 @@ LLM_MODELS = {
 # Modelo por defecto para experimentos rápidos
 DEFAULT_MODEL = "llama3.1:8b"
 
-# ─── Parámetros de generación ─────────────────────────────────────────────────
+# ─── Parámetros de generación (DETERMINISTAS - Tabla 2 memoria v2) ──────────
 GENERATION_PARAMS = {
-    "temperature": 0.1,    # Baja aleatoriedad para código formal
-    "top_p": 0.9,
-    "max_tokens": 4096,
-    "seed": 42,            # Reproducibilidad
+    "temperature":       0.0,
+    "top_p":             1.0,
+    "top_k":             1,
+    "seed":              42,
+    "frequency_penalty": 0.0,
+    "presence_penalty":  0.0,
+    "max_tokens":        8192,
 }
 
 # ─── Parámetros de muestreo de datos ─────────────────────────────────────────

@@ -1,0 +1,166 @@
+```ttl
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}GeneticRegulatoryElement/{{original_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :GeneticRegulatoryElement;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TranscriptionFactor/{{hgnc_symbol_TFs}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :TranscriptionFactor;
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Enhancer/{{crm_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :Enhancer;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}SuperEnhancer/{{crm_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :SuperEnhancer;
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TargetGene/{{hgnc_symbol_target_genes}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :TargetGene;
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Disease/{{disease_name}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :Disease;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}CellLineOrBiosample/{{cell_line_name}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :CellLineOrBiosample;
+        ]
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Mutation/{{mutation_id}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :Mutation;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}ChromatinRegulatoryModule/{{crm_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :ChromatinRegulatoryModule;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TranscriptionFactorToEnhancerInteraction/{{original_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :TranscriptionFactorToEnhancerInteraction;
+        ]
+    ].
+
+<#TriplesMapEnhancerToGeneInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}EnhancerToGeneInteraction/{{original_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :EnhancerToGeneInteraction;
+        ]
+    ].
+```

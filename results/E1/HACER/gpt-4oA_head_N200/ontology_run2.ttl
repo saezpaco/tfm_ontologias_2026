@@ -1,0 +1,74 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory sequence that increases the transcription of a gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+obo:CL_0000000 a owl:Class ;
+    skos:prefLabel "Cell line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/CL_0000000> .
+
+obo:GENE a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, usually a protein." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+obo:DISEASE a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms or that affects a specific location." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/DOID_4> .
+
+# Object Properties
+obo:has_target_gene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a cis-regulatory module to its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002434> .
+
+obo:active_in_cell_line a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the enhancer is active." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002435> .
+
+obo:associated_with_disease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a cis-regulatory module to a disease it is associated with." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0004020> .
+
+# Datatype Properties
+obo:has_genomic_start a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic start" ;
+    skos:definition "The starting coordinate of a genomic feature on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:has_genomic_end a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic end" ;
+    skos:definition "The ending coordinate of a genomic feature on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:has_chromosome a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which a genomic feature is located." ;
+    rdfs:range xsd:string .
+
+obo:has_assembly_version a owl:DatatypeProperty ;
+    skos:prefLabel "has assembly version" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    rdfs:range xsd:string .
+
+obo:has_evidence_score a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence score" ;
+    skos:definition "A score representing the strength of evidence for the enhancer activity." ;
+    rdfs:range xsd:float .

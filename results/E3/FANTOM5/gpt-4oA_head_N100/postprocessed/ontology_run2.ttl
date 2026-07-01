@@ -1,0 +1,119 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix pubmed:  <http://identifiers.org/pubmed/> .
+@prefix assembly: <http://identifiers.org/assembly/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+<http://example.org/ontology/Enhancer> a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+<http://example.org/ontology/GenomicLocation> a owl:Class ;
+    rdfs:label "Genomic Location" .
+
+<http://example.org/ontology/TargetGene> a owl:Class ;
+    rdfs:label "Target Gene" ;
+    skos:exactMatch crm2pgene:TargetGene .
+
+### Properties ###
+<http://example.org/ontology/hasGenomicLocation> a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/GenomicLocation> .
+
+<http://example.org/ontology/targetsGene> a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/TargetGene> ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+<http://example.org/ontology/hasAssembly> a owl:DatatypeProperty ;
+    rdfs:label "has assembly" ;
+    rdfs:domain <http://example.org/ontology/GenomicLocation> ;
+    rdfs:range assembly:Assembly .
+
+<http://example.org/ontology/hasChromosome> a owl:DatatypeProperty ;
+    rdfs:label "has chromosome" ;
+    rdfs:domain <http://example.org/ontology/GenomicLocation> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasStart> a owl:DatatypeProperty ;
+    rdfs:label "has start position" ;
+    rdfs:domain <http://example.org/ontology/GenomicLocation> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/ontology/hasEnd> a owl:DatatypeProperty ;
+    rdfs:label "has end position" ;
+    rdfs:domain <http://example.org/ontology/GenomicLocation> ;
+    rdfs:range xsd:integer .
+
+### Individuals ###
+<http://example.org/ontology/CRMHS00000005752> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000005752" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a <http://example.org/ontology/GenomicLocation> ;
+        <http://example.org/ontology/hasChromosome> "chr1" ;
+        <http://example.org/ontology/hasStart> 16039967 ;
+        <http://example.org/ontology/hasEnd> 16040344 ;
+        <http://example.org/ontology/hasAssembly> assembly:hg38
+    ] ;
+    <http://example.org/ontology/targetsGene> hgnc:FAM131C .
+
+<http://example.org/ontology/CRMHS00000005795> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000005795" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a <http://example.org/ontology/GenomicLocation> ;
+        <http://example.org/ontology/hasChromosome> "chr10" ;
+        <http://example.org/ontology/hasStart> 62685569 ;
+        <http://example.org/ontology/hasEnd> 62685884 ;
+        <http://example.org/ontology/hasAssembly> assembly:hg38
+    ] ;
+    <http://example.org/ontology/targetsGene> hgnc:ADO .
+
+<http://example.org/ontology/CRMHS00000006044> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000006044" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a <http://example.org/ontology/GenomicLocation> ;
+        <http://example.org/ontology/hasChromosome> "chr6" ;
+        <http://example.org/ontology/hasStart> 159102636 ;
+        <http://example.org/ontology/hasEnd> 159102934 ;
+        <http://example.org/ontology/hasAssembly> assembly:hg38
+    ] ;
+    <http://example.org/ontology/targetsGene> hgnc:TAGAP .
+
+<http://example.org/ontology/CRMHS00000006141> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000006141" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a <http://example.org/ontology/GenomicLocation> ;
+        <http://example.org/ontology/hasChromosome> "chrX" ;
+        <http://example.org/ontology/hasStart> 53256663 ;
+        <http://example.org/ontology/hasEnd> 53257187 ;
+        <http://example.org/ontology/hasAssembly> assembly:hg38
+    ] ;
+    <http://example.org/ontology/targetsGene> hgnc:FAM156A, hgnc:IQSEC2, hgnc:RIBC1 .
+
+<http://example.org/ontology/CRMHS00000074829> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000074829" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a <http://example.org/ontology/GenomicLocation> ;
+        <http://example.org/ontology/hasChromosome> "chr1" ;
+        <http://example.org/ontology/hasStart> 99534632 ;
+        <http://example.org/ontology/hasEnd> 99534837 ;
+        <http://example.org/ontology/hasAssembly> assembly:hg38
+    ] .

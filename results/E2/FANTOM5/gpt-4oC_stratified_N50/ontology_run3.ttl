@@ -1,0 +1,68 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    rdfs:comment "Ontology for enhancers identified by CAGE-seq in the FANTOM5 database." .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:exactMatch <http://example.org/ontology/crm/crm_ID> .
+
+<http://example.org/ontology/Chromosome> a owl:Class ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome in Homo sapiens" .
+
+<http://example.org/ontology/Database> a owl:Class ;
+    skos:prefLabel "Database" ;
+    skos:definition "Database containing enhancer information" ;
+    skos:exactMatch <http://example.org/ontology/database_name> .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "Protein that binds to specific DNA sequences to regulate transcription" .
+
+### Object Properties ###
+<http://example.org/ontology/hasChromosome> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Chromosome> ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "Association between a CRM and a chromosome" .
+
+<http://example.org/ontology/associatedWithDatabase> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Database> ;
+    skos:prefLabel "associated with database" ;
+    skos:definition "Association between a CRM and a database" .
+
+<http://example.org/ontology/associatedWithTranscriptionFactor> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> ;
+    skos:prefLabel "associated with transcription factor" ;
+    skos:definition "Association between a CRM and a transcription factor" ;
+    skos:exactMatch <http://example.org/ontology/bgw!crm_ID--uniprot!uniprot_ID> .
+
+### Datatype Properties ###
+<http://example.org/ontology/startPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start position" ;
+    skos:definition "Start position of the CRM on the chromosome" .
+
+<http://example.org/ontology/endPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end position" ;
+    skos:definition "End position of the CRM on the chromosome" .
+
+<http://example.org/ontology/score> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "score" ;
+    skos:definition "Score representing the activity level of the CRM" .

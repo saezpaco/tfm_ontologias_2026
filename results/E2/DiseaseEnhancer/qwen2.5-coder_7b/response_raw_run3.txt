@@ -1,0 +1,95 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to DNA and regulates the transcription of genes." .
+
+crm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A segment of DNA that codes for a protein or RNA molecule." .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A condition affecting the normal functioning of an organism." .
+
+crm:TranscriptionFactorRegulatesGene a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Regulates Gene" ;
+    skos:prefLabel "Transcription Factor Regulates Gene" ;
+    skos:definition "The relationship between a transcription factor and a gene it regulates." .
+
+crm:CisRegulatoryModuleLocatedIn a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In" ;
+    skos:prefLabel "Cis-regulatory module located in" ;
+    skos:definition "The location of a cis-regulatory module on a chromosome." .
+
+crm:CisRegulatoryModuleAssociatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Associated With Disease" ;
+    skos:prefLabel "Cis-regulatory module associated with disease" ;
+    skos:definition "The association between a cis-regulatory module and a disease." .
+
+crm:CisRegulatoryModuleAssociatedWithGene a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Associated With Gene" ;
+    skos:prefLabel "Cis-regulatory module associated with gene" ;
+    skos:definition "The association between a cis-regulatory module and a gene." .
+
+crm:CisRegulatoryModuleAssociatedWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Associated With Transcription Factor" ;
+    skos:prefLabel "Cis-regulatory module associated with transcription factor" ;
+    skos:definition "The association between a cis-regulatory module and a transcription factor." .
+
+crm:CisRegulatoryModuleHasStartPosition a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module Has Start Position" ;
+    skos:prefLabel "Cis-regulatory module has start position" ;
+    skos:definition "The starting position of the cis-regulatory module on the chromosome." ;
+    rdfs:range xsd:integer .
+
+crm:CisRegulatoryModuleHasEndPosition a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module Has End Position" ;
+    skos:prefLabel "Cis-regulatory module has end position" ;
+    skos:definition "The ending position of the cis-regulatory module on the chromosome." ;
+    rdfs:range xsd:integer .
+
+crm:CisRegulatoryModuleHasChromosome a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module Has Chromosome" ;
+    skos:prefLabel "Cis-regulatory module has chromosome" ;
+    skos:definition "The chromosome on which the cis-regulatory module is located." ;
+    rdfs:range xsd:string .
+
+crm:CisRegulatoryModuleHasDatabase a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module Has Database" ;
+    skos:prefLabel "Cis-regulatory module has database" ;
+    skos:definition "The database where the cis-regulatory module is stored." ;
+    rdfs:range xsd:string .
+
+crm:CisRegulatoryModuleHasGeneSymbol a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module Has Gene Symbol" ;
+    skos:prefLabel "Cis-regulatory module has gene symbol" ;
+    skos:definition "The symbol of the gene associated with the cis-regulatory module." ;
+    rdfs:range xsd:string .
+
+crm:CisRegulatoryModuleHasDisease a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module Has Disease" ;
+    skos:prefLabel "Cis-regulatory module has disease" ;
+    skos:definition "The disease associated with the cis-regulatory module." ;
+    rdfs:range xsd:string .
+
+crm:CisRegulatoryModuleHasTranscriptionFactor a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module Has Transcription Factor" ;
+    skos:prefLabel "Cis-regulatory module has transcription factor" ;
+    skos:definition "The transcription factor associated with the cis-regulatory module." ;
+    rdfs:range xsd:string .
+```

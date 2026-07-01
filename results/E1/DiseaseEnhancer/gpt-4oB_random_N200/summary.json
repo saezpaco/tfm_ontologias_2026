@@ -1,0 +1,99 @@
+{
+  "experiment": "E1",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 7.8999999999999995,
+  "total_tokens": 22345,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T21:30:02.612256",
+      "success": true,
+      "elapsed_seconds": 7.99,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6636,
+        "completion_tokens": 812,
+        "total_tokens": 7448
+      },
+      "prompt_tokens_estimate": 3542,
+      "response_chars": 2890,
+      "turtle_chars": 2890,
+      "validation": {
+        "valid": true,
+        "n_triples": 50,
+        "n_classes": 5,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oB_random_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oB_random_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T21:30:11.421336",
+      "success": true,
+      "elapsed_seconds": 7.76,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6636,
+        "completion_tokens": 811,
+        "total_tokens": 7447
+      },
+      "prompt_tokens_estimate": 3542,
+      "response_chars": 2866,
+      "turtle_chars": 2866,
+      "validation": {
+        "valid": true,
+        "n_triples": 51,
+        "n_classes": 4,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oB_random_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oB_random_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T21:30:20.424664",
+      "success": true,
+      "elapsed_seconds": 7.95,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6636,
+        "completion_tokens": 814,
+        "total_tokens": 7450
+      },
+      "prompt_tokens_estimate": 3542,
+      "response_chars": 2887,
+      "turtle_chars": 2887,
+      "validation": {
+        "valid": true,
+        "n_triples": 50,
+        "n_classes": 5,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oB_random_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oB_random_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

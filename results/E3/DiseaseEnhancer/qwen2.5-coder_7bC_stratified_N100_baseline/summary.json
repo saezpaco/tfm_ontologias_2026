@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 134.01666666666668,
+  "total_tokens": 15932,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-07-01T13:54:06.282990",
+      "success": true,
+      "elapsed_seconds": 105.63,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 839,
+        "total_tokens": 4934
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 2421,
+      "turtle_chars": 2407,
+      "validation": {
+        "valid": false,
+        "error": "at line 22 of <>:\nBad syntax (Prefix \"crm2phen_example:\" not bound) at ^ in:\n\"...b'.owl#> .\\n\\n# Define classes and properties based on the data\\n'^b'crm2phen_example:Ontology a owl:Ontology ;\\n    rdfs:label \"C'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_baseline/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_baseline/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-07-01T13:56:35.826093",
+      "success": true,
+      "elapsed_seconds": 147.21,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1404,
+        "total_tokens": 5499
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 4205,
+      "turtle_chars": 4191,
+      "validation": {
+        "valid": false,
+        "error": "at line 22 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'01217> .\\n\\n# Define classes and properties based on the data\\n'^b'crm:TranscriptionFactor a owl:Class ;\\n    rdfs:label \"Transc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_baseline/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_baseline/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-07-01T13:59:07.403634",
+      "success": true,
+      "elapsed_seconds": 149.21,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1404,
+        "total_tokens": 5499
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 4205,
+      "turtle_chars": 4191,
+      "validation": {
+        "valid": false,
+        "error": "at line 22 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'01217> .\\n\\n# Define classes and properties based on the data\\n'^b'crm:TranscriptionFactor a owl:Class ;\\n    rdfs:label \"Transc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_baseline/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_baseline/response_raw_run3.txt"
+      }
+    }
+  ]
+}

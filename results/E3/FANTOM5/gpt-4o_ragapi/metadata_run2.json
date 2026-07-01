@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-05-08T18:53:28.650273",
+  "success": true,
+  "elapsed_seconds": 9.64,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3269,
+    "completion_tokens": 1047,
+    "total_tokens": 4316
+  },
+  "prompt_tokens_estimate": 2046,
+  "response_chars": 3300,
+  "turtle_chars": 3286,
+  "validation": {
+    "valid": false,
+    "error": "at line 30 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'   rdfs:label \"Cis-Regulatory Module\" ;\\n    skos:exactMatch '^b'crm:CisRegulatoryModule .\\n\\nhcrm:Enhancer a owl:Class ;\\n    r'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/response_raw_run2.txt"
+  }
+}

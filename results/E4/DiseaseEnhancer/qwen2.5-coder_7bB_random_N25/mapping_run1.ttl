@@ -1,0 +1,157 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{crm_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            rr:template "{{TFs2enh_method}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:assemblyVersion;
+        rr:objectMap [
+            rr:template "{{current_assembly}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            rr:template "{{current_chr}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:ratioValue;
+        rr:objectMap [
+            rr:template "{{minimum_ratio}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:scoreValue;
+        rr:objectMap [
+            rr:template "{{score}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:sourceName;
+        rr:objectMap [
+            rr:template "{{FAIR_URI}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:typeOfElement;
+        rr:objectMap [
+            rr:template "{{type_of_element}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:startPosition;
+        rr:objectMap [
+            rr:template "{{start_position}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:endPosition;
+        rr:objectMap [
+            rr:template "{{end_position}}";
+        ]
+    ].
+
+<#TriplesMapPubMedArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{pmid}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{transcription_factor}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{enhancer}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{target_gene}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{disease}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{cell_line_biosample}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{mutation}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{transcription_factor_to_enhancer_relationship}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancerToGeneRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{enhancer_to_gene_relationship}}{FAIR_URI}";
+    ].
+```

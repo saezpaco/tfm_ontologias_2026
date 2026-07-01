@@ -1,0 +1,45 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2pgene/hcrm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene/> .
+@prefix assembly: <http://rdf.biogateway.eu/crm2pgene/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/crm2pgene/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/crm2pgene/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/crm2pgene/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/crm2pgene/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/crm2pgene/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+crm2gene  a owl:Ontology ;
+          rdfs:label "CRM2Gene Ontology" ;
+          crm2pgene:score 0.413 .
+crm2gene_example  a owl:Ontology ;
+                   rdfs:label "CRM2Gene Example Ontology" ;
+                   crm2pgene:score 0.411 .
+crm2phen_example  a owl:Ontology ;
+                   rdfs:label "CRM2Phen Example Ontology" ;
+                   crm2pgene:score 0.370 .
+crm2phen  a owl:Ontology ;
+           rdfs:label "CRM2Phen Ontology" ;
+           crm2pgene:score 0.350 .
+crm2tfac_example  a owl:Ontology ;
+                  rdfs:label "CRM2TFAC Example Ontology" ;
+                  crm2pgene:score 0.348 .
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+hgnc_symbol_target_genes  a rdf:Property ;
+                           rdfs:label "HGNC Symbol Target Genes" .
+crm2pgene:hgnc_symbol_target_genes  a owl:ObjectProperty ;
+                                    rdfs:domain crm2pgene:CRMHS00000003515 ;
+                                    rdfs:range hgene:HomoSapiensGene ;
+                                    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hgncsymbol!9606/TBX5> .

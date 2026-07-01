@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/DiseaseEnhancer.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-05T18:16:40.803428+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.087,
+    "plan_s": 107.257,
+    "plan_chars": 3837,
+    "plan_prompt_chars": 9562,
+    "onto_s": 239.27,
+    "onto_chars": 9532,
+    "onto_prompt_chars": 12779,
+    "map_s": 114.389,
+    "map_chars": 2695,
+    "map_prompt_chars": 16046
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-05T18:24:21.807628+00:00",
+  "total_s": 461.003
+}

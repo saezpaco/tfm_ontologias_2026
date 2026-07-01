@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:41:21.549020",
+  "success": true,
+  "elapsed_seconds": 7.2,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7396,
+    "completion_tokens": 817,
+    "total_tokens": 8213
+  },
+  "prompt_tokens_estimate": 3879,
+  "response_chars": 2943,
+  "turtle_chars": 2943,
+  "validation": {
+    "valid": false,
+    "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'R Ontology\" ;\\n    skos:prefLabel \"HACER\" .\\n\\n### Classes ###\\n'^b':CRM rdf:type owl:Class ;\\n    skos:prefLabel \"Cis-regulatory'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oA_head_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oA_head_N100/response_raw_run3.txt"
+  }
+}

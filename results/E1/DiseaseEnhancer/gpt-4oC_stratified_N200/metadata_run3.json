@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:31:24.473549",
+  "success": true,
+  "elapsed_seconds": 8.37,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 6696,
+    "completion_tokens": 843,
+    "total_tokens": 7539
+  },
+  "prompt_tokens_estimate": 3546,
+  "response_chars": 3037,
+  "turtle_chars": 3037,
+  "validation": {
+    "valid": false,
+    "error": "at line 11 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'org/ontology/DiseaseEnhancer> a owl:Ontology .\\n\\n### Classes\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"Cis-Regulatory Module'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N200/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N200/response_raw_run3.txt"
+  }
+}

@@ -1,0 +1,319 @@
+```ttl
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "disease_method";
+        ]
+    ],
+    [
+        rr:predicate genreg:assemblyVersion;
+        rr:objectMap [
+            ql:reference "current_assembly";
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            ql:reference "current_chr";
+        ]
+    ],
+    [
+        rr:predicate genreg:score;
+        rr:objectMap [
+            ql:reference "score";
+        ]
+    ],
+    [
+        rr:predicate genreg:startPosition;
+        rr:objectMap [
+            ql:reference "current_start";
+        ]
+    ],
+    [
+        rr:predicate genreg:endPosition;
+        rr:objectMap [
+            ql:reference "current_end";
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{TFs2enh_PMID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "TFs2enh_method";
+        ]
+    ],
+    [
+        rr:predicate genreg:assemblyVersion;
+        rr:objectMap [
+            ql:reference "current_assembly";
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            ql:reference "current_chr";
+        ]
+    ],
+    [
+        rr:predicate genreg:score;
+        rr:objectMap [
+            ql:reference "score";
+        ]
+    ],
+    [
+        rr:predicate genreg:startPosition;
+        rr:objectMap [
+            ql:reference "current_start";
+        ]
+    ],
+    [
+        rr:predicate genreg:endPosition;
+        rr:objectMap [
+            ql:reference "current_end";
+        ]
+    ],
+    [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ],
+    [
+        rr:predicate genreg:hasEnhancer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer>;
+        ]
+    ].
+
+<#TriplesMapEnhancerToGeneInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{crm}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "crm";
+        ]
+    ],
+    [
+        rr:predicate genreg:assemblyVersion;
+        rr:objectMap [
+            ql:reference "current_assembly";
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            ql:reference "current_chr";
+        ]
+    ],
+    [
+        rr:predicate genreg:score;
+        rr:objectMap [
+            ql:reference "score";
+        ]
+    ],
+    [
+        rr:predicate genreg:startPosition;
+        rr:objectMap [
+            ql:reference "current_start";
+        ]
+    ],
+    [
+        rr:predicate genreg:endPosition;
+        rr:objectMap [
+            ql:reference "current_end";
+        ]
+    ],
+    [
+        rr:predicate genreg:hasEnhancer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer>;
+        ]
+    ],
+    [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{hgnc_symbol}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "hgnc_symbol";
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{crm}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "crm";
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{hgnc_symbol}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "hgnc_symbol";
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{doid}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "doid";
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{FAIR_URI}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "FAIR_URI";
+        ]
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{FAIR_URI}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            ql:reference "FAIR_URI";
+        ]
+    ].
+
+<#TriplesMapPubMedArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{pmid}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            ql:reference "pmid";
+        ]
+    ].
+```

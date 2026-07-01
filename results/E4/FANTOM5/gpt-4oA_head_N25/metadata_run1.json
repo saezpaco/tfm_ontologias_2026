@@ -1,0 +1,24 @@
+{
+  "run": 1,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/A_head/N=25/FANTOM5.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 42,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-26T18:18:25.556609+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.021,
+    "plan_s": 2.757,
+    "plan_chars": 2162,
+    "plan_prompt_chars": 5376,
+    "onto_s": 5.206,
+    "onto_chars": 5413,
+    "onto_prompt_chars": 6918,
+    "map_s": 10.678,
+    "map_chars": 7668,
+    "map_prompt_chars": 10244
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-26T18:18:44.219273+00:00",
+  "total_s": 18.662
+}

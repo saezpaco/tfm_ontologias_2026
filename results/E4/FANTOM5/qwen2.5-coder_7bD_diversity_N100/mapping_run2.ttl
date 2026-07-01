@@ -1,0 +1,224 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedID>;
+        ]
+    ],
+    [
+        rr:predicate :usesMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapUsesMethod>;
+        ]
+    ],
+    [
+        rr:predicate :hasAssemblyVersion;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasAssemblyVersion>;
+        ]
+    ],
+    [
+        rr:predicate :hasChromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate :hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasScore>;
+        ]
+    ],
+    [
+        rr:predicate :hasStartPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate :hasEndPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasEndPosition>;
+        ]
+    ].
+
+<#TriplesMapPubMedID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasPubMedID;
+        rr:objectMap [
+            rr:constant "http://identifiers.org/pubmed/";
+            rr:termType xsd:string;
+        ]
+    ].
+
+<#TriplesMapUsesMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :usesMethod;
+        rr:objectMap [
+            rr:constant "http://identifiers.org/method/";
+            rr:termType xsd:string;
+        ]
+    ].
+
+<#TriplesMapHasAssemblyVersion> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasAssemblyVersion;
+        rr:objectMap [
+            rr:constant "http://identifiers.org/assembly/";
+            rr:termType xsd:string;
+        ]
+    ].
+
+<#TriplesMapHasChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasChromosomeNumber;
+        rr:objectMap [
+            rr:constant "http://identifiers.org/chromosome/";
+            rr:termType xsd:string;
+        ]
+    ].
+
+<#TriplesMapHasScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasScore;
+        rr:objectMap [
+            rr:constant "http://identifiers.org/score/";
+            rr:termType xsd:string;
+        ]
+    ].
+
+<#TriplesMapHasStartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasStartPosition;
+        rr:objectMap [
+            rr:constant "http://identifiers.org/start_position/";
+            rr:termType xsd:string;
+        ]
+    ].
+
+<#TriplesMapHasEndPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{type}}/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasEndPosition;
+        rr:objectMap [
+            rr:constant "http://identifiers.org/end_position/";
+            rr:termType xsd:string;
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":Enhancer/{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":TranscriptionFactor/{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":TargetGene/{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":Disease/{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":CellLine/{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":Mutation/{{original_ID}}{FAIR_URI}";
+    ].
+```

@@ -1,0 +1,127 @@
+```ttl
+<#GeneticElementMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/GeneticElement/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:cellName;
+        rr:objectMap [
+            rml:reference "cell_name";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate gr:chromosome;
+        rr:objectMap [
+            rml:reference "chrom";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate gr:geneSymbol;
+        rr:objectMap [
+            rml:reference "gene_symbol";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate gr:enhancerId;
+        rr:objectMap [
+            rml:reference "se_id";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate gr:rankValue;
+        rr:objectMap [
+            rml:reference "rank";
+            rr:datatype xsd:integer
+        ]
+    ],
+    [
+        rr:predicate gr:startPosition;
+        rr:objectMap [
+            rml:reference "start";
+            rr:datatype xsd:integer
+        ]
+    ],
+    [
+        rr:predicate gr:stopPosition;
+        rr:objectMap [
+            rml:reference "stop";
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#EnhancerMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/Enhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:enhancerId;
+        rr:objectMap [
+            rml:reference "se_id";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#SuperEnhancerMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/SuperEnhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:superEnhancerId;
+        rr:objectMap [
+            rml:reference "se_id";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#CellLineOrBiosampleMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/CellLineOrBiosample/{{cell_name}}{FAIR_URI}";
+    ].
+
+<#TargetGeneMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/TargetGene/{{gene_symbol}}{FAIR_URI}";
+    ].
+
+<#TranscriptionFactorMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/TranscriptionFactor/{{transcription_factor}}{FAIR_URI}";
+    ].
+
+<#DiseaseAssociationMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/DiseaseAssociation/{{disease}}{FAIR_URI}";
+    ].
+```

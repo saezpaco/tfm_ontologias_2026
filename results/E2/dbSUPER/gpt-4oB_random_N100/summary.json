@@ -1,0 +1,99 @@
+{
+  "experiment": "E2",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 9.783333333333333,
+  "total_tokens": 22472,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T21:38:08.374577",
+      "success": true,
+      "elapsed_seconds": 11.28,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6306,
+        "completion_tokens": 1339,
+        "total_tokens": 7645
+      },
+      "prompt_tokens_estimate": 3887,
+      "response_chars": 4791,
+      "turtle_chars": 4791,
+      "validation": {
+        "valid": true,
+        "n_triples": 73,
+        "n_classes": 6,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oB_random_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oB_random_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T21:38:16.677148",
+      "success": true,
+      "elapsed_seconds": 7.25,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6306,
+        "completion_tokens": 999,
+        "total_tokens": 7305
+      },
+      "prompt_tokens_estimate": 3887,
+      "response_chars": 3469,
+      "turtle_chars": 3469,
+      "validation": {
+        "valid": true,
+        "n_triples": 53,
+        "n_classes": 7,
+        "n_properties": 8
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oB_random_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oB_random_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T21:38:28.549658",
+      "success": true,
+      "elapsed_seconds": 10.82,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6306,
+        "completion_tokens": 1216,
+        "total_tokens": 7522
+      },
+      "prompt_tokens_estimate": 3887,
+      "response_chars": 4383,
+      "turtle_chars": 4383,
+      "validation": {
+        "valid": true,
+        "n_triples": 63,
+        "n_classes": 6,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oB_random_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oB_random_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

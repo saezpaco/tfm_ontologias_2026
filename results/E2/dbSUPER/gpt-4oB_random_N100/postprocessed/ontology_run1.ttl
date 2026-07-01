@@ -1,0 +1,96 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    skos:prefLabel "dbSUPER" ;
+    skos:definition "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/CisRegulatoryModule> a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000835> .
+
+<http://example.org/ontology/GenomicCoordinate> a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Genomic coordinate specifying chromosome, start, and end positions." .
+
+<http://example.org/ontology/CellLine> a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:prefLabel "biosample_name" ;
+    skos:definition "Cell line or biosample where the enhancer activity is observed." .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "hgnc_symbol_target_genes" ;
+    skos:definition "Gene targeted by the cis-regulatory module." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "hgnc_symbol_TFs" ;
+    skos:definition "Transcription factor interacting with the cis-regulatory module." .
+
+<http://example.org/ontology/Disease> a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "disease" ;
+    skos:definition "Disease associated with the cis-regulatory module." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/DOID_4> .
+
+### Object Properties ###
+<http://example.org/ontology/hasGenomicCoordinate> a owl:ObjectProperty ;
+    rdfs:label "has Genomic Coordinate" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/GenomicCoordinate> ;
+    skos:prefLabel "crm#crm_ID#database_name" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" .
+
+<http://example.org/ontology/targetsGene> a owl:ObjectProperty ;
+    rdfs:label "targets Gene" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/Gene> ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+<http://example.org/ontology/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:label "interacts with Transcription Factor" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+<http://example.org/ontology/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:label "associated with Disease" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/Disease> ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasScore> a owl:DatatypeProperty ;
+    rdfs:label "has Score" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "score" ;
+    skos:definition "Score representing the confidence or strength of the enhancer activity." .
+
+<http://example.org/ontology/hasMinimumRatio> a owl:DatatypeProperty ;
+    rdfs:label "has Minimum Ratio" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "minimum_ratio" ;
+    skos:definition "Minimum ratio of enhancer activity observed across samples." .
+
+<http://example.org/ontology/hasPMID> a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain <http://example.org/ontology/CisRegulatoryModule> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "enh_PMID" ;
+    skos:definition "PubMed ID for the publication providing evidence for the enhancer." .

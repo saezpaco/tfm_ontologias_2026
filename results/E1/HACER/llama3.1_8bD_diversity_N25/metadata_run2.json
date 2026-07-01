@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-27T00:28:08.260464",
+  "success": true,
+  "elapsed_seconds": 78.4,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 815,
+    "total_tokens": 1213
+  },
+  "prompt_tokens_estimate": 468,
+  "response_chars": 2701,
+  "turtle_chars": 2701,
+  "validation": {
+    "valid": false,
+    "error": "at line 17 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'ression.\" ;\\n\\n<http://example.org/hacer#hasGenomicCoordinate>'^b'\\n  a owl:ObjectProperty ;\\n  rdfs:label \"Has Genomic Coordina'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bD_diversity_N25/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bD_diversity_N25/response_raw_run2.txt"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-05T13:03:28.949133",
+  "success": true,
+  "elapsed_seconds": 119.85,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3186,
+    "completion_tokens": 974,
+    "total_tokens": 4160
+  },
+  "prompt_tokens_estimate": 1992,
+  "response_chars": 2830,
+  "turtle_chars": 2830,
+  "validation": {
+    "valid": false,
+    "error": "at line 13 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'atory Module Ontology\" ;\\n  skos:prefLabel \"CRM Ontology\" .\\n\\n'^b'crm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-regulatory Module\"'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8b/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8b/response_raw_run1.txt"
+  }
+}

@@ -1,0 +1,44 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper> .
+
+hcrm:dbSuper!dbsuper!crm_ID rdf:type owl:Class ;
+    rdfs:subClassOf hcrm:crm_ID ;
+    skos:prefLabel "dbSuper CRM ID" ;
+    skos:definition "Unique identifier for a cis-regulatory module in dbSuper" .
+
+hcrm:dbSuper!dbsuper!cell_line rdf:type owl:Class ;
+    rdfs:subClassOf obo:CL_ID ;
+    skos:prefLabel "Cell Line" ;
+    skos:closeMatch obo:CLO_ID ;
+    skos:definition "A specific line of cells that have been propagated in culture" .
+
+hcrm:dbSuper!dbsuper!gene_symbol rdf:type owl:Class ;
+    rdfs:subClassOf hgene:gene_symbol ;
+    skos:prefLabel "Gene Symbol" ;
+    skos:closeMatch id_ncbigene:GeneID ;
+    skos:definition "A shorthand name for a gene" .
+
+crm2pgene:bgw!dbsuper!crm_ID--hgncsymbol!9606/gene_symbol rdf:type owl:Class ;
+    rdfs:subClassOf rdf:Statement ;
+    rdf:subject hcrm:dbSuper!dbsuper!crm_ID ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hcrm:dbSuper!dbsuper!gene_symbol ;
+    skos:prefLabel "bgw!dbsuper!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module CRM and gene symbol in dbSuper" .
+
+hcrm:dbSuper!dbsuper!crm_ID obo:RO_0002429 hcrm:dbSuper!dbsuper!gene_symbol .
+
+hcrm:dbSuper!dbsuper!cell_line obo:RO_0002429 hcrm:dbSuper!dbsuper!gene_symbol .
+```

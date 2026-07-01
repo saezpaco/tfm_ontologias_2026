@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 92.37,
+  "total_tokens": 14163,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-05T16:42:00.058212",
+      "success": true,
+      "elapsed_seconds": 94.24,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 625,
+        "total_tokens": 4721
+      },
+      "prompt_tokens_estimate": 2694,
+      "response_chars": 1642,
+      "turtle_chars": 1628,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \"crm2phen:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm2phen:CRM .\\ncrm2phen:Disease .\\ncrm2phen:Biosample .\\ncrm2p'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-05T16:43:33.274186",
+      "success": true,
+      "elapsed_seconds": 91.39,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 625,
+        "total_tokens": 4721
+      },
+      "prompt_tokens_estimate": 2694,
+      "response_chars": 1642,
+      "turtle_chars": 1628,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \"crm2phen:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm2phen:CRM .\\ncrm2phen:Disease .\\ncrm2phen:Biosample .\\ncrm2p'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-05T16:45:06.615785",
+      "success": true,
+      "elapsed_seconds": 91.48,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 625,
+        "total_tokens": 4721
+      },
+      "prompt_tokens_estimate": 2694,
+      "response_chars": 1642,
+      "turtle_chars": 1628,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \"crm2phen:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm2phen:CRM .\\ncrm2phen:Disease .\\ncrm2phen:Biosample .\\ncrm2p'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

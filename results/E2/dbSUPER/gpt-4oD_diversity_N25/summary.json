@@ -1,0 +1,97 @@
+{
+  "experiment": "E2",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 11.020000000000001,
+  "total_tokens": 7389,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:51:14.626988",
+      "success": true,
+      "elapsed_seconds": 9.69,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1556,
+        "completion_tokens": 797,
+        "total_tokens": 2353
+      },
+      "prompt_tokens_estimate": 1251,
+      "response_chars": 2654,
+      "turtle_chars": 2640,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'er-enhancers from the dbSUPER database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oD_diversity_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oD_diversity_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:51:28.099724",
+      "success": true,
+      "elapsed_seconds": 12.43,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1556,
+        "completion_tokens": 1055,
+        "total_tokens": 2611
+      },
+      "prompt_tokens_estimate": 1251,
+      "response_chars": 3613,
+      "turtle_chars": 3613,
+      "validation": {
+        "valid": true,
+        "n_triples": 54,
+        "n_classes": 3,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oD_diversity_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oD_diversity_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:51:40.070290",
+      "success": true,
+      "elapsed_seconds": 10.94,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1556,
+        "completion_tokens": 869,
+        "total_tokens": 2425
+      },
+      "prompt_tokens_estimate": 1251,
+      "response_chars": 3065,
+      "turtle_chars": 3051,
+      "validation": {
+        "valid": true,
+        "n_triples": 45,
+        "n_classes": 3,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oD_diversity_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oD_diversity_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

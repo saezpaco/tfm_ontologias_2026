@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "DiseaseEnhancer",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 57.833333333333336,
+  "total_tokens": 3300,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-27T18:15:58.849934",
+      "success": true,
+      "elapsed_seconds": 57.78,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 395,
+        "completion_tokens": 705,
+        "total_tokens": 1100
+      },
+      "prompt_tokens_estimate": 470,
+      "response_chars": 2222,
+      "turtle_chars": 2208,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"DiseaseEnhance'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/qwen2.5-coder_7bA_head_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/qwen2.5-coder_7bA_head_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-27T18:16:57.759787",
+      "success": true,
+      "elapsed_seconds": 57.87,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 395,
+        "completion_tokens": 705,
+        "total_tokens": 1100
+      },
+      "prompt_tokens_estimate": 470,
+      "response_chars": 2222,
+      "turtle_chars": 2208,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"DiseaseEnhance'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/qwen2.5-coder_7bA_head_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/qwen2.5-coder_7bA_head_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-27T18:17:56.651167",
+      "success": true,
+      "elapsed_seconds": 57.85,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 395,
+        "completion_tokens": 705,
+        "total_tokens": 1100
+      },
+      "prompt_tokens_estimate": 470,
+      "response_chars": 2222,
+      "turtle_chars": 2208,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"DiseaseEnhance'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/qwen2.5-coder_7bA_head_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/qwen2.5-coder_7bA_head_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

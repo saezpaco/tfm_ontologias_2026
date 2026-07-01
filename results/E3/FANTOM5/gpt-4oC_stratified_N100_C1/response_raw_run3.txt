@@ -1,0 +1,76 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix assembly: <http://rdf.ebi.ac.uk/resource/ensemblassembly/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+<http://example.org/ontology/Enhancer> a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+<http://example.org/ontology/GenomicCoordinate> a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+### Properties ###
+<http://example.org/ontology/hasGenomicCoordinate> a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/GenomicCoordinate> .
+
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range hgnc:Gene ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+<http://example.org/ontology/hasExperimentalEvidence> a owl:DatatypeProperty ;
+    rdfs:label "has experimental evidence" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasPMID> a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range pubmed:PubMedID .
+
+### Individuals ###
+<http://example.org/ontology/CRMHS00000094290> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000094290" ;
+    <http://example.org/ontology/hasGenomicCoordinate> [
+        a <http://example.org/ontology/GenomicCoordinate> ;
+        assembly:chromosome "chr15" ;
+        assembly:start "26619732"^^xsd:integer ;
+        assembly:end "26619795"^^xsd:integer ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    <http://example.org/ontology/hasExperimentalEvidence> "CAGE" ;
+    <http://example.org/ontology/hasPMID> pubmed:24670763 .
+
+<http://example.org/ontology/CRMHS00000122781> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000122781" ;
+    <http://example.org/ontology/hasGenomicCoordinate> [
+        a <http://example.org/ontology/GenomicCoordinate> ;
+        assembly:chromosome "chr5" ;
+        assembly:start "149212232"^^xsd:integer ;
+        assembly:end "149212474"^^xsd:integer ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    <http://example.org/ontology/hasTargetGene> hgnc:ABLIM3 ;
+    <http://example.org/ontology/hasExperimentalEvidence> "CAGE" ;
+    <http://example.org/ontology/hasPMID> pubmed:24670763 .

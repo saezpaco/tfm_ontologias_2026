@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-29T21:35:09.665122",
+  "success": true,
+  "elapsed_seconds": 120.49,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 695,
+    "total_tokens": 4790
+  },
+  "prompt_tokens_estimate": 4457,
+  "response_chars": 2251,
+  "turtle_chars": 1566,
+  "validation": {
+    "valid": true,
+    "n_triples": 12,
+    "n_classes": 2,
+    "n_properties": 0
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bD_diversity_N200/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bD_diversity_N200/response_raw_run1.txt"
+  }
+}

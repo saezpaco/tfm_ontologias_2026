@@ -1,0 +1,142 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://www.w3.org/ns/sparql#> .
+@prefix csv: <https://example.com/csv/> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:GeneticElement/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasPubMedID;
+        rr:objectMap [
+            rr:column "TF_ID";
+        ]
+    ],
+    [
+        rr:predicate gr:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>;
+        ]
+    ],
+    [
+        rr:predicate gr:associatedWithDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease>;
+        ]
+    ],
+    [
+        rr:predicate gr:occursInCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample>;
+        ]
+    ],
+    [
+        rr:predicate gr:involvesMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasPubMedArticle;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasAssemblyVersion;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapAssemblyVersion>;
+        ]
+    ],
+    [
+        rr:predicate gr:locatedOnChromosome;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosome>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TranscriptionFactor/{{TF_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TargetGene/{{TG_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Disease/{{Disease_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:CellLineOrBiosample/{{Cell_Line_Biosample_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Mutation/{{Mutation_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapPubMedArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:PubMedArticle/{{PubMed_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapAssemblyVersion> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:AssemblyVersion/{{Assembly_Version_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapChromosome> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Chromosome/{{Chromosome_ID}}{FAIR_URI}";
+    ].
+```

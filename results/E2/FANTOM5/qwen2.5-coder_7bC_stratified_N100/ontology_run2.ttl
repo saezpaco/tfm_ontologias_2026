@@ -1,0 +1,36 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:CRM a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    rdfs:subClassOf obo:SO_0001856 .
+
+crm:hasGene a owl:ObjectProperty ;
+    rdfs:label "has gene" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "has transcription factor" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+crm:Database a owl:Class ;
+    rdfs:label "Database" ;
+    skos:prefLabel "database_name" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+
+crm:hasExpressionCorrelation a owl:ObjectProperty ;
+    rdfs:label "has expression correlation" ;
+    skos:prefLabel "expression correlation" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "Transcription Factor" .

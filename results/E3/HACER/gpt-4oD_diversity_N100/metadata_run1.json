@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-28T22:01:48.128696",
+  "success": true,
+  "elapsed_seconds": 20.19,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7556,
+    "completion_tokens": 950,
+    "total_tokens": 8506
+  },
+  "prompt_tokens_estimate": 4494,
+  "response_chars": 2849,
+  "turtle_chars": 2834,
+  "validation": {
+    "valid": false,
+    "error": "at line 63 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'       rdf:type biolink:GenomicEntity ;\\n        nuccore:chr1'^b' ;\\n        assembly:hg38 ;\\n        sio:SIO_000300 \"230113600'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N100/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N100/response_raw_run1.txt"
+  }
+}

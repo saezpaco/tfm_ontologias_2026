@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-05-09T00:51:17.655097",
+  "success": true,
+  "elapsed_seconds": 182.77,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3206,
+    "completion_tokens": 992,
+    "total_tokens": 4198
+  },
+  "prompt_tokens_estimate": 1995,
+  "response_chars": 3215,
+  "turtle_chars": 2510,
+  "validation": {
+    "valid": false,
+    "error": "at line 21 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'refix dbsuper: <http://purl.obolibrary.org/obo/dbsuper#> .\\n\\n'^b'crm:Enhancer a owl:Class ;\\n    rdfs:label \"Enhancer\" ;\\n    s'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi_C3/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi_C3/response_raw_run1.txt"
+  }
+}

@@ -1,0 +1,64 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "CRM" ;
+    skos:prefLabel "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+    rdfs:subClassOf obo:SO_0001765 .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:label "genomic_coordinates" ;
+    skos:prefLabel "chr_name, start_position, end_position" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:hasScore a owl:DatatypeProperty ;
+    rdfs:label "score" ;
+    skos:prefLabel "score" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+crm:isActive a owl:ObjectProperty ;
+    rdfs:label "active" ;
+    skos:prefLabel "active" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range rdf:langString .
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "target_gene" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 .
+
+crm:hasAssociatedDisease a owl:ObjectProperty ;
+    rdfs:label "associated_disease" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:DOID_0050128 .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "transcription_factor" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 .
+
+crm:FANTOM5 a owl:Class ;
+    rdfs:label "FANTOM5" ;
+    skos:prefLabel "Database" ;
+    rdfs:subClassOf obo:SO_0001765 .
+
+crm:Enhancer_FANTOM5 a crm:Enhancer ;
+    rdfs:label "chr1:839741-840250" ;
+    skos:prefLabel "chr1:839741-840250#FANTOM5" ;
+    crm:hasGenomicCoordinates "chr1:839741-840250" ;
+    crm:hasScore 24 ;
+    crm:isActive "active" ;
+    crm:hasTargetGene obo:GO_0003824 ;
+    crm:hasAssociatedDisease obo:DOID_0050128 ;
+    crm:hasTranscriptionFactor obo:GO_0003824 .

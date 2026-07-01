@@ -1,0 +1,55 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://example.org/ontology/DiseaseEnhancer> a owl:Ontology .
+
+### Classes
+:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" .
+
+:Disease a owl:Class ;
+    skos:prefLabel "Disease" .
+
+:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+### Object Properties
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol" .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+:interactsWithTF a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+### Datatype Properties
+:hasGenomicCoordinates a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Genomic coordinates of the CRM in the format chr_name:start_position-end_position" .
+
+:hasDatabaseSource a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "database_name" ;
+    skos:definition "Source database name for the CRM information" .

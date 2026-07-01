@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-27T10:04:20.374646",
+  "success": true,
+  "elapsed_seconds": 126.39,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 786,
+    "completion_tokens": 982,
+    "total_tokens": 1768
+  },
+  "prompt_tokens_estimate": 808,
+  "response_chars": 3467,
+  "turtle_chars": 3467,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\" ;\\n '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N25/response_raw_run1.txt"
+  }
+}

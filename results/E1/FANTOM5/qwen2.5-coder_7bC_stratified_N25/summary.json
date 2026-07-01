@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 73.11666666666666,
+  "total_tokens": 10227,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-27T16:22:12.026420",
+      "success": true,
+      "elapsed_seconds": 92.55,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2670,
+        "completion_tokens": 739,
+        "total_tokens": 3409
+      },
+      "prompt_tokens_estimate": 1123,
+      "response_chars": 2442,
+      "turtle_chars": 2428,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"FANTOM5 Enhanc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bC_stratified_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bC_stratified_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-27T16:23:15.908459",
+      "success": true,
+      "elapsed_seconds": 62.84,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2670,
+        "completion_tokens": 739,
+        "total_tokens": 3409
+      },
+      "prompt_tokens_estimate": 1123,
+      "response_chars": 2442,
+      "turtle_chars": 2428,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"FANTOM5 Enhanc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bC_stratified_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bC_stratified_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-27T16:24:20.891571",
+      "success": true,
+      "elapsed_seconds": 63.96,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2670,
+        "completion_tokens": 739,
+        "total_tokens": 3409
+      },
+      "prompt_tokens_estimate": 1123,
+      "response_chars": 2442,
+      "turtle_chars": 2428,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"FANTOM5 Enhanc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bC_stratified_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bC_stratified_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

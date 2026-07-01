@@ -1,0 +1,97 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 161.50666666666666,
+  "total_tokens": 15225,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-05-08T22:49:49.554698",
+      "success": true,
+      "elapsed_seconds": 151.72,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3997,
+        "completion_tokens": 1094,
+        "total_tokens": 5091
+      },
+      "prompt_tokens_estimate": 2491,
+      "response_chars": 3357,
+      "turtle_chars": 2698,
+      "validation": {
+        "valid": false,
+        "error": "at line 29 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b't \"Disease association ontology\" ;\\n\\n<http://example.org/Crm>'^b'\\n  a owl:Class ;\\n  rdfs:label \"Crm\" ;\\n  skos:exactMatch <htt'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-05-08T22:52:54.274567",
+      "success": true,
+      "elapsed_seconds": 168.1,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3997,
+        "completion_tokens": 1110,
+        "total_tokens": 5107
+      },
+      "prompt_tokens_estimate": 2491,
+      "response_chars": 3350,
+      "turtle_chars": 2756,
+      "validation": {
+        "valid": true,
+        "n_triples": 42,
+        "n_classes": 7,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-05-08T22:55:56.169877",
+      "success": true,
+      "elapsed_seconds": 164.7,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3997,
+        "completion_tokens": 1030,
+        "total_tokens": 5027
+      },
+      "prompt_tokens_estimate": 2491,
+      "response_chars": 3117,
+      "turtle_chars": 2568,
+      "validation": {
+        "valid": true,
+        "n_triples": 42,
+        "n_classes": 7,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/response_raw_run3.txt"
+      }
+    }
+  ]
+}

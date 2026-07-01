@@ -1,0 +1,728 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER#Enhancer>
+  a owl:Class ;
+  rdfs:label "Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer"@en ;
+  skos:definition "A regulatory element that modulates gene expression."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"@en ;
+  skos:definition "A location on the genome."@en .
+
+<http://example.org/dbSUPER#Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"@en ;
+  skos:definition "Experimental data supporting the enhancer's function."@en .
+
+<http://example.org/dbSUPER#CellLine>
+  a owl:Class ;
+  rdfs:label "Cell Line"^^xsd:string ;
+  skos:prefLabel "Cell Line"@en ;
+  skos:definition "A cultured cell population used for experiments."@en .
+
+<http://example.org/dbSUPER#TargetGene>
+  a owl:Class ;
+  rdfs:label "Target Gene"^^xsd:string ;
+  skos:prefLabel "Target Gene"@en ;
+  skos:definition "A gene regulated by the enhancer."@en .
+
+<http://example.org/dbSUPER#AssociatedDisease>
+  a owl:Class ;
+  rdfs:label "Associated Disease"^^xsd:string ;
+  skos:prefLabel "Associated Disease"@en ;
+  skos:definition "A disease linked to the enhancer's function."@en .
+
+<http://example.org/dbSUPER#TranscriptionFactor>
+  a owl:Class ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor"@en ;
+  skos:definition "A protein regulating gene expression."@en .
+
+<http://example.org/dbSUPER#enhancer_has_genomic_coordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "has Genomic Coordinate"@en ;
+  skos:definition "Associates an enhancer with its genomic location."@en .
+
+<http://example.org/dbSUPER#enhancer_has_evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "has Evidence"^^xsd:string ;
+  skos:prefLabel "has Evidence"@en ;
+  skos:definition "Associates an enhancer with experimental data."@en .
+
+<http://example.org/dbSUPER#enhancer_regulates_target_gene>
+  a owl:ObjectProperty ;
+  rdfs:label "regulates Target Gene"^^xsd:string ;
+  skos:prefLabel "regulates Target Gene"@en ;
+  skos:definition "Associates an enhancer with its target gene."@en .
+
+<http://example.org/dbSUPER#enhancer_is_associated_with_disease>
+  a owl:ObjectProperty ;
+  rdfs:label "is Associated With Disease"^^xsd:string ;
+  skos:prefLabel "is Associated With Disease"@en ;
+  skos:definition "Associates an enhancer with a disease."@en .
+
+<http://example.org/dbSUPER#enhancer_interacts_with_transcription_factor>
+  a owl:ObjectProperty ;
+  rdfs:label "interacts With Transcription Factor"^^xsd:string ;
+  skos:prefLabel "interacts With Transcription Factor"@en ;
+  skos:definition "Associates an enhancer with a transcription factor."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_line>
+  a owl:ObjectProperty ;
+  rdfs:label "has Cell Line"^^xsd:string ;
+  skos:prefLabel "has Cell Line"@en ;
+  skos:definition "Associates an enhancer with a cell line."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:ObjectProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:ObjectProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_start>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Start Coordinate"^^xsd:string ;
+  skos:prefLabel "has Start Coordinate"@en ;
+  skos:definition "Associates an enhancer with its start coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_stop>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "has Stop Coordinate"@en ;
+  skos:definition "Associates an enhancer with its stop coordinate."@en .
+
+<http://example.org/dbSUPER#enhancer_has_id>
+  a owl:DatatypeProperty ;
+  rdfs:label "has ID"^^xsd:string ;
+  skos:prefLabel "has ID"@en ;
+  skos:definition "Associates an enhancer with its unique identifier."@en .
+
+<http://example.org/dbSUPER#enhancer_has_gene_symbol>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Gene Symbol"^^xsd:string ;
+  skos:prefLabel "has Gene Symbol"@en ;
+  skos:definition "Associates an enhancer with its target gene's symbol."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Name"^^xsd:string ;
+  skos:prefLabel "has Cell Name"@en ;
+  skos:definition "Associates an enhancer with its cell line's name."@en .
+
+<http://example.org/dbSUPER#enhancer_has_rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Rank"^^xsd:string ;
+  skos:prefLabel "has Rank"@en ;
+  skos:definition "Associates an enhancer with its rank in the database."@en .
+
+<http://example.org/dbSUPER#enhancer_has_chrom>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Chromosome"^^xsd:string ;
+  skos:prefLabel "has Chromosome"@en ;
+  skos:definition "Associates an enhancer with its chromosome."@en .
+
+<http://example.org/dbSUPER#enh

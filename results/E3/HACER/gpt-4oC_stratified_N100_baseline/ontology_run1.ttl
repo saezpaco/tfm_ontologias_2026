@@ -1,0 +1,100 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2phen/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" ;
+    dc:source <http://bioinfo.vanderbilt.edu/AE/HACER/> .
+
+### Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+hcrm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+hcrm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+hcrm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+hcrm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+### Properties
+hcrm:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    skos:closeMatch <http://www.licpathway.net/ENdb/> .
+
+hcrm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+hcrm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "has transcription factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+hcrm:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+hcrm:hasBiosample a owl:ObjectProperty ;
+    rdfs:label "has biosample" ;
+    skos:closeMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+hcrm:hasExperimentalMethod a owl:DatatypeProperty ;
+    rdfs:label "has experimental method" ;
+    rdfs:range xsd:string .
+
+hcrm:hasScore a owl:DatatypeProperty ;
+    rdfs:label "has score" ;
+    rdfs:range xsd:float .
+
+hcrm:hasPMID a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:range xsd:string ;
+    skos:closeMatch <http://rdf.biogateway.eu/id_pubmed/> .
+
+### Individuals
+<http://bioinfo.vanderbilt.edu/AE/HACER/CRMHS00000079551> a hcrm:CisRegulatoryModule ;
+    rdfs:label "CRMHS00000079551" ;
+    hcrm:hasGenomicCoordinate [ 
+        a hcrm:Enhancer ;
+        assembly:orig_chr "chr1" ;
+        assembly:orig_start "52088228"^^xsd:integer ;
+        assembly:orig_end "52088763"^^xsd:integer ;
+        assembly:orig_assembly "hg19" ;
+        assembly:current_chr "chr1" ;
+        assembly:current_start "51622556"^^xsd:integer ;
+        assembly:current_end "51623091"^^xsd:integer ;
+        assembly:current_assembly "hg38" 
+    ] ;
+    hcrm:hasTargetGene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000079551--hgncsymbol!9606/OSBPL9> ;
+    hcrm:hasBiosample "EBC-1" ;
+    hcrm:hasExperimentalMethod "CAGE" ;
+    hcrm:hasScore "1"^^xsd:float ;
+    hcrm:hasPMID "30247654" .
+
+# Additional individuals would be defined similarly, following the pattern above.

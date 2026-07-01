@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-05T22:12:11.417378",
+  "success": true,
+  "elapsed_seconds": 108.33,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 731,
+    "total_tokens": 4827
+  },
+  "prompt_tokens_estimate": 2564,
+  "response_chars": 2358,
+  "turtle_chars": 1864,
+  "validation": {
+    "valid": false,
+    "error": "at line 20 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'ut=\"\">\\n\\n  <!-- Classes -->\\n  <rdfs:Class rdf:ID=\"Gene\">\\n    '^b'<rdfs:subClassOf rdf:resource=\"http://purl.obolibrary.org/ob'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N100/response_raw_run2.txt"
+  }
+}

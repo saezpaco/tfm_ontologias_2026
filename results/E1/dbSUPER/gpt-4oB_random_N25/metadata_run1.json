@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-26T19:27:32.564004",
+  "success": true,
+  "elapsed_seconds": 6.85,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1146,
+    "completion_tokens": 723,
+    "total_tokens": 1869
+  },
+  "prompt_tokens_estimate": 897,
+  "response_chars": 2535,
+  "turtle_chars": 2535,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'cription of genes.\" ;\\n    skos:exactMatch obo:SO_0000165 .\\n\\n'^b':SuperEnhancer a owl:Class ;\\n    skos:prefLabel \"Super Enhan'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oB_random_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oB_random_N25/response_raw_run1.txt"
+  }
+}

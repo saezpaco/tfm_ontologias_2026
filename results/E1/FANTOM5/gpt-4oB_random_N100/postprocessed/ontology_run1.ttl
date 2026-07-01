@@ -1,0 +1,67 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that increases the transcription of a gene." ;
+    skos:exactMatch obo:SO_0000167 .
+
+obo:GENE a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." .
+
+obo:TRANSCRIPTION_FACTOR a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to specific DNA sequences, thereby controlling the rate of transcription of genetic information." .
+
+obo:DISEASE a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms." .
+
+# Object Properties
+obo:has_target_gene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates an enhancer to its target gene." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range obo:GENE .
+
+obo:interacts_with_TF a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates an enhancer to a transcription factor it interacts with." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range obo:TRANSCRIPTION_FACTOR .
+
+obo:associated_with_disease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates an enhancer to a disease it is associated with." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range obo:DISEASE .
+
+# Datatype Properties
+obo:has_genomic_coordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Specifies the genomic coordinates of an enhancer." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:string .
+
+obo:has_experimental_evidence a owl:DatatypeProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Specifies the type of experimental evidence supporting the enhancer activity." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:string .
+
+obo:has_score a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "Specifies the score associated with the enhancer activity." ;
+    rdfs:domain obo:SO_0000167 ;
+    rdfs:range xsd:float .

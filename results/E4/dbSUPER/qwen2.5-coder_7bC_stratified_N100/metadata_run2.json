@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/C_stratified/N=100/dbSUPER.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-30T14:11:04.037899+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.034,
+    "plan_s": 89.795,
+    "plan_chars": 3861,
+    "plan_prompt_chars": 9591,
+    "onto_s": 242.945,
+    "onto_chars": 8209,
+    "onto_prompt_chars": 12832,
+    "map_s": 206.257,
+    "map_chars": 5142,
+    "map_prompt_chars": 14739
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-30T14:20:03.069321+00:00",
+  "total_s": 539.031
+}

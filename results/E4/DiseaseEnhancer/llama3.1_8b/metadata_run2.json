@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/DiseaseEnhancer.csv",
+  "api_model": "llama3.1:8b",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-05T16:36:05.211720+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.031,
+    "plan_s": 171.764,
+    "plan_chars": 6957,
+    "plan_prompt_chars": 9562,
+    "onto_s": 335.344,
+    "onto_chars": 15737,
+    "onto_prompt_chars": 15899,
+    "map_s": 165.118,
+    "map_chars": 5775,
+    "map_prompt_chars": 25371
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-05T16:47:17.468473+00:00",
+  "total_s": 672.257
+}

@@ -1,0 +1,64 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    skos:prefLabel "dbSUPER Ontology" ;
+    skos:definition "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/dbSUPER/SuperEnhancer> a owl:Class ;
+    skos:prefLabel "Super Enhancer" ;
+    skos:definition "A super-enhancer is a large cluster of transcriptional enhancers that drive expression of genes involved in cell identity." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+<http://example.org/ontology/dbSUPER/Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene is a sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+<http://example.org/ontology/dbSUPER/CellLine> a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line is a population of cells derived from a single cell and containing the same genetic makeup." .
+
+### Object Properties ###
+<http://example.org/ontology/dbSUPER/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER/SuperEnhancer> ;
+    rdfs:range <http://example.org/ontology/dbSUPER/Gene> ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a super-enhancer to its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002410> .
+
+<http://example.org/ontology/dbSUPER/activeInCellLine> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER/SuperEnhancer> ;
+    rdfs:range <http://example.org/ontology/dbSUPER/CellLine> ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the super-enhancer is active." .
+
+### Datatype Properties ###
+<http://example.org/ontology/dbSUPER/hasChromosome> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER/SuperEnhancer> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the super-enhancer is located." .
+
+<http://example.org/ontology/dbSUPER/hasStartPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER/SuperEnhancer> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has start position" ;
+    skos:definition "The start position of the super-enhancer on the chromosome." .
+
+<http://example.org/ontology/dbSUPER/hasEndPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER/SuperEnhancer> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has end position" ;
+    skos:definition "The end position of the super-enhancer on the chromosome." .
+
+<http://example.org/ontology/dbSUPER/hasRank> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER/SuperEnhancer> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has rank" ;
+    skos:definition "The rank of the super-enhancer based on its activity or significance." .

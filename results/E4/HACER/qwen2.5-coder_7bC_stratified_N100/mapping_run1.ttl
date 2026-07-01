@@ -1,0 +1,205 @@
+```ttl
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{type}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedID>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            rr:constant "{{method}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate genreg:scoreValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScoreValue>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:{{biosample_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapPubMedID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_PMID}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:constant "{{enh2gene_PMID}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:constant "{{disease_PMID}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:constant "{{mutation_PMID}}";
+        ]
+    ].
+
+<#TriplesMapChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            rr:constant "{{orig_chr}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            rr:constant "{{current_chr}}";
+        ]
+    ].
+
+<#TriplesMapScoreValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:scoreValue;
+        rr:objectMap [
+            rr:constant "{{minimum_ratio}}";
+        ]
+    ],
+    [
+        rr:predicate genreg:scoreValue;
+        rr:objectMap [
+            rr:constant "{{score}}";
+        ]
+    ].
+
+<#TriplesMapHasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapInteractsWithEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:interactsWithEnhancer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer>;
+        ]
+    ].
+
+<#TriplesMapAssociatedWithDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:associatedWithDisease;
+        rr:objectMap [
+            rr:constant "{{disease}}";
+        ]
+    ].
+
+<#TriplesMapLocatedInCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:locatedInCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapHasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>;
+        ]
+    ].
+```

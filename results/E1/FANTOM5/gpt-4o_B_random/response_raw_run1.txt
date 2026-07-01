@@ -1,0 +1,57 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory region of DNA that enhances the transcription of an associated gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+# Properties
+obo:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates an enhancer to its genomic coordinates." .
+
+obo:hasChromosome a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the enhancer is located." ;
+    rdfs:range xsd:string .
+
+obo:hasChromStart a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome start" ;
+    skos:definition "The starting position of the enhancer on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:hasChromEnd a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome end" ;
+    skos:definition "The ending position of the enhancer on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:hasScore a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "The score associated with the enhancer, indicating its activity level." ;
+    rdfs:range xsd:integer .
+
+obo:hasStrand a owl:DatatypeProperty ;
+    skos:prefLabel "has strand" ;
+    skos:definition "The DNA strand on which the enhancer is located." ;
+    rdfs:range xsd:string .
+
+obo:hasEvidence a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "The type of experimental evidence supporting the enhancer's activity." ;
+    rdfs:range xsd:string ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/ECO_0000205> .
+
+# Example individual
+_:enhancer1 a obo:SO_0000165 ;
+    obo:hasChromosome "chr7" ;
+    obo:hasChromStart 47343610 ;
+    obo:hasChromEnd 47343904 ;
+    obo:hasScore 7 ;
+    obo:hasStrand "." ;
+    obo:hasEvidence "CAGE-seq" .

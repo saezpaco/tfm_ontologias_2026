@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/HACER.csv",
+  "api_model": "llama3.1:8b",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-05T15:58:42.814711+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.026,
+    "plan_s": 203.842,
+    "plan_chars": 6899,
+    "plan_prompt_chars": 9549,
+    "onto_s": 292.395,
+    "onto_chars": 8091,
+    "onto_prompt_chars": 15828,
+    "map_s": 327.269,
+    "map_chars": 10327,
+    "map_prompt_chars": 17657
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-05T16:12:26.347792+00:00",
+  "total_s": 823.532
+}

@@ -365,7 +365,7 @@ def call_llm(model_name: str, system_prompt: str, user_prompt: str,
         base_url = cfg.get("base_url", "http://localhost:11434").rstrip("/")
         if not base_url.endswith("/v1"):
             base_url = base_url + "/v1"
-        client = openai.OpenAI(api_key="ollama-no-key", base_url=base_url)
+        client = openai.OpenAI(api_key="ollama-no-key", base_url=base_url, timeout=1600.0, max_retries=3)
     else:
         client = openai.OpenAI(api_key=api_key)
 

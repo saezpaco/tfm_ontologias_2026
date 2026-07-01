@@ -1,0 +1,207 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty
+    a rdfs:Class ;
+    rdfs:label "Data Type Property" ;
+    rdfs:comment "A property that has a datatype as its range." ;
+
+owl:ObjectProperty
+    a rdfs:Class ;
+    rdfs:label "Object Property" ;
+    rdfs:comment "A property that has an object (another resource) as its range." ;
+
+owl:Class
+    a rdfs:Class ;
+    rdfs:label "Class" ;
+    rdfs:comment "A category of entities with common characteristics." ;
+
+gr:GenomicElement
+    a owl:Class ;
+    rdfs:label "Genomic Element" ;
+    rdfs:comment "A biological element within the genome, such as an enhancer or superenhancer." ;
+    rdfs:subClassOf gr:Enhancer ;
+    rdfs:subClassOf gr:SuperEnhancer ;
+
+gr:Enhancer
+    a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A type of genomic element that can enhance the transcription of nearby genes." ;
+    rdfs:subClassOf gr:GenomicElement ;
+
+gr:SuperEnhancer
+    a owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    rdfs:comment "A highly active enhancer that can drive strong gene expression." ;
+    rdfs:subClassOf gr:Enhancer ;
+
+gr:hasBlockCount
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Has Block Count" ;
+    rdfs:comment "The number of blocks in the genomic region." ;
+
+gr:hasChromEnd
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Has Chrom End" ;
+    rdfs:comment "The end position of the chromosome." ;
+
+gr:hasChromStart
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Has Chrom Start" ;
+    rdfs:comment "The start position of the chromosome." ;
+
+gr:hasScore
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "The score associated with the genomic element." ;
+
+gr:hasThickEnd
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Has Thick End" ;
+    rdfs:comment "The end position of the thick part of the genomic element." ;
+
+gr:hasThickStart
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Has Thick Start" ;
+    rdfs:comment "The start position of the thick part of the genomic element." ;
+
+gr:hasBlockSizes
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Block Sizes" ;
+    rdfs:comment "The sizes of each block in the genomic region." ;
+
+gr:hasBlockStarts
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Block Starts" ;
+    rdfs:comment "The starting positions of each block in the genomic region." ;
+
+gr:hasChrom
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Chrom" ;
+    rdfs:comment "The chromosome identifier." ;
+
+gr:hasItemRgb
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Item Rgb" ;
+    rdfs:comment "The RGB color code for visualization." ;
+
+gr:hasName
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Name" ;
+    rdfs:comment "The name or identifier of the genomic element." ;
+
+gr:hasStrand
+    a owl:ObjectProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Strand" ;
+    rdfs:comment "The orientation of the genomic element (forward/reverse)." ;
+
+gr:blockCountValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Block Count Value" ;
+    rdfs:comment "The value of the block count property." ;
+
+gr:chromEndValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Chrom End Value" ;
+    rdfs:comment "The value of the chrom end property." ;
+
+gr:chromStartValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Chrom Start Value" ;
+    rdfs:comment "The value of the chrom start property." ;
+
+gr:scoreValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "The value of the score property." ;
+
+gr:thickEndValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Thick End Value" ;
+    rdfs:comment "The value of the thick end property." ;
+
+gr:thickStartValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Thick Start Value" ;
+    rdfs:comment "The value of the thick start property." ;
+
+gr:blockSizesValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Block Sizes Value" ;
+    rdfs:comment "The value of the block sizes property." ;
+
+gr:blockStartsValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Block Starts Value" ;
+    rdfs:comment "The value of the block starts property." ;
+
+gr:chromValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Chrom Value" ;
+    rdfs:comment "The value of the chrom property." ;
+
+gr:itemRgbValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Item Rgb Value" ;
+    rdfs:comment "The value of the item rgb property." ;
+
+gr:nameValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Name Value" ;
+    rdfs:comment "The value of the name property." ;
+
+gr:strandValue
+    a owl:DatatypeProperty ;
+    rdfs:domain gr:GenomicElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Strand Value" ;
+    rdfs:comment "The value of the strand property." ;

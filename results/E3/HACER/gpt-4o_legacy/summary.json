@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 15.823333333333332,
+  "total_tokens": 19437,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-05-08T19:06:31.683712",
+      "success": true,
+      "elapsed_seconds": 14.9,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4894,
+        "completion_tokens": 1391,
+        "total_tokens": 6285
+      },
+      "prompt_tokens_estimate": 3207,
+      "response_chars": 3776,
+      "turtle_chars": 3762,
+      "validation": {
+        "valid": false,
+        "error": "at line 31 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o_legacy/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o_legacy/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-05-08T19:06:54.188727",
+      "success": true,
+      "elapsed_seconds": 21.46,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4894,
+        "completion_tokens": 1888,
+        "total_tokens": 6782
+      },
+      "prompt_tokens_estimate": 3207,
+      "response_chars": 5230,
+      "turtle_chars": 5216,
+      "validation": {
+        "valid": false,
+        "error": "at line 33 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o_legacy/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o_legacy/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-05-08T19:07:06.331574",
+      "success": true,
+      "elapsed_seconds": 11.11,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4894,
+        "completion_tokens": 1476,
+        "total_tokens": 6370
+      },
+      "prompt_tokens_estimate": 3207,
+      "response_chars": 4018,
+      "turtle_chars": 4004,
+      "validation": {
+        "valid": false,
+        "error": "at line 31 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o_legacy/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4o_legacy/response_raw_run3.txt"
+      }
+    }
+  ]
+}

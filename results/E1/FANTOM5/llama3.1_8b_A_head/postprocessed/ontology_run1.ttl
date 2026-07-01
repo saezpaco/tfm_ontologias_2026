@@ -1,0 +1,748 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+crm:Enhancer
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Chromosome
+  a owl:ObjectProperty ;
+  rdfs:label "Chromosome" ;
+  skos:prefLabel "Chromosome" ;
+  skos:definition "The chromosome on which the enhancer is located" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000162> .
+
+crm:Start
+  a owl:ObjectProperty ;
+  rdfs:label "Start" ;
+  skos:prefLabel "Start" ;
+  skos:definition "The start position of the enhancer on the chromosome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000164> .
+
+crm:End
+  a owl:ObjectProperty ;
+  rdfs:label "End" ;
+  skos:prefLabel "End" ;
+  skos:definition "The end position of the enhancer on the chromosome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001095> .
+
+crm:TargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001096> .
+
+crm:Disease
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001097> .
+
+crm:TranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001098> .
+
+crm:Enhancer
+  a owl:ObjectProperty ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> .
+
+crm:GenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+crm:Evidence
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity" ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001094> .
+
+crm:CellLine
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active" ;
+  obo:skos

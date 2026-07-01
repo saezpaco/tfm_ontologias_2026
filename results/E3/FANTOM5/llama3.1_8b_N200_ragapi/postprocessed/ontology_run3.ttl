@@ -18,7 +18,7 @@
 
 <http://example.org/gene> a rdfs:Class ;
   rdfs:label "Gene" ;
-  skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+  skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 <http://example.org/region> a rdfs:Class ;
   rdfs:label "Genomic Region" ;
@@ -26,7 +26,7 @@
 
 <http://example.org/transcript> a rdfs:Class ;
   rdfs:label "Transcript" ;
-  skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+  skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 <http://example.org/protein> a rdfs:Class ;
   rdfs:label "Protein" ;

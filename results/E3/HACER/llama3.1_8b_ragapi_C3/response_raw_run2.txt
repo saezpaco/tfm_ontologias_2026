@@ -1,0 +1,116 @@
+Here is the formal OWL ontology schema in Turtle format based on the provided database sample and cisreg reference ontology fragments:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://hugenet.org/ontologies/cisreg#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/human_gene#> .
+@prefix assembly: <http://purl.obolibrary.org/obo/assembly#> .
+@prefix nuccore:  <http://purl.obolibrary.org/obo/nuccore#> .
+@prefix pubmed:   <http://purl.obolibrary.org/obo/pubmed#> .
+@prefix id_pubmed: <http://purl.obolibrary.org/obo/id_pubmed#> .
+@prefix id_ncbigene: <http://purl.obolibrary.org/obo/id_ncbigene#> .
+@prefix dbsuper:  <http://purl.obolibrary.org/obo/dbsuper#> .
+
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates gene expression.".
+
+hcrm:EnhancerSequence a owl:Class ;
+    rdfs:label "Enhancer sequence" ;
+    skos:definition "A specific type of cis-regulatory element that enhances transcription.".
+
+hcrm:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic coordinate" ;
+    skos:definition "A location on the genome, typically represented as a pair of integers (start and end positions).".
+
+hcrm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription factor" ;
+    skos:definition "A protein that binds to specific DNA sequences to regulate gene expression.".
+
+hcrm:TargetGene a owl:Class ;
+    rdfs:label "Target gene" ;
+    skos:definition "The gene whose expression is regulated by the cis-regulatory module.".
+
+hcrm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:definition "A medical condition caused by genetic or environmental factors.".
+
+hcrm:CellLine a owl:Class ;
+    rdfs:label "Cell line" ;
+    skos:definition "A population of cells grown in culture, often used for research purposes.".
+
+hcrm:ExperimentalEvidence a owl:Class ;
+    rdfs:label "Experimental evidence" ;
+    skos:definition "Data obtained through experiments or observations that support the existence of a cis-regulatory module.".
+
+hcrm:CAGEExperiment a owl:Class ;
+    rdfs:label "CAGE experiment" ;
+    skos:definition "A type of experimental technique used to identify and quantify enhancer sequences.".
+
+hcrm:ExpressionCorrelation a owl:Class ;
+    rdfs:label "Expression correlation" ;
+    skos:definition "A measure of the relationship between gene expression levels in different cell types or conditions.".
+
+hcrm:Distance50kb a owl:Class ;
+    rdfs:label "Distance 50 kb" ;
+    skos:definition "A region on the genome with a distance of approximately 50 kilobases from a specific location.".
+
+hcrm:Overlap a owl:ObjectProperty ;
+    rdfs:label "Overlap" ;
+    skos:definition "The relationship between two genomic regions that share a common sequence.".
+
+hcrm:hasEnhancerSequence hcrm:EnhancerSequence ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasGenomicCoordinate hcrm:GenomicCoordinate ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasTranscriptionFactor hcrm:TranscriptionFactor ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasTargetGene hcrm:TargetGene ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasDisease hcrm:Disease ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasCellLine hcrm:CellLine ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasExperimentalEvidence hcrm:ExperimentalEvidence ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasCAGEExperiment hcrm:CAGEExperiment ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasExpressionCorrelation hcrm:ExpressionCorrelation ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+hcrm:hasDistance50kb hcrm:Distance50kb ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+```
+
+Note that I have only included the classes and properties mentioned in the provided database sample and cisreg reference ontology fragments. If there are any additional concepts or relationships not covered by these, they should be added accordingly.
+
+Also, please note that this is a generated output based on the provided specifications, and it's recommended to review and verify the output before using it as a final solution.

@@ -1,0 +1,113 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <https://identifiers.org/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+<https://w3id.org/biolink/vocab/>
+  rdfs:label "Biolink Ontology" ;
+  owl:versionInfo "1.0" .
+<http://rdf.biogateway.eu/crm2pgene/>
+  rdfs:label "CRM2PGene Ontology" ;
+  owl:versionInfo "1.0" .
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+# Column 'crm_ID':
+dbsuper:CrmId
+  a owl:Class ;
+  rdfs:label "Crm ID" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/crm_id> .
+<https://w3id.org/biolink/vocab/>
+  rdfs:label "Biolink Ontology" ;
+  owl:versionInfo "1.0" .
+
+# Column 'biosample_name':
+dbsuper:BiosampleName
+  a owl:Class ;
+  rdfs:label "Biosample Name" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/biosample> .
+<https://w3id.org/biolink/vocab/>
+  rdfs:label "Biolink Ontology" ;
+  owl:versionInfo "1.0" .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:HgncSymbol
+  a owl:Class ;
+  rdfs:label "Hgnc Symbol" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/hgnc_symbol> .
+<http://rdf.biogateway.eu/crm2pgene/CrmId--HgncSymbol!9606>
+  a owl:ObjectProperty ;
+  rdfs:label "Crm ID -- Hgnc Symbol (9606)" ;
+  skos:closeMatch <https://w3id.org/biolink/vocab/crm_id_hgnc_symbol> .
+<https://w3id.org/biolink/vocab/>
+  rdfs:label "Biolink Ontology" ;
+  owl:versionInfo "1.0" .
+
+# Column 'orig_end':
+assembly:Assembly
+  a owl:Class ;
+  rdfs:label "Assembly" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/assembly> .
+nuccore:Nuccore
+  a owl:Class ;
+  rdfs:label "Nuccore" ;
+  skos:closeMatch <https://w3id.org/biolink/vocab/nuccore> .
+
+# Column 'current_end':
+assembly:Assembly
+  a owl:Class ;
+  rdfs:label "Assembly" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/assembly> .
+nuccore:Nuccore
+  a owl:Class ;
+  rdfs:label "Nuccore" ;
+  skos:closeMatch <https://w3id.org/biolink/vocab/nuccore> .
+
+# === NEW CLASSES AND PROPERTIES ===
+
+dbsuper:CrmId
+  a owl:Class ;
+  rdfs:label "Crm ID" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/crm_id> .
+dbsuper:BiosampleName
+  a owl:Class ;
+  rdfs:label "Biosample Name" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/biosample> .
+hgene:HgncSymbol
+  a owl:Class ;
+  rdfs:label "Hgnc Symbol" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/hgnc_symbol> .
+<http://rdf.biogateway.eu/crm2pgene/CrmId--HgncSymbol!9606>
+  a owl:ObjectProperty ;
+  rdfs:label "Crm ID -- Hgnc Symbol (9606)" ;
+  skos:closeMatch <https://w3id.org/biolink/vocab/crm_id_hgnc_symbol> .
+assembly:Assembly
+  a owl:Class ;
+  rdfs:label "Assembly" ;
+  skos:exactMatch <https://w3id.org/biolink/vocab/assembly> .
+nuccore:Nuccore
+  a owl:Class ;
+  rdfs:label "Nuccore" ;
+  skos:closeMatch <https://w3id.org/biolink/vocab/nuccore> .
+
+# === NEW OBJECT PROPERTIES ===
+
+<http://rdf.biogateway.eu/crm2pgene/CrmId--HgncSymbol!9606>
+  a owl:ObjectProperty ;
+  rdfs:label "Crm ID -- Hgnc Symbol (9606)" ;
+  skos:closeMatch <https://w3id.org/biolink/vocab/crm_id_hgnc_symbol> .

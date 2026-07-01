@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-05T13:01:27.594021",
+  "success": true,
+  "elapsed_seconds": 83.14,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3036,
+    "completion_tokens": 904,
+    "total_tokens": 3940
+  },
+  "prompt_tokens_estimate": 1780,
+  "response_chars": 3100,
+  "turtle_chars": 3100,
+  "validation": {
+    "valid": false,
+    "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'\\n<owl:ObjectProperty rdf:about=\"http://example.org/targets\">'^b'\\n  a owl:ObjectProperty ;\\n  rdfs:label \"targets\" ;\\n  skos:pr'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/response_raw_run3.txt"
+  }
+}

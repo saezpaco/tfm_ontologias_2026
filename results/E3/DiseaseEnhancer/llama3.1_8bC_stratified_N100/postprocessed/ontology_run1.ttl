@@ -1,0 +1,75 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/crm2pgene#> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene#> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+#   • ontology=crm2phen_example  file=crm2phen_example.txt  score=0.410
+#   • ontology=crm2gene  file=crm2gene.txt  score=0.390
+#   • ontology=crm2phen  file=crm2phen.txt  score=0.387
+#   • ontology=crm2gene_example  file=crm2gene_example.txt  score=0.387
+#   • ontology=crm2tfac  file=crm2tfac.txt  score=0.346
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+# Column 'orig_end':
+#   - <http://www.licpathway.net/ENdb/> rdfs:label "ENdb" ; # score=0.422
+#   - <http://www.licpathway.net/ENdb/> rdfs:label "ENdb" ; # score=0.422
+
+# Column 'current_end':
+#   - <http://www.licpathway.net/ENdb/> rdfs:label "ENdb" ; # score=0.433
+#   - <http://www.licpathway.net/ENdb/> rdfs:label "ENdb" ; # score=0.433
+
+# Column 'hgnc_symbol_target_genes':
+#   - <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> rdfs:label "bgw!CRMHS00000003515--doid!1682" ; # score=0.402
+#   - <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ; # score=0.593
+#   - <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> rdfs:label "bgw!CRMHS00000003515--hgncsymbol!9606/TBX5" ; # score=0.615
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> rdfs:label "Transcription Factor" ; # score=0.402
+
+# Column 'disease_PMID':
+#   - <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> rdfs:label "bgw!CRMHS00000003515--doid!1682" ; # score=0.457
+#   - <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> rdfs:label "bgw!crm_ID--doid!doid" ; # score=0.418
+
+# Column 'crm_ID':
+#   - <original_URL_database> rdfs:label "database_name" ; # score=0.418
+#   - <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> rdfs:label "bgw!crm_ID--doid!doid" ; # score=0.532
+
+# Column 'biosample_name':
+#   - <original_URL_database> rdfs:label "database_name" ; # score=0.454
+#   - <original_URL_database> rdfs:label "database_name" ; # score=0.454
+#   - <original_URL_database> rdfs:label "database_name" ; # score=0.454
+
+# Column 'original_ID':
+#   - <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" ; # score=0.448
+
+# === ADDING NEW TERMS ONLY WHERE CISREG DOESN'T COVER THE CONCEPT ===
+# Column 'hgnc_symbol_target_genes':
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> rdfs:label "Transcription Factor" ; # score=0.402
+
+# === REUSING CISREG CLASSES AND PROPERTIES WHERE SEMANTICALLY APPROPRIATE ===
+# Column 'orig_end':
+#   - <http://www.licpathway.net/ENdb/> skos:exactMatch <http://rdf.biogateway.eu/crm2phen/hcrm#ENdb> .
+
+# Column 'current_end':
+#   - <http://www.licpathway.net/ENdb/> skos:exactMatch <http://rdf.biogateway.eu/crm2phen/hcrm#ENdb> .
+
+# Column 'hgnc_symbol_target_genes':
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+# Column 'disease_PMID':
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> skos:closeMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .

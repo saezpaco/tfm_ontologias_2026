@@ -1,0 +1,99 @@
+{
+  "experiment": "E2",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 104.73333333333333,
+  "total_tokens": 14550,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T16:25:03.634272",
+      "success": true,
+      "elapsed_seconds": 101.35,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 755,
+        "total_tokens": 4850
+      },
+      "prompt_tokens_estimate": 3881,
+      "response_chars": 2525,
+      "turtle_chars": 2525,
+      "validation": {
+        "valid": true,
+        "n_triples": 40,
+        "n_classes": 5,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bD_diversity_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bD_diversity_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T16:26:48.306281",
+      "success": true,
+      "elapsed_seconds": 103.63,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 755,
+        "total_tokens": 4850
+      },
+      "prompt_tokens_estimate": 3881,
+      "response_chars": 2525,
+      "turtle_chars": 2525,
+      "validation": {
+        "valid": true,
+        "n_triples": 40,
+        "n_classes": 5,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bD_diversity_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bD_diversity_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T16:28:38.581309",
+      "success": true,
+      "elapsed_seconds": 109.22,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 755,
+        "total_tokens": 4850
+      },
+      "prompt_tokens_estimate": 3881,
+      "response_chars": 2525,
+      "turtle_chars": 2525,
+      "validation": {
+        "valid": true,
+        "n_triples": 40,
+        "n_classes": 5,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bD_diversity_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bD_diversity_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

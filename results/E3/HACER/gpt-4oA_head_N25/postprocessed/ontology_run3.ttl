@@ -1,0 +1,59 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+
+# Define a new class for the HACER database
+hcrm:HACER rdf:type owl:Class ;
+    rdfs:subClassOf obo:NCIT_C15426 ;
+    skos:prefLabel "HACER Database" ;
+    biolink:category biolink:InformationResource .
+
+# Example CRM instance from HACER
+hcrm:crm_001 rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr1 between 1000000 and 1005000 according to HACER" ;
+    skos:prefLabel "crm#crm_001#HACER" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; # in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; # hg38 assembly as reference
+    obo:BFO_0000050 nuccore:chr1 ; # chromosome
+    obo:GENO_0000895 "1000000"^^xsd:integer ;
+    obo:GENO_0000894 "1005000"^^xsd:integer ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Example cell line
+    schema:evidenceOrigin <https://hacer.org/evidence/12345> ; # Crossreference
+    rdfs:isDefinedBy obo:ECO_0000353 ; # Example experimental evidence
+    sio:SIO_000772 id_pubmed:12345678 ; # Article
+    sio:SIO_000253 <https://hacer.org/database> . # Original Database
+
+# Example chromosome class
+nuccore:chr1 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000340 ;
+    skos:prefLabel "Chromosome 1" ;
+    biolink:category biolink:GenomicSequenceLocalization ;
+    skos:closeMatch obo:NCIT_C0001 . # Example NCIT ID for chromosome 1
+
+# Example cell line class
+obo:CLO_0000003 rdf:type owl:Class ;
+    skos:prefLabel "Example Cell Line" ;
+    biolink:category biolink:CellLine .
+
+# Example experimental evidence class
+obo:ECO_0000353 rdf:type owl:Class ;
+    skos:prefLabel "Example Experimental Evidence" ;
+    biolink:category biolink:EvidenceType .
+
+# Example PubMed article
+id_pubmed:12345678 skos:exactMatch pubmed:12345678 .
+pubmed:12345678 rdf:type owl:Class ;
+    skos:prefLabel "Example Article" ;
+    biolink:category biolink:Article .

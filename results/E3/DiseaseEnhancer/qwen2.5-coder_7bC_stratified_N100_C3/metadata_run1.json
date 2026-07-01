@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-07-01T14:10:07.143488",
+  "success": true,
+  "elapsed_seconds": 75.78,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 503,
+    "total_tokens": 4598
+  },
+  "prompt_tokens_estimate": 3881,
+  "response_chars": 1529,
+  "turtle_chars": 1515,
+  "validation": {
+    "valid": false,
+    "error": "at line 13 of <>:\nBad syntax (Prefix \"crm2phen_example:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm2phen_example:Ontology a owl:Class ;\\n    rdfs:label \"CRM2'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_C3/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N100_C3/response_raw_run1.txt"
+  }
+}

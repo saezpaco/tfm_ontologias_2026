@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 89.51666666666667,
+  "total_tokens": 13857,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-30T04:40:56.762570",
+      "success": true,
+      "elapsed_seconds": 92.5,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 524,
+        "total_tokens": 4619
+      },
+      "prompt_tokens_estimate": 3882,
+      "response_chars": 1697,
+      "turtle_chars": 1683,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm:CRM a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7bC_stratified_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7bC_stratified_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-30T04:42:25.706657",
+      "success": true,
+      "elapsed_seconds": 87.9,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 524,
+        "total_tokens": 4619
+      },
+      "prompt_tokens_estimate": 3882,
+      "response_chars": 1697,
+      "turtle_chars": 1683,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm:CRM a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7bC_stratified_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7bC_stratified_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-30T04:43:54.890853",
+      "success": true,
+      "elapsed_seconds": 88.15,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 524,
+        "total_tokens": 4619
+      },
+      "prompt_tokens_estimate": 3882,
+      "response_chars": 1697,
+      "turtle_chars": 1683,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm:CRM a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7bC_stratified_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7bC_stratified_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

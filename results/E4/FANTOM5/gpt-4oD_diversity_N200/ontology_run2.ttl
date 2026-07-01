@@ -1,0 +1,230 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:crmID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "CRM ID" ;
+    skos:definition "Unique identifier for cis-regulatory module" .
+
+base:currentAssembly a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Current Assembly" ;
+    skos:definition "Current genome assembly version" .
+
+base:currentChr a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Current Chromosome" ;
+    skos:definition "Current chromosome identifier" .
+
+base:currentStart a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Current Start" ;
+    skos:definition "Current start position in the genome" .
+
+base:currentEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Current End" ;
+    skos:definition "Current end position in the genome" .
+
+base:origAssembly a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Original Assembly" ;
+    skos:definition "Original genome assembly version" .
+
+base:origChr a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Original Chromosome" ;
+    skos:definition "Original chromosome identifier" .
+
+base:origStart a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Original Start" ;
+    skos:definition "Original start position in the genome" .
+
+base:origEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Original End" ;
+    skos:definition "Original end position in the genome" .
+
+base:hgncSymbol a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "HGNC Symbol" ;
+    skos:definition "HGNC symbol for transcription factors or target genes" .
+
+base:score a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "Score" ;
+    skos:definition "Score value" .
+
+base:minimumRatio a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "Minimum Ratio" ;
+    skos:definition "Minimum ratio value" .
+
+base:hasBiosample a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Biosample ;
+    rdfs:label "has Biosample" ;
+    skos:definition "Biosample or cell line used" .
+
+base:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Disease ;
+    rdfs:label "associated with Disease" ;
+    skos:definition "Disease associated with the genetic element" .
+
+base:identifiedByMethod a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Method ;
+    rdfs:label "identified by Method" ;
+    skos:definition "Method used for identifying the genetic element" .
+
+base:referencedInPublication a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Publication ;
+    rdfs:label "referenced in Publication" ;
+    skos:definition "PubMed ID for the genetic element" .
+
+base:regulates a owl:ObjectProperty ;
+    rdfs:domain base:TranscriptionFactor ;
+    rdfs:range base:TargetGene ;
+    rdfs:label "regulates" ;
+    skos:definition "Transcription factor regulates target gene" .
+
+base:locatedOnChromosome a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "located on Chromosome" ;
+    skos:definition "Chromosome identifier" .
+
+base:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    skos:definition "A genetic element such as an enhancer, transcription factor, or mutation" .
+
+base:Biosample a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:definition "Type of biosample or cell line used" .
+
+base:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:definition "Disease associated with the genetic element" .
+
+base:Method a owl:Class ;
+    rdfs:label "Method" ;
+    skos:definition "Method used for identifying the genetic element" .
+
+base:Publication a owl:Class ;
+    rdfs:label "Publication" ;
+    skos:definition "PubMed ID for the genetic element" .
+
+base:Enhancer a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "Enhancer" ;
+    skos:definition "A type of genetic element that enhances the transcription of genes" .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "Super Enhancer" ;
+    skos:definition "A type of genetic element with strong enhancer activity" .
+
+base:TranscriptionFactor a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "Transcription Factor" ;
+    skos:definition "A type of genetic element that regulates gene expression" .
+
+base:TargetGene a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "Target Gene" ;
+    skos:definition "A gene that is regulated by a transcription factor" .
+
+base:Mutation a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "Mutation" ;
+    skos:definition "A type of genetic element that represents a mutation" .
+
+base:GeneticElement a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:hasBiosample ;
+        owl:someValuesFrom base:Biosample
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:associatedWithDisease ;
+        owl:someValuesFrom base:Disease
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:identifiedByMethod ;
+        owl:someValuesFrom base:Method
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:referencedInPublication ;
+        owl:someValuesFrom base:Publication
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:locatedOnChromosome ;
+        owl:someValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:crmID ;
+        owl:someValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:currentAssembly ;
+        owl:someValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:currentChr ;
+        owl:someValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:currentStart ;
+        owl:someValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:currentEnd ;
+        owl:someValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:origAssembly ;
+        owl:someValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:origChr ;
+        owl:someValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:origStart ;
+        owl:someValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:origEnd ;
+        owl:someValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:hgncSymbol ;
+        owl:someValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:score ;
+        owl:someValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:minimumRatio ;
+        owl:someValuesFrom xsd:float
+    ] .

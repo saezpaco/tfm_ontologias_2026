@@ -1,0 +1,95 @@
+{
+  "experiment": "E2",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 7.603333333333334,
+  "total_tokens": 12684,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-05-29T01:56:05.823565",
+      "success": true,
+      "elapsed_seconds": 7.1,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3230,
+        "completion_tokens": 942,
+        "total_tokens": 4172
+      },
+      "prompt_tokens_estimate": 1996,
+      "response_chars": 3283,
+      "turtle_chars": 3269,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'Active Cis-regulatory Elements database\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-05-29T01:56:13.956784",
+      "success": true,
+      "elapsed_seconds": 7.08,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3230,
+        "completion_tokens": 1116,
+        "total_tokens": 4346
+      },
+      "prompt_tokens_estimate": 1996,
+      "response_chars": 3770,
+      "turtle_chars": 3756,
+      "validation": {
+        "valid": true,
+        "n_triples": 54,
+        "n_classes": 5,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-05-29T01:56:23.634535",
+      "success": true,
+      "elapsed_seconds": 8.63,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3230,
+        "completion_tokens": 936,
+        "total_tokens": 4166
+      },
+      "prompt_tokens_estimate": 1996,
+      "response_chars": 3254,
+      "turtle_chars": 3240,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'Active Cis-regulatory Elements database\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4o/response_raw_run3.txt"
+      }
+    }
+  ]
+}

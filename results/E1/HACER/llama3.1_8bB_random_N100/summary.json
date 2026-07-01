@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 88.54333333333334,
+  "total_tokens": 14148,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T06:45:33.466015",
+      "success": true,
+      "elapsed_seconds": 79.27,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 621,
+        "total_tokens": 4716
+      },
+      "prompt_tokens_estimate": 3543,
+      "response_chars": 2165,
+      "turtle_chars": 2165,
+      "validation": {
+        "valid": false,
+        "error": "at line 50 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'/regulatesExpressionOf> \\n    [ rdf:type obo:GO_0042592 ] .\\n\\n'^b'Note that the above code is a simplified version of what wou'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bB_random_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bB_random_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T06:47:03.536609",
+      "success": true,
+      "elapsed_seconds": 89.03,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 621,
+        "total_tokens": 4716
+      },
+      "prompt_tokens_estimate": 3543,
+      "response_chars": 2165,
+      "turtle_chars": 2165,
+      "validation": {
+        "valid": false,
+        "error": "at line 50 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'/regulatesExpressionOf> \\n    [ rdf:type obo:GO_0042592 ] .\\n\\n'^b'Note that the above code is a simplified version of what wou'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bB_random_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bB_random_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T06:48:41.906305",
+      "success": true,
+      "elapsed_seconds": 97.33,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 621,
+        "total_tokens": 4716
+      },
+      "prompt_tokens_estimate": 3543,
+      "response_chars": 2165,
+      "turtle_chars": 2165,
+      "validation": {
+        "valid": false,
+        "error": "at line 50 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'/regulatesExpressionOf> \\n    [ rdf:type obo:GO_0042592 ] .\\n\\n'^b'Note that the above code is a simplified version of what wou'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bB_random_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bB_random_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

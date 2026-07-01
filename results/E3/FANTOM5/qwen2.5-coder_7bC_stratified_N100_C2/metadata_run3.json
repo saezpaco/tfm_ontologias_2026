@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-07-01T13:10:55.686170",
+  "success": true,
+  "elapsed_seconds": 646.83,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 8192,
+    "total_tokens": 12287
+  },
+  "prompt_tokens_estimate": 3989,
+  "response_chars": 17572,
+  "turtle_chars": 17561,
+  "validation": {
+    "valid": false,
+    "error": "string index out of range"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bC_stratified_N100_C2/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bC_stratified_N100_C2/response_raw_run3.txt"
+  }
+}

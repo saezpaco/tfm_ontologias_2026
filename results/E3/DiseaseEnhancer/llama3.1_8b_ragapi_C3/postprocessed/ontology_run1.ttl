@@ -1,0 +1,52 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix assembly: <http://purl.obolibrary.org/obo/assembly#> .
+@prefix nuccore: <http://purl.obolibrary.org/obo/nuccore#> .
+@prefix pubmed:  <http://purl.obolibrary.org/obo/pubmed#> .
+@prefix id_pubmed: <http://purl.obolibrary.org/obo/id_pubmed#> .
+@prefix id_ncbigene: <http://purl.obolibrary.org/obo/id_ncbigene#> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/dbsuper#> .
+
+# Classes
+<http://example.org/DiseaseEnhancer> a owl:Ontology ;
+    rdfs:label "Disease Enhancer Ontology" .
+
+<http://example.org/CisRegulatoryModule> a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/crm#0000010> .
+
+<http://example.org/EnhancerSequence> a owl:Class ;
+    rdfs:label "Enhancer Sequence" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/nuccore#0000011> .
+
+<http://example.org/DiseaseAssociation> a owl:Class ;
+    rdfs:label "Disease Association" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/dbsuper#0000020> .
+
+<http://example.org/GeneTarget> a owl:Class ;
+    rdfs:label "Gene Target" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/crm2pgene#0000011> .
+
+# Properties
+<http://example.org/hasEnhancerSequence> a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer Sequence" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/nuccore#0000020> .
+
+<http://example.org/isAssociatedWithDisease> a owl:ObjectProperty ;
+    rdfs:label "Is Associated With Disease" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/dbsuper#0000030> .
+
+<http://example.org/targetsGene> a owl:ObjectProperty ;
+    rdfs:label "Targets Gene" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/crm2pgene#0000021> .

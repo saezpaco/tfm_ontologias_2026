@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-05-09T00:25:18.832360",
+  "success": true,
+  "elapsed_seconds": 211.02,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3336,
+    "completion_tokens": 1230,
+    "total_tokens": 4566
+  },
+  "prompt_tokens_estimate": 2049,
+  "response_chars": 4426,
+  "turtle_chars": 3619,
+  "validation": {
+    "valid": false,
+    "error": "at line 21 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'refix dbsuper: <http://purl.obolibrary.org/obo/dbsuper#> .\\n\\n'^b'crm:crm_ID rdf:type owl:Class ;\\n           rdfs:label \"cis-r'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_ragapi_C2/response_raw_run1.txt"
+  }
+}

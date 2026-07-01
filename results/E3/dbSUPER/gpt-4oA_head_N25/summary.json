@@ -1,0 +1,95 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 16.106666666666666,
+  "total_tokens": 16092,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T20:06:46.557098",
+      "success": true,
+      "elapsed_seconds": 36.44,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3260,
+        "completion_tokens": 4825,
+        "total_tokens": 8085
+      },
+      "prompt_tokens_estimate": 2459,
+      "response_chars": 11991,
+      "turtle_chars": 11991,
+      "validation": {
+        "valid": true,
+        "n_triples": 250,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oA_head_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oA_head_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T20:06:53.768375",
+      "success": true,
+      "elapsed_seconds": 6.17,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3260,
+        "completion_tokens": 754,
+        "total_tokens": 4014
+      },
+      "prompt_tokens_estimate": 2459,
+      "response_chars": 2063,
+      "turtle_chars": 2048,
+      "validation": {
+        "valid": false,
+        "error": "at line 32 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oA_head_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oA_head_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T20:07:00.515403",
+      "success": true,
+      "elapsed_seconds": 5.71,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3260,
+        "completion_tokens": 733,
+        "total_tokens": 3993
+      },
+      "prompt_tokens_estimate": 2459,
+      "response_chars": 2037,
+      "turtle_chars": 2022,
+      "validation": {
+        "valid": false,
+        "error": "at line 33 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oA_head_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oA_head_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

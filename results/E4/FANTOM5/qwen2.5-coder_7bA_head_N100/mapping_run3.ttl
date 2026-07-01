@@ -1,0 +1,127 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix greg: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_PMID}}"
+        ]
+    ],
+    [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant "{{TFs2enh_method}}"
+        ]
+    ],
+    [
+        rr:predicate greg:hasAssemblyVersion;
+        rr:objectMap [
+            rr:constant "{{current_assembly}}"
+        ]
+    ],
+    [
+        rr:predicate greg:hasChromosomeNumber;
+        rr:objectMap [
+            rr:constant "{{current_chr}}"
+        ]
+    ],
+    [
+        rr:predicate greg:hasScore;
+        rr:objectMap [
+            rr:constant "{{minimum_score}}"
+        ]
+    ],
+    [
+        rr:predicate greg:hasHGNCsymbol;
+        rr:objectMap [
+            rr:constant "{{hgnc_symbol}}"
+        ]
+    ],
+    [
+        rr:predicate greg:hasPositionStart;
+        rr:objectMap [
+            rr:constant "{{start_position}}"
+        ]
+    ],
+    [
+        rr:predicate greg:hasPositionEnd;
+        rr:objectMap [
+            rr:constant "{{end_position}}"
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TranscriptionFactor/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TargetGene/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Disease/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:CellLine/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Mutation/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+```

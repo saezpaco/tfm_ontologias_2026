@@ -1,0 +1,86 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    rdfs:comment "A formal representation of CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcriptional activity of a target gene in the context of chromatin remodeling." ;
+    rdfs:subClassOf obo:SO_0001765 ;  # Transcriptional enhancer
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location within the genome, defined by chromosome and position." ;
+
+crm:start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "The starting base pair of the genomic coordinate." ;
+
+crm:end a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Position" ;
+    skos:definition "The ending base pair of the genomic coordinate." ;
+
+crm:evidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Supporting evidence for the existence and function of the CRM enhancer." ;
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information that supports or confirms the validity of a claim about a CRM enhancer." ;
+
+crm:evidenceType a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:GO_0012501 ;  # Experimental evidence
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of experimental evidence supporting the CRM enhancer." ;
+
+crm:evidenceSource a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source or reference where the evidence is documented." ;
+
+crm:targetGene a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 ;  # Gene
+    skos:prefLabel "Target Gene" ;
+    skos:definition "The gene whose transcriptional activity is enhanced by the CRM enhancer." ;
+
+crm:chromosome a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "The chromosome on which the genomic coordinate is located." ;
+
+crm:strand a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range obo:SO_0001217 ;  # DNA strand
+    skos:prefLabel "Strand" ;
+    skos:definition "The DNA strand (positive or negative) on which the genomic coordinate is located." ;
+
+crm:enhancerType a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001765 ;  # Transcriptional enhancer
+    skos:prefLabel "Enhancer Type" ;
+    skos:definition "The type of CRM enhancer, such as transcriptional or enhancer." ;
+
+crm:enhancerFunction a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Enhancer Function" ;
+    skos:definition "The biological function of the CRM enhancer, such as transcriptional regulation." ;
+}

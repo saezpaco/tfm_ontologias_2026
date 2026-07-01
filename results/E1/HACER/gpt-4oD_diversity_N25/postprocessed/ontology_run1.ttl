@@ -1,0 +1,101 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory region of DNA that enhances the transcription of an associated gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome, defined by a start and end position." .
+
+:ExperimentalEvidence a owl:Class ;
+    skos:prefLabel "Experimental Evidence" ;
+    skos:definition "Evidence obtained from experimental methods supporting the existence or function of a biological entity." .
+
+:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms." .
+
+:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that controls the rate of transcription of genetic information from DNA to messenger RNA, by binding to a specific DNA sequence." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/GO_0003700> .
+
+# Object Properties
+:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates a biological entity to its genomic coordinate." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :GenomicCoordinate .
+
+:hasExperimentalEvidence a owl:ObjectProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Relates a biological entity to the experimental evidence supporting it." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :ExperimentalEvidence .
+
+:isActiveInCellLine a owl:ObjectProperty ;
+    skos:prefLabel "is active in cell line" ;
+    skos:definition "Indicates the cell line in which a cis-regulatory module is active." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :CellLine .
+
+:targetsGene a owl:ObjectProperty ;
+    skos:prefLabel "targets gene" ;
+    skos:definition "Indicates the gene that is regulated by a cis-regulatory module." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :Gene .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Indicates a disease associated with a cis-regulatory module." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :Disease .
+
+:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Indicates a transcription factor that interacts with a cis-regulatory module." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :TranscriptionFactor .
+
+# Datatype Properties
+:chromosome a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which a genomic coordinate is located." ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:string .
+
+:startPosition a owl:DatatypeProperty ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of a genomic coordinate on a chromosome." ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+:endPosition a owl:DatatypeProperty ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of a genomic coordinate on a chromosome." ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+:evidenceType a owl:DatatypeProperty ;
+    skos:prefLabel "evidence type" ;
+    skos:definition "The type of experimental evidence supporting a biological entity." ;
+    rdfs:domain :ExperimentalEvidence ;
+    rdfs:range xsd:string .

@@ -1,0 +1,61 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://www.licpathway.net/ENdb/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/bgw!> .
+@prefix assembly:<http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/bgw!> .
+@prefix id_pubmed:<http://purl.obolibrary.org/obo/PUBMED_ID_> .
+@prefix id_ncbigene:<http://purl.obolibrary.org/obo/NCBIGENE_ID_> .
+@prefix dbsuper: <http://www.ontobee.org/ontology/DBSUPER.owl#> .
+
+# Define classes and properties based on the data
+crm2phen_example:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Phenotype Example" ;
+    skos:exactMatch crm2phen_example:Ontology .
+
+crm2gene:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Gene Example" ;
+    skos:exactMatch crm2gene:Ontology .
+
+crm2phen:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Phenotype" ;
+    skos:exactMatch crm2phen:Ontology .
+
+crm2gene_example:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Gene Example" ;
+    skos:exactMatch crm2gene_example:Ontology .
+
+crm2tfac:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Transcription Factor" ;
+    skos:exactMatch crm2tfac:Ontology .
+
+# Define classes and properties based on the data
+crm2phen_example:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Phenotype Example" ;
+    skos:exactMatch crm2phen_example:Ontology .
+
+crm2gene:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Gene Example" ;
+    skos:exactMatch crm2gene:Ontology .
+
+crm2phen:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Phenotype" ;
+    skos:exactMatch crm2phen:Ontology .
+
+crm2gene_example:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Gene Example" ;
+    skos:exactMatch crm2gene_example:Ontology .
+
+crm2tfac:Ontology a owl:Ontology ;
+    rdfs:label "CRM2 Transcription Factor" ;
+    skos:exactMatch crm2tfac:Ontology .

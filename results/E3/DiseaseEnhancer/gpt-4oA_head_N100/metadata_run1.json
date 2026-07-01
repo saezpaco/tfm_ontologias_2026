@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-28T22:03:26.950520",
+  "success": true,
+  "elapsed_seconds": 35.6,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7859,
+    "completion_tokens": 3886,
+    "total_tokens": 11745
+  },
+  "prompt_tokens_estimate": 4387,
+  "response_chars": 12785,
+  "turtle_chars": 12771,
+  "validation": {
+    "valid": false,
+    "error": "at line 118 of <>:\nBad syntax (Prefix \"mesh:\" not bound) at ^ in:\n\"...b'e:RET ;\\n    biolink:associated_with_disease obo:DOID_10487, '^b'mesh:D006627 ;\\n    dc:source pubmed:16269442 .\\n\\n<http://bioc'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oA_head_N100/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oA_head_N100/response_raw_run1.txt"
+  }
+}

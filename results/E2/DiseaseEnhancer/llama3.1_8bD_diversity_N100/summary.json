@@ -1,0 +1,99 @@
+{
+  "experiment": "E2",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 134.6,
+  "total_tokens": 16251,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T17:32:08.121725",
+      "success": true,
+      "elapsed_seconds": 133.6,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1322,
+        "total_tokens": 5417
+      },
+      "prompt_tokens_estimate": 3881,
+      "response_chars": 4489,
+      "turtle_chars": 4489,
+      "validation": {
+        "valid": true,
+        "n_triples": 72,
+        "n_classes": 8,
+        "n_properties": 9
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bD_diversity_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bD_diversity_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T17:34:23.208470",
+      "success": true,
+      "elapsed_seconds": 134.04,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1322,
+        "total_tokens": 5417
+      },
+      "prompt_tokens_estimate": 3881,
+      "response_chars": 4489,
+      "turtle_chars": 4489,
+      "validation": {
+        "valid": true,
+        "n_triples": 72,
+        "n_classes": 8,
+        "n_properties": 9
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bD_diversity_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bD_diversity_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T17:36:40.427930",
+      "success": true,
+      "elapsed_seconds": 136.16,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1322,
+        "total_tokens": 5417
+      },
+      "prompt_tokens_estimate": 3881,
+      "response_chars": 4489,
+      "turtle_chars": 4489,
+      "validation": {
+        "valid": true,
+        "n_triples": 72,
+        "n_classes": 8,
+        "n_properties": 9
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bD_diversity_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bD_diversity_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

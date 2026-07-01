@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 93.54333333333334,
+  "total_tokens": 8934,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-28T06:39:11.658721",
+      "success": true,
+      "elapsed_seconds": 93.65,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1942,
+        "completion_tokens": 1036,
+        "total_tokens": 2978
+      },
+      "prompt_tokens_estimate": 1575,
+      "response_chars": 2713,
+      "turtle_chars": 2699,
+      "validation": {
+        "valid": false,
+        "error": "at line 18 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b';\\n    obo:RO_0002162 obo:NCBITaxon_9606 ;\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ;\\n    obo:BFO_0000050 nuccore:chr_'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bB_random_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bB_random_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-28T06:40:46.047724",
+      "success": true,
+      "elapsed_seconds": 93.34,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1942,
+        "completion_tokens": 1036,
+        "total_tokens": 2978
+      },
+      "prompt_tokens_estimate": 1575,
+      "response_chars": 2713,
+      "turtle_chars": 2699,
+      "validation": {
+        "valid": false,
+        "error": "at line 18 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b';\\n    obo:RO_0002162 obo:NCBITaxon_9606 ;\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ;\\n    obo:BFO_0000050 nuccore:chr_'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bB_random_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bB_random_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-28T06:42:20.717347",
+      "success": true,
+      "elapsed_seconds": 93.64,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1942,
+        "completion_tokens": 1036,
+        "total_tokens": 2978
+      },
+      "prompt_tokens_estimate": 1575,
+      "response_chars": 2713,
+      "turtle_chars": 2699,
+      "validation": {
+        "valid": false,
+        "error": "at line 18 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b';\\n    obo:RO_0002162 obo:NCBITaxon_9606 ;\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ;\\n    obo:BFO_0000050 nuccore:chr_'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bB_random_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bB_random_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

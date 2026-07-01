@@ -1,0 +1,69 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly:<https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed:<http://identifiers.org/pubmed/> .
+
+# Define the DiseaseEnhancer class
+hcrm:DiseaseEnhancer rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Enhancers associated with diseases in Homo sapiens" ;
+    skos:prefLabel "Disease Enhancer" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; # in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; # hg38 assembly as reference
+    biolink:category biolink:RegulatoryRegion .
+
+# Define properties for DiseaseEnhancer
+<http://rdf.biogateway.eu/crm/9606DiseaseEnhancer#genomicCoordinates> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range nuccore:chr_ID ;
+    skos:definition "Genomic coordinates of the enhancer" ;
+    skos:prefLabel "genomic coordinates" .
+
+<http://rdf.biogateway.eu/crm/9606DiseaseEnhancer#experimentalEvidence> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:ECO_ID ;
+    skos:definition "Experimental evidence supporting the enhancer's function" ;
+    skos:prefLabel "experimental evidence" .
+
+<http://rdf.biogateway.eu/crm/9606DiseaseEnhancer#cellLineActivity> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:CLO_ID ;
+    skos:definition "Cell line activity of the enhancer" ;
+    skos:prefLabel "cell line activity" .
+
+<http://rdf.biogateway.eu/crm/9606DiseaseEnhancer#targetGene> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:SO_0000704 ; # Gene
+    skos:definition "Target gene regulated by the enhancer" ;
+    skos:prefLabel "target gene" .
+
+<http://rdf.biogateway.eu/crm/9606DiseaseEnhancer#associatedDisease> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:NCIT_C2991 ; # Disease
+    skos:definition "Disease associated with the enhancer" ;
+    skos:prefLabel "associated disease" .
+
+<http://rdf.biogateway.eu/crm/9606DiseaseEnhancer#interactingTranscriptionFactor> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:PR_000000001 ; # Protein
+    skos:definition "Transcription factor interacting with the enhancer" ;
+    skos:prefLabel "interacting transcription factor" .
+
+# Define exact matches to cisreg URIs
+hcrm:DiseaseEnhancer skos:exactMatch obo:SO_0000727 .
+nuccore:chr_ID skos:exactMatch obo:SO_0000340 .
+obo:NCBITaxon_9606 skos:exactMatch biolink:OrganismTaxon .
+assembly:GCF_000001405.26 skos:exactMatch biolink:Genome .
+obo:CLO_ID skos:exactMatch biolink:CellLine .
+obo:ECO_ID skos:exactMatch biolink:EvidenceType .

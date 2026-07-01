@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-05-03T23:47:57.609165",
+  "success": true,
+  "elapsed_seconds": 7.63,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1577,
+    "completion_tokens": 911,
+    "total_tokens": 2488
+  },
+  "prompt_tokens_estimate": 977,
+  "response_chars": 3181,
+  "turtle_chars": 3181,
+  "validation": {
+    "valid": false,
+    "error": "at line 11 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'example.org/ontology/FANTOM5> a owl:Ontology .\\n\\n### Classes\\n'^b':Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n    '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o_A_head/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o_A_head/response_raw_run1.txt"
+  }
+}

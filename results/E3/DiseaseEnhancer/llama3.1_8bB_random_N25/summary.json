@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 87.84666666666665,
+  "total_tokens": 8232,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-27T15:01:22.363169",
+      "success": true,
+      "elapsed_seconds": 87.82,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1825,
+        "completion_tokens": 919,
+        "total_tokens": 2744
+      },
+      "prompt_tokens_estimate": 1575,
+      "response_chars": 3062,
+      "turtle_chars": 2424,
+      "validation": {
+        "valid": false,
+        "error": "at line 43 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'range obo:NCIT_ID ; #Gene\\n\\nhcrm:associated_disease rdf:type '^b'owl:ObjectProperty ;\\n    rdfs:domain hcrm:disease ;\\n    rdfs'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bB_random_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bB_random_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-27T15:02:51.521571",
+      "success": true,
+      "elapsed_seconds": 88.11,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1825,
+        "completion_tokens": 919,
+        "total_tokens": 2744
+      },
+      "prompt_tokens_estimate": 1575,
+      "response_chars": 3062,
+      "turtle_chars": 2424,
+      "validation": {
+        "valid": false,
+        "error": "at line 43 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'range obo:NCIT_ID ; #Gene\\n\\nhcrm:associated_disease rdf:type '^b'owl:ObjectProperty ;\\n    rdfs:domain hcrm:disease ;\\n    rdfs'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bB_random_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bB_random_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-27T15:04:20.177420",
+      "success": true,
+      "elapsed_seconds": 87.61,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1825,
+        "completion_tokens": 919,
+        "total_tokens": 2744
+      },
+      "prompt_tokens_estimate": 1575,
+      "response_chars": 3062,
+      "turtle_chars": 2424,
+      "validation": {
+        "valid": false,
+        "error": "at line 43 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'range obo:NCIT_ID ; #Gene\\n\\nhcrm:associated_disease rdf:type '^b'owl:ObjectProperty ;\\n    rdfs:domain hcrm:disease ;\\n    rdfs'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bB_random_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bB_random_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

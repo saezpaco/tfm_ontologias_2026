@@ -1,0 +1,173 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:GeneticRegulatoryElement/{{type}}_{{crm_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScore>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasRatio;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRatio>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasStartPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasEndPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEndPosition>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Enhancer/{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:SuperEnhancer/{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TargetGene/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Disease/{{disease_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:CellLineOrBiosample/{{cell_line_or_biosample_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:Mutation/{{mutation_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:TranscriptionFactorToEnhancerRelationship/{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancerToGeneRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:EnhancerToGeneRelationship/{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasValue;
+        rr:objectMap [
+            rr:template "{{score}}";
+            rr:datatype xsd:float
+        ]
+    ].
+
+<#TriplesMapRatio> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasValue;
+        rr:objectMap [
+            rr:template "{{ratio}}";
+            rr:datatype xsd:float
+        ]
+    ].
+
+<#TriplesMapStartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasValue;
+        rr:objectMap [
+            rr:template "{{start_position}}";
+            rr:datatype xsd:int
+        ]
+    ].
+
+<#TriplesMapEndPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasValue;
+        rr:objectMap [
+            rr:template "{{end_position}}";
+            rr:datatype xsd:int
+        ]
+    ].
+```

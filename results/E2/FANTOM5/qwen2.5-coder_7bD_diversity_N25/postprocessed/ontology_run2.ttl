@@ -1,0 +1,114 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "CRM" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:exactMatch obo:SO_0001765 .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:label "genomic_coordinates" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinates ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome name where the enhancer is located" .
+
+crm:GenomicCoordinates a owl:Class ;
+    rdfs:label "GenomicCoordinates" ;
+    skos:prefLabel "chr_name:start_position-end_position" ;
+    skos:definition "Coordinates of the enhancer on the chromosome" .
+
+crm:hasScore a owl:ObjectProperty ;
+    rdfs:label "score" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "score" ;
+    skos:definition "Score of the enhancer" .
+
+crm:hasStrand a owl:ObjectProperty ;
+    rdfs:label "strand" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "strand" ;
+    skos:definition "Strand of the enhancer" .
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "target_gene" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Target gene of the enhancer" .
+
+crm:hasAssociatedDisease a owl:ObjectProperty ;
+    rdfs:label "associated_disease" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:DOID_0050124 ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Disease associated with the enhancer" .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "transcription_factor" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Transcription factor associated with the enhancer" .
+
+crm:FANTOM5 a owl:Class ;
+    rdfs:label "FANTOM5" ;
+    skos:prefLabel "Database" ;
+    skos:definition "Enhancers activos identificados por CAGE-seq" ;
+    skos:exactMatch obo:GO_0003824 .
+
+crm:FANTOM5Enhancer a owl:Class ;
+    rdfs:label "FANTOM5Enhancer" ;
+    rdfs:subClassOf crm:Enhancer ;
+    skos:prefLabel "crm#crm_ID#database_name" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to FANTOM5" .
+
+crm:FANTOM5Enhancer hasGenomicCoordinates some crm:GenomicCoordinates ;
+    rdfs:label "genomic_coordinates" ;
+    rdfs:domain crm:FANTOM5Enhancer ;
+    rdfs:range crm:GenomicCoordinates ;
+    skos:prefLabel "chr_name:start_position-end_position" ;
+    skos:definition "Coordinates of the enhancer on the chromosome according to FANTOM5" .
+
+crm:FANTOM5Enhancer hasScore some xsd:integer ;
+    rdfs:label "score" ;
+    rdfs:domain crm:FANTOM5Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "score" ;
+    skos:definition "Score of the enhancer according to FANTOM5" .
+
+crm:FANTOM5Enhancer hasStrand some xsd:string ;
+    rdfs:label "strand" ;
+    rdfs:domain crm:FANTOM5Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "strand" ;
+    skos:definition "Strand of the enhancer according to FANTOM5" .
+
+crm:FANTOM5Enhancer hasTargetGene some obo:GO_0003824 ;
+    rdfs:label "target_gene" ;
+    rdfs:domain crm:FANTOM5Enhancer ;
+    rdfs:range obo:GO_0003824 ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Target gene of the enhancer according to FANTOM5" .
+
+crm:FANTOM5Enhancer hasAssociatedDisease some obo:DOID_0050124 ;
+    rdfs:label "associated_disease" ;
+    rdfs:domain crm:FANTOM5Enhancer ;
+    rdfs:range obo:DOID_0050124 ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Disease associated with the enhancer according to FANTOM5" .
+
+crm:FANTOM5Enhancer hasTranscriptionFactor some obo:GO_0003824 ;
+    rdfs:label "transcription_factor" ;
+    rdfs:domain crm:FANTOM5Enhancer ;
+    rdfs:range obo:GO_0003824 ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Transcription factor associated with the enhancer according to FANTOM5" .

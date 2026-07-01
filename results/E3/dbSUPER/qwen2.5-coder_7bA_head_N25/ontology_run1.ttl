@@ -1,0 +1,69 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/gene/9606> .
+@prefix dbsuper: <http://example.org/dbsuper> .
+
+hcrm:dbsuper!crm_ID rdf:type owl:Class ;
+    rdfs:subClassOf hcrm:crm_ID ;
+    skos:prefLabel "dbSuper CRM ID" ;
+    skos:definition "A CRM ID from the dbSuper database" ;
+    skos:exactMatch dbsuper:crm_ID .
+
+hcrm:dbsuper!gene_symbol rdf:type owl:Class ;
+    rdfs:subClassOf hgene:gene_symbol ;
+    skos:prefLabel "dbSuper Gene Symbol" ;
+    skos:definition "A gene symbol from the dbSuper database" ;
+    skos:exactMatch dbsuper:gene_symbol .
+
+hcrm:dbsuper!cell_type rdf:type owl:Class ;
+    rdfs:subClassOf obo:CL_ID ;
+    skos:prefLabel "dbSuper Cell Type" ;
+    skos:definition "A cell type from the dbSuper database" ;
+    skos:exactMatch dbsuper:cell_type .
+
+hcrm:dbsuper!anatomical_structure rdf:type owl:Class ;
+    rdfs:subClassOf obo:UBERON_ID ;
+    skos:prefLabel "dbSuper Anatomical Structure" ;
+    skos:definition "An anatomical structure from the dbSuper database" ;
+    skos:exactMatch dbsuper:anatomical_structure .
+
+hcrm:dbsuper!experimental_evidence rdf:type owl:Class ;
+    rdfs:subClassOf obo:ECO_ID ;
+    skos:prefLabel "dbSuper Experimental Evidence" ;
+    skos:definition "Experimental evidence from the dbSuper database" ;
+    skos:exactMatch dbsuper:experimental_evidence .
+
+hcrm:dbsuper!pubmed_id rdf:type owl:Class ;
+    rdfs:subClassOf sio:SIO_000772 ;
+    skos:prefLabel "dbSuper PubMed ID" ;
+    skos:definition "A PubMed ID from the dbSuper database" ;
+    skos:exactMatch dbsuper:pubmed_id .
+
+hcrm:dbsuper!database_name rdf:type owl:Class ;
+    rdfs:subClassOf obo:NCIT_C15426 ;
+    skos:prefLabel "dbSuper Database Name" ;
+    skos:definition "A database name from the dbSuper database" ;
+    skos:exactMatch dbsuper:database_name .
+
+crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_symbol rdf:type owl:Class ;
+    rdfs:subClassOf rdf:Statement ;
+    rdf:subject hcrm:dbsuper!crm_ID ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:hgncsymbol ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+hcrm:dbsuper!crm_ID obo:RO_0002429 hgene:hgncsymbol .
+
+hgene:hgncsymbol skos:closeMatch id_ncbigene:GeneID ;
+    biolink:category biolink:Gene .

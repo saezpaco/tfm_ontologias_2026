@@ -1,0 +1,253 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+        rr:class base:GeneticElement
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crmID;
+        rr:objectMap [ rml:reference "crm_ID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentAssembly;
+        rr:objectMap [ rml:reference "current_assembly" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentChr;
+        rr:objectMap [ rml:reference "current_chr" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentStart;
+        rr:objectMap [ rml:reference "current_start" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:currentEnd;
+        rr:objectMap [ rml:reference "current_end" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origAssembly;
+        rr:objectMap [ rml:reference "orig_assembly" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origChr;
+        rr:objectMap [ rml:reference "orig_chr" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origStart;
+        rr:objectMap [ rml:reference "orig_start" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:origEnd;
+        rr:objectMap [ rml:reference "orig_end" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hgncSymbol;
+        rr:objectMap [ rml:reference "hgnc_symbol_target_genes" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:minimumRatio;
+        rr:objectMap [ rml:reference "minimum_ratio" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [ rml:reference "score" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:source;
+        rr:objectMap [ rml:reference "source" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:type;
+        rr:objectMap [ rml:reference "type" ]
+    ].
+
+<#TriplesMapBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Biosample/{biosample}";
+        rr:class base:Biosample
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Disease/{disease}";
+        rr:class base:Disease
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Method/{TFs2enh_method}";
+        rr:class base:Method
+    ].
+
+<#TriplesMapPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Publication/{TFs2enh_PMID}";
+        rr:class base:Publication
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Enhancer/{original_ID}";
+        rr:class base:Enhancer
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/SuperEnhancer/{original_ID}";
+        rr:class base:SuperEnhancer
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/TranscriptionFactor/{hgnc_symbol_TFs}";
+        rr:class base:TranscriptionFactor
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/TargetGene/{hgnc_symbol_target_genes}";
+        rr:class base:TargetGene
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Mutation/{original_ID}";
+        rr:class base:Mutation
+    ].
+
+<#TriplesMapHasBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBiosample>;
+        ]
+    ].
+
+<#TriplesMapAssociatedWithDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:associatedWithDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease>;
+        ]
+    ].
+
+<#TriplesMapIdentifiedByMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:identifiedByMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMethod>;
+        ]
+    ].
+
+<#TriplesMapReferencedInPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:referencedInPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPublication>;
+        ]
+    ].
+
+<#TriplesMapRegulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/TranscriptionFactor/{hgnc_symbol_TFs}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>;
+        ]
+    ].
+
+<#TriplesMapLocatedOnChromosome> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:locatedOnChromosome;
+        rr:objectMap [ rml:reference "current_chr" ]
+    ].

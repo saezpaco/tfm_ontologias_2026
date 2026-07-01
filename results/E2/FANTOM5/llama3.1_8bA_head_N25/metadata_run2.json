@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-27T01:16:43.517536",
+  "success": true,
+  "elapsed_seconds": 189.61,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2072,
+    "completion_tokens": 1685,
+    "total_tokens": 3757
+  },
+  "prompt_tokens_estimate": 1386,
+  "response_chars": 5786,
+  "turtle_chars": 5786,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'efinition \"Enhancers activos identificados por CAGE-seq\" .\\n\\n'^b'crm a owl:Class ;\\n  rdfs:label \"Cis-regulatory module\" ;\\n  s'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bA_head_N25/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bA_head_N25/response_raw_run2.txt"
+  }
+}

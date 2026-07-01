@@ -1,0 +1,509 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+**Data Description:**
+1. blockCount: categorical - Number of blocks in the genomic feature - [2.0]
+2. chromEnd: Numerical - End position of the genomic feature on the chromosome - [1910781.0, 216620704.0]
+3. chromStart: Numerical - Start position of the genomic feature on the chromosome - [1910638.0, 216620341.0]
+4. score: Numerical - Score associated with the genomic feature - [2.0, 1215.0]
+5. thickEnd: Numerical - End position of the thick part of the feature - [1910698.0, 216620523.0]
+6. thickStart: Numerical - Start position of the thick part of the feature - [1910697.0, 216620522.0]
+7. blockSizes: text - Sizes of the blocks in the feature - [various]
+8. blockStarts: text - Start positions of the blocks in the feature - [various]
+9. chrom: text - Chromosome on which the feature is located - [various]
+10. itemRgb: categorical - RGB value for the feature - [various]
+11. name: text - Name of the genomic feature - [various]
+12. strand: categorical - Strand of the genomic feature - [various]
+
+**classes:**
+1. GenomicFeature
+
+**subclasses:**
+1. Enhancer: subclass of -> GenomicFeature
+2. SuperEnhancer: subclass of -> GenomicFeature
+
+**Object Properties:**
+1. hasChromosome: GenomicFeature - Chromosome
+2. hasBlock: GenomicFeature - Block
+3. hasScore: GenomicFeature - Score
+4. hasThickRegion: GenomicFeature - ThickRegion
+
+**Data Type Properties:**
+1. blockCount: GenomicFeature - xsd:integer
+2. chromEnd: GenomicFeature - xsd:integer
+3. chromStart: GenomicFeature - xsd:integer
+4. score: GenomicFeature - xsd:integer
+5. thickEnd: GenomicFeature - xsd:integer
+6. thickStart: GenomicFeature - xsd:integer
+7. blockSizes: GenomicFeature - xsd:string
+8. blockStarts: GenomicFeature - xsd:string
+9. chrom: GenomicFeature - xsd:string
+10. itemRgb: GenomicFeature - xsd:string
+11. name: GenomicFeature - xsd:string
+12. strand: GenomicFeature - xsd:string
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:blockCount a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "blockCount" ;
+    skos:definition "Number of blocks in the genomic feature" .
+
+base:chromEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "chromEnd" ;
+    skos:definition "End position of the genomic feature on the chromosome" .
+
+base:chromStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "chromStart" ;
+    skos:definition "Start position of the genomic feature on the chromosome" .
+
+base:score a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "score" ;
+    skos:definition "Score associated with the genomic feature" .
+
+base:thickEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "thickEnd" ;
+    skos:definition "End position of the thick part of the feature" .
+
+base:thickStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "thickStart" ;
+    skos:definition "Start position of the thick part of the feature" .
+
+base:blockSizes a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "blockSizes" ;
+    skos:definition "Sizes of the blocks in the feature" .
+
+base:blockStarts a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "blockStarts" ;
+    skos:definition "Start positions of the blocks in the feature" .
+
+base:chrom a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "chrom" ;
+    skos:definition "Chromosome on which the feature is located" .
+
+base:itemRgb a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "itemRgb" ;
+    skos:definition "RGB value for the feature" .
+
+base:name a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "name" ;
+    skos:definition "Name of the genomic feature" .
+
+base:strand a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "strand" ;
+    skos:definition "Strand of the genomic feature" .
+
+base:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Chromosome ;
+    rdfs:label "hasChromosome" ;
+    skos:definition "Chromosome associated with the genomic feature" .
+
+base:hasBlock a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Block ;
+    rdfs:label "hasBlock" ;
+    skos:definition "Block associated with the genomic feature" .
+
+base:hasScore a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Score ;
+    rdfs:label "hasScore" ;
+    skos:definition "Score associated with the genomic feature" .
+
+base:hasThickRegion a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:ThickRegion ;
+    rdfs:label "hasThickRegion" ;
+    skos:definition "Thick region associated with the genomic feature" .
+
+base:GenomicFeature a owl:Class ;
+    rdfs:label "GenomicFeature" ;
+    skos:definition "A feature located on a genome" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:blockCount ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chromEnd ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chromStart ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:score ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:thickEnd ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:thickStart ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:blockSizes ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:blockStarts ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chrom ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:itemRgb ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:name ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:strand ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:definition "A subclass of GenomicFeature representing an enhancer" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    skos:definition "A subclass of GenomicFeature representing a super enhancer" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+################ MAPPING (OntoMapper) #######################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapGenomicFeature> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#GenomicFeature/{name}";
+        rr:class base:GenomicFeature
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockCount;
+        rr:objectMap [
+            rml:reference "blockCount";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromEnd;
+        rr:objectMap [
+            rml:reference "chromEnd";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromStart;
+        rr:objectMap [
+            rml:reference "chromStart";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [
+            rml:reference "score";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickEnd;
+        rr:objectMap [
+            rml:reference "thickEnd";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickStart;
+        rr:objectMap [
+            rml:reference "thickStart";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockSizes;
+        rr:objectMap [
+            rml:reference "blockSizes";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockStarts;
+        rr:objectMap [
+            rml:reference "blockStarts";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chrom;
+        rr:objectMap [
+            rml:reference "chrom";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:itemRgb;
+        rr:objectMap [
+            rml:reference "itemRgb";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:strand;
+        rr:objectMap [
+            rml:reference "strand";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Enhancer/{name}";
+        rr:class base:Enhancer
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockCount;
+        rr:objectMap [
+            rml:reference "blockCount";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromEnd;
+        rr:objectMap [
+            rml:reference "chromEnd";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromStart;
+        rr:objectMap [
+            rml:reference "chromStart";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [
+            rml:reference "score";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickEnd;
+        rr:objectMap [
+            rml:reference "thickEnd";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickStart;
+        rr:objectMap [
+            rml:reference "thickStart";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockSizes;
+        rr:objectMap [
+            rml:reference "blockSizes";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockStarts;
+        rr:objectMap [
+            rml:reference "blockStarts";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chrom;
+        rr:objectMap [
+            rml:reference "chrom";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:itemRgb;
+        rr:objectMap [
+            rml:reference "itemRgb";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:strand;
+        rr:objectMap [
+            rml:reference "strand";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#SuperEnhancer/{name}";
+        rr:class base:SuperEnhancer
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockCount;
+        rr:objectMap [
+            rml:reference "blockCount";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromEnd;
+        rr:objectMap [
+            rml:reference "chromEnd";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromStart;
+        rr:objectMap [
+            rml:reference "chromStart";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [
+            rml:reference "score";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickEnd;
+        rr:objectMap [
+            rml:reference "thickEnd";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickStart;
+        rr:objectMap [
+            rml:reference "thickStart";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockSizes;
+        rr:objectMap [
+            rml:reference "blockSizes";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockStarts;
+        rr:objectMap [
+            rml:reference "blockStarts";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chrom;
+        rr:objectMap [
+            rml:reference "chrom";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:itemRgb;
+        rr:objectMap [
+            rml:reference "itemRgb";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:strand;
+        rr:objectMap [
+            rml:reference "strand";
+            rr:datatype xsd:string
+        ]
+    ].

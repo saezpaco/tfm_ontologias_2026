@@ -1,0 +1,99 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://infohub.siemens-energy.com/supplier/> .
+@prefix crm2pgene: <http://ontology.siemens.com/base/enterprise/technical-asset#> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://purl.bioontology.org/ontology/MESH/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    dc:title "DiseaseEnhancer Database" ;
+    dc:description "Enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+hcrm:CRM rdf:type owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://infohub.siemens-energy.com/supplier/CRM> .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+### Properties ###
+hcrm:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" .
+
+hcrm:hasTargetGene rdf:type owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch biolink:gene .
+
+hcrm:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch biolink:disease .
+
+hcrm:hasPubMedID rdf:type owl:DatatypeProperty ;
+    rdfs:label "has PubMed ID" ;
+    rdfs:range xsd:string .
+
+### Instances ###
+_:CRMHS00000001594 rdf:type hcrm:CRM ;
+    hcrm:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr5:125315470-125318494"^^xsd:string ;
+        crm2pgene:TechnicalAsset "hg38"^^xsd:string
+    ] ;
+    hcrm:hasTargetGene [
+        a biolink:Gene ;
+        schema:identifier "LMNB1"
+    ] ;
+    hcrm:associatedWithDisease [
+        a biolink:Disease ;
+        schema:identifier omim:169500
+    ] ;
+    hcrm:hasPubMedID pubmed:25701871 .
+
+_:CRMHS00000005971 rdf:type hcrm:CRM ;
+    hcrm:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr3:185781414-185799612"^^xsd:string ;
+        crm2pgene:TechnicalAsset "hg38"^^xsd:string
+    ] ;
+    hcrm:hasTargetGene [
+        a biolink:Gene ;
+        schema:identifier "IGF2BP2"
+    ] ;
+    hcrm:associatedWithDisease [
+        a biolink:Disease ;
+        schema:identifier doid:9352
+    ] ;
+    hcrm:hasPubMedID pubmed:21035756 .
+
+_:CRMHS00000006099 rdf:type hcrm:CRM ;
+    hcrm:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr8:127386357-127404755"^^xsd:string ;
+        crm2pgene:TechnicalAsset "hg38"^^xsd:string
+    ] ;
+    hcrm:hasTargetGene [
+        a biolink:Gene ;
+        schema:identifier "MYC"
+    ] ;
+    hcrm:associatedWithDisease [
+        a biolink:Disease ;
+        schema:identifier omim:176807
+    ] ;
+    hcrm:hasPubMedID pubmed:23832660 .
+
+# Additional instances would follow the same pattern

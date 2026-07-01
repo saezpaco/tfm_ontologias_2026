@@ -1,0 +1,582 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    rdfs:comment "A formal representation of CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcriptional activity of a gene or set of genes." ;
+    obo:IAO_0000115 "Genomic feature that increases the expression of one or more genes." ;
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome." ;
+    obo:SO_0000707 "Chromosome region." ;
+
+crm:start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start" ;
+    skos:definition "The starting position of the genomic coordinate on the chromosome." ;
+    obo:SO_0001217 "Chromosome start position." ;
+
+crm:end a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End" ;
+    skos:definition "The ending position of the genomic coordinate on the chromosome." ;
+    obo:SO_0001218 "Chromosome end position." ;
+
+crm:evidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Supporting information for the enhancer's function or location." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information that supports the validity of an enhancer's properties." ;
+    obo:IAO_0000115 "Supporting information for a biological entity or process." ;
+
+crm:evidenceType a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidenceSource a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source of the evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidenceDate a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:date ;
+    skos:prefLabel "Evidence Date" ;
+    skos:definition "The date when the evidence was collected or reported." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidenceDescription a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Description" ;
+    skos:definition "A detailed description of the evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidenceConfidence a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Confidence" ;
+    skos:definition "The level of confidence in the evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedID a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed ID" ;
+    skos:definition "The PubMed identifier of the evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidenceDOI a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence DOI" ;
+    skos:definition "The Digital Object Identifier of the evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidenceURL a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:anyURI ;
+    skos:prefLabel "Evidence URL" ;
+    skos:definition "The web address of the evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedTitle a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Title" ;
+    skos:definition "The title of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAbstract a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Abstract" ;
+    skos:definition "The abstract of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAuthors a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Authors" ;
+    skos:definition "The authors of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedJournal a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Journal" ;
+    skos:definition "The journal in which the publication supporting the enhancer's properties was published." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedVolume a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Volume" ;
+    skos:definition "The volume number of the journal in which the publication supporting the enhancer's properties was published." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedIssue a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Issue" ;
+    skos:definition "The issue number of the journal in which the publication supporting the enhancer's properties was published." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedPages a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Pages" ;
+    skos:definition "The page numbers of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedPublicationDate a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:date ;
+    skos:prefLabel "Evidence PubMed Publication Date" ;
+    skos:definition "The date of publication of the evidence supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedCitation a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Citation" ;
+    skos:definition "The citation of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedKeywords a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Keywords" ;
+    skos:definition "The keywords associated with the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedReferences a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed References" ;
+    skos:definition "The references cited in the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFunding a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Funding" ;
+    skos:definition "The funding sources for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedGrantNumbers a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Grant Numbers" ;
+    skos:definition "The grant numbers associated with the funding for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAcknowledgments a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Acknowledgments" ;
+    skos:definition "The acknowledgments section of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedConflictOfInterest a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Conflict of Interest" ;
+    skos:definition "The conflict of interest section of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedEthicalApproval a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Ethical Approval" ;
+    skos:definition "The ethical approval section of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedDataAvailability a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Data Availability" ;
+    skos:definition "The data availability section of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedSupplementaryFiles a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Supplementary Files" ;
+    skos:definition "The supplementary files associated with the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAppendices a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Appendices" ;
+    skos:definition "The appendices section of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFigures a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Figures" ;
+    skos:definition "The figures section of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedTables a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Tables" ;
+    skos:definition "The tables section of the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedReferencesList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed References List" ;
+    skos:definition "The list of references cited in the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFundingDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Funding Details" ;
+    skos:definition "The details of the funding sources for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAcknowledgmentsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Acknowledgments List" ;
+    skos:definition "The list of acknowledgments for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedConflictOfInterestDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Conflict of Interest Details" ;
+    skos:definition "The details of the conflict of interest for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedEthicalApprovalDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Ethical Approval Details" ;
+    skos:definition "The details of the ethical approval for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedDataAvailabilityDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Data Availability Details" ;
+    skos:definition "The details of the data availability for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedSupplementaryFilesList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Supplementary Files List" ;
+    skos:definition "The list of supplementary files for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAppendicesList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Appendices List" ;
+    skos:definition "The list of appendices for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFiguresList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Figures List" ;
+    skos:definition "The list of figures for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedTablesList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Tables List" ;
+    skos:definition "The list of tables for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedReferencesListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed References List Details" ;
+    skos:definition "The details of the list of references for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFundingDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Funding Details List" ;
+    skos:definition "The list of details of funding sources for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAcknowledgmentsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Acknowledgments List Details" ;
+    skos:definition "The list of details of acknowledgments for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedConflictOfInterestDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Conflict of Interest Details List" ;
+    skos:definition "The list of details of conflict of interest for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedEthicalApprovalDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Ethical Approval Details List" ;
+    skos:definition "The list of details of ethical approval for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedDataAvailabilityDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Data Availability Details List" ;
+    skos:definition "The list of details of data availability for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedSupplementaryFilesListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Supplementary Files List Details" ;
+    skos:definition "The list of details of supplementary files for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAppendicesListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Appendices List Details" ;
+    skos:definition "The list of details of appendices for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFiguresListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Figures List Details" ;
+    skos:definition "The list of details of figures for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedTablesListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Tables List Details" ;
+    skos:definition "The list of details of tables for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedReferencesListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed References List Details List" ;
+    skos:definition "The list of details of the list of references for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFundingDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Funding Details List Details" ;
+    skos:definition "The list of details of the list of funding sources for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAcknowledgmentsListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Acknowledgments List Details List" ;
+    skos:definition "The list of details of the list of acknowledgments for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedConflictOfInterestDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Conflict of Interest Details List Details" ;
+    skos:definition "The list of details of the list of conflict of interest for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedEthicalApprovalDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Ethical Approval Details List Details" ;
+    skos:definition "The list of details of the list of ethical approval for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedDataAvailabilityDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Data Availability Details List Details" ;
+    skos:definition "The list of details of the list of data availability for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedSupplementaryFilesListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Supplementary Files List Details List" ;
+    skos:definition "The list of details of the list of supplementary files for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAppendicesListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Appendices List Details List" ;
+    skos:definition "The list of details of the list of appendices for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFiguresListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Figures List Details List" ;
+    skos:definition "The list of details of the list of figures for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedTablesListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Tables List Details List" ;
+    skos:definition "The list of details of the list of tables for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedReferencesListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed References List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of references for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFundingDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Funding Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of funding sources for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAcknowledgmentsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Acknowledgments List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of acknowledgments for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedConflictOfInterestDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Conflict of Interest Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of conflict of interest for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedEthicalApprovalDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Ethical Approval Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of ethical approval for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedDataAvailabilityDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Data Availability Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of data availability for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedSupplementaryFilesListDetailsListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Supplementary Files List Details List Details List" ;
+    skos:definition "The list of details of the list of details of the list of supplementary files for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAppendicesListDetailsListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Appendices List Details List Details List" ;
+    skos:definition "The list of details of the list of details of the list of appendices for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFiguresListDetailsListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Figures List Details List Details List" ;
+    skos:definition "The list of details of the list of details of the list of figures for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedTablesListDetailsListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Tables List Details List Details List" ;
+    skos:definition "The list of details of the list of details of the list of tables for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedReferencesListDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed References List Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of details of the list of references for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedFundingDetailsListDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Funding Details List Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of details of the list of funding sources for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedAcknowledgmentsListDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Acknowledgments List Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of details of the list of acknowledgments for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedConflictOfInterestDetailsListDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Conflict of Interest Details List Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of details of the list of conflict of interest for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedEthicalApprovalDetailsListDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Ethical Approval Details List Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of details of the list of ethical approval for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedDataAvailabilityDetailsListDetailsListDetailsListDetails a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Data Availability Details List Details List Details List Details" ;
+    skos:definition "The list of details of the list of details of the list of details of the list of data availability for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm:evidencePubMedSupplementaryFilesListDetailsListDetailsListDetailsList a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence PubMed Supplementary Files List Details List Details List Details List" ;
+    skos:definition "The list of details of the list of details of the list of details of the list of supplementary files for the publication supporting the enhancer's properties." ;
+    obo:IAO_0000136 "Supporting evidence for a biological entity or process." ;
+
+crm

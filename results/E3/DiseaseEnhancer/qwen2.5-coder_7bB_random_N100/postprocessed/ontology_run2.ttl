@@ -1,0 +1,34 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2gene: <http://rdf.biogateway.eu/crm2gene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+
+# Define new classes and properties
+crm2phen:CRMHS00000003515 a owl:Class ;
+    rdfs:label "CISREG Reference" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+crm2gene:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+# Define relationships
+crm2phen:hasGene crm2gene:Gene ;
+    rdfs:label "has Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/gene_sybmol> .
+
+crm2phen:hasDisease crm2phen:Disease ;
+    rdfs:label "has Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+crm2phen:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .

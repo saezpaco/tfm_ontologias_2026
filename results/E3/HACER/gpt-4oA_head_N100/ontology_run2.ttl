@@ -1,0 +1,96 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+obo:SO_0000727 rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CRM .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:CellLine rdf:type owl:Class ;
+    rdfs:label "Cell Line" .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+# Properties
+biolink:has_sequence_location rdf:type owl:ObjectProperty ;
+    rdfs:label "has sequence location" .
+
+biolink:has_target_gene rdf:type owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:has_target_gene .
+
+biolink:associated_with_disease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" .
+
+biolink:expressed_in rdf:type owl:ObjectProperty ;
+    rdfs:label "expressed in" ;
+    skos:exactMatch biolink:expressed_in .
+
+biolink:interacts_with rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with" ;
+    skos:exactMatch biolink:interacts_with .
+
+# Example instances
+hcrm:CRMHS00000005752 rdf:type obo:SO_0000727 ;
+    biolink:has_sequence_location [
+        a schema:Place ;
+        schema:containedInPlace nuccore:chr1 ;
+        schema:startDate "16039967"^^xsd:integer ;
+        schema:endDate "16040344"^^xsd:integer ;
+        schema:identifier "hg38"
+    ] ;
+    biolink:expressed_in [
+        a biolink:CellLine ;
+        rdfs:label "MS-1"
+    ] ;
+    biolink:has_target_gene [
+        a biolink:Gene ;
+        rdfs:label "FAM131C"
+    ] ;
+    biolink:interacts_with [
+        a biolink:TranscriptionFactor ;
+        rdfs:label "ZBTB17"
+    ] .
+
+hcrm:CRMHS00000005795 rdf:type obo:SO_0000727 ;
+    biolink:has_sequence_location [
+        a schema:Place ;
+        schema:containedInPlace nuccore:chr10 ;
+        schema:startDate "62685569"^^xsd:integer ;
+        schema:endDate "62685884"^^xsd:integer ;
+        schema:identifier "hg38"
+    ] ;
+    biolink:expressed_in [
+        a biolink:CellLine ;
+        rdfs:label "DMS 144"
+    ] ;
+    biolink:has_target_gene [
+        a biolink:Gene ;
+        rdfs:label "ADO"
+    ] .
+
+# Additional instances and properties can be added similarly

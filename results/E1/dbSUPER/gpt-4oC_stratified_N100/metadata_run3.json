@@ -1,0 +1,29 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:23:21.617157",
+  "success": true,
+  "elapsed_seconds": 6.99,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 5923,
+    "completion_tokens": 895,
+    "total_tokens": 6818
+  },
+  "prompt_tokens_estimate": 3554,
+  "response_chars": 2908,
+  "turtle_chars": 2908,
+  "validation": {
+    "valid": true,
+    "n_triples": 50,
+    "n_classes": 4,
+    "n_properties": 7
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N100/response_raw_run3.txt"
+  }
+}

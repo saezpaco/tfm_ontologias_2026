@@ -1,0 +1,154 @@
+```ttl
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}GeneticElement/{{original_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPMID>;
+        ]
+    ],
+    [
+        rr:predicate :method;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMethod>;
+        ]
+    ],
+    [
+        rr:predicate :chromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate :score;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScore>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TranscriptionFactor/{{hgnc_symbol_TFs}}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Enhancer/{{original_ID}}";
+    ],
+    [
+        rr:predicate :hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}SuperEnhancer/{{original_ID}}";
+    ],
+    [
+        rr:predicate :partOfChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TargetGene/{{hgnc_symbol_target_genes}}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Disease/{{disease}}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}CellLineOrBiosample/{{biosample_name}}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Mutation/{{original_ID}}";
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}ChromatinRegulatoryModule/{{crm_ID}}";
+    ].
+
+<#TriplesMapPMID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}PMID/{{TFs2enh_PMID}}";
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Method/{{TFs2enh_method}}";
+    ].
+
+<#TriplesMapChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}ChromosomeNumber/{{orig_chr}}";
+    ].
+
+<#TriplesMapScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Score/{{score}}";
+    ].
+```

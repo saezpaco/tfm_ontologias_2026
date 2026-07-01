@@ -1,0 +1,75 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER#Enhancer>
+  a owl:Class ;
+  rdfs:label "Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer"@en ;
+  skos:definition "A regulatory element that modulates gene expression."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"@en ;
+  skos:definition "A location on the genome where an enhancer is found."@en .
+
+<http://example.org/dbSUPER#Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"@en ;
+  skos:definition "Experimental data supporting the presence of an enhancer."@en .
+
+<http://example.org/dbSUPER#CellLineActivity>
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line Activity"^^xsd:string ;
+  skos:prefLabel "Cell Line Activity"@en ;
+  skos:definition "The activity level of an enhancer in a specific cell line."@en .
+
+<http://example.org/dbSUPER#TargetGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene"^^xsd:string ;
+  skos:prefLabel "Target Gene"@en ;
+  skos:definition "A gene regulated by an enhancer."@en .
+
+<http://example.org/dbSUPER#AssociatedDisease>
+  a owl:ObjectProperty ;
+  rdfs:label "Associated Disease"^^xsd:string ;
+  skos:prefLabel "Associated Disease"@en ;
+  skos:definition "A disease linked to the presence of an enhancer."@en .
+
+<http://example.org/dbSUPER#TranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor"@en ;
+  skos:definition "A protein that interacts with an enhancer to regulate gene expression."@en .
+
+<http://example.org/dbSUPER#Enhancer>
+  rdfs:subClassOf obo:SO_0000163 ; # cis-regulatory module
+  <http://example.org/dbSUPER#GenomicCoordinate> ;
+  <http://example.org/dbSUPER#Evidence> ;
+  <http://example.org/dbSUPER#CellLineActivity> ;
+  <http://example.org/dbSUPER#TargetGene> ;
+  <http://example.org/dbSUPER#AssociatedDisease> ;
+  <http://example.org/dbSUPER#TranscriptionFactor> .
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  rdfs:subPropertyOf obo:SO_0000164 ; # genomic location
+
+<http://example.org/dbSUPER#Evidence>
+  skos:exactMatch obo:SO_0000313 ; # experimental evidence
+
+<http://example.org/dbSUPER#CellLineActivity>
+  skos:closeMatch obo:GO_0045892 ; # regulation of cell growth
+
+<http://example.org/dbSUPER#TargetGene>
+  skos:closeMatch obo:GO_0006351 ; # transcription from RNA polymerase II promoter
+
+<http://example.org/dbSUPER#AssociatedDisease>
+  skos:exactMatch obo:DOID_14326 ; # disease of the nervous system
+
+<http://example.org/dbSUPER#TranscriptionFactor>
+  skos:closeMatch obo:GO_0005515 ; # protein binding

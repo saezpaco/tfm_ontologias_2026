@@ -1,0 +1,82 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology#CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology#Chromosome> a owl:Class ;
+    skos:prefLabel "chr_name" .
+
+<http://example.org/ontology#Gene> a owl:Class ;
+    skos:prefLabel "Gene" .
+
+<http://example.org/ontology#TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+<http://example.org/ontology#Disease> a owl:Class ;
+    skos:prefLabel "Disease" .
+
+<http://example.org/ontology#Database> a owl:Class ;
+    skos:prefLabel "Database" .
+
+<http://example.org/ontology#hasChromosome> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range <http://example.org/ontology#Chromosome> ;
+    skos:prefLabel "has chromosome" .
+
+<http://example.org/ontology#hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range <http://example.org/ontology#Gene> ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" ;
+    skos:exactMatch <http://example.org/ontology#bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name> .
+
+<http://example.org/ontology#associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range <http://example.org/ontology#Disease> ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" ;
+    skos:exactMatch <http://example.org/ontology#bgw!crm_ID--doid!doid#database_name> .
+
+<http://example.org/ontology#interactsWithTF> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range <http://example.org/ontology#TranscriptionFactor> ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" ;
+    skos:exactMatch <http://example.org/ontology#bgw!crm_ID--uniprot!uniprot_ID#database_name> .
+
+<http://example.org/ontology#identifiedBy> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range <http://example.org/ontology#Database> ;
+    skos:prefLabel "identified by database" .
+
+<http://example.org/ontology#startPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start position" .
+
+<http://example.org/ontology#endPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end position" .
+
+<http://example.org/ontology#assemblyVersion> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "assembly version" ;
+    skos:exactMatch <http://example.org/ontology#GRCh38> .
+
+<http://example.org/ontology#minimumRatio> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "minimum ratio" .
+
+<http://example.org/ontology#score> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "score" .

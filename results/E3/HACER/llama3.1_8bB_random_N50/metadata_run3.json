@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-27T14:30:42.676503",
+  "success": true,
+  "elapsed_seconds": 99.11,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1826,
+    "completion_tokens": 1077,
+    "total_tokens": 2903
+  },
+  "prompt_tokens_estimate": 1573,
+  "response_chars": 3555,
+  "turtle_chars": 2640,
+  "validation": {
+    "valid": true,
+    "n_triples": 40,
+    "n_classes": 8,
+    "n_properties": 0
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bB_random_N50/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bB_random_N50/response_raw_run3.txt"
+  }
+}

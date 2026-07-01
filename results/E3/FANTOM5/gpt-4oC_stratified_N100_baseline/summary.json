@@ -1,0 +1,99 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 12.233333333333334,
+  "total_tokens": 28615,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-07-01T09:42:26.571747",
+      "success": true,
+      "elapsed_seconds": 13.06,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8264,
+        "completion_tokens": 1172,
+        "total_tokens": 9436
+      },
+      "prompt_tokens_estimate": 4381,
+      "response_chars": 3820,
+      "turtle_chars": 3806,
+      "validation": {
+        "valid": true,
+        "n_triples": 61,
+        "n_classes": 5,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_baseline/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_baseline/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-07-01T09:42:40.311977",
+      "success": true,
+      "elapsed_seconds": 11.34,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8264,
+        "completion_tokens": 1377,
+        "total_tokens": 9641
+      },
+      "prompt_tokens_estimate": 4381,
+      "response_chars": 4009,
+      "turtle_chars": 3995,
+      "validation": {
+        "valid": true,
+        "n_triples": 75,
+        "n_classes": 3,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_baseline/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_baseline/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-07-01T09:42:54.649815",
+      "success": true,
+      "elapsed_seconds": 12.3,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8264,
+        "completion_tokens": 1274,
+        "total_tokens": 9538
+      },
+      "prompt_tokens_estimate": 4381,
+      "response_chars": 4190,
+      "turtle_chars": 4176,
+      "validation": {
+        "valid": true,
+        "n_triples": 71,
+        "n_classes": 3,
+        "n_properties": 5
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_baseline/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_baseline/response_raw_run3.txt"
+      }
+    }
+  ]
+}

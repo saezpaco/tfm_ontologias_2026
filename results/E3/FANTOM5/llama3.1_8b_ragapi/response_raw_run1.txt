@@ -1,0 +1,75 @@
+Here is the formal OWL ontology schema in Turtle format based on the provided database sample and cisreg reference ontology fragments:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix crm2pgene: <https://w3id.org/crm2gene/vocab/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <https://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <https://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://purl.uniprot.org/databases/> .
+
+# Classes
+crm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch obo:HGNC_0000011 .
+
+enhancer:EnhancerSequence a owl:Class ;
+    rdfs:label "Enhancer Sequence" ;
+    skos:closeMatch crm2pgene:ENHANCER_SEQUENCE .
+
+target_gene:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    skos:exactMatch obo:HGNC_0000011 .
+
+transcription_factor:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:closeMatch crm2pgene:TRANSCRIPTION_FACTOR .
+
+disease:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch obo:HGNC_0000011 .
+
+# Properties
+crm:CisRegulatoryModule_has_target_gene a rdf:Property ;
+    rdfs:label "has target gene" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range target_gene:TargetGene .
+
+enhancer:EnhancerSequence_has_transcription_factor a rdf:Property ;
+    rdfs:label "has transcription factor" ;
+    rdfs:domain enhancer:EnhancerSequence ;
+    rdfs:range transcription_factor:TranscriptionFactor .
+
+target_gene:TargetGene_is_associated_with_disease a rdf:Property ;
+    rdfs:label "is associated with disease" ;
+    rdfs:domain target_gene:TargetGene ;
+    rdfs:range disease:Disease .
+
+# Individuals
+crm:CISREG_000001 a crm:CisRegulatoryModule ;
+    crm:CisRegulatoryModule_has_target_gene target_gene:TGT_000001 .
+
+enhancer:ENHANCER_SEQ_000001 a enhancer:EnhancerSequence ;
+    enhancer:EnhancerSequence_has_transcription_factor transcription_factor:TF_000001 .
+
+target_gene:TGT_000001 a target_gene:TargetGene ;
+    target_gene:TargetGene_is_associated_with_disease disease:DISEASE_000001 .
+```
+
+Note that I have only included the classes and properties that are relevant to the provided database sample. You may need to add additional classes and properties depending on your specific use case.
+
+Also, please note that I have used the `skos:exactMatch` and `skos:closeMatch` predicates to align the new terms with existing ontologies. This is a common practice in ontology development, but it's essential to verify the alignments manually to ensure they are correct.
+
+Finally, make sure to declare all prefixes at the top of your Turtle file, as required by the specification.

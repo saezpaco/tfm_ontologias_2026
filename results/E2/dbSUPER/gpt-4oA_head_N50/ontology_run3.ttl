@@ -1,0 +1,62 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    skos:prefLabel "Database" ;
+    skos:definition "Super-enhancers with coordinates, cell lines, and target genes" .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology/CellLine> a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A specific cell line where the CRM is active" .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is targeted by the CRM" .
+
+### Object Properties ###
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Gene> ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol" .
+
+<http://example.org/ontology/activeInCellLine> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/CellLine> ;
+    skos:prefLabel "Active in Cell Line" ;
+    skos:definition "The cell line in which the CRM is active" .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasChromosome> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome where the CRM is located" .
+
+<http://example.org/ontology/hasStartPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "Start position of the CRM on the chromosome" .
+
+<http://example.org/ontology/hasEndPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Position" ;
+    skos:definition "End position of the CRM on the chromosome" .
+
+<http://example.org/ontology/hasRank> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Rank" ;
+    skos:definition "Rank of the CRM based on its activity" .

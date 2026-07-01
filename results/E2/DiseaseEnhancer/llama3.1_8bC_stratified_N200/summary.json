@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 663.9433333333333,
+  "total_tokens": 36861,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T17:08:23.646320",
+      "success": true,
+      "elapsed_seconds": 704.8,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 8192,
+        "total_tokens": 12287
+      },
+      "prompt_tokens_estimate": 3884,
+      "response_chars": 30914,
+      "turtle_chars": 30914,
+      "validation": {
+        "valid": false,
+        "error": "at line 728 of <>:\nBad syntax (unterminated URI reference) at ^ in:\n\"b'@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\\n@pref"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bC_stratified_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bC_stratified_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T17:19:21.904678",
+      "success": true,
+      "elapsed_seconds": 657.19,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 8192,
+        "total_tokens": 12287
+      },
+      "prompt_tokens_estimate": 3884,
+      "response_chars": 30914,
+      "turtle_chars": 30914,
+      "validation": {
+        "valid": false,
+        "error": "at line 728 of <>:\nBad syntax (unterminated URI reference) at ^ in:\n\"b'@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\\n@pref"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bC_stratified_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bC_stratified_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T17:29:52.803181",
+      "success": true,
+      "elapsed_seconds": 629.84,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 8192,
+        "total_tokens": 12287
+      },
+      "prompt_tokens_estimate": 3884,
+      "response_chars": 30914,
+      "turtle_chars": 30914,
+      "validation": {
+        "valid": false,
+        "error": "at line 728 of <>:\nBad syntax (unterminated URI reference) at ^ in:\n\"b'@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\\n@pref"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bC_stratified_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bC_stratified_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

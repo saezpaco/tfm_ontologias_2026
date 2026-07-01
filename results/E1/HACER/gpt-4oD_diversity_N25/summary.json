@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 12.846666666666666,
+  "total_tokens": 4563,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:36:16.580529",
+      "success": true,
+      "elapsed_seconds": 13.12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 1155,
+        "total_tokens": 1543
+      },
+      "prompt_tokens_estimate": 468,
+      "response_chars": 4351,
+      "turtle_chars": 4337,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':GenomicCoordinate a owl:Class ;\\n    skos:prefLabel \"Genomic'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oD_diversity_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oD_diversity_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:36:29.606053",
+      "success": true,
+      "elapsed_seconds": 11.99,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 1092,
+        "total_tokens": 1480
+      },
+      "prompt_tokens_estimate": 468,
+      "response_chars": 4198,
+      "turtle_chars": 4184,
+      "validation": {
+        "valid": false,
+        "error": "at line 9 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n# Classes\\n'^b':Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n    '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oD_diversity_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oD_diversity_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:36:44.080115",
+      "success": true,
+      "elapsed_seconds": 13.43,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 1152,
+        "total_tokens": 1540
+      },
+      "prompt_tokens_estimate": 468,
+      "response_chars": 4319,
+      "turtle_chars": 4305,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':GenomicCoordinate a owl:Class ;\\n    skos:prefLabel \"Genomic'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oD_diversity_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oD_diversity_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

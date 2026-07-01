@@ -1,0 +1,119 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "dbSUPER" ;
+  skos:definition "Super-enhancers con coordenadas, líneas celulares y genes diana" .
+
+crm:CRM
+  a owl:Class ;
+  rdfs:label "Cis-regulatory module" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm:hasChrName
+  a owl:ObjectProperty ;
+  rdfs:label "Has chromosome name" ;
+  skos:prefLabel "chr_name" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:CRM ;
+  rdfs:range xsd:string .
+
+crm:hasStartPosition
+  a owl:ObjectProperty ;
+  rdfs:label "Has start position" ;
+  skos:prefLabel "start_position" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:CRM ;
+  rdfs:range xsd:integer .
+
+crm:hasEndPosition
+  a owl:ObjectProperty ;
+  rdfs:label "Has end position" ;
+  skos:prefLabel "end_position" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:CRM ;
+  rdfs:range xsd:integer .
+
+crm:hasDatabaseName
+  a owl:ObjectProperty ;
+  rdfs:label "Has database name" ;
+  skos:prefLabel "database_name" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:CRM ;
+  rdfs:range xsd:string .
+
+bgw:CrmId
+  a owl:Class ;
+  rdfs:label "Cis-regulatory module ID" ;
+  skos:prefLabel "crm_ID" ;
+  skos:definition "Unique identifier for a cis-regulatory module" .
+
+bgw:hasGeneSymbol
+  a owl:ObjectProperty ;
+  rdfs:label "Has gene symbol" ;
+  skos:prefLabel "gene_symbol" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain bgw:CrmId ;
+  rdfs:range xsd:string .
+
+bgw:hasDisease
+  a owl:ObjectProperty ;
+  rdfs:label "Has disease" ;
+  skos:prefLabel "disease" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain bgw:CrmId ;
+  rdfs:range xsd:string .
+
+bgw:hasTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Has transcription factor" ;
+  skos:prefLabel "transcription_factor" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain bgw:CrmId ;
+  rdfs:range xsd:string .
+
+crm:Enhancer
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "enhancer" ;
+  skos:definition "Region of DNA that regulates gene expression" .
+
+crm:hasCellLineActivity
+  a owl:ObjectProperty ;
+  rdfs:label "Has cell line activity" ;
+  skos:prefLabel "cell_line_activity" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string .
+
+crm:hasTargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Has target gene" ;
+  skos:prefLabel "target_gene" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string .
+
+crm:hasAssociatedDisease
+  a owl:ObjectProperty ;
+  rdfs:label "Has associated disease" ;
+  skos:prefLabel "associated_disease" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string .
+
+crm:hasInteractingTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Has interacting transcription factor" ;
+  skos:prefLabel "interacting_transcription_factor" ;
+  obo:IAO_0000115 "has_part" ;
+  rdfs:domain crm:Enhancer ;
+  rdfs:range xsd:string .

@@ -1,0 +1,81 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology .
+
+### Classes
+:CRM rdf:type owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:Gene rdf:type owl:Class ;
+    skos:prefLabel "Gene" .
+
+:Disease rdf:type owl:Class ;
+    skos:prefLabel "Disease" .
+
+:TranscriptionFactor rdf:type owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+### Object Properties
+:hasTargetGene rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:interactsWithTF rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+### Datatype Properties
+:hasGenomicCoordinates rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module in the format chr:start-end" .
+
+:hasScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "Score" ;
+    skos:definition "Score representing the confidence or strength of the enhancer activity" .
+
+:hasPMID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PMID" ;
+    skos:definition "PubMed ID associated with the experimental evidence for the enhancer" .
+
+:hasRefSeqID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "RefSeq ID" ;
+    skos:definition "RefSeq ID associated with the enhancer or its target gene" .
+
+### Instances
+:CRMHS00000001594 rdf:type :CRM ;
+    :hasGenomicCoordinates "chr5:125315470-125318494" ;
+    :hasScore 1.0 ;
+    :hasPMID "25701871" ;
+    :hasTargetGene :LMNB1 ;
+    :associatedWithDisease obo:OMIM_169500 .
+
+:LMNB1 rdf:type :Gene ;
+    skos:prefLabel "LMNB1" .
+
+obo:OMIM_169500 rdf:type :Disease ;
+    skos:prefLabel "OMIM:169500" .

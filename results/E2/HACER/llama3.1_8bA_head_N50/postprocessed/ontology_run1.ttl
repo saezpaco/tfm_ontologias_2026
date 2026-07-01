@@ -1,0 +1,565 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+:crm a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:crm_ID a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!crm_ID" ;
+    skos:prefLabel "crm/crm_ID" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000013> .
+
+:chr_name a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!chr_name" ;
+    skos:prefLabel "chr_name" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000014> .
+
+:start_position a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!start_position" ;
+    skos:prefLabel "start_position" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000015> .
+
+:end_position a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!end_position" ;
+    skos:prefLabel "end_position" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000016> .
+
+:database_name a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!database_name" ;
+    skos:prefLabel "Database" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000017> .
+
+:association a owl:ObjectProperty ;
+    rdfs:label "Association between cis-regulatory module and gene/gene_symbol/disease/transcription factor" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+:crm_association a owl:ObjectProperty ;
+    rdfs:label "cisreg!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:disease_association a owl:ObjectProperty ;
+    rdfs:label "cisreg!crm_ID--doid!doid#database_name" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:transcription_factor_association a owl:ObjectProperty ;
+    rdfs:label "cisreg!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+:gene_symbol a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000018> .
+
+:disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+:transcription_factor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+:uniprot_ID a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!crm_ID--uniprot!uniprot_ID" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000019> .
+
+:doid a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!crm_ID--doid!doid" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000020> .
+
+:cell_line_activity a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!cell_line_activity" ;
+    skos:prefLabel "Cell Line Activity" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000021> .
+
+:enhancer_sequence a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!enhancer_sequence" ;
+    skos:prefLabel "Enhancer Sequence" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000022> .
+
+:target_gene a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!target_gene" ;
+    skos:prefLabel "Target Gene" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000023> .
+
+:associated_disease a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!associated_disease" ;
+    skos:prefLabel "Associated Disease" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000024> .
+
+:interacting_transcription_factor a obo:BFO_0000051 ;  # :part_of
+    rdfs:label "cisreg!interacting_transcription_factor" ;
+    skos:prefLabel "Interacting Transcription Factor" ;
+    owl:equivalentClass <http://purl.obolibrary.org/obo/BMF_0000025> .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:crm_association_disease a owl:ObjectProperty ;
+    rdfs:label "Disease Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+:crm_association_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association of CRM" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+:crm_association_cell_line_activity a owl:ObjectProperty ;
+    rdfs:label "Cell Line Activity of CRM Association" ;
+    skos:prefLabel "cisreg!cell_line_activity#database_name" ;
+    skos:definition "Cell line activity associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_enhancer_sequence a owl:ObjectProperty ;
+    rdfs:label "Enhancer Sequence of CRM Association" ;
+    skos:prefLabel "cisreg!enhancer_sequence#database_name" ;
+    skos:definition "Enhancer sequence associated with cis-regulatory module crm_ID according to database_name" .
+
+:crm_association_target_gene a owl:ObjectProperty ;
+    rdfs:label "Target Gene of CRM Association" .

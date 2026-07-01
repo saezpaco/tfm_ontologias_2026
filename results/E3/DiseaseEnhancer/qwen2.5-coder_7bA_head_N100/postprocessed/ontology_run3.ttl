@@ -1,0 +1,28 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm!> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene!> .
+@prefix assembly:<http://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+@prefix id_pubmed:<https://pubmed.ncbi.nlm.nih.gov/?term=> .
+@prefix id_ncbigene:<https://www.ncbi.nlm.nih.gov/gene/> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/SO_0001217> .
+
+# Example of how to reuse cisreg URIs with skos:exactMatch
+<http://rdf.biogateway.eu/crm2pgene/bgw!bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> skos:exactMatch obo:SO_0000704 .
+
+# Example of how to reuse cisreg URIs with skos:closeMatch
+<http://rdf.biogateway.eu/crm2pgene/bgw!bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> skos:closeMatch obo:SO_0000704 .
+
+# Example of how to add new terms where cisreg doesn't cover the concept
+<http://rdf.biogateway.eu/crm2pgene/bgw!bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> biolink:has_function "Transcription Factor" .

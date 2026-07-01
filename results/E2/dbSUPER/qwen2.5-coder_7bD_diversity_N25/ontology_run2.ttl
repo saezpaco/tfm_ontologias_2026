@@ -1,0 +1,86 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology rdf:about "http://example.com/dbSUPER-ontology" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for cis-regulatory modules, specifically enhancers in the human genome." ;
+
+crm:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:Enhancer a owl:Class ;
+    rdfs:subClassOf crm:CRM ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "An enhancer sequence that modulates the transcription rate of its target genes in the human genome." .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinates ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "The genomic coordinates of an enhancer sequence." .
+
+crm:GenomicCoordinates a owl:Class ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "A class representing the genomic coordinates of a cis-regulatory module." ;
+    rdfs:subClassOf crm:Enhancer ;
+
+crm:startPosition a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of the enhancer sequence on the chromosome." .
+
+crm:endPosition a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of the enhancer sequence on the chromosome." ;
+
+crm:chrName a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chromosome name" ;
+    skos:definition "The name of the chromosome where the enhancer sequence is located." .
+
+crm:cellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:CellLine ;
+    skos:prefLabel "cell line activity" ;
+    skos:definition "The cell lines in which the enhancer sequence has been observed to be active." .
+
+crm:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A class representing different types of cell lines." ;
+
+crm:targetGene a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Gene ;
+    skos:prefLabel "target gene" ;
+    skos:definition "The genes that are regulated by the enhancer sequence." .
+
+crm:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A class representing different types of genes." ;
+
+crm:associatedDisease a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:Disease ;
+    skos:prefLabel "associated disease" ;
+    skos:definition "The diseases associated with the enhancer sequence." .
+
+crm:interactingTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:TranscriptionFactor ;
+    skos:prefLabel "interacting transcription factor" ;
+    skos:definition "The transcription factors that interact with the enhancer sequence." .
+
+crm:hasRank a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "rank" ;
+    skos:definition "A rank or score indicating the significance of the enhancer sequence." .

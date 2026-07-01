@@ -1,0 +1,644 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM/enhancer>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module (CRM) Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer"^^xsd:string ;
+  skos:definition "A region of DNA that can be bound by transcription factors and other regulatory proteins to enhance the expression of nearby genes."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the presence of a CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasChromosomalLocation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosomal Location"^^xsd:string ;
+  skos:prefLabel "Chromosomal Location"^^xsd:string ;
+  skos:definition "The location of the CRM enhancer on a specific chromosome."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region"^^xsd:string ;
+  skos:definition "The region of the genome where the CRM enhancer is located."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where transcription factors bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site"^^xsd:string ;
+  skos:definition "The site on the CRM enhancer where regulatory proteins bind."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement"^^xsd:string ;
+  skos:definition "The enhancement of gene expression due to the presence of the CRM enhancer."^^xsd:string .
+
+<http://example.org/CRM/enhancer#hasGen

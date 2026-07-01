@@ -1,0 +1,63 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes located on the same chromosome." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters and can function in either orientation and in any location (upstream or downstream) relative to the promoter." ;
+    skos:exactMatch obo:SO_0000167 .
+
+obo:SO_0000704 a owl:Class ;
+    skos:prefLabel "Genomic coordinate" ;
+    skos:definition "A specific location on a chromosome, defined by a start and end position." .
+
+obo:GO_0006355 a owl:Class ;
+    skos:prefLabel "Regulation of transcription, DNA-templated" ;
+    skos:definition "Any process that modulates the frequency, rate or extent of cellular DNA-templated transcription." ;
+    skos:exactMatch obo:GO_0006355 .
+
+# Object Properties
+obo:RO_0002434 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a cis-regulatory module to its target gene." ;
+    skos:exactMatch obo:RO_0002434 .
+
+obo:RO_0002436 a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates a cis-regulatory module to a transcription factor that interacts with it." ;
+    skos:exactMatch obo:RO_0002436 .
+
+# Datatype Properties
+obo:SO_0000704_start a owl:DatatypeProperty ;
+    skos:prefLabel "genomic start coordinate" ;
+    skos:definition "The start position of a genomic coordinate on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:SO_0000704_end a owl:DatatypeProperty ;
+    skos:prefLabel "genomic end coordinate" ;
+    skos:definition "The end position of a genomic coordinate on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:OBI_0000312 a owl:DatatypeProperty ;
+    skos:prefLabel "experimental evidence" ;
+    skos:definition "Evidence supporting the existence or function of a cis-regulatory module." ;
+    skos:exactMatch obo:OBI_0000312 .
+
+obo:CL_0000003 a owl:DatatypeProperty ;
+    skos:prefLabel "cell line activity" ;
+    skos:definition "The activity of a cis-regulatory module in a specific cell line." ;
+    skos:exactMatch obo:CL_0000003 .
+
+obo:DOID_4 a owl:DatatypeProperty ;
+    skos:prefLabel "associated disease" ;
+    skos:definition "A disease associated with the malfunction or dysregulation of a cis-regulatory module." ;
+    skos:exactMatch obo:DOID_4 .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-28T04:27:11.648510",
+  "success": true,
+  "elapsed_seconds": 778.78,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 3797,
+    "completion_tokens": 8192,
+    "total_tokens": 11989
+  },
+  "prompt_tokens_estimate": 2446,
+  "response_chars": 20349,
+  "turtle_chars": 20339,
+  "validation": {
+    "valid": false,
+    "error": "at line 45 of <>:\nBad syntax (Prefix \"hgene:\" not bound) at ^ in:\n\"...b'nhancer ;\\n    rdf:predicate obo:RO_0002429 ;\\n    rdf:object '^b'hgene:gene_symbol ;\\n    skos:prefLabel \"Super Enhancer--Gene'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bB_random_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bB_random_N25/response_raw_run1.txt"
+  }
+}

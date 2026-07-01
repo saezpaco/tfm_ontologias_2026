@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 131.11333333333332,
+  "total_tokens": 7941,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-27T03:13:28.001085",
+      "success": true,
+      "elapsed_seconds": 145.48,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1581,
+        "completion_tokens": 1066,
+        "total_tokens": 2647
+      },
+      "prompt_tokens_estimate": 1251,
+      "response_chars": 3130,
+      "turtle_chars": 3130,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'hancers con coordenadas, l\\xc3\\xadneas celulares y genes diana\" .\\n'^b'\\ncrm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-regulatory module'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-27T03:15:33.132463",
+      "success": true,
+      "elapsed_seconds": 124.1,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1581,
+        "completion_tokens": 1066,
+        "total_tokens": 2647
+      },
+      "prompt_tokens_estimate": 1251,
+      "response_chars": 3130,
+      "turtle_chars": 3130,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'hancers con coordenadas, l\\xc3\\xadneas celulares y genes diana\" .\\n'^b'\\ncrm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-regulatory module'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-27T03:17:37.924713",
+      "success": true,
+      "elapsed_seconds": 123.76,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1581,
+        "completion_tokens": 1066,
+        "total_tokens": 2647
+      },
+      "prompt_tokens_estimate": 1251,
+      "response_chars": 3130,
+      "turtle_chars": 3130,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'hancers con coordenadas, l\\xc3\\xadneas celulares y genes diana\" .\\n'^b'\\ncrm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-regulatory module'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

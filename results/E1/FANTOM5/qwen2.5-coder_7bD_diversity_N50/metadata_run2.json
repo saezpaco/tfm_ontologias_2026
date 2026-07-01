@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-06-27T16:36:45.175577",
+  "success": true,
+  "elapsed_seconds": 108.42,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 756,
+    "total_tokens": 4851
+  },
+  "prompt_tokens_estimate": 1694,
+  "response_chars": 2279,
+  "turtle_chars": 2265,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Genomic Enhanc'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N50/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N50/response_raw_run2.txt"
+  }
+}

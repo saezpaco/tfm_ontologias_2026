@@ -1,0 +1,225 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.org/ontology>
+    a owl:Ontology ;
+    rdfs:label "Example Ontology" ;
+    skos:description "This is an example ontology.".
+
+owl:DatatypeProperty
+    a owl:Class ;
+    rdfs:label "Data Property" ;
+    skos:description "A property that has a data type as its range.".
+
+has_PMID_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has PMID Value" ;
+    skos:description "The value of the PMID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_method_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Method Value" ;
+    skos:description "The value of the method for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_assembly_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Assembly Value" ;
+    skos:description "The value of the assembly for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_chromosome_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Chromosome Value" ;
+    skos:description "The value of the chromosome for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_ID_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has ID Value" ;
+    skos:description "The value of the ID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_score_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Score Value" ;
+    skos:description "The value of the score for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_source_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Source Value" ;
+    skos:description "The value of the source for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_type_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Type Value" ;
+    skos:description "The value of the type for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_end_coordinate_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has End Coordinate Value" ;
+    skos:description "The value of the end coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+has_start_coordinate_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Start Coordinate Value" ;
+    skos:description "The value of the start coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+owl:ObjectProperty
+    a owl:Class ;
+    rdfs:label "Object Property" ;
+    skos:description "A property that has an object as its range.".
+
+has_PMID
+    a owl:ObjectProperty ;
+    rdfs:label "Has PMID" ;
+    skos:description "The PMID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Method" ;
+    skos:description "The method for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_assembly
+    a owl:ObjectProperty ;
+    rdfs:label "Has Assembly" ;
+    skos:description "The assembly for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_chromosome
+    a owl:ObjectProperty ;
+    rdfs:label "Has Chromosome" ;
+    skos:description "The chromosome for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_ID
+    a owl:ObjectProperty ;
+    rdfs:label "Has ID" ;
+    skos:description "The ID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_score
+    a owl:ObjectProperty ;
+    rdfs:label "Has Score" ;
+    skos:description "The score for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_source
+    a owl:ObjectProperty ;
+    rdfs:label "Has Source" ;
+    skos:description "The source for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_type
+    a owl:ObjectProperty ;
+    rdfs:label "Has Type" ;
+    skos:description "The type for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_end_coordinate
+    a owl:ObjectProperty ;
+    rdfs:label "Has End Coordinate" ;
+    skos:description "The end coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+has_start_coordinate
+    a owl:ObjectProperty ;
+    rdfs:label "Has Start Coordinate" ;
+    skos:description "The start coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+<http://example.org/ontology#class_entity>
+    a owl:Class ;
+    rdfs:label "Class Entity" ;
+    skos:description "An entity that is a class.".
+
+<http://example.org/ontology#entity_name>
+    a owl:Class ;
+    rdfs:label "Entity Name" ;
+    skos:description "A name for an entity." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#enhancer>
+    a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:description "An enhancer is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#super_enhancer>
+    a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:description "A super enhancer is a type of enhancer that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#enhancer> .
+
+<http://example.org/ontology#transcription_factor>
+    a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:description "A transcription factor is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#target_gene>
+    a owl:Class ;
+    rdfs:label "Target Gene" ;
+    skos:description "A target gene is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#disease_association>
+    a owl:Class ;
+    rdfs:label "Disease Association" ;
+    skos:description "A disease association is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#biosample>
+    a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:description "A biosample is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#cell_line>
+    a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:description "A cell line is a type of biosample that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#biosample> .
+
+<http://example.org/ontology#gene>
+    a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:description "A gene is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#chromosome>
+    a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:description "A chromosome is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .

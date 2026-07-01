@@ -1,0 +1,95 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 360.62000000000006,
+  "total_tokens": 24038,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-07-01T11:03:22.098321",
+      "success": true,
+      "elapsed_seconds": 174.08,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1648,
+        "total_tokens": 5743
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 4552,
+      "turtle_chars": 4193,
+      "validation": {
+        "valid": true,
+        "n_triples": 0,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N100_baseline/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N100_baseline/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-07-01T11:06:43.730685",
+      "success": true,
+      "elapsed_seconds": 199.27,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1913,
+        "total_tokens": 6008
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 5749,
+      "turtle_chars": 5270,
+      "validation": {
+        "valid": false,
+        "error": "at line 43 of <>:\nBad syntax (Prefix \"crm2phen:\" not bound) at ^ in:\n\"...b\"u/crm2phen/bgw!CRMHS00000003515--doid!1682> .\\n\\n# Column 'dis\"^b'ease_PMID\\':\\ncrm2phen:disease_PMID rdfs:label \"bgw!CRMHS00000'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N100_baseline/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N100_baseline/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-07-01T11:18:34.706384",
+      "success": true,
+      "elapsed_seconds": 708.51,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 8192,
+        "total_tokens": 12287
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 23101,
+      "turtle_chars": 22984,
+      "validation": {
+        "valid": false,
+        "error": "at line 43 of <>:\nBad syntax (Prefix \"crm2phen:\" not bound) at ^ in:\n\"...b\"u/crm2phen/bgw!CRMHS00000003515--doid!1682> .\\n\\n# Column 'dis\"^b'ease_PMID\\':\\ncrm2phen:disease_PMID rdfs:label \"bgw!CRMHS00000'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N100_baseline/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N100_baseline/response_raw_run3.txt"
+      }
+    }
+  ]
+}

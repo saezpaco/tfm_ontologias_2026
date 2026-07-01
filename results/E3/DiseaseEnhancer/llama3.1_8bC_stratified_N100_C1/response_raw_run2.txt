@@ -1,0 +1,65 @@
+Based on the provided data and requirements, I will create the Turtle code for the cisreg reference ontology. Here is the output:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene#> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:crm2phen_example a owl:Ontology ;
+  rdfs:label "crm2phen_example" ;
+  skos:prefLabel "crm2phen_example" ;
+  biolink:score 0.410.
+
+hcrm:crm2gene a owl:Ontology ;
+  rdfs:label "crm2gene" ;
+  skos:prefLabel "crm2gene" ;
+  biolink:score 0.390.
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+hcrm:orig_end a hcrm:ENdb ;
+  rdfs:label "ENdb" ;
+  biolink:score 0.422.
+
+hcrm:current_end a hcrm:ENdb ;
+  rdfs:label "ENdb" ;
+  biolink:score 0.433.
+
+hcrm:hgnc_symbol_target_genes a crm2pgene:bgw!CRMHS00000003515--doid!1682 ;
+  rdfs:label "bgw!CRMHS00000003515--doid!1682" ;
+  biolink:score 0.402.
+hcrm:hgnc_symbol_target_genes a crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol ;
+  rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  biolink:score 0.593.
+
+hcrm:disease_PMID a crm2phen:bgw!CRMHS00000003515--doid!1682 ;
+  rdfs:label "bgw!CRMHS00000003515--doid!1682" ;
+  biolink:score 0.457.
+
+hcrm:crm_ID a hgene:original_URL_database ;
+  rdfs:label "database_name" ;
+  biolink:score 0.418.
+
+hcrm:biosample_name a hgene:original_URL_database ;
+  rdfs:label "database_name" ;
+  biolink:score 0.454.
+```
+
+This output includes the required prefix declarations, the recommended ontologies with their scores, and the column → ontology class mappings with their corresponding classes and properties from the cisreg reference ontology.

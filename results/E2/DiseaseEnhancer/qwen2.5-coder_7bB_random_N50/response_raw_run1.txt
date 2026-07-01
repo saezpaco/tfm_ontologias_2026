@@ -1,0 +1,559 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "DiseaseEnhancer Ontology" ;
+    skos:definition "An ontology for enhancers associated with diseases in the human genome." ;
+}
+
+crm:CRM a owl:Class ;
+    rdfs:subClassOf obo:SO_0001849 ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." ;
+
+crm:Enhancer a owl:Class ;
+    rdfs:subClassOf crm:CRM ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "An enhancer sequence that modulates the transcription rate of its target genes in the human genome." ;
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "genomic coordinates" ;
+    skos:definition "The genomic coordinates of the enhancer sequence." ;
+
+crm:hasExperimentalEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "experimental evidence" ;
+    skos:definition "Experimental evidence supporting the enhancer's function." ;
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "cell line activity" ;
+    skos:definition "The cell lines in which the enhancer shows activity." ;
+
+crm:targetsGene a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 ;
+    skos:prefLabel "target gene" ;
+    skos:definition "The gene that is modulated by the enhancer." ;
+
+crm:associatedDisease a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:DOID_0050124 ;
+    skos:prefLabel "associated disease" ;
+    skos:definition "The disease associated with the enhancer." ;
+
+crm:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 ;
+    skos:prefLabel "interacting transcription factor" ;
+    skos:definition "The transcription factor that interacts with the enhancer." ;
+
+crm:hasDatabase a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "database" ;
+    skos:definition "The database from which the enhancer information is derived." ;
+
+crm:bgwFormat a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format" ;
+    skos:definition "A specific format used in the bgw database for enhancer information." ;
+
+crm:bgwFormatExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format exact match" ;
+    skos:definition "An exact match of the enhancer in the bgw database format." ;
+
+crm:bgwFormatCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format close match" ;
+    skos:definition "A close match of the enhancer in the bgw database format." ;
+
+crm:bgwFormatDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format database" ;
+    skos:definition "The database from which the enhancer information in bgw format is derived." ;
+
+crm:bgwFormatDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format database exact match" ;
+    skos:definition "An exact match of the enhancer in the bgw database format from a specific database." ;
+
+crm:bgwFormatDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format database close match" ;
+    skos:definition "A close match of the enhancer in the bgw database format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactor a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor" ;
+    skos:definition "The transcription factor associated with the enhancer in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor exact match" ;
+    skos:definition "An exact match of the transcription factor associated with the enhancer in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor close match" ;
+    skos:definition "A close match of the transcription factor associated with the enhancer in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor database" ;
+    skos:definition "The database from which the transcription factor information in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor database exact match" ;
+    skos:definition "An exact match of the transcription factor information in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor database close match" ;
+    skos:definition "A close match of the transcription factor information in bgw format from a specific database." ;
+
+crm:bgwFormatDisease a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format disease" ;
+    skos:definition "The disease associated with the enhancer in bgw format." ;
+
+crm:bgwFormatDiseaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format disease exact match" ;
+    skos:definition "An exact match of the disease associated with the enhancer in bgw format." ;
+
+crm:bgwFormatDiseaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format disease close match" ;
+    skos:definition "A close match of the disease associated with the enhancer in bgw format." ;
+
+crm:bgwFormatDiseaseDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format disease database" ;
+    skos:definition "The database from which the disease information in bgw format is derived." ;
+
+crm:bgwFormatDiseaseDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format disease database exact match" ;
+    skos:definition "An exact match of the disease information in bgw format from a specific database." ;
+
+crm:bgwFormatDiseaseDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format disease database close match" ;
+    skos:definition "A close match of the disease information in bgw format from a specific database." ;
+
+crm:bgwFormatGene a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format gene" ;
+    skos:definition "The gene associated with the enhancer in bgw format." ;
+
+crm:bgwFormatGeneExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format gene exact match" ;
+    skos:definition "An exact match of the gene associated with the enhancer in bgw format." ;
+
+crm:bgwFormatGeneCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format gene close match" ;
+    skos:definition "A close match of the gene associated with the enhancer in bgw format." ;
+
+crm:bgwFormatGeneDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format gene database" ;
+    skos:definition "The database from which the gene information in bgw format is derived." ;
+
+crm:bgwFormatGeneDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format gene database exact match" ;
+    skos:definition "An exact match of the gene information in bgw format from a specific database." ;
+
+crm:bgwFormatGeneDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format gene database close match" ;
+    skos:definition "A close match of the gene information in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDisease a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease" ;
+    skos:definition "The disease associated with the enhancer and its interacting transcription factor in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease exact match" ;
+    skos:definition "An exact match of the disease associated with the enhancer and its interacting transcription factor in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease close match" ;
+    skos:definition "A close match of the disease associated with the enhancer and its interacting transcription factor in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease database" ;
+    skos:definition "The database from which the disease information associated with the enhancer and its interacting transcription factor in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease database exact match" ;
+    skos:definition "An exact match of the disease information associated with the enhancer and its interacting transcription factor in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease database close match" ;
+    skos:definition "A close match of the disease information associated with the enhancer and its interacting transcription factor in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorGene a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor gene" ;
+    skos:definition "The gene associated with the enhancer and its interacting transcription factor in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorGeneExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor gene exact match" ;
+    skos:definition "An exact match of the gene associated with the enhancer and its interacting transcription factor in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorGeneCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor gene close match" ;
+    skos:definition "A close match of the gene associated with the enhancer and its interacting transcription factor in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorGeneDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor gene database" ;
+    skos:definition "The database from which the gene information associated with the enhancer and its interacting transcription factor in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorGeneDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor gene database exact match" ;
+    skos:definition "An exact match of the gene information associated with the enhancer and its interacting transcription factor in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorGeneDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor gene database close match" ;
+    skos:definition "A close match of the gene information associated with the enhancer and its interacting transcription factor in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGene a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene" ;
+    skos:definition "The gene associated with the enhancer, its interacting transcription factor, and the disease in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene exact match" ;
+    skos:definition "An exact match of the gene associated with the enhancer, its interacting transcription factor, and the disease in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene close match" ;
+    skos:definition "A close match of the gene associated with the enhancer, its interacting transcription factor, and the disease in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene database" ;
+    skos:definition "The database from which the gene information associated with the enhancer, its interacting transcription factor, and the disease in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene database exact match" ;
+    skos:definition "An exact match of the gene information associated with the enhancer, its interacting transcription factor, and the disease in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene database close match" ;
+    skos:definition "A close match of the gene information associated with the enhancer, its interacting transcription factor, and the disease in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactor a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor" ;
+    skos:definition "The interacting transcription factor associated with the enhancer, its gene, and the disease in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor exact match" ;
+    skos:definition "An exact match of the interacting transcription factor associated with the enhancer, its gene, and the disease in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor close match" ;
+    skos:definition "A close match of the interacting transcription factor associated with the enhancer, its gene, and the disease in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor database" ;
+    skos:definition "The database from which the interacting transcription factor information associated with the enhancer, its gene, and the disease in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor database exact match" ;
+    skos:definition "An exact match of the interacting transcription factor information associated with the enhancer, its gene, and the disease in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor database close match" ;
+    skos:definition "A close match of the interacting transcription factor information associated with the enhancer, its gene, and the disease in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDisease a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease" ;
+    skos:definition "The disease associated with the enhancer, its interacting transcription factor, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease exact match" ;
+    skos:definition "An exact match of the disease associated with the enhancer, its interacting transcription factor, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease close match" ;
+    skos:definition "A close match of the disease associated with the enhancer, its interacting transcription factor, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease database" ;
+    skos:definition "The database from which the disease information associated with the enhancer, its interacting transcription factor, and its gene in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease database exact match" ;
+    skos:definition "An exact match of the disease information associated with the enhancer, its interacting transcription factor, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease database close match" ;
+    skos:definition "A close match of the disease information associated with the enhancer, its interacting transcription factor, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGene a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene" ;
+    skos:definition "The gene associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene exact match" ;
+    skos:definition "An exact match of the gene associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene close match" ;
+    skos:definition "A close match of the gene associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene database" ;
+    skos:definition "The database from which the gene information associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene database exact match" ;
+    skos:definition "An exact match of the gene information associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene database close match" ;
+    skos:definition "A close match of the gene information associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactor a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor" ;
+    skos:definition "The interacting transcription factor associated with the enhancer, its gene, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor exact match" ;
+    skos:definition "An exact match of the interacting transcription factor associated with the enhancer, its gene, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor close match" ;
+    skos:definition "A close match of the interacting transcription factor associated with the enhancer, its gene, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor database" ;
+    skos:definition "The database from which the interacting transcription factor information associated with the enhancer, its gene, the disease, and its gene in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor database exact match" ;
+    skos:definition "An exact match of the interacting transcription factor information associated with the enhancer, its gene, the disease, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor database close match" ;
+    skos:definition "A close match of the interacting transcription factor information associated with the enhancer, its gene, the disease, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDisease a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease" ;
+    skos:definition "The disease associated with the enhancer, its interacting transcription factor, its gene, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease exact match" ;
+    skos:definition "An exact match of the disease associated with the enhancer, its interacting transcription factor, its gene, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease close match" ;
+    skos:definition "A close match of the disease associated with the enhancer, its interacting transcription factor, its gene, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease database" ;
+    skos:definition "The database from which the disease information associated with the enhancer, its interacting transcription factor, its gene, and its gene in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease database exact match" ;
+    skos:definition "An exact match of the disease information associated with the enhancer, its interacting transcription factor, its gene, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease database close match" ;
+    skos:definition "A close match of the disease information associated with the enhancer, its interacting transcription factor, its gene, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGene a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene" ;
+    skos:definition "The gene associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene exact match" ;
+    skos:definition "An exact match of the gene associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene close match" ;
+    skos:definition "A close match of the gene associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene database" ;
+    skos:definition "The database from which the gene information associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneDatabaseExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene database exact match" ;
+    skos:definition "An exact match of the gene information associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneDatabaseCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene database close match" ;
+    skos:definition "A close match of the gene information associated with the enhancer, its interacting transcription factor, the disease, and its gene in bgw format from a specific database." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactor a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene transcription factor" ;
+    skos:definition "The interacting transcription factor associated with the enhancer, its gene, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorExactMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene transcription factor exact match" ;
+    skos:definition "An exact match of the interacting transcription factor associated with the enhancer, its gene, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorCloseMatch a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene transcription factor close match" ;
+    skos:definition "A close match of the interacting transcription factor associated with the enhancer, its gene, the disease, and its gene in bgw format." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscriptionFactorDatabase a owl:AnnotationProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw format transcription factor disease gene transcription factor disease gene transcription factor disease gene transcription factor database" ;
+    skos:definition "The database from which the interacting transcription factor information associated with the enhancer, its gene, the disease, and its gene in bgw format is derived." ;
+
+crm:bgwFormatTranscriptionFactorDiseaseGeneTranscriptionFactorDiseaseGeneTranscription

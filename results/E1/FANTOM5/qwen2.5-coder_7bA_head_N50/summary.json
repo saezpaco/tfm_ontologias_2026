@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 135.13666666666668,
+  "total_tokens": 15517,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-27T15:35:52.888284",
+      "success": true,
+      "elapsed_seconds": 138.58,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1076,
+        "total_tokens": 5171
+      },
+      "prompt_tokens_estimate": 1562,
+      "response_chars": 3084,
+      "turtle_chars": 3070,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Genomic Enhanc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bA_head_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bA_head_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-27T15:38:08.908882",
+      "success": true,
+      "elapsed_seconds": 134.99,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1078,
+        "total_tokens": 5173
+      },
+      "prompt_tokens_estimate": 1562,
+      "response_chars": 3099,
+      "turtle_chars": 3085,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Genomic Enhanc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bA_head_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bA_head_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-27T15:40:21.787150",
+      "success": true,
+      "elapsed_seconds": 131.84,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1078,
+        "total_tokens": 5173
+      },
+      "prompt_tokens_estimate": 1562,
+      "response_chars": 3099,
+      "turtle_chars": 3085,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Genomic Enhanc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bA_head_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bA_head_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

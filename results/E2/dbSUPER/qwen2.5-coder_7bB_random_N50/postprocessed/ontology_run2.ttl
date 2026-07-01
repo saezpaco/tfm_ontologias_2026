@@ -1,0 +1,87 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology rdf:about "http://example.org/dbSUPER" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for cis-regulatory modules, specifically enhancer sequences in the human genome." .
+
+crm:CRM a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 ;
+    skos:prefLabel "hasChromosome" ;
+    skos:definition "The chromosome on which the cis-regulatory module is located." .
+
+crm:hasStart a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "hasStart" ;
+    skos:definition "The start position of the cis-regulatory module on the chromosome." .
+
+crm:hasEnd a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "hasEnd" ;
+    skos:definition "The end position of the cis-regulatory module on the chromosome." .
+
+crm:hasGeneSymbol a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 ;
+    skos:prefLabel "hasGeneSymbol" ;
+    skos:definition "The gene symbol associated with the cis-regulatory module." .
+
+crm:hasCellLine a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 ;
+    skos:prefLabel "hasCellLine" ;
+    skos:definition "The cell line activity associated with the cis-regulatory module." .
+
+crm:hasRank a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "hasRank" ;
+    skos:definition "The rank of the cis-regulatory module based on some criteria." .
+
+crm:isAssociatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:DOID_0000001 ;
+    skos:prefLabel "isAssociatedWithDisease" ;
+    skos:definition "The disease associated with the cis-regulatory module." .
+
+crm:isAssociatedWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 ;
+    skos:prefLabel "isAssociatedWithTranscriptionFactor" ;
+    skos:definition "The transcription factor associated with the cis-regulatory module." .
+
+crm:SE_01932 a crm:CRM ;
+    crm:hasChromosome obo:SO_chromosome_16 ;
+    crm:hasStart 72866815 ;
+    crm:hasEnd 72895386 ;
+    crm:hasGeneSymbol obo:SO_ZFHX3 ;
+    crm:hasCellLine obo:SO_Aorta ;
+    crm:hasRank "400"^^xsd:string .
+
+crm:SE_01371 a crm:CRM ;
+    crm:hasChromosome obo:SO_chromosome_17 ;
+    crm:hasStart 7378882 ;
+    crm:hasEnd 7383861 ;
+    crm:hasGeneSymbol obo:SO_ZBTB4 ;
+    crm:hasCellLine obo:SO_Adrenal_Gland ;
+    crm:hasRank "519"^^xsd:string .
+
+crm:SE_47462 a crm:CRM ;
+    crm:hasChromosome obo:SO_chromosome_10 ;
+    crm:hasStart 38000000 ;
+    crm:hasEnd 38500000 ;
+    crm:hasGeneSymbol obo:SO_Gene_Symbol ;
+    crm:hasCellLine obo:SO_Cell_Line ;
+    crm:hasRank "Rank"^^xsd:string .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-05-08T19:49:16.448228",
+  "success": true,
+  "elapsed_seconds": 187.33,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 1443,
+    "total_tokens": 5539
+  },
+  "prompt_tokens_estimate": 3329,
+  "response_chars": 4449,
+  "turtle_chars": 3943,
+  "validation": {
+    "valid": false,
+    "error": "at line 45 of <>:\nBad syntax (Prefix \"linkml:\" not bound) at ^ in:\n\"...b'bel \"CRM\" ;\\n    skos:altLabel \"cis-regulatory module\" ;\\n    '^b'linkml:is_a biolink:RegulatoryRegion .\\n\\nnuccore:chr_ID rdf:t'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_legacy/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_legacy/response_raw_run2.txt"
+  }
+}

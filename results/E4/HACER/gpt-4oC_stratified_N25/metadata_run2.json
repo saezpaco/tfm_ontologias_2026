@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/C_stratified/N=25/HACER.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-28T20:34:11.992448+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.031,
+    "plan_s": 4.076,
+    "plan_chars": 4556,
+    "plan_prompt_chars": 9538,
+    "onto_s": 7.584,
+    "onto_chars": 8699,
+    "onto_prompt_chars": 13474,
+    "map_s": 5.494,
+    "map_chars": 7222,
+    "map_prompt_chars": 15922
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-28T20:34:29.178171+00:00",
+  "total_s": 17.185
+}

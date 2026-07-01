@@ -1,0 +1,55 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for cis-regulatory modules (CRMs), specifically enhancers, from the dbSUPER database." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that modulates the transcription rate of target genes in the human genome." ;
+    rdfs:subClassOf obo:SO_0001217 .  # SO term for enhancer
+
+crm:GenomicCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "The genomic location of an enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:Evidence a owl:ObjectProperty ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Experimental evidence supporting the presence or function of an enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0016549 .  # GO term for experimental evidence
+
+crm:CellLineActivity a owl:ObjectProperty ;
+    skos:prefLabel "Cell Line Activity" ;
+    skos:definition "The cellular context in which an enhancer is active." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008270 .  # GO term for cell line
+
+crm:TargetGene a owl:ObjectProperty ;
+    skos:prefLabel "Target Gene" ;
+    skos:definition "The gene that is modulated by an enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 .  # SO term for gene
+
+crm:Disease a owl:ObjectProperty ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with an enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:DOID_0050124 .  # DO term for disease
+
+crm:TranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor that interacts with an enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 .  # SO term for transcription factor
+```

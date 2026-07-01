@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/B_random/N=100/FANTOM5.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-30T10:05:39.307467+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.033,
+    "plan_s": 95.264,
+    "plan_chars": 3534,
+    "plan_prompt_chars": 9557,
+    "onto_s": 242.004,
+    "onto_chars": 7512,
+    "onto_prompt_chars": 12471,
+    "map_s": 148.981,
+    "map_chars": 4090,
+    "map_prompt_chars": 13715
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-30T10:13:45.590108+00:00",
+  "total_s": 486.282
+}

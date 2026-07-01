@@ -1,0 +1,77 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" ;
+    dc:source <http://bioinfo.vanderbilt.edu/AE/HACER/> .
+
+# Classes
+obo:SO_0000727 a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CRM .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:GenomicEntity a owl:Class ;
+    rdfs:label "Genomic Entity" .
+
+biolink:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+# Properties
+biolink:has_genomic_location a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:GenomicEntity .
+
+biolink:regulates_expression_of a owl:ObjectProperty ;
+    rdfs:label "regulates expression of" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:Gene ;
+    skos:closeMatch crm2pgene:regulates_expression_of .
+
+biolink:associated_with_disease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:Disease .
+
+biolink:interacts_with a owl:ObjectProperty ;
+    rdfs:label "interacts with" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:TranscriptionFactor .
+
+# Example Individuals
+hcrm:CRMHS00000129723 a obo:SO_0000727 ;
+    rdfs:label "CRMHS00000129723" ;
+    biolink:has_genomic_location [
+        a biolink:GenomicEntity ;
+        nuccore:chr7 "chr7" ;
+        sio:SIO_000300 "107495680"^^xsd:integer ;
+        sio:SIO_000301 "107496131"^^xsd:integer ;
+        assembly:GRCh38 "hg38"
+    ] ;
+    pubmed:30247654 "30247654" ;
+    biolink:associated_with_disease [] ;
+    biolink:regulates_expression_of [] ;
+    biolink:interacts_with [] .
+
+# Additional individuals and properties would be defined similarly
+```

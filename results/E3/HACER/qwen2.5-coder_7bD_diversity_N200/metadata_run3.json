@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-06-30T10:13:45.681978",
+  "success": true,
+  "elapsed_seconds": 117.69,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 768,
+    "total_tokens": 4863
+  },
+  "prompt_tokens_estimate": 4494,
+  "response_chars": 2052,
+  "turtle_chars": 2038,
+  "validation": {
+    "valid": false,
+    "error": "at line 22 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'01217> .\\n\\n# Define classes and properties based on the data\\n'^b'crm:CRM a owl:Class ;\\n    rdfs:label \"Cis-regulatory Module\"'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bD_diversity_N200/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bD_diversity_N200/response_raw_run3.txt"
+  }
+}

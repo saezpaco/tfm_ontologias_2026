@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-29T16:09:09.708665",
+  "success": true,
+  "elapsed_seconds": 137.25,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 969,
+    "total_tokens": 5064
+  },
+  "prompt_tokens_estimate": 3885,
+  "response_chars": 3450,
+  "turtle_chars": 3450,
+  "validation": {
+    "valid": true,
+    "n_triples": 52,
+    "n_classes": 2,
+    "n_properties": 11
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bC_stratified_N100/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bC_stratified_N100/response_raw_run1.txt"
+  }
+}

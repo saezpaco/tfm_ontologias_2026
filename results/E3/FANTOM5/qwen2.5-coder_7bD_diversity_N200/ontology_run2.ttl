@@ -1,0 +1,64 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+# Define new classes and properties
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+crm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" .
+
+crm:SNP a owl:Class ;
+    rdfs:label "Single Nucleotide Polymorphism" .
+
+crm:Assembly a owl:Class ;
+    rdfs:label "Assembly" .
+
+crm:PMID a owl:Class ;
+    rdfs:label "PubMed Identifier" .
+
+# Define properties
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:TranscriptionFactor ;
+    skos:exactMatch obo:GO_0003705 .
+
+crm:regulates a owl:ObjectProperty ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Gene ;
+    skos:exactMatch obo:GO_0006914 .
+
+crm:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain crm:Disease ;
+    rdfs:range crm:CisRegulatoryModule ;
+    skos:exactMatch obo:RO_0002337 .
+
+crm:containsSNP a owl:ObjectProperty ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:SNP ;
+    skos:exactMatch obo:GO_0006914 .
+
+crm:locatedInAssembly a owl:ObjectProperty ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Assembly ;
+    skos:exactMatch obo:RO_0002558 .
+
+crm:identifiedByPMID a owl:ObjectProperty ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:PMID ;
+    skos:exactMatch obo:RO_0002416 .

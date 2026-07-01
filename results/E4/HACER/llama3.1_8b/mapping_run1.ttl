@@ -1,0 +1,404 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://www.w3.org/TR/2011/PR-rdf-sparql-json-20111206#>.
+@prefix ex: <http://example.org/>.
+@prefix base: <http://example.org/base/>.
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:class;
+        rr:objectMap [
+            rr:parentTriplesMap <#ClassMapping>
+        ]
+    ].
+
+<#TriplesMapEntity2> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity2}}{FAIR_URI}";
+    ].
+
+<#ClassMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:class;
+        rr:objectMap [
+            rr:constant <http://example.org/Class>
+        ]
+    ].
+
+<#PropertyMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:Property;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#OriginalIDMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{OriginalID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:originalID;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#RefSNPIDMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{RefSNP}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:refSNP;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#ScoreMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Score}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:score;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#SourceMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Source}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:source;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#TypeMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Type}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#CurrentEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{CurrentEnd}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:currentEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#CurrentStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{CurrentStart}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:currentStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#OriginalStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{OriginalStart}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:originalStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#OriginalEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{OriginalEnd}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:originalEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasPMIDMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasPMID;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasMethodMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasBiosampleMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasCellLineMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasCellLine;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasGenomicCoordinateMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasGenomicCoordinate;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasChromosomeMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasChromosome;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasRefSNPMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasRefSNP;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasScoreMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasSourceMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasSource;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasTypeMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasCurrentEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasCurrentEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasCurrentStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasCurrentStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasOriginalEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasOriginalEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasOriginalStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasOriginalStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].

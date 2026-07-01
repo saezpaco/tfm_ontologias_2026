@@ -1,0 +1,95 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix greg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "ratioValue" ;
+    rdfs:comment "The ratio value of a genetic regulatory element." ;
+    rdfs:subClassOf xsd:float .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "scoreValue" ;
+    rdfs:comment "The score value of a genetic regulatory element." ;
+    rdfs:subClassOf xsd:float .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "startPosition" ;
+    rdfs:comment "The start position of a genetic regulatory element in the genome." ;
+    rdfs:subClassOf xsd:int .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "endPosition" ;
+    rdfs:comment "The end position of a genetic regulatory element in the genome." ;
+    rdfs:subClassOf xsd:int .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "hasTranscriptionFactor" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and its associated transcription factor." ;
+    rdfs:domain greg:Enhancer , greg:SuperEnhancer ;
+    rdfs:range greg:TranscriptionFactor .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "hasTargetGene" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and its associated target gene." ;
+    rdfs:domain greg:Enhancer , greg:SuperEnhancer ;
+    rdfs:range greg:TargetGene .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "associatedWithDisease" ;
+    rdfs:comment "A relationship between a genetic regulatory element and the disease it is associated with." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range greg:Disease .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "occursInCellLine" ;
+    rdfs:comment "A relationship between a genetic regulatory element and the cell line it occurs in." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range greg:CellLine .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "involvesMutation" ;
+    rdfs:comment "A relationship between a genetic regulatory element and the mutation it involves." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range greg:Mutation .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "GeneticRegulatoryElement" ;
+    rdfs:comment "A general class representing a genetic regulatory element." ;
+    rdfs:subClassOf owl:Thing .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing an enhancer." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    rdfs:comment "A subclass of Enhancer representing a superenhancer." ;
+    rdfs:subClassOf greg:Enhancer .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "TranscriptionFactor" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing a transcription factor." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "TargetGene" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing a target gene." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing a disease." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "CellLine" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing a cell line." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing a mutation." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-26T19:32:20.310238",
+  "success": true,
+  "elapsed_seconds": 13.62,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 388,
+    "completion_tokens": 1155,
+    "total_tokens": 1543
+  },
+  "prompt_tokens_estimate": 468,
+  "response_chars": 4342,
+  "turtle_chars": 4328,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':GenomicCoordinate a owl:Class ;\\n    skos:prefLabel \"Genomic'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oA_head_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oA_head_N25/response_raw_run1.txt"
+  }
+}

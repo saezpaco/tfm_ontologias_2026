@@ -1,0 +1,77 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/DiseaseEnhancerOntology>
+  a owl:Ontology ;
+  rdfs:label "Disease Enhancer Ontology" ;
+  skos:prefLabel "Disease Enhancer Ontology" ;
+  skos:definition "An ontology for describing disease-associated enhancers.".
+
+<owl:Class rdf:about="http://example.org/CrmEnhancer">
+  a owl:Class ;
+  rdfs:label "CrmEnhancer" ;
+  skos:prefLabel "CrmEnhancer" ;
+  skos:definition "A cis-regulatory module (CRM) that modulates the transcription rate of its target genes in the human genome.".
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/targets">
+  a owl:ObjectProperty ;
+  rdfs:label "targets" ;
+  skos:prefLabel "targets" ;
+  skos:definition "The gene(s) targeted by this enhancer." ;
+  obo:skos:exactMatch <obo:SO_0000163> .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/genomicCoordinate">
+  a owl:DatatypeProperty ;
+  rdfs:label "genomicCoordinate" ;
+  skos:prefLabel "genomicCoordinate" ;
+  skos:definition "The genomic coordinates of this enhancer." ;
+  obo:skos:exactMatch <obo:SO_0000164> .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/evidence">
+  a owl:ObjectProperty ;
+  rdfs:label "evidence" ;
+  skos:prefLabel "evidence" ;
+  skos:definition "The experimental evidence supporting the association of this enhancer with disease.".
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/evidencePMID">
+  a owl:DatatypeProperty ;
+  rdfs:label "evidencePMID" ;
+  skos:prefLabel "evidencePMID" ;
+  skos:definition "The PubMed ID of the study providing evidence for this enhancer's association with disease.".
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "associatedDisease" ;
+  skos:prefLabel "associatedDisease" ;
+  skos:definition "The disease(s) associated with this enhancer.".
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/associatedDiseasePMID">
+  a owl:DatatypeProperty ;
+  rdfs:label "associatedDiseasePMID" ;
+  skos:prefLabel "associatedDiseasePMID" ;
+  skos:definition "The PubMed ID of the study associating this enhancer with disease.".
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/interactingTF">
+  a owl:ObjectProperty ;
+  rdfs:label "interactingTF" ;
+  skos:prefLabel "interactingTF" ;
+  skos:definition "The transcription factors interacting with this enhancer.".
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/interactingTFPMID">
+  a owl:DatatypeProperty ;
+  rdfs:label "interactingTFPMID" ;
+  skos:prefLabel "interactingTFPMID" ;
+  skos:definition "The PubMed ID of the study describing the interaction between this enhancer and transcription factors.".
+</owl:DatatypeProperty>

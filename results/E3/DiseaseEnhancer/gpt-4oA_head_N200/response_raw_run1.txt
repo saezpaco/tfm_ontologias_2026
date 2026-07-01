@@ -1,0 +1,283 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer" ;
+    dc:description "Enhancers asociados a enfermedades" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+### Properties ###
+biolink:has_genomic_location a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:closeMatch <http://www.licpathway.net/ENdb/> .
+
+biolink:targets_gene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+biolink:associated_with_disease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+biolink:has_publication a owl:ObjectProperty ;
+    rdfs:label "has publication" ;
+    skos:closeMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+### Instances ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001594> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr5:125315470-125318494"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:LMNB1 ;
+    biolink:associated_with_disease doid:0060785, omim:169500 ;
+    biolink:has_publication pubmed:25701871 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001595> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr5:125372642-125374699"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:LMNB1 ;
+    biolink:associated_with_disease doid:0060785, omim:169500 ;
+    biolink:has_publication pubmed:25701871 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001596> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr5:126008814-126010550"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:LMNB1 ;
+    biolink:associated_with_disease doid:0060785, omim:169500 ;
+    biolink:has_publication pubmed:25701871 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001610> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr5:135433909-135436454"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:PITX1 ;
+    biolink:associated_with_disease omim:186550 ;
+    biolink:has_publication pubmed:23601627 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000002824> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr10:43086364-43087263"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:RET ;
+    biolink:associated_with_disease doid:10487, mesh:D006627 ;
+    biolink:has_publication pubmed:16269442 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005454> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr14:60506709-60508712"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:SIX6 ;
+    biolink:associated_with_disease omim:137760, doid:1070, mesh:D005902 ;
+    biolink:has_publication pubmed:28717659 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005707> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr8:128531703-128542048"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:MYC ;
+    biolink:associated_with_disease doid:0050939 ;
+    biolink:has_publication pubmed:26656844 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005745> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:105934-107935"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:SHH ;
+    biolink:associated_with_disease omim:174500 ;
+    biolink:has_publication pubmed:26382709 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005746> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:109250580-109282778"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:SORT1 ;
+    biolink:associated_with_disease doid:3393, mesh:D003327 ;
+    biolink:has_publication pubmed:26477595 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005747> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:1162962-1164962"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:associated_with_disease doid:1324, mesh:D008175, omim:211980 ;
+    biolink:has_publication pubmed:27374108 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005748> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:116553180-116566778"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:CD58 ;
+    biolink:associated_with_disease doid:2377, mesh:D009103 ;
+    biolink:has_publication pubmed:22396755 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005749> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:121369191-121371191"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:NOTCH2 ;
+    biolink:associated_with_disease mesh:D001943, doid:1612, omim:114480 ;
+    biolink:has_publication pubmed:21738711 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005753> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:162050179-162052179"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:NOS1AP ;
+    biolink:associated_with_disease doid:114, mesh:D006331 ;
+    biolink:has_publication pubmed:24857694 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005754> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:162050210-162052210"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:NOS1AP ;
+    biolink:associated_with_disease doid:114, mesh:D006331 ;
+    biolink:has_publication pubmed:24857694 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005755> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:181050666-181051664"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:MR1 ;
+    biolink:associated_with_disease doid:399, mesh:D014375 ;
+    biolink:has_publication pubmed:27881839 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005758> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:192564977-192566977"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:RGS1 ;
+    biolink:associated_with_disease doid:2986, mesh:D005922 ;
+    biolink:has_publication pubmed:27804980 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005760> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:209814457-209821455"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:IRF6 ;
+    biolink:associated_with_disease doid:9296, mesh:D002971, doid:674, mesh:D002972, doid:0050567 ;
+    biolink:has_publication pubmed:26030420, pubmed:18836445, pubmed:25910213 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005763> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:240848902-240849900"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:CDKN2A ;
+    biolink:associated_with_disease doid:3393, mesh:D003324 ;
+    biolink:has_publication pubmed:26487755 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005764> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:243469900-243478698"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:SDCCAG8 ;
+    biolink:associated_with_disease omim:181500, doid:5419, mesh:D012559 ;
+    biolink:has_publication pubmed:25453756 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005767> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:47315320-47316552"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:TAL1 ;
+    biolink:associated_with_disease doid:5603, mesh:D015458 ;
+    biolink:has_publication pubmed:26940867 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005769> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:92543645-92543843"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:GFI1 ;
+    biolink:associated_with_disease doid:2377, mesh:D009103 ;
+    biolink:has_publication pubmed:21602820 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005770> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:98029246-98037044"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:associated_with_disease omim:181500, doid:5419, mesh:D012559 ;
+    biolink:has_publication pubmed:25453756 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005771> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:98048983-98050983"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:MIR137 ;
+    biolink:associated_with_disease doid:3312, mesh:D001714, omim:181500, doid:5419 ;
+    biolink:has_publication pubmed:25434007 .
+```

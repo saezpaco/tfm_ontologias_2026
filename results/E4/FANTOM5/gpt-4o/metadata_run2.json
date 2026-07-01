@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/FANTOM5.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-03T23:04:54.671952+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.021,
+    "plan_s": 5.426,
+    "plan_chars": 4679,
+    "plan_prompt_chars": 9560,
+    "onto_s": 8.194,
+    "onto_chars": 9212,
+    "onto_prompt_chars": 13619,
+    "map_s": 7.397,
+    "map_chars": 7392,
+    "map_prompt_chars": 16560
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-03T23:05:15.711510+00:00",
+  "total_s": 21.038
+}

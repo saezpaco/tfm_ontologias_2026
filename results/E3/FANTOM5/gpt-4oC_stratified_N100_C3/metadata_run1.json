@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-07-01T09:44:32.197652",
+  "success": true,
+  "elapsed_seconds": 11.31,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7538,
+    "completion_tokens": 1066,
+    "total_tokens": 8604
+  },
+  "prompt_tokens_estimate": 3939,
+  "response_chars": 3436,
+  "turtle_chars": 3422,
+  "validation": {
+    "valid": false,
+    "error": "at line 74 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'ource <https://fantom.gsc.riken.jp/5/> ;\\n    pubmed:24670763'^b' .\\n\\n<http://rdf.biogateway.eu/fantom5/CRMHS00000122781> a bi'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_C3/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4oC_stratified_N100_C3/response_raw_run1.txt"
+  }
+}

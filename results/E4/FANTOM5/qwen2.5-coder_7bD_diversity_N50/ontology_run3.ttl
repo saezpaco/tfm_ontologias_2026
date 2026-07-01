@@ -1,0 +1,203 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "count" ;
+    rdfs:comment "Number of non-null values in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasCount ;
+        owl:someValuesFrom xsd:integer ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "max" ;
+    rdfs:comment "Maximum value in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasMax ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "mean" ;
+    rdfs:comment "Mean value of the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasMean ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "min" ;
+    rdfs:comment "Minimum value in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasMin ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "non_null_count" ;
+    rdfs:comment "Number of non-null values in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasNonNullCount ;
+        owl:someValuesFrom xsd:integer ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "std" ;
+    rdfs:comment "Standard deviation of the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasStd ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    rdfs:comment "Data type of the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasType ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "unique_count" ;
+    rdfs:comment "Number of unique values in the dataset." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasUniqueCount ;
+        owl:someValuesFrom xsd:integer ] .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasBlockCount" ;
+    rdfs:comment "Number of blocks in the genomic region." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasChromEnd" ;
+    rdfs:comment "End position of the chromosome." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasChromStart" ;
+    rdfs:comment "Start position of the chromosome." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasScore" ;
+    rdfs:comment "Score or significance of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:float .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasThickEnd" ;
+    rdfs:comment "End position of the thick part of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasThickStart" ;
+    rdfs:comment "Start position of the thick part of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:integer .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasBlockSizes" ;
+    rdfs:comment "Sizes of each block in the genomic region." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasBlockStarts" ;
+    rdfs:comment "Starting positions of each block in the genomic region." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasChrom" ;
+    rdfs:comment "Chromosome identifier." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasItemRgb" ;
+    rdfs:comment "RGB color code for visualization." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasName" ;
+    rdfs:comment "Name or identifier of the element." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasStrand" ;
+    rdfs:comment "Orientation of the element (positive/negative)." ;
+    rdfs:domain gr:GeneticElement ;
+    rdfs:range xsd:string .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "GeneticElement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+        owl:onProperty gr:hasBlockCount ;
+        owl:someValuesFrom xsd:integer ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasChromEnd ;
+        owl:someValuesFrom xsd:integer ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasChromStart ;
+        owl:someValuesFrom xsd:integer ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasScore ;
+        owl:someValuesFrom xsd:float ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasThickEnd ;
+        owl:someValuesFrom xsd:integer ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasThickStart ;
+        owl:someValuesFrom xsd:integer ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasBlockSizes ;
+        owl:someValuesFrom xsd:string ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasBlockStarts ;
+        owl:someValuesFrom xsd:string ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasChrom ;
+        owl:someValuesFrom xsd:string ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasItemRgb ;
+        owl:someValuesFrom xsd:string ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasName ;
+        owl:someValuesFrom xsd:string ] ,
+    [ a owl:Restriction ;
+        owl:onProperty gr:hasStrand ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:subClassOf gr:GeneticElement .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    rdfs:subClassOf gr:Enhancer .

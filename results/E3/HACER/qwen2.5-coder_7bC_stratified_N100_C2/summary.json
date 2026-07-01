@@ -1,0 +1,99 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 68.49666666666667,
+  "total_tokens": 13338,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-07-01T13:43:36.804257",
+      "success": true,
+      "elapsed_seconds": 67.5,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 351,
+        "total_tokens": 4446
+      },
+      "prompt_tokens_estimate": 3991,
+      "response_chars": 855,
+      "turtle_chars": 841,
+      "validation": {
+        "valid": true,
+        "n_triples": 3,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bC_stratified_N100_C2/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bC_stratified_N100_C2/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-07-01T13:44:47.523206",
+      "success": true,
+      "elapsed_seconds": 68.41,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 351,
+        "total_tokens": 4446
+      },
+      "prompt_tokens_estimate": 3991,
+      "response_chars": 855,
+      "turtle_chars": 841,
+      "validation": {
+        "valid": true,
+        "n_triples": 3,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bC_stratified_N100_C2/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bC_stratified_N100_C2/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-07-01T13:45:59.374799",
+      "success": true,
+      "elapsed_seconds": 69.58,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 351,
+        "total_tokens": 4446
+      },
+      "prompt_tokens_estimate": 3991,
+      "response_chars": 855,
+      "turtle_chars": 841,
+      "validation": {
+        "valid": true,
+        "n_triples": 3,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bC_stratified_N100_C2/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bC_stratified_N100_C2/response_raw_run3.txt"
+      }
+    }
+  ]
+}

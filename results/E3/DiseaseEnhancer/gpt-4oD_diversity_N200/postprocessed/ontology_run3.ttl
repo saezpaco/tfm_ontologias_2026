@@ -1,0 +1,99 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer Ontology" ;
+    dc:description "Ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Gene> a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Disease> a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/TranscriptionFactor> a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm2tfac:TranscriptionFactor .
+
+### Properties ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasGenomicCoordinate> a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:range xsd:string .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:range <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Gene> ;
+    skos:exactMatch crm2pgene:hasTargetGene .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:range <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Disease> ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:range <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/TranscriptionFactor> ;
+    skos:exactMatch crm2tfac:interactsWithTF .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasPMID> a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:range xsd:string .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasRefSeqID> a owl:DatatypeProperty ;
+    rdfs:label "has RefSeq ID" ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:range xsd:string .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasMutationID> a owl:DatatypeProperty ;
+    rdfs:label "has mutation ID" ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:range xsd:string .
+
+### Individuals ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685823> a <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Enhancer> ;
+    rdfs:label "CRMHS00027685823" ;
+    <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasGenomicCoordinate> "chr1:155217211-155226809" ;
+    <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasTargetGene> <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CKS1B> ;
+    <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/associatedWithDisease> mesh:D051436 ;
+    <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasPMID> pubmed:29093029 ;
+    <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasRefSeqID> "rs2049805" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CKS1B> a <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Gene> ;
+    rdfs:label "CKS1B" .
+
+mesh:D051436 a <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Disease> ;
+    rdfs:label "Disease associated with CKS1B" .
+
+pubmed:29093029 a owl:NamedIndividual ;
+    rdfs:label "PMID 29093029" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/rs2049805> a owl:NamedIndividual ;
+    rdfs:label "RefSeq ID rs2049805" .

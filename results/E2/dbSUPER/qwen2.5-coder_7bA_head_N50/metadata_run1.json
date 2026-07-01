@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-27T19:59:06.172263",
+  "success": true,
+  "elapsed_seconds": 129.59,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3103,
+    "completion_tokens": 1136,
+    "total_tokens": 4239
+  },
+  "prompt_tokens_estimate": 1604,
+  "response_chars": 3892,
+  "turtle_chars": 3878,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm:SuperEnhancer a owl:Class ;\\n    rdfs:label \"Super-enhanc'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bA_head_N50/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bA_head_N50/response_raw_run1.txt"
+  }
+}

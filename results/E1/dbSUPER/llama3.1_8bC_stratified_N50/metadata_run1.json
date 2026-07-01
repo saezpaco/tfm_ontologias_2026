@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-26T23:14:11.559941",
+  "success": true,
+  "elapsed_seconds": 1027.62,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 1847,
+    "completion_tokens": 8192,
+    "total_tokens": 10039
+  },
+  "prompt_tokens_estimate": 1257,
+  "response_chars": 31226,
+  "turtle_chars": 31226,
+  "validation": {
+    "valid": false,
+    "error": "Quote expected in string at ^ in \n  skos:definition \"^A gene regulated"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bC_stratified_N50/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bC_stratified_N50/response_raw_run1.txt"
+  }
+}

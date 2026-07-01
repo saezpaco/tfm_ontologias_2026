@@ -1,0 +1,120 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology rdf:about "http://example.com/crm_enhancers" ;
+    rdfs:label "Cis-Regulatory Module Enhancers" ;
+    rdfs:comment "An ontology for cis-regulatory modules, specifically enhancer sequences identified by CAGE-seq." ;
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that modulates the transcription rate of target genes in the human genome." ;
+    rdfs:subClassOf obo:SIO_010245 ;  # Biological Region
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate that specifies a location within the genome." ;
+
+crm:Chromosome a owl:Class ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "One of the structures in eukaryotic cells containing DNA and associated proteins." ;
+    rdfs:subClassOf obo:SIO_010245 ;  # Biological Region
+
+crm:Start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+
+crm:End a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+
+crm:Name a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Name" ;
+    skos:definition "A unique identifier for the enhancer." ;
+
+crm:Score a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Score" ;
+    skos:definition "A measure of the activity or significance of the enhancer." ;
+
+crm:Strand a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Strand" ;
+    skos:definition "The directionality of the genomic coordinate (e.g., +, -)." ;
+
+crm:ThickStart a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Thick Start" ;
+    skos:definition "The starting position of the thick region." ;
+
+crm:ThickEnd a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Thick End" ;
+    skos:definition "The ending position of the thick region." ;
+
+crm:ItemRgb a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Item RGB" ;
+    skos:definition "A color code for the genomic coordinate." ;
+
+crm:BlockCount a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Block Count" ;
+    skos:definition "The number of blocks in the genomic coordinate." ;
+
+crm:BlockSize a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Block Size" ;
+    skos:definition "The size of each block in the genomic coordinate." ;
+
+crm:BlockStart a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Block Start" ;
+    skos:definition "The starting position of each block in the genomic coordinate." ;
+
+crm:CellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 ;  # Cell Line
+    skos:prefLabel "Cell Line Activity" ;
+    skos:definition "The cell line in which the enhancer is active." ;
+
+crm:TargetGene a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 ;  # Gene
+    skos:prefLabel "Target Gene" ;
+    skos:definition "The gene that is modulated by the enhancer." ;
+
+crm:Disease a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:MONDO_0016394 ;  # Disease
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with the enhancer." ;
+
+crm:TranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 ;  # Transcription Factor
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor that interacts with the enhancer." ;
+
+crm:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Has Genomic Coordinate" ;
+    skos:definition "The genomic coordinate of the enhancer." ;

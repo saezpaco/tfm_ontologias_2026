@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-26T19:25:47.551983",
+  "success": true,
+  "elapsed_seconds": 9.28,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1749,
+    "completion_tokens": 908,
+    "total_tokens": 2657
+  },
+  "prompt_tokens_estimate": 1123,
+  "response_chars": 3151,
+  "turtle_chars": 3151,
+  "validation": {
+    "valid": false,
+    "error": "at line 11 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'example.org/ontology/FANTOM5> a owl:Ontology .\\n\\n### Classes\\n'^b':Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n    '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oD_diversity_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oD_diversity_N25/response_raw_run1.txt"
+  }
+}

@@ -1,0 +1,172 @@
+```ttl
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/GeneticElement/{{cell_name}}_{{chrom}}_{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:chromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate ge:genomicStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGenomicStart>;
+        ]
+    ],
+    [
+        rr:predicate ge:genomicStop;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGenomicStop>;
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/Enhancer/{{se_id}}_{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:rankScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRankScore>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasCellLine;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasCellLine>;
+        ]
+    ],
+    [
+        rr:predicate ge:targetsGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetsGene>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/SuperEnhancer/{{se_id}}_{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:rankScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRankScore>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasCellLine;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasCellLine>;
+        ]
+    ],
+    [
+        rr:predicate ge:targetsGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetsGene>;
+        ]
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/CellLine/{{cell_name}}_{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/TargetGene/{{gene_symbol}}_{FAIR_URI}";
+    ].
+
+<#TriplesMapChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:chromosomeNumber;
+        rr:objectMap [
+            rr:constant ?chrom;
+        ]
+    ].
+
+<#TriplesMapGenomicStart> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:genomicStart;
+        rr:objectMap [
+            rr:constant ?start;
+        ]
+    ].
+
+<#TriplesMapGenomicStop> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:genomicStop;
+        rr:objectMap [
+            rr:constant ?stop;
+        ]
+    ].
+
+<#TriplesMapRankScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:rankScore;
+        rr:objectMap [
+            rr:constant ?rank;
+        ]
+    ].
+
+<#TriplesMapHasCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasCellLine;
+        rr:objectMap [
+            rr:template "https://genetic_regulatory_elements.com/CellLine/{{cell_name}}_{FAIR_URI}";
+        ]
+    ].
+
+<#TriplesMapTargetsGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:targetsGene;
+        rr:objectMap [
+            rr:template "https://genetic_regulatory_elements.com/TargetGene/{{gene_symbol}}_{FAIR_URI}";
+        ]
+    ].
+```

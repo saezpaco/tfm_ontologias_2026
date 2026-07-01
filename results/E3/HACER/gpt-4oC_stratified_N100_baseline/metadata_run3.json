@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-07-01T09:49:27.893806",
+  "success": true,
+  "elapsed_seconds": 12.43,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 8341,
+    "completion_tokens": 1028,
+    "total_tokens": 9369
+  },
+  "prompt_tokens_estimate": 4471,
+  "response_chars": 3209,
+  "turtle_chars": 3194,
+  "validation": {
+    "valid": false,
+    "error": "at line 28 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oC_stratified_N100_baseline/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oC_stratified_N100_baseline/response_raw_run3.txt"
+  }
+}

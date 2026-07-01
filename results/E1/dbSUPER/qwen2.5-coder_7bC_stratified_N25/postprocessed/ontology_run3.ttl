@@ -1,0 +1,114 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology rdf:about "http://example.com/dbSUPER" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for dbSUPER database containing information about cis-regulatory modules (CRM), specifically enhancer sequences." ;
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that modulates the transcription rate of target genes in the human genome." ;
+    rdfs:subClassOf obo:SO_0001217 ;  # Transcriptional regulation
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate representing a specific location in the genome." ;
+
+crm:Chromosome a owl:Class ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "One of the structures within a eukaryotic cell that contains DNA and is capable of replicating itself during cell division." ;
+    rdfs:subClassOf obo:SO_0001219 ;  # Chromosome
+
+crm:StartCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+crm:StopCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    skos:prefLabel "Stop Coordinate" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+crm:ExperimentEvidence a owl:Class ;
+    skos:prefLabel "Experimental Evidence" ;
+    skos:definition "Data or results from experiments that support the existence and function of an enhancer." ;
+
+crm:CellLineActivity a owl:Class ;
+    skos:prefLabel "Cell Line Activity" ;
+    skos:definition "The biological activity observed in specific cell lines when exposed to enhancers." ;
+
+crm:TargetGene a owl:Class ;
+    skos:prefLabel "Target Gene" ;
+    skos:definition "A gene whose transcription rate is modulated by an enhancer." ;
+    rdfs:subClassOf obo:SO_0001217 ;  # Transcriptional regulation
+
+crm:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A condition affecting the normal functioning of any part, organ, or system of an organism." ;
+    rdfs:subClassOf obo:GO_0043226 ;  # Disease
+
+crm:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to DNA and regulates the transcription of genes." ;
+    rdfs:subClassOf obo:SO_0001217 ;  # Transcriptional regulation
+
+crm:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "Has Genomic Coordinate" ;
+    skos:definition "The relationship between an enhancer and its genomic coordinate." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate .
+
+crm:hasExperimentEvidence a owl:ObjectProperty ;
+    skos:prefLabel "Has Experimental Evidence" ;
+    skos:definition "The relationship between an enhancer and the experimental evidence supporting it." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:ExperimentEvidence ;
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    skos:prefLabel "Has Cell Line Activity" ;
+    skos:definition "The relationship between an enhancer and the cell line activity it exhibits." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:CellLineActivity ;
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "Has Target Gene" ;
+    skos:definition "The relationship between an enhancer and the gene it targets." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:TargetGene ;
+
+crm:hasDisease a owl:ObjectProperty ;
+    skos:prefLabel "Has Disease" ;
+    skos:definition "The relationship between an enhancer and the disease it is associated with." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Disease ;
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "Has Transcription Factor" ;
+    skos:definition "The relationship between an enhancer and the transcription factor it interacts with." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:TranscriptionFactor ;
+
+crm:chromosome a owl:ObjectProperty ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "The chromosome on which the enhancer is located." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range crm:Chromosome .
+
+crm:startCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+crm:stopCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    skos:prefLabel "Stop Coordinate" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer .

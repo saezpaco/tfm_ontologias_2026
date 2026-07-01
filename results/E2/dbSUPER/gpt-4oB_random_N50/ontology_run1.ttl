@@ -1,0 +1,78 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of a cis-regulatory module." .
+
+:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line in which the super-enhancer is active." .
+
+### Object Properties ###
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+:activeInCellLine a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :CellLine ;
+    skos:prefLabel "Active in Cell Line" ;
+    skos:definition "The cell line in which the CRM is active." .
+
+### Datatype Properties ###
+:chromosome a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome name where the CRM is located." .
+
+:startPosition a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "Start position of the CRM on the chromosome." .
+
+:endPosition a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Position" ;
+    skos:definition "End position of the CRM on the chromosome." .
+
+:rank a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Rank" ;
+    skos:definition "Rank of the super-enhancer based on its activity." .
+
+### Instances ###
+:SE_01932 a :CRM ;
+    :chromosome "chr16" ;
+    :startPosition 72866815 ;
+    :endPosition 72895386 ;
+    :rank 400 ;
+    :hasTargetGene :ZFHX3 ;
+    :activeInCellLine :Aorta .
+
+:ZFHX3 a :Gene ;
+    skos:prefLabel "ZFHX3" .
+
+:Aorta a :CellLine ;
+    skos:prefLabel "Aorta" .
+
+# Additional instances would follow the same pattern for each row in the sample data.

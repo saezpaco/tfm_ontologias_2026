@@ -1,0 +1,66 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:CRM a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    rdfs:subClassOf obo:SO_0001856 .
+
+crm:hasChromosome a owl:ObjectProperty ;
+    rdfs:label "has chromosome" ;
+    skos:prefLabel "chr_name" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string .
+
+crm:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:label "has start position" ;
+    skos:prefLabel "start_position" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer .
+
+crm:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:label "has end position" ;
+    skos:prefLabel "end_position" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer .
+
+crm:isLocatedInGRCh38 a owl:ObjectProperty ;
+    rdfs:label "is located in GRCh38" ;
+    skos:prefLabel "GRCh38" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0100572 .
+
+crm:hasDatabase a owl:ObjectProperty ;
+    rdfs:label "has database" ;
+    skos:prefLabel "database_name" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string .
+
+crm:isAssociatedWithGene a owl:ObjectProperty ;
+    rdfs:label "is associated with gene" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 .
+
+crm:isAssociatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "is associated with disease" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:DOID .
+
+crm:isAssociatedWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "is associated with transcription factor" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "Transcription Factor" .
+```

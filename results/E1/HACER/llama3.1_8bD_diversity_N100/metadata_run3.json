@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-29T08:09:30.263187",
+  "success": true,
+  "elapsed_seconds": 116.42,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 631,
+    "total_tokens": 4726
+  },
+  "prompt_tokens_estimate": 3544,
+  "response_chars": 2191,
+  "turtle_chars": 2191,
+  "validation": {
+    "valid": false,
+    "error": "at line 30 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'.org/crm-enhancer>\\n  <http://example.org/genomic-coordinate>'^b' \\n    a owl:ObjectProperty ;\\n    rdfs:label \"Located At\"^^xs'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bD_diversity_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8bD_diversity_N100/response_raw_run3.txt"
+  }
+}

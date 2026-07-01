@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 721.3566666666667,
+  "total_tokens": 30495,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-27T20:15:28.845438",
+      "success": true,
+      "elapsed_seconds": 706.88,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 1973,
+        "completion_tokens": 8192,
+        "total_tokens": 10165
+      },
+      "prompt_tokens_estimate": 1235,
+      "response_chars": 19293,
+      "turtle_chars": 19283,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'is-regulatory modules, specifically enhancer sequences.\" ;\\n\\n'^b'crm:CRM a owl:Class ;\\n    skos:prefLabel \"Cis-Regulatory Mod'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bB_random_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bB_random_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-27T20:27:57.972784",
+      "success": true,
+      "elapsed_seconds": 748.07,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 1973,
+        "completion_tokens": 8192,
+        "total_tokens": 10165
+      },
+      "prompt_tokens_estimate": 1235,
+      "response_chars": 19293,
+      "turtle_chars": 19283,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'is-regulatory modules, specifically enhancer sequences.\" ;\\n\\n'^b'crm:CRM a owl:Class ;\\n    skos:prefLabel \"Cis-Regulatory Mod'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bB_random_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bB_random_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-27T20:39:48.142784",
+      "success": true,
+      "elapsed_seconds": 709.12,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 1973,
+        "completion_tokens": 8192,
+        "total_tokens": 10165
+      },
+      "prompt_tokens_estimate": 1235,
+      "response_chars": 19293,
+      "turtle_chars": 19283,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'is-regulatory modules, specifically enhancer sequences.\" ;\\n\\n'^b'crm:CRM a owl:Class ;\\n    skos:prefLabel \"Cis-Regulatory Mod'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bB_random_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bB_random_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

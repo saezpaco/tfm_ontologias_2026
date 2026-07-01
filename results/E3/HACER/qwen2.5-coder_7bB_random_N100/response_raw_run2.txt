@@ -1,0 +1,34 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://www.licpathway.net/ENdb/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/bgw!> .
+@prefix assembly:<http://purl.obolibrary.org/obo/GENO_0000847> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/bgw!> .
+@prefix id_pubmed:<http://purl.obolibrary.org/obo/PUBMED_ID> .
+@prefix id_ncbigene:<http://identifiers.org/ncbi.gene> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/SO_0001217> .
+
+# Example of how to map data to ontology classes and properties
+:example_crm a obo:SO_0000727 ;
+    hcrm:orig_end "end_position"^^xsd:string ;
+    hcrm:current_end "new_end_position"^^xsd:string ;
+    crm2pgene:hgnc_symbol_target_genes <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> ;
+    hcrm:crm_ID "CRM_ID"^^xsd:string ;
+    hcrm:biosample_name "sample_name"^^xsd:string ;
+    crm2pgene:disease_PMID <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> ;
+    hcrm:orig_chr "original_chromosome"^^xsd:string ;
+    hcrm:current_chr "new_chromosome"^^xsd:string .
+
+# Additional mappings can be added following the same pattern
+```

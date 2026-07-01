@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-06-30T09:36:04.862759",
+  "success": true,
+  "elapsed_seconds": 108.07,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 806,
+    "total_tokens": 4901
+  },
+  "prompt_tokens_estimate": 4430,
+  "response_chars": 2150,
+  "turtle_chars": 2136,
+  "validation": {
+    "valid": false,
+    "error": "at line 22 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'\\n# Example of how to reuse cisreg URIs with skos:exactMatch\\n'^b'crm_ID rdfs:label \"CRM\" ;\\n        skos:exactMatch obo:SO_000'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bA_head_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bA_head_N100/response_raw_run3.txt"
+  }
+}

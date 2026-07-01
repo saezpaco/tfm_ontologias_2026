@@ -1,0 +1,57 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+# Define new classes and properties
+crm2phen:CRM .
+crm2phen:Disease .
+crm2phen:Biosample .
+crm2phen:Gene .
+crm2phen:TranscriptionFactor .
+crm2phen:CisRegulatoryElement .
+
+# Define relationships
+crm2phen:hasDisease rdf:type owl:ObjectProperty ;
+                    rdfs:domain crm2phen:CRM ;
+                    rdfs:range crm2phen:Disease .
+
+crm2phen:hasBiosample rdf:type owl:ObjectProperty ;
+                      rdfs:domain crm2phen:CRM ;
+                      rdfs:range crm2phen:Biosample .
+
+crm2phen:containsGene rdf:type owl:ObjectProperty ;
+                        rdfs:domain crm2phen:CisRegulatoryElement ;
+                        rdfs:range crm2phen:Gene .
+
+crm2phen:regulatesTranscriptionFactor rdf:type owl:ObjectProperty ;
+                                       rdfs:domain crm2phen:CisRegulatoryElement ;
+                                       rdfs:range crm2phen:TranscriptionFactor .
+
+# Align with cisreg URIs
+crm2phen:Disease skos:exactMatch obo:DOID_1682 .
+crm2phen:Biosample skos:closeMatch obo:SO_0000745 .
+crm2phen:Gene skos:closeMatch obo:NCIT_C13987 .
+crm2phen:TranscriptionFactor skos:exactMatch obo:GO_0003674 .
+crm2phen:CisRegulatoryElement skos:exactMatch obo:SO_0001566 .
+
+# Example instances
+crm2phen:ExampleCRM rdf:type crm2phen:CRM ;
+                    crm2phen:hasDisease <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> ;
+                    crm2phen:hasBiosample <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+crm2phen:ExampleGene rdf:type crm2phen:Gene ;
+                     rdfs:label "TBX5" ;
+                     crm2phen:containsIn crm2phen:ExampleCRM .
+
+crm2phen:ExampleTranscriptionFactor rdf:type crm2phen:TranscriptionFactor ;
+                                     rdfs:label "TF1" ;
+                                     crm2phen:regulatesIn crm2phen:ExampleCRM .
+```

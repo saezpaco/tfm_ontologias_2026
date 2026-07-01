@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-26T19:31:11.455812",
+  "success": true,
+  "elapsed_seconds": 8.99,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1167,
+    "completion_tokens": 737,
+    "total_tokens": 1904
+  },
+  "prompt_tokens_estimate": 913,
+  "response_chars": 2595,
+  "turtle_chars": 2595,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':SuperEnhancer a owl:Class ;\\n    skos:prefLabel \"Super Enhan'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oD_diversity_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oD_diversity_N25/response_raw_run1.txt"
+  }
+}

@@ -1,0 +1,91 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+<owl:Class rdf:about="http://example.org/CRM">
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module (CRM)" ;
+  skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression" .
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/GenomicCoordinate">
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/targets">
+  a owl:ObjectProperty ;
+  rdfs:label "targets" ;
+  skos:prefLabel "targets" ;
+  skos:definition "The gene(s) regulated by this CRM" ;
+  obo:skos:exactMatch <obo:SO_0000163> .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/chrom">
+  a owl:DatatypeProperty ;
+  rdfs:label "chrom" ;
+  skos:prefLabel "chrom" ;
+  skos:definition "The chromosome on which this CRM is located" ;
+  obo:skos:exactMatch <obo:SO_0000162> .
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/chromStart">
+  a owl:DatatypeProperty ;
+  rdfs:label "chromStart" ;
+  skos:prefLabel "chromStart" ;
+  skos:definition "The start of the genomic coordinate for this CRM" .
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/chromEnd">
+  a owl:DatatypeProperty ;
+  rdfs:label "chromEnd" ;
+  skos:prefLabel "chromEnd" ;
+  skos:definition "The end of the genomic coordinate for this CRM" .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/evidence">
+  a owl:ObjectProperty ;
+  rdfs:label "evidence" ;
+  skos:prefLabel "evidence" ;
+  skos:definition "The experimental evidence supporting the existence of this CRM" .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactor">
+  a owl:Class ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to DNA and regulates gene expression" .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/interactsWith">
+  a owl:ObjectProperty ;
+  rdfs:label "interactsWith" ;
+  skos:prefLabel "interactsWith" ;
+  skos:definition "The transcription factor(s) that interact with this CRM" .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Disease">
+  a owl:Class ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "A medical condition caused by genetic or environmental factors" .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "associatedWith" ;
+  skos:prefLabel "associatedWith" ;
+  skos:definition "The disease(s) associated with this CRM" .
+</owl:ObjectProperty>

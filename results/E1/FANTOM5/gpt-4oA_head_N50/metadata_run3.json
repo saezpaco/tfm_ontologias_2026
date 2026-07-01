@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-26T19:23:37.390356",
+  "success": true,
+  "elapsed_seconds": 9.48,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2917,
+    "completion_tokens": 951,
+    "total_tokens": 3868
+  },
+  "prompt_tokens_estimate": 1562,
+  "response_chars": 3154,
+  "turtle_chars": 3154,
+  "validation": {
+    "valid": false,
+    "error": "at line 19 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'//purl.obolibrary.org/obo/SO_0000165> .\\n\\n### Properties ###\\n'^b':hasChromosome a owl:DatatypeProperty ;\\n    rdfs:domain obo:'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oA_head_N50/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oA_head_N50/response_raw_run3.txt"
+  }
+}

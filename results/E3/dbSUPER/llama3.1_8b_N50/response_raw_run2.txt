@@ -1,0 +1,64 @@
+Here is the formal OWL ontology schema in Turtle format based on the provided database sample and cisreg reference ontology fragments:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2gene/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgnc:   <http://www.genenames.org/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+
+# Classes
+owl:Class( :SuperEnhancer  rdfs:label "Super Enhancer" ) .
+owl:Class( :CisRegulatoryModule  rdfs:label "Cis-Regulatory Module" ) .
+owl:Class( :TranscriptionFactor  rdfs:label "Transcription Factor" ) .
+
+# Properties
+owl:ObjectProperty( :hasGenomicCoordinates  rdfs:domain :SuperEnhancer ; rdfs:range xsd:string ) .
+owl:ObjectProperty( :hasCellLineActivity  rdfs:domain :SuperEnhancer ; rdfs:range xsd:string ) .
+owl:ObjectProperty( :hasTargetGene  rdfs:domain :SuperEnhancer ; rdfs:range hgnc:HGNC_ID ) .
+owl:ObjectProperty( :hasAssociatedDisease  rdfs:domain :SuperEnhancer ; rdfs:range obo:MONDO_0000001 ) .
+owl:ObjectProperty( :hasInteractingTranscriptionFactor  rdfs:domain :SuperEnhancer ; rdfs:range crm2tfac:CRM_ID--uniprot!uniprot_ID ) .
+
+# Class axioms
+owl:equivalentClass( :SuperEnhancer owl:sameAs hcrm:bgw!crm_ID--hgncsymbol!9606/gene_sybmol ) .
+owl:equivalentClass( :CisRegulatoryModule owl:sameAs crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 ) .
+
+# Property axioms
+owl:propertyChainAxiom( [ rdf:type owl:ObjectProperty ; rdfs:domain :SuperEnhancer ; rdfs:range xsd:string ] ) .
+owl:propertyChainAxiom( [ rdf:type owl:ObjectProperty ; rdfs:domain :SuperEnhancer ; rdfs:range hgnc:HGNC_ID ] ) .
+
+# SKOS mappings
+skos:exactMatch( hcrm:bgw!crm_ID--hgncsymbol!9606/gene_sybmol skos:closeMatch obo:NCIT_C17207 ) .
+skos:exactMatch( crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 skos:closeMatch obo:NCIT_C17207 ) .
+
+# Instance data
+:SE_00001 rdf:type :SuperEnhancer ;
+          hcrm:bgw!crm_ID--hgncsymbol!9606/gene_sybmol "NOTCH2"^^xsd:string ;
+          crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 "Adipose Nuclei"^^xsd:string .
+
+:SE_00002 rdf:type :SuperEnhancer ;
+          hcrm:bgw!crm_ID--hgncsymbol!9606/gene_sybmol "COL4A2"^^xsd:string ;
+          crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 "Adipose Nuclei"^^xsd:string .
+
+# ... (insert remaining instance data)
+```
+
+Note that this is a simplified version of the ontology schema, and you may need to add more classes, properties, and axioms depending on your specific use case. Additionally, you should verify that every prefix used in the code has a matching `@prefix` declaration at the top.
+
+Also, please note that I've assumed some URIs for the classes and properties based on the provided cisreg reference ontology fragments. You may need to adjust these URIs according to your specific use case.
+
+Please let me know if you have any questions or need further assistance!

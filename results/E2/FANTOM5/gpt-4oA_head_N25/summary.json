@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 11.906666666666666,
+  "total_tokens": 9773,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:42:16.110669",
+      "success": true,
+      "elapsed_seconds": 8.89,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2056,
+        "completion_tokens": 1203,
+        "total_tokens": 3259
+      },
+      "prompt_tokens_estimate": 1386,
+      "response_chars": 4261,
+      "turtle_chars": 4247,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ed by CAGE-seq in the FANTOM5 database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oA_head_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oA_head_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:42:30.486252",
+      "success": true,
+      "elapsed_seconds": 13.34,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2056,
+        "completion_tokens": 1200,
+        "total_tokens": 3256
+      },
+      "prompt_tokens_estimate": 1386,
+      "response_chars": 4227,
+      "turtle_chars": 4213,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ed by CAGE-seq in the FANTOM5 database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oA_head_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oA_head_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:42:45.021471",
+      "success": true,
+      "elapsed_seconds": 13.49,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2056,
+        "completion_tokens": 1202,
+        "total_tokens": 3258
+      },
+      "prompt_tokens_estimate": 1386,
+      "response_chars": 4241,
+      "turtle_chars": 4227,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ed by CAGE-seq in the FANTOM5 database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oA_head_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oA_head_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "experiment": "E2",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 7.053333333333334,
+  "total_tokens": 23689,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T21:45:20.472969",
+      "success": true,
+      "elapsed_seconds": 6.58,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 7026,
+        "completion_tokens": 933,
+        "total_tokens": 7959
+      },
+      "prompt_tokens_estimate": 3879,
+      "response_chars": 3022,
+      "turtle_chars": 3022,
+      "validation": {
+        "valid": true,
+        "n_triples": 40,
+        "n_classes": 4,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oA_head_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oA_head_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T21:45:27.263174",
+      "success": true,
+      "elapsed_seconds": 5.75,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 7026,
+        "completion_tokens": 768,
+        "total_tokens": 7794
+      },
+      "prompt_tokens_estimate": 3879,
+      "response_chars": 2756,
+      "turtle_chars": 2756,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'e of enhancers associated with diseases\" .\\n\\n### Classes ###\\n'^b':CRM rdf:type owl:Class ;\\n    skos:prefLabel \"Cis-regulatory'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oA_head_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oA_head_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T21:45:37.132518",
+      "success": true,
+      "elapsed_seconds": 8.83,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 7026,
+        "completion_tokens": 910,
+        "total_tokens": 7936
+      },
+      "prompt_tokens_estimate": 3879,
+      "response_chars": 3159,
+      "turtle_chars": 3159,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'e of enhancers associated with diseases\" .\\n\\n### Classes ###\\n'^b':CRM rdf:type owl:Class ;\\n    skos:prefLabel \"Cis-regulatory'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oA_head_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oA_head_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,745 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER#CRM>
+  a owl:Class ;
+  rdfs:label "cis-regulatory module"^^xsd:string ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A region of DNA that modulates the transcription rate of its target genes." ;
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "genomic coordinate"^^xsd:string ;
+  skos:prefLabel "chromosome position" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+
+<http://example.org/dbSUPER#hasStart>
+  a owl:ObjectProperty ;
+  rdfs:label "start position"^^xsd:string ;
+  skos:prefLabel "chromosome start" ;
+  skos:definition "The starting position of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasStop>
+  a owl:ObjectProperty ;
+  rdfs:label "stop position"^^xsd:string ;
+  skos:prefLabel "chromosome end" ;
+  skos:definition "The ending position of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellLine>
+  a owl:ObjectProperty ;
+  rdfs:label "cell line"^^xsd:string ;
+  skos:prefLabel "cell type" ;
+  skos:definition "The cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:CL .
+
+<http://example.org/dbSUPER#hasGene>
+  a owl:ObjectProperty ;
+  rdfs:label "target gene"^^xsd:string ;
+  skos:prefLabel "regulated gene" ;
+  skos:definition "The gene whose transcription is modulated by the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:SO .
+
+<http://example.org/dbSUPER#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "experimental evidence"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The type of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDisease>
+  a owl:ObjectProperty ;
+  rdfs:label "associated disease"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "interacting transcription factor"^^xsd:string ;
+  skos:prefLabel "transcription factor interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRank>
+  a owl:ObjectProperty ;
+  rdfs:label "rank"^^xsd:string ;
+  skos:prefLabel "enhancer rank" ;
+  skos:definition "The rank of the enhancer in the super-enhancer list." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbol>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosome>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:CHROM .
+
+<http://example.org/dbSUPER#hasCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceType>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence type"^^xsd:string ;
+  skos:prefLabel "evidence category" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseAssociation>
+  a owl:ObjectProperty ;
+  rdfs:label "disease association"^^xsd:string ;
+  skos:prefLabel "disease link" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTranscriptionFactorInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasCoordinateValue>
+  a owl:ObjectProperty ;
+  rdfs:label "coordinate value"^^xsd:string ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A pair of integers representing the start and end positions of a genomic region." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasEvidenceCategory>
+  a owl:ObjectProperty ;
+  rdfs:label "evidence category"^^xsd:string ;
+  skos:prefLabel "evidence type" ;
+  skos:definition "The category of experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:EVID .
+
+<http://example.org/dbSUPER#hasDiseaseLink>
+  a owl:ObjectProperty ;
+  rdfs:label "disease link"^^xsd:string ;
+  skos:prefLabel "disease association" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:DISEASE .
+
+<http://example.org/dbSUPER#hasTFInteraction>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription factor interaction"^^xsd:string ;
+  skos:prefLabel "TF interaction" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range obo:TF .
+
+<http://example.org/dbSUPER#hasRankValue>
+  a owl:ObjectProperty ;
+  rdfs:label "rank value"^^xsd:string ;
+  skos:prefLabel "enhancer rank value" ;
+  skos:definition "The numerical value of the enhancer's rank." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#hasCellTypeName>
+  a owl:ObjectProperty ;
+  rdfs:label "cell type name"^^xsd:string ;
+  skos:prefLabel "cell type name" ;
+  skos:definition "The name of the cell type in which the enhancer is active." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasGeneSymbolValue>
+  a owl:ObjectProperty ;
+  rdfs:label "gene symbol value"^^xsd:string ;
+  skos:prefLabel "regulated gene symbol" ;
+  skos:definition "The symbol of the target gene." ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string .
+
+<http://example.org/dbSUPER#hasChromosomeName>
+  a owl:ObjectProperty ;
+  rdfs:label "chromosome name"^^xsd:string ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain

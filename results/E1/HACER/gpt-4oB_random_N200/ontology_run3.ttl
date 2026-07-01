@@ -1,0 +1,103 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:HACER_CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory Module" ;
+    skos:definition "A genomic region that regulates the expression of a target gene, often an enhancer." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome defined by a start and end position." .
+
+obo:ExperimentalEvidence a owl:Class ;
+    skos:prefLabel "Experimental Evidence" ;
+    skos:definition "Evidence obtained from experimental methods supporting the existence or function of a biological entity." .
+
+obo:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch obo:SO_0000704 .
+
+obo:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to specific DNA sequences, thereby controlling the rate of transcription of genetic information." ;
+    skos:exactMatch obo:GO_0003700 .
+
+obo:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms." ;
+    skos:exactMatch obo:DOID_4 .
+
+# Object Properties
+obo:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates a CRM to its genomic coordinates." ;
+    rdfs:domain obo:HACER_CRM ;
+    rdfs:range obo:GenomicCoordinate .
+
+obo:hasEvidence a owl:ObjectProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Relates a CRM to the experimental evidence supporting its function." ;
+    rdfs:domain obo:HACER_CRM ;
+    rdfs:range obo:ExperimentalEvidence .
+
+obo:targetsGene a owl:ObjectProperty ;
+    skos:prefLabel "targets gene" ;
+    skos:definition "Relates a CRM to the gene it regulates." ;
+    rdfs:domain obo:HACER_CRM ;
+    rdfs:range obo:Gene .
+
+obo:interactsWithTF a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates a CRM to a transcription factor that interacts with it." ;
+    rdfs:domain obo:HACER_CRM ;
+    rdfs:range obo:TranscriptionFactor .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a CRM to a disease it is associated with." ;
+    rdfs:domain obo:HACER_CRM ;
+    rdfs:range obo:Disease .
+
+# Datatype Properties
+obo:chromosome a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the genomic coordinate is located." ;
+    rdfs:domain obo:GenomicCoordinate ;
+    rdfs:range xsd:string .
+
+obo:startPosition a owl:DatatypeProperty ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of the genomic coordinate on the chromosome." ;
+    rdfs:domain obo:GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+obo:endPosition a owl:DatatypeProperty ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of the genomic coordinate on the chromosome." ;
+    rdfs:domain obo:GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+obo:assemblyVersion a owl:DatatypeProperty ;
+    skos:prefLabel "assembly version" ;
+    skos:definition "The genome assembly version used for the genomic coordinate." ;
+    rdfs:domain obo:GenomicCoordinate ;
+    rdfs:range xsd:string .
+
+obo:evidenceMethod a owl:DatatypeProperty ;
+    skos:prefLabel "evidence method" ;
+    skos:definition "The method used to obtain the experimental evidence." ;
+    rdfs:domain obo:ExperimentalEvidence ;
+    rdfs:range xsd:string .
+
+obo:evidencePMID a owl:DatatypeProperty ;
+    skos:prefLabel "evidence PMID" ;
+    skos:definition "The PubMed ID of the publication providing the experimental evidence." ;
+    rdfs:domain obo:ExperimentalEvidence ;
+    rdfs:range xsd:string .

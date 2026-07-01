@@ -1,0 +1,75 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology ;
+    skos:prefLabel "HACER Ontology" ;
+    skos:definition "Ontology for the Human Active Cis-regulatory Elements database" .
+
+### Classes ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Database> a owl:Class ;
+    skos:prefLabel "Database" ;
+    skos:definition "Database containing information about cis-regulatory modules" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "Protein that binds to specific DNA sequences, thereby controlling the rate of transcription of genetic information" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A segment of DNA that is involved in producing a polypeptide chain" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Disease> a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant" .
+
+### Object Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasTargetGene> a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and its target gene" ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/Gene> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/associatedWithDisease> a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease" ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/Disease> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/interactsWithTF> a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor" ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> .
+
+### Datatype Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasGenomicCoordinates> a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module" ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasScore> a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "Score indicating the confidence or strength of the cis-regulatory module" ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:float .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasPMID> a owl:DatatypeProperty ;
+    skos:prefLabel "has PMID" ;
+    skos:definition "PubMed ID associated with the evidence for the cis-regulatory module" ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasBiosampleName> a owl:DatatypeProperty ;
+    skos:prefLabel "has biosample name" ;
+    skos:definition "Name of the biosample in which the cis-regulatory module is active" ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string .

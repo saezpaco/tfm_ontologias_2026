@@ -1,0 +1,168 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapGenomicFeature> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#GenomicFeature/{name}";
+        rr:class base:GenomicFeature
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromEnd;
+        rr:objectMap [
+            rml:reference "chromEnd";
+            rr:datatype xsd:double
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromStart;
+        rr:objectMap [
+            rml:reference "chromStart";
+            rr:datatype xsd:double
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [
+            rml:reference "score";
+            rr:datatype xsd:double
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickEnd;
+        rr:objectMap [
+            rml:reference "thickEnd";
+            rr:datatype xsd:double
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickStart;
+        rr:objectMap [
+            rml:reference "thickStart";
+            rr:datatype xsd:double
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:itemRgb;
+        rr:objectMap [
+            rml:reference "itemRgb";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasChromosome;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosome>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasBlockCount;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockCount>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasBlockSizes;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockSizes>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasBlockStarts;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockStarts>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasStrand;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStrand>
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Enhancer/{name}";
+        rr:class base:Enhancer
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#SuperEnhancer/{name}";
+        rr:class base:SuperEnhancer
+    ].
+
+<#TriplesMapChromosome> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Chromosome/{chrom}";
+        rr:class base:Chromosome
+    ].
+
+<#TriplesMapBlockCount> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#BlockCount/{blockCount}";
+        rr:class base:BlockCount
+    ].
+
+<#TriplesMapBlockSizes> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#BlockSizes/{blockSizes}";
+        rr:class base:BlockSizes
+    ].
+
+<#TriplesMapBlockStarts> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#BlockStarts/{blockStarts}";
+        rr:class base:BlockStarts
+    ].
+
+<#TriplesMapStrand> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Strand/{strand}";
+        rr:class base:Strand
+    ].

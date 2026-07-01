@@ -1,0 +1,118 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hcrm#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgene#> .
+@prefix assembly: <http://purl.obolibrary.org/obo/assembly#> .
+@prefix nuccore:  <http://purl.obolibrary.org/obo/nuccore#> .
+@prefix pubmed:   <http://purl.obolibrary.org/obo/pubmed#> .
+@prefix id_pubmed: <http://purl.obolibrary.org/obo/id_pubmed#> .
+@prefix id_ncbigene: <http://purl.obolibrary.org/obo/id_ncbigene#> .
+@prefix dbsuper:  <http://purl.obolibrary.org/obo/dbsuper#> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+#   • ontology=crm  file=crm.ttl  score=0.702
+#   • ontology=crm_example  file=crm_example.ttl  score=0.690
+#   • ontology=crm2phen  file=crm2phen.ttl  score=0.671
+#   • ontology=crm2tfac  file=crm2tfac.ttl  score=0.660
+#   • ontology=crm2gene_example  file=crm2gene_example.ttl  score=0.642
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+# Column 'type':
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> rdfs:label "" ; # score=0.413
+crmType: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+# Column 'hgnc_symbol_TFs':
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> rdfs:label "" ; # score=0.438
+crmHgncSymbolTfs: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+# Column 'TFs2enh_PMID':
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> rdfs:label "" ; # score=0.459
+crmTfs2EnhPmid: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+# Column 'TFs2enh_method':
+#   - <http://purl.obolibrary.org/obo/NCIT_C17207> rdfs:label "" ; # score=0.472
+crmTfs2EnhMethod: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+# Column 'hgnc_symbol':
+#   - <http://purl.obolibrary.org/obo/hgene#0000011> skos:exactMatch <http://identifiers.org/pubmed/12345678> .
+crmHgncSymbol: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/hgene#0000011> .
+
+# Column 'hgnc_id':
+#   - <http://purl.obolibrary.org/obo/id_ncbigene#12345678> skos:exactMatch <http://identifiers.org/pubmed/12345678> .
+crmHgncId: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/id_ncbigene#12345678> .
+
+# Column 'assembly':
+#   - <http://purl.obolibrary.org/obo/assembly#0000011> skos:exactMatch <http://identifiers.org/pubmed/12345678> .
+crmAssembly: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/assembly#0000011> .
+
+# Column 'nuccore':
+#   - <http://purl.obolibrary.org/obo/nuccore#0000011> skos:exactMatch <http://identifiers.org/pubmed/12345678> .
+crmNuccore: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/nuccore#0000011> .
+
+# Column 'pubmed':
+#   - <http://purl.obolibrary.org/obo/pubmed#12345678> skos:exactMatch <http://identifiers.org/pubmed/12345678> .
+crmPubmed: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/pubmed#12345678> .
+
+# Column 'dbsuper':
+#   - <http://purl.obolibrary.org/obo/dbsuper#0000011> skos:exactMatch <http://identifiers.org/pubmed/12345678> .
+crmDbsuper: a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/dbsuper#0000011> .
+
+# Column 'type' (crmType) has sub-properties:
+crmType rdfs:subPropertyOf biolink:has_type .
+crmType rdfs:subPropertyOf obo:has_type .
+
+# Column 'hgnc_symbol_TFs' (crmHgncSymbolTfs) has sub-properties:
+crmHgncSymbolTfs rdfs:subPropertyOf biolink:has_hgnc_symbol_tfs .
+crmHgncSymbolTfs rdfs:subPropertyOf obo:has_hgnc_symbol_tfs .
+
+# Column 'TFs2enh_PMID' (crmTfs2EnhPmid) has sub-properties:
+crmTfs2EnhPmid rdfs:subPropertyOf biolink:has_tfs2enh_pmid .
+crmTfs2EnhPmid rdfs:subPropertyOf obo:has_tfs2enh_pmid .
+
+# Column 'TFs2enh_method' (crmTfs2EnhMethod) has sub-properties:
+crmTfs2EnhMethod rdfs:subPropertyOf biolink:has_tfs2enh_method .
+crmTfs2EnhMethod rdfs:subPropertyOf obo:has_tfs2enh_method .
+
+# Column 'hgnc_symbol' (crmHgncSymbol) has sub-properties:
+crmHgncSymbol rdfs:subPropertyOf biolink:has_hgnc_symbol .
+crmHgncSymbol rdfs:subPropertyOf obo:has_hgnc_symbol .
+
+# Column 'hgnc_id' (crmHgncId) has sub-properties:
+crmHgncId rdfs:subPropertyOf biolink:has_hgnc_id .
+crmHgncId rdfs:subPropertyOf obo:has_hgnc_id .
+
+# Column 'assembly' (crmAssembly) has sub-properties:
+crmAssembly rdfs:subPropertyOf biolink:has_assembly .
+crmAssembly rdfs:subPropertyOf obo:has_assembly .
+
+# Column 'nuccore' (crmNuccore) has sub-properties:
+crmNuccore rdfs:subPropertyOf biolink:has_nuccore .
+crmNuccore rdfs:subPropertyOf obo:has_nuccore .
+
+# Column 'pubmed' (crmPubmed) has sub-properties:
+crmPubmed rdfs:subPropertyOf biolink:has_pubmed .
+crmPubmed rdfs:subPropertyOf obo:has_pubmed .
+
+# Column 'dbsuper' (crmDbsuper) has sub-properties:
+crmDbsuper rdfs:subPropertyOf biolink:has_dbsuper .
+crmDbsuper rdfs:subPropertyOf obo:has_dbsuper .

@@ -1,0 +1,94 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 database" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+<http://example.org/ontology/Enhancer> a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+<http://example.org/ontology/GenomicLocation> a owl:Class ;
+    rdfs:label "Genomic Location" .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+<http://example.org/ontology/Disease> a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+### Properties ###
+<http://example.org/ontology/hasGenomicLocation> a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/GenomicLocation> .
+
+<http://example.org/ontology/targetsGene> a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/Gene> ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+<http://example.org/ontology/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/Disease> ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+<http://example.org/ontology/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> .
+
+<http://example.org/ontology/hasPMID> a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range xsd:string ;
+    skos:exactMatch pubmed:PMID .
+
+<http://example.org/ontology/hasScore> a owl:DatatypeProperty ;
+    rdfs:label "has score" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range xsd:float .
+
+<http://example.org/ontology/hasMinimumRatio> a owl:DatatypeProperty ;
+    rdfs:label "has minimum ratio" ;
+    rdfs:domain <http://example.org/ontology/Enhancer> ;
+    rdfs:range xsd:float .
+
+### Individuals ###
+<http://example.org/ontology/CRMHS00000094290> a <http://example.org/ontology/Enhancer> ;
+    rdfs:label "CRMHS00000094290" ;
+    <http://example.org/ontology/hasGenomicLocation> [
+        a <http://example.org/ontology/GenomicLocation> ;
+        rdfs:label "chr15:26619732-26619795" ;
+        schema:chromosome "chr15" ;
+        schema:startPosition 26619732 ;
+        schema:endPosition 26619795 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    <http://example.org/ontology/hasPMID> "24670763" ;
+    <http://example.org/ontology/hasScore> 1.0 ;
+    <http://example.org/ontology/hasMinimumRatio> 0.95 .
+```

@@ -1,0 +1,108 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "CRM" ;
+  skos:definition "A chromatin regulatory module is a functional unit of chromatin that regulates gene expression."^^xsd:string .
+
+<http://example.org/Enhancer>
+  a owl:Class ;
+  rdfs:label "Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A region of DNA that can be bound by transcription factors and enhance the expression of nearby genes."^^xsd:string .
+
+<http://example.org/GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A specific location on a chromosome, typically represented as a pair of integers (chromosome number and position)."^^xsd:string .
+
+<http://example.org/Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "A piece of information that supports or refutes the existence of a CRM or enhancer."^^xsd:string .
+
+<http://example.org/hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate" ;
+  skos:definition "A relationship between a CRM/enhancer and its genomic coordinate."^^xsd:string .
+
+<http://example.org/isEvidenceFor>
+  a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For" ;
+  skos:definition "A relationship between evidence and the CRM/enhancer it supports or refutes."^^xsd:string .
+
+<http://example.org/genomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "The genomic coordinate of a CRM/enhancer, represented as a pair of integers (chromosome number and position)."^^xsd:string .
+
+<http://example.org/evidenceType>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type" ;
+  skos:definition "The type of evidence supporting or refuting the existence of a CRM/enhancer."^^xsd:string .
+
+<http://example.org/evidenceSource>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of evidence supporting or refuting the existence of a CRM/enhancer."^^xsd:string .
+
+<http://example.org/obo#GO_0003674>
+  a owl:ObjectProperty ;
+  rdfs:label "molecular_function"^^xsd:string ;
+  skos:prefLabel "molecular function" ;
+  skos:definition "The molecular function of a gene product, such as catalytic activity or binding activity."^^xsd:string .
+
+<http://example.org/obo#GO_0005575>
+  a owl:ObjectProperty ;
+  rdfs:label "cellular_component"^^xsd:string ;
+  skos:prefLabel "cellular component" ;
+  skos:definition "The cellular component of a gene product, such as membrane or cytoplasm."^^xsd:string .
+
+<http://example.org/obo#GO_0008150>
+  a owl:ObjectProperty ;
+  rdfs:label "biological_process"^^xsd:string ;
+  skos:prefLabel "biological process" ;
+  skos:definition "The biological process of a gene product, such as metabolic process or signaling process."^^xsd:string .
+
+<http://example.org/obo#SO_0000163>
+  a owl:ObjectProperty ;
+  rdfs:label "transcription_factor_binding_site"^^xsd:string ;
+  skos:prefLabel "transcription factor binding site" ;
+  skos:definition "A region of DNA that can be bound by transcription factors."^^xsd:string .
+
+<http://example.org/obo#SO_0000164>
+  a owl:ObjectProperty ;
+  rdfs:label "enhancer_region"^^xsd:string ;
+  skos:prefLabel "enhancer region" ;
+  skos:definition "A region of DNA that can enhance the expression of nearby genes."^^xsd:string .
+
+<http://example.org/obo#BioLink_0000001>
+  a owl:ObjectProperty ;
+  rdfs:label "has_participant"^^xsd:string ;
+  skos:prefLabel "has participant" ;
+  skos:definition "A relationship between an event and its participants."^^xsd:string .
+
+<http://example.org/obo#BioLink_0000002>
+  a owl:ObjectProperty ;
+  rdfs:label "occurs_during"^^xsd:string ;
+  skos:prefLabel "occurs during" ;
+  skos:definition "A relationship between an event and the time period during which it occurs."^^xsd:string .
+
+<http://example.org/obo#BioLink_0000003>
+  a owl:ObjectProperty ;
+  rdfs:label "has_input"^^xsd:string ;
+  skos:prefLabel "has input" ;
+  skos:definition "A relationship between an event and its inputs."^^xsd:string .

@@ -1,0 +1,130 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GeneticElement a rdfs:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A general class representing genetic regulatory elements such as enhancers, super-enhancers, transcription factors, target genes, diseases, and mutations." ;
+    rdfs:subClassOf ge:Enhancer ;
+    rdfs:subClassOf ge:SuperEnhancer ;
+    rdfs:subClassOf ge:TranscriptionFactor ;
+    rdfs:subClassOf ge:TargetGene ;
+    rdfs:subClassOf ge:Disease ;
+    rdfs:subClassOf ge:Mutation ;
+    rdfs:subClassOf ge:CellLineOrBiosample .
+
+ge:Enhancer a rdfs:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers, which are regions of DNA that can increase the transcription of nearby genes." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:SuperEnhancer a rdfs:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A subclass of enhancers that have been identified as having particularly strong regulatory capabilities." ;
+    rdfs:subClassOf ge:Enhancer .
+
+ge:TranscriptionFactor a rdfs:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing transcription factors, which are proteins that bind to DNA and regulate the transcription of genes." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:TargetGene a rdfs:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes, which are genes that can be regulated by enhancers or transcription factors." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:Disease a rdfs:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing diseases associated with genetic elements." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:Mutation a rdfs:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing mutations that can affect the function of genetic elements." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:CellLineOrBiosample a rdfs:Class ;
+    rdfs:label "Cell Line or Biosample" ;
+    rdfs:comment "A class representing cell lines or biosamples in which genetic elements occur." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:TranscriptionFactor ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "An object property that represents the relationship between an enhancer and its associated transcription factor." .
+
+ge:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:TargetGene ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "An object property that represents the relationship between an enhancer and its associated target gene." .
+
+ge:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain ge:Disease ;
+    rdfs:range ge:GeneticElement ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "An object property that represents the relationship between a disease and genetic elements associated with it." .
+
+ge:associatedWithMutation a owl:ObjectProperty ;
+    rdfs:domain ge:Mutation ;
+    rdfs:range ge:GeneticElement ;
+    rdfs:label "Associated With Mutation" ;
+    rdfs:comment "An object property that represents the relationship between a mutation and genetic elements associated with it." .
+
+ge:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:CellLineOrBiosample ;
+    rdfs:label "Occurs In Cell Line or Biosample" ;
+    rdfs:comment "An object property that represents the relationship between a genetic element and the cell line or biosample in which it occurs." .
+
+ge:hasPubMedID a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has PubMed ID" ;
+    rdfs:comment "A datatype property that represents the PubMed ID associated with a genetic element." ;
+    skos:definition "The unique identifier assigned by PubMed for a scientific article or study." .
+
+ge:hasMethod a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Method" ;
+    rdfs:comment "A datatype property that represents the method used in the study of a genetic element." ;
+    skos:definition "The experimental technique or approach employed to investigate a genetic element." .
+
+ge:hasChromosomeNumber a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Chromosome Number" ;
+    rdfs:comment "A datatype property that represents the chromosome number associated with a genetic element." ;
+    skos:definition "The specific chromosome on which a genetic element is located." .
+
+ge:hasScore a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "A datatype property that represents the score associated with a genetic element." ;
+    skos:definition "A numerical value indicating the significance or importance of a genetic element." .
+
+ge:hasAssemblyVersion a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Assembly Version" ;
+    rdfs:comment "A datatype property that represents the genome assembly version associated with a genetic element." ;
+    skos:definition "The specific version of the genome assembly used to define the location and structure of a genetic element." .
+
+ge:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:int ;
+    rdfs:label "Has Start Position" ;
+    rdfs:comment "A datatype property that represents the start position of a genetic element in the genome." ;
+    skos:definition "The base pair number indicating where a genetic element begins within the reference genome sequence." .
+
+ge:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:int ;
+    rdfs:label "Has End Position" ;
+    rdfs:comment "A datatype property that represents the end position of a genetic element in the genome." ;
+    skos:definition "The base pair number indicating where a genetic element ends within the reference genome sequence." .

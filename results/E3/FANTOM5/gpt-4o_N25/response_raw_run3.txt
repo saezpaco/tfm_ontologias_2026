@@ -1,0 +1,72 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm:     <http://rdf.biogateway.eu/crm/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project." ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+
+crm:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch nuccore:chr_ID .
+
+crm:GenomicLocation a owl:Class ;
+    rdfs:label "Genomic Location" .
+
+crm:hasStart a owl:DatatypeProperty ;
+    rdfs:label "has start position" ;
+    rdfs:domain crm:GenomicLocation ;
+    rdfs:range xsd:integer .
+
+crm:hasEnd a owl:DatatypeProperty ;
+    rdfs:label "has end position" ;
+    rdfs:domain crm:GenomicLocation ;
+    rdfs:range xsd:integer .
+
+crm:hasChromosome a owl:DatatypeProperty ;
+    rdfs:label "has chromosome" ;
+    rdfs:domain crm:GenomicLocation ;
+    rdfs:range xsd:string ;
+    skos:exactMatch nuccore:chr_name .
+
+crm:hasActivityScore a owl:DatatypeProperty ;
+    rdfs:label "has activity score" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:float .
+
+crm:hasExpressionLevel a owl:DatatypeProperty ;
+    rdfs:label "has expression level" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:float .
+
+crm:EnhancerInstance a owl:Class ;
+    rdfs:subClassOf crm:Enhancer ;
+    rdfs:label "Enhancer Instance" .
+
+_:enhancer1 a crm:EnhancerInstance ;
+    crm:hasGenomicLocation _:location1 ;
+    crm:hasActivityScore 24 ;
+    crm:hasExpressionLevel 0.73 .
+
+_:location1 a crm:GenomicLocation ;
+    crm:hasChromosome "chr1" ;
+    crm:hasStart 839741 ;
+    crm:hasEnd 840250 .
+
+# Additional instances would follow the same pattern as _:enhancer1 and _:location1
+```

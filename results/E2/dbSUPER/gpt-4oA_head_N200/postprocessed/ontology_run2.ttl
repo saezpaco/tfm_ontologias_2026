@@ -1,0 +1,98 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    skos:definition "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology/Chromosome> a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:prefLabel "chr_name" .
+
+<http://example.org/ontology/CellLine> a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:prefLabel "biosample_name" .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "hgnc_symbol_target_genes" .
+
+<http://example.org/ontology/Disease> a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "disease" .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "hgnc_symbol_TFs" .
+
+### Object Properties ###
+<http://example.org/ontology/hasChromosome> a owl:ObjectProperty ;
+    rdfs:label "has Chromosome" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Chromosome> ;
+    skos:exactMatch <http://example.org/ontology/chr_name> .
+
+<http://example.org/ontology/activeInCellLine> a owl:ObjectProperty ;
+    rdfs:label "active in Cell Line" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/CellLine> ;
+    skos:exactMatch <http://example.org/ontology/biosample_name> .
+
+<http://example.org/ontology/targetsGene> a owl:ObjectProperty ;
+    rdfs:label "targets Gene" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Gene> ;
+    skos:exactMatch <http://example.org/ontology/hgnc_symbol_target_genes> .
+
+<http://example.org/ontology/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:label "associated with Disease" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Disease> ;
+    skos:exactMatch <http://example.org/ontology/disease> .
+
+<http://example.org/ontology/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:label "interacts with Transcription Factor" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> ;
+    skos:exactMatch <http://example.org/ontology/hgnc_symbol_TFs> .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasStartPosition> a owl:DatatypeProperty ;
+    rdfs:label "has Start Position" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:exactMatch <http://example.org/ontology/orig_start> .
+
+<http://example.org/ontology/hasEndPosition> a owl:DatatypeProperty ;
+    rdfs:label "has End Position" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:exactMatch <http://example.org/ontology/orig_end> .
+
+<http://example.org/ontology/hasAssembly> a owl:DatatypeProperty ;
+    rdfs:label "has Assembly" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:exactMatch <http://example.org/ontology/orig_assembly> .
+
+<http://example.org/ontology/hasScore> a owl:DatatypeProperty ;
+    rdfs:label "has Score" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:float ;
+    skos:exactMatch <http://example.org/ontology/score> .
+
+<http://example.org/ontology/hasMinimumRatio> a owl:DatatypeProperty ;
+    rdfs:label "has Minimum Ratio" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:float ;
+    skos:exactMatch <http://example.org/ontology/minimum_ratio> .

@@ -1,0 +1,71 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://infohub.siemens-energy.com/supplier/> .
+@prefix crm2pgene: <http://ontology.siemens.com/base/enterprise/technical-asset#> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix omim:    <http://omim.org/entry/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+
+# Ontology Declaration
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    dc:title "Disease Enhancer Ontology" ;
+    dc:description "Ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+# Classes
+hcrm:CRM rdf:type owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://infohub.siemens-energy.com/supplier/CRM> .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+# Properties
+hcrm:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain hcrm:CRM ;
+    rdfs:range crm2pgene:TechnicalAsset .
+
+biolink:gene_to_disease_association rdf:type owl:ObjectProperty ;
+    rdfs:label "gene to disease association" ;
+    rdfs:domain biolink:Gene ;
+    rdfs:range biolink:Disease .
+
+biolink:has_gene_product rdf:type owl:ObjectProperty ;
+    rdfs:label "has gene product" ;
+    rdfs:domain hcrm:CRM ;
+    rdfs:range biolink:Gene .
+
+# Individuals
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001594> rdf:type hcrm:CRM ;
+    hcrm:hasGenomicLocation [
+        crm2pgene:TechnicalAsset "chr5:125315470-125318494"^^xsd:string ;
+        crm2pgene:TechnicalAsset "hg38"^^xsd:string
+    ] ;
+    biolink:has_gene_product <http://identifiers.org/hgnc/LMNB1> ;
+    biolink:gene_to_disease_association omim:169500, doid:0060785 .
+
+<http://identifiers.org/hgnc/LMNB1> rdf:type biolink:Gene ;
+    rdfs:label "LMNB1" .
+
+omim:169500 rdf:type biolink:Disease ;
+    rdfs:label "Autosomal Dominant Leukodystrophy" .
+
+doid:0060785 rdf:type biolink:Disease ;
+    rdfs:label "Leukodystrophy" .
+
+# Example of a publication reference
+<http://www.ncbi.nlm.nih.gov/pubmed/25701871> rdf:type pubmed:Publication ;
+    rdfs:label "PubMed Article 25701871" .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-26T20:10:12.211637",
+  "success": true,
+  "elapsed_seconds": 8.49,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3220,
+    "completion_tokens": 778,
+    "total_tokens": 3998
+  },
+  "prompt_tokens_estimate": 2462,
+  "response_chars": 2174,
+  "turtle_chars": 2159,
+  "validation": {
+    "valid": false,
+    "error": "at line 32 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'.org/dbsuper/> ;\\n    skos:exactMatch hcrm:crm_ID#dbSUPER .\\n\\n'^b'hgene:C16orf54 rdf:type biolink:Gene ;\\n    skos:prefLabel \"C'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oD_diversity_N25/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oD_diversity_N25/response_raw_run3.txt"
+  }
+}

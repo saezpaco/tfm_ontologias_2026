@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-07-01T09:53:36.922132",
+  "success": true,
+  "elapsed_seconds": 11.03,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7249,
+    "completion_tokens": 1175,
+    "total_tokens": 8424
+  },
+  "prompt_tokens_estimate": 3987,
+  "response_chars": 3674,
+  "turtle_chars": 3660,
+  "validation": {
+    "valid": false,
+    "error": "at line 74 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b';\\n    dc:identifier \"CRMHS00027685535\" ;\\n    pubmed:27869826'^b' .\\n\\n<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N100_C2/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N100_C2/response_raw_run2.txt"
+  }
+}

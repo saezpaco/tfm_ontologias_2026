@@ -1,0 +1,71 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:crm2gene_example  a biolink:Ontology ;
+    rdfs:label "crm2gene_example" ;
+    skos:exactMatch <https://example.com/crm2gene_example> .
+hcrm:crm2gene  a biolink:Ontology ;
+    rdfs:label "crm2gene" ;
+    skos:closeMatch <https://example.com/crm2gene> .
+hcrm:crm2phen_example  a biolink:Ontology ;
+    rdfs:label "crm2phen_example" ;
+    skos:exactMatch <https://example.com/crm2phen_example> .
+hcrm:crm2tfac_example  a biolink:Ontology ;
+    rdfs:label "crm2tfac_example" ;
+    skos:closeMatch <https://example.com/crm2tfac_example> .
+hcrm:crm  a biolink:Ontology ;
+    rdfs:label "crm" ;
+    skos:exactMatch <https://example.com/crm> .
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+hcrm:orig_end  a biolink:Class ;
+    rdfs:label "ENdb" ;
+    skos:closeMatch <http://www.licpathway.net/ENdb/> .
+hcrm:current_end  a biolink:Class ;
+    rdfs:label "ENdb" ;
+    skos:exactMatch <http://www.licpathway.net/ENdb/> .
+hcrm:hgnc_symbol_target_genes  a biolink:Class ;
+    rdfs:label "bgw!CRMHS00000003515--hgncsymbol!9606/TBX5" ;
+    skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+hcrm:crm_ID  a biolink:Class ;
+    rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+hcrm:biosample_name  a biolink:Class ;
+    rdfs:label "database_name" ;
+    skos:closeMatch <original_URL_database> .
+hcrm:disease_PMID  a biolink:Class ;
+    rdfs:label "bgw!CRMHS00000003515--doid!1682" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+hcrm:orig_chr  a biolink:Class ;
+    rdfs:label "chr_name" ;
+    skos:closeMatch <https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> .
+hcrm:current_chr  a biolink:Class ;
+    rdfs:label "chr_name" ;
+    skos:exactMatch <https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> .
+
+# === COLUMN → ONTOLOGY PROPERTY MAPPINGS ===
+hcrm:orig_end  a biolink:ObjectProperty ;
+    rdfs:label "ENdb" ;
+    skos:closeMatch <http://www.licpathway.net/ENdb/> .
+hcrm:current_end  a biolink:ObjectProperty ;
+    rdfs:label "ENdb" ;
+    skos:exactMatch <http://www.licpathway.net/ENdb/> .

@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 122.38,
+  "total_tokens": 15342,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-05T16:36:14.276444",
+      "success": true,
+      "elapsed_seconds": 121.59,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 1018,
+        "total_tokens": 5114
+      },
+      "prompt_tokens_estimate": 2583,
+      "response_chars": 2834,
+      "turtle_chars": 2820,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm:TranscriptionFactor a owl:Class ;\\n    rdfs:label \"Transc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-05T16:38:18.349545",
+      "success": true,
+      "elapsed_seconds": 122.21,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 1018,
+        "total_tokens": 5114
+      },
+      "prompt_tokens_estimate": 2583,
+      "response_chars": 2834,
+      "turtle_chars": 2820,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm:TranscriptionFactor a owl:Class ;\\n    rdfs:label \"Transc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-05T16:40:23.547714",
+      "success": true,
+      "elapsed_seconds": 123.34,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4096,
+        "completion_tokens": 1018,
+        "total_tokens": 5114
+      },
+      "prompt_tokens_estimate": 2583,
+      "response_chars": 2834,
+      "turtle_chars": 2820,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm:TranscriptionFactor a owl:Class ;\\n    rdfs:label \"Transc'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 133.58666666666667,
+  "total_tokens": 15459,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-29T23:41:31.132850",
+      "success": true,
+      "elapsed_seconds": 128.6,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1058,
+        "total_tokens": 5153
+      },
+      "prompt_tokens_estimate": 3548,
+      "response_chars": 3783,
+      "turtle_chars": 3769,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-29T23:43:48.320004",
+      "success": true,
+      "elapsed_seconds": 136.1,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1058,
+        "total_tokens": 5153
+      },
+      "prompt_tokens_estimate": 3548,
+      "response_chars": 3783,
+      "turtle_chars": 3769,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-29T23:46:05.425994",
+      "success": true,
+      "elapsed_seconds": 136.06,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1058,
+        "total_tokens": 5153
+      },
+      "prompt_tokens_estimate": 3548,
+      "response_chars": 3783,
+      "turtle_chars": 3769,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

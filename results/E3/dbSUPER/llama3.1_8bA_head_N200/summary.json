@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 162.06333333333333,
+  "total_tokens": 15834,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T18:47:35.042109",
+      "success": true,
+      "elapsed_seconds": 162.03,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1183,
+        "total_tokens": 5278
+      },
+      "prompt_tokens_estimate": 4473,
+      "response_chars": 3622,
+      "turtle_chars": 3005,
+      "validation": {
+        "valid": false,
+        "error": "at line 51 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T18:50:19.155685",
+      "success": true,
+      "elapsed_seconds": 161.78,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1183,
+        "total_tokens": 5278
+      },
+      "prompt_tokens_estimate": 4473,
+      "response_chars": 3622,
+      "turtle_chars": 3005,
+      "validation": {
+        "valid": false,
+        "error": "at line 51 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T18:53:03.863294",
+      "success": true,
+      "elapsed_seconds": 162.38,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1183,
+        "total_tokens": 5278
+      },
+      "prompt_tokens_estimate": 4473,
+      "response_chars": 3622,
+      "turtle_chars": 3005,
+      "validation": {
+        "valid": false,
+        "error": "at line 51 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

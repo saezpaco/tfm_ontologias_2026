@@ -1,0 +1,39 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 1,
+  "n_success": 1,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 5.13,
+  "total_tokens": 1790,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-05-03T23:50:41.624343",
+      "success": true,
+      "elapsed_seconds": 5.13,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1076,
+        "completion_tokens": 714,
+        "total_tokens": 1790
+      },
+      "prompt_tokens_estimate": 837,
+      "response_chars": 2524,
+      "turtle_chars": 2524,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ription of a gene.\" ;\\n    skos:exactMatch obo:SO_0000165 .\\n\\n'^b':SuperEnhancer a owl:Class ;\\n    skos:prefLabel \"Super Enhan'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o_D_diversity/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o_D_diversity/response_raw_run1.txt"
+      }
+    }
+  ]
+}

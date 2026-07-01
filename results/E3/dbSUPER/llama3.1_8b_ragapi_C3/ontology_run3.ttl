@@ -1,0 +1,81 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgene#> .
+@prefix assembly: <http://purl.obolibrary.org/obo/assembly#> .
+@prefix nuccore:  <http://purl.obolibrary.org/obo/nuccore#> .
+@prefix pubmed:   <http://purl.obolibrary.org/obo/pubmed#> .
+@prefix id_pubmed: <http://purl.obolibrary.org/obo/id_pubmed#> .
+@prefix id_ncbigene: <http://purl.obolibrary.org/obo/id_ncbigene#> .
+@prefix dbsuper:  <http://purl.obolibrary.org/obo/dbsuper#> .
+
+# Classes
+hcrm:CrisprCasSystem a owl:Class ;
+    rdfs:label "CRISPR-Cas system" .
+
+hcrm:Gene a owl:Class ;
+    rdfs:label "gene" .
+
+hcrm:Transcript a owl:Class ;
+    rdfs:label "transcript" .
+
+assembly:Assembly a owl:Class ;
+    rdfs:label "assembly" .
+
+nuccore:NucleotideSequence a owl:Class ;
+    rdfs:label "nucleotide sequence" .
+
+pubmed:Publication a owl:Class ;
+    rdfs:label "publication" .
+
+id_pubmed:PubMedIdentifier a owl:Class ;
+    rdfs:label "PubMed identifier" .
+
+id_ncbigene:NCBIGeneIdentifier a owl:Class ;
+    rdfs:label "NCBI Gene identifier" .
+
+dbsuper:DatabasesSuper a owl:Class ;
+    rdfs:label "database super" .
+
+# Properties
+hcrm:has_gene a rdf:type owl:ObjectProperty ;
+    rdfs:label "has gene" ;
+    skos:exactMatch obo:hgnc_has_gene .
+
+hcrm:has_transcript a rdf:type owl:ObjectProperty ;
+    rdfs:label "has transcript" ;
+    skos:exactMatch obo:hgnc_has_transcript .
+
+assembly:has_assembly a rdf:type owl:ObjectProperty ;
+    rdfs:label "has assembly" ;
+    skos:exactMatch obo:assembly_has_assembly .
+
+nuccore:has_nucleotide_sequence a rdf:type owl:ObjectProperty ;
+    rdfs:label "has nucleotide sequence" ;
+    skos:exactMatch obo:nuccore_has_nucleotide_sequence .
+
+pubmed:has_publication a rdf:type owl:ObjectProperty ;
+    rdfs:label "has publication" ;
+    skos:exactMatch obo:pubmed_has_publication .
+
+id_pubmed:has_PubMedIdentifier a rdf:type owl:ObjectProperty ;
+    rdfs:label "has PubMed identifier" ;
+    skos:exactMatch obo:id_pubmed_has_PubMedIdentifier .
+
+id_ncbigene:has_NCBI_GeneIdentifier a rdf:type owl:ObjectProperty ;
+    rdfs:label "has NCBIGene identifier" ;
+    skos:exactMatch obo:id_ncbigene_has_NCBI_GeneIdentifier .
+
+dbsuper:has_database_super a rdf:type owl:ObjectProperty ;
+    rdfs:label "has database super" ;
+    skos:exactMatch obo:dbsuper_has_database_super .

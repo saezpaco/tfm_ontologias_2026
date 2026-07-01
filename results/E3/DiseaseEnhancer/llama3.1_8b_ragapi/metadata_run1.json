@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-05-08T22:49:49.554698",
+  "success": true,
+  "elapsed_seconds": 151.72,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3997,
+    "completion_tokens": 1094,
+    "total_tokens": 5091
+  },
+  "prompt_tokens_estimate": 2491,
+  "response_chars": 3357,
+  "turtle_chars": 2698,
+  "validation": {
+    "valid": false,
+    "error": "at line 29 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b't \"Disease association ontology\" ;\\n\\n<http://example.org/Crm>'^b'\\n  a owl:Class ;\\n  rdfs:label \"Crm\" ;\\n  skos:exactMatch <htt'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/response_raw_run1.txt"
+  }
+}

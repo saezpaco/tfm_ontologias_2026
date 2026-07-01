@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 15.410000000000002,
+  "total_tokens": 14493,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T20:09:07.263669",
+      "success": true,
+      "elapsed_seconds": 10.84,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3878,
+        "completion_tokens": 1183,
+        "total_tokens": 5061
+      },
+      "prompt_tokens_estimate": 2806,
+      "response_chars": 3360,
+      "turtle_chars": 3346,
+      "validation": {
+        "valid": false,
+        "error": "at line 35 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T20:09:14.899246",
+      "success": true,
+      "elapsed_seconds": 6.59,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3878,
+        "completion_tokens": 732,
+        "total_tokens": 4610
+      },
+      "prompt_tokens_estimate": 2806,
+      "response_chars": 2117,
+      "turtle_chars": 2102,
+      "validation": {
+        "valid": false,
+        "error": "at line 30 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T20:09:44.732668",
+      "success": true,
+      "elapsed_seconds": 28.8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3878,
+        "completion_tokens": 944,
+        "total_tokens": 4822
+      },
+      "prompt_tokens_estimate": 2806,
+      "response_chars": 2742,
+      "turtle_chars": 2727,
+      "validation": {
+        "valid": false,
+        "error": "at line 35 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

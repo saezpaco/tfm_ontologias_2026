@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 99.14999999999999,
+  "total_tokens": 14442,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-28T23:02:43.857609",
+      "success": true,
+      "elapsed_seconds": 96.8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 719,
+        "total_tokens": 4814
+      },
+      "prompt_tokens_estimate": 3539,
+      "response_chars": 2373,
+      "turtle_chars": 2373,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'ion \"An ontology for annotating enhancers in the genome.\".\\n\\n'^b'Class CRM rdf:type owl:Class;\\n  rdfs:label \"CRM\" ;\\n  skos:pr'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bA_head_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bA_head_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-28T23:04:23.520318",
+      "success": true,
+      "elapsed_seconds": 98.62,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 719,
+        "total_tokens": 4814
+      },
+      "prompt_tokens_estimate": 3539,
+      "response_chars": 2373,
+      "turtle_chars": 2373,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'ion \"An ontology for annotating enhancers in the genome.\".\\n\\n'^b'Class CRM rdf:type owl:Class;\\n  rdfs:label \"CRM\" ;\\n  skos:pr'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bA_head_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bA_head_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-28T23:06:06.589534",
+      "success": true,
+      "elapsed_seconds": 102.03,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 719,
+        "total_tokens": 4814
+      },
+      "prompt_tokens_estimate": 3539,
+      "response_chars": 2373,
+      "turtle_chars": 2373,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'ion \"An ontology for annotating enhancers in the genome.\".\\n\\n'^b'Class CRM rdf:type owl:Class;\\n  rdfs:label \"CRM\" ;\\n  skos:pr'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bA_head_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bA_head_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

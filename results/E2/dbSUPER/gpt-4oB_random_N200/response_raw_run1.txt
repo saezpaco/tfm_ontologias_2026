@@ -1,0 +1,74 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology .
+
+### Classes
+<http://example.org/ontology/dbSUPER#CisRegulatoryModule> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology/dbSUPER#Gene> a owl:Class ;
+    skos:prefLabel "Gene" .
+
+<http://example.org/ontology/dbSUPER#TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+<http://example.org/ontology/dbSUPER#Disease> a owl:Class ;
+    skos:prefLabel "Disease" .
+
+<http://example.org/ontology/dbSUPER#CellLine> a owl:Class ;
+    skos:prefLabel "Cell Line" .
+
+### Object Properties
+<http://example.org/ontology/dbSUPER#hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/dbSUPER#Gene> ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+<http://example.org/ontology/dbSUPER#associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/dbSUPER#Disease> ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+<http://example.org/ontology/dbSUPER#interactsWithTF> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/dbSUPER#TranscriptionFactor> ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+<http://example.org/ontology/dbSUPER#activeInCellLine> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/dbSUPER#CellLine> ;
+    skos:prefLabel "Active in Cell Line" .
+
+### Datatype Properties
+<http://example.org/ontology/dbSUPER#hasGenomicCoordinates> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module" .
+
+<http://example.org/ontology/dbSUPER#hasScore> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "Score" ;
+    skos:definition "Score of the cis-regulatory module" .
+
+<http://example.org/ontology/dbSUPER#hasPMID> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PMID" ;
+    skos:definition "PubMed ID associated with the cis-regulatory module" .
+
+<http://example.org/ontology/dbSUPER#hasMethod> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Method" ;
+    skos:definition "Method used to identify the cis-regulatory module" .

@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 140.56,
+  "total_tokens": 15546,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-28T02:56:03.590548",
+      "success": true,
+      "elapsed_seconds": 140.99,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1087,
+        "total_tokens": 5182
+      },
+      "prompt_tokens_estimate": 2795,
+      "response_chars": 2928,
+      "turtle_chars": 2914,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"hcrm:\" not bound) at ^ in:\n\"...b'\\n@prefix sio:     <http://semanticscience.org/resource/> .\\n\\n'^b'hcrm:crm_ID rdf:type owl:Class ;\\n    rdfs:subClassOf obo:SO_'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bB_random_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bB_random_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-28T02:58:24.604064",
+      "success": true,
+      "elapsed_seconds": 139.96,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1087,
+        "total_tokens": 5182
+      },
+      "prompt_tokens_estimate": 2795,
+      "response_chars": 2928,
+      "turtle_chars": 2914,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"hcrm:\" not bound) at ^ in:\n\"...b'\\n@prefix sio:     <http://semanticscience.org/resource/> .\\n\\n'^b'hcrm:crm_ID rdf:type owl:Class ;\\n    rdfs:subClassOf obo:SO_'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bB_random_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bB_random_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-28T03:00:46.380754",
+      "success": true,
+      "elapsed_seconds": 140.73,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1087,
+        "total_tokens": 5182
+      },
+      "prompt_tokens_estimate": 2795,
+      "response_chars": 2928,
+      "turtle_chars": 2914,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"hcrm:\" not bound) at ^ in:\n\"...b'\\n@prefix sio:     <http://semanticscience.org/resource/> .\\n\\n'^b'hcrm:crm_ID rdf:type owl:Class ;\\n    rdfs:subClassOf obo:SO_'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bB_random_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bB_random_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

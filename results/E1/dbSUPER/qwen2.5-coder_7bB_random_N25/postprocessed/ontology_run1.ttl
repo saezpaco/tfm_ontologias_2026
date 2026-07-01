@@ -1,0 +1,99 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology rdf:about "http://example.com/dbSUPER" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for dbSUPER database containing information about cis-regulatory modules, specifically enhancer sequences." ;
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+    skos:definition "A region of DNA that modulates the transcription rate of its target genes in the human genome." ;
+    rdfs:subClassOf obo:SO_0001217 ;  # Transcriptional regulation
+
+crm:GenomicCoordinates a owl:Class ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "The start and stop positions of a cis-regulatory module within the genome." ;
+
+crm:Chromosome a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "The chromosome on which the cis-regulatory module is located." ;
+
+crm:Start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "The starting position of the cis-regulatory module on the chromosome." ;
+
+crm:Stop a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Stop Position" ;
+    skos:definition "The ending position of the cis-regulatory module on the chromosome." ;
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Experimental Evidence" ;
+    skos:definition "Data supporting the existence and function of a cis-regulatory module." ;
+
+crm:CellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 ;  # Cell line activity
+    skos:prefLabel "Cell Line Activity" ;
+    skos:definition "The cellular context in which the cis-regulatory module is active." ;
+
+crm:TargetGene a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003674 ;  # Gene
+    skos:prefLabel "Target Gene" ;
+    skos:definition "The gene whose transcription is modulated by the cis-regulatory module." ;
+
+crm:Disease a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0043226 ;  # Disease
+    skos:prefLabel "Associated Disease" ;
+    skos:definition "A disease or condition associated with the cis-regulatory module." ;
+
+crm:TranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003674 ;  # Transcription factor
+    skos:prefLabel "Interacting Transcription Factor" ;
+    skos:definition "A transcription factor that interacts with the cis-regulatory module." ;
+
+crm:SE_ID a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Super-Enhancer ID" ;
+    skos:definition "The unique identifier for the super-enhancer." ;
+
+crm:GeneSymbol a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Gene Symbol" ;
+    skos:definition "A shorthand symbol used to identify a gene." ;
+
+crm:Rank a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Rank" ;
+    skos:definition "The rank or significance of the super-enhancer." ;
+
+# Instances
+ex:SE_01932 a crm:Enhancer ;
+    crm:Chromosome "chr16" ;
+    crm:Start 72866815 ;
+    crm:Stop 72895386 ;
+    crm:SE_ID "SE_01932" ;
+    crm:GeneSymbol "ZFHX3" ;
+    crm:CellLineActivity obo:GO_0008279 ;
+    crm:TargetGene obo:GO_0003674 ;
+    crm:Disease obo:GO_0043226 ;
+    crm:TranscriptionFactor obo:GO_0003674 ;
+    crm:Rank 400 .
+
+# ... (other instances follow the same pattern)

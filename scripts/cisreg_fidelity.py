@@ -27,10 +27,16 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path("/sessions/nifty-beautiful-knuth/mnt/TFM")
+import os
+ROOT = Path(os.environ.get("TFM_ROOT", Path(__file__).resolve().parent.parent))
 RES  = ROOT / "results"
 EVAL = RES / "evaluation"
-REFS = Path("/sessions/nifty-beautiful-knuth/mnt/RAGannotationAPI/embeddings/ontologies")
+# Esquemas cisreg de referencia: si no existe el repo annotationRAG hermano,
+# cae a data/samples/schemas/ del propio TFM.
+_default_refs = ROOT.parent / "RAGannotationAPI" / "embeddings" / "ontologies"
+if not _default_refs.exists():
+    _default_refs = ROOT / "data" / "samples" / "schemas"
+REFS = Path(os.environ.get("CISREG_REFS", _default_refs))
 
 # ───────────── namespaces "canónicos" del dominio ─────────────
 # (estos son namespaces reales y autoritativos; cualquier IRI en uno de
@@ -141,8 +147,13 @@ def build_gold_uris() -> tuple[set[str], dict[str, set[str]]]:
     for f in cisreg_files:
         path = REFS / f
         if not path.exists():
-            print(f"[warn] missing {f}")
-            continue
+            # Fallback: try .txt extension (local TFM samples_schemas use .txt)
+            alt = REFS / f.replace(".ttl", ".txt")
+            if alt.exists():
+                path = alt
+            else:
+                print(f"[warn] missing {f} (also tried {alt.name})")
+                continue
         text = path.read_text(encoding="utf-8", errors="replace")
         uris = expand_uris(text)
         # Solo añadimos al gold las URIs canónicas (no las standard como rdf/owl)

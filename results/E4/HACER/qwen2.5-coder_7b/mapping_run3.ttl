@@ -1,0 +1,214 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix greg: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPMID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPMID>;
+        ]
+    ],
+    [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMethod>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasAssemblyVersion;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapAssemblyVersion>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasChromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScore>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasSource;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSource>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapType>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasStartPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasEndPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEndPosition>;
+        ]
+    ].
+
+<#TriplesMapPMID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPMID;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{TFs2enh_PMID}}"
+        ]
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:usesMethod;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{TFs2enh_PMID}}"
+        ]
+    ].
+
+<#TriplesMapAssemblyVersion> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasAssemblyVersion;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{orig_assembly}}"
+        ]
+    ].
+
+<#TriplesMapChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasChromosomeNumber;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{orig_chrom}}"
+        ]
+    ].
+
+<#TriplesMapScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasScore;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{orig_score}}"
+        ]
+    ].
+
+<#TriplesMapSource> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasSource;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{orig_source}}"
+        ]
+    ].
+
+<#TriplesMapType> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasType;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{orig_type}}"
+        ]
+    ].
+
+<#TriplesMapStartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasStartPosition;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{orig_start}}"
+        ]
+    ].
+
+<#TriplesMapEndPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasEndPosition;
+        rr:objectMap [
+            rr:constant xsd:string ;
+            rr:template "{{orig_end}}"
+        ]
+    ].
+```

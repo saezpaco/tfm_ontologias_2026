@@ -1,0 +1,329 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. cell_name: type - text - short description of the cell line or biosample - possible range: any string representing a cell line or biosample name
+2. chrom: type - text - chromosome number - possible range: any string representing a chromosome number (e.g., "chr1", "chr2")
+3. gene_symbol: type - text - target gene symbol - possible range: any string representing a gene symbol (e.g., "BRCA1", "EGFR")
+4. se_id: type - text - identifier for the super-enhancer - possible range: any string representing a unique identifier
+5. rank: type - Numerical - rank of the enhancer or super-enhancer - possible range: any integer between 20 and 1079
+6. start: type - Numerical - genomic start position of the element - possible range: any integer between 1,088,778 and 235,489,531
+7. stop: type - Numerical - genomic stop position of the element - possible range: any integer between 1,110,655 and 235,500,911
+
+**Classes:**
+1. GeneticElement
+2. Enhancer
+3. SuperEnhancer
+4. CellLine
+5. TargetGene
+6. TranscriptionFactor
+7. DiseaseAssociation
+
+**Subclasses:**
+1. SpecificEnhancer: subclass of -> Enhancer
+2. SpecificSuperEnhancer: subclass of -> SuperEnhancer
+3. SpecificCellLine: subclass of -> CellLine
+4. SpecificTargetGene: subclass of -> TargetGene
+5. SpecificTranscriptionFactor: subclass of -> TranscriptionFactor
+6. SpecificDiseaseAssociation: subclass of -> DiseaseAssociation
+
+**Object Properties:**
+1. hasGenomicCoordinates: domain - GeneticElement; range - GenomicCoordinates
+2. associatedWithCellLine: domain - GeneticElement; range - CellLine
+3. targetsGene: domain - Enhancer/SuperEnhancer; range - TargetGene
+4. regulatedByTranscriptionFactor: domain - Enhancer/SuperEnhancer; range - TranscriptionFactor
+5. associatedWithDisease: domain - GeneticElement; range - DiseaseAssociation
+
+**Data Type Properties:**
+1. rankValue: domain - Enhancer/SuperEnhancer; range - xsd:int
+2. startPosition: domain - GenomicCoordinates; range - xsd:int
+3. stopPosition: domain - GenomicCoordinates; range - xsd:int
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GenomicCoordinates a owl:Class ;
+    rdfs:label "Genomic Coordinates" ;
+    rdfs:comment "Represents the genomic coordinates of an element." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    owl:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement
+            [ owl:onProperty ge:startPosition ; owl:someValuesFrom xsd:int ] )
+    ] .
+
+ge:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "Represents an enhancer element." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    owl:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement
+            [ owl:onProperty ge:startPosition ; owl:someValuesFrom xsd:int ] )
+    ] .
+
+ge:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "Represents a super-enhancer element." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    owl:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement
+            [ owl:onProperty ge:startPosition ; owl:someValuesFrom xsd:int ] )
+    ] .
+
+ge:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    rdfs:comment "Represents a cell line or biosample." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    owl:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement
+            [ owl:onProperty ge:startPosition ; owl:someValuesFrom xsd:int ] )
+    ] .
+
+ge:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "Represents a target gene." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    owl:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement
+            [ owl:onProperty ge:startPosition ; owl:someValuesFrom xsd:int ] )
+    ] .
+
+ge:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "Represents a transcription factor." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    owl:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement
+            [ owl:onProperty ge:startPosition ; owl:someValuesFrom xsd:int ] )
+    ] .
+
+ge:DiseaseAssociation a owl:Class ;
+    rdfs:label "Disease Association" ;
+    rdfs:comment "Represents a disease association." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    owl:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement
+            [ owl:onProperty ge:startPosition ; owl:someValuesFrom xsd:int ] )
+    ] .
+
+ge:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:label "Has Genomic Coordinates" ;
+    rdfs:comment "Indicates the genomic coordinates of an element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:GenomicCoordinates ;
+
+ge:associatedWithCellLine a owl:ObjectProperty ;
+    rdfs:label "Associated With Cell Line" ;
+    rdfs:comment "Indicates the cell line or biosample associated with an element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:CellLine ;
+
+ge:targetsGene a owl:ObjectProperty ;
+    rdfs:label "Targets Gene" ;
+    rdfs:comment "Indicates the target gene of an enhancer or super-enhancer." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer ;
+    rdfs:range ge:TargetGene ;
+
+ge:regulatedByTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "Regulated By Transcription Factor" ;
+    rdfs:comment "Indicates the transcription factor regulating an enhancer or super-enhancer." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer ;
+    rdfs:range ge:TranscriptionFactor ;
+
+ge:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "Indicates the disease associated with an element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:DiseaseAssociation ;
+
+ge:rankValue a owl:DatatypeProperty ;
+    rdfs:label "Rank Value" ;
+    rdfs:comment "Represents the rank value of an enhancer or super-enhancer." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer ;
+    rdfs:range xsd:int ;
+    skos:definition "An integer representing the rank of the enhancer or super-enhancer, ranging from 20 to 1079." ;
+
+ge:startPosition a owl:DatatypeProperty ;
+    rdfs:label "Start Position" ;
+    rdfs:comment "Represents the genomic start position of an element." ;
+    rdfs:domain ge:GenomicCoordinates ;
+    rdfs:range xsd:int ;
+    skos:definition "An integer representing the genomic start position, ranging from 1,088,778 to 235,489,531." ;
+
+ge:stopPosition a owl:DatatypeProperty ;
+    rdfs:label "Stop Position" ;
+    rdfs:comment "Represents the genomic stop position of an element." ;
+    rdfs:domain ge:GenomicCoordinates ;
+    rdfs:range xsd:int ;
+    skos:definition "An integer representing the genomic stop position, ranging from 1,110,655 to 235,500,911." .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGenomicCoordinates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:GenomicCoordinates/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStopPosition>;
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:Enhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStopPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:rankValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRankValue>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:SuperEnhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStopPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:rankValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRankValue>;
+        ]
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:CellLine/{{cell_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:TargetGene/{{gene_symbol}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:TranscriptionFactor/{{transcription_factor}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDiseaseAssociation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:DiseaseAssociation/{{disease}}{FAIR_URI}";
+    ].
+
+<#TriplesMapStartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:GenomicCoordinates/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:constant xsd:int(1088778);
+        ]
+    ].
+
+<#TriplesMapStopPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:GenomicCoordinates/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:constant xsd:int(235489531);
+        ]
+    ].
+
+<#TriplesMapRankValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:Enhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:rankValue;
+        rr:objectMap [
+            rr:constant xsd:int(20);
+        ]
+    ].
+```

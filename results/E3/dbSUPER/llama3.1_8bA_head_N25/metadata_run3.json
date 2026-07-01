@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-27T12:19:28.972508",
+  "success": true,
+  "elapsed_seconds": 204.03,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3273,
+    "completion_tokens": 1437,
+    "total_tokens": 4710
+  },
+  "prompt_tokens_estimate": 2459,
+  "response_chars": 4373,
+  "turtle_chars": 3926,
+  "validation": {
+    "valid": false,
+    "error": "at line 52 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'ID#dbsuper skos:exactMatch hcrm:crm_ID .\\n\\nhgene:gene_symbol '^b'skos:closeMatch id_ncbigene:GeneID ;\\n    biolink:category bi'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N25/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8bA_head_N25/response_raw_run3.txt"
+  }
+}

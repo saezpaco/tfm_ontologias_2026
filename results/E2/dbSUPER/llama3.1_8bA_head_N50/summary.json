@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 210.95000000000002,
+  "total_tokens": 12114,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-27T02:29:46.176562",
+      "success": true,
+      "elapsed_seconds": 229.4,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2334,
+        "completion_tokens": 1704,
+        "total_tokens": 4038
+      },
+      "prompt_tokens_estimate": 1604,
+      "response_chars": 5674,
+      "turtle_chars": 5674,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'hancers con coordenadas, l\\xc3\\xadneas celulares y genes diana\" .\\n'^b'\\ncrm\\n  a owl:Class ;\\n  rdfs:label \"CRM\" ;\\n  skos:prefLabel \"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bA_head_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bA_head_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-27T02:33:09.246884",
+      "success": true,
+      "elapsed_seconds": 202.04,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2334,
+        "completion_tokens": 1704,
+        "total_tokens": 4038
+      },
+      "prompt_tokens_estimate": 1604,
+      "response_chars": 5674,
+      "turtle_chars": 5674,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'hancers con coordenadas, l\\xc3\\xadneas celulares y genes diana\" .\\n'^b'\\ncrm\\n  a owl:Class ;\\n  rdfs:label \"CRM\" ;\\n  skos:prefLabel \"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bA_head_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bA_head_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-27T02:36:31.686720",
+      "success": true,
+      "elapsed_seconds": 201.41,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2334,
+        "completion_tokens": 1704,
+        "total_tokens": 4038
+      },
+      "prompt_tokens_estimate": 1604,
+      "response_chars": 5674,
+      "turtle_chars": 5674,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'hancers con coordenadas, l\\xc3\\xadneas celulares y genes diana\" .\\n'^b'\\ncrm\\n  a owl:Class ;\\n  rdfs:label \"CRM\" ;\\n  skos:prefLabel \"'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bA_head_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bA_head_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

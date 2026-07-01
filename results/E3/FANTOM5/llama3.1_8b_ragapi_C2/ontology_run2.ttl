@@ -1,0 +1,77 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://identifiers.org/human_cis_regulatory_module/> .
+@prefix crm2pgene: <http://identifiers.org/crm2pgene/> .
+@prefix hgene:   <http://identifiers.org/human_gene/> .
+@prefix assembly: <http://identifiers.org/assembly/> .
+@prefix nuccore: <http://identifiers.org/nuccore/> .
+@prefix pubmed:  <http://identifiers.org/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/id_pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/id_ncbigene/> .
+@prefix dbsuper: <http://identifiers.org/dbsuper/> .
+
+crm: a owl:Ontology ;
+    rdfs:label "cis-regulatory module ontology" .
+
+EnhancerSequence: a crm:EnhancerSequence ;
+    rdfs:label "enhancer sequence" ;
+    skos:exactMatch hcrm:EnhancerSequence .
+
+GenomicCoordinates: a crm:GenomicCoordinates ;
+    rdfs:label "genomic coordinates" ;
+    skos:closeMatch assembly:GenomicCoordinates .
+
+ExperimentalEvidence: a crm:ExperimentalEvidence ;
+    rdfs:label "experimental evidence" ;
+    skos:exactMatch obo:EVIDENCE_CODE .
+
+CellLineActivity: a crm:CellLineActivity ;
+    rdfs:label "cell line activity" ;
+    skos:closeMatch hgene:CellLineActivity .
+
+TargetGene: a crm:TargetGene ;
+    rdfs:label "target gene" ;
+    skos:exactMatch id_ncbigene:HGNC .
+
+AssociatedDisease: a crm:AssociatedDisease ;
+    rdfs:label "associated disease" ;
+    skos:closeMatch pubmed:Disease .
+
+InteractingTranscriptionFactor: a crm:InteractingTransfactor ;
+    rdfs:label "interacting transcription factor" ;
+    skos:exactMatch obo:GO_0005515 .
+
+crm:EnhancerSequence
+    rdfs:subPropertyOf biolink:has_target ;
+    rdfs:subPropertyOf biolink:has_evidence .
+
+crm:GenomicCoordinates
+    rdfs:subPropertyOf assembly:start_position ;
+    rdfs:subPropertyOf assembly:end_position .
+
+crm:ExperimentalEvidence
+    rdfs:subPropertyOf obo:EVIDENCE_CODE .
+
+crm:CellLineActivity
+    rdfs:subPropertyOf hgene:cell_line_activity .
+
+crm:TargetGene
+    rdfs:subPropertyOf id_ncbigene:HGNC ;
+    rdfs:subPropertyOf biolink:has_target .
+
+crm:AssociatedDisease
+    rdfs:subPropertyOf pubmed:Disease ;
+    rdfs:subPropertyOf crm2pgene:disease_association .
+
+crm:InteractingTransfactor
+    rdfs:subPropertyOf obo:GO_0005515 ;
+    rdfs:subPropertyOf biolink:has_interactor .

@@ -1,0 +1,69 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters." ;
+    skos:exactMatch obo:SO_0000167 .
+
+# Properties
+obo:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates a CRM to its genomic coordinates." .
+
+obo:hasExperimentalEvidence a owl:ObjectProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Relates a CRM to the experimental evidence supporting its activity." .
+
+obo:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a CRM to its target gene." ;
+    skos:exactMatch obo:RO_0002434 .
+
+obo:hasTranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "has transcription factor" ;
+    skos:definition "Relates a CRM to a transcription factor that interacts with it." .
+
+obo:hasAssociatedDisease a owl:ObjectProperty ;
+    skos:prefLabel "has associated disease" ;
+    skos:definition "Relates a CRM to a disease associated with its activity." .
+
+obo:hasGenomicStart a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic start" ;
+    skos:definition "The start position of the genomic coordinate." ;
+    rdfs:range xsd:integer .
+
+obo:hasGenomicEnd a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic end" ;
+    skos:definition "The end position of the genomic coordinate." ;
+    rdfs:range xsd:integer .
+
+obo:hasChromosome a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the CRM is located." ;
+    rdfs:range xsd:string .
+
+obo:hasAssemblyVersion a owl:DatatypeProperty ;
+    skos:prefLabel "has assembly version" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    rdfs:range xsd:string .
+
+obo:hasMinimumRatio a owl:DatatypeProperty ;
+    skos:prefLabel "has minimum ratio" ;
+    skos:definition "The minimum ratio of enhancer activity." ;
+    rdfs:range xsd:float .
+
+obo:hasScore a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "The score representing the confidence of the enhancer activity." ;
+    rdfs:range xsd:float .

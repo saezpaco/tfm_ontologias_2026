@@ -1,0 +1,201 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER#CRM>
+  a owl:Class ;
+  rdfs:label "cis-regulatory module"^^xsd:string ;
+  skos:prefLabel "cis-regulatory module"@en ;
+  skos:definition "A region of DNA that regulates gene expression."@en .
+
+<http://example.org/dbSUPER#Enhancer>
+  a owl:Class ;
+  rdfs:subClassOf <http://example.org/dbSUPER#CRM> ;
+  rdfs:label "enhancer"^^xsd:string ;
+  skos:prefLabel "enhancer"@en ;
+  skos:definition "A type of cis-regulatory module that increases gene expression."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  a owl:Class ;
+  rdfs:subClassOf <http://example.org/dbSUPER#CRM> ;
+  rdfs:label "genomic coordinate"^^xsd:string ;
+  skos:prefLabel "genomic coordinate"@en ;
+  skos:definition "A location on the genome where a gene or regulatory element is found."@en .
+
+<http://example.org/dbSUPER#Chromosome>
+  a owl:Class ;
+  rdfs:subClassOf <http://example.org/dbSUPER#GenomicCoordinate> ;
+  rdfs:label "chromosome"^^xsd:string ;
+  skos:prefLabel "chromosome"@en ;
+  skos:definition "A single DNA molecule in the nucleus of an organism."@en .
+
+<http://example.org/dbSUPER#Start>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#GenomicCoordinate> ;
+  rdfs:range xsd:int ;
+  rdfs:label "start position"^^xsd:string ;
+  skos:prefLabel "start position"@en ;
+  skos:definition "The starting point of a genomic coordinate."@en .
+
+<http://example.org/dbSUPER#End>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#GenomicCoordinate> ;
+  rdfs:range xsd:int ;
+  rdfs:label "end position"^^xsd:string ;
+  skos:prefLabel "end position"@en ;
+  skos:definition "The ending point of a genomic coordinate."@en .
+
+<http://example.org/dbSUPER#Evidence>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string ;
+  rdfs:label "evidence"^^xsd:string ;
+  skos:prefLabel "evidence"@en ;
+  skos:definition "A statement or observation that supports the existence of a cis-regulatory module."@en .
+
+<http://example.org/dbSUPER#CellLine>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string ;
+  rdfs:label "cell line"^^xsd:string ;
+  skos:prefLabel "cell line"@en ;
+  skos:definition "A type of cell culture used in experiments."@en .
+
+<http://example.org/dbSUPER#TargetGene>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string ;
+  rdfs:label "target gene"^^xsd:string ;
+  skos:prefLabel "target gene"@en ;
+  skos:definition "A gene that is regulated by a cis-regulatory module."@en .
+
+<http://example.org/dbSUPER#AssociatedDisease>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string ;
+  rdfs:label "associated disease"^^xsd:string ;
+  skos:prefLabel "associated disease"@en ;
+  skos:definition "A disease that is linked to a cis-regulatory module."@en .
+
+<http://example.org/dbSUPER#InteractingTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string ;
+  rdfs:label "interacting transcription factor"^^xsd:string ;
+  skos:prefLabel "interacting transcription factor"@en ;
+  skos:definition "A protein that binds to a cis-regulatory module."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CRM> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#GenomicCoordinate> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#GenomicCoordinate> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#Evidence> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#Evidence> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CellLine> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#CellLine> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#TargetGene> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#TargetGene> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#AssociatedDisease> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#AssociatedDisease> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#InteractingTranscriptionFactor> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#InteractingTranscriptionFactor> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .
+
+<http://example.org/dbSUPER#skos:exactMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#Chromosome> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "exact match"@en ;
+  skos:definition "A mapping to an external ontology that is exact."@en .
+
+<http://example.org/dbSUPER#skos:closeMatch>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#Chromosome> ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "close match"@en ;
+  skos:definition "A mapping to an external ontology that is close."@en .

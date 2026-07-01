@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-06-28T06:45:23.070506",
+  "success": true,
+  "elapsed_seconds": 86.45,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1942,
+    "completion_tokens": 1036,
+    "total_tokens": 2978
+  },
+  "prompt_tokens_estimate": 1575,
+  "response_chars": 2713,
+  "turtle_chars": 2699,
+  "validation": {
+    "valid": false,
+    "error": "at line 18 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b';\\n    obo:RO_0002162 obo:NCBITaxon_9606 ;\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ;\\n    obo:BFO_0000050 nuccore:chr_'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N25/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/qwen2.5-coder_7bC_stratified_N25/response_raw_run2.txt"
+  }
+}

@@ -1,0 +1,116 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer" ;
+    dc:description "Enhancers asociados a enfermedades" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+### Properties
+biolink:has_sequence_location a owl:ObjectProperty ;
+    rdfs:label "has sequence location" ;
+    skos:exactMatch crm2pgene:has_sequence_location .
+
+biolink:has_target_gene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:has_target_gene .
+
+biolink:associated_with_disease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associated_with_disease .
+
+### Instances
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685825> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685825" ;
+    biolink:has_sequence_location [
+        a biolink:SequenceLocation ;
+        schema:chromosome "chr4" ;
+        schema:startPosition 88037770 ;
+        schema:endPosition 88039770 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene hgnc:PIGY ;
+    biolink:associated_with_disease doid:784 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685608> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685608" ;
+    biolink:has_sequence_location [
+        a biolink:SequenceLocation ;
+        schema:chromosome "chr20" ;
+        schema:startPosition 57108146 ;
+        schema:endPosition 57109944 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene hgnc:BRIP1 ;
+    biolink:associated_with_disease doid:1612 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685975> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685975" ;
+    biolink:has_sequence_location [
+        a biolink:SequenceLocation ;
+        schema:chromosome "chr22" ;
+        schema:startPosition 19755479 ;
+        schema:endPosition 19757077 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene hgnc:TBX1 ;
+    biolink:associated_with_disease mesh:D006345 ;
+    dc:source pubmed:25910213 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005889> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005889" ;
+    biolink:has_sequence_location [
+        a biolink:SequenceLocation ;
+        schema:chromosome "chr18" ;
+        schema:startPosition 48913832 ;
+        schema:endPosition 48948630 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene hgnc:SMAD7 ;
+    biolink:associated_with_disease mesh:D015179 ;
+    dc:source pubmed:25375357 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685533> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685533" ;
+    biolink:has_sequence_location [
+        a biolink:SequenceLocation ;
+        schema:chromosome "chr3" ;
+        schema:startPosition 15558295 ;
+        schema:endPosition 15558493 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene hgnc:BTD ;
+    biolink:associated_with_disease doid:0050939 ;
+    dc:source pubmed:27869826 .
+```

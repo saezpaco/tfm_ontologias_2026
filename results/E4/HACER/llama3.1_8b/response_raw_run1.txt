@@ -1,0 +1,979 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://base_ontology.com#
+
+**Data Description:**
+
+1. TFs2enh_PMID
+   - type: categorical
+   - short description: Transcription Factors to Enhancers PMID
+   - possible range: [PMID]
+
+2. TFs2enh_method
+   - type: categorical
+   - short description: Transcription Factors to Enhancers Method
+   - possible range: [Method]
+
+3. biosample_name
+   - type: text
+   - short description: Biosample Name
+   - possible range: [String]
+
+4. crm_ID
+   - type: text
+   - short description: CRM ID
+   - possible range: [String]
+
+5. crossref
+   - type: categorical
+   - short description: Cross Reference
+   - possible range: [Cross Reference]
+
+6. current_assembly
+   - type: categorical
+   - short description: Current Assembly
+   - possible range: [Assembly]
+
+7. current_chr
+   - type: categorical
+   - short description: Current Chromosome
+   - possible range: [Chromosome]
+
+8. disease
+   - type: categorical
+   - short description: Disease
+   - possible range: [Disease]
+
+9. disease_PMID
+   - type: categorical
+   - short description: Disease PMID
+   - possible range: [PMID]
+
+10. disease_method
+    - type: categorical
+    - short description: Disease Method
+    - possible range: [Method]
+
+11. enh2gene_PMID
+    - type: categorical
+    - short description: Enhancer to Gene PMID
+    - possible range: [PMID]
+
+12. enh2gene_method
+    - type: categorical
+    - short description: Enhancer to Gene Method
+    - possible range: [Method]
+
+13. enh_PMID
+    - type: categorical
+    - short description: Enhancer PMID
+    - possible range: [PMID]
+
+14. enh_method
+    - type: categorical
+    - short description: Enhancer Method
+    - possible range: [Method]
+
+15. hgnc_symbol_TFs
+    - type: categorical
+    - short description: HGNC Symbol Transcription Factors
+    - possible range: [HGNC Symbol]
+
+16. hgnc_symbol_target_genes
+    - type: text
+    - short description: HGNC Symbol Target Genes
+    - possible range: [String]
+
+17. minimum_ratio
+    - type: categorical
+    - short description: Minimum Ratio
+    - possible range: [Ratio]
+
+18. mutation_PMID
+    - type: categorical
+    - short description: Mutation PMID
+    - possible range: [PMID]
+
+19. mutation_method
+    - type: categorical
+    - short description: Mutation Method
+    - possible range: [Method]
+
+20. orig_assembly
+    - type: categorical
+    - short description: Original Assembly
+    - possible range: [Assembly]
+
+21. orig_chr
+    - type: categorical
+    - short description: Original Chromosome
+    - possible range: [Chromosome]
+
+22. original_ID
+    - type: categorical
+    - short description: Original ID
+    - possible range: [ID]
+
+23. refsnp_ID
+    - type: categorical
+    - short description: RefSNP ID
+    - possible range: [RefSNP ID]
+
+24. score
+    - type: categorical
+    - short description: Score
+    - possible range: [Score]
+
+25. source
+    - type: categorical
+    - short description: Source
+    - possible range: [Source]
+
+26. type
+    - type: categorical
+    - short description: Type
+    - possible range: [Type]
+
+27. current_end
+    - type: Numerical
+    - short description: Current End Coordinate
+    - possible range: [Integer]
+
+28. current_start
+    - type: Numerical
+    - short description: Current Start Coordinate
+    - possible range: [Integer]
+
+29. orig_end
+    - type: Numerical
+    - short description: Original End Coordinate
+    - possible range: [Integer]
+
+30. orig_start
+    - type: Numerical
+    - short description: Original Start Coordinate
+    - possible range: [Integer]
+
+**classes:**
+
+1. class_entity
+
+**subclasses:**
+
+1. entity_name: subclass of -> class_entity
+
+2. enhancer: subclass of -> class_entity
+
+3. super_enhancer: subclass of -> enhancer
+
+4. target_gene: subclass of -> class_entity
+
+5. transcription_factor: subclass of -> class_entity
+
+6. disease_association: subclass of -> class_entity
+
+7. biosample: subclass of -> class_entity
+
+8. cell_line: subclass of -> biosample
+
+9. genomic_coordinate: subclass of -> class_entity
+
+10. chromosome: subclass of -> genomic_coordinate
+
+11. assembly: subclass of -> genomic_coordinate
+
+**Object Properties:**
+
+1. has_PMID: domain - enhancer, super_enhancer, target_gene, transcription_factor, disease_association
+   range - PMID
+
+2. has_method: domain - enhancer, super_enhancer, target_gene, transcription_factor, disease_association
+   range - Method
+
+3. has_biosample: domain - biosample
+   range - Biosample
+
+4. has_cell_line: domain - cell_line
+   range - Cell Line
+
+5. has_genomic_coordinate: domain - genomic_coordinate
+   range - Genomic Coordinate
+
+6. has_chromosome: domain - chromosome
+   range - Chromosome
+
+7. has_assembly: domain - assembly
+   range - Assembly
+
+8. has_original_ID: domain - original_ID
+   range - Original ID
+
+9. has_refSNP_ID: domain - refsnp_ID
+   range - RefSNP ID
+
+10. has_score: domain - score
+    range - Score
+
+11. has_source: domain - source
+    range - Source
+
+12. has_type: domain - type
+    range - Type
+
+13. has_current_end: domain - current_end
+    range - Current End Coordinate
+
+14. has_current_start: domain - current_start
+    range - Current Start Coordinate
+
+15. has_orig_end: domain - orig_end
+    range - Original End Coordinate
+
+16. has_orig_start: domain - orig_start
+    range - Original Start Coordinate
+
+17. is_target_of: domain - target_gene
+   range - Transcription Factor
+
+18. regulates: domain - enhancer, super_enhancer
+   range - Target Gene
+
+19. associated_with: domain - disease_association
+   range - Disease
+
+20. has_hgnc_symbol: domain - hgnc_symbol_TFs
+    range - HGNC Symbol
+
+21. has_minimum_ratio: domain - minimum_ratio
+    range - Ratio
+
+22. has_mutation_PMID: domain - mutation_PMID
+    range - PMID
+
+23. has_mutation_method: domain - mutation_method
+    range - Method
+
+**Data Type Properties:**
+
+1. has_PMID_value: domain - enhancer, super_enhancer, target_gene, transcription_factor, disease_association
+   range - String
+
+2. has_method_value: domain - enhancer, super_enhancer, target_gene, transcription_factor, disease_association
+   range - String
+
+3. has_biosample_name: domain - biosample
+   range - String
+
+4. has_cell_line_name: domain - cell_line
+   range - String
+
+5. has_genomic_coordinate_value: domain - genomic_coordinate
+   range - Integer
+
+6. has_chromosome_value: domain - chromosome
+   range - Chromosome
+
+7. has_assembly_value: domain - assembly
+   range - Assembly
+
+8. has_original_ID_value: domain - original_ID
+   range - ID
+
+9. has_refSNP_ID_value: domain - refsnp_ID
+    range - RefSNP ID
+
+10. has_score_value: domain - score
+    range - Score
+
+11. has_source_value: domain - source
+    range - Source
+
+12. has_type_value: domain - type
+    range - Type
+
+13. has_current_end_value: domain - current_end
+    range - Integer
+
+14. has_current_start_value: domain - current_start
+    range - Integer
+
+15. has_orig_end_value: domain - orig_end
+    range - Integer
+
+16. has_orig_start_value: domain - orig_start
+    range - Integer
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.org/ontology#>
+  a owl:Ontology ;
+
+  rdfs:comment "This is an example ontology."@en ;
+  rdfs:label "Example Ontology"@en .
+
+owl:DatatypeProperty
+  rdfs:comment "A property that has a data type as its range."@en ;
+  rdfs:label "Data Property"@en .
+
+owl:ObjectProperty
+  rdfs:comment "A property that has an object as its range."@en ;
+  rdfs:label "Object Property"@en .
+
+owl:Class
+  rdfs:comment "A class is a concept or category in the ontology."@en ;
+  rdfs:label "Class"@en .
+
+class_entity
+  a owl:Class ;
+  rdfs:comment "A class that represents an entity."@en ;
+  rdfs:label "Entity"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> ;
+
+  has_PMID_value
+    a owl:DatatypeProperty ;
+    rdfs:domain class_entity ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The PMID value of the entity."@en ;
+    rdfs:label "PMID Value"@en .
+
+  has_method_value
+    a owl:DatatypeProperty ;
+    rdfs:domain class_entity ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The method value of the entity."@en ;
+    rdfs:label "Method Value"@en .
+
+entity_name
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents an entity name."@en ;
+  rdfs:label "Entity Name"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+enhancer
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents an enhancer."@en ;
+  rdfs:label "Enhancer"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+super_enhancer
+  a owl:Class ;
+  rdfs:subClassOf enhancer ;
+  rdfs:comment "A subclass of enhancer that represents a super enhancer."@en ;
+  rdfs:label "Super Enhancer"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+target_gene
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a target gene."@en ;
+  rdfs:label "Target Gene"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+transcription_factor
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a transcription factor."@en ;
+  rdfs:label "Transcription Factor"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+disease_association
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a disease association."@en ;
+  rdfs:label "Disease Association"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+biosample
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a biosample."@en ;
+  rdfs:label "Biosample"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+cell_line
+  a owl:Class ;
+  rdfs:subClassOf biosample ;
+  rdfs:comment "A subclass of biosample that represents a cell line."@en ;
+  rdfs:label "Cell Line"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+genomic_coordinate
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a genomic coordinate."@en ;
+  rdfs:label "Genomic Coordinate"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+chromosome
+  a owl:Class ;
+  rdfs:subClassOf genomic_coordinate ;
+  rdfs:comment "A subclass of genomic coordinate that represents a chromosome."@en ;
+  rdfs:label "Chromosome"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+assembly
+  a owl:Class ;
+  rdfs:subClassOf genomic_coordinate ;
+  rdfs:comment "A subclass of genomic coordinate that represents an assembly."@en ;
+  rdfs:label "Assembly"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+original_ID
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents an original ID."@en ;
+  rdfs:label "Original ID"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+refsnp_ID
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a RefSNP ID."@en ;
+  rdfs:label "RefSNP ID"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+score
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a score."@en ;
+  rdfs:label "Score"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+source
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a source."@en ;
+  rdfs:label "Source"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+type
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a type."@en ;
+  rdfs:label "Type"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+current_end
+  a owl:DatatypeProperty ;
+  rdfs:domain current_end ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The current end coordinate."@en ;
+  rdfs:label "Current End"@en .
+
+current_start
+  a owl:DatatypeProperty ;
+  rdfs:domain current_start ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The current start coordinate."@en ;
+  rdfs:label "Current Start"@en .
+
+orig_end
+  a owl:DatatypeProperty ;
+  rdfs:domain orig_end ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The original end coordinate."@en ;
+  rdfs:label "Original End"@en .
+
+orig_start
+  a owl:DatatypeProperty ;
+  rdfs:domain orig_start ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The original start coordinate."@en ;
+  rdfs:label "Original Start"@en .
+
+has_PMID
+  a owl:ObjectProperty ;
+  rdfs:domain enhancer, super_enhancer, target_gene, transcription_factor, disease_association ;
+  rdfs:range PMID ;
+  rdfs:comment "The PMID of the entity."@en ;
+  rdfs:label "Has PMID"@en .
+
+has_method
+  a owl:ObjectProperty ;
+  rdfs:domain enhancer, super_enhancer, target_gene, transcription_factor, disease_association ;
+  rdfs:range Method ;
+  rdfs:comment "The method of the entity."@en ;
+  rdfs:label "Has Method"@en .
+
+has_biosample
+  a owl:ObjectProperty ;
+  rdfs:domain biosample ;
+  rdfs:range Biosample ;
+  rdfs:comment "The biosample of the entity."@en ;
+  rdfs:label "Has Biosample"@en .
+
+has_cell_line
+  a owl:ObjectProperty ;
+  rdfs:domain cell_line ;
+  rdfs:range Cell Line ;
+  rdfs:comment "The cell line of the entity."@en ;
+  rdfs:label "Has Cell Line"@en .
+
+has_genomic_coordinate
+  a owl:ObjectProperty ;
+  rdfs:domain genomic_coordinate ;
+  rdfs:range Genomic Coordinate ;
+  rdfs:comment "The genomic coordinate of the entity."@en ;
+  rdfs:label "Has Genomic Coordinate"@en .
+
+has_chromosome
+  a owl:ObjectProperty ;
+  rdfs:domain chromosome ;
+  rdfs:range Chromosome ;
+  rdfs:comment "The chromosome of the entity."@en ;
+  rdfs:label "Has Chromosome"@en .
+
+has_assembly
+  a owl:ObjectProperty ;
+  rdfs:domain assembly ;
+  rdfs:range Assembly ;
+  rdfs:comment "The assembly of the entity."@en ;
+  rdfs:label "Has Assembly"@en .
+
+has_original_ID
+  a owl:ObjectProperty ;
+  rdfs:domain original_ID ;
+  rdfs:range Original ID ;
+  rdfs:comment "The original ID of the entity."@en ;
+  rdfs:label "Has Original ID"@en .
+
+has_refsnp_ID
+  a owl:ObjectProperty ;
+  rdfs:domain refsnp_ID ;
+  rdfs:range RefSNP ID ;
+  rdfs:comment "The RefSNP ID of the entity."@en ;
+  rdfs:label "Has RefSNP ID"@en .
+
+has_score
+  a owl:ObjectProperty ;
+  rdfs:domain score ;
+  rdfs:range Score ;
+  rdfs:comment "The score of the entity."@en ;
+  rdfs:label "Has Score"@en .
+
+has_source
+  a owl:ObjectProperty ;
+  rdfs:domain source ;
+  rdfs:range Source ;
+  rdfs:comment "The source of the entity."@en ;
+  rdfs:label "Has Source"@en .
+
+has_type
+  a owl:ObjectProperty ;
+  rdfs:domain type ;
+  rdfs:range Type ;
+  rdfs:comment "The type of the entity."@en ;
+  rdfs:label "Has Type"@en .
+
+################ MAPPING (OntoMapper) #######################
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://www.w3.org/TR/2011/PR-rdf-sparql-json-20111206#>.
+@prefix ex: <http://example.org/>.
+@prefix base: <http://example.org/base/>.
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:class;
+        rr:objectMap [
+            rr:parentTriplesMap <#ClassMapping>
+        ]
+    ].
+
+<#TriplesMapEntity2> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity2}}{FAIR_URI}";
+    ].
+
+<#ClassMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:class;
+        rr:objectMap [
+            rr:constant <http://example.org/Class>
+        ]
+    ].
+
+<#PropertyMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:Property;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#OriginalIDMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{OriginalID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:originalID;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#RefSNPIDMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{RefSNP}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:refSNP;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#ScoreMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Score}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:score;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#SourceMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Source}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:source;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#TypeMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Type}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#CurrentEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{CurrentEnd}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:currentEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#CurrentStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{CurrentStart}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:currentStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#OriginalStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{OriginalStart}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:originalStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#OriginalEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{OriginalEnd}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:originalEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasPMIDMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasPMID;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasMethodMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasBiosampleMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasCellLineMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasCellLine;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasGenomicCoordinateMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasGenomicCoordinate;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasChromosomeMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasChromosome;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasRefSNPMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasRefSNP;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasScoreMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasSourceMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasSource;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasTypeMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasCurrentEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasCurrentEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasCurrentStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasCurrentStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasOriginalEndMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasOriginalEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].
+
+<#HasOriginalStartMapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasOriginalStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#PropertyMapping>
+        ]
+    ].

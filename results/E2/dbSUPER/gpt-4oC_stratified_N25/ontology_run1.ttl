@@ -1,0 +1,63 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    skos:prefLabel "dbSUPER Ontology" ;
+    skos:definition "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens." .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is targeted by a cis-regulatory module." .
+
+:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line in which the super-enhancer is active." .
+
+### Properties ###
+:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "The genomic coordinate of the cis-regulatory module." .
+
+:targetsGene a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "targets gene" ;
+    skos:definition "The gene targeted by the cis-regulatory module." .
+
+:isActiveInCellLine a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :CellLine ;
+    skos:prefLabel "is active in cell line" ;
+    skos:definition "The cell line in which the cis-regulatory module is active." .
+
+:hasRank a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has rank" ;
+    skos:definition "The rank of the super-enhancer in the cell line." .
+
+### Instances ###
+:SE_31797 a :CRM ;
+    :hasGenomicCoordinate "chr3:187454355-187468841" ;
+    :targetsGene :BCL6 ;
+    :isActiveInCellLine :Gastric ;
+    :hasRank 424 .
+
+:BCL6 a :Gene ;
+    skos:prefLabel "BCL6" .
+
+:Gastric a :CellLine ;
+    skos:prefLabel "Gastric" .
+
+# Additional instances would follow the same pattern for each row in the sample data.

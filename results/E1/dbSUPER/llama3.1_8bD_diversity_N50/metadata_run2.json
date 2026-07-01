@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-26T23:59:21.890298",
+  "success": true,
+  "elapsed_seconds": 90.29,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 403,
+    "completion_tokens": 879,
+    "total_tokens": 1282
+  },
+  "prompt_tokens_estimate": 473,
+  "response_chars": 2972,
+  "turtle_chars": 2972,
+  "validation": {
+    "valid": false,
+    "error": "at line 52 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'tory module\\n  <http://example.org/dbSUPER#GenomicCoordinate>'^b' ;\\n  <http://example.org/dbSUPER#Evidence> ;\\n  <http://examp'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bD_diversity_N50/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bD_diversity_N50/response_raw_run2.txt"
+  }
+}

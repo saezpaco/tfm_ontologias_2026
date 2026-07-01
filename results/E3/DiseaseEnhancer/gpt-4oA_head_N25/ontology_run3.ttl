@@ -1,0 +1,67 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly:<https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed:<http://identifiers.org/pubmed/> .
+
+# Define the DiseaseEnhancer class
+hcrm:DiseaseEnhancer rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Enhancers associated with diseases in Homo sapiens" ;
+    skos:prefLabel "Disease Enhancer" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; # in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; # hg38 assembly as reference
+    biolink:category biolink:RegulatoryRegion .
+
+# Define properties for DiseaseEnhancer
+hcrm:DiseaseEnhancer#database_name rdf:type hcrm:DiseaseEnhancer ;
+    skos:definition "Disease enhancer located in Homo sapiens according to database_name" ;
+    skos:prefLabel "Disease Enhancer#database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; # Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; # Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; # Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; # Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; # Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; # Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; # Article
+    sio:SIO_000253 <original_URL_database> . # Original Database
+
+# Define genomic coordinates for DiseaseEnhancer
+hcrm:DiseaseEnhancer#GenomicCoordinates rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000340 ;
+    skos:prefLabel "Genomic Coordinates" ;
+    biolink:category biolink:GenomicSequenceLocalization ;
+    obo:GENO_0000895 "start_position"^^xsd:integer ;
+    obo:GENO_0000894 "end_position"^^xsd:integer ;
+    obo:BFO_0000050 nuccore:chr_ID . # Chromosome
+
+# Define the relationship to diseases
+hcrm:DiseaseEnhancer#AssociatedDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:NCIT_C2991 ; # Disease
+    skos:prefLabel "associated disease" ;
+    skos:exactMatch biolink:has_disease_association .
+
+# Define the relationship to target genes
+hcrm:DiseaseEnhancer#TargetGene rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:SO_0000704 ; # Gene
+    skos:prefLabel "target gene" ;
+    skos:exactMatch biolink:regulates_expression_of .
+
+# Define the relationship to transcription factors
+hcrm:DiseaseEnhancer#InteractingTF rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:DiseaseEnhancer ;
+    rdfs:range obo:SO_0000235 ; # Transcription Factor
+    skos:prefLabel "interacting transcription factor" ;
+    skos:exactMatch biolink:interacts_with .

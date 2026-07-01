@@ -1,0 +1,60 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology .
+
+### Classes
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRM> rdf:type owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Gene> rdf:type owl:Class ;
+    skos:prefLabel "Gene" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Disease> rdf:type owl:Class ;
+    skos:prefLabel "Disease" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/TranscriptionFactor> rdf:type owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+### Object Properties
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasTargetGene> rdf:type owl:ObjectProperty ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRM> ;
+    rdfs:range <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Gene> ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/associatedWithDisease> rdf:type owl:ObjectProperty ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRM> ;
+    rdfs:range <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/Disease> ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/interactsWithTF> rdf:type owl:ObjectProperty ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRM> ;
+    rdfs:range <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/TranscriptionFactor> ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+### Datatype Properties
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasGenomicCoordinates> rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "Genomic coordinates of the CRM in the human genome" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasScore> rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRM> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "Score" ;
+    skos:definition "Score representing the confidence or strength of the CRM" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/hasPMID> rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PMID" ;
+    skos:definition "PubMed ID associated with the CRM evidence" .

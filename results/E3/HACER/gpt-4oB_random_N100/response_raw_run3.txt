@@ -1,0 +1,92 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" ;
+    dc:source <http://bioinfo.vanderbilt.edu/AE/HACER/> .
+
+obo:SO_0000727 a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CRM .
+
+schema:Chromosome a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:exactMatch nuccore:chr_ID .
+
+schema:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:gene_symbol .
+
+schema:CellLine a owl:Class ;
+    rdfs:label "Cell Line" .
+
+schema:Disease a owl:Class ;
+    rdfs:label "Disease" .
+
+schema:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+schema:hasPart a owl:ObjectProperty ;
+    rdfs:label "has part" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range schema:Gene .
+
+schema:hasEvidence a owl:ObjectProperty ;
+    rdfs:label "has evidence" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range pubmed: .
+
+schema:hasActivityInCellLine a owl:ObjectProperty ;
+    rdfs:label "has activity in cell line" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range schema:CellLine .
+
+schema:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range schema:Disease .
+
+schema:interactsWithTF a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range schema:TranscriptionFactor .
+
+schema:genomicStart a owl:DatatypeProperty ;
+    rdfs:label "genomic start" ;
+    rdfs:domain schema:Chromosome ;
+    rdfs:range xsd:integer .
+
+schema:genomicEnd a owl:DatatypeProperty ;
+    rdfs:label "genomic end" ;
+    rdfs:domain schema:Chromosome ;
+    rdfs:range xsd:integer .
+
+schema:assemblyVersion a owl:DatatypeProperty ;
+    rdfs:label "assembly version" ;
+    rdfs:domain schema:Chromosome ;
+    rdfs:range xsd:string .
+
+schema:score a owl:DatatypeProperty ;
+    rdfs:label "score" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range xsd:float .
+
+schema:minimumRatio a owl:DatatypeProperty ;
+    rdfs:label "minimum ratio" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range xsd:float .
+```

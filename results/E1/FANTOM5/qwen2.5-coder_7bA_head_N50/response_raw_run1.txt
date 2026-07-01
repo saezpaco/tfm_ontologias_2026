@@ -1,0 +1,76 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "Genomic Enhancer Ontology" ;
+    rdfs:comment "A formal representation of genomic enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A region of DNA that can enhance the transcription of other genes." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A position within the genome." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:startCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:endCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Coordinate" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information supporting the existence or properties of an enhancer." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:evidenceType a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range skos:Concept ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the enhancer." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:evidenceSource a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range skos:Concept ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source of the evidence supporting the enhancer." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:enhances a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Gene ;
+    skos:prefLabel "Enhances" ;
+    skos:definition "The gene that is enhanced by the enhancer." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A segment of DNA that codes for a protein or RNA molecule." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+
+crm:transcription a owl:ObjectProperty ;
+    rdfs:domain crm:Gene ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "Transcription" ;
+    skos:definition "The process of synthesizing RNA from DNA." ;
+    obo:IAO_0000136 "http://purl.obolibrary.org/obo/GENO_0000257" .
+```

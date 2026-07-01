@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-05T21:46:52.614682",
+  "success": true,
+  "elapsed_seconds": 105.92,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2010,
+    "completion_tokens": 1013,
+    "total_tokens": 3023
+  },
+  "prompt_tokens_estimate": 1487,
+  "response_chars": 3259,
+  "turtle_chars": 2624,
+  "validation": {
+    "valid": false,
+    "error": "at line 25 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'Enhancer>\\n  rdfs:label \"Cis-regulatory enhancer\"\\n)\\nowl:Class'^b'(\\n  <http://example.org/TranscriptionFactor>\\n  rdfs:label \"T'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/response_raw_run1.txt"
+  }
+}

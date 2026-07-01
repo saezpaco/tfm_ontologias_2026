@@ -1,0 +1,72 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "enhancer" ;
+    skos:definition "A cis-regulatory region of DNA that increases the transcription of associated genes." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+# Properties
+obo:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates an enhancer to its genomic coordinates." .
+
+obo:hasChromosome a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the enhancer is located." ;
+    rdfs:range xsd:string .
+
+obo:hasChromStart a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome start" ;
+    skos:definition "The starting position of the enhancer on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:hasChromEnd a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome end" ;
+    skos:definition "The ending position of the enhancer on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:hasScore a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "The score associated with the enhancer, indicating its activity level." ;
+    rdfs:range xsd:integer .
+
+obo:hasStrand a owl:DatatypeProperty ;
+    skos:prefLabel "has strand" ;
+    skos:definition "The DNA strand on which the enhancer is located." ;
+    rdfs:range xsd:string .
+
+obo:hasEvidence a owl:ObjectProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Relates an enhancer to the evidence supporting its activity." .
+
+obo:hasBlockCount a owl:DatatypeProperty ;
+    skos:prefLabel "has block count" ;
+    skos:definition "The number of blocks in the enhancer region." ;
+    rdfs:range xsd:integer .
+
+obo:hasBlockSizes a owl:DatatypeProperty ;
+    skos:prefLabel "has block sizes" ;
+    skos:definition "The sizes of the blocks in the enhancer region." ;
+    rdfs:range xsd:string .
+
+obo:hasBlockStarts a owl:DatatypeProperty ;
+    skos:prefLabel "has block starts" ;
+    skos:definition "The starting positions of the blocks in the enhancer region." ;
+    rdfs:range xsd:string .
+
+# Example individual
+<http://example.org/enhancer/chr7:47343610-47343904> a obo:SO_0000165 ;
+    obo:hasChromosome "chr7" ;
+    obo:hasChromStart 47343610 ;
+    obo:hasChromEnd 47343904 ;
+    obo:hasScore 7 ;
+    obo:hasStrand "." ;
+    obo:hasBlockCount 2 ;
+    obo:hasBlockSizes "212,4" ;
+    obo:hasBlockStarts "0,290" .

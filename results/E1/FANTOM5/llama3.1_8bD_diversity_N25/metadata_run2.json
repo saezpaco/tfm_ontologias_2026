@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-26T21:00:23.361194",
+  "success": true,
+  "elapsed_seconds": 73.28,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1766,
+    "completion_tokens": 927,
+    "total_tokens": 2693
+  },
+  "prompt_tokens_estimate": 1123,
+  "response_chars": 3197,
+  "turtle_chars": 3197,
+  "validation": {
+    "valid": false,
+    "error": "at line 19 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'es gene expression\" .\\n  obo:SO_0000163 <owl:equivalentClass>'^b' .\\n</owl:Class>\\n\\n<owl:Class rdf:about=\"http://example.org/En'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bD_diversity_N25/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bD_diversity_N25/response_raw_run2.txt"
+  }
+}

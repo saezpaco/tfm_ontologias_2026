@@ -1,0 +1,95 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 11.459999999999999,
+  "total_tokens": 10956,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-05-28T16:36:00.242816",
+      "success": true,
+      "elapsed_seconds": 9.7,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2781,
+        "completion_tokens": 746,
+        "total_tokens": 3527
+      },
+      "prompt_tokens_estimate": 1655,
+      "response_chars": 2768,
+      "turtle_chars": 2768,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'xample.org/ontology/FANTOM5> a owl:Ontology .\\n\\n### Classes\\n\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"Cis-Regulatory Module'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-05-28T16:36:15.225811",
+      "success": true,
+      "elapsed_seconds": 13.95,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2781,
+        "completion_tokens": 835,
+        "total_tokens": 3616
+      },
+      "prompt_tokens_estimate": 1655,
+      "response_chars": 2702,
+      "turtle_chars": 2688,
+      "validation": {
+        "valid": true,
+        "n_triples": 50,
+        "n_classes": 2,
+        "n_properties": 8
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-05-28T16:36:26.989764",
+      "success": true,
+      "elapsed_seconds": 10.73,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2781,
+        "completion_tokens": 1032,
+        "total_tokens": 3813
+      },
+      "prompt_tokens_estimate": 1655,
+      "response_chars": 3860,
+      "turtle_chars": 3860,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'xample.org/ontology/FANTOM5> a owl:Ontology .\\n\\n### Classes\\n\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"Cis-Regulatory Module'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4o/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://www.sqlalchemy.org/engines/sqlite/> .
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://example.org/entity/{Entity1}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Property>
+        ]
+    ].
+
+<#TriplesMapEntity2> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://example.org/entity/{Entity2}{FAIR_URI}";
+    ].
+
+<#TriplesMapProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Property>
+        ]
+    ].
+
+<#TriplesMapPMID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#PMID>
+        ]
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Method>
+        ]
+    ].
+
+<#TriplesMapBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Biosample>
+        ]
+    ].
+
+<#TriplesMapID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#ID>
+        ]
+    ].
+
+<#TriplesMapReference> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Reference>
+        ]
+    ].
+
+<#TriplesMapAssembly> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Assembly>
+        ]
+    ].
+
+<#TriplesMapChromosome> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Chromosome>
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Disease>
+        ]
+    ].
+
+<#TriplesMapRatio> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <http://example.org/property>;
+        rr:objectMap [
+            rr:parentTriplesMap <#Ratio>
+        ]
+    ].
+
+<#Property> a rr:Class;
+    rdfs:label "Property";
+    rdfs:comment "This is a property.";
+    skos:definition "A characteristic or attribute of something.";
+
+<#PMID> a rr:DatatypeProperty;
+    rdfs:label "PMID";
+    rdfs:comment "This is a PMID.";
+    skos:definition "A unique identifier for a publication in PubMed.";
+    range xsd:string .
+
+<#Method> a owl:Class;
+    rdfs:label "Method";
+    rdfs:comment "This is a method.";
+    skos:definition "A procedure or technique used to achieve a particular result.";
+
+<#Biosample> a owl:Class;
+    rdfs:label "Biosample";
+    rdfs:comment "This is a biosample.";
+    skos:definition "A sample of biological material, such as tissue or cells.";
+
+<#ID> a owl:Class;
+    rdfs:label "ID";
+    rdfs:comment "This is an ID.";
+    skos:definition "A unique identifier for something.";
+
+<#Reference> a owl:Class;
+    rdfs:label "Reference";
+    rdfs:comment "This is a reference.";
+    skos:definition "A citation or mention of another work.";
+
+<#Assembly> a owl:Class;
+    rdfs:label "Assembly";
+    rdfs:comment "This is an assembly.";
+    skos:definition "A collection of genetic material, such as DNA or RNA.";
+
+<#Chromosome> a owl:Class;
+    rdfs:label "Chromosome";
+    rdfs:comment "This is a chromosome.";
+    skos:definition "A thread-like structure in the nucleus of a cell that carries hereditary information.";
+
+<#Disease> a owl:Class;
+    rdfs:label "Disease";
+    rdfs:comment "This is a disease.";
+    skos:definition "A condition that affects an organism's health.";
+
+<#Ratio> a owl:DatatypeProperty;
+    rdfs:label "Ratio";
+    rdfs:comment "This is a ratio.";
+    skos:definition "The result of dividing one quantity by another.";
+    range xsd:string .

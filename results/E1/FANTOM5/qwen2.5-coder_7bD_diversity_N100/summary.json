@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 785.5500000000001,
+  "total_tokens": 36861,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-29T22:32:11.545594",
+      "success": true,
+      "elapsed_seconds": 809.49,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 8192,
+        "total_tokens": 12287
+      },
+      "prompt_tokens_estimate": 3541,
+      "response_chars": 34682,
+      "turtle_chars": 34668,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-29T22:46:20.077077",
+      "success": true,
+      "elapsed_seconds": 847.49,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 8192,
+        "total_tokens": 12287
+      },
+      "prompt_tokens_estimate": 3541,
+      "response_chars": 34682,
+      "turtle_chars": 34668,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-29T22:58:00.797556",
+      "success": true,
+      "elapsed_seconds": 699.67,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 8192,
+        "total_tokens": 12287
+      },
+      "prompt_tokens_estimate": 3541,
+      "response_chars": 34682,
+      "turtle_chars": 34668,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/qwen2.5-coder_7bD_diversity_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

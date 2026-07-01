@@ -1,0 +1,233 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix greg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty pmid
+    a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "The PubMed ID associated with the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+owl:DatatypeProperty method
+    a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study of the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty assemblyVersion
+    a owl:DatatypeProperty ;
+    rdfs:label "Assembly Version" ;
+    rdfs:comment "The genomic assembly version of the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty chromosomeNumber
+    a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number of the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+owl:DatatypeProperty ratio
+    a owl:DatatypeProperty ;
+    rdfs:label "Ratio" ;
+    rdfs:comment "The minimum ratio of interaction for transcription factor to enhancer and enhancer to gene interactions." ;
+    rdfs:domain greg:TranscriptionFactorToEnhancerInteraction, greg:EnhancerToGeneInteraction ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty score
+    a owl:DatatypeProperty ;
+    rdfs:label "Score" ;
+    rdfs:comment "The score associated with the interaction of genetic regulatory elements." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty hgncSymbol
+    a owl:DatatypeProperty ;
+    rdfs:label "HGNC Symbol" ;
+    rdfs:comment "The HGNC symbol of transcription factors and target genes." ;
+    rdfs:domain greg:TranscriptionFactor, greg:TargetGene ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty refseqID
+    a owl:DatatypeProperty ;
+    rdfs:label "RefSeq ID" ;
+    rdfs:comment "The RefSeq ID of the gene or enhancer." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty start
+    a owl:DatatypeProperty ;
+    rdfs:label "Start" ;
+    rdfs:comment "The start position in the assembly of the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+owl:DatatypeProperty end
+    a owl:DatatypeProperty ;
+    rdfs:label "End" ;
+    rdfs:comment "The end position in the assembly of the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+owl:ObjectProperty hasTranscriptionFactor
+    a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The transcription factor involved in the interaction." ;
+    rdfs:domain greg:TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range greg:TranscriptionFactor .
+
+owl:ObjectProperty hasEnhancer
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer" ;
+    rdfs:comment "The enhancer involved in the interaction." ;
+    rdfs:domain greg:TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range greg:Enhancer .
+
+owl:ObjectProperty hasTargetGene
+    a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The target gene involved in the interaction." ;
+    rdfs:domain greg:EnhancerToGeneInteraction ;
+    rdfs:range greg:TargetGene .
+
+owl:ObjectProperty associatedWithDisease
+    a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The disease associated with the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range greg:Disease .
+
+owl:ObjectProperty occursInCellLineOrBiosample
+    a owl:ObjectProperty ;
+    rdfs:label "Occurs In Cell Line Or Biosample" ;
+    rdfs:comment "The cell line or biosample in which the genetic regulatory element occurs." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range greg:CellLineOrBiosample .
+
+owl:ObjectProperty involvesMutation
+    a owl:ObjectProperty ;
+    rdfs:label "Involves Mutation" ;
+    rdfs:comment "The mutation involved in the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range greg:Mutation .
+
+owl:ObjectProperty hasPubMedArticle
+    a owl:ObjectProperty ;
+    rdfs:label "Has PubMed Article" ;
+    rdfs:comment "The PubMed article associated with the genetic regulatory element." ;
+    rdfs:domain greg:GeneticRegulatoryElement ;
+    rdfs:range greg:PubMedArticle .
+
+owl:Class GeneticRegulatoryElement
+    a owl:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A general class representing genetic regulatory elements such as enhancers and super-enhancers." ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:pmid ;
+        owl:someValuesFrom xsd:int
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:method ;
+        owl:someValuesFrom xsd:string
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:assemblyVersion ;
+        owl:someValuesFrom xsd:string
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:chromosomeNumber ;
+        owl:someValuesFrom xsd:int
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:start ;
+        owl:someValuesFrom xsd:int
+    ] ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:end ;
+        owl:someValuesFrom xsd:int
+    ] .
+
+owl:Class TranscriptionFactor
+    a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing transcription factors." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:hgncSymbol ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class Enhancer
+    a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:hgncSymbol ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class SuperEnhancer
+    a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing super-enhancers." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:hgncSymbol ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class TargetGene
+    a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes." ;
+    rdfs:subClassOf greg:GeneticRegulatoryElement ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:hgncSymbol ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class Disease
+    a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing diseases." ;
+    rdfs:subClassOf owl:Thing .
+
+owl:Class CellLineOrBiosample
+    a owl:Class ;
+    rdfs:label "Cell Line Or Biosample" ;
+    rdfs:comment "A class representing cell lines or biosamples." ;
+    rdfs:subClassOf owl:Thing .
+
+owl:Class Mutation
+    a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing mutations." ;
+    rdfs:subClassOf owl:Thing .
+
+owl:Class PubMedArticle
+    a owl:Class ;
+    rdfs:label "PubMed Article" ;
+    rdfs:comment "A class representing PubMed articles." ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty greg:pmid ;
+        owl:someValuesFrom xsd:int
+    ] .

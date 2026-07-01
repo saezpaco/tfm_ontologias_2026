@@ -1,0 +1,177 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geo: <https://genomic_elements_ontology.com#> .
+
+geo:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A generic class representing a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass geo:Enhancer union geo:SuperEnhancer .
+
+geo:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A subclass of GeneticElement representing an enhancer." ;
+    rdfs:subClassOf geo:GeneticElement .
+
+geo:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A subclass of Enhancer representing a super enhancer." ;
+    rdfs:subClassOf geo:Enhancer .
+
+geo:hasBlockCount a owl:ObjectProperty ;
+    rdfs:label "Has Block Count" ;
+    rdfs:comment "The number of blocks in the genetic element." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:BlockCount ;
+    owl:equivalentProperty geo:blockCountValue .
+
+geo:hasChromEnd a owl:ObjectProperty ;
+    rdfs:label "Has Chrom End" ;
+    rdfs:comment "The end position of the chromosome." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:ChromEnd ;
+    owl:equivalentProperty geo:chromEndValue .
+
+geo:hasChromStart a owl:ObjectProperty ;
+    rdfs:label "Has Chrom Start" ;
+    rdfs:comment "The start position of the chromosome." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:ChromStart ;
+    owl:equivalentProperty geo:chromStartValue .
+
+geo:hasScore a owl:ObjectProperty ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "The score of the genetic element." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:Score ;
+    owl:equivalentProperty geo:scoreValue .
+
+geo:hasThickEnd a owl:ObjectProperty ;
+    rdfs:label "Has Thick End" ;
+    rdfs:comment "The end position of the thick region." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:ThickEnd ;
+    owl:equivalentProperty geo:thickEndValue .
+
+geo:hasThickStart a owl:ObjectProperty ;
+    rdfs:label "Has Thick Start" ;
+    rdfs:comment "The start position of the thick region." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:ThickStart ;
+    owl:equivalentProperty geo:thickStartValue .
+
+geo:hasBlockSizes a owl:ObjectProperty ;
+    rdfs:label "Has Block Sizes" ;
+    rdfs:comment "The sizes of the blocks." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:BlockSizes ;
+    owl:equivalentProperty geo:blockSizesValue .
+
+geo:hasBlockStarts a owl:ObjectProperty ;
+    rdfs:label "Has Block Starts" ;
+    rdfs:comment "The starts of the blocks." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:BlockStarts ;
+    owl:equivalentProperty geo:blockStartsValue .
+
+geo:hasChrom a owl:ObjectProperty ;
+    rdfs:label "Has Chrom" ;
+    rdfs:comment "The chromosome name." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:Chromosome ;
+    owl:equivalentProperty geo:chromName .
+
+geo:hasItemRgb a owl:ObjectProperty ;
+    rdfs:label "Has Item Rgb" ;
+    rdfs:comment "The RGB color code." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:ColorCode ;
+    owl:equivalentProperty geo:itemRgbCode .
+
+geo:hasName a owl:ObjectProperty ;
+    rdfs:label "Has Name" ;
+    rdfs:comment "The name of the genetic element." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:Name ;
+    owl:equivalentProperty geo:nameValue .
+
+geo:hasStrand a owl:ObjectProperty ;
+    rdfs:label "Has Strand" ;
+    rdfs:comment "The strand orientation of the genetic element." ;
+    rdfs:domain geo:GeneticElement ;
+    rdfs:range geo:StrandOrientation ;
+    owl:equivalentProperty geo:strandOrientation .
+
+geo:BlockCount a owl:Class ;
+    rdfs:label "Block Count" ;
+    rdfs:comment "A class representing the block count of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:integer .
+
+geo:ChromEnd a owl:Class ;
+    rdfs:label "Chrom End" ;
+    rdfs:comment "A class representing the chrom end of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:integer .
+
+geo:ChromStart a owl:Class ;
+    rdfs:label "Chrom Start" ;
+    rdfs:comment "A class representing the chrom start of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:integer .
+
+geo:Score a owl:Class ;
+    rdfs:label "Score" ;
+    rdfs:comment "A class representing the score of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:float .
+
+geo:ThickEnd a owl:Class ;
+    rdfs:label "Thick End" ;
+    rdfs:comment "A class representing the thick end of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:integer .
+
+geo:ThickStart a owl:Class ;
+    rdfs:label "Thick Start" ;
+    rdfs:comment "A class representing the thick start of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:integer .
+
+geo:BlockSizes a owl:Class ;
+    rdfs:label "Block Sizes" ;
+    rdfs:comment "A class representing the block sizes of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:string .
+
+geo:BlockStarts a owl:Class ;
+    rdfs:label "Block Starts" ;
+    rdfs:comment "A class representing the block starts of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:string .
+
+geo:Chromosome a owl:Class ;
+    rdfs:label "Chromosome" ;
+    rdfs:comment "A class representing a chromosome." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:string .
+
+geo:ColorCode a owl:Class ;
+    rdfs:label "Color Code" ;
+    rdfs:comment "A class representing a color code." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:string .
+
+geo:Name a owl:Class ;
+    rdfs:label "Name" ;
+    rdfs:comment "A class representing the name of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:string .
+
+geo:StrandOrientation a owl:Class ;
+    rdfs:label "Strand Orientation" ;
+    rdfs:comment "A class representing the strand orientation of a genetic element." ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass xsd:string .

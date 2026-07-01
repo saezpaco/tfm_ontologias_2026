@@ -1,0 +1,222 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasPubMedID" ;
+    rdfs:comment "The PubMed ID of a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasMethod" ;
+    rdfs:comment "The method used in a genetic element study." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasMethod ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasScore" ;
+    rdfs:comment "The score value of a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasScore ;
+        owl:someValuesFrom xsd:float
+    ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasSource" ;
+    rdfs:comment "The source of a genetic element data." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasSource ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasType" ;
+    rdfs:comment "The type of a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasType ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasChromosomeNumber" ;
+    rdfs:comment "The chromosome number of a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasChromosomeNumber ;
+        owl:someValuesFrom xsd:int
+    ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasStartPosition" ;
+    rdfs:comment "The start position of a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasStartPosition ;
+        owl:someValuesFrom xsd:int
+    ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasEndPosition" ;
+    rdfs:comment "The end position of a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasEndPosition ;
+        owl:someValuesFrom xsd:int
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "hasTranscriptionFactor" ;
+    rdfs:comment "The transcription factor associated with an enhancer or superenhancer." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasTranscriptionFactor ;
+        owl:someValuesFrom gr:TranscriptionFactor
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "hasTargetGene" ;
+    rdfs:comment "The target gene associated with an enhancer or superenhancer." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasTargetGene ;
+        owl:someValuesFrom gr:TargetGene
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "associatedWithDisease" ;
+    rdfs:comment "The disease associated with a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:associatedWithDisease ;
+        owl:someValuesFrom gr:Disease
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "occursInCellLineOrBiosample" ;
+    rdfs:comment "The cell line or biosample in which a genetic element occurs." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:occursInCellLineOrBiosample ;
+        owl:someValuesFrom gr:CellLineOrBiosample
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "involvesMutation" ;
+    rdfs:comment "The mutation involved in a genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:involvesMutation ;
+        owl:someValuesFrom gr:Mutation
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "hasPubMedArticle" ;
+    rdfs:comment "The PubMed article associated with a genetic element, transcription factor, enhancer, superenhancer, target gene, disease, cell line or biosample, mutation." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedArticle ;
+        owl:someValuesFrom gr:PubMedArticle
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "hasAssemblyVersion" ;
+    rdfs:comment "The assembly version associated with a genetic element, transcription factor, enhancer, superenhancer, target gene, disease, cell line or biosample, mutation." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasAssemblyVersion ;
+        owl:someValuesFrom gr:AssemblyVersion
+    ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "locatedOnChromosome" ;
+    rdfs:comment "The chromosome on which a genetic element is located." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:locatedOnChromosome ;
+        owl:someValuesFrom gr:Chromosome
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "GeneticElement" ;
+    rdfs:comment "A genetic element." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "TranscriptionFactor" ;
+    rdfs:comment "A transcription factor." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "An enhancer." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    rdfs:comment "A superenhancer." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "TargetGene" ;
+    rdfs:comment "A target gene." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A disease." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "CellLineOrBiosample" ;
+    rdfs:comment "A cell line or biosample." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A mutation." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "PubMedArticle" ;
+    rdfs:comment "A PubMed article." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "AssemblyVersion" ;
+    rdfs:comment "An assembly version." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasPubMedID ;
+        owl:someValuesFrom xsd:string
+    ] .
+
+owl:Class rdf:type owl:Class ;
+    rdfs:label "Chromosome" ;
+    rdfs:comment "A chromosome." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:hasChromosomeNumber ;
+        owl:someValuesFrom xsd:int
+    ] .

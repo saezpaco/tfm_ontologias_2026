@@ -1,0 +1,99 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 9.376666666666667,
+  "total_tokens": 7932,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T20:13:36.750906",
+      "success": true,
+      "elapsed_seconds": 11.12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 870,
+        "total_tokens": 2686
+      },
+      "prompt_tokens_estimate": 1573,
+      "response_chars": 2606,
+      "turtle_chars": 2606,
+      "validation": {
+        "valid": true,
+        "n_triples": 31,
+        "n_classes": 5,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T20:13:45.100735",
+      "success": true,
+      "elapsed_seconds": 7.3,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 738,
+        "total_tokens": 2554
+      },
+      "prompt_tokens_estimate": 1573,
+      "response_chars": 2130,
+      "turtle_chars": 2130,
+      "validation": {
+        "valid": true,
+        "n_triples": 24,
+        "n_classes": 2,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T20:13:55.850785",
+      "success": true,
+      "elapsed_seconds": 9.71,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 876,
+        "total_tokens": 2692
+      },
+      "prompt_tokens_estimate": 1573,
+      "response_chars": 2648,
+      "turtle_chars": 2634,
+      "validation": {
+        "valid": true,
+        "n_triples": 32,
+        "n_classes": 5,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oD_diversity_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

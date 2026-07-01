@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-27T21:02:45.721074",
+  "success": true,
+  "elapsed_seconds": 80.81,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 802,
+    "completion_tokens": 989,
+    "total_tokens": 1791
+  },
+  "prompt_tokens_estimate": 811,
+  "response_chars": 3471,
+  "turtle_chars": 3457,
+  "validation": {
+    "valid": false,
+    "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'ry modules, specifically enhancers in the human genome.\" ;\\n\\n'^b'crm:CRM a owl:Class ;\\n    skos:prefLabel \"Cis-regulatory mod'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bD_diversity_N50/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/qwen2.5-coder_7bD_diversity_N50/response_raw_run1.txt"
+  }
+}

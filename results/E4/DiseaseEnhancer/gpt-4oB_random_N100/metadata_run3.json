@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/B_random/N=100/DiseaseEnhancer.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-28T20:48:23.387531+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.033,
+    "plan_s": 3.905,
+    "plan_chars": 4113,
+    "plan_prompt_chars": 9618,
+    "onto_s": 7.338,
+    "onto_chars": 6959,
+    "onto_prompt_chars": 13111,
+    "map_s": 5.585,
+    "map_chars": 5956,
+    "map_prompt_chars": 13749
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-28T20:48:40.249378+00:00",
+  "total_s": 16.861
+}

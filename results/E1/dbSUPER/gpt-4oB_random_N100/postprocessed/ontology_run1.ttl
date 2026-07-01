@@ -1,0 +1,70 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+obo:CL_0000000 a owl:Class ;
+    skos:prefLabel "Cell line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." .
+
+obo:GENE_0000000 a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein." .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory region to its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002205> ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:GENE_0000000 .
+
+obo:RO_0002434 a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which a regulatory region is active." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:CL_0000000 .
+
+# Datatype Properties
+obo:SO_0000165_genomicStart a owl:DatatypeProperty ;
+    skos:prefLabel "genomic start" ;
+    skos:definition "The starting position of a genomic feature on a chromosome." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer .
+
+obo:SO_0000165_genomicEnd a owl:DatatypeProperty ;
+    skos:prefLabel "genomic end" ;
+    skos:definition "The ending position of a genomic feature on a chromosome." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer .
+
+obo:SO_0000165_chromosome a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which a genomic feature is located." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:SO_0000165_assembly a owl:DatatypeProperty ;
+    skos:prefLabel "genome assembly" ;
+    skos:definition "The reference genome assembly version used for genomic coordinates." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:SO_0000165_evidence a owl:DatatypeProperty ;
+    skos:prefLabel "evidence" ;
+    skos:definition "The type of experimental evidence supporting the existence of a regulatory region." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .

@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-06-28T22:06:41.186661",
+  "success": true,
+  "elapsed_seconds": 10.26,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7858,
+    "completion_tokens": 1259,
+    "total_tokens": 9117
+  },
+  "prompt_tokens_estimate": 4388,
+  "response_chars": 3963,
+  "turtle_chars": 3949,
+  "validation": {
+    "valid": true,
+    "n_triples": 63,
+    "n_classes": 4,
+    "n_properties": 4
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oB_random_N200/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oB_random_N200/response_raw_run2.txt"
+  }
+}

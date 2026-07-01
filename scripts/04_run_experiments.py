@@ -130,9 +130,28 @@ Output ONLY valid Turtle code. No explanations, no markdown code blocks."""
 
 # ─── Funciones de carga de datos ─────────────────────────────────────────────
 
+# ── Overrides para la rejilla muestreo×tamaño (Fase 1 del protocolo) ──────────
+# Permiten que este runner (Ollama: Llama/Qwen) consuma una celda concreta de
+# la rejilla y escriba los resultados en una carpeta trazable {modelo}_{sufijo}.
+# Sin los flags --samples-dir/--results-suffix el comportamiento es el original.
+SAMPLES_DIR_OVERRIDE: Optional[Path] = None
+RESULTS_SUFFIX: str = ""
+
+
+def _samples_dir() -> Path:
+    return SAMPLES_DIR_OVERRIDE if SAMPLES_DIR_OVERRIDE else PATHS["samples"]
+
+
+def _model_folder(model_name: str) -> str:
+    # Sin separador, igual que run_gpt_experiments / run_ontogenix (p. ej.
+    # llama3.1_8bA_head_N25), para que el post-procesado y already_done coincidan.
+    base = model_name.replace(':', '_')
+    return f"{base}{RESULTS_SUFFIX}" if RESULTS_SUFFIX else base
+
+
 def load_sample_text(db_name: str) -> Optional[str]:
     """Carga el texto de la muestra de datos para el prompt."""
-    sample_path = PATHS["samples"] / f"{db_name}_sample_prompt.txt"
+    sample_path = _samples_dir() / f"{db_name}_sample_prompt.txt"
     if not sample_path.exists():
         # Generar muestra on-the-fly si no existe
         print(f"  ⚠️  Muestra no encontrada: {sample_path}")
@@ -213,7 +232,7 @@ def get_rag_fragments(db_name: str, n_fragments: int = 5) -> str:
     priority_schemas = ["crm"]  # Siempre incluir el schema base
 
     # Añadir schemas según el contenido de la BD
-    sample_path = PATHS["samples"] / f"{db_name}_sample_prompt.txt"
+    sample_path = _samples_dir() / f"{db_name}_sample_prompt.txt"
     sample_text = ""
     if sample_path.exists():
         sample_text = sample_path.read_text(encoding='utf-8').lower()
@@ -438,7 +457,7 @@ def run_single_experiment(experiment: str, db_name: str, model_name: str,
     """
     exp_config = EXPERIMENTS[experiment]
     output_dir = output_dir or (
-        PATHS["results"] / experiment / db_name / model_name.replace(':', '_')
+        PATHS["results"] / experiment / db_name / _model_folder(model_name)
     )
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -561,7 +580,7 @@ def run_experiment_batch(experiment: str, db_names: list, model_name: str,
         # Resumen por BD
         if not dry_run:
             output_dir = (PATHS["results"] / experiment / db_name /
-                          model_name.replace(':', '_'))
+                          _model_folder(model_name))
             summary = {
                 "experiment": experiment,
                 "db_name": db_name,
@@ -619,7 +638,23 @@ def main():
         action='store_true',
         help='Mostrar prompts sin llamar al LLM'
     )
+    parser.add_argument(
+        '--samples-dir',
+        type=Path, default=None,
+        help='Carpeta con las muestras {DB}_sample_prompt.txt (p. ej. una celda '
+             'de data/grid/<tipo>/N=<n>/). Por defecto usa data/samples.'
+    )
+    parser.add_argument(
+        '--results-suffix',
+        default='',
+        help='Sufijo para la carpeta de modelo, p. ej. A_head_N50 → '
+             'results/{exp}/{db}/{modelo}_A_head_N50/. Da trazabilidad a la rejilla.'
+    )
     args = parser.parse_args()
+
+    global SAMPLES_DIR_OVERRIDE, RESULTS_SUFFIX
+    SAMPLES_DIR_OVERRIDE = args.samples_dir
+    RESULTS_SUFFIX = args.results_suffix or ""
 
     print("\n" + "="*60)
     print("  EXPERIMENTOS LLM - TFM ONTOLOGÍAS CRM")
@@ -642,7 +677,7 @@ def main():
 
     # Verificar muestras disponibles
     missing_samples = [db for db in dbs
-                       if not (PATHS["samples"] / f"{db}_sample_prompt.txt").exists()]
+                       if not (_samples_dir() / f"{db}_sample_prompt.txt").exists()]
     if missing_samples:
         print(f"\n  ⚠️  Muestras no encontradas para: {missing_samples}")
         print(f"     Ejecuta primero: python 02_sample_databases.py")

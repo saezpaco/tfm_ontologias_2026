@@ -11,6 +11,7 @@
 @prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
 @prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
 @prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix : <http://example.org/ontology/> .
 
 <http://example.org/ontology/FANTOM5> a owl:Ontology ;
     dc:title "FANTOM5 Enhancer Ontology" ;
@@ -32,7 +33,7 @@
     rdfs:label "has genomic coordinate" ;
     rdfs:domain :Enhancer ;
     rdfs:range :GenomicCoordinate ;
-    skos:exactMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 :hasChromosome a owl:DatatypeProperty ;
     rdfs:label "has chromosome" ;

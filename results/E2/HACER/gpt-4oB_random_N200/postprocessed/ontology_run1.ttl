@@ -1,0 +1,71 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology ;
+    skos:prefLabel "HACER Ontology" ;
+    skos:definition "Ontology for the Human Active Cis-regulatory Elements database" .
+
+### Classes ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Database> a owl:Class ;
+    skos:prefLabel "Database" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+### Object Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range obo:SO_0000704 ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and target gene" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range obo:DOID_4 ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor" .
+
+### Datatype Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasGenomicCoordinates> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasExperimentalEvidence> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Experimental evidence supporting the cis-regulatory module" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/activeInCellLine> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Cell line in which the cis-regulatory module is active" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasScore> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has score" ;
+    skos:definition "Score of the cis-regulatory module" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasMinimumRatio> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has minimum ratio" ;
+    skos:definition "Minimum ratio of the cis-regulatory module" .

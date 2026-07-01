@@ -1,0 +1,29 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-06-28T21:25:54.639414",
+  "success": true,
+  "elapsed_seconds": 7.6,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 6874,
+    "completion_tokens": 879,
+    "total_tokens": 7753
+  },
+  "prompt_tokens_estimate": 3543,
+  "response_chars": 3091,
+  "turtle_chars": 3091,
+  "validation": {
+    "valid": true,
+    "n_triples": 52,
+    "n_classes": 5,
+    "n_properties": 7
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oB_random_N100/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/gpt-4oB_random_N100/response_raw_run2.txt"
+  }
+}

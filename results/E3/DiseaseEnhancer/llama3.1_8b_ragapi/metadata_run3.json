@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-05-08T22:55:56.169877",
+  "success": true,
+  "elapsed_seconds": 164.7,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3997,
+    "completion_tokens": 1030,
+    "total_tokens": 5027
+  },
+  "prompt_tokens_estimate": 2491,
+  "response_chars": 3117,
+  "turtle_chars": 2568,
+  "validation": {
+    "valid": true,
+    "n_triples": 42,
+    "n_classes": 7,
+    "n_properties": 0
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_ragapi/response_raw_run3.txt"
+  }
+}

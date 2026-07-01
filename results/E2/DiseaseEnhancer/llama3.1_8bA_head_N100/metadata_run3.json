@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-29T16:34:19.198293",
+  "success": true,
+  "elapsed_seconds": 104.43,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 971,
+    "total_tokens": 5066
+  },
+  "prompt_tokens_estimate": 3879,
+  "response_chars": 3330,
+  "turtle_chars": 3330,
+  "validation": {
+    "valid": true,
+    "n_triples": 42,
+    "n_classes": 4,
+    "n_properties": 6
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N100/response_raw_run3.txt"
+  }
+}

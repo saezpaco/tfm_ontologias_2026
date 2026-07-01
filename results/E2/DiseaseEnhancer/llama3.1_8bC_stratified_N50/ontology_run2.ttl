@@ -1,0 +1,83 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+EnhancerSequence a owl:Class ;
+    rdfs:subClassOf crm ;
+    rdfs:label "Enhancer sequence" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" .
+
+chrName a owl:DatatypeProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Genomic chromosome name" .
+
+startPosition a owl:DatatypeProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start_position" ;
+    skos:definition "Start position of the enhancer sequence" .
+
+endPosition a owl:DatatypeProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end_position" ;
+    skos:definition "End position of the enhancer sequence" .
+
+databaseName a owl:DatatypeProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "database_name" ;
+    skos:definition "Database name associated with the enhancer sequence" .
+
+crmID a owl:ObjectProperty ;
+    rdfs:domain crm ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "crm_ID" ;
+    skos:definition "Unique identifier for the cis-regulatory module" .
+
+targetGene a owl:ObjectProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range obo:HGNC_symbol ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+targetGeneSymbol a owl:ObjectProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+associatedDisease a owl:ObjectProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range obo:DOID ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+associatedDiseaseName a owl:ObjectProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+transcriptionFactor a owl:ObjectProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range obo:UniProt_ID ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+transcriptionFactorName a owl:ObjectProperty ;
+    rdfs:domain EnhancerSequence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .

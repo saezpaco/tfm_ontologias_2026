@@ -1,0 +1,82 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GeneticElement a rdfs:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A generic class representing genetic elements." ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:subClassOf ge:EnhancerType ;
+    rdfs:subClassOf ge:SuperEnhancerType .
+
+ge:Enhancer a rdfs:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement [ rdf:type owl:Restriction ; 
+            owl:onProperty ge:rankScore ; 
+            owl:someValuesFrom xsd:float ] ) ] .
+
+ge:SuperEnhancer a rdfs:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing super-enhancers." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; 
+        owl:intersectionOf (ge:GeneticElement [ rdf:type owl:Restriction ; 
+            owl:onProperty ge:rankScore ; 
+            owl:someValuesFrom xsd:float ] ) ] .
+
+ge:CellLine a rdfs:Class ;
+    rdfs:label "Cell Line" ;
+    rdfs:comment "A class representing cell lines or biosamples." ;
+    rdfs:subClassOf owl:Thing .
+
+ge:TargetGene a rdfs:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes." ;
+    rdfs:subClassOf owl:Thing .
+
+ge:chromosomeNumber a rdf:Property ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number of the genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf skos:definition .
+
+ge:genomicStart a rdf:Property ;
+    rdfs:label "Genomic Start" ;
+    rdfs:comment "The genomic start position of the genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf skos:definition .
+
+ge:genomicStop a rdf:Property ;
+    rdfs:label "Genomic Stop" ;
+    rdfs:comment "The genomic stop position of the genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf skos:definition .
+
+ge:rankScore a rdf:Property ;
+    rdfs:label "Rank Score" ;
+    rdfs:comment "The rank or significance score of the enhancer." ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range xsd:float ;
+    rdfs:subPropertyOf skos:definition .
+
+ge:hasCellLine a owl:ObjectProperty ;
+    rdfs:label "Has Cell Line" ;
+    rdfs:comment "The cell line or biosample associated with the enhancer or super-enhancer." ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:CellLine ;
+    rdfs:subPropertyOf skos:definition .
+
+ge:targetsGene a owl:ObjectProperty ;
+    rdfs:label "Targets Gene" ;
+    rdfs:comment "The target gene associated with the enhancer or super-enhancer." ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:TargetGene ;
+    rdfs:subPropertyOf skos:definition .

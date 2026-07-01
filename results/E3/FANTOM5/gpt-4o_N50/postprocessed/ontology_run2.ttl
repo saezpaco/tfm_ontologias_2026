@@ -1,0 +1,59 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix crm:     <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project." ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm/9606crm_ID> ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+crm:GenomicLocation a owl:Class ;
+    rdfs:label "Genomic Location" ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+### Properties ###
+crm:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicLocation ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+
+crm:chromosome a owl:DatatypeProperty ;
+    rdfs:label "chromosome" ;
+    rdfs:domain crm:GenomicLocation ;
+    rdfs:range xsd:string ;
+    skos:closeMatch nuccore:chr_ID .
+
+crm:startPosition a owl:DatatypeProperty ;
+    rdfs:label "start position" ;
+    rdfs:domain crm:GenomicLocation ;
+    rdfs:range xsd:integer .
+
+crm:endPosition a owl:DatatypeProperty ;
+    rdfs:label "end position" ;
+    rdfs:domain crm:GenomicLocation ;
+    rdfs:range xsd:integer .
+
+### Individuals ###
+<http://example.org/ontology/FANTOM5/Enhancer1> a crm:Enhancer ;
+    crm:hasGenomicLocation <http://example.org/ontology/FANTOM5/GenomicLocation1> .
+
+<http://example.org/ontology/FANTOM5/GenomicLocation1> a crm:GenomicLocation ;
+    crm:chromosome "chr1" ;
+    crm:startPosition 839741 ;
+    crm:endPosition 840250 .

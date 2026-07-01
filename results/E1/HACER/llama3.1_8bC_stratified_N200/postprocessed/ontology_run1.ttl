@@ -1,0 +1,48 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRMEnhancer>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer"^^xsd:string ;
+  skos:definition "A regulatory element that can interact with transcription factors to regulate gene expression."^^xsd:string .
+
+<http://example.org/genomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "A location on the genome where a regulatory element is found."^^xsd:string .
+
+<http://example.org/evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The source of information that supports the existence of a CRM/Enhancer."^^xsd:string .
+
+<http://example.org/CRMenhancerLocation>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer Location"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer Location"^^xsd:string ;
+  skos:definition "The location of a CRM/Enhancer on the genome."^^xsd:string .
+
+<http://example.org/CRMenhancerEvidence>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer Evidence"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer Evidence"^^xsd:string ;
+  skos:definition "The evidence that supports the existence of a CRM/Enhancer."^^xsd:string .
+
+<http://example.org/CRMenhancer>
+  rdfs:subClassOf <http://example.org/CRMenhancerLocation> ;
+  rdfs:subClassOf <http://example.org/CRMenhancerEvidence> .
+
+<http://example.org/genomicCoordinate>
+  rdfs:domain <http://example.org/CRMenhancerLocation> ;
+  rdfs:range xsd:string .
+
+<http://example.org/evidence>
+  rdfs:domain <http://example.org/CRMenhancerEvidence> ;
+  rdfs:range xsd:string .

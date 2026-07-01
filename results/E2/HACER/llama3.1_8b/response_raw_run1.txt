@@ -1,0 +1,210 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/>
+  a owl:Ontology ;
+  rdfs:label "Human Active Cis-regulatory Elements database" .
+
+crm a owl:Class ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm_ID a rdf:Property ;
+  rdfs:label "crm/crm_ID" ;
+  skos:prefLabel "crm#crm_ID#database_name" ;
+  owl:propertyType xsd:string .
+
+orig_chr a rdf:Property ;
+  rdfs:label "chr_name" ;
+  skos:prefLabel "GRCh38" ;
+  owl:propertyType xsd:string .
+
+orig_start a rdf:Property ;
+  rdfs:label "start_position" ;
+  owl:propertyType xsd:integer .
+
+orig_end a rdf:Property ;
+  rdfs:label "end_position" ;
+  owl:propertyType xsd:integer .
+
+orig_assembly a rdf:Property ;
+  rdfs:label "database_name" ;
+  skos:prefLabel "Database" ;
+  owl:propertyType xsd:string .
+
+current_chr a rdf:Property ;
+  rdfs:label "chr_name" ;
+  skos:prefLabel "GRCh38" ;
+  owl:propertyType xsd:string .
+
+current_start a rdf:Property ;
+  rdfs:label "start_position" ;
+  owl:propertyType xsd:integer .
+
+current_end a rdf:Property ;
+  rdfs:label "end_position" ;
+  owl:propertyType xsd:integer .
+
+current_assembly a rdf:Property ;
+  rdfs:label "database_name" ;
+  skos:prefLabel "Database" ;
+  owl:propertyType xsd:string .
+
+minimum_ratio a rdf:Property ;
+  rdfs:label "minimum_ratio" ;
+  owl:propertyType xsd:float .
+
+score a rdf:Property ;
+  rdfs:label "score" ;
+  owl:propertyType xsd:integer .
+
+original_ID a rdf:Property ;
+  rdfs:label "crm#crm_ID#database_name" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  owl:propertyType xsd:string .
+
+crossref a rdf:Property ;
+  rdfs:label "crossref" ;
+  owl:propertyType xsd:string .
+
+enh_PMID a rdf:Property ;
+  rdfs:label "PMID" ;
+  owl:propertyType xsd:string .
+
+biosample_name a rdf:Property ;
+  rdfs:label "biosample_name" ;
+  owl:propertyType xsd:string .
+
+enh_method a rdf:Property ;
+  rdfs:label "enhancer method" ;
+  owl:propertyType xsd:string .
+
+type a rdf:Property ;
+  rdfs:label "type" ;
+  owl:propertyType xsd:string .
+
+source a rdf:Property ;
+  rdfs:label "source" ;
+  owl:propertyType xsd:string .
+
+hgnc_symbol_target_genes a rdf:Property ;
+  rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  owl:propertyType xsd:string .
+
+enh2gene_PMID a rdf:Property ;
+  rdfs:label "PMID" ;
+  owl:propertyType xsd:string .
+
+enh2gene_method a rdf:Property ;
+  rdfs:label "enhancer method" ;
+  owl:propertyType xsd:string .
+
+bgw!crm_ID--hgncsymbol!9606/gene_symbol a owl:ObjectProperty ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+bgw!crm_ID--doid!doid a owl:ObjectProperty ;
+  skos:prefLabel "bgw!crm_ID--doid!doid" ;
+  skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+bgw!crm_ID--uniprot!uniprot_ID a owl:ObjectProperty ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+  skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+TranscriptionFactor a owl:Class ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+crm a owl:ObjectProperty ;
+  rdfs:label "crm" ;
+  owl:propertyType obo:BFO_0000051 .
+
+has_crm_ID a owl:ObjectProperty ;
+  rdfs:label "has_crm_ID" ;
+  owl:propertyType xsd:string .
+
+has_orig_chr a owl:ObjectProperty ;
+  rdfs:label "has_orig_chr" ;
+  owl:propertyType xsd:string .
+
+has_orig_start a owl:ObjectProperty ;
+  rdfs:label "has_orig_start" ;
+  owl:propertyType xsd:integer .
+
+has_orig_end a owl:ObjectProperty ;
+  rdfs:label "has_orig_end" ;
+  owl:propertyType xsd:integer .
+
+has_orig_assembly a owl:ObjectProperty ;
+  rdfs:label "has_orig_assembly" ;
+  owl:propertyType xsd:string .
+
+has_current_chr a owl:ObjectProperty ;
+  rdfs:label "has_current_chr" ;
+  owl:propertyType xsd:string .
+
+has_current_start a owl:ObjectProperty ;
+  rdfs:label "has_current_start" ;
+  owl:propertyType xsd:integer .
+
+has_current_end a owl:ObjectProperty ;
+  rdfs:label "has_current_end" ;
+  owl:propertyType xsd:integer .
+
+has_current_assembly a owl:ObjectProperty ;
+  rdfs:label "has_current_assembly" ;
+  owl:propertyType xsd:string .
+
+has_minimum_ratio a owl:ObjectProperty ;
+  rdfs:label "has_minimum_ratio" ;
+  owl:propertyType xsd:float .
+
+has_score a owl:ObjectProperty ;
+  rdfs:label "has_score" ;
+  owl:propertyType xsd:integer .
+
+has_original_ID a owl:ObjectProperty ;
+  rdfs:label "has_original_ID" ;
+  owl:propertyType xsd:string .
+
+has_crossref a owl:ObjectProperty ;
+  rdfs:label "has_crossref" ;
+  owl:propertyType xsd:string .
+
+has_enh_PMID a owl:ObjectProperty ;
+  rdfs:label "has_enh_PMID" ;
+  owl:propertyType xsd:string .
+
+has_biosample_name a owl:ObjectProperty ;
+  rdfs:label "has_biosample_name" ;
+  owl:propertyType xsd:string .
+
+has_enh_method a owl:ObjectProperty ;
+  rdfs:label "has_enh_method" ;
+  owl:propertyType xsd:string .
+
+has_type a owl:ObjectProperty ;
+  rdfs:label "has_type" ;
+  owl:propertyType xsd:string .
+
+has_source a owl:ObjectProperty ;
+  rdfs:label "has_source" ;
+  owl:propertyType xsd:string .
+
+has_hgnc_symbol_target_genes a owl:ObjectProperty ;
+  rdfs:label "has_hgnc_symbol_target_genes" ;
+  owl:propertyType xsd:string .
+
+has_enh2gene_PMID a owl:ObjectProperty ;
+  rdfs:label "has_enh2gene_PMID" ;
+  owl:propertyType xsd:string .
+
+has_enh2gene_method a owl:ObjectProperty ;
+  rdfs:label "has_enh2gene_method" ;
+  owl:propertyType xsd:string .

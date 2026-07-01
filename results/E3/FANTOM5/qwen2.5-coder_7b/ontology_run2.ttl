@@ -1,0 +1,477 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+# Define new classes and properties
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+crm:GeneExpression a owl:Class ;
+    rdfs:label "Gene Expression" .
+
+crm:RegulatoryElement a owl:Class ;
+    rdfs:label "Regulatory Element" .
+
+crm:ChromosomeRegion a owl:Class ;
+    rdfs:label "Chromosome Region" .
+
+crm:TranscriptionalActivity a owl:Class ;
+    rdfs:label "Transcriptional Activity" .
+
+crm:ExpressionPattern a owl:Class ;
+    rdfs:label "Expression Pattern" .
+
+crm:RegulatoryNetwork a owl:Class ;
+    rdfs:label "Regulatory Network" .
+
+crm:GeneProduct a owl:Class ;
+    rdfs:label "Gene Product" .
+
+crm:TranscriptionalControl a owl:Class ;
+    rdfs:label "Transcriptional Control" .
+
+crm:ExpressionLevel a owl:Class ;
+    rdfs:label "Expression Level" .
+
+crm:RegulatoryActivity a owl:Class ;
+    rdfs:label "Regulatory Activity" .
+
+crm:TranscriptionalComplex a owl:Class ;
+    rdfs:label "Transcriptional Complex" .
+
+crm:TranscriptionalInitiation a owl:Class ;
+    rdfs:label "Transcriptional Initiation" .
+
+crm:TranscriptionalTermination a owl:Class ;
+    rdfs:label "Transcriptional Termination" .
+
+crm:TranscriptionalRegulation a owl:Class ;
+    rdfs:label "Transcriptional Regulation" .
+
+crm:TranscriptionalEnhancement a owl:Class ;
+    rdfs:label "Transcriptional Enhancement" .
+
+crm:TranscriptionalSuppression a owl:Class ;
+    rdfs:label "Transcriptional Suppression" .
+
+crm:TranscriptionalActivation a owl:Class ;
+    rdfs:label "Transcriptional Activation" .
+
+crm:TranscriptionalInhibition a owl:Class ;
+    rdfs:label "Transcriptional Inhibition" .
+
+crm:TranscriptionalStimulation a owl:Class ;
+    rdfs:label "Transcriptional Stimulation" .
+
+crm:TranscriptionalRepression a owl:Class ;
+    rdfs:label "Transcriptional Repression" .
+
+crm:TranscriptionalControlElement a owl:Class ;
+    rdfs:label "Transcriptional Control Element" .
+
+crm:TranscriptionalPromoter a owl:Class ;
+    rdfs:label "Transcriptional Promoter" .
+
+crm:TranscriptionalEnhancer a owl:Class ;
+    rdfs:label "Transcriptional Enhancer" .
+
+crm:TranscriptionalRepressor a owl:Class ;
+    rdfs:label "Transcriptional Repressor" .
+
+crm:TranscriptionalCoactivator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator" .
+
+crm:TranscriptionalCorepressor a owl:Class ;
+    rdfs:label "Transcriptional Corepressor" .
+
+crm:TranscriptionalCoactivatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex" .
+
+crm:TranscriptionalCorepressorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex" .
+
+crm:TranscriptionalRegulator a owl:Class ;
+    rdfs:label "Transcriptional Regulator" .
+
+crm:TranscriptionalCoactivatorRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator" .
+
+crm:TranscriptionalCorepressorRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator" .
+
+crm:TranscriptionalCoactivatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator" .
+
+crm:TranscriptionalCorepressorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator" .
+
+crm:TranscriptionalRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex" .
+
+crm:TranscriptionalCoactivatorRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex" .
+
+crm:TranscriptionalRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalCorepressorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulator a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator" .
+
+crm:TranscriptionalRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCoactivatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Coactivator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex" .
+
+crm:TranscriptionalCorepressorRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplexRegulatorComplex a owl:Class ;
+    rdfs:label "Transcriptional Corepressor Regulator Complex Regulator Complex Regulator Complex Regulator Complex Regulator Complex

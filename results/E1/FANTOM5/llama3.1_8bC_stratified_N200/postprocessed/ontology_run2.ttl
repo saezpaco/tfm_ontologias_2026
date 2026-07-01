@@ -1,0 +1,44 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRMEnhancer>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer"^^xsd:string ;
+  skos:definition "A regulatory element that can interact with transcription factors to regulate gene expression."^^xsd:string .
+
+<http://example.org/genomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "A location on the genome where a regulatory element is found."^^xsd:string .
+
+<http://example.org/evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The source of information that supports the existence of a CRM/Enhancer."^^xsd:string .
+
+<http://example.org/CRMEnhancer>
+  <http://example.org/genomicCoordinate> 
+    [ rdf:type obo:GO_0003674 ] ;
+  <http://example.org/evidence> 
+    [ rdf:type obo:SO_0000313 ] .
+
+<http://example.org/GenomicLocation>
+  a owl:Class ;
+  rdfs:label "Genomic Location"^^xsd:string ;
+  skos:prefLabel "Genomic Location"^^xsd:string ;
+  skos:definition "A specific location on the genome."^^xsd:string .
+
+<http://example.org/CRMEnhancer>
+  <http://example.org/genomicCoordinate> 
+    [ rdf:type <http://example.org/GenomicLocation> ] .
+
+Note that I have assumed some of the relationships and attributes based on the provided data. You may need to adjust these according to your specific requirements.
+
+Also, please note that this is a simplified example and you may want to add more properties and classes depending on your needs.

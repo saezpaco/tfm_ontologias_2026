@@ -1,0 +1,97 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 8.793333333333333,
+  "total_tokens": 27183,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T22:09:05.950210",
+      "success": true,
+      "elapsed_seconds": 8.92,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 7884,
+        "completion_tokens": 1003,
+        "total_tokens": 8887
+      },
+      "prompt_tokens_estimate": 4457,
+      "response_chars": 3032,
+      "turtle_chars": 3017,
+      "validation": {
+        "valid": true,
+        "n_triples": 44,
+        "n_classes": 4,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oD_diversity_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oD_diversity_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T22:09:14.559963",
+      "success": true,
+      "elapsed_seconds": 6.59,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 7884,
+        "completion_tokens": 977,
+        "total_tokens": 8861
+      },
+      "prompt_tokens_estimate": 4457,
+      "response_chars": 3010,
+      "turtle_chars": 2995,
+      "validation": {
+        "valid": false,
+        "error": "at line 71 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'D051436 ;\\n    biolink:interactsWith [] ;\\n    pubmed:29093029'^b' .\\n\\n<http://rdf.biogateway.eu/crm2pgene/CKS1B> a biolink:Gen'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oD_diversity_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oD_diversity_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T22:09:27.472082",
+      "success": true,
+      "elapsed_seconds": 10.87,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 7884,
+        "completion_tokens": 1551,
+        "total_tokens": 9435
+      },
+      "prompt_tokens_estimate": 4457,
+      "response_chars": 4675,
+      "turtle_chars": 4661,
+      "validation": {
+        "valid": true,
+        "n_triples": 62,
+        "n_classes": 4,
+        "n_properties": 7
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oD_diversity_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oD_diversity_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=50/HACER.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-07-01T00:14:40.641471+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.034,
+    "plan_s": 80.008,
+    "plan_chars": 3533,
+    "plan_prompt_chars": 9542,
+    "onto_s": 184.114,
+    "onto_chars": 6354,
+    "onto_prompt_chars": 12455,
+    "map_s": 141.066,
+    "map_chars": 4112,
+    "map_prompt_chars": 12554
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-07-01T00:21:25.864151+00:00",
+  "total_s": 405.222
+}

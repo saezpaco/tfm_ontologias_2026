@@ -1,0 +1,100 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+<http://rdf.biogateway.eu/fantom5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancers" ;
+    dc:description "Enhancers activos identificados por CAGE-seq" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm2pgene:TranscriptionFactor .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2pgene:Disease .
+
+### Properties ###
+biolink:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2pgene:hasGenomicLocation .
+
+biolink:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:hasTargetGene .
+
+biolink:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "has transcription factor" ;
+    skos:exactMatch crm2pgene:hasTranscriptionFactor .
+
+biolink:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2pgene:associatedWithDisease .
+
+biolink:hasExperimentalMethod a owl:DatatypeProperty ;
+    rdfs:label "has experimental method" ;
+    skos:exactMatch crm2pgene:hasExperimentalMethod .
+
+biolink:hasScore a owl:DatatypeProperty ;
+    rdfs:label "has score" ;
+    skos:exactMatch crm2pgene:hasScore .
+
+### Individuals ###
+<http://rdf.biogateway.eu/fantom5/CRMHS00000094290> a biolink:Enhancer ;
+    biolink:hasGenomicLocation [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr15" ;
+        assembly:start 26619732 ;
+        assembly:end 26619795 ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    biolink:hasExperimentalMethod "CAGE" ;
+    biolink:hasScore 1 ;
+    dc:source <http://rdf.biogateway.eu/pubmed/24670763> .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000122781> a biolink:Enhancer ;
+    biolink:hasGenomicLocation [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr5" ;
+        assembly:start 149212232 ;
+        assembly:end 149212474 ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    biolink:hasTargetGene <http://rdf.biogateway.eu/hgene/ABLIM3> ;
+    biolink:hasExperimentalMethod "CAGE" ;
+    biolink:hasScore 1 ;
+    dc:source <http://rdf.biogateway.eu/pubmed/24670763> .
+
+<http://rdf.biogateway.eu/hgene/ABLIM3> a biolink:Gene ;
+    rdfs:label "ABLIM3" .
+
+<http://rdf.biogateway.eu/pubmed/24670763> a pubmed:Publication ;
+    rdfs:label "PMID:24670763" .
+```

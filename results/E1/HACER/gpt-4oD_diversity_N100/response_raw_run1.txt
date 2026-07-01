@@ -1,0 +1,70 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes located on the same chromosome." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters and can function in either orientation and in any location relative to the promoter." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+obo:GENO_0000002 a owl:Class ;
+    skos:prefLabel "Genomic Location" ;
+    skos:definition "A specific location on a chromosome." .
+
+obo:NCIT_C16612 a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder or abnormal condition affecting the body." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C16612> .
+
+obo:NCIT_C16612 a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to specific DNA sequences, thereby controlling the rate of transcription of genetic information from DNA to messenger RNA." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C16612> .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory element to its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002205> .
+
+obo:RO_0002434 a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a biological entity to a disease it is associated with." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002434> .
+
+obo:RO_0002436 a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates a regulatory element to a transcription factor it interacts with." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002436> .
+
+# Datatype Properties
+obo:GENO_0000002 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Specifies the genomic coordinates of a sequence." ;
+    rdfs:range xsd:string .
+
+obo:NCIT_C16612 a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence score" ;
+    skos:definition "A numerical score representing the strength of evidence for a regulatory element." ;
+    rdfs:range xsd:float .
+
+obo:NCIT_C16612 a owl:DatatypeProperty ;
+    skos:prefLabel "has experimental method" ;
+    skos:definition "The method used to identify or validate the regulatory element." ;
+    rdfs:range xsd:string .
+
+obo:NCIT_C16612 a owl:DatatypeProperty ;
+    skos:prefLabel "has associated publication" ;
+    skos:definition "A reference to a publication that provides evidence or context for the regulatory element." ;
+    rdfs:range xsd:string .
+```

@@ -1,0 +1,120 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology rdf:about "http://example.com/dbSUPER" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for dbSUPER database containing information about cis-regulatory modules, specifically enhancer sequences." ;
+
+crm:CRM a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:SE_ID a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Super-Enhancer ID" ;
+    skos:definition "A unique identifier for a super-enhancer." ;
+
+crm:Gene_Symbol a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Gene Symbol" ;
+    skos:definition "The symbol of the gene targeted by the cis-regulatory module." ;
+
+crm:Cell_Line a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "The cell line in which the cis-regulatory module is active." ;
+
+crm:Rank a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Rank" ;
+    skos:definition "A numerical rank indicating the significance or importance of the super-enhancer." ;
+
+crm:Chromosome a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "The chromosome on which the cis-regulatory module is located." ;
+
+crm:Start_Position a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "The starting position of the cis-regulatory module on the chromosome." ;
+
+crm:End_Position a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Position" ;
+    skos:definition "The ending position of the cis-regulatory module on the chromosome." ;
+
+crm:Database_Name a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Database Name" ;
+    skos:definition "The name of the database from which the information is sourced." ;
+
+crm:Transcription_Factor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to DNA and regulates gene expression." ;
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:Transcription_Factor ;
+    skos:prefLabel "Has Transcription Factor" ;
+    skos:definition "The relationship between a cis-regulatory module and the transcription factor it interacts with." ;
+
+crm:associatedWithGene a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:GO_0003674 ;  # Gene
+    skos:prefLabel "Associated With Gene" ;
+    skos:definition "The relationship between a cis-regulatory module and the gene it targets." ;
+
+crm:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:DOID_0050124 ;  # Disease
+    skos:prefLabel "Associated With Disease" ;
+    skos:definition "The relationship between a cis-regulatory module and the disease it is associated with." ;
+
+crm:associatedWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:GO_0003674 ;  # Transcription Factor
+    skos:prefLabel "Associated With Transcription Factor" ;
+    skos:definition "The relationship between a cis-regulatory module and the transcription factor it interacts with." ;
+
+# Example instances
+crm:SE_00001 a crm:CRM ;
+    crm:SE_ID "SE_00001" ;
+    crm:Gene_Symbol "NOTCH2" ;
+    crm:Cell_Line "Adipose Nuclei" ;
+    crm:Rank 1 ;
+    crm:Chromosome "chr1" ;
+    crm:Start_Position 120485363 ;
+    crm:End_Position 120615071 ;
+    crm:Database_Name "dbSUPER" ;
+    crm:hasTranscriptionFactor obo:GO_0003674 ;  # Example transcription factor
+    crm:associatedWithGene obo:GO_0003674 ;  # Example gene
+    crm:associatedWithDisease obo:DOID_0050124 .  # Example disease
+
+crm:SE_00002 a crm:CRM ;
+    crm:SE_ID "SE_00002" ;
+    crm:Gene_Symbol "COL4A2" ;
+    crm:Cell_Line "Adipose Nuclei" ;
+    crm:Rank 2 ;
+    crm:Chromosome "chr13" ;
+    crm:Start_Position 110838836 ;
+    crm:End_Position 111112228 ;
+    crm:Database_Name "dbSUPER" ;
+    crm:hasTranscriptionFactor obo:GO_0003674 ;  # Example transcription factor
+    crm:associatedWithGene obo:GO_0003674 ;  # Example gene
+    crm:associatedWithDisease obo:DOID_0050124 .  # Example disease
+
+# Add more instances as needed

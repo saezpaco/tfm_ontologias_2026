@@ -33,7 +33,7 @@ crm:hasGenomicCoordinate a owl:ObjectProperty ;
     rdfs:label "has genomic coordinate" ;
     rdfs:domain crm:Enhancer ;
     rdfs:range crm:GenomicCoordinate ;
-    skos:exactMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 crm:hasChromosome a owl:DatatypeProperty ;
     rdfs:label "has chromosome" ;

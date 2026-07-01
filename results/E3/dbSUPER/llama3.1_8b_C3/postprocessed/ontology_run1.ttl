@@ -1,0 +1,67 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://purl.uniprot.org/uniprot/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <https://rdf.biogateway.eu/dbsuper/> .
+
+# Classes
+owl:Class(hcrm:Crm).
+owl:Class(crm2pgene:Crm2Gene).
+owl:Class(assembly:Assembly).
+owl:Class(nuccore:NucleotideSequence).
+owl:Class(pubmed:PubMedArticle).
+
+# Properties
+owl:ObjectProperty(hcrm:hasCrmId).
+owl:ObjectProperty(crm2pgene:crm2gene).
+owl:ObjectProperty(assembly:hasAssembly).
+owl:ObjectProperty(nuccore:nucleotideSequence).
+owl:ObjectProperty(pubmed:pubmedArticle).
+
+# Alignments with cisreg URIs
+skos:exactMatch(hcrm:Crm, <http://rdf.biogateway.eu/crm2pgene/Crm>).
+skos:closeMatch(crm2pgene:Crm2Gene, <http://rdf.biogateway.eu/crm2pgene/Crm2Gene>).
+
+# New classes and properties
+owl:Class(dbsuper:DbsuperCrm).
+owl:ObjectProperty(dbsuper:hasDbsuperId).
+
+# Example instances
+hcrm:Crm rdf:type owl:Thing.
+hcrm:Crm rdfs:label "Crm" .
+hcrm:Crm hcrm:hasCrmId "CRMHS00000003515" .
+
+crm2pgene:Crm2Gene rdf:type owl:Thing.
+crm2pgene:Crm2Gene rdfs:label "Crm2Gene" .
+crm2pgene:Crm2Gene crm2pgene:crm2gene "bgw!CRMHS00000003515--hgncsymbol!9606/TBX5" .
+
+assembly:Assembly rdf:type owl:Thing.
+assembly:Assembly rdfs:label "Assembly" .
+assembly:Assembly assembly:hasAssembly "NC_000001.11" .
+
+nuccore:NucleotideSequence rdf:type owl:Thing.
+nuccore:NucleotideSequence rdfs:label "NucleotideSequence" .
+nuccore:NucleotideSequence nuccore:nucleotideSequence "NC_000001.11" .
+
+pubmed:PubMedArticle rdf:type owl:Thing.
+pubmed:PubMedArticle rdfs:label "PubMedArticle" .
+pubmed:PubMedArticle pubmed:pubmedArticle "PMC1234567" .
+
+dbsuper:DbsuperCrm rdf:type owl:Thing.
+dbsuper:DbsuperCrm rdfs:label "DbsuperCrm" .
+dbsuper:DbsuperCrm dbsuper:hasDbsuperId "CRMHS00000003515" .

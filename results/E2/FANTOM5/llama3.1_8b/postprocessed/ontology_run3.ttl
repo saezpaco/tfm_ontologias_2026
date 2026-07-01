@@ -1,0 +1,96 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+<http://example.org/cisreg-ontology>
+  a owl:Ontology ;
+  rdfs:label "Cis-regulatory Module Ontology" ;
+  skos:prefLabel "CRM Ontology" .
+
+crm:CRM
+  a owl:Class ;
+  rdfs:label "Cis-regulatory Module" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm:hasChrName
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chr Name" ;
+  skos:prefLabel "chr_name" ;
+  obo:IAO_0000115 "has_part" .
+
+crm:hasStartPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "Has Start Position" ;
+  skos:prefLabel "start_position" ;
+  xsd:dataType xsd:int .
+
+crm:hasEndPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "Has End Position" ;
+  skos:prefLabel "end_position" ;
+  xsd:dataType xsd:int .
+
+crm:hasDatabaseName
+  a owl:ObjectProperty ;
+  rdfs:label "Has Database Name" ;
+  skos:prefLabel "database_name" ;
+  obo:IAO_0000115 "has_part" .
+
+crm:isLocatedIn
+  a owl:ObjectProperty ;
+  rdfs:label "Is Located In" ;
+  skos:prefLabel "chr_name" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasAssociationWithGene
+  a owl:ObjectProperty ;
+  rdfs:label "Has Association With Gene" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasAssociationWithDisease
+  a owl:ObjectProperty ;
+  rdfs:label "Has Association With Disease" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasAssociationWithTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Has Association With Transcription Factor" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasGenomicCoordinates
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinates" ;
+  skos:prefLabel "GRCh38" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasTargetGene
+  a owl:ObjectProperty ;
+  rdfs:label "Has Target Gene" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasDisease
+  a owl:ObjectProperty ;
+  rdfs:label "Has Disease" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  obo:IAO_0000115 "part_of" .
+
+crm:hasAssociationWith
+  a owl:ObjectProperty ;
+  rdfs:label "Has Association With" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  obo:IAO_0000115 "part_of" .

@@ -1,0 +1,276 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:TFs2enh_PMID;
+        rr:objectMap [ rml:reference "TFs2enh_PMID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:TFs2enh_method;
+        rr:objectMap [ rml:reference "TFs2enh_method" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crossref;
+        rr:objectMap [ rml:reference "crossref" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enh2gene_PMID;
+        rr:objectMap [ rml:reference "enh2gene_PMID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enh2gene_method;
+        rr:objectMap [ rml:reference "enh2gene_method" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:minimum_ratio;
+        rr:objectMap [ rml:reference "minimum_ratio" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:mutation_PMID;
+        rr:objectMap [ rml:reference "mutation_PMID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:mutation_method;
+        rr:objectMap [ rml:reference "mutation_method" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:original_ID;
+        rr:objectMap [ rml:reference "original_ID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:refsnp_ID;
+        rr:objectMap [ rml:reference "refsnp_ID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [ rml:reference "score" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:source;
+        rr:objectMap [ rml:reference "source" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:type;
+        rr:objectMap [ rml:reference "type" ]
+    ].
+
+<#TriplesMapGenomicCoordinate> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GenomicCoordinate/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:current_assembly;
+        rr:objectMap [ rml:reference "current_assembly" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:current_chr;
+        rr:objectMap [ rml:reference "current_chr" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:current_end;
+        rr:objectMap [ rml:reference "current_end" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:current_start;
+        rr:objectMap [ rml:reference "current_start" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:orig_assembly;
+        rr:objectMap [ rml:reference "orig_assembly" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:orig_chr;
+        rr:objectMap [ rml:reference "orig_chr" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:orig_end;
+        rr:objectMap [ rml:reference "orig_end" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:orig_start;
+        rr:objectMap [ rml:reference "orig_start" ]
+    ].
+
+<#TriplesMapBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Biosample/{biosample_name}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:biosample_name;
+        rr:objectMap [ rml:reference "biosample_name" ]
+    ].
+
+<#TriplesMapGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Gene/{hgnc_symbol_target_genes}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hgnc_symbol_target_genes;
+        rr:objectMap [ rml:reference "hgnc_symbol_target_genes" ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/TranscriptionFactor/{hgnc_symbol_TFs}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hgnc_symbol_TFs;
+        rr:objectMap [ rml:reference "hgnc_symbol_TFs" ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Disease/{disease}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:disease;
+        rr:objectMap [ rml:reference "disease" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:disease_PMID;
+        rr:objectMap [ rml:reference "disease_PMID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:disease_method;
+        rr:objectMap [ rml:reference "disease_method" ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/Enhancer/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enh_PMID;
+        rr:objectMap [ rml:reference "enh_PMID" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:enh_method;
+        rr:objectMap [ rml:reference "enh_method" ]
+    ].
+
+<#TriplesMapCisRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/CisRegulatoryModule/{crm_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:crm_ID;
+        rr:objectMap [ rml:reference "crm_ID" ]
+    ].
+
+<#TriplesMapGeneticElement_GenomicCoordinate> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasGenomicCoordinate;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGenomicCoordinate>;
+        ]
+    ].
+
+<#TriplesMapGeneticElement_Biosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:hasBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBiosample>;
+        ]
+    ].
+
+<#TriplesMapGeneticElement_Gene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:targetsGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGene>;
+        ]
+    ].
+
+<#TriplesMapGeneticElement_TranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:regulatedBy;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapGeneticElement_Disease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com/GeneticElement/{original_ID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:associatedWithDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease>;
+        ]
+    ].

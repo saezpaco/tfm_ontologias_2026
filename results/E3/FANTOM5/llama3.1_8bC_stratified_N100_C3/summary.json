@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 104.06,
+  "total_tokens": 14634,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-07-01T10:11:29.516753",
+      "success": true,
+      "elapsed_seconds": 105.08,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 783,
+        "total_tokens": 4878
+      },
+      "prompt_tokens_estimate": 3939,
+      "response_chars": 2291,
+      "turtle_chars": 1777,
+      "validation": {
+        "valid": false,
+        "error": "at line 31 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'ttp://rdf.biogateway.eu/crm2pgene/hcrm#CRMHS00000003516> .\\n\\n'^b'...\\n\\n<http://example.org/resource/n>\\n  rdf:type crm2pgene:CR'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C3/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C3/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-07-01T10:13:16.810311",
+      "success": true,
+      "elapsed_seconds": 105.51,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 783,
+        "total_tokens": 4878
+      },
+      "prompt_tokens_estimate": 3939,
+      "response_chars": 2291,
+      "turtle_chars": 1777,
+      "validation": {
+        "valid": false,
+        "error": "at line 31 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'ttp://rdf.biogateway.eu/crm2pgene/hcrm#CRMHS00000003516> .\\n\\n'^b'...\\n\\n<http://example.org/resource/n>\\n  rdf:type crm2pgene:CR'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C3/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C3/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-07-01T10:15:00.154697",
+      "success": true,
+      "elapsed_seconds": 101.59,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 783,
+        "total_tokens": 4878
+      },
+      "prompt_tokens_estimate": 3939,
+      "response_chars": 2291,
+      "turtle_chars": 1777,
+      "validation": {
+        "valid": false,
+        "error": "at line 31 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'ttp://rdf.biogateway.eu/crm2pgene/hcrm#CRMHS00000003516> .\\n\\n'^b'...\\n\\n<http://example.org/resource/n>\\n  rdf:type crm2pgene:CR'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C3/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bC_stratified_N100_C3/response_raw_run3.txt"
+      }
+    }
+  ]
+}

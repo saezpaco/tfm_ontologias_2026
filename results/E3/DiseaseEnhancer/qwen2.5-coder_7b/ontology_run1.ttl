@@ -1,0 +1,43 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+# Define new classes and properties
+crm2phen:CRM .
+crm2phen:Disease .
+crm2phen:Biosample .
+crm2phen:Gene .
+crm2phen:TranscriptionFactor .
+crm2phen:PMID .
+
+# Map existing data to ontology terms
+crm2phen:CRM a crm2phen:CRM ;
+    rdfs:label "Cis-regulatory Module" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+crm2phen:Disease a crm2phen:Disease ;
+    rdfs:label "Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+crm2phen:Biosample a crm2phen:Biosample ;
+    rdfs:label "Biosample" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+crm2phen:Gene a crm2phen:Gene ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+crm2phen:TranscriptionFactor a crm2phen:TranscriptionFactor ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+crm2phen:PMID a crm2phen:PMID ;
+    rdfs:label "PubMed ID" ;
+    skos:exactMatch <pubmed:PMID> .

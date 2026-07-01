@@ -1,0 +1,101 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://bioinfo.vanderbilt.edu/AE/HACER/> .
+@prefix crm:     <http://example.org/ontology/crm#> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology Declaration
+<http://bioinfo.vanderbilt.edu/AE/HACER/ontology> a owl:Ontology ;
+    rdfs:label "HACER Ontology" ;
+    dc:description "Ontology for the Human Active Cis-regulatory Elements database" ;
+    dc:source <http://bioinfo.vanderbilt.edu/AE/HACER/> .
+
+# Classes
+crm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0005850> .
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch biolink:Gene .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/GO_0003700> .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch biolink:Disease .
+
+crm:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17021> .
+
+# Properties
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinates" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/GENO_0000895> .
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch biolink:has_target .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "has transcription factor" ;
+    skos:exactMatch biolink:has_transcription_factor .
+
+crm:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch biolink:associated_with .
+
+crm:activeInCellLine a owl:ObjectProperty ;
+    rdfs:label "active in cell line" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17021> .
+
+crm:hasExperimentalEvidence a owl:DatatypeProperty ;
+    rdfs:label "has experimental evidence" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/ECO_0000000> .
+
+crm:hasPubMedID a owl:DatatypeProperty ;
+    rdfs:label "has PubMed ID" ;
+    skos:exactMatch pubmed: .
+
+# Example Individual
+hcrm:CRMHS00000005752 a crm:CisRegulatoryModule ;
+    crm:hasGenomicCoordinates [
+        a crm:GenomicCoordinates ;
+        crm:chromosome "chr1" ;
+        crm:start 16039967 ;
+        crm:end 16040344 ;
+        crm:assembly "hg38"
+    ] ;
+    crm:activeInCellLine hcrm:MS-1, hcrm:MKL-1, hcrm:NCI-H1770 ;
+    crm:hasExperimentalEvidence "CAGE" ;
+    crm:hasPubMedID "30247654"^^xsd:string ;
+    crm:hasTargetGene hcrm:FAM131C .
+
+hcrm:FAM131C a crm:Gene ;
+    rdfs:label "FAM131C" .
+
+hcrm:MS-1 a crm:CellLine ;
+    rdfs:label "MS-1" .
+
+hcrm:MKL-1 a crm:CellLine ;
+    rdfs:label "MKL-1" .
+
+hcrm:NCI-H1770 a crm:CellLine ;
+    rdfs:label "NCI-H1770" .
+```

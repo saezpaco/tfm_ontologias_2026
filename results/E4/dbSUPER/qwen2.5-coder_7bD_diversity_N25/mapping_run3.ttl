@@ -1,0 +1,164 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGenomicCoordinates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:GenomicCoordinates/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStopPosition>;
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:Enhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStopPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:rankValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRankValue>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:SuperEnhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStopPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:rankValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRankValue>;
+        ]
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:CellLine/{{cell_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:TargetGene/{{gene_symbol}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:TranscriptionFactor/{{transcription_factor}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDiseaseAssociation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:DiseaseAssociation/{{disease}}{FAIR_URI}";
+    ].
+
+<#TriplesMapStartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:GenomicCoordinates/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:startPosition;
+        rr:objectMap [
+            rr:constant xsd:int(1088778);
+        ]
+    ].
+
+<#TriplesMapStopPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:GenomicCoordinates/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:stopPosition;
+        rr:objectMap [
+            rr:constant xsd:int(235489531);
+        ]
+    ].
+
+<#TriplesMapRankValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:Enhancer/{{se_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:rankValue;
+        rr:objectMap [
+            rr:constant xsd:int(20);
+        ]
+    ].
+```

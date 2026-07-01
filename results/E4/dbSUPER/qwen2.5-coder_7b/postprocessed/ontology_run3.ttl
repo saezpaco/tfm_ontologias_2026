@@ -1,0 +1,116 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+owl:DatatypeProperty
+    genreg:assemblyVersion ;
+    rdfs:label "Assembly Version" ;
+    rdfs:comment "The version of the genome assembly." ;
+    rdfs:range xsd:string ;
+    skos:definition "The version of the genome assembly used in the study." ;
+
+    genreg:chromosomeNumber ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number in the assembly." ;
+    rdfs:range xsd:int ;
+    skos:definition "The chromosome number where the genetic regulatory element is located." ;
+
+    genreg:endPosition ;
+    rdfs:label "End Position" ;
+    rdfs:comment "The end position of the genetic regulatory element." ;
+    rdfs:range xsd:int ;
+    skos:definition "The end position in the assembly where the genetic regulatory element ends." ;
+
+    genreg:startPosition ;
+    rdfs:label "Start Position" ;
+    rdfs:comment "The start position of the genetic regulatory element." ;
+    rdfs:range xsd:int ;
+    skos:definition "The start position in the assembly where the genetic regulatory element begins." ;
+
+    genreg:scoreValue ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "A score value associated with the genetic regulatory element." ;
+    rdfs:range xsd:float ;
+    skos:definition "A numerical score indicating the significance or importance of the genetic regulatory element." ;
+
+owl:ObjectProperty
+    genreg:associatedWithDisease ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The disease associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Disease ;
+    skos:definition "A relationship between a genetic regulatory element and a disease it is associated with." ;
+
+    genreg:hasMethod ;
+    rdfs:label "Has Method" ;
+    rdfs:comment "The method used in the study of the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Method ;
+    skos:definition "A relationship between a genetic regulatory element and the method used to study it." ;
+
+    genreg:hasPubMedID ;
+    rdfs:label "Has PubMed ID" ;
+    rdfs:comment "The PubMed ID associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string ;
+    skos:definition "A relationship between a genetic regulatory element and its PubMed ID." ;
+
+    genreg:hasTargetGene ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The target gene associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Gene ;
+    skos:definition "A relationship between a genetic regulatory element and its target gene." ;
+
+    genreg:hasTranscriptionFactor ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The transcription factor associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:TranscriptionFactor ;
+    skos:definition "A relationship between a genetic regulatory element and its associated transcription factor." ;
+
+owl:Class
+    genreg:Disease ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A disease associated with genetic regulatory elements." ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A medical condition or disorder that can be studied using genetic regulatory elements." ;
+
+    genreg:Enhancer ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A type of genetic regulatory element that increases the transcription of a gene." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement ;
+    skos:definition "A region in the genome that enhances the transcription of a nearby gene." ;
+
+    genreg:Gene ;
+    rdfs:label "Gene" ;
+    rdfs:comment "A segment of DNA that codes for a protein or RNA molecule." ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A biological unit of heredity that is passed from parents to offspring and encodes proteins or RNA molecules." ;
+
+    genreg:GeneticRegulatoryElement ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A segment of DNA that controls the expression of genes." ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A biological unit of heredity that regulates gene expression in cells." ;
+
+    genreg:Method ;
+    rdfs:label "Method" ;
+    rdfs:comment "A technique or procedure used to study genetic regulatory elements." ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A scientific approach or protocol used to investigate the properties and functions of genetic regulatory elements." ;
+
+    genreg:SuperEnhancer ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A type of genetic regulatory element that is highly active and can drive the transcription of multiple genes." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement ;
+    skos:definition "A region in the genome that is exceptionally active and can regulate the expression of multiple nearby genes." ;
+
+    genreg:TranscriptionFactor ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A protein that binds to DNA and regulates gene transcription." ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A type of protein that interacts with DNA to control the expression of genes." ;

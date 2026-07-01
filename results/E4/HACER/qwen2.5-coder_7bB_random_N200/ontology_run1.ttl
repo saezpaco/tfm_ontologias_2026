@@ -1,0 +1,219 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasRatio" ;
+    rdfs:comment "The ratio value associated with a genetic regulatory element." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasScore" ;
+    rdfs:comment "The score value associated with a genetic regulatory element." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "hasChromosomeNumber" ;
+    rdfs:comment "The chromosome number associated with a genetic regulatory element." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range xsd:int .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasTranscriptionFactor" ;
+    rdfs:comment "The transcription factor associated with an enhancer or superenhancer." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:TranscriptionFactor .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasTargetGene" ;
+    rdfs:comment "The target gene associated with an enhancer or superenhancer." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:TargetGene .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "associatedWithDisease" ;
+    rdfs:comment "The disease associated with a genetic regulatory element." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Disease ;
+    rdfs:range genreg:Disease .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "occursInCellLineOrBiosample" ;
+    rdfs:comment "The cell line or biosample in which a genetic regulatory element occurs." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:CellLineOrBiosample .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasPubMedID" ;
+    rdfs:comment "The PubMed ID associated with a genetic regulatory element." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "usesMethod" ;
+    rdfs:comment "The method used in a genetic regulatory element study." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasPubMedID" ;
+    rdfs:comment "The PubMed ID associated with a mutation." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Mutation ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "usesMethod" ;
+    rdfs:comment "The method used in a mutation study." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Mutation ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasPubMedID" ;
+    rdfs:comment "The PubMed ID associated with a disease." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Disease ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "usesMethod" ;
+    rdfs:comment "The method used in a disease study." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Disease ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasPubMedID" ;
+    rdfs:comment "The PubMed ID associated with a chromatin regulatory module." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:ChromatinRegulatoryModule ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "usesMethod" ;
+    rdfs:comment "The method used in a chromatin regulatory module study." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:ChromatinRegulatoryModule ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasPubMedID" ;
+    rdfs:comment "The PubMed ID associated with an enhancer." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "usesMethod" ;
+    rdfs:comment "The method used in an enhancer study." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "hasPubMedID" ;
+    rdfs:comment "The PubMed ID associated with a superenhancer." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+owl:ObjectProperty
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "usesMethod" ;
+    rdfs:comment "The method used in a superenhancer study." ;
+    rdfs:subPropertyOf skos:definition ;
+    rdfs:domain genreg:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "GeneticRegulatoryElement" ;
+    rdfs:comment "A genetic regulatory element." ;
+    rdfs:subClassOf genreg:Enhancer ;
+    rdfs:subClassOf genreg:SuperEnhancer ;
+    rdfs:subClassOf genreg:TranscriptionFactor ;
+    rdfs:subClassOf genreg:TargetGene ;
+    rdfs:subClassOf genreg:Disease ;
+    rdfs:subClassOf genreg:CellLineOrBiosample ;
+    rdfs:subClassOf genreg:Mutation ;
+    rdfs:subClassOf genreg:ChromatinRegulatoryModule .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "An enhancer." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement ;
+    rdfs:equivalentClass [ a owl:Class ; rdfs:subClassOf genreg:SuperEnhancer ] .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    rdfs:comment "A superenhancer." ;
+    rdfs:subClassOf genreg:Enhancer .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "TranscriptionFactor" ;
+    rdfs:comment "A transcription factor." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "TargetGene" ;
+    rdfs:comment "A target gene." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A disease." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "CellLineOrBiosample" ;
+    rdfs:comment "A cell line or biosample." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A mutation." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class
+    rdf:type owl:Class ;
+    rdfs:label "ChromatinRegulatoryModule" ;
+    rdfs:comment "A chromatin regulatory module." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .

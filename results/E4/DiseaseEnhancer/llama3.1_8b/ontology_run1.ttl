@@ -1,0 +1,381 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://example.org/ontology>
+    a owl:Ontology ;
+    rdfs:label "Example Ontology" ;
+    rdfs:comment "This is an example ontology.".
+
+owl:DatatypeProperty
+    a owl:ObjectProperty ;
+    rdfs:subClassOf rdf:Property .
+
+owl:ObjectProperty
+    a owl:ObjectProperty ;
+    rdfs:subClassOf rdf:Property .
+
+owl:Class
+    a owl:Class ;
+    rdfs:subClassOf rdf:Resource .
+
+class_entity
+    a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:comment "This is an entity."@en ;
+    skos:definition "An entity is something that exists or has existence."@en ;
+    owl:equivalentClass <http://example.org/ontology#entity> .
+
+has_PMID
+    a owl:ObjectProperty ;
+    rdfs:label "Has PMID" ;
+    rdfs:comment "This property represents the relationship between an entity and its PMID."@en ;
+    skos:definition "The property that relates an entity to its PMID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#PMID> .
+
+has_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its method."@en ;
+    skos:definition "The property that relates an entity to its method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_biosample
+    a owl:ObjectProperty ;
+    rdfs:label "Has Biosample" ;
+    rdfs:comment "This property represents the relationship between an entity and its biosample."@en ;
+    skos:definition "The property that relates an entity to its biosample."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Biosample> .
+
+has_crm_ID
+    a owl:ObjectProperty ;
+    rdfs:label "Has CRM ID" ;
+    rdfs:comment "This property represents the relationship between an entity and its CRM ID."@en ;
+    skos:definition "The property that relates an entity to its CRM ID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#ID> .
+
+has_crossref
+    a owl:ObjectProperty ;
+    rdfs:label "Has Cross Reference" ;
+    rdfs:comment "This property represents the relationship between an entity and its cross reference."@en ;
+    skos:definition "The property that relates an entity to its cross reference."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Reference> .
+
+has_current_assembly
+    a owl:ObjectProperty ;
+    rdfs:label "Has Current Assembly" ;
+    rdfs:comment "This property represents the relationship between an entity and its current assembly."@en ;
+    skos:definition "The property that relates an entity to its current assembly."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Assembly> .
+
+has_current_chr
+    a owl:ObjectProperty ;
+    rdfs:label "Has Current Chromosome" ;
+    rdfs:comment "This property represents the relationship between an entity and its current chromosome."@en ;
+    skos:definition "The property that relates an entity to its current chromosome."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Chromosome> .
+
+has_disease
+    a owl:ObjectProperty ;
+    rdfs:label "Has Disease" ;
+    rdfs:comment "This property represents the relationship between an entity and its disease."@en ;
+    skos:definition "The property that relates an entity to its disease."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Disease> .
+
+has_disease_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Disease Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its disease method."@en ;
+    skos:definition "The property that relates an entity to its disease method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_enh2gene_PMID
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer to Gene PMID" ;
+    rdfs:comment "This property represents the relationship between an entity and its enhancer to gene PMID."@en ;
+    skos:definition "The property that relates an entity to its enhancer to gene PMID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#PMID> .
+
+has_enh2gene_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer to Gene Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its enhancer to gene method."@en ;
+    skos:definition "The property that relates an entity to its enhancer to gene method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_enh_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its enhancer method."@en ;
+    skos:definition "The property that relates an entity to its enhancer method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_hgnc_symbol_TFs
+    a owl:ObjectProperty ;
+    rdfs:label "Has HGNC Symbol Transcription Factors" ;
+    rdfs:comment "This property represents the relationship between an entity and its HGNC symbol transcription factors."@en ;
+    skos:definition "The property that relates an entity to its HGNC symbol transcription factors."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Symbol> .
+
+has_hgnc_symbol_target_genes
+    a owl:ObjectProperty ;
+    rdfs:label "Has HGNC Symbol Target Genes" ;
+    rdfs:comment "This property represents the relationship between an entity and its HGNC symbol target genes."@en ;
+    skos:definition "The property that relates an entity to its HGNC symbol target genes."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Symbol> .
+
+has_minimum_ratio
+    a owl:ObjectProperty ;
+    rdfs:label "Has Minimum Ratio" ;
+    rdfs:comment "This property represents the relationship between an entity and its minimum ratio."@en ;
+    skos:definition "The property that relates an entity to its minimum ratio."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Ratio> .
+
+has_mutation_PMID
+    a owl:ObjectProperty ;
+    rdfs:label "Has Mutation PMID" ;
+    rdfs:comment "This property represents the relationship between an entity and its mutation PMID."@en ;
+    skos:definition "The property that relates an entity to its mutation PMID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#PMID> .
+
+has_mutation_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Mutation Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its mutation method."@en ;
+    skos:definition "The property that relates an entity to its mutation method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_orig_assembly
+    a owl:ObjectProperty ;
+    rdfs:label "Has Original Assembly" ;
+    rdfs:comment "This property represents the relationship between an entity and its original assembly."@en ;
+    skos:definition "The property that relates an entity to its original assembly."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Assembly> .
+
+has_orig_chr
+    a owl:ObjectProperty ;
+    rdfs:label "Has Original Chromosome" ;
+    rdfs:comment "This property represents the relationship between an entity and its original chromosome."@en ;
+    skos:definition "The property that relates an entity to its original chromosome."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Chromosome> .
+
+has_original_ID
+    a owl:ObjectProperty ;
+    rdfs:label "Has Original ID" ;
+    rdfs:comment "This property represents the relationship between an entity and its original ID."@en ;
+    skos:definition "The property that relates an entity to its original ID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#ID> .
+
+has_refseq_ID
+    a owl:ObjectProperty ;
+    rdfs:label "Has RefSeq ID" ;
+    rdfs:comment "This property represents the relationship between an entity and its RefSeq ID."@en ;
+    skos:definition "The property that relates an entity to its RefSeq ID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#ID> .
+
+has_current_assembly
+    a owl:ObjectProperty ;
+    rdfs:label "Has Current Assembly" ;
+    rdfs:comment "This property represents the relationship between an entity and its current assembly."@en ;
+    skos:definition "The property that relates an entity to its current assembly."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Assembly> .
+
+has_current_chr
+    a owl:ObjectProperty ;
+    rdfs:label "Has Current Chromosome" ;
+    rdfs:comment "This property represents the relationship between an entity and its current chromosome."@en ;
+    skos:definition "The property that relates an entity to its current chromosome."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Chromosome> .
+
+has_disease
+    a owl:ObjectProperty ;
+    rdfs:label "Has Disease" ;
+    rdfs:comment "This property represents the relationship between an entity and its disease."@en ;
+    skos:definition "The property that relates an entity to its disease."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Disease> .
+
+has_disease_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Disease Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its disease method."@en ;
+    skos:definition "The property that relates an entity to its disease method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_enh2gene_PMID
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer to Gene PMID" ;
+    rdfs:comment "This property represents the relationship between an entity and its enhancer to gene PMID."@en ;
+    skos:definition "The property that relates an entity to its enhancer to gene PMID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#PMID> .
+
+has_enh2gene_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer to Gene Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its enhancer to gene method."@en ;
+    skos:definition "The property that relates an entity to its enhancer to gene method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_enh_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its enhancer method."@en ;
+    skos:definition "The property that relates an entity to its enhancer method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_hgnc_symbol_TFs
+    a owl:ObjectProperty ;
+    rdfs:label "Has HGNC Symbol Transcription Factors" ;
+    rdfs:comment "This property represents the relationship between an entity and its HGNC symbol transcription factors."@en ;
+    skos:definition "The property that relates an entity to its HGNC symbol transcription factors."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Symbol> .
+
+has_hgnc_symbol_target_genes
+    a owl:ObjectProperty ;
+    rdfs:label "Has HGNC Symbol Target Genes" ;
+    rdfs:comment "This property represents the relationship between an entity and its HGNC symbol target genes."@en ;
+    skos:definition "The property that relates an entity to its HGNC symbol target genes."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Symbol> .
+
+has_minimum_ratio
+    a owl:ObjectProperty ;
+    rdfs:label "Has Minimum Ratio" ;
+    rdfs:comment "This property represents the relationship between an entity and its minimum ratio."@en ;
+    skos:definition "The property that relates an entity to its minimum ratio."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Ratio> .
+
+has_mutation_PMID
+    a owl:ObjectProperty ;
+    rdfs:label "Has Mutation PMID" ;
+    rdfs:comment "This property represents the relationship between an entity and its mutation PMID."@en ;
+    skos:definition "The property that relates an entity to its mutation PMID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#PMID> .
+
+has_mutation_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Mutation Method" ;
+    rdfs:comment "This property represents the relationship between an entity and its mutation method."@en ;
+    skos:definition "The property that relates an entity to its mutation method."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Method> .
+
+has_orig_assembly
+    a owl:ObjectProperty ;
+    rdfs:label "Has Original Assembly" ;
+    rdfs:comment "This property represents the relationship between an entity and its original assembly."@en ;
+    skos:definition "The property that relates an entity to its original assembly."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Assembly> .
+
+has_orig_chr
+    a owl:ObjectProperty ;
+    rdfs:label "Has Original Chromosome" ;
+    rdfs:comment "This property represents the relationship between an entity and its original chromosome."@en ;
+    skos:definition "The property that relates an entity to its original chromosome."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#Chromosome> .
+
+has_original_ID
+    a owl:ObjectProperty ;
+    rdfs:label "Has Original ID" ;
+    rdfs:comment "This property represents the relationship between an entity and its original ID."@en ;
+    skos:definition "The property that relates an entity to its original ID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#ID> .
+
+has_refseq_ID
+    a owl:ObjectProperty ;
+    rdfs:label "Has RefSeq ID" ;
+    rdfs:comment "This property represents the relationship between an entity and its RefSeq ID."@en ;
+    skos:definition "The property that relates an entity to its RefSeq ID."@en ;
+    domain class_entity ;
+    range <http://example.org/ontology#ID> .
+
+PMID
+    a owl:DatatypeProperty ;
+    rdfs:label "PMID" ;
+    rdfs:comment "This is a PMID."@en ;
+    skos:definition "A unique identifier for a publication in PubMed."@en ;
+    range xsd:string .
+
+Method
+    a owl:Class ;
+    rdfs:label "Method" ;
+    rdfs:comment "This is a method."@en ;
+    skos:definition "A procedure or technique used to achieve a particular result."@en .
+
+Biosample
+    a owl:Class ;
+    rdfs:label "Biosample" ;
+    rdfs:comment "This is a biosample."@en ;
+    skos:definition "A sample of biological material, such as tissue or cells."@en .
+
+ID
+    a owl:Class ;
+    rdfs:label "ID" ;
+    rdfs:comment "This is an ID."@en ;
+    skos:definition "A unique identifier for something."@en .
+
+Reference
+    a owl:Class ;
+    rdfs:label "Reference" ;
+    rdfs:comment "This is a reference."@en ;
+    skos:definition "A citation or mention of another work."@en .
+
+Assembly
+    a owl:Class ;
+    rdfs:label "Assembly" ;
+    rdfs:comment "This is an assembly."@en ;
+    skos:definition "A collection of genetic material, such as DNA or RNA."@en .
+
+Chromosome
+    a owl:Class ;
+    rdfs:label "Chromosome" ;
+    rdfs:comment "This is a chromosome."@en ;
+    skos:definition "A thread-like structure in the nucleus of a cell that carries hereditary information."@en .
+
+Disease
+    a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "This is a disease."@en ;
+    skos:definition "A condition that affects an organism's health."@en .
+
+Ratio
+    a owl:DatatypeProperty ;
+    rdfs:label "Ratio" ;
+    rdfs:comment "This is a ratio."@en ;
+    skos:definition "The result of dividing one quantity by another."@en ;
+    range xsd:string .

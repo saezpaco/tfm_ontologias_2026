@@ -1,0 +1,79 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    skos:prefLabel "dbSUPER Ontology" ;
+    skos:definition "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology/CellLine> a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line in which the super-enhancer is active." .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is targeted by the super-enhancer." .
+
+### Object Properties ###
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Gene> ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and its target gene." .
+
+<http://example.org/ontology/activeInCellLine> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/CellLine> ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Association between cis-regulatory module and the cell line in which it is active." .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasChromosome> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "Chromosome on which the cis-regulatory module is located." .
+
+<http://example.org/ontology/hasStartPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start position" ;
+    skos:definition "Start position of the cis-regulatory module on the chromosome." .
+
+<http://example.org/ontology/hasEndPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end position" ;
+    skos:definition "End position of the cis-regulatory module on the chromosome." .
+
+<http://example.org/ontology/hasRank> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "rank" ;
+    skos:definition "Rank of the super-enhancer based on its activity." .
+
+### Instances ###
+<http://example.org/ontology/SE_31797> a <http://example.org/ontology/CRM> ;
+    skos:prefLabel "SE_31797" ;
+    <http://example.org/ontology/hasChromosome> "chr3" ;
+    <http://example.org/ontology/hasStartPosition> 187454355 ;
+    <http://example.org/ontology/hasEndPosition> 187468841 ;
+    <http://example.org/ontology/hasRank> 424 ;
+    <http://example.org/ontology/hasTargetGene> <http://example.org/ontology/BCL6> ;
+    <http://example.org/ontology/activeInCellLine> <http://example.org/ontology/Gastric> .
+
+<http://example.org/ontology/BCL6> a <http://example.org/ontology/Gene> ;
+    skos:prefLabel "BCL6" .
+
+<http://example.org/ontology/Gastric> a <http://example.org/ontology/CellLine> ;
+    skos:prefLabel "Gastric" .
+```

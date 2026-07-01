@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-26T20:10:22.296937",
+  "success": true,
+  "elapsed_seconds": 8.59,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1822,
+    "completion_tokens": 930,
+    "total_tokens": 2752
+  },
+  "prompt_tokens_estimate": 1578,
+  "response_chars": 3015,
+  "turtle_chars": 3015,
+  "validation": {
+    "valid": false,
+    "error": "at line 60 of <>:\nBad syntax (Prefix \"id_ncbigene:\" not bound) at ^ in:\n\"...b':activeInCellLine obo:CLO_0000001 ;\\n    dbsuper:targetsGene '^b'id_ncbigene:1234 ;\\n    dbsuper:associatedWithDisease obo:DOI'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oD_diversity_N50/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oD_diversity_N50/response_raw_run1.txt"
+  }
+}

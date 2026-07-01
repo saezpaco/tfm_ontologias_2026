@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-05-09T00:02:49.689718",
+  "success": true,
+  "elapsed_seconds": 179.43,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3282,
+    "completion_tokens": 1023,
+    "total_tokens": 4305
+  },
+  "prompt_tokens_estimate": 2046,
+  "response_chars": 3528,
+  "turtle_chars": 2903,
+  "validation": {
+    "valid": false,
+    "error": "at line 22 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'e/> .\\n@prefix dbsuper: <http://identifiers.org/dbsuper/> .\\n\\n'^b'crm: a owl:Ontology ;\\n    rdfs:label \"cis-regulatory module '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi_C2/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi_C2/response_raw_run1.txt"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:57:23.555378",
+  "success": true,
+  "elapsed_seconds": 9.52,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7245,
+    "completion_tokens": 1031,
+    "total_tokens": 8276
+  },
+  "prompt_tokens_estimate": 4475,
+  "response_chars": 3156,
+  "turtle_chars": 3142,
+  "validation": {
+    "valid": false,
+    "error": "at line 24 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oD_diversity_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oD_diversity_N100/response_raw_run3.txt"
+  }
+}

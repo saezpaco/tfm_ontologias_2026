@@ -1,0 +1,78 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+obo:SO_0000704 a owl:Class ;
+    skos:prefLabel "Super-enhancer" ;
+    skos:definition "A cluster of enhancers in close genomic proximity that drive expression of genes involved in cell identity." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+obo:CL_0000000 a owl:Class ;
+    skos:prefLabel "Cell line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/CL_0000000> .
+
+obo:GENE_0000000 a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory region to its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002205> ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:GENE_0000000 .
+
+obo:RO_0002434 a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which a regulatory region is active." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002434> ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:CL_0000000 .
+
+# Datatype Properties
+obo:GENO_0000001 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic start" ;
+    skos:definition "The start coordinate of a genomic feature." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000002 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic end" ;
+    skos:definition "The end coordinate of a genomic feature." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000003 a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which a genomic feature is located." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000004 a owl:DatatypeProperty ;
+    skos:prefLabel "has assembly version" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:ECO_0000000 a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence method" ;
+    skos:definition "The method used to determine the activity of a regulatory region." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-06-05T16:18:44.476400",
+  "success": true,
+  "elapsed_seconds": 694.85,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 8192,
+    "total_tokens": 12288
+  },
+  "prompt_tokens_estimate": 2574,
+  "response_chars": 37634,
+  "turtle_chars": 37624,
+  "validation": {
+    "valid": false,
+    "error": "at line 13 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'ience.org/resource/> .\\n\\n# Define new classes and properties\\n'^b'crm:TranscriptionFactor a owl:Class ;\\n    rdfs:label \"Transc'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7b/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7b/response_raw_run2.txt"
+  }
+}

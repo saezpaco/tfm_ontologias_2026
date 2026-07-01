@@ -264,11 +264,87 @@ def escape_local_names(ttl: str) -> tuple[str, int]:
     return "\n".join(out_lines) + ("\n" if ttl.endswith("\n") else ""), n
 
 
+# ─── Pasada de recuperación agresiva (solo para ficheros que NO parsean) ──────
+# Tres modos de error frecuentes en modelos compactos, todos documentados en la
+# memoria (§3.6.1 / §4.3.1): (i) nombre de prefijo usado como término desnudo
+# («crm a owl:Class» en vez de «:crm …»); (ii) falta del «.» final; (iii) falta
+# del «.» entre sentencias (el modelo encadena bloques sin terminar el anterior).
+_KEEP_BARE = {"a", "true", "false"}
+
+
+def fix_bare_terms(ttl: str) -> str:
+    """Reescribe un token alfabético desnudo (fuera de IRIs/literales y que no
+    sea `a`/`true`/`false` ni parte de un `prefix:local`) como `:token`, bajo el
+    prefijo por defecto. Repara el patrón «crm a owl:Class»."""
+    out = []
+    for line in ttl.splitlines():
+        if re.match(r"\s*@?(prefix|base)\b", line, re.I) or line.lstrip().startswith("#"):
+            out.append(line)
+            continue
+        parts = re.split(r'(<[^>]*>|"[^"]*")', line)
+        for i in range(0, len(parts), 2):
+            parts[i] = re.sub(
+                r'(?<![:@\w-])([A-Za-z_][\w-]*)(?![\w:])',
+                lambda m: m.group(1) if m.group(1) in _KEEP_BARE else ":" + m.group(1),
+                parts[i],
+            )
+        out.append("".join(parts))
+    return "\n".join(out)
+
+
+def fix_terminators(ttl: str) -> str:
+    """Inserta el «.» que falta: entre sentencias (nueva línea-sujeto a columna
+    0 cuando la anterior acaba en «;») y al final del documento."""
+    lines = ttl.splitlines()
+
+    def starts_subject(l: str) -> bool:
+        return bool(re.match(r'^(:?[A-Za-z_][\w-]*:?[\w-]*|<[^>]+>)\s+(a\b|[:\w]+:)', l))
+
+    for i, l in enumerate(lines):
+        if l[:1] not in (" ", "\t", "") and starts_subject(l):
+            j = i - 1
+            while j >= 0 and not lines[j].strip():
+                j -= 1
+            if j >= 0 and not re.match(r"\s*@?(prefix|base)", lines[j], re.I):
+                s = lines[j].rstrip()
+                if s.endswith(";"):
+                    lines[j] = s[:-1].rstrip() + " ."
+                elif s and not s.endswith("."):
+                    lines[j] = s + " ."
+    txt = "\n".join(lines).rstrip()
+    if txt and not txt.endswith("."):
+        txt = (txt[:-1].rstrip() + " .") if txt.endswith(";") else (txt + " .")
+    return txt
+
+
+def _parses(text: str) -> bool:
+    if not HAS_RDFLIB:
+        return True  # sin rdflib no podemos verificar: no forzamos recuperación
+    try:
+        _RDFG().parse(data=text, format="turtle")
+        return True
+    except Exception:
+        return False
+
+
 def process_file(src: Path, dst: Path) -> dict:
-    """Procesa un .ttl. Devuelve métricas del fix."""
+    """Procesa un .ttl. Devuelve métricas del fix.
+
+    Pasada estándar (inject_prefixes + escape_local_names). Si el resultado aún
+    no parsea, intenta una pasada de recuperación agresiva y SOLO la conserva si
+    consigue que el fichero parsee (nunca puede empeorar un fichero ya válido).
+    """
     txt = src.read_text(encoding="utf-8", errors="ignore")
     fixed, added, unresolved = inject_prefixes(txt)
     fixed, n_escaped = escape_local_names(fixed)
+    recovered = False
+    if HAS_RDFLIB and not _parses(fixed):
+        cand = fix_bare_terms(fixed)
+        cand, _a2, _u2 = inject_prefixes(cand)
+        cand, _ = escape_local_names(cand)
+        cand = fix_terminators(cand)
+        if _parses(cand):
+            fixed, recovered = cand, True
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(fixed, encoding="utf-8")
     return {
@@ -279,6 +355,7 @@ def process_file(src: Path, dst: Path) -> dict:
         "added":        added,
         "unresolved":   unresolved,
         "n_escaped":    n_escaped,
+        "recovered":    recovered,
     }
 
 

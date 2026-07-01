@@ -1,0 +1,95 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 9.53,
+  "total_tokens": 11831,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:25:14.543823",
+      "success": true,
+      "elapsed_seconds": 8.42,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3008,
+        "completion_tokens": 850,
+        "total_tokens": 3858
+      },
+      "prompt_tokens_estimate": 1684,
+      "response_chars": 2962,
+      "turtle_chars": 2962,
+      "validation": {
+        "valid": false,
+        "error": "at line 17 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':Enhancer a owl:Class ;\\n    rdfs:subClassOf obo:SO_0000165 ;'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oC_stratified_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oC_stratified_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:25:25.095134",
+      "success": true,
+      "elapsed_seconds": 9.51,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3008,
+        "completion_tokens": 967,
+        "total_tokens": 3975
+      },
+      "prompt_tokens_estimate": 1684,
+      "response_chars": 3275,
+      "turtle_chars": 3275,
+      "validation": {
+        "valid": true,
+        "n_triples": 64,
+        "n_classes": 1,
+        "n_properties": 12
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oC_stratified_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oC_stratified_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:25:36.794303",
+      "success": true,
+      "elapsed_seconds": 10.66,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3008,
+        "completion_tokens": 990,
+        "total_tokens": 3998
+      },
+      "prompt_tokens_estimate": 1684,
+      "response_chars": 3273,
+      "turtle_chars": 3273,
+      "validation": {
+        "valid": false,
+        "error": "at line 19 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'tp://purl.obolibrary.org/obo/SO_0000165> .\\n\\n### Properties\\n\\n'^b':hasChromosome a owl:DatatypeProperty ;\\n    rdfs:domain obo:'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oC_stratified_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oC_stratified_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

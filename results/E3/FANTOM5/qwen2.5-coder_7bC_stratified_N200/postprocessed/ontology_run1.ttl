@@ -1,0 +1,33 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606crm_ID> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/9606/> .
+@prefix assembly:<http://purl.obolibrary.org/obo/GENO_0000821> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed:<http://purl.obolibrary.org/obo/PUBMED_0000012> .
+@prefix id_ncbigene:<http://purl.obolibrary.org/obo/NCBIGENE_0000031> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/SO_0000727> .
+
+# Example of a CRM resource
+<http://example.com/crm/CRMHS00000003515>
+    rdf:type obo:SO_0000727 ;
+    hcrm:crm_ID "CRMHS00000003515" ;
+    <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmolbgw!crm_ID--hgncsymbol!9606/TBX5> "TBX5" ;
+    assembly:chr_name "chr14" ;
+    nuccore:chr_ID "NC_000014.10" ;
+    pubmed:id_pubmed "PMID12345678" .
+
+# Example of a gene resource
+<http://example.com/gene/TBX5>
+    rdf:type hgene:9606/TBX5 ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001217> .

@@ -1,0 +1,99 @@
+{
+  "experiment": "E2",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 133.55666666666664,
+  "total_tokens": 14793,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T13:07:59.614246",
+      "success": true,
+      "elapsed_seconds": 128.76,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 836,
+        "total_tokens": 4931
+      },
+      "prompt_tokens_estimate": 3888,
+      "response_chars": 2835,
+      "turtle_chars": 2835,
+      "validation": {
+        "valid": true,
+        "n_triples": 46,
+        "n_classes": 6,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T13:10:12.797995",
+      "success": true,
+      "elapsed_seconds": 132.13,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 836,
+        "total_tokens": 4931
+      },
+      "prompt_tokens_estimate": 3888,
+      "response_chars": 2835,
+      "turtle_chars": 2835,
+      "validation": {
+        "valid": true,
+        "n_triples": 46,
+        "n_classes": 6,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T13:12:33.620596",
+      "success": true,
+      "elapsed_seconds": 139.78,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 836,
+        "total_tokens": 4931
+      },
+      "prompt_tokens_estimate": 3888,
+      "response_chars": 2835,
+      "turtle_chars": 2835,
+      "validation": {
+        "valid": true,
+        "n_triples": 46,
+        "n_classes": 6,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bD_diversity_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

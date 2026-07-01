@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-28T04:55:12.239696",
+  "success": true,
+  "elapsed_seconds": 127.58,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 882,
+    "total_tokens": 4977
+  },
+  "prompt_tokens_estimate": 2794,
+  "response_chars": 2178,
+  "turtle_chars": 2164,
+  "validation": {
+    "valid": false,
+    "error": "at line 38 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bB_random_N50/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bB_random_N50/response_raw_run1.txt"
+  }
+}

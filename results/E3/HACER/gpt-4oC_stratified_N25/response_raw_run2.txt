@@ -1,0 +1,66 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly:<https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed:<http://identifiers.org/pubmed/> .
+
+hcrm:HACER_CRM rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens according to HACER database" ;
+    skos:prefLabel "HACER CRM" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr_ID ;
+    obo:GENO_0000895 "start_position"^^xsd:integer ;
+    obo:GENO_0000894 "end_position"^^xsd:integer ;
+    schema:evidenceOrigin <original_URL_crossreference> ;
+    rdfs:isDefinedBy obo:ECO_ID ;
+    sio:SIO_000772 id_pubmed:pubmed_ID ;
+    sio:SIO_000253 <original_URL_database> .
+
+obo:SO_0000727 rdf:type owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:altLabel "cis-regulatory module" ;
+    linkml:is_a biolink:RegulatoryRegion .
+
+nuccore:chr_ID rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000340 ;
+    skos:prefLabel "chr_name" ;
+    biolink:category biolink:GenomicSequenceLocalization ;
+    skos:closeMatch obo:NCIT_ID .
+
+obo:NCBITaxon_9606 biolink:category biolink:OrganismTaxon .
+
+assembly:GCF_000001405.26 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0001505 ;
+    skos:prefLabel "GRCh38" ;
+    skos:altLabel "hg38" ;
+    biolink:category biolink:Genome .
+
+obo:CL_ID biolink:category biolink:Cell .
+obo:CLO_ID biolink:category biolink:CellLine .
+obo:UBERON_ID biolink:category biolink:GrossAnatomicalStructure .
+obo:ECO_ID biolink:category biolink:EvidenceType .
+
+id_pubmed:pubmed_ID skos:exactMatch pubmed:pubmed_ID .
+pubmed:pubmed_ID biolink:category biolink:Article .
+
+<original_URL_database> rdf:type owl:Class ;
+    rdfs:subClassOf obo:NCIT_C15426 ;
+    skos:prefLabel "HACER Database" ;
+    biolink:category biolink:InformationResource .
+
+obo:NCIT_C15426 rdf:type owl:Class ;
+    skos:prefLabel "Database" .
+```

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-05T16:31:47.332787",
+  "success": true,
+  "elapsed_seconds": 71.94,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 369,
+    "total_tokens": 4465
+  },
+  "prompt_tokens_estimate": 3070,
+  "response_chars": 966,
+  "turtle_chars": 952,
+  "validation": {
+    "valid": false,
+    "error": "at line 16 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ample of how to map data to ontology classes and properties\\n'^b':CRMHS00000003515 a hcrm:TranscriptionFactor ;\\n    rdfs:labe'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7b/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7b/response_raw_run1.txt"
+  }
+}

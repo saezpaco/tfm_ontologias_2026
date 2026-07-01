@@ -1,0 +1,76 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+obo:SO_0000727 rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000727> .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:GenomicEntity rdf:type owl:Class ;
+    rdfs:label "Genomic Entity" .
+
+# Properties
+biolink:has_gene_target rdf:type owl:ObjectProperty ;
+    rdfs:label "has gene target" ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+biolink:has_disease_association rdf:type owl:ObjectProperty ;
+    rdfs:label "has disease association" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+biolink:has_snp_association rdf:type owl:ObjectProperty ;
+    rdfs:label "has SNP association" .
+
+biolink:located_in rdf:type owl:ObjectProperty ;
+    rdfs:label "located in" ;
+    skos:exactMatch nuccore:chr_ID .
+
+# Individuals
+hcrm:CRMHS00000078104 rdf:type obo:SO_0000727 ;
+    rdfs:label "CRMHS00000078104" ;
+    biolink:located_in nuccore:chr1 ;
+    biolink:has_gene_target <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000078104--hgncsymbol!9606/GALNT2> ;
+    biolink:has_snp_association <https://www.ncbi.nlm.nih.gov/snp/rs34631471> ;
+    dc:source <http://bioinfo.vanderbilt.edu/AE/HACER/> ;
+    dc:identifier "CRMHS00000078104" .
+
+hcrm:CRMHS00007357114 rdf:type obo:SO_0000727 ;
+    rdfs:label "CRMHS00007357114" ;
+    biolink:located_in nuccore:chr19 ;
+    biolink:has_snp_association <https://www.ncbi.nlm.nih.gov/snp/rs34631471> ;
+    dc:source <http://bioinfo.vanderbilt.edu/AE/HACER/> ;
+    dc:identifier "CRMHS00007357114" .
+
+# Example of a gene individual
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000078104--hgncsymbol!9606/GALNT2> rdf:type biolink:Gene ;
+    rdfs:label "GALNT2" .
+
+# Example of a disease individual
+<http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000078104--doid!1682> rdf:type biolink:Disease ;
+    rdfs:label "Disease associated with CRMHS00000078104" .
+
+# Example of a SNP individual
+<https://www.ncbi.nlm.nih.gov/snp/rs34631471> rdf:type biolink:GenomicEntity ;
+    rdfs:label "rs34631471" .

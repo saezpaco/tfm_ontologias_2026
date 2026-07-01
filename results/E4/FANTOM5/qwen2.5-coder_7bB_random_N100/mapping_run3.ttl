@@ -1,0 +1,157 @@
+```ttl
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPMID>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            rr:constant "TFs2enh_method";
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            rr:constant "current_chr";
+        ]
+    ],
+    [
+        rr:predicate genreg:scoreValue;
+        rr:objectMap [
+            rr:constant "score";
+        ]
+    ],
+    [
+        rr:predicate genreg:assemblyVersion;
+        rr:objectMap [
+            rr:constant "current_assembly";
+        ]
+    ],
+    [
+        rr:predicate genreg:hgncSymbol;
+        rr:objectMap [
+            rr:constant "hgnc_symbol_TFs";
+        ]
+    ],
+    [
+        rr:predicate genreg:startPosition;
+        rr:objectMap [
+            rr:constant "current_start";
+        ]
+    ],
+    [
+        rr:predicate genreg:endPosition;
+        rr:objectMap [
+            rr:constant "current_end";
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLine/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapClusterRegionModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ClusterRegionModule/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactorToEnhancerInteraction/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancerToGeneInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:EnhancerToGeneInteraction/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapPMID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:PMID/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+```

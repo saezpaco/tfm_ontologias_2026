@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-28T05:01:44.256465",
+  "success": true,
+  "elapsed_seconds": 137.23,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3785,
+    "completion_tokens": 1019,
+    "total_tokens": 4804
+  },
+  "prompt_tokens_estimate": 2450,
+  "response_chars": 2824,
+  "turtle_chars": 2810,
+  "validation": {
+    "valid": false,
+    "error": "at line 38 of <>:\nBad syntax (Prefix \"pubmed:\" not bound) at ^ in:\n\"...b'crm:pubmed_article rdf:type owl:Class ;\\n    rdfs:subClassOf '^b'pubmed:pubmed_ID ;\\n    skos:prefLabel \"PubMed Article\" ;\\n   '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bC_stratified_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bC_stratified_N25/response_raw_run1.txt"
+  }
+}

@@ -1,0 +1,94 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://example.org/ontology/crm#> .
+@prefix crm2pgene: <http://example.org/ontology/crm2pgene#> .
+@prefix hgene:   <http://example.org/ontology/hgene#> .
+@prefix assembly: <http://example.org/ontology/assembly#> .
+@prefix nuccore: <http://example.org/ontology/nuccore#> .
+@prefix pubmed:  <http://example.org/ontology/pubmed#> .
+@prefix id_pubmed: <http://example.org/ontology/id_pubmed#> .
+@prefix id_ncbigene: <http://example.org/ontology/id_ncbigene#> .
+@prefix dbsuper: <http://example.org/ontology/dbsuper#> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+# Ontology definition
+<http://example.org/ontology/fantom5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch crm:CisRegulatoryModule .
+
+hcrm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:subClassOf hcrm:CisRegulatoryModule ;
+    skos:exactMatch crm:Enhancer .
+
+hgene:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+# Properties
+hcrm:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm:hasGenomicLocation .
+
+hcrm:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hgene:Gene ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+hcrm:hasExperimentalEvidence a owl:ObjectProperty ;
+    rdfs:label "has experimental evidence" ;
+    skos:exactMatch crm:hasExperimentalEvidence .
+
+hcrm:hasBiosample a owl:ObjectProperty ;
+    rdfs:label "has biosample" ;
+    skos:exactMatch crm:hasBiosample .
+
+hcrm:hasMethod a owl:ObjectProperty ;
+    rdfs:label "has method" ;
+    skos:exactMatch crm:hasMethod .
+
+hcrm:hasScore a owl:DatatypeProperty ;
+    rdfs:label "has score" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:float ;
+    skos:exactMatch crm:hasScore .
+
+hcrm:hasMinimumRatio a owl:DatatypeProperty ;
+    rdfs:label "has minimum ratio" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:float ;
+    skos:exactMatch crm:hasMinimumRatio .
+
+# Example individuals
+<http://example.org/ontology/fantom5/CRMHS00000005752> a hcrm:Enhancer ;
+    hcrm:hasGenomicLocation [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 16039967 ;
+        assembly:end 16040344 ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    hcrm:hasMinimumRatio 0.95 ;
+    hcrm:hasScore 1.0 ;
+    hcrm:hasExperimentalEvidence pubmed:24670763 ;
+    hcrm:hasMethod "CAGE" ;
+    hcrm:targetsGene <http://example.org/ontology/hgene/FAM131C> .
+
+<http://example.org/ontology/hgene/FAM131C> a hgene:Gene ;
+    rdfs:label "FAM131C" ;
+    skos:exactMatch id_ncbigene:FAM131C .

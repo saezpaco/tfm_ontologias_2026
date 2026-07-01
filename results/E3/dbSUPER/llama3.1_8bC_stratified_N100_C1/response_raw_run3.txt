@@ -1,0 +1,60 @@
+Based on the provided data and requirements, I will create the Turtle code for the cisreg reference ontology. Here is the output:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:crm2gene rdf:type owl:Ontology ;
+  rdfs:label "CRM2Gene Ontology" ;
+  skos:prefLabel "CRM2Gene Ontology" .
+hcrm:crm2gene_example rdf:type owl:Ontology ;
+  rdfs:label "CRM2Gene Example Ontology" ;
+  skos:prefLabel "CRM2Gene Example Ontology" .
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+hcrm:crm_ID rdf:type owl:Class ;
+  rdfs:label "CRM ID" ;
+  skos:prefLabel "CRM ID" .
+hcrm:biosample_name rdf:type owl:Class ;
+  rdfs:label "Biosample Name" ;
+  skos:prefLabel "Biosample Name" .
+hcrm:hgnc_symbol_target_genes rdf:type owl:Class ;
+  rdfs:label "HGNC Symbol Target Genes" ;
+  skos:prefLabel "HGNC Symbol Target Genes" .
+
+# === COLUMN → ONTOLOGY PROPERTY MAPPINGS ===
+hcrm:orig_end rdf:type owl:ObjectProperty ;
+  rdfs:label "Original End" ;
+  skos:prefLabel "Original End" .
+hcrm:current_end rdf:type owl:ObjectProperty ;
+  rdfs:label "Current End" ;
+  skos:prefLabel "Current End" .
+
+# === REUSE CISREG CLASSES AND PROPERTIES ===
+dbsuper:dbsuper rdf:type owl:Class ;
+  rdfs:label "DBSUPER Ontology" ;
+  skos:prefLabel "DBSUPER Ontology" .
+```
+
+This output includes the required prefix declarations, the recommended ontologies (CRM2Gene and CRM2Gene Example), and the column-to-ontology class mappings. It also reuses CISREG classes and properties where semantically appropriate.
+
+Please note that this is a partial output, as the original data was truncated due to its length. You may need to add more statements based on your specific requirements.

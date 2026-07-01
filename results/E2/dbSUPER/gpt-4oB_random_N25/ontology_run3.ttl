@@ -1,0 +1,69 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    skos:prefLabel "dbSUPER Ontology" ;
+    skos:definition "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/dbSUPER#CisRegulatoryModule> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:exactMatch <http://example.org/ontology/cisreg#CRM> .
+
+<http://example.org/ontology/dbSUPER#Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of a cis-regulatory module." .
+
+<http://example.org/ontology/dbSUPER#CellLine> a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line in which the cis-regulatory module is active." .
+
+### Object Properties ###
+<http://example.org/ontology/dbSUPER#hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/dbSUPER#Gene> ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" ;
+    skos:exactMatch <http://example.org/ontology/cisreg#hasTargetGene> .
+
+<http://example.org/ontology/dbSUPER#activeInCellLine> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range <http://example.org/ontology/dbSUPER#CellLine> ;
+    skos:prefLabel "Active in Cell Line" ;
+    skos:definition "The cell line in which the cis-regulatory module is active." .
+
+### Datatype Properties ###
+<http://example.org/ontology/dbSUPER#hasChromosome> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome on which the cis-regulatory module is located." .
+
+<http://example.org/ontology/dbSUPER#hasStartPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "Start position of the cis-regulatory module on the chromosome." .
+
+<http://example.org/ontology/dbSUPER#hasEndPosition> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Position" ;
+    skos:definition "End position of the cis-regulatory module on the chromosome." .
+
+<http://example.org/ontology/dbSUPER#hasRank> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Rank" ;
+    skos:definition "Rank of the super-enhancer in the cell line." .
+
+<http://example.org/ontology/dbSUPER#hasDatabaseID> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/dbSUPER#CisRegulatoryModule> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Identifier for the cis-regulatory module in the database." .

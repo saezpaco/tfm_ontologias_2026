@@ -1,0 +1,169 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "dbSUPER" ;
+  skos:definition "Super-enhancers con coordenadas, líneas celulares y genes diana" .
+
+:crm a owl:Class ;
+  rdfs:label "CRM" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/dbSUPER#crm_ID> a obo:OBI_0000073 ;
+  rdfs:label "crm/crm_ID" ;
+  skos:prefLabel "crm/crm_ID" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" .
+
+<http://example.org/dbSUPER#chr_name> a obo:NCBITaxon_9606 ;
+  rdfs:label "chr_name" ;
+  skos:prefLabel "chr_name" ;
+  skos:definition "Chromosome name in Homo sapiens" .
+
+:enhancerSequence a owl:Class ;
+  rdfs:subClassOf :crm ;
+  rdfs:label "Enhancer Sequence" ;
+  skos:prefLabel "Enhancer Sequence" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:enhancerSequence a owl:Class ;
+  rdfs:subClassOf :crm ;
+  rdfs:label "Enhancer Sequence" ;
+  skos:prefLabel "Enhancer Sequence" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" .
+
+:enhancerSequence a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#chr_name> ;
+  rdfs:label "chromosome name" ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "Chromosome name associated with the enhancer sequence" .
+
+:enhancerSequence a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range xsd:int ;
+  rdfs:label "start position" ;
+  skos:prefLabel "start position" ;
+  skos:definition "Start position of the enhancer sequence on the chromosome" .
+
+:enhancerSequence a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range xsd:int ;
+  rdfs:label "end position" ;
+  skos:prefLabel "end position" ;
+  skos:definition "End position of the enhancer sequence on the chromosome" .
+
+:gene a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
+  rdfs:label "Gene" ;
+  skos:prefLabel "Gene" ;
+  skos:definition "Genetic unit of heredity" .
+
+:gene a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#bgw!crm_ID--hgncsymbol!9606/gene_sybmol> ;
+  rdfs:label "associated gene" ;
+  skos:prefLabel "associated gene" ;
+  skos:definition "Gene associated with the enhancer sequence" .
+
+:disease a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/DOID> ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "Medical condition affecting an organism" .
+
+:disease a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#bgw!crm_ID--doid!doid> ;
+  rdfs:label "associated disease" ;
+  skos:prefLabel "associated disease" ;
+  skos:definition "Disease associated with the enhancer sequence" .
+
+:transcriptionFactor a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/UNIPROT> ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "Protein that regulates gene expression by binding to DNA" .
+
+:transcriptionFactor a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#bgw!crm_ID--uniprot!uniprot_ID> ;
+  rdfs:label "associated transcription factor" ;
+  skos:prefLabel "associated transcription factor" ;
+  skos:definition "Transcription factor associated with the enhancer sequence" .
+
+:cellLine a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/CL> ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "Population of cells grown in culture" .
+
+:cellLine a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#database_name> ;
+  rdfs:label "associated cell line" ;
+  skos:prefLabel "associated cell line" ;
+  skos:definition "Cell line associated with the enhancer sequence" .
+
+:associatedWith a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#bgw!crm_ID--hgncsymbol!9606/gene_sybmol> ;
+  rdfs:label "associated gene" ;
+  skos:prefLabel "associated gene" ;
+  skos:definition "Gene associated with the enhancer sequence" .
+
+:hasDisease a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#bgw!crm_ID--doid!doid> ;
+  rdfs:label "associated disease" ;
+  skos:prefLabel "associated disease" ;
+  skos:definition "Disease associated with the enhancer sequence" .
+
+:hasTranscriptionFactor a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#bgw!crm_ID--uniprot!uniprot_ID> ;
+  rdfs:label "associated transcription factor" ;
+  skos:prefLabel "associated transcription factor" ;
+  skos:definition "Transcription factor associated with the enhancer sequence" .
+
+:hasCellLine a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#database_name> ;
+  rdfs:label "associated cell line" ;
+  skos:prefLabel "associated cell line" ;
+  skos:definition "Cell line associated with the enhancer sequence" .
+
+:crm_ID a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range xsd:string ;
+  rdfs:label "CRM ID" ;
+  skos:prefLabel "CRM ID" ;
+  skos:definition "Unique identifier for the cis-regulatory module" .
+
+:chr_name a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range <http://example.org/dbSUPER#chr_name> ;
+  rdfs:label "chromosome name" ;
+  skos:prefLabel "chromosome name" ;
+  skos:definition "Chromosome name associated with the enhancer sequence" .
+
+:start_position a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range xsd:int ;
+  rdfs:label "start position" ;
+  skos:prefLabel "start position" ;
+  skos:definition "Start position of the enhancer sequence on the chromosome" .
+
+:end_position a owl:ObjectProperty ;
+  rdfs:domain :crm ;
+  rdfs:range xsd:int ;
+  rdfs:label "end position" ;
+  skos:prefLabel "end position" ;
+  skos:definition "End position of the enhancer sequence on the chromosome" .

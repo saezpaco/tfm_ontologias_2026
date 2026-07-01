@@ -1,0 +1,689 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/hacer#CRM>
+  a owl:Class ;
+  rdfs:label "Cis-regulatory Module"^^xsd:string ;
+  skos:prefLabel "Enhancer"^^xsd:string ;
+  skos:definition "A region of DNA that regulates gene expression."^^xsd:string .
+
+<http://example.org/hacer#GenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Chromosome Position"^^xsd:string ;
+  skos:definition "A point in the genome where a gene or regulatory element is located."^^xsd:string .
+
+<http://example.org/hacer#hasChr>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome ID"^^xsd:string ;
+  skos:definition "The chromosome on which the enhancer is located."^^xsd:string .
+
+<http://example.org/hacer#hasStart>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Start Position"^^xsd:string ;
+  skos:prefLabel "Start Coordinate"^^xsd:string ;
+  skos:definition "The starting position of the enhancer on the chromosome."^^xsd:string .
+
+<http://example.org/hacer#hasEnd>
+  a owl:ObjectProperty ;
+  rdfs:label "Has End Position"^^xsd:string ;
+  skos:prefLabel "End Coordinate"^^xsd:string ;
+  skos:definition "The ending position of the enhancer on the chromosome."^^xsd:string .
+
+<http://example.org/hacer#hasAssembly>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Assembly"^^xsd:string ;
+  skos:prefLabel "Genome Build"^^xsd:string ;
+  skos:definition "The genome assembly in which the enhancer is located."^^xsd:string .
+
+<http://example.org/hacer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Experimental Evidence"^^xsd:string ;
+  skos:definition "The type of evidence supporting the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasCellLine>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Cell Line"^^xsd:string ;
+  skos:prefLabel "Cell Line Name"^^xsd:string ;
+  skos:definition "The cell line in which the enhancer's activity was measured."^^xsd:string .
+
+<http://example.org/hacer#hasTargetGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Target Gene"^^xsd:string ;
+  skos:prefLabel "Target Gene Symbol"^^xsd:string ;
+  skos:definition "The gene whose expression is regulated by the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasDisease>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Disease"^^xsd:string ;
+  skos:prefLabel "Associated Disease"^^xsd:string ;
+  skos:definition "The disease associated with the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Interacting TF"^^xsd:string ;
+  skos:definition "The transcription factor interacting with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasPMID>
+  a owl:ObjectProperty ;
+  rdfs:label "Has PMID"^^xsd:string ;
+  skos:prefLabel "PubMed ID"^^xsd:string ;
+  skos:definition "The PubMed ID of the study supporting the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasMethod>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Method"^^xsd:string ;
+  skos:prefLabel "Experimental Method"^^xsd:string ;
+  skos:definition "The experimental method used to measure the enhancer's activity."^^xsd:string .
+
+<http://example.org/hacer#hasRatio>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Ratio"^^xsd:string ;
+  skos:prefLabel "Activity Ratio"^^xsd:string ;
+  skos:definition "The ratio of the enhancer's activity in different cell lines or conditions."^^xsd:string .
+
+<http://example.org/hacer#hasScore>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Score"^^xsd:string ;
+  skos:prefLabel "Regulatory Score"^^xsd:string ;
+  skos:definition "The score of the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasOriginalID>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Original ID"^^xsd:string ;
+  skos:prefLabel "Enhancer ID"^^xsd:string ;
+  skos:definition "The original identifier of the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasCrossref>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Crossref"^^xsd:string ;
+  skos:prefLabel "Cross-reference URL"^^xsd:string ;
+  skos:definition "The cross-reference URL of the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasOverlap>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Overlap"^^xsd:string ;
+  skos:prefLabel "Genomic Overlap"^^xsd:string ;
+  skos:definition "The genomic overlap between the enhancer and other regulatory elements."^^xsd:string .
+
+<http://example.org/hacer#hasDistance>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Distance"^^xsd:string ;
+  skos:prefLabel "Genomic Distance"^^xsd:string ;
+  skos:definition "The genomic distance between the enhancer and other regulatory elements."^^xsd:string .
+
+<http://example.org/hacer#hasExpression>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Expression"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity"^^xsd:string ;
+  skos:definition "The level of the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of the enhancer (e.g. promoter, enhancer)."^^xsd:string .
+
+<http://example.org/hacer#hasFunction>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Function"^^xsd:string ;
+  skos:prefLabel "Regulatory Function"^^xsd:string ;
+  skos:definition "The function of the enhancer (e.g. activator, repressor)."^^xsd:string .
+
+<http://example.org/hacer#hasGO>
+  a owl:ObjectProperty ;
+  rdfs:label "Has GO Term"^^xsd:string ;
+  skos:prefLabel "Gene Ontology Term"^^xsd:string ;
+  skos:definition "The Gene Ontology term associated with the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasSO>
+  a owl:ObjectProperty ;
+  rdfs:label "Has SO Term"^^xsd:string ;
+  skos:prefLabel "Sequence Ontology Term"^^xsd:string ;
+  skos:definition "The Sequence Ontology term associated with the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasBioLink>
+  a owl:ObjectProperty ;
+  rdfs:label "Has BioLink ID"^^xsd:string ;
+  skos:prefLabel "BioLink Identifier"^^xsd:string ;
+  skos:definition "The BioLink identifier associated with the enhancer's regulatory activity."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivity>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunction>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScore>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Activity Type"^^xsd:string ;
+  skos:definition "The type of regulatory activity associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryElementType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Element Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Element Type"^^xsd:string ;
+  skos:definition "The type of regulatory element associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryFunctionType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Function Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Function Type"^^xsd:string ;
+  skos:definition "The type of regulatory function associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryScoreType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Score Type"^^xsd:string ;
+  skos:prefLabel "Regulatory Score Type"^^xsd:string ;
+  skos:definition "The type of regulatory score associated with the enhancer."^^xsd:string .
+
+<http://example.org/hacer#hasRegulatoryActivityType>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Activity Type"^^xsd:string ;
+  skos:prefLabel

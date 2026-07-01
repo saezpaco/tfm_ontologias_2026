@@ -1,0 +1,597 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    rdfs:comment "An ontology for representing CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcription of a CRM (Core Regulatory Module)." ;
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate within a genome." ;
+
+crm:start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+
+crm:end a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+
+crm:evidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Supporting evidence for the enhancer's function." ;
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information supporting the validity of an enhancer." ;
+
+crm:evidenceType a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:GO_0008279 ;  # GO term for experimental evidence
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the enhancer's function." ;
+
+crm:evidenceSource a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source of the evidence for the enhancer." ;
+
+crm:enhancesCRM a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 ;  # SO term for CRM
+    skos:prefLabel "Enhances CRM" ;
+    skos:definition "The CRM that is enhanced by this enhancer." ;
+
+crm:enhancerLocation a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Enhancer Location" ;
+    skos:definition "The genomic location of the enhancer." ;
+
+crm:enhancerSequence a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Enhancer Sequence" ;
+    skos:definition "The DNA sequence of the enhancer." ;
+
+crm:enhancerID a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Enhancer ID" ;
+    skos:definition "A unique identifier for the enhancer." ;
+
+crm:enhancerDescription a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Enhancer Description" ;
+    skos:definition "A description of the enhancer's function and characteristics." ;
+
+crm:enhancerFunction a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for transcriptional regulation
+    skos:prefLabel "Enhancer Function" ;
+    skos:definition "The biological function of the enhancer, typically related to transcriptional regulation." ;
+
+crm:enhancerExpression a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression
+    skos:prefLabel "Enhancer Expression" ;
+    skos:definition "The expression pattern of the enhancer." ;
+
+crm:enhancerRegulates a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for regulation
+    skos:prefLabel "Enhancer Regulates" ;
+    skos:definition "The biological processes or molecules regulated by the enhancer." ;
+
+crm:enhancerExpressionPattern a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression pattern
+    skos:prefLabel "Enhancer Expression Pattern" ;
+    skos:definition "The spatial and temporal patterns of enhancer expression." ;
+
+crm:enhancerExpressionLevel a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression level
+    skos:prefLabel "Enhancer Expression Level" ;
+    skos:definition "The intensity or magnitude of enhancer expression." ;
+
+crm:enhancerExpressionSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression site
+    skos:prefLabel "Enhancer Expression Site" ;
+    skos:definition "The specific cellular or tissue sites where the enhancer is expressed." ;
+
+crm:enhancerExpressionTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression time
+    skos:prefLabel "Enhancer Expression Time" ;
+    skos:definition "The temporal stages or conditions during which the enhancer is expressed." ;
+
+crm:enhancerExpressionCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression condition
+    skos:prefLabel "Enhancer Expression Condition" ;
+    skos:definition "The specific conditions or stimuli that induce enhancer expression." ;
+
+crm:enhancerExpressionRegulation a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation
+    skos:prefLabel "Enhancer Expression Regulation" ;
+    skos:definition "The mechanisms or factors that control the expression of the enhancer." ;
+
+crm:enhancerExpressionRegulationType a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation type
+    skos:prefLabel "Enhancer Expression Regulation Type" ;
+    skos:definition "The specific types of mechanisms or factors that regulate enhancer expression." ;
+
+crm:enhancerExpressionRegulationTarget a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation target
+    skos:prefLabel "Enhancer Expression Regulation Target" ;
+    skos:definition "The specific molecules or processes that are regulated by the enhancer." ;
+
+crm:enhancerExpressionRegulationMechanism a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation mechanism
+    skos:prefLabel "Enhancer Expression Regulation Mechanism" ;
+    skos:definition "The specific mechanisms or pathways that mediate the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation intensity
+    skos:prefLabel "Enhancer Expression Regulation Intensity" ;
+    skos:definition "The degree or magnitude of the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationSite a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation site
+    skos:prefLabel "Enhancer Expression Regulation Site" ;
+    skos:definition "The specific cellular or tissue sites where the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationTime a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation time
+    skos:prefLabel "Enhancer Expression Regulation Time" ;
+    skos:definition "The temporal stages or conditions during which the regulation of enhancer expression occurs." ;
+
+crm:enhancerExpressionRegulationCondition a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;  # GO term for expression regulation condition
+    skos:prefLabel "Enhancer Expression Regulation Condition" ;
+    skos:definition "The specific conditions or stimuli that influence the regulation of enhancer expression." ;
+
+crm:enhancerExpressionRegulationIntensity a

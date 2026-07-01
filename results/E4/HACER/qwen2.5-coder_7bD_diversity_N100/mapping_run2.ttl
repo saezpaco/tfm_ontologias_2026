@@ -1,0 +1,148 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":Enhancer/{{crm_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ],
+    [
+        rr:predicate :hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>;
+        ]
+    ],
+    [
+        rr:predicate :associatedWithDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease>;
+        ]
+    ],
+    [
+        rr:predicate :occursInCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample>;
+        ]
+    ],
+    [
+        rr:predicate :hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation>;
+        ]
+    ],
+    [
+        rr:predicate :partOfChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule>;
+        ]
+    ],
+    [
+        rr:predicate :pmid;
+        rr:objectMap [
+            rr:template "{{TFs2enh_PMID}}";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate :method;
+        rr:objectMap [
+            rr:template "{{TFs2enh_method}}";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate :current_assembly;
+        rr:objectMap [
+            rr:template "{{current_assembly}}";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate :current_chr;
+        rr:objectMap [
+            rr:template "{{current_chr}}";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate :current_start;
+        rr:objectMap [
+            rr:template "{{current_start}}";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate :current_end;
+        rr:objectMap [
+            rr:template "{{current_end}}";
+            rr:datatype xsd:int
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":Disease/{{disease_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":Mutation/{{mutation_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":ChromatinRegulatoryModule/{{module_name}}{FAIR_URI}";
+    ].
+```

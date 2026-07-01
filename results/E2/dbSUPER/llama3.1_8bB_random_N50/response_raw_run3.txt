@@ -1,0 +1,104 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "dbSUPER" ;
+  skos:definition "Super-enhancers con coordenadas, líneas celulares y genes diana" .
+
+crm a owl:Class ;
+  rdfs:label "CRM" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/dbSUPER#crm_ID> a obo:OBI_0000073 ;
+  rdfs:label "crm/crm_ID" ;
+  skos:prefLabel "crm/crm_ID" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" .
+
+<http://example.org/dbSUPER#chr_name> a obo:NCBITaxon_9606 ;
+  rdfs:label "chr_name" ;
+  skos:prefLabel "chr_name" ;
+  skos:definition "Chromosome name in Homo sapiens" .
+
+<http://example.org/dbSUPER#start_position> a xsd:integer ;
+  rdfs:label "start_position" ;
+  skos:prefLabel "start_position" ;
+  skos:definition "Start position of the cis-regulatory module on the chromosome" .
+
+<http://example.org/dbSUPER#end_position> a xsd:integer ;
+  rdfs:label "end_position" ;
+  skos:prefLabel "end_position" ;
+  skos:definition "End position of the cis-regulatory module on the chromosome" .
+
+gene_symbol a owl:Class ;
+  rdfs:label "Gene Symbol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+<http://example.org/dbSUPER#gene_symbol> a obo:HGNC_0000011 ;
+  rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+cell_line a owl:Class ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+<http://example.org/dbSUPER#cell_line> a obo:CL_0000066 ;
+  rdfs:label "bgw!crm_ID--doid!doid#database_name" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+target_gene a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+<http://example.org/dbSUPER#target_gene> a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+associated_disease a owl:ObjectProperty ;
+  rdfs:label "Associated Disease" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+<http://example.org/dbSUPER#associated_disease> a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--doid!doid#database_name" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" .
+
+transcription_factor a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+<http://example.org/dbSUPER#transcription_factor> a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" .
+
+crm rdfs:subClassOf+ crm ;
+  owl:equivalentClass <http://example.org/dbSUPER#crm_ID> .
+
+<http://example.org/dbSUPER#crm_ID> rdf:type+ crm .
+
+<http://example.org/dbSUPER#chr_name> rdf:type+ obo:NCBITaxon_9606 .
+
+<http://example.org/dbSUPER#start_position> rdf:type+ xsd:integer .
+
+<http://example.org/dbSUPER#end_position> rdf:type+ xsd:integer .
+
+crm rdfs:subPropertyOf+ <http://example.org/dbSUPER#target_gene> ;
+  owl:equivalentProperty <http://example.org/dbSUPER#associated_disease> ;
+  owl:equivalentProperty <http://example.org/dbSUPER#transcription_factor> .
+
+<http://example.org/dbSUPER#cell_line> rdf:type+ obo:CL_0000066 .

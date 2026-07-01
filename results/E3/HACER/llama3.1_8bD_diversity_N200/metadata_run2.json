@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-29T20:26:49.545386",
+  "success": true,
+  "elapsed_seconds": 146.02,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 999,
+    "total_tokens": 5094
+  },
+  "prompt_tokens_estimate": 4494,
+  "response_chars": 3030,
+  "turtle_chars": 2279,
+  "validation": {
+    "valid": false,
+    "error": "at line 23 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'org/> .\\n\\n# === RECOMMENDED ONTOLOGIES (semantic search) ===\\n'^b'crm2gene_example a owl:Ontology ;\\n  rdfs:label \"CRM2Gene Exa'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bD_diversity_N200/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bD_diversity_N200/response_raw_run2.txt"
+  }
+}

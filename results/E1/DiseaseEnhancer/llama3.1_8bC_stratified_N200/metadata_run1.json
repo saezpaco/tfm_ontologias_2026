@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-29T10:44:40.710338",
+  "success": true,
+  "elapsed_seconds": 868.7,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 8192,
+    "total_tokens": 12287
+  },
+  "prompt_tokens_estimate": 3546,
+  "response_chars": 29095,
+  "turtle_chars": 29095,
+  "validation": {
+    "valid": false,
+    "error": "Quote expected in string at ^ in \n  skos:definition \"^This property indica"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8bC_stratified_N200/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8bC_stratified_N200/response_raw_run1.txt"
+  }
+}

@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+<owl:Class rdf:about="http://example.org/CRM">
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module (CRM)" ;
+  skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression" .
+  obo:SO_0000163 <owl:equivalentClass> .
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/Enhancer">
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A type of CRM that activates gene expression" .
+  obo:SO_0000163 <owl:equivalentClass> .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/targetGene">
+  a owl:ObjectProperty ;
+  rdfs:label "target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the CRM/enhancer" .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/genomicCoordinate">
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "The location of the CRM/enhancer in the genome" .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/evidence">
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the CRM/enhancer's activity" .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/cellLineActivity">
+  a owl:DatatypeProperty ;
+  rdfs:label "Cell Line Activity" ;
+  skos:prefLabel "Cell Line Activity" ;
+  skos:definition "The activity of the CRM/enhancer in a specific cell line" .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "Associated Disease" ;
+  skos:prefLabel "Associated Disease" ;
+  skos:definition "The disease associated with the CRM/enhancer's activity" .
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/interactingTranscriptionFactor">
+  a owl:ObjectProperty ;
+  rdfs:label "Interacting Transcription Factor" ;
+  skos:prefLabel "Interacting Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the CRM/enhancer" .
+</owl:ObjectProperty>
+
+<http://example.org/FANTOM5>
+  <owl:Class rdf:resource="http://example.org/CRM"/> ;
+  <owl:ObjectProperty rdf:resource="http://example.org/targetGene"/>
+  <owl:DatatypeProperty rdf:resource="http://example.org/genomicCoordinate"/>
+  <owl:ObjectProperty rdf:resource="http://example.org/evidence"/>
+  <owl:DatatypeProperty rdf:resource="http://example.org/cellLineActivity"/>
+  <owl:ObjectProperty rdf:resource="http://example.org/associatedDisease"/>
+  <owl:ObjectProperty rdf:resource="http://example.org/interactingTranscriptionFactor"/> .

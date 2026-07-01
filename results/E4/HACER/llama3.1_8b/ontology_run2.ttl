@@ -1,0 +1,267 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.org/ontology#>
+  a owl:Ontology ;
+
+  rdfs:comment "This is an example ontology."@en ;
+  rdfs:label "Example Ontology"@en .
+
+owl:DatatypeProperty
+  rdfs:comment "A property that has a data type as its range."@en ;
+  rdfs:label "Data Property"@en .
+
+owl:ObjectProperty
+  rdfs:comment "A property that has an object as its range."@en ;
+  rdfs:label "Object Property"@en .
+
+owl:Class
+  rdfs:comment "A class is a concept or category in the ontology."@en ;
+  rdfs:label "Class"@en .
+
+class_entity
+  a owl:Class ;
+  rdfs:comment "A class that represents an entity."@en ;
+  rdfs:label "Entity"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> ;
+
+  has_PMID_value
+    a owl:DatatypeProperty ;
+    rdfs:domain class_entity ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The PMID value of the entity."@en ;
+    rdfs:label "PMID Value"@en .
+
+  has_method_value
+    a owl:DatatypeProperty ;
+    rdfs:domain class_entity ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The method value of the entity."@en ;
+    rdfs:label "Method Value"@en .
+
+entity_name
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents an entity name."@en ;
+  rdfs:label "Entity Name"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+enhancer
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents an enhancer."@en ;
+  rdfs:label "Enhancer"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+super_enhancer
+  a owl:Class ;
+  rdfs:subClassOf enhancer ;
+  rdfs:comment "A subclass of enhancer that represents a super enhancer."@en ;
+  rdfs:label "Super Enhancer"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+target_gene
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a target gene."@en ;
+  rdfs:label "Target Gene"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+transcription_factor
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a transcription factor."@en ;
+  rdfs:label "Transcription Factor"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+disease_association
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a disease association."@en ;
+  rdfs:label "Disease Association"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+biosample
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a biosample."@en ;
+  rdfs:label "Biosample"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+cell_line
+  a owl:Class ;
+  rdfs:subClassOf biosample ;
+  rdfs:comment "A subclass of biosample that represents a cell line."@en ;
+  rdfs:label "Cell Line"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+genomic_coordinate
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a genomic coordinate."@en ;
+  rdfs:label "Genomic Coordinate"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+chromosome
+  a owl:Class ;
+  rdfs:subClassOf genomic_coordinate ;
+  rdfs:comment "A subclass of genomic coordinate that represents a chromosome."@en ;
+  rdfs:label "Chromosome"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+assembly
+  a owl:Class ;
+  rdfs:subClassOf genomic_coordinate ;
+  rdfs:comment "A subclass of genomic coordinate that represents an assembly."@en ;
+  rdfs:label "Assembly"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+original_ID
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents an original ID."@en ;
+  rdfs:label "Original ID"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+refsnp_ID
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a RefSNP ID."@en ;
+  rdfs:label "RefSNP ID"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+score
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a score."@en ;
+  rdfs:label "Score"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+source
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a source."@en ;
+  rdfs:label "Source"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+type
+  a owl:Class ;
+  rdfs:subClassOf class_entity ;
+  rdfs:comment "A subclass of entity that represents a type."@en ;
+  rdfs:label "Type"@en ;
+  skos:definition <http://www.w3.org/2004/02/skos/core#definition> .
+
+current_end
+  a owl:DatatypeProperty ;
+  rdfs:domain current_end ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The current end coordinate."@en ;
+  rdfs:label "Current End"@en .
+
+current_start
+  a owl:DatatypeProperty ;
+  rdfs:domain current_start ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The current start coordinate."@en ;
+  rdfs:label "Current Start"@en .
+
+orig_end
+  a owl:DatatypeProperty ;
+  rdfs:domain orig_end ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The original end coordinate."@en ;
+  rdfs:label "Original End"@en .
+
+orig_start
+  a owl:DatatypeProperty ;
+  rdfs:domain orig_start ;
+  rdfs:range xsd:integer ;
+  rdfs:comment "The original start coordinate."@en ;
+  rdfs:label "Original Start"@en .
+
+has_PMID
+  a owl:ObjectProperty ;
+  rdfs:domain enhancer, super_enhancer, target_gene, transcription_factor, disease_association ;
+  rdfs:range PMID ;
+  rdfs:comment "The PMID of the entity."@en ;
+  rdfs:label "Has PMID"@en .
+
+has_method
+  a owl:ObjectProperty ;
+  rdfs:domain enhancer, super_enhancer, target_gene, transcription_factor, disease_association ;
+  rdfs:range Method ;
+  rdfs:comment "The method of the entity."@en ;
+  rdfs:label "Has Method"@en .
+
+has_biosample
+  a owl:ObjectProperty ;
+  rdfs:domain biosample ;
+  rdfs:range Biosample ;
+  rdfs:comment "The biosample of the entity."@en ;
+  rdfs:label "Has Biosample"@en .
+
+has_cell_line
+  a owl:ObjectProperty ;
+  rdfs:domain cell_line ;
+  rdfs:range Cell Line ;
+  rdfs:comment "The cell line of the entity."@en ;
+  rdfs:label "Has Cell Line"@en .
+
+has_genomic_coordinate
+  a owl:ObjectProperty ;
+  rdfs:domain genomic_coordinate ;
+  rdfs:range Genomic Coordinate ;
+  rdfs:comment "The genomic coordinate of the entity."@en ;
+  rdfs:label "Has Genomic Coordinate"@en .
+
+has_chromosome
+  a owl:ObjectProperty ;
+  rdfs:domain chromosome ;
+  rdfs:range Chromosome ;
+  rdfs:comment "The chromosome of the entity."@en ;
+  rdfs:label "Has Chromosome"@en .
+
+has_assembly
+  a owl:ObjectProperty ;
+  rdfs:domain assembly ;
+  rdfs:range Assembly ;
+  rdfs:comment "The assembly of the entity."@en ;
+  rdfs:label "Has Assembly"@en .
+
+has_original_ID
+  a owl:ObjectProperty ;
+  rdfs:domain original_ID ;
+  rdfs:range Original ID ;
+  rdfs:comment "The original ID of the entity."@en ;
+  rdfs:label "Has Original ID"@en .
+
+has_refsnp_ID
+  a owl:ObjectProperty ;
+  rdfs:domain refsnp_ID ;
+  rdfs:range RefSNP ID ;
+  rdfs:comment "The RefSNP ID of the entity."@en ;
+  rdfs:label "Has RefSNP ID"@en .
+
+has_score
+  a owl:ObjectProperty ;
+  rdfs:domain score ;
+  rdfs:range Score ;
+  rdfs:comment "The score of the entity."@en ;
+  rdfs:label "Has Score"@en .
+
+has_source
+  a owl:ObjectProperty ;
+  rdfs:domain source ;
+  rdfs:range Source ;
+  rdfs:comment "The source of the entity."@en ;
+  rdfs:label "Has Source"@en .
+
+has_type
+  a owl:ObjectProperty ;
+  rdfs:domain type ;
+  rdfs:range Type ;
+  rdfs:comment "The type of the entity."@en ;
+  rdfs:label "Has Type"@en .

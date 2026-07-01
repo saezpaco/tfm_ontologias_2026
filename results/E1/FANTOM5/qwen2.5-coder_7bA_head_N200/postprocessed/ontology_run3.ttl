@@ -1,0 +1,118 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    rdfs:comment "A formal representation of CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcriptional activity of a target gene in the context of chromatin remodeling." ;
+    rdfs:subClassOf obo:SO_0001765 ;  # Transcriptional enhancer
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location within the genome, defined by chromosome, start position, and end position." ;
+
+crm:StartPosition a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "The starting base pair of the genomic coordinate." ;
+
+crm:EndPosition a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Position" ;
+    skos:definition "The ending base pair of the genomic coordinate." ;
+
+crm:Chromosome a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "The chromosome on which the genomic coordinate is located." ;
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information or data supporting the existence or characteristics of an enhancer." ;
+
+crm:Supports a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Supports" ;
+    skos:definition "Indicates that evidence supports the enhancer's function or characteristics."
+
+crm:TranscriptionalActivity a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Transcriptional Activity" ;
+    skos:definition "The level of transcriptional activity associated with the enhancer." ;
+
+crm:ChromatinRemodeling a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chromatin Remodeling" ;
+    skos:definition "The process by which the enhancer influences chromatin structure to enhance transcription." ;
+
+crm:ExpressionCorrelation a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Expression Correlation" ;
+    skos:definition "Indicates that expression correlation evidence supports the enhancer's function or characteristics."
+
+crm:GeneTarget a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Gene Target" ;
+    skos:definition "The gene that is transcriptionally enhanced by the enhancer." ;
+
+crm:ExpressionData a owl:Class ;
+    skos:prefLabel "Expression Data" ;
+    skos:definition "Data related to the expression levels of genes or transcripts." ;
+
+crm:HasExpressionData a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:ExpressionData ;
+    skos:prefLabel "Has Expression Data" ;
+    skos:definition "Indicates that the evidence includes expression data."
+
+crm:ExpressionLevel a owl:DatatypeProperty ;
+    rdfs:domain crm:ExpressionData ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Expression Level" ;
+    skos:definition "The level of gene or transcript expression." ;
+
+crm:ExperimentType a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Experiment Type" ;
+    skos:definition "The type of experiment used to generate the evidence, e.g., ChIP-seq, RNA-seq." ;
+
+crm:Publication a owl:Class ;
+    skos:prefLabel "Publication" ;
+    skos:definition "A scholarly work that reports research findings." ;
+
+crm:CitedBy a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Publication ;
+    skos:prefLabel "Cited By" ;
+    skos:definition "Indicates that the evidence is cited in a publication."
+
+crm:PubMedID a owl:DatatypeProperty ;
+    rdfs:domain crm:Publication ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PubMed ID" ;
+    skos:definition "The unique identifier for a publication in PubMed." ;
+
+crm:DOI a owl:DatatypeProperty ;
+    rdfs:domain crm:Publication ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Digital Object Identifier" ;
+    skos:definition "A persistent identifier for an electronic document or object." ;

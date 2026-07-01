@@ -1,0 +1,97 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    rdfs:comment "An ontology for representing CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcription of a gene or set of genes." ;
+    rdfs:subClassOf obo:SO_0001217 .  # SO term for enhancer
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate within the genome that specifies a location of interest." ;
+
+crm:StartCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the enhancer within the genome." ;
+
+crm:EndCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Coordinate" ;
+    skos:definition "The ending position of the enhancer within the genome." ;
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information or data supporting the existence or properties of an enhancer." ;
+
+crm:Supports a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Supports" ;
+    skos:definition "Indicates that evidence supports the enhancer's function or properties." ;
+
+crm:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A segment of DNA that codes for a protein or functional RNA molecule." ;
+
+crm:TranscriptionEnhancement a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Gene ;
+    skos:prefLabel "Transcription Enhancement" ;
+    skos:definition "Indicates that the enhancer enhances the transcription of a gene." ;
+
+crm:CellType a owl:Class ;
+    skos:prefLabel "Cell Type" ;
+    skos:definition "A specific type of cell with distinct characteristics and functions." ;
+
+crm:ExpressionIn a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:CellType ;
+    skos:prefLabel "Expression In" ;
+    skos:definition "Indicates that the enhancer is expressed in a specific cell type." ;
+
+crm:Biosample a owl:Class ;
+    skos:prefLabel "Biosample" ;
+    skos:definition "A sample of biological material for analysis." ;
+
+crm:DerivedFrom a owl:ObjectProperty ;
+    rdfs:domain crm:Biosample ;
+    rdfs:range crm:Biosample ;
+    skos:prefLabel "Derived From" ;
+    skos:definition "Indicates that one biosample is derived from another." ;
+
+crm:Experiment a owl:Class ;
+    skos:prefLabel "Experiment" ;
+    skos:definition "A procedure or set of procedures conducted to investigate a hypothesis or answer a question." ;
+
+crm:PerformedIn a owl:ObjectProperty ;
+    rdfs:domain crm:Experiment ;
+    rdfs:range crm:Biosample ;
+    skos:prefLabel "Performed In" ;
+    skos:definition "Indicates that an experiment is performed on a specific biosample." ;
+
+crm:PublishedIn a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Published In" ;
+    skos:definition "Indicates the publication where evidence is reported." ;
+
+crm:PubMedID a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PubMed ID" ;
+    skos:definition "The unique identifier for a scientific publication in PubMed." ;
+}

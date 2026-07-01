@@ -1,0 +1,77 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer" ;
+    dc:description "Enhancers asociados a enfermedades" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2phen:Enhancer .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+biolink:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm2tfac:TranscriptionFactor .
+
+### Properties ###
+biolink:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2phen:hasGenomicLocation .
+
+biolink:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:hasTargetGene .
+
+biolink:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+biolink:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    skos:exactMatch crm2tfac:interactsWithTranscriptionFactor .
+
+### Individuals ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685823> a biolink:Enhancer ;
+    biolink:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr1:155217211-155226809"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:hasTargetGene <http://rdf.biogateway.eu/crm2pgene/CKS1B> ;
+    biolink:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://rdf.biogateway.eu/crm2pgene/CKS1B> a biolink:Gene ;
+    rdfs:label "CKS1B" .
+
+mesh:D051436 a biolink:Disease ;
+    rdfs:label "Disease associated with CKS1B" .
+
+# Additional individuals would be defined similarly for each row in the dataset.
+```

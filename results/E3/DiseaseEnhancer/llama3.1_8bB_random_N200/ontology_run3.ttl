@@ -1,0 +1,44 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/crm2pgene#> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene#> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:crm2phen_example a biolink:Ontology ;
+    rdfs:label "crm2phen example" ;
+    skos:prefLabel "crm2phen example" ;
+    dc:title "crm2phen example" .
+
+hcrm:crm2gene a biolink:Ontology ;
+    rdfs:label "crm2gene" ;
+    skos:prefLabel "crm2gene" ;
+    dc:title "crm2gene" .
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+hcrm:orig_end a biolink:Class ;
+    rdfs:label "ENdb" ;
+    skos:prefLabel "ENdb" ;
+    dc:description "End position of the original genomic region" .
+
+hcrm:current_end a biolink:Class ;
+    rdfs:label "ENdb" ;
+    skos:prefLabel "ENdb" ;
+    dc:description "End position of the current genomic region" .
+
+# ... (rest of the mappings)

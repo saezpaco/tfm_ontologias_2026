@@ -1,0 +1,56 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRMEnhancer>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer" ;
+  skos:definition "A regulatory element that regulates gene expression."^^xsd:string .
+
+<http://example.org/genomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "The location of a genomic feature on the genome."^^xsd:string .
+
+<http://example.org/evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "A statement that supports or refutes a claim about a CRM/Enhancer."^^xsd:string .
+
+<http://example.org/CRMenhancerClass>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer Class"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer Class" ;
+  skos:definition "A class of CRM/Enhancers that share similar characteristics."^^xsd:string .
+
+<http://example.org/CRMenhancerInstance>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer Instance"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer Instance" ;
+  skos:definition "A specific instance of a CRM/Enhancer."^^xsd:string .
+
+<http://example.org/CRMenhancerInstance>
+  owl:onProperty <http://example.org/genomicCoordinate> ;
+  owl:someValuesFrom <http://example.org/CRMenhancerClass> .
+  
+<http://example.org/evidence>
+  rdfs:domain <http://example.org/CRMEnhancer> ;
+  rdfs:range xsd:string .
+
+<http://example.org/hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate" ;
+  skos:definition "A CRM/Enhancer has a genomic coordinate."^^xsd:string .
+
+<http://example.org/isEvidenceFor>
+  a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For" ;
+  skos:definition "A statement is evidence for a CRM/Enhancer."^^xsd:string .

@@ -1,0 +1,91 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/DiseaseEnhancerOntology>
+  a owl:Ontology ;
+  rdfs:label "Disease Enhancer Ontology" ;
+  skos:prefLabel "Disease Enhancer Ontology" ;
+  skos:definition "Ontology for enhancers associated with diseases.".
+
+obo:CIS_REGULATORY_MODULE
+  a owl:Class ;
+  rdfs:label "Cis-regulatory module" ;
+  skos:prefLabel "Cis-regulatory module" ;
+  skos:definition "A region of DNA that regulates gene expression.".
+
+DiseaseEnhancer
+  a owl:Class ;
+  rdfs:subClassOf obo:CIS_REGULATORY_MODULE ;
+  rdfs:label "Disease enhancer" ;
+  skos:prefLabel "Disease enhancer" ;
+  skos:definition "An enhancer associated with a disease.".
+
+hasGenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range xsd:string ;
+  rdfs:label "Has genomic coordinate" ;
+  skos:prefLabel "Has genomic coordinate" ;
+  skos:definition "The genomic coordinates of the enhancer.".
+
+hasEvidence
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range xsd:string ;
+  rdfs:label "Has evidence" ;
+  skos:prefLabel "Has evidence" ;
+  skos:definition "Experimental evidence supporting the association of the enhancer with a disease.".
+
+hasCellLineActivity
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range xsd:string ;
+  rdfs:label "Has cell line activity" ;
+  skos:prefLabel "Has cell line activity" ;
+  skos:definition "The activity of the enhancer in different cell lines.".
+
+hasTargetGene
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range obo:GENE ;
+  rdfs:label "Has target gene" ;
+  skos:prefLabel "Has target gene" ;
+  skos:definition "The gene targeted by the enhancer.".
+
+hasAssociatedDisease
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range obo:DISEASE ;
+  rdfs:label "Has associated disease" ;
+  skos:prefLabel "Has associated disease" ;
+  skos:definition "The disease associated with the enhancer.".
+
+hasInteractingTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range obo:TRANSCRIPTION_FACTOR ;
+  rdfs:label "Has interacting transcription factor" ;
+  skos:prefLabel "Has interacting transcription factor" ;
+  skos:definition "The transcription factors that interact with the enhancer.".
+
+skos:exactMatch
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range obo:CIS_REGULATORY_MODULE ;
+  rdfs:label "Exact match" ;
+  skos:prefLabel "Exact match" ;
+  skos:definition "The enhancer is an exact match for the cis-regulatory module.".
+
+skos:closeMatch
+  a owl:ObjectProperty ;
+  rdfs:domain DiseaseEnhancer ;
+  rdfs:range obo:CIS_REGULATORY_MODULE ;
+  rdfs:label "Close match" ;
+  skos:prefLabel "Close match" ;
+  skos:definition "The enhancer is a close match for the cis-regulatory module.".
+
+Note: The database sample was not provided, so I assumed some properties and classes based on the description. Please adjust according to your needs.

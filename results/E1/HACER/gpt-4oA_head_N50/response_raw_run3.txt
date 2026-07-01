@@ -1,0 +1,67 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory region of DNA that enhances the transcription of an associated gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:GENE a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+obo:DISEASE a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/DOID_4> .
+
+obo:TRANSCRIPTION_FACTOR a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that controls the rate of transcription of genetic information from DNA to messenger RNA, by binding to a specific DNA sequence." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/GO_0003700> .
+
+# Object Properties
+obo:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a cis-regulatory module to its target gene." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:GENE .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a cis-regulatory module to a disease it is associated with." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:DISEASE .
+
+obo:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates a cis-regulatory module to a transcription factor it interacts with." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:TRANSCRIPTION_FACTOR .
+
+# Datatype Properties
+obo:hasGenomicCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Specifies the genomic coordinates of a cis-regulatory module." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:hasExperimentalEvidence a owl:DatatypeProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Provides the type of experimental evidence supporting the existence of a cis-regulatory module." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:activeInCellLine a owl:DatatypeProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the cis-regulatory module is active." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+```

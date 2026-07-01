@@ -1,0 +1,53 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly:<https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+
+# Define the FANTOM5 database as an information resource
+<https://fantom.gsc.riken.jp/5/> rdf:type owl:Class ;
+    rdfs:subClassOf obo:NCIT_C15426 ;
+    skos:prefLabel "FANTOM5" ;
+    biolink:category biolink:InformationResource .
+
+# Define a class for enhancers identified in FANTOM5
+hcrm:Enhancer_FANTOM5 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Enhancer identified by CAGE-seq in the FANTOM5 project" ;
+    skos:prefLabel "Enhancer FANTOM5" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; # in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; # hg38 assembly as reference
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ; # Crossreference to FANTOM5
+    rdfs:isDefinedBy obo:ECO_0000203 ; # Experimental evidence (CAGE-seq)
+
+# Define instances for each enhancer in the sample
+hcrm:Enhancer_1 rdf:type hcrm:Enhancer_FANTOM5 ;
+    skos:prefLabel "chr7:47343610-47343904" ;
+    obo:BFO_0000050 nuccore:chr7 ;
+    obo:GENO_0000895 "47343610"^^xsd:integer ;
+    obo:GENO_0000894 "47343904"^^xsd:integer ;
+    sio:SIO_000772 id_pubmed:12345678 ; # Example PubMed ID for evidence
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+# Repeat the above block for each enhancer in the sample, changing the identifiers and coordinates accordingly
+
+# Example for another enhancer
+hcrm:Enhancer_2 rdf:type hcrm:Enhancer_FANTOM5 ;
+    skos:prefLabel "chr5:134727973-134728292" ;
+    obo:BFO_0000050 nuccore:chr5 ;
+    obo:GENO_0000895 "134727973"^^xsd:integer ;
+    obo:GENO_0000894 "134728292"^^xsd:integer ;
+    sio:SIO_000772 id_pubmed:12345679 ; # Example PubMed ID for evidence
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+# Continue defining instances for each enhancer in the sample...

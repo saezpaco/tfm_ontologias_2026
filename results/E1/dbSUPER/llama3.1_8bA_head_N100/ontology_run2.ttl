@@ -1,0 +1,701 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM/enhancer>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module (CRM) Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A region of DNA that can be bound by transcription factors and other regulatory proteins to enhance the expression of nearby genes." .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "The location of the CRM enhancer on the genome." .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The source of information supporting the existence of the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#isLocatedAt>
+  a owl:ObjectProperty ;
+  rdfs:label "Is Located At"^^xsd:string ;
+  skos:prefLabel "Location" ;
+  skos:definition "The location of the CRM enhancer on the genome." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site" ;
+  skos:definition "A region of the CRM enhancer where transcription factors can bind." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site" ;
+  skos:definition "A region of the CRM enhancer where regulatory proteins can bind." .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement" ;
+  skos:definition "The effect of the CRM enhancer on gene expression." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructure>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure" ;
+  skos:definition "The structure of the chromatin at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification" ;
+  skos:definition "The epigenetic modifications at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProtein>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene"^^xsd:string ;
+  skos:prefLabel "Gene" ;
+  skos:definition "The gene affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinRegulatoryModule>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Chromatin Regulatory Module" ;
+  skos:definition "The chromatin regulatory module associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region" ;
+  skos:definition "The genomic region associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionalRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcriptional Regulation"^^xsd:string ;
+  skos:prefLabel "Transcriptional Regulation" ;
+  skos:definition "The transcriptional regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Regulation"^^xsd:string ;
+  skos:prefLabel "Epigenetic Regulation" ;
+  skos:definition "The epigenetic regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Modification"^^xsd:string ;
+  skos:prefLabel "Chromatin Modification" ;
+  skos:definition "The chromatin modification associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding" ;
+  skos:definition "The binding of transcription factors to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding" ;
+  skos:definition "The binding of regulatory proteins to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGeneExpression>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression"^^xsd:string ;
+  skos:prefLabel "Gene Expression" ;
+  skos:definition "The expression of genes affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructureChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure Change"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure Change" ;
+  skos:definition "The change in chromatin structure associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModificationChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification Change"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification Change" ;
+  skos:definition "The change in epigenetic modifications associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site" ;
+  skos:definition "A region of the CRM enhancer where transcription factors can bind." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site" ;
+  skos:definition "A region of the CRM enhancer where regulatory proteins can bind." .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement" ;
+  skos:definition "The effect of the CRM enhancer on gene expression." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructure>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure" ;
+  skos:definition "The structure of the chromatin at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification" ;
+  skos:definition "The epigenetic modifications at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProtein>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene"^^xsd:string ;
+  skos:prefLabel "Gene" ;
+  skos:definition "The gene affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinRegulatoryModule>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Chromatin Regulatory Module" ;
+  skos:definition "The chromatin regulatory module associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region" ;
+  skos:definition "The genomic region associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionalRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcriptional Regulation"^^xsd:string ;
+  skos:prefLabel "Transcriptional Regulation" ;
+  skos:definition "The transcriptional regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Regulation"^^xsd:string ;
+  skos:prefLabel "Epigenetic Regulation" ;
+  skos:definition "The epigenetic regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Modification"^^xsd:string ;
+  skos:prefLabel "Chromatin Modification" ;
+  skos:definition "The chromatin modification associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding" ;
+  skos:definition "The binding of transcription factors to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding" ;
+  skos:definition "The binding of regulatory proteins to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGeneExpression>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression"^^xsd:string ;
+  skos:prefLabel "Gene Expression" ;
+  skos:definition "The expression of genes affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructureChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure Change"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure Change" ;
+  skos:definition "The change in chromatin structure associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModificationChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification Change"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification Change" ;
+  skos:definition "The change in epigenetic modifications associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site" ;
+  skos:definition "A region of the CRM enhancer where transcription factors can bind." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site" ;
+  skos:definition "A region of the CRM enhancer where regulatory proteins can bind." .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement" ;
+  skos:definition "The effect of the CRM enhancer on gene expression." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructure>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure" ;
+  skos:definition "The structure of the chromatin at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification" ;
+  skos:definition "The epigenetic modifications at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProtein>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene"^^xsd:string ;
+  skos:prefLabel "Gene" ;
+  skos:definition "The gene affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinRegulatoryModule>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Chromatin Regulatory Module" ;
+  skos:definition "The chromatin regulatory module associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region" ;
+  skos:definition "The genomic region associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionalRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcriptional Regulation"^^xsd:string ;
+  skos:prefLabel "Transcriptional Regulation" ;
+  skos:definition "The transcriptional regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Regulation"^^xsd:string ;
+  skos:prefLabel "Epigenetic Regulation" ;
+  skos:definition "The epigenetic regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Modification"^^xsd:string ;
+  skos:prefLabel "Chromatin Modification" ;
+  skos:definition "The chromatin modification associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding" ;
+  skos:definition "The binding of transcription factors to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding" ;
+  skos:definition "The binding of regulatory proteins to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGeneExpression>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression"^^xsd:string ;
+  skos:prefLabel "Gene Expression" ;
+  skos:definition "The expression of genes affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructureChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure Change"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure Change" ;
+  skos:definition "The change in chromatin structure associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModificationChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification Change"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification Change" ;
+  skos:definition "The change in epigenetic modifications associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site" ;
+  skos:definition "A region of the CRM enhancer where transcription factors can bind." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site" ;
+  skos:definition "A region of the CRM enhancer where regulatory proteins can bind." .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement" ;
+  skos:definition "The effect of the CRM enhancer on gene expression." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructure>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure" ;
+  skos:definition "The structure of the chromatin at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification" ;
+  skos:definition "The epigenetic modifications at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProtein>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene"^^xsd:string ;
+  skos:prefLabel "Gene" ;
+  skos:definition "The gene affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinRegulatoryModule>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Chromatin Regulatory Module" ;
+  skos:definition "The chromatin regulatory module associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region" ;
+  skos:definition "The genomic region associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionalRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcriptional Regulation"^^xsd:string ;
+  skos:prefLabel "Transcriptional Regulation" ;
+  skos:definition "The transcriptional regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Regulation"^^xsd:string ;
+  skos:prefLabel "Epigenetic Regulation" ;
+  skos:definition "The epigenetic regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Modification"^^xsd:string ;
+  skos:prefLabel "Chromatin Modification" ;
+  skos:definition "The chromatin modification associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding" ;
+  skos:definition "The binding of transcription factors to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding" ;
+  skos:definition "The binding of regulatory proteins to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGeneExpression>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression"^^xsd:string ;
+  skos:prefLabel "Gene Expression" ;
+  skos:definition "The expression of genes affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructureChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure Change"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure Change" ;
+  skos:definition "The change in chromatin structure associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModificationChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification Change"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification Change" ;
+  skos:definition "The change in epigenetic modifications associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site" ;
+  skos:definition "A region of the CRM enhancer where transcription factors can bind." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site" ;
+  skos:definition "A region of the CRM enhancer where regulatory proteins can bind." .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement" ;
+  skos:definition "The effect of the CRM enhancer on gene expression." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructure>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure" ;
+  skos:definition "The structure of the chromatin at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification" ;
+  skos:definition "The epigenetic modifications at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProtein>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene"^^xsd:string ;
+  skos:prefLabel "Gene" ;
+  skos:definition "The gene affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinRegulatoryModule>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Chromatin Regulatory Module" ;
+  skos:definition "The chromatin regulatory module associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region" ;
+  skos:definition "The genomic region associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionalRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcriptional Regulation"^^xsd:string ;
+  skos:prefLabel "Transcriptional Regulation" ;
+  skos:definition "The transcriptional regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Regulation"^^xsd:string ;
+  skos:prefLabel "Epigenetic Regulation" ;
+  skos:definition "The epigenetic regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Modification"^^xsd:string ;
+  skos:prefLabel "Chromatin Modification" ;
+  skos:definition "The chromatin modification associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding" ;
+  skos:definition "The binding of transcription factors to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding" ;
+  skos:definition "The binding of regulatory proteins to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGeneExpression>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression"^^xsd:string ;
+  skos:prefLabel "Gene Expression" ;
+  skos:definition "The expression of genes affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructureChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure Change"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure Change" ;
+  skos:definition "The change in chromatin structure associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModificationChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification Change"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification Change" ;
+  skos:definition "The change in epigenetic modifications associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site" ;
+  skos:definition "A region of the CRM enhancer where transcription factors can bind." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site" ;
+  skos:definition "A region of the CRM enhancer where regulatory proteins can bind." .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement" ;
+  skos:definition "The effect of the CRM enhancer on gene expression." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructure>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure" ;
+  skos:definition "The structure of the chromatin at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification" ;
+  skos:definition "The epigenetic modifications at the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProtein>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein" ;
+  skos:definition "A protein that binds to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene"^^xsd:string ;
+  skos:prefLabel "Gene" ;
+  skos:definition "The gene affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinRegulatoryModule>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Chromatin Regulatory Module" ;
+  skos:definition "The chromatin regulatory module associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGenomicRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Region"^^xsd:string ;
+  skos:prefLabel "Genomic Region" ;
+  skos:definition "The genomic region associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionalRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcriptional Regulation"^^xsd:string ;
+  skos:prefLabel "Transcriptional Regulation" ;
+  skos:definition "The transcriptional regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticRegulation>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Regulation"^^xsd:string ;
+  skos:prefLabel "Epigenetic Regulation" ;
+  skos:definition "The epigenetic regulation associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinModification>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Modification"^^xsd:string ;
+  skos:prefLabel "Chromatin Modification" ;
+  skos:definition "The chromatin modification associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding" ;
+  skos:definition "The binding of transcription factors to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBinding>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding" ;
+  skos:definition "The binding of regulatory proteins to the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasGeneExpression>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression"^^xsd:string ;
+  skos:prefLabel "Gene Expression" ;
+  skos:definition "The expression of genes affected by the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructureChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure Change"^^xsd:string ;
+  skos:prefLabel "Chromatin Structure Change" ;
+  skos:definition "The change in chromatin structure associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasEpigeneticModificationChange>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Epigenetic Modification Change"^^xsd:string ;
+  skos:prefLabel "Epigenetic Modification Change" ;
+  skos:definition "The change in epigenetic modifications associated with the CRM enhancer." .
+
+<http://example.org/CRM/enhancer#hasTranscriptionFactorBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Transcription Factor Binding Site"^^xsd:string ;
+  skos:prefLabel "Transcription Factor Binding Site" ;
+  skos:definition "A region of the CRM enhancer where transcription factors can bind." .
+
+<http://example.org/CRM/enhancer#hasRegulatoryProteinBindingSite>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Regulatory Protein Binding Site"^^xsd:string ;
+  skos:prefLabel "Regulatory Protein Binding Site" ;
+  skos:definition "A region of the CRM enhancer where regulatory proteins can bind." .
+
+<http://example.org/CRM/enhancer#hasGeneExpressionEnhancement>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Gene Expression Enhancement"^^xsd:string ;
+  skos:prefLabel "Gene Expression Enhancement" ;
+  skos:definition "The effect of the CRM enhancer on gene expression." .
+
+<http://example.org/CRM/enhancer#hasChromatinStructure>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Chromatin Structure"^^xsd:string ;
+  skos:pref

@@ -1,0 +1,65 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    rdfs:comment "An ontology for enhancers identified by CAGE-seq in FANTOM5 dataset." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+    skos:definition "A DNA sequence that modulates the transcription rate of its target genes." ;
+    rdfs:subClassOf obo:SIO_010245 ;  # Biological Region
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    skos:prefLabel "Has Genomic Coordinates" ;
+    skos:definition "The genomic location of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinates .
+
+crm:GenomicCoordinates a owl:Class ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "A set of coordinates defining the position of an enhancer in the genome." ;
+
+crm:chromosome a owl:DatatypeProperty ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "The chromosome on which the enhancer is located." ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:string .
+
+crm:start a owl:DatatypeProperty ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "The starting position of the enhancer on the chromosome." ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer .
+
+crm:end a owl:DatatypeProperty ;
+    skos:prefLabel "End Position" ;
+    skos:definition "The ending position of the enhancer on the chromosome." ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer .
+
+crm:name a owl:DatatypeProperty ;
+    skos:prefLabel "Name" ;
+    skos:definition "A unique identifier for the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:score a owl:DatatypeProperty ;
+    skos:prefLabel "Score" ;
+    skos:definition "A measure of the activity or significance of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+crm:strand a owl:DatatypeProperty ;
+    skos:prefLabel "Strand" ;
+    skos:definition "The DNA strand on which the enhancer is located (positive or negative)." ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:string .
+```

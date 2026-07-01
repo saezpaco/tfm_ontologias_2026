@@ -1,0 +1,83 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    rdfs:comment "Ontology for enhancers identified by CAGE-seq in the FANTOM5 database." .
+
+### Classes ###
+obo:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+obo:Database a owl:Class ;
+    skos:prefLabel "Database" .
+
+obo:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+### Properties ###
+obo:hasChromosome a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" .
+
+obo:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start_position" .
+
+obo:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end_position" .
+
+obo:hasScore a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "score" .
+
+obo:hasStrand a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "strand" .
+
+obo:hasDatabase a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Database ;
+    skos:prefLabel "database_name" .
+
+obo:associatedWithGene a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Gene ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Disease ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+obo:associatedWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:TranscriptionFactor ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+### Instances ###
+<http://example.org/ontology/FANTOM5/chr3:64147375-64147623> a obo:CRM ;
+    obo:hasChromosome "chr3" ;
+    obo:hasStartPosition 64147375 ;
+    obo:hasEndPosition 64147623 ;
+    obo:hasScore 2 ;
+    obo:hasStrand "." ;
+    obo:hasDatabase <http://example.org/ontology/FANTOM5> .
+
+<http://example.org/ontology/FANTOM5> a obo:Database ;
+    skos:prefLabel "FANTOM5" ;
+    skos:definition "Enhancers activos identificados por CAGE-seq" .

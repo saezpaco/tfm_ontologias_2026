@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-04T18:50:25.173265",
+  "success": true,
+  "elapsed_seconds": 70.38,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1664,
+    "completion_tokens": 860,
+    "total_tokens": 2524
+  },
+  "prompt_tokens_estimate": 1046,
+  "response_chars": 2876,
+  "turtle_chars": 2876,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b's:definition \"Enhancer sequences identified by CAGE-seq\" .\\n\\n'^b'crm:Enhancer\\n  a owl:Class ;\\n  rdfs:label \"Cis-Regulatory Mo'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b_D_diversity/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b_D_diversity/response_raw_run1.txt"
+  }
+}

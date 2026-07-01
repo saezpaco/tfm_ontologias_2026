@@ -1,0 +1,310 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed ID for a specific piece of genetic data." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_PubMed_ID ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "A method used in genetic data analysis." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_Method ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "String" ;
+    rdfs:comment "A string value." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_String ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "Integer" ;
+    rdfs:comment "An integer value." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_Integer ;
+        owl:someValuesFrom xsd:int ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "Float" ;
+    rdfs:comment "A float value." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_Float ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_transcription_factor_to_enhancer_relationship" ;
+    rdfs:comment "The PubMed ID for a transcription factor to enhancer relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:transcription_factor .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_transcription_factor_to_enhancer_relationship" ;
+    rdfs:comment "The method used in a transcription factor to enhancer relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_biosample" ;
+    rdfs:comment "The name of the cell line or biosample." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:biosample .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_CRISPR_Cas9_target_region_ID" ;
+    rdfs:comment "The ID of a CRISPR/Cas9 target region." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:CRISPR_Cas9_target_region .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_cross_reference" ;
+    rdfs:comment "A reference for the data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:reference .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_assembly_version" ;
+    rdfs:comment "The assembly version of the genome." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:assembly_version .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_chromosome_number" ;
+    rdfs:comment "The chromosome number." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:chromosome_number .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_end_position" ;
+    rdfs:comment "The end position of the genomic feature." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:end_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_start_position" ;
+    rdfs:comment "The start position of the genomic feature." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:start_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_disease_association" ;
+    rdfs:comment "The name of the disease associated with the data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:disease .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_disease_PMID" ;
+    rdfs:comment "The PubMed ID for disease information." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:disease_PMID .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_disease_association" ;
+    rdfs:comment "The method used in a disease association." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_enhancer_to_gene_relationship" ;
+    rdfs:comment "The PubMed ID for an enhancer to gene relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:gene .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_enhancer_to_gene_relationship" ;
+    rdfs:comment "The method used in an enhancer to gene relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_enhancer_information" ;
+    rdfs:comment "The PubMed ID for enhancer information." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:enhancer .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_enhancer_analysis" ;
+    rdfs:comment "The method used in an enhancer analysis." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_transcription_factor_symbol" ;
+    rdfs:comment "The HGNC symbol of a transcription factor." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:transcription_factor_symbol .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_target_gene_symbols" ;
+    rdfs:comment "The HGNC symbols of target genes." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:gene_symbol .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_minimum_ratio" ;
+    rdfs:comment "The minimum ratio value." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:ratio .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_mutation_information" ;
+    rdfs:comment "The PubMed ID for mutation information." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:mutation .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_mutation_analysis" ;
+    rdfs:comment "The method used in a mutation analysis." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_assembly_version" ;
+    rdfs:comment "The original assembly version of the genome." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:assembly_version .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_chromosome_number" ;
+    rdfs:comment "The chromosome number from the original assembly." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:chromosome_number .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_end_position" ;
+    rdfs:comment "The end position of the genomic feature from the original assembly." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:end_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_start_position" ;
+    rdfs:comment "The start position of the genomic feature from the original assembly." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:start_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_ID" ;
+    rdfs:comment "The ID of the original data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:ID .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_RSID" ;
+    rdfs:comment "The RSID for a genetic variation." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:RSID .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_score" ;
+    rdfs:comment "A score value." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:score_value .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_source" ;
+    rdfs:comment "The source of the genetic data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:source .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_genetic_data_type" ;
+    rdfs:comment "The type of genetic data (e.g., transcription factor, enhancer, disease)." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:genetic_data_type .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_genetic_data_value" ;
+    rdfs:comment "The value of the genetic data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range xsd:anyURI .
+
+gr:class_entity rdf:type owl:Class ;
+    rdfs:label "Genetic Data Entity" ;
+    rdfs:comment "A class representing a specific piece of genetic data." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_genetic_data_type ;
+        owl:someValuesFrom xsd:string ] .
+
+gr:transcription_factor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing a transcription factor." ;
+
+gr:enhancer rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing an enhancer." ;
+
+gr:disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing a disease." ;
+
+gr:gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:comment "A class representing a gene." ;
+
+gr:transcription_factor_symbol rdf:type owl:Class ;
+    rdfs:label "Transcription Factor Symbol" ;
+    rdfs:comment "A class representing the symbol of a transcription factor." ;
+
+gr:gene_symbol rdf:type owl:Class ;
+    rdfs:label "Gene Symbol" ;
+    rdfs:comment "A class representing the symbol of a gene." ;
+
+gr:ratio rdf:type owl:Class ;
+    rdfs:label "Ratio" ;
+    rdfs:comment "A class representing a ratio value." ;
+
+gr:mutation rdf:type owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing a mutation." ;
+
+gr:score_value rdf:type owl:Class ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "A class representing a score value." ;
+
+gr:ID rdf:type owl:Class ;
+    rdfs:label "ID" ;
+    rdfs:comment "A class representing an ID." ;
+
+gr:RSID rdf:type owl:Class ;
+    rdfs:label "RSID" ;
+    rdfs:comment "A class representing an RSID." ;
+
+gr:biosample rdf:type owl:Class ;
+    rdfs:label "Biosample" ;
+    rdfs:comment "A class representing a biosample." ;
+
+gr:CRISPR_Cas9_target_region rdf:type owl:Class ;
+    rdfs:label "CRISPR Cas9 Target Region" ;
+    rdfs:comment "A class representing a CRISPR Cas9 target region." ;
+
+gr:reference rdf:type owl:Class ;
+    rdfs:label "Reference" ;
+    rdfs:comment "A class representing a reference." ;
+
+gr:assembly_version rdf:type owl:Class ;
+    rdfs:label "Assembly Version" ;
+    rdfs:comment "A class representing an assembly version." ;
+
+gr:chromosome_number rdf:type owl:Class ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "A class representing a chromosome number." ;
+
+gr:end_position rdf:type owl:Class ;
+    rdfs:label "End Position" ;
+    rdfs:comment "A class representing an end position." ;
+
+gr:start_position rdf:type owl:Class ;
+    rdfs:label "Start Position" ;
+    rdfs:comment "A class representing a start position." ;
+
+gr:method rdf:type owl:Class ;
+    rdfs:label "Method" ;
+    rdfs:comment "A class representing a method used in genetic data analysis." .

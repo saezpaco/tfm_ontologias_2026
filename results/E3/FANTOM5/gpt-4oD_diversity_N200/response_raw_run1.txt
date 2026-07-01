@@ -1,0 +1,74 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/bgw!> .
+@prefix pubmed:  <http://rdf.ncbi.nlm.nih.gov/pubmed/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+### Properties ###
+biolink:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2pgene:hasGenomicLocation .
+
+biolink:targetGene a owl:ObjectProperty ;
+    rdfs:label "target gene" ;
+    skos:exactMatch crm2pgene:targetGene .
+
+biolink:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+biolink:interactsWith a owl:ObjectProperty ;
+    rdfs:label "interacts with" ;
+    skos:exactMatch crm2pgene:interactsWith .
+
+### Individuals ###
+<http://example.org/ontology/FANTOM5/CRMHS00000081908> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000081908" ;
+    biolink:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr10:18142022-18142352"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targetGene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000081908--hgncsymbol!9606/CACNB2> ;
+    biolink:interactsWith [] ;
+    biolink:associatedWithDisease [] ;
+    dc:source <https://fantom.gsc.riken.jp/5/> ;
+    pubmed:24670763 .
+
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000081908--hgncsymbol!9606/CACNB2> a biolink:Gene ;
+    rdfs:label "CACNB2" .
+
+### Additional Individuals and Properties for other CRMs can be added similarly ###
+```

@@ -1,0 +1,447 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. TFs2enh_PMID: type - PubMed ID for transcription factor to enhancer interaction - string
+2. TFs2enh_method: type - method used in transcription factor to enhancer interaction study - string
+3. biosample_name: type - name of the cell line or biosample - string
+4. crm_ID: type - ID of the chromatin regulatory module - string
+5. crossref: type - reference type (e.g., PMID, DOI) - string
+6. current_assembly: type - current genome assembly version - string
+7. current_chr: type - chromosome number in the current assembly - string
+8. disease: type - disease associated with the genetic regulatory element - string
+9. disease_PMID: type - PubMed ID for disease study - string
+10. disease_method: type - method used in disease study - string
+11. enh2gene_PMID: type - PubMed ID for enhancer to gene interaction study - string
+12. enh2gene_method: type - method used in enhancer to gene interaction study - string
+13. enh_PMID: type - PubMed ID for enhancer study - string
+14. enh_method: type - method used in enhancer study - string
+15. hgnc_symbol_TFs: type - HGNC symbol of the transcription factors - string
+16. hgnc_symbol_target_genes: type - HGNC symbols of target genes - string
+17. minimum_ratio: type - minimum ratio value - float
+18. mutation_PMID: type - PubMed ID for mutation study - string
+19. mutation_method: type - method used in mutation study - string
+20. orig_assembly: type - original genome assembly version - string
+21. orig_chr: type - chromosome number in the original assembly - string
+22. original_ID: type - original ID of the genetic regulatory element - string
+23. refsnp_ID: type - reference SNP ID - string
+24. score: type - score value - float
+25. source: type - source of the data - string
+26. type: type - type of the genetic regulatory element (e.g., enhancer, super-enhancer) - string
+27. current_end: type - end position in the current assembly - integer
+28. current_start: type - start position in the current assembly - integer
+29. orig_end: type - end position in the original assembly - integer
+30. orig_start: type - start position in the original assembly - integer
+
+**Classes:**
+1. GeneticRegulatoryElement
+2. TranscriptionFactor
+3. Enhancer
+4. SuperEnhancer
+5. TargetGene
+6. CellLineOrBiosample
+7. Disease
+8. Mutation
+9. ChromatinRegulatoryModule
+
+**Subclasses:**
+1. TranscriptionFactorToEnhancerInteraction (subclass of GeneticRegulatoryElement)
+2. EnhancerToGeneInteraction (subclass of GeneticRegulatoryElement)
+
+**Object Properties:**
+1. hasTranscriptionFactor (domain - TranscriptionFactorToEnhancerInteraction, range - TranscriptionFactor)
+2. hasEnhancer (domain - TranscriptionFactorToEnhancerInteraction, range - Enhancer)
+3. hasTargetGene (domain - EnhancerToGeneInteraction, range - TargetGene)
+4. associatedWithCellLineOrBiosample (domain - GeneticRegulatoryElement, range - CellLineOrBiosample)
+5. associatedWithDisease (domain - GeneticRegulatoryElement, range - Disease)
+6. associatedWithMutation (domain - GeneticRegulatoryElement, range - Mutation)
+7. hasChromatinRegulatoryModule (domain - GeneticRegulatoryElement, range - ChromatinRegulatoryModule)
+
+**Data Type Properties:**
+1. pmid (domain - PubMed ID, range - xsd:string)
+2. method (domain - Method, range - xsd:string)
+3. chromosomeNumber (domain - Chromosome Number, range - xsd:string)
+4. scoreValue (domain - Score Value, range - xsd:float)
+5. startPosition (domain - Start Position, range - xsd:int)
+6. endPosition (domain - End Position, range - xsd:int)
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty pmid
+    a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed ID associated with a genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty method
+    a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "A method used in the study of a genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty chromosomeNumber
+    a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number in the assembly." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty scoreValue
+    a owl:DatatypeProperty ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "A score value associated with a genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty startPosition
+    a owl:DatatypeProperty ;
+    rdfs:label "Start Position" ;
+    rdfs:comment "The start position in the assembly." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+owl:DatatypeProperty endPosition
+    a owl:DatatypeProperty ;
+    rdfs:label "End Position" ;
+    rdfs:comment "The end position in the assembly." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+owl:ObjectProperty hasTranscriptionFactor
+    a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "A transcription factor involved in the interaction." ;
+    rdfs:subPropertyOf rdf:type ;
+    rdfs:domain genreg:TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range genreg:TranscriptionFactor .
+
+owl:ObjectProperty hasEnhancer
+    a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer" ;
+    rdfs:comment "An enhancer involved in the interaction." ;
+    rdfs:subPropertyOf rdf:type ;
+    rdfs:domain genreg:TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range genreg:Enhancer .
+
+owl:ObjectProperty hasTargetGene
+    a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "A target gene involved in the interaction." ;
+    rdfs:subPropertyOf rdf:type ;
+    rdfs:domain genreg:EnhancerToGeneInteraction ;
+    rdfs:range genreg:TargetGene .
+
+owl:ObjectProperty associatedWithCellLineOrBiosample
+    a owl:ObjectProperty ;
+    rdfs:label "Associated With Cell Line or Biosample" ;
+    rdfs:comment "A cell line or biosample associated with the genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:type ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:CellLineOrBiosample .
+
+owl:ObjectProperty associatedWithDisease
+    a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "A disease associated with the genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:type ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Disease .
+
+owl:ObjectProperty associatedWithMutation
+    a owl:ObjectProperty ;
+    rdfs:label "Associated With Mutation" ;
+    rdfs:comment "A mutation associated with the genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:type ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Mutation .
+
+owl:ObjectProperty hasChromatinRegulatoryModule
+    a owl:ObjectProperty ;
+    rdfs:label "Has Chromatin Regulatory Module" ;
+    rdfs:comment "A chromatin regulatory module associated with the genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:type ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:ChromatinRegulatoryModule .
+
+owl:Class GeneticRegulatoryElement
+    a owl:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A genetic regulatory element such as an enhancer or super-enhancer." ;
+    rdfs:subClassOf rdf:Resource ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty genreg:associatedWithCellLineOrBiosample ;
+        owl:someValuesFrom genreg:CellLineOrBiosample
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty genreg:associatedWithDisease ;
+        owl:someValuesFrom genreg:Disease
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty genreg:associatedWithMutation ;
+        owl:someValuesFrom genreg:Mutation
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty genreg:hasChromatinRegulatoryModule ;
+        owl:someValuesFrom genreg:ChromatinRegulatoryModule
+    ] .
+
+owl:Class TranscriptionFactor
+    a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A transcription factor involved in gene regulation." ;
+    rdfs:subClassOf rdf:Resource .
+
+owl:Class Enhancer
+    a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "An enhancer that increases the transcription of target genes." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty genreg:hasTranscriptionFactor ;
+        owl:someValuesFrom genreg:TranscriptionFactor
+    ] .
+
+owl:Class SuperEnhancer
+    a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A super-enhancer that is highly active and can drive the transcription of multiple genes." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty genreg:hasTranscriptionFactor ;
+        owl:someValuesFrom genreg:TranscriptionFactor
+    ] .
+
+owl:Class TargetGene
+    a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A gene that is regulated by an enhancer." ;
+    rdfs:subClassOf rdf:Resource ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty genreg:hasTargetGene ;
+        owl:someValuesFrom genreg:TargetGene
+    ] .
+
+owl:Class CellLineOrBiosample
+    a owl:Class ;
+    rdfs:label "Cell Line or Biosample" ;
+    rdfs:comment "A cell line or biosample used in genetic regulatory element studies." ;
+    rdfs:subClassOf rdf:Resource .
+
+owl:Class Disease
+    a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A disease associated with genetic regulatory elements." ;
+    rdfs:subClassOf rdf:Resource .
+
+owl:Class Mutation
+    a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A mutation associated with genetic regulatory elements." ;
+    rdfs:subClassOf rdf:Resource .
+
+owl:Class ChromatinRegulatoryModule
+    a owl:Class ;
+    rdfs:label "Chromatin Regulatory Module" ;
+    rdfs:comment "A chromatin regulatory module involved in the regulation of genetic regulatory elements." ;
+    rdfs:subClassOf rdf:Resource .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPMID>;
+        ]
+    ],
+    [
+        rr:predicate genreg:method;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMethod>;
+        ]
+    ],
+    [
+        rr:predicate genreg:chromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate genreg:scoreValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScoreValue>;
+        ]
+    ],
+    [
+        rr:predicate genreg:startPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate genreg:endPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEndPosition>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{mutation_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapPMID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:PMID/{{pmid}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Method/{{method}}{FAIR_URI}";
+    ].
+
+<#TriplesMapChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromosomeNumber/{{chromosome_number}}{FAIR_URI}";
+    ].
+
+<#TriplesMapScoreValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ScoreValue/{{score_value}}{FAIR_URI}";
+    ].
+
+<#TriplesMapStartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:StartPosition/{{start_position}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEndPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:EndPosition/{{end_position}}{FAIR_URI}";
+    ].
+```

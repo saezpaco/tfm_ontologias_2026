@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-05-09T00:13:34.076677",
+  "success": true,
+  "elapsed_seconds": 223.98,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3923,
+    "completion_tokens": 1238,
+    "total_tokens": 5161
+  },
+  "prompt_tokens_estimate": 2532,
+  "response_chars": 3983,
+  "turtle_chars": 3407,
+  "validation": {
+    "valid": true,
+    "n_triples": 54,
+    "n_classes": 9,
+    "n_properties": 9
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_ragapi_C2/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_ragapi_C2/response_raw_run1.txt"
+  }
+}

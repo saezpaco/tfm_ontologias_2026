@@ -1,0 +1,71 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A genomic region that regulates the expression of genes, such as enhancers." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch obo:SO_0000704 .
+
+obo:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to specific DNA sequences, thereby controlling the rate of transcription of genetic information." ;
+    skos:exactMatch obo:GO_0003700 .
+
+obo:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms." ;
+    skos:exactMatch obo:DOID_4 .
+
+# Object Properties
+obo:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a CRM to its target gene." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Gene .
+
+obo:interactsWithTF a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates a CRM to a transcription factor that interacts with it." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:TranscriptionFactor .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a CRM to a disease it is associated with." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Disease .
+
+# Datatype Properties
+obo:hasGenomicCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Specifies the genomic coordinates of a CRM." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasExperimentalEvidence a owl:DatatypeProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Specifies the type of experimental evidence supporting the CRM." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasBiosampleName a owl:DatatypeProperty ;
+    skos:prefLabel "has biosample name" ;
+    skos:definition "Specifies the name of the biosample in which the CRM activity was observed." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasScore a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "Specifies the score associated with the CRM, indicating its activity level." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:float .

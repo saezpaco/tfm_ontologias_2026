@@ -1,0 +1,66 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2gene/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+
+# Classes
+owl:Class(
+  <http://example.org/CisRegEnhancer>
+  rdfs:label "Cis-regulatory enhancer"
+)
+owl:Class(
+  <http://example.org/TranscriptionFactor>
+  rdfs:label "Transcription factor"
+  skos:exactMatch obo:NCIT_C17207
+)
+
+# Properties
+owl:ObjectProperty(
+  <http://example.org/targetGene>
+  rdfs:label "target gene"
+  rdfs:domain <http://example.org/CisRegEnhancer>
+  rdfs:range <http://purl.obolibrary.org/obo/NCIT_C17207>
+)
+owl:ObjectProperty(
+  <http://example.org/enhancerSequence>
+  rdfs:label "enhancer sequence"
+  rdfs:domain <http://example.org/CisRegEnhancer>
+  rdfs:range <http://purl.obolibrary.org/obo/NCIT_C17207>
+)
+owl:ObjectProperty(
+  <http://example.org/cellLineActivity>
+  rdfs:label "cell line activity"
+  rdfs:domain <http://example.org/CisRegEnhancer>
+  rdfs:range <http://purl.obolibrary.org/obo/NCIT_C17207>
+)
+owl:ObjectProperty(
+  <http://example.org/experimentalEvidence>
+  rdfs:label "experimental evidence"
+  rdfs:domain <http://example.org/CisRegEnhancer>
+  rdfs:range <http://purl.obolibrary.org/obo/NCIT_C17207>
+)
+
+# Individuals
+<http://example.org/SE_00001> a <http://example.org/CisRegEnhancer>;
+  <http://example.org/targetGene> <http://purl.obolibrary.org/obo/NCIT_C17207:NOTCH2>;
+  <http://example.org/enhancerSequence> "chr1:120485363-120615071";
+  <http://example.org/cellLineActivity> "Adipose Nuclei".
+<http://example.org/SE_00002> a <http://example.org/CisRegEnhancer>;
+  <http://example.org/targetGene> <http://purl.obolibrary.org/obo/NCIT_C17207:COL4A2>;
+  <http://example.org/enhancerSequence> "chr13:110838836-111112228";
+  <http://example.org/cellLineActivity> "Adipose Nuclei".
+...

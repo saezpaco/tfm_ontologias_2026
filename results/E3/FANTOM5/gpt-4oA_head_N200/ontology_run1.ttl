@@ -1,0 +1,369 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+
+<http://rdf.biogateway.eu/fantom5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+crm2pgene:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2gene/Enhancer> .
+
+crm2pgene:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/Gene> .
+
+crm2phen:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/Disease> .
+
+### Properties ###
+crm2pgene:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    rdfs:domain crm2pgene:Enhancer ;
+    rdfs:range crm2pgene:Gene ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hasTargetGene> .
+
+crm2phen:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain crm2pgene:Enhancer ;
+    rdfs:range crm2phen:Disease ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/associatedWithDisease> .
+
+crm2pgene:hasGenomicLocation a owl:DatatypeProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain crm2pgene:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hasGenomicLocation> .
+
+crm2pgene:hasExperimentalEvidence a owl:DatatypeProperty ;
+    rdfs:label "has experimental evidence" ;
+    rdfs:domain crm2pgene:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hasExperimentalEvidence> .
+
+crm2pgene:hasPMID a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain crm2pgene:Enhancer ;
+    rdfs:range pubmed:PMID ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hasPMID> .
+
+### Individuals ###
+<http://rdf.biogateway.eu/fantom5/CRMHS00000005752> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:16039967-16040344" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:FAM131C .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000005795> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr10:62685569-62685884" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:ADO .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000006044> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr6:159102636-159102934" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:TAGAP .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000006141> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chrX:53256663-53257187" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:FAM156A, hgnc:IQSEC2, hgnc:RIBC1 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074829> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99534632-99534837" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074830> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99638888-99639130" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074831> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99647978-99648480" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:AGL, hgnc:PALMD .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074832> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99672650-99673035" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:AGL, hgnc:PALMD .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074833> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99673438-99673767" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074834> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99674765-99675026" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074835> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99704395-99704662" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074836> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99956795-99957040" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074837> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:99959000-99959232" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074838> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:1069266-1069606" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074839> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100028756-100029179" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074840> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100037066-100037325" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074841> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100039746-100040076" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074842> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100046954-100047160" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:MFSD14A .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074843> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:1069913-1070167" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:HES4 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074844> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100089561-100089903" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074845> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:9997794-9998011" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074846> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100212813-100213206" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074847> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100237802-100238050" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074848> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100355029-100355282" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074849> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100361995-100362218" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A, hgnc:SLC35A3 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074850> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100362969-100363366" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:SASS6 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074851> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100393309-100393435" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A, hgnc:SLC35A3 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074852> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100393533-100393930" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074853> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100394037-100394384" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074854> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:1073342-1073506" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074855> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100412960-100413147" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074856> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100440265-100440612" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A, hgnc:SLC35A3 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074857> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100445570-100445982" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A, hgnc:SLC35A3 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074858> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100449569-100450028" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074859> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100452675-100452990" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:CDC14A, hgnc:MFSD14A, hgnc:SLC35A3 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074860> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100500741-100500765" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074861> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100530881-100531273" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:SLC30A7 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074862> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100535331-100535507" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:SLC30A7 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074863> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100736711-100737015" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074864> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100747803-100747911" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074865> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100765329-100765541" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074866> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:10067153-10067257" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:KIF1B .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074867> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100847538-100847690" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:SLC30A7 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074868> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:100927430-100927704" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:S1PR1, hgnc:SLC30A7 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074869> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101004171-101004263" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074870> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:1079454-1079715" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074871> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101019829-101020157" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074872> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101020577-101020602" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074873> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101088549-101088648" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074874> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101112038-101112552" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:S1PR1, hgnc:SLC30A7 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074875> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101112567-101112779" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074876> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101199419-101199684" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074877> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101220176-101220536" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074878> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101242419-101242765" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074879> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101259800-101260123" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 ;
+    crm2pgene:hasTargetGene hgnc:SLC30A7 .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000074880> a crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation "chr1:101284192-101284591" ;
+    crm2pgene:hasExperimentalEvidence "CAGE" ;
+    crm2pgene:hasPMID pubmed:24670763 .

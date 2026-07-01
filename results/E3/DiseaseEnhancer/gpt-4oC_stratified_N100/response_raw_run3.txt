@@ -1,0 +1,83 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix hcrm: <http://rdf.biogateway.eu/crm2phen/bgw!> .
+@prefix hgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed: <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# Ontology definition
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    rdfs:label "Disease Enhancer Ontology" ;
+    dc:description "Ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+# Classes
+biolink:Enhancer rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2phen:Enhancer .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+# Properties
+biolink:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2phen:hasGenomicLocation .
+
+biolink:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+biolink:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+biolink:interactsWithTranscriptionFactor rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    skos:exactMatch crm2tfac:interactsWithTranscriptionFactor .
+
+# Example individuals
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685535> rdf:type biolink:Enhancer ;
+    biolink:hasGenomicLocation [ 
+        rdf:type assembly:GenomicLocation ;
+        assembly:chromosome "chrX" ;
+        assembly:start 8672161 ;
+        assembly:end 8672559 ;
+        assembly:assemblyVersion "hg38" 
+    ] ;
+    biolink:targetsGene <http://rdf.biogateway.eu/id_ncbigene/TBL1X> ;
+    biolink:associatedWithDisease obo:DOID_3571 ;
+    dc:source pubmed:27869826 .
+
+<http://rdf.biogateway.eu/id_ncbigene/TBL1X> rdf:type biolink:Gene ;
+    rdfs:label "TBL1X" .
+
+obo:DOID_3571 rdf:type biolink:Disease ;
+    rdfs:label "Disease associated with DOID:3571" .
+
+pubmed:27869826 rdf:type pubmed:Publication ;
+    rdfs:label "Publication with PMID 27869826" .

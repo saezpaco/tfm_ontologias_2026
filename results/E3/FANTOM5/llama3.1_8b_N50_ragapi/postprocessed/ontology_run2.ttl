@@ -19,13 +19,13 @@ hcrm:CisReg  a owl:Class ;
 
 hcrm:CisRegRegion  a owl:Class ;
     rdfs:label "Cis-Regulatory Region" ;
-    skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+    skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 # Properties
 hcrm:hasRegion  a owl:ObjectProperty ;
     rdfs:domain hcrm:CisReg ;
     rdfs:range hcrm:CisRegRegion ;
-    skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+    skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 hcrm:hasCoordinate  a owl:ObjectProperty ;
     rdfs:domain hcrm:CisRegRegion ;
@@ -42,4 +42,4 @@ hcrm:CRMHS00000003515  a hcrm:CisReg ;
 
 # Alignments
 hcrm:9606CRMHS00000003515  skos:exactMatch <http://rdf.biogateway.eu/crm/9606CRMHS00000003515> .
-crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5  skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5>  skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .

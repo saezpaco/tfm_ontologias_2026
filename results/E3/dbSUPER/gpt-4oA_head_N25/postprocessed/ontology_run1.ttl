@@ -1,0 +1,294 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/gene/9606/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://asntech.org/dbsuper/> .
+
+dbsuper:SE_00001 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00001" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr1 ;
+    obo:GENO_0000895 "120485363"^^xsd:integer ;
+    obo:GENO_0000894 "120615071"^^xsd:integer ;
+    obo:RO_0002429 hgene:NOTCH2 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00002 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00002" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr13 ;
+    obo:GENO_0000895 "110838836"^^xsd:integer ;
+    obo:GENO_0000894 "111112228"^^xsd:integer ;
+    obo:RO_0002429 hgene:COL4A2 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00003 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00003" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr1 ;
+    obo:GENO_0000895 "145206326"^^xsd:integer ;
+    obo:GENO_0000894 "145293008"^^xsd:integer ;
+    obo:RO_0002429 hgene:NOTCH2NL ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00004 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00004" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr5 ;
+    obo:GENO_0000895 "158117077"^^xsd:integer ;
+    obo:GENO_0000894 "158371526"^^xsd:integer ;
+    obo:RO_0002429 hgene:EBF1 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00005 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00005" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr2 ;
+    obo:GENO_0000895 "218548183"^^xsd:integer ;
+    obo:GENO_0000894 "218895526"^^xsd:integer ;
+    obo:RO_0002429 hgene:TNS1 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00006 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00006" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr2 ;
+    obo:GENO_0000895 "54586565"^^xsd:integer ;
+    obo:GENO_0000894 "54904699"^^xsd:integer ;
+    obo:RO_0002429 hgene:SPTBN1 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00007 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00007" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr6 ;
+    obo:GENO_0000895 "112420456"^^xsd:integer ;
+    obo:GENO_0000894 "112652968"^^xsd:integer ;
+    obo:RO_0002429 hgene:LAMA4 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00008 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00008" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr3 ;
+    obo:GENO_0000895 "12327760"^^xsd:integer ;
+    obo:GENO_0000894 "12522419"^^xsd:integer ;
+    obo:RO_0002429 hgene:PPARG ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00009 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00009" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr1 ;
+    obo:GENO_0000895 "12455848"^^xsd:integer ;
+    obo:GENO_0000894 "12698932"^^xsd:integer ;
+    obo:RO_0002429 hgene:DHRS3 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00010 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00010" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr8 ;
+    obo:GENO_0000895 "30239218"^^xsd:integer ;
+    obo:GENO_0000894 "30455499"^^xsd:integer ;
+    obo:RO_0002429 hgene:RBPMS ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00011 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00011" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr11 ;
+    obo:GENO_0000895 "111468184"^^xsd:integer ;
+    obo:GENO_0000894 "111670113"^^xsd:integer ;
+    obo:RO_0002429 hgene:PPP2R1B ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00012 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00012" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr10 ;
+    obo:GENO_0000895 "82143428"^^xsd:integer ;
+    obo:GENO_0000894 "82297600"^^xsd:integer ;
+    obo:RO_0002429 hgene:TSPAN14 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00013 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00013" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr2 ;
+    obo:GENO_0000895 "145147464"^^xsd:integer ;
+    obo:GENO_0000894 "145289272"^^xsd:integer ;
+    obo:RO_0002429 hgene:ZEB2 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00014 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00014" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr1 ;
+    obo:GENO_0000895 "92148226"^^xsd:integer ;
+    obo:GENO_0000894 "92358240"^^xsd:integer ;
+    obo:RO_0002429 hgene:TGFBR3 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00015 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00015" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr10 ;
+    obo:GENO_0000895 "114708122"^^xsd:integer ;
+    obo:GENO_0000894 "114899787"^^xsd:integer ;
+    obo:RO_0002429 hgene:TCF7L2 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00016 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00016" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr10 ;
+    obo:GENO_0000895 "97067610"^^xsd:integer ;
+    obo:GENO_0000894 "97208276"^^xsd:integer ;
+    obo:RO_0002429 hgene:PDLIM1 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00017 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00017" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr9 ;
+    obo:GENO_0000895 "14132520"^^xsd:integer ;
+    obo:GENO_0000894 "14325750"^^xsd:integer ;
+    obo:RO_0002429 hgene:NFIB ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00018 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00018" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr7 ;
+    obo:GENO_0000895 "116124962"^^xsd:integer ;
+    obo:GENO_0000894 "116229755"^^xsd:integer ;
+    obo:RO_0002429 hgene:CAV1 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00019 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00019" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr22 ;
+    obo:GENO_0000895 "46436313"^^xsd:integer ;
+    obo:GENO_0000894 "46491627"^^xsd:integer ;
+    obo:RO_0002429 hgene:PRR34 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00020 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00020" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr15 ;
+    obo:GENO_0000895 "62681468"^^xsd:integer ;
+    obo:GENO_0000894 "62918670"^^xsd:integer ;
+    obo:RO_0002429 hgene:MGC15885 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00021 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00021" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr9 ;
+    obo:GENO_0000895 "124030416"^^xsd:integer ;
+    obo:GENO_0000894 "124136617"^^xsd:integer ;
+    obo:RO_0002429 hgene:GSN ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00022 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00022" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr9 ;
+    obo:GENO_0000895 "112747903"^^xsd:integer ;
+    obo:GENO_0000894 "112917636"^^xsd:integer ;
+    obo:RO_0002429 hgene:AKAP2 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00023 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00023" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr5 ;
+    obo:GENO_0000895 "158457028"^^xsd:integer ;
+    obo:GENO_0000894 "158534580"^^xsd:integer ;
+    obo:RO_0002429 hgene:EBF1 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00024 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00024" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr19 ;
+    obo:GENO_0000895 "13106663"^^xsd:integer ;
+    obo:GENO_0000894 "13216504"^^xsd:integer ;
+    obo:RO_0002429 hgene:LYL1 ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .
+
+dbsuper:SE_00025 rdf:type hcrm:crm_ID ;
+    skos:prefLabel "SE_00025" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr3 ;
+    obo:GENO_0000895 "127414600"^^xsd:integer ;
+    obo:GENO_0000894 "127543388"^^xsd:integer ;
+    obo:RO_0002429 hgene:MGLL ;
+    obo:TXPO_0003500 obo:CLO_0000003 ; # Adipose Nuclei
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> .

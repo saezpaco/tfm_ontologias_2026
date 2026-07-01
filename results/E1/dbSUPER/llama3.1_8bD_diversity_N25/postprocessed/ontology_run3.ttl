@@ -1,0 +1,136 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER#Enhancer>
+  a owl:Class ;
+  rdfs:label "Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer"@en ;
+  skos:definition "A regulatory element that modulates gene expression."@en .
+
+<http://example.org/dbSUPER#GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"@en ;
+  skos:definition "A location on the genome."@en .
+
+<http://example.org/dbSUPER#Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"@en ;
+  skos:definition "Data supporting the existence of an enhancer."@en .
+
+<http://example.org/dbSUPER#CellLine>
+  a owl:Class ;
+  rdfs:label "Cell Line"^^xsd:string ;
+  skos:prefLabel "Cell Line"@en ;
+  skos:definition "A cultured cell population."@en .
+
+<http://example.org/dbSUPER#TargetGene>
+  a owl:Class ;
+  rdfs:label "Target Gene"^^xsd:string ;
+  skos:prefLabel "Target Gene"@en ;
+  skos:definition "A gene regulated by an enhancer."@en .
+
+<http://example.org/dbSUPER#AssociatedDisease>
+  a owl:Class ;
+  rdfs:label "Associated Disease"^^xsd:string ;
+  skos:prefLabel "Associated Disease"@en ;
+  skos:definition "A disease linked to an enhancer's target gene."@en .
+
+<http://example.org/dbSUPER#TranscriptionFactor>
+  a owl:Class ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor"@en ;
+  skos:definition "A protein that binds to an enhancer."@en .
+
+<http://example.org/dbSUPER#enhancer_has_genomic_coordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "has Genomic Coordinate"@en ;
+  skos:definition "An enhancer's location on the genome."@en .
+
+<http://example.org/dbSUPER#enhancer_has_evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "has Evidence"^^xsd:string ;
+  skos:prefLabel "has Evidence"@en ;
+  skos:definition "Data supporting an enhancer's existence."@en .
+
+<http://example.org/dbSUPER#enhancer_is_active_in>
+  a owl:ObjectProperty ;
+  rdfs:label "is active in"^^xsd:string ;
+  skos:prefLabel "is active in"@en ;
+  skos:definition "A cell line where an enhancer is active."@en .
+
+<http://example.org/dbSUPER#enhancer_regulates>
+  a owl:ObjectProperty ;
+  rdfs:label "regulates"^^xsd:string ;
+  skos:prefLabel "regulates"@en ;
+  skos:definition "An enhancer's target gene."@en .
+
+<http://example.org/dbSUPER#enhancer_is_associated_with>
+  a owl:ObjectProperty ;
+  rdfs:label "is associated with"^^xsd:string ;
+  skos:prefLabel "is associated with"@en ;
+  skos:definition "A disease linked to an enhancer's target gene."@en .
+
+<http://example.org/dbSUPER#enhancer_interacts_with>
+  a owl:ObjectProperty ;
+  rdfs:label "interacts with"^^xsd:string ;
+  skos:prefLabel "interacts with"@en ;
+  skos:definition "A transcription factor binding to an enhancer."@en .
+
+<http://example.org/dbSUPER#enhancer_has_cell_line>
+  a owl:ObjectProperty ;
+  rdfs:label "has Cell Line"^^xsd:string ;
+  skos:prefLabel "has Cell Line"@en ;
+  skos:definition "A cell line where an enhancer is active."@en .
+
+<http://example.org/dbSUPER#enhancer_has_target_gene>
+  a owl:ObjectProperty ;
+  rdfs:label "has Target Gene"^^xsd:string ;
+  skos:prefLabel "has Target Gene"@en ;
+  skos:definition "An enhancer's target gene."@en .
+
+<http://example.org/dbSUPER#chromosome>
+  a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome where an enhancer is located."@en .
+
+<http://example.org/dbSUPER#start_coordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Start Coordinate"^^xsd:string ;
+  skos:prefLabel "Start Coordinate"@en ;
+  skos:definition "An enhancer's start location on the genome."@en .
+
+<http://example.org/dbSUPER#stop_coordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Stop Coordinate"^^xsd:string ;
+  skos:prefLabel "Stop Coordinate"@en ;
+  skos:definition "An enhancer's end location on the genome."@en .
+
+<http://example.org/dbSUPER#evidence_type>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of data supporting an enhancer's existence."@en .
+
+<http://example.org/dbSUPER#cell_line_name>
+  a owl:DatatypeProperty ;
+  rdfs:label "Cell Line Name"^^xsd:string ;
+  skos:prefLabel "Cell Line Name"@en ;
+  skos:definition "The name of the cell line where an enhancer is active."@en .
+
+<http://example.org/dbSUPER#rank>
+  a owl:DatatypeProperty ;
+  rdfs:label "Rank"^^xsd:string ;
+  skos:prefLabel "Rank"@en ;
+  skos:definition "An enhancer's rank in a list."@en .
+
+skos:exactMatch <obo:ENHANCER> <http://example.org/dbSUPER#Enhancer> .
+skos:closeMatch <obo:GENOMIC_COORDINATE> <http://example.org/dbSUPER#GenomicCoordinate> .
+skos:closeMatch <obo:EVIDENCE> <http://example.org/dbSUPER#Evidence> .

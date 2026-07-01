@@ -1,0 +1,56 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology rdf:about "http://example.org/hacer-ontology" ;
+    rdfs:label "Human Active Cis-regulatory Elements Database Ontology" ;
+    rdfs:comment "An ontology for representing cis-regulatory modules in the human genome." .
+
+crm:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "genomic coordinates" ;
+    skos:definition "The genomic coordinates of the cis-regulatory module." .
+
+crm:hasExperimentalEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "experimental evidence" ;
+    skos:definition "Experimental evidence supporting the cis-regulatory module." .
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "cell line activity" ;
+    skos:definition "The cell lines in which the cis-regulatory module is active." .
+
+crm:targetsGene a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:GO_0003674 ;
+    skos:prefLabel "target gene" ;
+    skos:definition "The gene targeted by the cis-regulatory module." .
+
+crm:associatedDisease a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:DOID_0000001 ;
+    skos:prefLabel "associated disease" ;
+    skos:definition "The disease associated with the cis-regulatory module." .
+
+crm:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:GO_0003674 ;
+    skos:prefLabel "interacting transcription factor" ;
+    skos:definition "The transcription factor interacting with the cis-regulatory module." .
+
+crm:hasDatabase a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "database" ;
+    skos:definition "The database from which the cis-regulatory module information is derived." .

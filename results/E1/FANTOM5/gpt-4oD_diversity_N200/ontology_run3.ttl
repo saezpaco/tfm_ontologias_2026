@@ -1,0 +1,78 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+obo:GENO_0000000 a owl:Class ;
+    skos:prefLabel "Genomic Location" ;
+    skos:definition "A specific location on a chromosome." .
+
+obo:NCBITaxon_9606 a owl:Class ;
+    skos:prefLabel "Homo sapiens" ;
+    skos:definition "The species of bipedal primates to which modern humans belong." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCBITaxon_9606> .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory region to its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002205> .
+
+# Datatype Properties
+obo:GENO_0000001 a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the genomic feature is located." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000002 a owl:DatatypeProperty ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of the genomic feature on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000003 a owl:DatatypeProperty ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of the genomic feature on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000004 a owl:DatatypeProperty ;
+    skos:prefLabel "genome assembly" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000005 a owl:DatatypeProperty ;
+    skos:prefLabel "minimum ratio" ;
+    skos:definition "The minimum ratio of enhancer activity." ;
+    rdfs:range xsd:float .
+
+obo:GENO_0000006 a owl:DatatypeProperty ;
+    skos:prefLabel "score" ;
+    skos:definition "The score representing the activity level of the enhancer." ;
+    rdfs:range xsd:float .
+
+obo:GENO_0000007 a owl:DatatypeProperty ;
+    skos:prefLabel "evidence PMID" ;
+    skos:definition "The PubMed ID of the publication providing evidence for the enhancer." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000008 a owl:DatatypeProperty ;
+    skos:prefLabel "enhancer method" ;
+    skos:definition "The method used to identify the enhancer." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000009 a owl:DatatypeProperty ;
+    skos:prefLabel "target gene symbol" ;
+    skos:definition "The HGNC symbol of the target gene regulated by the enhancer." ;
+    rdfs:range xsd:string .

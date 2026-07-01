@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-07-01T13:26:56.027188",
+  "success": true,
+  "elapsed_seconds": 70.99,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 444,
+    "total_tokens": 4539
+  },
+  "prompt_tokens_estimate": 3998,
+  "response_chars": 1176,
+  "turtle_chars": 1162,
+  "validation": {
+    "valid": true,
+    "n_triples": 2,
+    "n_classes": 0,
+    "n_properties": 0
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bC_stratified_N100_C2/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bC_stratified_N100_C2/response_raw_run1.txt"
+  }
+}

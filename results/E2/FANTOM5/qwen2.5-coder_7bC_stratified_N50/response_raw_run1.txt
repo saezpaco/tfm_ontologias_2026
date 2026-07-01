@@ -1,0 +1,73 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to DNA and regulates the transcription of genes." .
+
+crm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:prefLabel "CRM" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "gene_symbol" ;
+    skos:definition "A segment of DNA that codes for a protein or RNA molecule." .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "doid" ;
+    skos:definition "A disorder affecting the structure, function, or metabolism of an organism." .
+
+crm:TranscriptionFactorAssociation a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Association" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and transcription factor uniprot_ID." .
+
+crm:CisRegulatoryModuleGeneAssociation a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Gene Association" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5." .
+
+crm:CisRegulatoryModuleDiseaseAssociation a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Disease Association" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and disease DOID:doid." .
+
+crm:CisRegulatoryModuleDatabase a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Database" ;
+    skos:prefLabel "database_name" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name." .
+
+crm:CisRegulatoryModuleID a owl:DatatypeProperty ;
+    rdfs:label "Cis-Regulatory Module ID" ;
+    skos:prefLabel "crm_ID" ;
+    skos:definition "A unique identifier for a cis-regulatory module." .
+
+crm:Chromosome a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "One of the structures in a eukaryotic cell that contains DNA and is capable of replicating itself during cell division." .
+
+crm:StartPosition a owl:DatatypeProperty ;
+    rdfs:label "Start Position" ;
+    skos:prefLabel "start_position" ;
+    skos:definition "The beginning position of the cis-regulatory module on the chromosome." .
+
+crm:EndPosition a owl:DatatypeProperty ;
+    rdfs:label "End Position" ;
+    skos:prefLabel "end_position" ;
+    skos:definition "The ending position of the cis-regulatory module on the chromosome." .
+
+crm:GRCh38 a owl:Class ;
+    rdfs:label "GRCh38" ;
+    skos:prefLabel "GRCh38" ;
+    skos:definition "A version of the human genome assembly." .
+```

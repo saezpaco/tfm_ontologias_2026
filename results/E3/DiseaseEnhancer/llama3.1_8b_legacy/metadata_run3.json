@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-05-08T19:51:36.586759",
+  "success": true,
+  "elapsed_seconds": 139.09,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 936,
+    "total_tokens": 5032
+  },
+  "prompt_tokens_estimate": 3329,
+  "response_chars": 2951,
+  "turtle_chars": 2446,
+  "validation": {
+    "valid": false,
+    "error": "at line 21 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b'62 obo:NCBITaxon_9606 ; #in taxon \"human\"\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ; #hg38 assembly as reference\\n    '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_legacy/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_legacy/response_raw_run3.txt"
+  }
+}

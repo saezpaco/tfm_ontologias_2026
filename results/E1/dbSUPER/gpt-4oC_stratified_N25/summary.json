@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 32.92333333333333,
+  "total_tokens": 5563,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:30:08.444233",
+      "success": true,
+      "elapsed_seconds": 85.27,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1139,
+        "completion_tokens": 742,
+        "total_tokens": 1881
+      },
+      "prompt_tokens_estimate": 901,
+      "response_chars": 2592,
+      "turtle_chars": 2592,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':SuperEnhancer a owl:Class ;\\n    skos:prefLabel \"super-enhan'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:30:16.254376",
+      "success": true,
+      "elapsed_seconds": 6.77,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1139,
+        "completion_tokens": 703,
+        "total_tokens": 1842
+      },
+      "prompt_tokens_estimate": 901,
+      "response_chars": 2350,
+      "turtle_chars": 2350,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':CellLine a owl:Class ;\\n    skos:prefLabel \"Cell Line\" ;\\n   '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:30:24.026910",
+      "success": true,
+      "elapsed_seconds": 6.73,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1139,
+        "completion_tokens": 701,
+        "total_tokens": 1840
+      },
+      "prompt_tokens_estimate": 901,
+      "response_chars": 2341,
+      "turtle_chars": 2341,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':CellLine a owl:Class ;\\n    skos:prefLabel \"Cell Line\" ;\\n   '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oC_stratified_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:chromEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "chromEnd" ;
+    skos:definition "End position of the genomic feature on the chromosome" .
+
+base:chromStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "chromStart" ;
+    skos:definition "Start position of the genomic feature on the chromosome" .
+
+base:score a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "score" ;
+    skos:definition "Score associated with the genomic feature" .
+
+base:thickEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "thickEnd" ;
+    skos:definition "End position of the thick part of the feature" .
+
+base:thickStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "thickStart" ;
+    skos:definition "Start position of the thick part of the feature" .
+
+base:name a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "name" ;
+    skos:definition "Name of the genomic feature" .
+
+base:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Chromosome ;
+    rdfs:label "hasChromosome" ;
+    skos:definition "Chromosome on which the feature is located" .
+
+base:hasBlockCount a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:BlockCount ;
+    rdfs:label "hasBlockCount" ;
+    skos:definition "Number of blocks in the genomic feature" .
+
+base:hasBlockSizes a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:BlockSizes ;
+    rdfs:label "hasBlockSizes" ;
+    skos:definition "Sizes of the blocks in the genomic feature" .
+
+base:hasBlockStarts a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:BlockStarts ;
+    rdfs:label "hasBlockStarts" ;
+    skos:definition "Start positions of the blocks in the genomic feature" .
+
+base:hasItemRgb a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:ItemRgb ;
+    rdfs:label "hasItemRgb" ;
+    skos:definition "RGB value for the item" .
+
+base:hasStrand a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Strand ;
+    rdfs:label "hasStrand" ;
+    skos:definition "Strand of the genomic feature" .
+
+base:GenomicFeature a owl:Class ;
+    rdfs:label "GenomicFeature" ;
+    skos:definition "A feature located on a genome" .
+
+base:Enhancer a owl:Class ;
+    rdfs:subClassOf base:GenomicFeature ;
+    rdfs:label "Enhancer" ;
+    skos:definition "A subclass of GenomicFeature representing an enhancer" .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:subClassOf base:GenomicFeature ;
+    rdfs:label "SuperEnhancer" ;
+    skos:definition "A subclass of GenomicFeature representing a super enhancer" .
+
+base:CellLine a owl:Class ;
+    rdfs:subClassOf base:GenomicFeature ;
+    rdfs:label "CellLine" ;
+    skos:definition "A subclass of GenomicFeature representing a cell line" .
+
+base:BioSample a owl:Class ;
+    rdfs:subClassOf base:GenomicFeature ;
+    rdfs:label "BioSample" ;
+    skos:definition "A subclass of GenomicFeature representing a biological sample" .
+
+base:TargetGene a owl:Class ;
+    rdfs:subClassOf base:GenomicFeature ;
+    rdfs:label "TargetGene" ;
+    skos:definition "A subclass of GenomicFeature representing a target gene" .
+
+base:TranscriptionFactor a owl:Class ;
+    rdfs:subClassOf base:GenomicFeature ;
+    rdfs:label "TranscriptionFactor" ;
+    skos:definition "A subclass of GenomicFeature representing a transcription factor" .
+
+base:DiseaseAssociation a owl:Class ;
+    rdfs:subClassOf base:GenomicFeature ;
+    rdfs:label "DiseaseAssociation" ;
+    skos:definition "A subclass of GenomicFeature representing a disease association" .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-04T18:08:08.383673",
+  "success": true,
+  "elapsed_seconds": 712.72,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 1670,
+    "completion_tokens": 8192,
+    "total_tokens": 9862
+  },
+  "prompt_tokens_estimate": 1047,
+  "response_chars": 29685,
+  "turtle_chars": 29684,
+  "validation": {
+    "valid": false,
+    "error": "at line 19 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'gene expression\" .\\n  obo:SO_0000163 <http://example.org/CRM>'^b' .\\n\\n<owl:Class rdf:about=\"http://example.org/Enhancer\">\\n  a '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b_B_random/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b_B_random/response_raw_run2.txt"
+  }
+}

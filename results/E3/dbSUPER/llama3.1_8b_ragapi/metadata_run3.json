@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-05-08T22:40:14.179168",
+  "success": true,
+  "elapsed_seconds": 243.32,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4092,
+    "completion_tokens": 2062,
+    "total_tokens": 6154
+  },
+  "prompt_tokens_estimate": 2638,
+  "response_chars": 5937,
+  "turtle_chars": 5325,
+  "validation": {
+    "valid": false,
+    "error": "at line 32 of <>:\nBad syntax (Prefix \"crmType:\" not bound) at ^ in:\n\"...b'tp://purl.obolibrary.org/obo/NCIT_C17207> rdfs:label \"\" ; # '^b'score=0.413\\ncrmType: a owl:Class ;\\n  rdfs:subClassOf <http:/'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_ragapi/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_ragapi/response_raw_run3.txt"
+  }
+}

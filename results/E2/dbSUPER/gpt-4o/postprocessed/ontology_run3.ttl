@@ -1,0 +1,96 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    skos:prefLabel "dbSUPER Ontology" ;
+    skos:definition "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:exactMatch <http://example.org/ontology/crm/crm_ID> .
+
+<http://example.org/ontology/GRCh38> a owl:Class ;
+    skos:prefLabel "GRCh38" ;
+    skos:definition "Genome Reference Consortium Human Build 38" .
+
+<http://example.org/ontology/Database> a owl:Class ;
+    skos:prefLabel "Database" ;
+    skos:definition "A biological database containing information about super-enhancers." .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to specific DNA sequences, thereby controlling the rate of transcription of genetic information." .
+
+### Object Properties ###
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Gene> .
+
+<http://example.org/ontology/hasTranscriptionFactor> a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasChromosome> a owl:DatatypeProperty ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome name where the CRM is located" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasStartPosition> a owl:DatatypeProperty ;
+    skos:prefLabel "start_position" ;
+    skos:definition "Start position of the CRM on the chromosome" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/ontology/hasEndPosition> a owl:DatatypeProperty ;
+    skos:prefLabel "end_position" ;
+    skos:definition "End position of the CRM on the chromosome" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/ontology/hasBiosampleName> a owl:DatatypeProperty ;
+    skos:prefLabel "biosample_name" ;
+    skos:definition "Name of the biosample where the CRM activity was observed" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasEnhancerMethod> a owl:DatatypeProperty ;
+    skos:prefLabel "enh_method" ;
+    skos:definition "Method used to identify the enhancer" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasScore> a owl:DatatypeProperty ;
+    skos:prefLabel "score" ;
+    skos:definition "Score representing the confidence or strength of the CRM" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:float .
+
+<http://example.org/ontology/hasMinimumRatio> a owl:DatatypeProperty ;
+    skos:prefLabel "minimum_ratio" ;
+    skos:definition "Minimum ratio for the CRM" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:float .
+
+<http://example.org/ontology/hasOriginalID> a owl:DatatypeProperty ;
+    skos:prefLabel "original_ID" ;
+    skos:definition "Original ID of the CRM in the database" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasCrossReference> a owl:DatatypeProperty ;
+    skos:prefLabel "crossref" ;
+    skos:definition "Cross-reference URL for the CRM in the database" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:anyURI .

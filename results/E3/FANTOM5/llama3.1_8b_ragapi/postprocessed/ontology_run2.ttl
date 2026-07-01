@@ -1,0 +1,54 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://identifiers.org/human-cis-regulatory-modules/> .
+@prefix crm2pgene: <https://identifiers.org/crm2pgene/> .
+@prefix hgene:   <http://identifiers.org/human-gene/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <https://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <https://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://purl.uniprot.org/databases/> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch hcrm:CisRegulatoryModule .
+
+hcrm:EnhancerSequence a owl:Class ;
+    rdfs:label "Enhancer Sequence" ;
+    skos:closeMatch crm2pgene:EnhancerSequence .
+
+hgene:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch hgene:Gene .
+
+# Properties
+crm2pgene:hasTargetGene a rdf:Property ;
+    rdfs:label "has target gene" ;
+    skos:closeMatch biolink:has_target_gene .
+
+hcrm:hasGenomicCoordinates a rdf:Property ;
+    rdfs:label "has genomic coordinates" ;
+    skos:exactMatch hcrm:hasGenomicCoordinates .
+
+hgene:hasTranscript a rdf:Property ;
+    rdfs:label "has transcript" ;
+    skos:closeMatch biolink:has_transcript .
+
+# Object Properties
+crm2pgene:regulatesExpression a rdf:Property ;
+    rdfs:label "regulates expression" ;
+    skos:exactMatch crm2pgene:regulates_expression .
+
+hcrm:modulatesTranscriptionRate a rdf:Property ;
+    rdfs:label "modulates transcription rate" ;
+    skos:closeMatch biolink:modulates_transcription_rate .

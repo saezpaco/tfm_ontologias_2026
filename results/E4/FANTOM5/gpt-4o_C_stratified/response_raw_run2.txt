@@ -1,0 +1,399 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+**Data Description:**
+1. blockCount: categorical - Number of blocks in the genomic feature - [2.0]
+2. chromEnd: Numerical - End position of the genomic feature on the chromosome - [1910781.0, 173378884.0]
+3. chromStart: Numerical - Start position of the genomic feature on the chromosome - [1910638.0, 173378612.0]
+4. score: Numerical - Score associated with the genomic feature - [2.0, 1215.0]
+5. thickEnd: Numerical - End position of the thick part of the feature - [1910698.0, 173378727.0]
+6. thickStart: Numerical - Start position of the thick part of the feature - [1910697.0, 173378726.0]
+7. blockSizes: text - Sizes of the blocks - [various]
+8. blockStarts: text - Start positions of the blocks - [various]
+9. chrom: text - Chromosome on which the feature is located - [various]
+10. itemRgb: categorical - RGB value for the item - [various]
+11. name: text - Name of the genomic feature - [various]
+12. strand: categorical - Strand of the genomic feature - [various]
+
+**classes:**
+1. GenomicFeature
+
+**subclasses:**
+1. Enhancer: subclass of -> GenomicFeature
+2. SuperEnhancer: subclass of -> GenomicFeature
+3. CellLine: subclass of -> GenomicFeature
+4. Biosample: subclass of -> GenomicFeature
+5. TargetGene: subclass of -> GenomicFeature
+6. TranscriptionFactor: subclass of -> GenomicFeature
+7. DiseaseAssociation: subclass of -> GenomicFeature
+
+**Object Properties:**
+1. hasGenomicCoordinate: GenomicFeature - GenomicCoordinate
+2. hasCellLine: GenomicFeature - CellLine
+3. hasBiosample: GenomicFeature - Biosample
+4. targetsGene: GenomicFeature - TargetGene
+5. boundBy: GenomicFeature - TranscriptionFactor
+6. associatedWith: GenomicFeature - DiseaseAssociation
+
+**Data Type Properties:**
+1. blockCount: GenomicFeature - xsd:float
+2. chromEnd: GenomicFeature - xsd:float
+3. chromStart: GenomicFeature - xsd:float
+4. score: GenomicFeature - xsd:float
+5. thickEnd: GenomicFeature - xsd:float
+6. thickStart: GenomicFeature - xsd:float
+7. blockSizes: GenomicFeature - xsd:string
+8. blockStarts: GenomicFeature - xsd:string
+9. chrom: GenomicFeature - xsd:string
+10. itemRgb: GenomicFeature - xsd:string
+11. name: GenomicFeature - xsd:string
+12. strand: GenomicFeature - xsd:string
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:blockCount a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "blockCount" ;
+    skos:definition "Number of blocks in the genomic feature" .
+
+base:chromEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "chromEnd" ;
+    skos:definition "End position of the genomic feature on the chromosome" .
+
+base:chromStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "chromStart" ;
+    skos:definition "Start position of the genomic feature on the chromosome" .
+
+base:score a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "score" ;
+    skos:definition "Score associated with the genomic feature" .
+
+base:thickEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "thickEnd" ;
+    skos:definition "End position of the thick part of the feature" .
+
+base:thickStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:float ;
+    rdfs:label "thickStart" ;
+    skos:definition "Start position of the thick part of the feature" .
+
+base:blockSizes a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "blockSizes" ;
+    skos:definition "Sizes of the blocks" .
+
+base:blockStarts a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "blockStarts" ;
+    skos:definition "Start positions of the blocks" .
+
+base:chrom a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "chrom" ;
+    skos:definition "Chromosome on which the feature is located" .
+
+base:itemRgb a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "itemRgb" ;
+    skos:definition "RGB value for the item" .
+
+base:name a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "name" ;
+    skos:definition "Name of the genomic feature" .
+
+base:strand a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "strand" ;
+    skos:definition "Strand of the genomic feature" .
+
+base:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:GenomicCoordinate ;
+    rdfs:label "hasGenomicCoordinate" ;
+    skos:definition "Relates a genomic feature to its genomic coordinate" .
+
+base:hasCellLine a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:CellLine ;
+    rdfs:label "hasCellLine" ;
+    skos:definition "Relates a genomic feature to a cell line" .
+
+base:hasBiosample a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Biosample ;
+    rdfs:label "hasBiosample" ;
+    skos:definition "Relates a genomic feature to a biosample" .
+
+base:targetsGene a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:TargetGene ;
+    rdfs:label "targetsGene" ;
+    skos:definition "Relates a genomic feature to a target gene" .
+
+base:boundBy a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:TranscriptionFactor ;
+    rdfs:label "boundBy" ;
+    skos:definition "Relates a genomic feature to a transcription factor" .
+
+base:associatedWith a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:DiseaseAssociation ;
+    rdfs:label "associatedWith" ;
+    skos:definition "Relates a genomic feature to a disease association" .
+
+base:GenomicFeature a owl:Class ;
+    rdfs:label "GenomicFeature" ;
+    skos:definition "A feature located on the genome" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:blockCount ;
+        owl:allValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chromEnd ;
+        owl:allValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chromStart ;
+        owl:allValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:score ;
+        owl:allValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:thickEnd ;
+        owl:allValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:thickStart ;
+        owl:allValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:blockSizes ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:blockStarts ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chrom ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:itemRgb ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:name ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:strand ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:definition "A genomic feature that enhances the transcription of a gene" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:label "SuperEnhancer" ;
+    skos:definition "A large cluster of enhancers that drive high levels of gene expression" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:CellLine a owl:Class ;
+    rdfs:label "CellLine" ;
+    skos:definition "A cell line used in genomic studies" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:Biosample a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:definition "A biological sample used in genomic studies" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:TargetGene a owl:Class ;
+    rdfs:label "TargetGene" ;
+    skos:definition "A gene targeted by a genomic feature" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:TranscriptionFactor a owl:Class ;
+    rdfs:label "TranscriptionFactor" ;
+    skos:definition "A protein that binds to specific DNA sequences to regulate gene expression" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:DiseaseAssociation a owl:Class ;
+    rdfs:label "DiseaseAssociation" ;
+    skos:definition "An association between a genomic feature and a disease" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+################ MAPPING (OntoMapper) #######################
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<#TriplesMapGenomicFeature> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#GenomicFeature/{name}";
+        rr:class base:GenomicFeature
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockCount;
+        rr:objectMap [ rml:reference "blockCount"; rr:datatype xsd:float ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromEnd;
+        rr:objectMap [ rml:reference "chromEnd"; rr:datatype xsd:float ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chromStart;
+        rr:objectMap [ rml:reference "chromStart"; rr:datatype xsd:float ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:score;
+        rr:objectMap [ rml:reference "score"; rr:datatype xsd:float ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickEnd;
+        rr:objectMap [ rml:reference "thickEnd"; rr:datatype xsd:float ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:thickStart;
+        rr:objectMap [ rml:reference "thickStart"; rr:datatype xsd:float ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockSizes;
+        rr:objectMap [ rml:reference "blockSizes"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:blockStarts;
+        rr:objectMap [ rml:reference "blockStarts"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:chrom;
+        rr:objectMap [ rml:reference "chrom"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:itemRgb;
+        rr:objectMap [ rml:reference "itemRgb"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:name;
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate base:strand;
+        rr:objectMap [ rml:reference "strand"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Enhancer/{name}";
+        rr:class base:Enhancer
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#SuperEnhancer/{name}";
+        rr:class base:SuperEnhancer
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#CellLine/{name}";
+        rr:class base:CellLine
+    ].
+
+<#TriplesMapBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#Biosample/{name}";
+        rr:class base:Biosample
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#TargetGene/{name}";
+        rr:class base:TargetGene
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#TranscriptionFactor/{name}";
+        rr:class base:TranscriptionFactor
+    ].
+
+<#TriplesMapDiseaseAssociation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://base_ontology.com#DiseaseAssociation/{name}";
+        rr:class base:DiseaseAssociation
+    ].

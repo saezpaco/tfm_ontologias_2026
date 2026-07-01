@@ -1,0 +1,81 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes located on the same chromosome." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters and can function in either orientation and in any location relative to the promoter." ;
+    skos:exactMatch obo:SO_0000167 .
+
+# Object Properties
+obo:RO_0002434 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory element to its target gene." ;
+    skos:exactMatch obo:RO_0002434 .
+
+obo:RO_0002436 a owl:ObjectProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Relates a regulatory element to the evidence supporting its function." ;
+    skos:exactMatch obo:RO_0002436 .
+
+# Datatype Properties
+obo:GENO_0000891 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic start" ;
+    skos:definition "The starting position of a genomic feature on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000892 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic end" ;
+    skos:definition "The ending position of a genomic feature on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000893 a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which a genomic feature is located." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000894 a owl:DatatypeProperty ;
+    skos:prefLabel "has assembly" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000895 a owl:DatatypeProperty ;
+    skos:prefLabel "has minimum ratio" ;
+    skos:definition "The minimum ratio of activity observed for the enhancer." ;
+    rdfs:range xsd:float .
+
+obo:GENO_0000896 a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "The score assigned to the enhancer based on experimental evidence." ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000897 a owl:DatatypeProperty ;
+    skos:prefLabel "has biosample name" ;
+    skos:definition "The name of the biosample in which the enhancer activity was observed." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000898 a owl:DatatypeProperty ;
+    skos:prefLabel "has method" ;
+    skos:definition "The method used to identify the enhancer activity." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000899 a owl:DatatypeProperty ;
+    skos:prefLabel "has disease" ;
+    skos:definition "The disease associated with the enhancer." ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000900 a owl:DatatypeProperty ;
+    skos:prefLabel "has refsnp ID" ;
+    skos:definition "The reference SNP ID associated with the enhancer." ;
+    rdfs:range xsd:string .
+```

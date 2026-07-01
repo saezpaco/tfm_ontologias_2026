@@ -1,0 +1,277 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:TFs2enh_PMID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "TFs2enh_PMID" ;
+    skos:definition "PubMed ID for transcription factors to enhancer association" .
+
+base:TFs2enh_method a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "TFs2enh_method" ;
+    skos:definition "Method used for transcription factors to enhancer association" .
+
+base:biosample a owl:DatatypeProperty ;
+    rdfs:domain base:Biosample ;
+    rdfs:range xsd:string ;
+    rdfs:label "biosample" ;
+    skos:definition "Biosample or cell line used in the study" .
+
+base:crm_ID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "crm_ID" ;
+    skos:definition "Unique identifier for cis-regulatory module" .
+
+base:crossref a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "crossref" ;
+    skos:definition "Cross-reference identifier" .
+
+base:current_assembly a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "current_assembly" ;
+    skos:definition "Current genome assembly version" .
+
+base:current_chr a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "current_chr" ;
+    skos:definition "Current chromosome identifier" .
+
+base:disease a owl:DatatypeProperty ;
+    rdfs:domain base:Disease ;
+    rdfs:range xsd:string ;
+    rdfs:label "disease" ;
+    skos:definition "Disease associated with the genetic element" .
+
+base:disease_PMID a owl:DatatypeProperty ;
+    rdfs:domain base:Disease ;
+    rdfs:range xsd:string ;
+    rdfs:label "disease_PMID" ;
+    skos:definition "PubMed ID for disease association" .
+
+base:disease_method a owl:DatatypeProperty ;
+    rdfs:domain base:Disease ;
+    rdfs:range xsd:string ;
+    rdfs:label "disease_method" ;
+    skos:definition "Method used for disease association" .
+
+base:enh2gene_PMID a owl:DatatypeProperty ;
+    rdfs:domain base:Enhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "enh2gene_PMID" ;
+    skos:definition "PubMed ID for enhancer to gene association" .
+
+base:enh2gene_method a owl:DatatypeProperty ;
+    rdfs:domain base:Enhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "enh2gene_method" ;
+    skos:definition "Method used for enhancer to gene association" .
+
+base:enh_PMID a owl:DatatypeProperty ;
+    rdfs:domain base:Enhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "enh_PMID" ;
+    skos:definition "PubMed ID for enhancer" .
+
+base:enh_method a owl:DatatypeProperty ;
+    rdfs:domain base:Enhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "enh_method" ;
+    skos:definition "Method used for enhancer identification" .
+
+base:hgnc_symbol_TFs a owl:DatatypeProperty ;
+    rdfs:domain base:TranscriptionFactor ;
+    rdfs:range xsd:string ;
+    rdfs:label "hgnc_symbol_TFs" ;
+    skos:definition "HGNC symbol for transcription factors" .
+
+base:hgnc_symbol_target_genes a owl:DatatypeProperty ;
+    rdfs:domain base:TargetGene ;
+    rdfs:range xsd:string ;
+    rdfs:label "hgnc_symbol_target_genes" ;
+    skos:definition "HGNC symbol for target genes" .
+
+base:minimum_ratio a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "minimum_ratio" ;
+    skos:definition "Minimum ratio value" .
+
+base:mutation_PMID a owl:DatatypeProperty ;
+    rdfs:domain base:Mutation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mutation_PMID" ;
+    skos:definition "PubMed ID for mutation" .
+
+base:mutation_method a owl:DatatypeProperty ;
+    rdfs:domain base:Mutation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mutation_method" ;
+    skos:definition "Method used for mutation identification" .
+
+base:orig_assembly a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "orig_assembly" ;
+    skos:definition "Original genome assembly version" .
+
+base:orig_chr a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "orig_chr" ;
+    skos:definition "Original chromosome identifier" .
+
+base:original_ID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "original_ID" ;
+    skos:definition "Original identifier" .
+
+base:refsnp_ID a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "refsnp_ID" ;
+    skos:definition "Reference SNP ID" .
+
+base:score a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "score" ;
+    skos:definition "Score value" .
+
+base:source a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "source" ;
+    skos:definition "Source of the data" .
+
+base:type a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "type" ;
+    skos:definition "Type of genetic element" .
+
+base:current_end a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "current_end" ;
+    skos:definition "End coordinate in the current assembly" .
+
+base:current_start a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "current_start" ;
+    skos:definition "Start coordinate in the current assembly" .
+
+base:orig_end a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "orig_end" ;
+    skos:definition "End coordinate in the original assembly" .
+
+base:orig_start a owl:DatatypeProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "orig_start" ;
+    skos:definition "Start coordinate in the original assembly" .
+
+base:hasBiosample a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Biosample ;
+    rdfs:label "hasBiosample" ;
+    skos:definition "Biosample or cell line used in the study" .
+
+base:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Disease ;
+    rdfs:label "associatedWithDisease" ;
+    skos:definition "Disease associated with the genetic element" .
+
+base:identifiedByMethod a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Method ;
+    rdfs:label "identifiedByMethod" ;
+    skos:definition "Method used for identification" .
+
+base:referencedInPublication a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:Publication ;
+    rdfs:label "referencedInPublication" ;
+    skos:definition "Referenced in publication" .
+
+base:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain base:Enhancer ;
+    rdfs:range base:TranscriptionFactor ;
+    rdfs:label "hasTranscriptionFactor" ;
+    skos:definition "Has transcription factor" .
+
+base:targetsGene a owl:ObjectProperty ;
+    rdfs:domain base:Enhancer ;
+    rdfs:range base:TargetGene ;
+    rdfs:label "targetsGene" ;
+    skos:definition "Targets gene" .
+
+base:GeneticElement a owl:Class ;
+    rdfs:label "GeneticElement" ;
+    skos:definition "A genetic element" .
+
+base:Biosample a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:definition "A biosample or cell line used in the study" .
+
+base:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:definition "A disease associated with the genetic element" .
+
+base:Method a owl:Class ;
+    rdfs:label "Method" ;
+    skos:definition "A method used for identification" .
+
+base:Publication a owl:Class ;
+    rdfs:label "Publication" ;
+    skos:definition "A publication" .
+
+base:Enhancer a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "Enhancer" ;
+    skos:definition "An enhancer" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:hasTranscriptionFactor ;
+        owl:someValuesFrom base:TranscriptionFactor
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:targetsGene ;
+        owl:someValuesFrom base:TargetGene
+    ] .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "SuperEnhancer" ;
+    skos:definition "A super enhancer" .
+
+base:TranscriptionFactor a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "TranscriptionFactor" ;
+    skos:definition "A transcription factor" .
+
+base:TargetGene a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "TargetGene" ;
+    skos:definition "A target gene" .
+
+base:Mutation a owl:Class ;
+    rdfs:subClassOf base:GeneticElement ;
+    rdfs:label "Mutation" ;
+    skos:definition "A mutation" .

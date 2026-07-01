@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-06-28T03:43:35.788144",
+  "success": true,
+  "elapsed_seconds": 140.2,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 1087,
+    "total_tokens": 5182
+  },
+  "prompt_tokens_estimate": 2789,
+  "response_chars": 2928,
+  "turtle_chars": 2914,
+  "validation": {
+    "valid": false,
+    "error": "at line 12 of <>:\nBad syntax (Prefix \"hcrm:\" not bound) at ^ in:\n\"...b'\\n@prefix sio:     <http://semanticscience.org/resource/> .\\n\\n'^b'hcrm:crm_ID rdf:type owl:Class ;\\n    rdfs:subClassOf obo:SO_'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bC_stratified_N50/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bC_stratified_N50/response_raw_run2.txt"
+  }
+}

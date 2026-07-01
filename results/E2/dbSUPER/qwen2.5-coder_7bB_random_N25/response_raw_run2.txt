@@ -1,0 +1,460 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology rdf:about "http://example.com/dbSUPER" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for dbSUPER database containing information about cis-regulatory modules, specifically enhancer sequences." ;
+
+crm:CRM a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:GenomicCoordinates ;
+    skos:prefLabel "Has Genomic Coordinates" ;
+    skos:definition "The genomic coordinates of the cis-regulatory module." .
+
+crm:GenomicCoordinates a owl:Class ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "A class representing genomic coordinates with chromosome, start position, and end position." ;
+
+crm:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Has Chromosome" ;
+    skos:definition "The chromosome number of the genomic coordinates." .
+
+crm:hasStartPosition a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Has Start Position" ;
+    skos:definition "The start position of the genomic coordinates." .
+
+crm:hasEndPosition a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicCoordinates ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Has End Position" ;
+    skos:definition "The end position of the genomic coordinates." .
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Has Cell Line Activity" ;
+    skos:definition "The cell line activity associated with the cis-regulatory module." .
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:GO_0003674 ;
+    skos:prefLabel "Has Target Gene" ;
+    skos:definition "The target gene associated with the cis-regulatory module." .
+
+crm:hasAssociatedDisease a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:DOID_0050124 ;
+    skos:prefLabel "Has Associated Disease" ;
+    skos:definition "The disease associated with the cis-regulatory module." .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:GO_0003715 ;
+    skos:prefLabel "Has Transcription Factor" ;
+    skos:definition "The transcription factor associated with the cis-regulatory module." .
+
+crm:hasRank a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Has Rank" ;
+    skos:definition "The rank of the cis-regulatory module." .
+
+crm:SE_01932 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr16" ; crm:hasStartPosition 72866815 ; crm:hasEndPosition 72895386 ] ;
+    crm:hasCellLineActivity "Aorta" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 400 .
+
+crm:SE_01371 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr17" ; crm:hasStartPosition 7378882 ; crm:hasEndPosition 7383861 ] ;
+    crm:hasCellLineActivity "Adrenal Gland" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 519 .
+
+crm:SE_47462 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 80817765 ; crm:hasEndPosition 80920515 ] ;
+    crm:hasCellLineActivity "Pancreas" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 8 .
+
+crm:SE_45873 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 104529407 ; crm:hasEndPosition 104576890 ] ;
+    crm:hasCellLineActivity "Osteoblasts" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 341 .
+
+crm:SE_45918 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr9" ; crm:hasStartPosition 35470312 ; crm:hasEndPosition 35533883 ] ;
+    crm:hasCellLineActivity "Osteoblasts" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 386 .
+
+crm:SE_38524 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 585 .
+
+crm:SE_02311 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr3" ; crm:hasStartPosition 16099720 ; crm:hasEndPosition 16182650 ] ;
+    crm:hasCellLineActivity "Astrocytes" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr5" ; crm:hasStartPosition 133859647 ; crm:hasEndPosition 133864178 ] ;
+    crm:hasCellLineActivity "Right Ventricle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 360 .
+
+crm:SE_64800 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr4" ; crm:hasStartPosition 177908562 ; crm:hasEndPosition 177945740 ] ;
+    crm:hasCellLineActivity "NHEK" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 582 .
+
+crm:SE_19722 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 13715837 ; crm:hasEndPosition 13730297 ] ;
+    crm:hasCellLineActivity "HUVEC" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 76 .
+
+crm:SE_26143 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr10" ; crm:hasStartPosition 73505715 ; crm:hasEndPosition 73534193 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 377 .
+
+crm:SE_58853 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:hasChromosome "chr15" ; crm:hasStartPosition 40336022 ; crm:hasEndPosition 40409018 ] ;
+    crm:hasCellLineActivity "Ly3" ;
+    crm:hasTargetGene obo:GO_0003674 ;
+    crm:hasRank 40 .
+
+crm:SE_49799 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:has

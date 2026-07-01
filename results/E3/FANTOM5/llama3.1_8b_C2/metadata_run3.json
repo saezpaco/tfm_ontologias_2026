@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-05T20:58:08.202824",
+  "success": true,
+  "elapsed_seconds": 119.61,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3360,
+    "completion_tokens": 915,
+    "total_tokens": 4275
+  },
+  "prompt_tokens_estimate": 2095,
+  "response_chars": 2973,
+  "turtle_chars": 2308,
+  "validation": {
+    "valid": false,
+    "error": "at line 56 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'latoryModule ;\\n    rdfs:range hcrm:Disease .\\n\\n# Individuals\\n'^b'CRMHS00000005752 a hcrm:CisRegulatoryModule ;\\n    hcrm:hasEn'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_C2/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_C2/response_raw_run3.txt"
+  }
+}

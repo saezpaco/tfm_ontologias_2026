@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:39:29.372884",
+  "success": true,
+  "elapsed_seconds": 7.63,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 6312,
+    "completion_tokens": 1080,
+    "total_tokens": 7392
+  },
+  "prompt_tokens_estimate": 3891,
+  "response_chars": 3956,
+  "turtle_chars": 3956,
+  "validation": {
+    "valid": true,
+    "n_triples": 60,
+    "n_classes": 5,
+    "n_properties": 9
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oC_stratified_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/gpt-4oC_stratified_N100/response_raw_run3.txt"
+  }
+}

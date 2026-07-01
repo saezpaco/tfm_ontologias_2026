@@ -16,6 +16,7 @@
 @prefix id_pubmed: <http://identifiers.org/pubmed/> .
 @prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
 @prefix dbsuper: <https://asntech.org/dbsuper/> .
+@prefix hgene: <http://rdf.biogateway.eu/gene/9606/> .
 
 # Classes
 hcrm:CisRegulatoryModule a owl:Class ;

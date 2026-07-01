@@ -1,0 +1,59 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "Genomic Enhancer Ontology" ;
+    skos:prefLabel "Genomic Enhancer Ontology" ;
+    skos:definition "An ontology for representing genomic enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    rdfs:subClassOf obo:SO_0001765 ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A region of DNA that can enhance the transcription of other genes." ;
+    skos:exactMatch obo:SO_0001765 .
+
+crm:GenomicCoordinate a owl:Class ;
+    rdfs:subClassOf obo:SO_0000782 ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate that specifies a location within the genome." ;
+    skos:exactMatch obo:SO_0000782 .
+
+crm:StartCoordinate a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:EndCoordinate a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "End Coordinate" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+    skos:exactMatch obo:SO_0001218 .
+
+crm:Evidence a owl:Class ;
+    rdfs:subClassOf obo:GO_0003674 ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information or data that supports the existence of an enhancer." ;
+    skos:exactMatch obo:GO_0003674 .
+
+crm:Supports a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supports" ;
+    skos:definition "Indicates that the evidence supports the enhancer." ;
+    skos:exactMatch obo:GO_0003674 .
+
+crm:HasCoordinate a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Has Coordinate" ;
+    skos:definition "Indicates that the enhancer has a genomic coordinate." ;
+    skos:exactMatch obo:SO_0001765 .

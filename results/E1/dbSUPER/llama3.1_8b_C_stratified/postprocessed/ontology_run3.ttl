@@ -1,0 +1,171 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "Super-enhancers database" ;
+  skos:definition "Database of super-enhancers with genomic coordinates, cell lines and target genes." .
+
+<owl:Class rdf:about="http://example.org/Crm">
+  a owl:Class ;
+  rdfs:label "Crm" ;
+  skos:prefLabel "Cis-regulatory module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression by binding transcription factors." .
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/GenomicCoordinate">
+  a owl:Class ;
+  rdfs:label "GenomicCoordinate" ;
+  skos:prefLabel "Genomic coordinate" ;
+  skos:definition "A point or range of points on the genome." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "hasGenomicCoordinate" ;
+  skos:prefLabel "Has genomic coordinate" ;
+  skos:definition "A CRM is associated with one or more genomic coordinates." .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/start">
+  a owl:DatatypeProperty ;
+  rdfs:label "start" ;
+  skos:prefLabel "Start position" ;
+  skos:definition "The starting point of the genomic coordinate." ;
+  rdfs:range xsd:int .
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/stop">
+  a owl:DatatypeProperty ;
+  rdfs:label "stop" ;
+  skos:prefLabel "Stop position" ;
+  skos:definition "The ending point of the genomic coordinate." ;
+  rdfs:range xsd:int .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasEvidence">
+  a owl:ObjectProperty ;
+  rdfs:label "hasEvidence" ;
+  skos:prefLabel "Has evidence" ;
+  skos:definition "A CRM is supported by one or more pieces of experimental evidence." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Evidence">
+  a owl:Class ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Experimental evidence" ;
+  skos:definition "A piece of data that supports the existence or function of a CRM." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasCellLine">
+  a owl:ObjectProperty ;
+  rdfs:label "hasCellLine" ;
+  skos:prefLabel "Has cell line" ;
+  skos:definition "A CRM is active in one or more cell lines." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/CellLine">
+  a owl:Class ;
+  rdfs:label "CellLine" ;
+  skos:prefLabel "Cell line" ;
+  skos:definition "A cultured cell population used in experiments." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/targetsGene">
+  a owl:ObjectProperty ;
+  rdfs:label "targetsGene" ;
+  skos:prefLabel "Targets gene" ;
+  skos:definition "A CRM regulates the expression of one or more genes." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Gene">
+  a owl:Class ;
+  rdfs:label "Gene" ;
+  skos:prefLabel "Gene" ;
+  skos:definition "A unit of heredity that is passed from one generation to the next." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasDiseaseAssociation">
+  a owl:ObjectProperty ;
+  rdfs:label "hasDiseaseAssociation" ;
+  skos:prefLabel "Has disease association" ;
+  skos:definition "A CRM is associated with one or more diseases." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Disease">
+  a owl:Class ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "A disorder of structure or function in a living organism." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/interactsWith">
+  a owl:ObjectProperty ;
+  rdfs:label "interactsWith" ;
+  skos:prefLabel "Interacts with" ;
+  skos:definition "A CRM interacts with one or more transcription factors." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactor">
+  a owl:Class ;
+  rdfs:label "TranscriptionFactor" ;
+  skos:prefLabel "Transcription factor" ;
+  skos:definition "A protein that binds to DNA and regulates gene expression." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasRank">
+  a owl:ObjectProperty ;
+  rdfs:label "hasRank" ;
+  skos:prefLabel "Has rank" ;
+  skos:definition "A CRM has one or more ranks in the database." .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/rank">
+  a owl:DatatypeProperty ;
+  rdfs:label "rank" ;
+  skos:prefLabel "Rank" ;
+  skos:definition "A numerical value representing the importance of a CRM." ;
+  rdfs:range xsd:int .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGeneSymbol">
+  a owl:ObjectProperty ;
+  rdfs:label "hasGeneSymbol" ;
+  skos:prefLabel "Has gene symbol" ;
+  skos:definition "A CRM is associated with one or more gene symbols." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/GeneSymbol">
+  a owl:Class ;
+  rdfs:label "GeneSymbol" ;
+  skos:prefLabel "Gene symbol" ;
+  skos:definition "A unique identifier for a gene, often in the form of a string." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasCellName">
+  a owl:ObjectProperty ;
+  rdfs:label "hasCellName" ;
+  skos:prefLabel "Has cell name" ;
+  skos:definition "A CRM is active in one or more cell lines." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/CellName">
+  a owl:Class ;
+  rdfs:label "CellName" ;
+  skos:prefLabel "Cell name" ;
+  skos:definition "A string identifier for a cell line." .
+</owl:Class>
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> <http://example.org/Crm> .
+skos:closeMatch <http://purl.obolibrary.org/obo/BFO_0000050> <http://example.org/GenomicCoordinate> .
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> <http://example.org/Crm> .
+skos:closeMatch <http://purl.obolibrary.org/obo/BFO_0000050> <http://example.org/GenomicCoordinate> .
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> <http://example.org/Crm> .
+skos:closeMatch <http://purl.obolibrary.org/obo/BFO_0000050> <http://example.org/GenomicCoordinate> .

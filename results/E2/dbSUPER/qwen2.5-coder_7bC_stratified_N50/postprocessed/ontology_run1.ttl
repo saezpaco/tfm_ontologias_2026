@@ -1,0 +1,95 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology rdf:about "http://example.org/dbSUPER" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for cis-regulatory modules, specifically enhancer sequences in the human genome." .
+
+crm:CRM a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:GenomicCoordinates ;
+    skos:prefLabel "has Genomic Coordinates" ;
+    skos:definition "The genomic coordinates of the cis-regulatory module." .
+
+crm:GenomicCoordinates a owl:Class ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "A class representing genomic coordinates with chromosome, start position, and end position." .
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:CellLine ;
+    skos:prefLabel "has Cell Line Activity" ;
+    skos:definition "The cell line activity associated with the cis-regulatory module." .
+
+crm:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A class representing different types of cell lines." .
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:Gene ;
+    skos:prefLabel "has Target Gene" ;
+    skos:definition "The target gene regulated by the cis-regulatory module." .
+
+crm:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A class representing genes in the human genome." .
+
+crm:hasAssociatedDisease a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:Disease ;
+    skos:prefLabel "has Associated Disease" ;
+    skos:definition "The disease associated with the cis-regulatory module." .
+
+crm:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A class representing diseases in the human genome." .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:TranscriptionFactor ;
+    skos:prefLabel "has Transcription Factor" ;
+    skos:definition "The transcription factor associated with the cis-regulatory module." .
+
+crm:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A class representing transcription factors in the human genome." .
+
+crm:hasRank a owl:DatatypeProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has Rank" ;
+    skos:definition "The rank of the cis-regulatory module based on some criteria." .
+
+crm:SE_50575 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:chrom "chr20" ; crm:start 35921900 ; crm:end 35986561 ] ;
+    crm:hasCellLineActivity "Sigmoid Colon" ;
+    crm:hasTargetGene "SRC" ;
+    crm:hasRank 526 .
+
+crm:SE_26240 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:chrom "chr10" ; crm:start 17028302 ; crm:end 17081284 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene "TRDMT1" ;
+    crm:hasRank 474 .
+
+crm:SE_18593 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:chrom "chr10" ; crm:start 17028302 ; crm:end 17081284 ] ;
+    crm:hasCellLineActivity "Duodenum Smooth Muscle" ;
+    crm:hasTargetGene "TRDMT1" ;
+    crm:hasRank 474 .
+
+crm:SE_50575 a crm:CRM ;
+    crm:hasGenomicCoordinates [ crm:chrom "chr20" ; crm:start 35921900 ; crm:end 35986561 ] ;
+    crm:hasCellLineActivity "Sigmoid Colon" ;
+    crm:hasTargetGene "SRC" ;
+    crm:hasRank 526 .

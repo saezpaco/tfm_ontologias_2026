@@ -1,0 +1,77 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+obo:SO_0000727 rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CRM .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:CellLine rdf:type owl:Class ;
+    rdfs:label "Cell Line" .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+# Properties
+biolink:has_genomic_location rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" .
+
+biolink:has_target_gene rdf:type owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:has_target_gene .
+
+biolink:associated_with_disease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" .
+
+biolink:expressed_in rdf:type owl:ObjectProperty ;
+    rdfs:label "expressed in" ;
+    skos:exactMatch biolink:expressed_in .
+
+biolink:interacts_with rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with" ;
+    skos:exactMatch obo:RO_0002436 .
+
+# Example individuals
+<http://rdf.biogateway.eu/crm/CRMHS00000005752> rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chr1:16039967-16040344" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:expressed_in <http://rdf.biogateway.eu/cellline/MS-1> ;
+    biolink:has_target_gene <http://rdf.biogateway.eu/gene/FAM131C> ;
+    biolink:interacts_with <http://rdf.biogateway.eu/tf/ZBTB17> .
+
+<http://rdf.biogateway.eu/gene/FAM131C> rdf:type biolink:Gene ;
+    rdfs:label "FAM131C" .
+
+<http://rdf.biogateway.eu/cellline/MS-1> rdf:type biolink:CellLine ;
+    rdfs:label "MS-1" .
+
+<http://rdf.biogateway.eu/tf/ZBTB17> rdf:type biolink:TranscriptionFactor ;
+    rdfs:label "ZBTB17" .
+```

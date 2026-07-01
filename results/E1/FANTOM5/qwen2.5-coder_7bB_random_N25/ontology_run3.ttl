@@ -1,0 +1,704 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "Cis-Regulatory Module Ontology" ;
+    rdfs:comment "An ontology for cis-regulatory modules, specifically enhancers identified by CAGE-seq." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that modulates the transcription rate of target genes in the human genome." ;
+    rdfs:subClassOf obo:SIO_010245 ;  # Biological Region
+    skos:exactMatch obo:SO_0001769 .  # Enhancer
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate that specifies the location of a cis-regulatory module within the genome." ;
+
+crm:Chromosome a owl:Class ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "One of the 46 chromosomes in human cells, consisting of DNA and proteins." ;
+    rdfs:subClassOf obo:SIO_010245 ;  # Biological Region
+
+crm:Start a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Start" ;
+    rdfs:comment "The starting position of the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "The starting base pair position of a genomic region." ;
+
+crm:End a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "End" ;
+    rdfs:comment "The ending position of the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Position" ;
+    skos:definition "The ending base pair position of a genomic region." ;
+
+crm:Name a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Name" ;
+    rdfs:comment "A unique identifier for the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Enhancer Name" ;
+    skos:definition "A string that uniquely identifies an enhancer within a genome." ;
+
+crm:Score a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Score" ;
+    rdfs:comment "A measure of the activity or significance of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Activity Score" ;
+    skos:definition "An integer score indicating the level of activity or significance of an enhancer." ;
+
+crm:Strand a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Strand" ;
+    rdfs:comment "The DNA strand on which the enhancer is located (positive or negative)." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "DNA Strand" ;
+    skos:definition "Indicates whether the enhancer is located on the positive or negative strand of DNA." ;
+
+crm:ThickStart a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Thick Start" ;
+    rdfs:comment "The start position for thick display (e.g., in genome browsers)." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Thick Start Position" ;
+    skos:definition "The starting base pair position for thick display of a genomic region." ;
+
+crm:ThickEnd a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Thick End" ;
+    rdfs:comment "The end position for thick display (e.g., in genome browsers)." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Thick End Position" ;
+    skos:definition "The ending base pair position for thick display of a genomic region." ;
+
+crm:ItemRgb a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Item RGB" ;
+    rdfs:comment "A color code used in genome browsers to represent the enhancer." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Color Code" ;
+    skos:definition "A string representing a color code for visual representation of an enhancer." ;
+
+crm:BlockCount a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Block Count" ;
+    rdfs:comment "The number of blocks in the genomic coordinate (e.g., exons or introns)." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Number of Blocks" ;
+    skos:definition "An integer indicating the number of blocks within a genomic region." ;
+
+crm:BlockSizes a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Block Sizes" ;
+    rdfs:comment "The sizes of each block in the genomic coordinate (e.g., exons or introns)." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Block Sizes" ;
+    skos:definition "A string representing the sizes of each block within a genomic region." ;
+
+crm:BlockStarts a owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
+    rdfs:label "Block Starts" ;
+    rdfs:comment "The starting positions of each block in the genomic coordinate (e.g., exons or introns)." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Block Start Positions" ;
+    skos:definition "A string representing the starting positions of each block within a genomic region." ;
+
+crm:evidence a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence" ;
+    rdfs:comment "The evidence supporting the activity or significance of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Supporting Evidence" ;
+    skos:definition "Evidence that supports the activity or significance of an enhancer." ;
+
+crm:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Genomic Coordinate" ;
+    rdfs:comment "The genomic coordinate associated with the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Genomic Location" ;
+    skos:definition "The genomic location of an enhancer." ;
+
+crm:hasChromosome a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Chromosome" ;
+    rdfs:comment "The chromosome on which the enhancer is located." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range crm:Chromosome ;
+    skos:prefLabel "Located on Chromosome" ;
+    skos:definition "Indicates the chromosome on which an enhancer is located." ;
+
+crm:hasName a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Name" ;
+    rdfs:comment "The name of the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Enhancer Name" ;
+    skos:definition "Indicates the name of an enhancer." ;
+
+crm:hasScore a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "The score associated with the enhancer." ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Activity Score" ;
+    skos:definition "Indicates the activity or significance score of an enhancer." ;
+
+crm:hasStrand a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Strand" ;
+    rdfs:comment "The strand on which the enhancer is located." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "DNA Strand" ;
+    skos:definition "Indicates whether an enhancer is located on the positive or negative strand of DNA." ;
+
+crm:hasThickStart a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Thick Start" ;
+    rdfs:comment "The thick start position associated with the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Thick Start Position" ;
+    skos:definition "Indicates the thick start position of a genomic region." ;
+
+crm:hasThickEnd a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Thick End" ;
+    rdfs:comment "The thick end position associated with the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Thick End Position" ;
+    skos:definition "Indicates the thick end position of a genomic region." ;
+
+crm:hasItemRgb a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Item RGB" ;
+    rdfs:comment "The item RGB associated with the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Color Code" ;
+    skos:definition "Indicates the color code of a genomic region." ;
+
+crm:hasBlockCount a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Block Count" ;
+    rdfs:comment "The block count associated with the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Number of Blocks" ;
+    skos:definition "Indicates the number of blocks in a genomic region." ;
+
+crm:hasBlockSizes a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Block Sizes" ;
+    rdfs:comment "The block sizes associated with the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Block Sizes" ;
+    skos:definition "Indicates the sizes of blocks in a genomic region." ;
+
+crm:hasBlockStarts a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Block Starts" ;
+    rdfs:comment "The block starts associated with the genomic coordinate." ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Block Start Positions" ;
+    skos:definition "Indicates the starting positions of blocks in a genomic region." ;
+
+crm:evidenceType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Type" ;
+    rdfs:comment "The type of evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Type of Evidence" ;
+    skos:definition "Indicates the type of evidence supporting an enhancer." ;
+
+crm:evidenceSource a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Source" ;
+    rdfs:comment "The source of the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Source of Evidence" ;
+    skos:definition "Indicates the source of evidence supporting an enhancer." ;
+
+crm:evidenceDescription a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Description" ;
+    rdfs:comment "A description of the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Description of Evidence" ;
+    skos:definition "Provides a description of evidence supporting an enhancer." ;
+
+crm:evidenceDate a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Date" ;
+    rdfs:comment "The date when the evidence was collected or reported." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:date ;
+    skos:prefLabel "Date of Evidence" ;
+    skos:definition "Indicates the date when evidence supporting an enhancer was collected or reported." ;
+
+crm:evidenceConfidence a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Confidence" ;
+    rdfs:comment "The confidence level in the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Confidence Level" ;
+    skos:definition "Indicates the confidence level in evidence supporting an enhancer." ;
+
+crm:evidenceSupports a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Supports" ;
+    rdfs:comment "The property indicating what is supported by the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Supported By Evidence" ;
+    skos:definition "Indicates what is supported by evidence supporting an enhancer." ;
+
+crm:evidenceContradicts a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Contradicts" ;
+    rdfs:comment "The property indicating what is contradicted by the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Contradicted By Evidence" ;
+    skos:definition "Indicates what is contradicted by evidence supporting an enhancer." ;
+
+crm:evidenceModifier a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Modifier" ;
+    rdfs:comment "The property indicating any modifiers to the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Modifier of Evidence" ;
+    skos:definition "Indicates any modifiers to evidence supporting an enhancer." ;
+
+crm:evidenceQualifier a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Qualifier" ;
+    rdfs:comment "The property indicating qualifiers for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Qualifier of Evidence" ;
+    skos:definition "Indicates any qualifiers for evidence supporting an enhancer." ;
+
+crm:evidenceContext a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Context" ;
+    rdfs:comment "The property indicating the context in which the evidence was collected or reported." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Context of Evidence" ;
+    skos:definition "Indicates the context in which evidence supporting an enhancer was collected or reported." ;
+
+crm:evidenceMethod a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Method" ;
+    rdfs:comment "The method used to collect or report the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Method of Evidence Collection" ;
+    skos:definition "Indicates the method used to collect or report evidence supporting an enhancer." ;
+
+crm:evidenceReference a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Reference" ;
+    rdfs:comment "The reference for the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Reference of Evidence" ;
+    skos:definition "Indicates the reference for evidence supporting an enhancer." ;
+
+crm:evidenceComment a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Comment" ;
+    rdfs:comment "A comment about the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Comment on Evidence" ;
+    skos:definition "Provides a comment about evidence supporting an enhancer." ;
+
+crm:evidenceStatus a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Status" ;
+    rdfs:comment "The status of the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Status of Evidence" ;
+    skos:definition "Indicates the status of evidence supporting an enhancer." ;
+
+crm:evidencePriority a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Priority" ;
+    rdfs:comment "The priority level of the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Priority of Evidence" ;
+    skos:definition "Indicates the priority level of evidence supporting an enhancer." ;
+
+crm:evidenceImpact a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Impact" ;
+    rdfs:comment "The impact of the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Impact of Evidence" ;
+    skos:definition "Indicates the impact of evidence supporting an enhancer." ;
+
+crm:evidenceConfidenceLevel a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Confidence Level" ;
+    rdfs:comment "The confidence level in the evidence supporting the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Confidence Level of Evidence" ;
+    skos:definition "Indicates the confidence level in evidence supporting an enhancer." ;
+
+crm:evidenceSupportsEnhancer a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Supports Enhancer" ;
+    rdfs:comment "The property indicating that the evidence supports the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Enhancer Supported by Evidence" ;
+    skos:definition "Indicates that evidence supports an enhancer." ;
+
+crm:evidenceContradictsEnhancer a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Contradicts Enhancer" ;
+    rdfs:comment "The property indicating that the evidence contradicts the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Enhancer Contradicted by Evidence" ;
+    skos:definition "Indicates that evidence contradicts an enhancer." ;
+
+crm:evidenceModifierType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Modifier Type" ;
+    rdfs:comment "The type of modifier for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Modifier" ;
+    skos:definition "Indicates the type of modifier for evidence supporting an enhancer." ;
+
+crm:evidenceQualifierType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Qualifier Type" ;
+    rdfs:comment "The type of qualifier for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Qualifier" ;
+    skos:definition "Indicates the type of qualifier for evidence supporting an enhancer." ;
+
+crm:evidenceContextType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Context Type" ;
+    rdfs:comment "The type of context for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Context" ;
+    skos:definition "Indicates the type of context for evidence supporting an enhancer." ;
+
+crm:evidenceMethodType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Method Type" ;
+    rdfs:comment "The type of method used to collect or report the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Collection Method" ;
+    skos:definition "Indicates the type of method used to collect or report evidence supporting an enhancer." ;
+
+crm:evidenceReferenceType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Reference Type" ;
+    rdfs:comment "The type of reference for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Reference" ;
+    skos:definition "Indicates the type of reference for evidence supporting an enhancer." ;
+
+crm:evidenceCommentType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Comment Type" ;
+    rdfs:comment "The type of comment about the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Comment" ;
+    skos:definition "Indicates the type of comment about evidence supporting an enhancer." ;
+
+crm:evidenceStatusType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Status Type" ;
+    rdfs:comment "The type of status for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Status" ;
+    skos:definition "Indicates the type of status for evidence supporting an enhancer." ;
+
+crm:evidencePriorityType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Priority Type" ;
+    rdfs:comment "The type of priority level for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Priority" ;
+    skos:definition "Indicates the type of priority level for evidence supporting an enhancer." ;
+
+crm:evidenceImpactType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Impact Type" ;
+    rdfs:comment "The type of impact of the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Impact" ;
+    skos:definition "Indicates the type of impact of evidence supporting an enhancer." ;
+
+crm:evidenceConfidenceLevelType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Confidence Level Type" ;
+    rdfs:comment "The type of confidence level in the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Confidence Level" ;
+    skos:definition "Indicates the type of confidence level in evidence supporting an enhancer." ;
+
+crm:evidenceSupportsEnhancerType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Supports Enhancer Type" ;
+    rdfs:comment "The type of property indicating that the evidence supports the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Type of Enhancer Supported by Evidence" ;
+    skos:definition "Indicates the type of property indicating that evidence supports an enhancer." ;
+
+crm:evidenceContradictsEnhancerType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Contradicts Enhancer Type" ;
+    rdfs:comment "The type of property indicating that the evidence contradicts the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Type of Enhancer Contradicted by Evidence" ;
+    skos:definition "Indicates the type of property indicating that evidence contradicts an enhancer." ;
+
+crm:evidenceModifierTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Modifier Type Type" ;
+    rdfs:comment "The type of property indicating the type of modifier for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Modifier Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of modifier for evidence supporting an enhancer." ;
+
+crm:evidenceQualifierTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Qualifier Type Type" ;
+    rdfs:comment "The type of property indicating the type of qualifier for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Qualifier Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of qualifier for evidence supporting an enhancer." ;
+
+crm:evidenceContextTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Context Type Type" ;
+    rdfs:comment "The type of property indicating the type of context for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Context Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of context for evidence supporting an enhancer." ;
+
+crm:evidenceMethodTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Method Type Type" ;
+    rdfs:comment "The type of property indicating the type of method used to collect or report the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Collection Method Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of method used to collect or report evidence supporting an enhancer." ;
+
+crm:evidenceReferenceTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Reference Type Type" ;
+    rdfs:comment "The type of property indicating the type of reference for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Reference Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of reference for evidence supporting an enhancer." ;
+
+crm:evidenceCommentTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Comment Type Type" ;
+    rdfs:comment "The type of property indicating the type of comment about the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Comment Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of comment about evidence supporting an enhancer." ;
+
+crm:evidenceStatusTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Status Type Type" ;
+    rdfs:comment "The type of property indicating the type of status for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Status Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of status for evidence supporting an enhancer." ;
+
+crm:evidencePriorityTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Priority Type Type" ;
+    rdfs:comment "The type of property indicating the type of priority level for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Priority Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of priority level for evidence supporting an enhancer." ;
+
+crm:evidenceImpactTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Impact Type Type" ;
+    rdfs:comment "The type of property indicating the type of impact of the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Impact Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of impact of evidence supporting an enhancer." ;
+
+crm:evidenceConfidenceLevelTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Confidence Level Type Type" ;
+    rdfs:comment "The type of property indicating the type of confidence level in the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Confidence Level Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of confidence level in evidence supporting an enhancer." ;
+
+crm:evidenceSupportsEnhancerTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Supports Enhancer Type Type" ;
+    rdfs:comment "The type of property indicating that the evidence supports the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Type of Enhancer Supported by Evidence Type Property" ;
+    skos:definition "Indicates the type of property indicating that evidence supports an enhancer." ;
+
+crm:evidenceContradictsEnhancerTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Contradicts Enhancer Type Type" ;
+    rdfs:comment "The type of property indicating that the evidence contradicts the enhancer." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:SIO_010245 ;  # Biological Evidence
+    skos:prefLabel "Type of Enhancer Contradicted by Evidence Type Property" ;
+    skos:definition "Indicates the type of property indicating that evidence contradicts an enhancer." ;
+
+crm:evidenceModifierTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Modifier Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of modifier for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Modifier Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of modifier for evidence supporting an enhancer." ;
+
+crm:evidenceQualifierTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Qualifier Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of qualifier for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Qualifier Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of qualifier for evidence supporting an enhancer." ;
+
+crm:evidenceContextTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Context Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of context for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Context Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of context for evidence supporting an enhancer." ;
+
+crm:evidenceMethodTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Method Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of method used to collect or report the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Collection Method Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of method used to collect or report evidence supporting an enhancer." ;
+
+crm:evidenceReferenceTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Reference Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of reference for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Reference Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of reference for evidence supporting an enhancer." ;
+
+crm:evidenceCommentTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Comment Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of comment about the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Comment Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of comment about evidence supporting an enhancer." ;
+
+crm:evidenceStatusTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Status Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of status for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Status Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of status for evidence supporting an enhancer." ;
+
+crm:evidencePriorityTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Priority Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of priority level for the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Priority Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of priority level for evidence supporting an enhancer." ;
+
+crm:evidenceImpactTypeTypeType a owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:label "Evidence Impact Type Type Type" ;
+    rdfs:comment "The type of property indicating the type of impact of the evidence." ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Type of Evidence Impact Type Type Property" ;
+    skos:definition "Indicates the type of property indicating the type of impact of evidence supporting an enhancer." ;
+
+crm:evidenceConfidenceLevelTypeTypeType

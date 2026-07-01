@@ -1,0 +1,134 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:cellName a owl:DatatypeProperty ;
+    rdfs:domain base:CellLine ;
+    rdfs:range xsd:string ;
+    rdfs:label "cell name" ;
+    skos:definition "name of the cell line or biosample" .
+
+base:chrom a owl:DatatypeProperty ;
+    rdfs:domain base:Chromosome ;
+    rdfs:range xsd:string ;
+    rdfs:label "chromosome identifier" ;
+    skos:definition "chromosome identifier" .
+
+base:geneSymbol a owl:DatatypeProperty ;
+    rdfs:domain base:Gene ;
+    rdfs:range xsd:string ;
+    rdfs:label "gene symbol" ;
+    skos:definition "symbol of the target gene" .
+
+base:seId a owl:DatatypeProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "super-enhancer identifier" ;
+    skos:definition "identifier for the super-enhancer" .
+
+base:rank a owl:DatatypeProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range xsd:float ;
+    rdfs:label "rank" ;
+    skos:definition "rank of the super-enhancer" .
+
+base:start a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:float ;
+    rdfs:label "start coordinate" ;
+    skos:definition "start coordinate of the genomic region" .
+
+base:stop a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range xsd:float ;
+    rdfs:label "stop coordinate" ;
+    skos:definition "stop coordinate of the genomic region" .
+
+base:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain base:GeneticElement ;
+    rdfs:range base:GenomicCoordinate ;
+    rdfs:label "has genomic coordinate" ;
+    skos:definition "relationship between a genetic element and its genomic coordinate" .
+
+base:isLocatedIn a owl:ObjectProperty ;
+    rdfs:domain base:GenomicCoordinate ;
+    rdfs:range base:Chromosome ;
+    rdfs:label "is located in" ;
+    skos:definition "relationship between a genomic coordinate and a chromosome" .
+
+base:isExpressedIn a owl:ObjectProperty ;
+    rdfs:domain base:Gene ;
+    rdfs:range base:CellLine ;
+    rdfs:label "is expressed in" ;
+    skos:definition "relationship between a gene and a cell line" .
+
+base:targetsGene a owl:ObjectProperty ;
+    rdfs:domain base:SuperEnhancer ;
+    rdfs:range base:Gene ;
+    rdfs:label "targets gene" ;
+    skos:definition "relationship between a super-enhancer and a gene" .
+
+base:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    skos:definition "A genetic element" .
+
+base:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:definition "A genomic coordinate" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:start ;
+        owl:allValuesFrom xsd:float
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:stop ;
+        owl:allValuesFrom xsd:float
+    ] .
+
+base:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:definition "A cell line or biosample" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:cellName ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:definition "A gene" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:geneSymbol ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:definition "A super-enhancer" ;
+    rdfs:subClassOf base:Enhancer, [
+        a owl:Restriction ;
+        owl:onProperty base:seId ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:rank ;
+        owl:allValuesFrom xsd:float
+    ] .
+
+base:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:definition "An enhancer" ;
+    rdfs:subClassOf base:GeneticElement .
+
+base:Chromosome a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:definition "A chromosome" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:chrom ;
+        owl:allValuesFrom xsd:string
+    ] .

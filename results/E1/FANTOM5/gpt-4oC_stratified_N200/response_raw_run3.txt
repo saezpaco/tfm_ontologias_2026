@@ -1,0 +1,69 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+obo:SO_0000733 a owl:Class ;
+    skos:prefLabel "Genomic coordinate" ;
+    skos:definition "A specific location on a chromosome." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000733> .
+
+obo:GO_0006355 a owl:Class ;
+    skos:prefLabel "Regulation of transcription, DNA-templated" ;
+    skos:definition "Any process that modulates the frequency, rate or extent of cellular DNA-templated transcription." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/GO_0006355> .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory region to its target gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002205> .
+
+obo:RO_0002436 a owl:ObjectProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Relates an entity to the evidence supporting its existence or function." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/RO_0002436> .
+
+# Datatype Properties
+obo:SO_0000733_start a owl:DatatypeProperty ;
+    skos:prefLabel "genomic start coordinate" ;
+    skos:definition "The start position of a genomic feature on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:SO_0000733_end a owl:DatatypeProperty ;
+    skos:prefLabel "genomic end coordinate" ;
+    skos:definition "The end position of a genomic feature on a chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:SO_0000733_chr a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which a genomic feature is located." ;
+    rdfs:range xsd:string .
+
+obo:SO_0000733_assembly a owl:DatatypeProperty ;
+    skos:prefLabel "genome assembly" ;
+    skos:definition "The reference genome assembly version." ;
+    rdfs:range xsd:string .
+
+obo:RO_0002436_method a owl:DatatypeProperty ;
+    skos:prefLabel "evidence method" ;
+    skos:definition "The method used to obtain evidence for a genomic feature." ;
+    rdfs:range xsd:string .
+
+obo:RO_0002436_PMID a owl:DatatypeProperty ;
+    skos:prefLabel "evidence PMID" ;
+    skos:definition "The PubMed ID of the publication providing evidence." ;
+    rdfs:range xsd:string .

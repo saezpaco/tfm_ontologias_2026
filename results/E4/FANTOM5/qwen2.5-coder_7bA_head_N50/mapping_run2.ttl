@@ -1,0 +1,281 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://www.w3.org/ns/sparql#> .
+@prefix geo: <https://genomic_elements_ontology.com#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:hasBlockCount;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockCount>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasChromEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromEnd>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasChromStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromStart>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScore>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasThickEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapThickEnd>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasThickStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapThickStart>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasBlockSizes;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockSizes>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasBlockStarts;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockStarts>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasChrom;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChrom>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasItemRgb;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapItemRgb>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasName;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapName>;
+        ]
+    ],
+    [
+        rr:predicate geo:hasStrand;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStrand>;
+        ]
+    ].
+
+<#TriplesMapBlockCount> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:blockCountValue;
+        rr:objectMap [
+            rr:template "{{blockCount}}";
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapChromEnd> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:chromEndValue;
+        rr:objectMap [
+            rr:template "{{chromEnd}}";
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapChromStart> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:chromStartValue;
+        rr:objectMap [
+            rr:template "{{chromStart}}";
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:scoreValue;
+        rr:objectMap [
+            rr:template "{{score}}";
+            rr:datatype xsd:float
+        ]
+    ].
+
+<#TriplesMapThickEnd> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:thickEndValue;
+        rr:objectMap [
+            rr:template "{{thickEnd}}";
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapThickStart> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:thickStartValue;
+        rr:objectMap [
+            rr:template "{{thickStart}}";
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapBlockSizes> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:blockSizesValue;
+        rr:objectMap [
+            rr:template "{{blockSizes}}";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapBlockStarts> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:blockStartsValue;
+        rr:objectMap [
+            rr:template "{{blockStarts}}";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapChrom> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:chromValue;
+        rr:objectMap [
+            rr:template "{{chrom}}";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapItemRgb> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:itemRgbValue;
+        rr:objectMap [
+            rr:template "{{itemRgb}}";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapName> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:nameValue;
+        rr:objectMap [
+            rr:template "{{name}}";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapStrand> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "geo:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geo:strandValue;
+        rr:objectMap [
+            rr:template "{{strand}}";
+            rr:datatype xsd:string
+        ]
+    ].
+```

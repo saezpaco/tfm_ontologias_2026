@@ -1,0 +1,24 @@
+{
+  "run": 1,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=200/FANTOM5.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 42,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-30T12:04:53.027371+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.023,
+    "plan_s": 112.046,
+    "plan_chars": 3688,
+    "plan_prompt_chars": 9597,
+    "onto_s": 148.276,
+    "onto_chars": 4017,
+    "onto_prompt_chars": 12665,
+    "map_s": 235.708,
+    "map_chars": 7366,
+    "map_prompt_chars": 10374
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-30T12:13:09.080911+00:00",
+  "total_s": 496.053
+}

@@ -1,0 +1,682 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+<owl:Class rdf:about="http://example.org/CRM">
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module (CRM)" ;
+  skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression" .
+  obo:SO_0000163 <http://example.org/CRM> .
+
+<owl:Class rdf:about="http://example.org/Enhancer">
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A type of CRM that increases gene expression" .
+  obo:SO_0000163 <http://example.org/Enhancer> .
+
+<owl:ObjectProperty rdf:about="http://example.org/targets">
+  a owl:ObjectProperty ;
+  rdfs:label "targets" ;
+  skos:prefLabel "targets" ;
+  skos:definition "A CRM that targets a specific gene" .
+  obo:BFO_0000050 <http://example.org/targets> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/genomicCoordinate">
+  a owl:DatatypeProperty ;
+  rdfs:label "genomic coordinate" ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A point in the genome where a CRM is located" .
+  xsd:string <http://example.org/genomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/evidence">
+  a owl:ObjectProperty ;
+  rdfs:label "evidence" ;
+  skos:prefLabel "evidence" ;
+  skos:definition "Experimental data supporting the existence of a CRM" .
+  obo:BFO_0000050 <http://example.org/evidence> .
+
+<owl:Class rdf:about="http://example.org/GenomicCoordinate">
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A point in the genome where a CRM is located" .
+  obo:SO_0000163 <http://example.org/GenomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "associated with" ;
+  skos:prefLabel "associated with" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/associatedWith> .
+
+<owl:Class rdf:about="http://example.org/Disease">
+  a owl:Class ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "A medical condition caused by genetic or environmental factors" .
+  obo:SO_0000163 <http://example.org/Disease> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interactsWith">
+  a owl:ObjectProperty ;
+  rdfs:label "interacts with" ;
+  skos:prefLabel "interacts with" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interactsWith> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactor">
+  a owl:Class ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that regulates gene expression by binding to DNA or RNA" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactor> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressedIn">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed in" ;
+  skos:prefLabel "expressed in" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressedIn> .
+
+<owl:Class rdf:about="http://example.org/CellLine">
+  a owl:Class ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "A population of cells grown in culture for research or therapeutic purposes" .
+  obo:SO_0000163 <http://example.org/CellLine> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate" ;
+  skos:prefLabel "has genomic coordinate" ;
+  skos:definition "A CRM that has a specific genomic coordinate" .
+  obo:BFO_0000050 <http://example.org/hasGenomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isEvidenceFor">
+  a owl:ObjectProperty ;
+  rdfs:label "is evidence for" ;
+  skos:prefLabel "is evidence for" ;
+  skos:definition "A CRM that is supported by experimental data" .
+  obo:BFO_0000050 <http://example.org/isEvidenceFor> .
+
+<owl:Class rdf:about="http://example.org/ExperimentalData">
+  a owl:Class ;
+  rdfs:label "Experimental Data" ;
+  skos:prefLabel "Experimental Data" ;
+  skos:definition "Data collected through experimentation, such as sequencing or microarray data" .
+  obo:SO_0000163 <http://example.org/ExperimentalData> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isAssociatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "is associated with" ;
+  skos:prefLabel "is associated with" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/isAssociatedWith> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interacts">
+  a owl:ObjectProperty ;
+  rdfs:label "interacts" ;
+  skos:prefLabel "interacts" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interacts> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressed">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed" ;
+  skos:prefLabel "expressed" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressed> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasEvidence">
+  a owl:ObjectProperty ;
+  rdfs:label "has evidence" ;
+  skos:prefLabel "has evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:BFO_0000050 <http://example.org/hasEvidence> .
+
+<owl:Class rdf:about="http://example.org/CRMWithEvidence">
+  a owl:Class ;
+  rdfs:label "CRM with Evidence" ;
+  skos:prefLabel "CRM with Evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:SO_0000163 <http://example.org/CRMWithEvidence> .
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "associated disease" ;
+  skos:prefLabel "associated disease" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/associatedDisease> .
+
+<owl:Class rdf:about="http://example.org/DiseaseAssociation">
+  a owl:Class ;
+  rdfs:label "Disease Association" ;
+  skos:prefLabel "Disease Association" ;
+  skos:definition "The association between a CRM and a specific disease or condition" .
+  obo:SO_0000163 <http://example.org/DiseaseAssociation> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interactingTranscriptionFactor">
+  a owl:ObjectProperty ;
+  rdfs:label "interacting transcription factor" ;
+  skos:prefLabel "interacting transcription factor" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interactingTranscriptionFactor> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressedInCellLine">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed in cell line" ;
+  skos:prefLabel "expressed in cell line" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressedInCellLine> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate" ;
+  skos:prefLabel "has genomic coordinate" ;
+  skos:definition "A CRM that has a specific genomic coordinate" .
+  obo:BFO_0000050 <http://example.org/hasGenomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isEvidenceFor">
+  a owl:ObjectProperty ;
+  rdfs:label "is evidence for" ;
+  skos:prefLabel "is evidence for" ;
+  skos:definition "A CRM that is supported by experimental data" .
+  obo:BFO_0000050 <http://example.org/isEvidenceFor> .
+
+<owl:Class rdf:about="http://example.org/ExperimentalData">
+  a owl:Class ;
+  rdfs:label "Experimental Data" ;
+  skos:prefLabel "Experimental Data" ;
+  skos:definition "Data collected through experimentation, such as sequencing or microarray data" .
+  obo:SO_0000163 <http://example.org/ExperimentalData> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isAssociatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "is associated with" ;
+  skos:prefLabel "is associated with" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/isAssociatedWith> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interacts">
+  a owl:ObjectProperty ;
+  rdfs:label "interacts" ;
+  skos:prefLabel "interacts" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interacts> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressed">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed" ;
+  skos:prefLabel "expressed" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressed> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasEvidence">
+  a owl:ObjectProperty ;
+  rdfs:label "has evidence" ;
+  skos:prefLabel "has evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:BFO_0000050 <http://example.org/hasEvidence> .
+
+<owl:Class rdf:about="http://example.org/CRMWithEvidence">
+  a owl:Class ;
+  rdfs:label "CRM with Evidence" ;
+  skos:prefLabel "CRM with Evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:SO_0000163 <http://example.org/CRMWithEvidence> .
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "associated disease" ;
+  skos:prefLabel "associated disease" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/associatedDisease> .
+
+<owl:Class rdf:about="http://example.org/DiseaseAssociation">
+  a owl:Class ;
+  rdfs:label "Disease Association" ;
+  skos:prefLabel "Disease Association" ;
+  skos:definition "The association between a CRM and a specific disease or condition" .
+  obo:SO_0000163 <http://example.org/DiseaseAssociation> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interactingTranscriptionFactor">
+  a owl:ObjectProperty ;
+  rdfs:label "interacting transcription factor" ;
+  skos:prefLabel "interacting transcription factor" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interactingTranscriptionFactor> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressedInCellLine">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed in cell line" ;
+  skos:prefLabel "expressed in cell line" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressedInCellLine> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate" ;
+  skos:prefLabel "has genomic coordinate" ;
+  skos:definition "A CRM that has a specific genomic coordinate" .
+  obo:BFO_0000050 <http://example.org/hasGenomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isEvidenceFor">
+  a owl:ObjectProperty ;
+  rdfs:label "is evidence for" ;
+  skos:prefLabel "is evidence for" ;
+  skos:definition "A CRM that is supported by experimental data" .
+  obo:BFO_0000050 <http://example.org/isEvidenceFor> .
+
+<owl:Class rdf:about="http://example.org/ExperimentalData">
+  a owl:Class ;
+  rdfs:label "Experimental Data" ;
+  skos:prefLabel "Experimental Data" ;
+  skos:definition "Data collected through experimentation, such as sequencing or microarray data" .
+  obo:SO_0000163 <http://example.org/ExperimentalData> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isAssociatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "is associated with" ;
+  skos:prefLabel "is associated with" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/isAssociatedWith> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interacts">
+  a owl:ObjectProperty ;
+  rdfs:label "interacts" ;
+  skos:prefLabel "interacts" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interacts> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressed">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed" ;
+  skos:prefLabel "expressed" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressed> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasEvidence">
+  a owl:ObjectProperty ;
+  rdfs:label "has evidence" ;
+  skos:prefLabel "has evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:BFO_0000050 <http://example.org/hasEvidence> .
+
+<owl:Class rdf:about="http://example.org/CRMWithEvidence">
+  a owl:Class ;
+  rdfs:label "CRM with Evidence" ;
+  skos:prefLabel "CRM with Evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:SO_0000163 <http://example.org/CRMWithEvidence> .
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "associated disease" ;
+  skos:prefLabel "associated disease" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/associatedDisease> .
+
+<owl:Class rdf:about="http://example.org/DiseaseAssociation">
+  a owl:Class ;
+  rdfs:label "Disease Association" ;
+  skos:prefLabel "Disease Association" ;
+  skos:definition "The association between a CRM and a specific disease or condition" .
+  obo:SO_0000163 <http://example.org/DiseaseAssociation> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interactingTranscriptionFactor">
+  a owl:ObjectProperty ;
+  rdfs:label "interacting transcription factor" ;
+  skos:prefLabel "interacting transcription factor" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interactingTranscriptionFactor> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressedInCellLine">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed in cell line" ;
+  skos:prefLabel "expressed in cell line" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressedInCellLine> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate" ;
+  skos:prefLabel "has genomic coordinate" ;
+  skos:definition "A CRM that has a specific genomic coordinate" .
+  obo:BFO_0000050 <http://example.org/hasGenomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isEvidenceFor">
+  a owl:ObjectProperty ;
+  rdfs:label "is evidence for" ;
+  skos:prefLabel "is evidence for" ;
+  skos:definition "A CRM that is supported by experimental data" .
+  obo:BFO_0000050 <http://example.org/isEvidenceFor> .
+
+<owl:Class rdf:about="http://example.org/ExperimentalData">
+  a owl:Class ;
+  rdfs:label "Experimental Data" ;
+  skos:prefLabel "Experimental Data" ;
+  skos:definition "Data collected through experimentation, such as sequencing or microarray data" .
+  obo:SO_0000163 <http://example.org/ExperimentalData> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isAssociatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "is associated with" ;
+  skos:prefLabel "is associated with" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/isAssociatedWith> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interacts">
+  a owl:ObjectProperty ;
+  rdfs:label "interacts" ;
+  skos:prefLabel "interacts" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interacts> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressed">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed" ;
+  skos:prefLabel "expressed" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressed> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasEvidence">
+  a owl:ObjectProperty ;
+  rdfs:label "has evidence" ;
+  skos:prefLabel "has evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:BFO_0000050 <http://example.org/hasEvidence> .
+
+<owl:Class rdf:about="http://example.org/CRMWithEvidence">
+  a owl:Class ;
+  rdfs:label "CRM with Evidence" ;
+  skos:prefLabel "CRM with Evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:SO_0000163 <http://example.org/CRMWithEvidence> .
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "associated disease" ;
+  skos:prefLabel "associated disease" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/associatedDisease> .
+
+<owl:Class rdf:about="http://example.org/DiseaseAssociation">
+  a owl:Class ;
+  rdfs:label "Disease Association" ;
+  skos:prefLabel "Disease Association" ;
+  skos:definition "The association between a CRM and a specific disease or condition" .
+  obo:SO_0000163 <http://example.org/DiseaseAssociation> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interactingTranscriptionFactor">
+  a owl:ObjectProperty ;
+  rdfs:label "interacting transcription factor" ;
+  skos:prefLabel "interacting transcription factor" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interactingTranscriptionFactor> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressedInCellLine">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed in cell line" ;
+  skos:prefLabel "expressed in cell line" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressedInCellLine> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate" ;
+  skos:prefLabel "has genomic coordinate" ;
+  skos:definition "A CRM that has a specific genomic coordinate" .
+  obo:BFO_0000050 <http://example.org/hasGenomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isEvidenceFor">
+  a owl:ObjectProperty ;
+  rdfs:label "is evidence for" ;
+  skos:prefLabel "is evidence for" ;
+  skos:definition "A CRM that is supported by experimental data" .
+  obo:BFO_0000050 <http://example.org/isEvidenceFor> .
+
+<owl:Class rdf:about="http://example.org/ExperimentalData">
+  a owl:Class ;
+  rdfs:label "Experimental Data" ;
+  skos:prefLabel "Experimental Data" ;
+  skos:definition "Data collected through experimentation, such as sequencing or microarray data" .
+  obo:SO_0000163 <http://example.org/ExperimentalData> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isAssociatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "is associated with" ;
+  skos:prefLabel "is associated with" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/isAssociatedWith> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interacts">
+  a owl:ObjectProperty ;
+  rdfs:label "interacts" ;
+  skos:prefLabel "interacts" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interacts> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressed">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed" ;
+  skos:prefLabel "expressed" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressed> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasEvidence">
+  a owl:ObjectProperty ;
+  rdfs:label "has evidence" ;
+  skos:prefLabel "has evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:BFO_0000050 <http://example.org/hasEvidence> .
+
+<owl:Class rdf:about="http://example.org/CRMWithEvidence">
+  a owl:Class ;
+  rdfs:label "CRM with Evidence" ;
+  skos:prefLabel "CRM with Evidence" ;
+  skos:definition "A CRM that has experimental data supporting its existence" .
+  obo:SO_0000163 <http://example.org/CRMWithEvidence> .
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "associated disease" ;
+  skos:prefLabel "associated disease" ;
+  skos:definition "A CRM that is associated with a specific disease or condition" .
+  obo:BFO_0000050 <http://example.org/associatedDisease> .
+
+<owl:Class rdf:about="http://example.org/DiseaseAssociation">
+  a owl:Class ;
+  rdfs:label "Disease Association" ;
+  skos:prefLabel "Disease Association" ;
+  skos:definition "The association between a CRM and a specific disease or condition" .
+  obo:SO_0000163 <http://example.org/DiseaseAssociation> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interactingTranscriptionFactor">
+  a owl:ObjectProperty ;
+  rdfs:label "interacting transcription factor" ;
+  skos:prefLabel "interacting transcription factor" ;
+  skos:definition "A CRM that interacts with a specific transcription factor" .
+  obo:BFO_0000050 <http://example.org/interactingTranscriptionFactor> .
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactorInteraction">
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between a CRM and a transcription factor" .
+  obo:SO_0000163 <http://example.org/TranscriptionFactorInteraction> .
+
+<owl:ObjectProperty rdf:about="http://example.org/expressedInCellLine">
+  a owl:ObjectProperty ;
+  rdfs:label "expressed in cell line" ;
+  skos:prefLabel "expressed in cell line" ;
+  skos:definition "A CRM that is expressed in a specific cell line or tissue type" .
+  obo:BFO_0000050 <http://example.org/expressedInCellLine> .
+
+<owl:Class rdf:about="http://example.org/CellLineExpression">
+  a owl:Class ;
+  rdfs:label "Cell Line Expression" ;
+  skos:prefLabel "Cell Line Expression" ;
+  skos:definition "The expression of a CRM in a specific cell line or tissue type" .
+  obo:SO_0000163 <http://example.org/CellLineExpression> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "has genomic coordinate" ;
+  skos:prefLabel "has genomic coordinate" ;
+  skos:definition "A CRM that has a specific genomic coordinate" .
+  obo:BFO_0000050 <http://example.org/hasGenomicCoordinate> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isEvidenceFor">
+  a owl:ObjectProperty ;
+  rdfs:label "is evidence for" ;
+  skos:prefLabel "is evidence for" ;
+  skos:definition "A CRM that is supported by experimental data" .
+  obo:BFO_0000050 <http://example.org/isEvidenceFor> .
+
+<owl:Class rdf:about="http://example.org/ExperimentalData">
+  a owl:Class ;
+  rdfs:label "Experimental Data" ;
+  skos:prefLabel "Experimental Data" ;
+  skos:definition "Data collected through experimentation, such as sequencing or microarray data" .
+  obo:SO_0000163 <http://example.org/ExperimentalData> .
+
+<owl:ObjectProperty rdf:about="http://example.org/isAssociatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "is associated with" ;
+  skos:prefLabel "is associated with" ;

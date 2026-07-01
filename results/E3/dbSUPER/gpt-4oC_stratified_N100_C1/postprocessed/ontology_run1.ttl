@@ -1,0 +1,78 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    dc:description "Ontology for representing super-enhancers from the dbSUPER database." .
+
+# Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:subClassOf biolink:Enhancer .
+
+dbsuper:GenomicLocation a owl:Class ;
+    rdfs:label "Genomic Location" .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/CL_0000000> .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+# Properties
+dbsuper:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:GenomicLocation .
+
+dbsuper:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:label "has cell line activity" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:CellLine .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Gene ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:hasPubMedID a owl:DatatypeProperty ;
+    rdfs:label "has PubMed ID" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string ;
+    skos:exactMatch pubmed: .
+
+# Example individual
+dbsuper:CRMHS00000035442 a dbsuper:SuperEnhancer ;
+    rdfs:label "Super Enhancer CRMHS00000035442" ;
+    dbsuper:hasGenomicLocation [
+        a dbsuper:GenomicLocation ;
+        rdfs:label "chr17:42271401-42290073" ;
+        schema:chromosome "17" ;
+        schema:startPosition 42271401 ;
+        schema:endPosition 42290073 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    dbsuper:hasCellLineActivity [
+        a dbsuper:CellLine ;
+        rdfs:label "CD4 Memory Primary 8pool"
+    ] ;
+    dbsuper:targetsGene [
+        a dbsuper:Gene ;
+        rdfs:label "STAT5B" ;
+        crm2pgene:geneSymbol "STAT5B"
+    ] ;
+    dbsuper:hasPubMedID "24119843" .

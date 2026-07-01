@@ -1,0 +1,73 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    rdfs:label "DiseaseEnhancer Ontology" ;
+    skos:prefLabel "DiseaseEnhancer" ;
+    skos:definition "Ontology for enhancers associated with diseases" .
+
+### Classes ###
+:CRM rdf:type owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:Gene rdf:type owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of a cis-regulatory module" .
+
+:Disease rdf:type owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with a cis-regulatory module" .
+
+:TranscriptionFactor rdf:type owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor interacting with a cis-regulatory module" .
+
+### Object Properties ###
+:hasTargetGene rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol" .
+
+:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+:interactsWithTF rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+### Datatype Properties ###
+:hasGenomicCoordinates rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module" .
+
+:hasScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "Score" ;
+    skos:definition "Score indicating the confidence of the enhancer activity" .
+
+:hasPMID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PMID" ;
+    skos:definition "PubMed ID for the reference supporting the data" .
+
+:hasMutationID rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Mutation ID" ;
+    skos:definition "ID of the mutation associated with the enhancer" .

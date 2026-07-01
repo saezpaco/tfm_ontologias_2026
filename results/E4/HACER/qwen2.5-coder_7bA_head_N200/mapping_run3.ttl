@@ -1,0 +1,229 @@
+```ttl
+<#TriplesMapTranscriptionFactorToEnhancerRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/TranscriptionFactorToEnhancerRelationship/{{TFs2enh_PMID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "TFs2enh_method";
+        ]
+    ],
+    [
+        rr:predicate greg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasEnhancer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer>;
+        ]
+    ].
+
+<#TriplesMapEnhancerToGeneRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/EnhancerToGeneRelationship/{{enh2gene_PMID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "enh2gene_method";
+        ]
+    ],
+    [
+        rr:predicate greg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "TF_method";
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/Enhancer/{{crm_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "enh_method";
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "target_gene_method";
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/Disease/{{disease}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "disease_method";
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "cell_line_method";
+        ]
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/Mutation/{{FAIR_URI}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "mutation_method";
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/SuperEnhancer/{{crm_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticElement>;
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "super_enhancer_method";
+        ]
+    ].
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/GeneticElement/{{FAIR_URI}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:hasPubMedID;
+        rr:objectMap [
+            rr:constant "NA";
+        ]
+    ],
+    [
+        rr:predicate greg:hasMethod;
+        rr:objectMap [
+            rr:constant "NA";
+        ]
+    ].
+```

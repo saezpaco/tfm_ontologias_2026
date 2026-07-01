@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 737.2766666666666,
+  "total_tokens": 33123,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-05T12:31:48.103746",
+      "success": true,
+      "elapsed_seconds": 724.42,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 2849,
+        "completion_tokens": 8192,
+        "total_tokens": 11041
+      },
+      "prompt_tokens_estimate": 1658,
+      "response_chars": 31981,
+      "turtle_chars": 31981,
+      "validation": {
+        "valid": false,
+        "error": "string index out of range"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-05T12:44:10.524552",
+      "success": true,
+      "elapsed_seconds": 741.37,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 2849,
+        "completion_tokens": 8192,
+        "total_tokens": 11041
+      },
+      "prompt_tokens_estimate": 1658,
+      "response_chars": 31981,
+      "turtle_chars": 31981,
+      "validation": {
+        "valid": false,
+        "error": "string index out of range"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-05T12:56:37.620544",
+      "success": true,
+      "elapsed_seconds": 746.04,
+      "finish_reason": "length",
+      "usage": {
+        "prompt_tokens": 2849,
+        "completion_tokens": 8192,
+        "total_tokens": 11041
+      },
+      "prompt_tokens_estimate": 1658,
+      "response_chars": 31981,
+      "turtle_chars": 31981,
+      "validation": {
+        "valid": false,
+        "error": "string index out of range"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/llama3.1_8b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm:     <http://rdf.biogateway.eu/crm/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+
+crm:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" .
+
+crm:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    rdfs:label "has genomic coordinate" .
+
+crm:Chromosome a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:exactMatch nuccore:chr_ID .
+
+crm:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Chromosome ;
+    rdfs:label "has chromosome" .
+
+crm:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has start position" .
+
+crm:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has end position" .
+
+crm:hasActivityScore a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has activity score" .
+
+crm:hasExpressionLevel a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:float ;
+    rdfs:label "has expression level" .
+
+crm:hasSignalStrength a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:float ;
+    rdfs:label "has signal strength" .
+
+# Example instance
+<http://example.org/instance/Enhancer1> a crm:Enhancer ;
+    crm:hasGenomicCoordinate <http://example.org/instance/GenomicCoordinate1> ;
+    crm:hasChromosome <http://example.org/instance/Chromosome1> ;
+    crm:hasActivityScore 24 ;
+    crm:hasExpressionLevel 20.436 ;
+    crm:hasSignalStrength 0.73 .
+
+<http://example.org/instance/GenomicCoordinate1> a crm:GenomicCoordinate ;
+    crm:hasStartPosition 839741 ;
+    crm:hasEndPosition 840250 .
+
+<http://example.org/instance/Chromosome1> a crm:Chromosome ;
+    rdfs:label "chr1" .
+```

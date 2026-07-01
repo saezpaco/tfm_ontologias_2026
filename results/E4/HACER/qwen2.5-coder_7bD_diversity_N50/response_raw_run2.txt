@@ -1,0 +1,367 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. TFs2enh_PMID: type - PubMed ID for transcription factor to enhancer interaction - string
+2. TFs2enh_method: type - method used in transcription factor to enhancer interaction study - string
+3. biosample_name: type - name of the cell line or biosample - string
+4. crm_ID: type - ID of the chromatin regulatory module - string
+5. crossref: type - reference for the data - string
+6. current_assembly: type - current genome assembly version - string
+7. current_chr: type - chromosome number in the current assembly - string
+8. disease: type - disease associated with the genetic element - string
+9. disease_PMID: type - PubMed ID for disease study - string
+10. disease_method: type - method used in disease study - string
+11. enh2gene_PMID: type - PubMed ID for enhancer to gene interaction - string
+12. enh2gene_method: type - method used in enhancer to gene interaction study - string
+13. enh_PMID: type - PubMed ID for enhancer study - integer
+14. enh_method: type - method used in enhancer study - string
+15. hgnc_symbol_TFs: type - HGNC symbol of the transcription factors - string
+16. hgnc_symbol_target_genes: type - HGNC symbol of the target genes - string
+17. minimum_ratio: type - minimum ratio value - float
+18. mutation_PMID: type - PubMed ID for mutation study - string
+19. mutation_method: type - method used in mutation study - string
+20. orig_assembly: type - original genome assembly version - string
+21. orig_chr: type - chromosome number in the original assembly - string
+22. original_ID: type - original ID of the genetic element - string
+23. refsnp_ID: type - reference SNP ID - string
+24. score: type - score associated with the genetic element - float
+25. source: type - source of the data - string
+26. type: type - type of the genetic regulatory element (enhancer, super-enhancer) - string
+27. current_end: type - end position in the current assembly - integer
+28. current_start: type - start position in the current assembly - integer
+29. orig_end: type - end position in the original assembly - integer
+30. orig_start: type - start position in the original assembly - integer
+
+**Classes:**
+1. GeneticElement
+2. Enhancer
+3. SuperEnhancer
+4. TranscriptionFactor
+5. TargetGene
+6. Disease
+7. Mutation
+8. CellLineOrBiosample
+
+**Subclasses:**
+1. Enhancer subclass of -> GeneticElement
+2. SuperEnhancer subclass of -> Enhancer
+3. TranscriptionFactor subclass of -> GeneticElement
+4. TargetGene subclass of -> GeneticElement
+5. Disease subclass of -> GeneticElement
+6. Mutation subclass of -> GeneticElement
+7. CellLineOrBiosample subclass of -> GeneticElement
+
+**Object Properties:**
+1. hasTranscriptionFactor: domain - TranscriptionFactor, range - Enhancer or SuperEnhancer
+2. hasTargetGene: domain - TargetGene, range - Enhancer or SuperEnhancer
+3. associatedWithDisease: domain - Disease, range - GeneticElement
+4. associatedWithMutation: domain - Mutation, range - GeneticElement
+5. occursInCellLineOrBiosample: domain - CellLineOrBiosample, range - GeneticElement
+
+**Data Type Properties:**
+1. hasPubMedID: domain - GeneticElement, range - xsd:string
+2. hasMethod: domain - GeneticElement, range - xsd:string
+3. hasChromosomeNumber: domain - GeneticElement, range - xsd:string
+4. hasScore: domain - GeneticElement, range - xsd:float
+5. hasAssemblyVersion: domain - GeneticElement, range - xsd:string
+6. hasStartPosition: domain - GeneticElement, range - xsd:int
+7. hasEndPosition: domain - GeneticElement, range - xsd:int
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GeneticElement a rdfs:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A general class representing genetic regulatory elements such as enhancers, super-enhancers, transcription factors, target genes, diseases, and mutations." ;
+    rdfs:subClassOf ge:Enhancer ;
+    rdfs:subClassOf ge:SuperEnhancer ;
+    rdfs:subClassOf ge:TranscriptionFactor ;
+    rdfs:subClassOf ge:TargetGene ;
+    rdfs:subClassOf ge:Disease ;
+    rdfs:subClassOf ge:Mutation ;
+    rdfs:subClassOf ge:CellLineOrBiosample .
+
+ge:Enhancer a rdfs:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers, which are regions of DNA that can increase the transcription of nearby genes." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:SuperEnhancer a rdfs:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A subclass of enhancers that have been identified as having particularly strong regulatory capabilities." ;
+    rdfs:subClassOf ge:Enhancer .
+
+ge:TranscriptionFactor a rdfs:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing transcription factors, which are proteins that bind to DNA and regulate the transcription of genes." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:TargetGene a rdfs:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes, which are genes that can be regulated by enhancers or transcription factors." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:Disease a rdfs:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing diseases associated with genetic elements." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:Mutation a rdfs:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing mutations that can affect the function of genetic elements." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:CellLineOrBiosample a rdfs:Class ;
+    rdfs:label "Cell Line or Biosample" ;
+    rdfs:comment "A class representing cell lines or biosamples in which genetic elements occur." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:TranscriptionFactor ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "An object property that represents the relationship between an enhancer and its associated transcription factor." .
+
+ge:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:TargetGene ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "An object property that represents the relationship between an enhancer and its associated target gene." .
+
+ge:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain ge:Disease ;
+    rdfs:range ge:GeneticElement ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "An object property that represents the relationship between a disease and genetic elements associated with it." .
+
+ge:associatedWithMutation a owl:ObjectProperty ;
+    rdfs:domain ge:Mutation ;
+    rdfs:range ge:GeneticElement ;
+    rdfs:label "Associated With Mutation" ;
+    rdfs:comment "An object property that represents the relationship between a mutation and genetic elements associated with it." .
+
+ge:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:CellLineOrBiosample ;
+    rdfs:label "Occurs In Cell Line or Biosample" ;
+    rdfs:comment "An object property that represents the relationship between a genetic element and the cell line or biosample in which it occurs." .
+
+ge:hasPubMedID a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has PubMed ID" ;
+    rdfs:comment "A datatype property that represents the PubMed ID associated with a genetic element." ;
+    skos:definition "The unique identifier assigned by PubMed for a scientific article or study." .
+
+ge:hasMethod a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Method" ;
+    rdfs:comment "A datatype property that represents the method used in the study of a genetic element." ;
+    skos:definition "The experimental technique or approach employed to investigate a genetic element." .
+
+ge:hasChromosomeNumber a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Chromosome Number" ;
+    rdfs:comment "A datatype property that represents the chromosome number associated with a genetic element." ;
+    skos:definition "The specific chromosome on which a genetic element is located." .
+
+ge:hasScore a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "A datatype property that represents the score associated with a genetic element." ;
+    skos:definition "A numerical value indicating the significance or importance of a genetic element." .
+
+ge:hasAssemblyVersion a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Assembly Version" ;
+    rdfs:comment "A datatype property that represents the genome assembly version associated with a genetic element." ;
+    skos:definition "The specific version of the genome assembly used to define the location and structure of a genetic element." .
+
+ge:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:int ;
+    rdfs:label "Has Start Position" ;
+    rdfs:comment "A datatype property that represents the start position of a genetic element in the genome." ;
+    skos:definition "The base pair number indicating where a genetic element begins within the reference genome sequence." .
+
+ge:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:int ;
+    rdfs:label "Has End Position" ;
+    rdfs:comment "A datatype property that represents the end position of a genetic element in the genome." ;
+    skos:definition "The base pair number indicating where a genetic element ends within the reference genome sequence." .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasPubMedID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedID>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMethod>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasChromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScore>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasAssemblyVersion;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapAssemblyVersion>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasStartPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ge:hasEndPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEndPosition>;
+        ]
+    ].
+
+<#TriplesMapPubMedID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasPubMedID;
+        rr:objectMap [
+            rr:constant xsd:string;
+        ]
+    ].
+
+<#TriplesMapMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasMethod;
+        rr:objectMap [
+            rr:constant xsd:string;
+        ]
+    ].
+
+<#TriplesMapChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasChromosomeNumber;
+        rr:objectMap [
+            rr:constant xsd:string;
+        ]
+    ].
+
+<#TriplesMapScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasScore;
+        rr:objectMap [
+            rr:constant xsd:float;
+        ]
+    ].
+
+<#TriplesMapAssemblyVersion> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasAssemblyVersion;
+        rr:objectMap [
+            rr:constant xsd:string;
+        ]
+    ].
+
+<#TriplesMapStartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasStartPosition;
+        rr:objectMap [
+            rr:constant xsd:int;
+        ]
+    ].
+
+<#TriplesMapEndPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasEndPosition;
+        rr:objectMap [
+            rr:constant xsd:int;
+        ]
+    ].
+```

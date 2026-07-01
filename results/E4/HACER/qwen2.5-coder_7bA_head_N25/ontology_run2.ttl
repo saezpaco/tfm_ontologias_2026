@@ -1,0 +1,153 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ge: <https://geneticregulatoryelements.com#> .
+
+ge:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A general class representing genetic elements such as enhancers, transcription factors, and target genes." ;
+    rdfs:subClassOf ge:Enhancer , ge:TranscriptionFactor , ge:TargetGene .
+
+ge:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers, which are DNA sequences that can increase the transcription of nearby genes." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    hasTranscriptionFactor some ge:TranscriptionFactor ;
+    hasTargetGene some ge:TargetGene ;
+    partOfChromatinRegionModule some ge:ChromatinRegionModule .
+
+ge:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing super enhancers, which are highly active enhancers that can drive the transcription of multiple genes." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    hasTranscriptionFactor some ge:TranscriptionFactor ;
+    hasTargetGene some ge:TargetGene ;
+    partOfChromatinRegionModule some ge:ChromatinRegionModule .
+
+ge:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing transcription factors, which are proteins that bind to DNA and regulate the transcription of genes." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    hasHGNCsymbol some xsd:string .
+
+ge:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes, which are genes that can be regulated by transcription factors and enhancers." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    hasHGNCsymbol some xsd:string .
+
+ge:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing diseases, which are conditions that can affect the normal functioning of cells and tissues." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:CellLineOrBiosample a owl:Class ;
+    rdfs:label "Cell Line or Biosample" ;
+    rdfs:comment "A class representing cell lines or biosamples, which are collections of cells that can be used for research and experimentation." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:Mutation a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing mutations, which are changes in the DNA sequence that can affect the normal functioning of genes and cells." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:ChromatinRegionModule a owl:Class ;
+    rdfs:label "Chromatin Region Module" ;
+    rdfs:comment "A class representing chromatin region modules, which are groups of DNA sequences that can be regulated by enhancers and transcription factors." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    hasChromosomeNumber some xsd:integer ;
+    hasGenomicStart some xsd:integer ;
+    hasGenomicEnd some xsd:integer .
+
+ge:TFs2enh_Interaction a owl:Class ;
+    rdfs:label "Transcription Factor to Enhancer Interaction" ;
+    rdfs:comment "A class representing interactions between transcription factors and enhancers." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    hasPubMedID some xsd:string ;
+    usesMethod some xsd:string .
+
+ge:enh2gene_Interaction a owl:Class ;
+    rdfs:label "Enhancer to Gene Interaction" ;
+    rdfs:comment "A class representing interactions between enhancers and target genes." ;
+    rdfs:subClassOf ge:GeneticElement ;
+    hasPubMedID some xsd:string ;
+    usesMethod some xsd:string .
+
+ge:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "An object property that represents the relationship between an enhancer or super enhancer and its associated transcription factor." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer ;
+    rdfs:range ge:TranscriptionFactor .
+
+ge:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "An object property that represents the relationship between an enhancer or super enhancer and its associated target gene." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer ;
+    rdfs:range ge:TargetGene .
+
+ge:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "An object property that represents the relationship between a genetic element and its associated disease." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:Disease .
+
+ge:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:label "Occurs In Cell Line or Biosample" ;
+    rdfs:comment "An object property that represents the relationship between a genetic element and its associated cell line or biosample." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:CellLineOrBiosample .
+
+ge:involvesMutation a owl:ObjectProperty ;
+    rdfs:label "Involves Mutation" ;
+    rdfs:comment "An object property that represents the relationship between a genetic element and its associated mutation." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:Mutation .
+
+ge:partOfChromatinRegionModule a owl:ObjectProperty ;
+    rdfs:label "Part Of Chromatin Region Module" ;
+    rdfs:comment "An object property that represents the relationship between an enhancer or super enhancer and its associated chromatin region module." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer ;
+    rdfs:range ge:ChromatinRegionModule .
+
+ge:hasPubMedID a owl:DatatypeProperty ;
+    rdfs:label "Has PubMed ID" ;
+    rdfs:comment "A datatype property that represents the PubMed ID of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string .
+
+ge:usesMethod a owl:DatatypeProperty ;
+    rdfs:label "Uses Method" ;
+    rdfs:comment "A datatype property that represents the method used in a study involving a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string .
+
+ge:hasHGNCsymbol a owl:DatatypeProperty ;
+    rdfs:label "Has HGNC Symbol" ;
+    rdfs:comment "A datatype property that represents the HGNC symbol of a transcription factor or target gene." ;
+    rdfs:domain ge:TranscriptionFactor , ge:TargetGene ;
+    rdfs:range xsd:string .
+
+ge:hasChromosomeNumber a owl:DatatypeProperty ;
+    rdfs:label "Has Chromosome Number" ;
+    rdfs:comment "A datatype property that represents the chromosome number of an enhancer, super enhancer, or chromatin region module." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer , ge:ChromatinRegionModule ;
+    rdfs:range xsd:integer .
+
+ge:hasGenomicStart a owl:DatatypeProperty ;
+    rdfs:label "Has Genomic Start" ;
+    rdfs:comment "A datatype property that represents the start position of an enhancer, super enhancer, or chromatin region module in the genome." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer , ge:ChromatinRegionModule ;
+    rdfs:range xsd:integer .
+
+ge:hasGenomicEnd a owl:DatatypeProperty ;
+    rdfs:label "Has Genomic End" ;
+    rdfs:comment "A datatype property that represents the end position of an enhancer, super enhancer, or chromatin region module in the genome." ;
+    rdfs:domain ge:Enhancer , ge:SuperEnhancer , ge:ChromatinRegionModule ;
+    rdfs:range xsd:integer .
+
+ge:hasScore a owl:DatatypeProperty ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "A datatype property that represents the score of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:float .

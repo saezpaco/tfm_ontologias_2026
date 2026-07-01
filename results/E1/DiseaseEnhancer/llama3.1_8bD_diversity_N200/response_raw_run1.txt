@@ -1,0 +1,104 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM/enhancer>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module (CRM) Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A region of DNA that can be bound by transcription factors and other regulatory proteins to enhance the expression of nearby genes." .
+
+<http://example.org/CRM/enhancer#has_genomic_coordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A specific location on the genome where a CRM enhancer is located." .
+
+<http://example.org/CRM/enhancer#has_evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "A study or publication that provides evidence for the existence and function of a CRM enhancer." .
+
+<http://example.org/CRM/enhancer#genomic_coordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A specific location on the genome where a CRM enhancer is located." .
+
+<http://example.org/CRM/enhancer#evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "A study or publication that provides evidence for the existence and function of a CRM enhancer." .
+
+<http://example.org/CRM/enhancer#chromosome>
+  a owl:ObjectProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome" ;
+  skos:definition "A single thread-like structure made up of DNA and proteins that carries hereditary information from one generation to the next." .
+
+<http://example.org/CRM/enhancer#start_position>
+  a owl:DatatypeProperty ;
+  rdfs:label "Start Position"^^xsd:string ;
+  skos:prefLabel "Start Position" ;
+  skos:definition "The starting position of a CRM enhancer on the genome." .
+
+<http://example.org/CRM/enhancer#end_position>
+  a owl:DatatypeProperty ;
+  rdfs:label "End Position"^^xsd:string ;
+  skos:prefLabel "End Position" ;
+  skos:definition "The ending position of a CRM enhancer on the genome." .
+
+<http://example.org/CRM/enhancer#strand>
+  a owl:DatatypeProperty ;
+  rdfs:label "Strand"^^xsd:string ;
+  skos:prefLabel "Strand" ;
+  skos:definition "The strand of DNA where a CRM enhancer is located (+ or -)." .
+
+<http://example.org/CRM/enhancer#transcription_factor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor"^^xsd:string ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A protein that binds to specific DNA sequences and regulates gene expression." .
+
+<http://example.org/CRM/enhancer#regulatory_element>
+  a owl:ObjectProperty ;
+  rdfs:label "Regulatory Element"^^xsd:string ;
+  skos:prefLabel "Regulatory Element" ;
+  skos:definition "A region of DNA that can be bound by transcription factors and other regulatory proteins to regulate gene expression." .
+
+<http://example.org/CRM/enhancer#gene>
+  a owl:ObjectProperty ;
+  rdfs:label "Gene"^^xsd:string ;
+  skos:prefLabel "Gene" ;
+  skos:definition "A unit of heredity that is passed from one generation to the next and carries information from DNA to proteins." .
+
+<http://example.org/CRM/enhancer#expression_level>
+  a owl:DatatypeProperty ;
+  rdfs:label "Expression Level"^^xsd:string ;
+  skos:prefLabel "Expression Level" ;
+  skos:definition "The level of gene expression in a particular cell or tissue." .
+
+<http://example.org/CRM/enhancer#cell_type>
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Type"^^xsd:string ;
+  skos:prefLabel "Cell Type" ;
+  skos:definition "A specific type of cell, such as epithelial or immune cells." .
+
+<http://example.org/CRM/enhancer#tissue>
+  a owl:ObjectProperty ;
+  rdfs:label "Tissue"^^xsd:string ;
+  skos:prefLabel "Tissue" ;
+  skos:definition "A group of similar cells that perform specific functions in an organism." .
+
+<http://example.org/CRM/enhancer#organism>
+  a owl:ObjectProperty ;
+  rdfs:label "Organism"^^xsd:string ;
+  skos:prefLabel "Organism" ;
+  skos:definition "An individual living thing, such as a human or mouse." .
+
+Note that this is just one possible way to represent the data in Turtle format. The actual output may vary depending on the specific requirements and constraints of the project.

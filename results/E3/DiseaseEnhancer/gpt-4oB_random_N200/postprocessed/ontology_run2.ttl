@@ -1,0 +1,102 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix pubmed:  <http://identifiers.org/pubmed/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix omim:    <http://identifiers.org/omim/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    rdfs:label "DiseaseEnhancer Ontology" ;
+    dc:description "Ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+biolink:Enhancer rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/Enhancer> .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/Gene> .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/Disease> .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+### Properties ###
+biolink:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain biolink:Enhancer ;
+    rdfs:range biolink:GenomicLocation .
+
+biolink:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain biolink:Enhancer ;
+    rdfs:range biolink:Gene ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/targetsGene> .
+
+biolink:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain biolink:Enhancer ;
+    rdfs:range biolink:Disease ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/associatedWithDisease> .
+
+biolink:interactsWithTranscriptionFactor rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain biolink:Enhancer ;
+    rdfs:range biolink:TranscriptionFactor ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+### Individuals ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685825> rdf:type biolink:Enhancer ;
+    biolink:hasGenomicLocation [
+        rdf:type biolink:GenomicLocation ;
+        biolink:chromosome "chr4" ;
+        biolink:startPosition 88037770 ;
+        biolink:endPosition 88039770 ;
+        biolink:assembly "hg38"
+    ] ;
+    biolink:targetsGene hgnc:PIGY ;
+    biolink:associatedWithDisease doid:784 ;
+    biolink:interactsWithTranscriptionFactor [] .
+
+hgnc:PIGY rdf:type biolink:Gene ;
+    rdfs:label "PIGY" .
+
+doid:784 rdf:type biolink:Disease ;
+    rdfs:label "Disease associated with PIGY" .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685608> rdf:type biolink:Enhancer ;
+    biolink:hasGenomicLocation [
+        rdf:type biolink:GenomicLocation ;
+        biolink:chromosome "chr20" ;
+        biolink:startPosition 57108146 ;
+        biolink:endPosition 57109944 ;
+        biolink:assembly "hg38"
+    ] ;
+    biolink:targetsGene hgnc:BRIP1 ;
+    biolink:associatedWithDisease doid:1612 ;
+    biolink:interactsWithTranscriptionFactor [] .
+
+hgnc:BRIP1 rdf:type biolink:Gene ;
+    rdfs:label "BRIP1" .
+
+doid:1612 rdf:type biolink:Disease ;
+    rdfs:label "Disease associated with BRIP1" .
+
+# Additional individuals and properties would be defined similarly

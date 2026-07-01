@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 91.39666666666666,
+  "total_tokens": 9069,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-05T21:46:52.614682",
+      "success": true,
+      "elapsed_seconds": 105.92,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2010,
+        "completion_tokens": 1013,
+        "total_tokens": 3023
+      },
+      "prompt_tokens_estimate": 1487,
+      "response_chars": 3259,
+      "turtle_chars": 2624,
+      "validation": {
+        "valid": false,
+        "error": "at line 25 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'Enhancer>\\n  rdfs:label \"Cis-regulatory enhancer\"\\n)\\nowl:Class'^b'(\\n  <http://example.org/TranscriptionFactor>\\n  rdfs:label \"T'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-05T21:48:16.565174",
+      "success": true,
+      "elapsed_seconds": 82.6,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2010,
+        "completion_tokens": 1013,
+        "total_tokens": 3023
+      },
+      "prompt_tokens_estimate": 1487,
+      "response_chars": 3259,
+      "turtle_chars": 2624,
+      "validation": {
+        "valid": false,
+        "error": "at line 25 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'Enhancer>\\n  rdfs:label \"Cis-regulatory enhancer\"\\n)\\nowl:Class'^b'(\\n  <http://example.org/TranscriptionFactor>\\n  rdfs:label \"T'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-05T21:49:43.570553",
+      "success": true,
+      "elapsed_seconds": 85.67,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2010,
+        "completion_tokens": 1013,
+        "total_tokens": 3023
+      },
+      "prompt_tokens_estimate": 1487,
+      "response_chars": 3259,
+      "turtle_chars": 2624,
+      "validation": {
+        "valid": false,
+        "error": "at line 25 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'Enhancer>\\n  rdfs:label \"Cis-regulatory enhancer\"\\n)\\nowl:Class'^b'(\\n  <http://example.org/TranscriptionFactor>\\n  rdfs:label \"T'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/llama3.1_8b_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

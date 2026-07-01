@@ -1,0 +1,62 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> a owl:Ontology ;
+    rdfs:label "HACER Ontology" ;
+    rdfs:comment "Ontology for the Human Active Cis-regulatory Elements database" .
+
+### Classes ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Gene> a owl:Class ;
+    skos:prefLabel "Gene" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/Disease> a owl:Class ;
+    skos:prefLabel "Disease" .
+
+### Object Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/Gene> ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/Disease> ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range <http://bioinfo.vanderbilt.edu/AE/HACER/TranscriptionFactor> ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+### Datatype Properties ###
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasGenomicCoordinates> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasAssemblyVersion> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "GRCh38" ;
+    skos:definition "Genome assembly version for the genomic coordinates" .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/hasDatabaseSource> a owl:DatatypeProperty ;
+    rdfs:domain <http://bioinfo.vanderbilt.edu/AE/HACER/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "database_name" ;
+    skos:definition "Source database for the cis-regulatory module information" .

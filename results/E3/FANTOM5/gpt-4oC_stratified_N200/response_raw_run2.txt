@@ -1,0 +1,76 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm:     <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    dc:title "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+obo:SO_0000727 a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch crm:9606crm_ID .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" .
+
+### Properties ###
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:Gene ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+crm:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range nuccore:chr_ID ;
+    skos:exactMatch nuccore:chr_ID .
+
+crm:hasPubMedReference a owl:ObjectProperty ;
+    rdfs:label "has PubMed reference" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range pubmed:24670763 .
+
+### Individuals ###
+<http://example.org/CRMHS00000085114> a obo:SO_0000727 ;
+    crm:hasGenomicLocation [
+        a nuccore:chr_ID ;
+        rdfs:label "chr11:132406838-132407201" ;
+        schema:assembly "hg38"
+    ] ;
+    crm:hasPubMedReference pubmed:24670763 .
+
+<http://example.org/CRMHS00000079042> a obo:SO_0000727 ;
+    crm:hasGenomicLocation [
+        a nuccore:chr_ID ;
+        rdfs:label "chr1:32736869-32737205" ;
+        schema:assembly "hg38"
+    ] ;
+    crm:hasTargetGene <http://identifiers.org/hgnc/NHSL3> ;
+    crm:hasPubMedReference pubmed:24670763 .
+
+<http://example.org/CRMHS00000108437> a obo:SO_0000727 ;
+    crm:hasGenomicLocation [
+        a nuccore:chr_ID ;
+        rdfs:label "chr2:241763028-241763444" ;
+        schema:assembly "hg38"
+    ] ;
+    crm:hasTargetGene <http://identifiers.org/hgnc/D2HGDH> ;
+    crm:hasPubMedReference pubmed:24670763 .
+
+# Additional individuals would follow the same pattern
+```

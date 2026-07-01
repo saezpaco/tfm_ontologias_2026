@@ -1,0 +1,99 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 8.426666666666668,
+  "total_tokens": 8085,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T20:10:50.045803",
+      "success": true,
+      "elapsed_seconds": 8.05,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 887,
+        "total_tokens": 2703
+      },
+      "prompt_tokens_estimate": 1573,
+      "response_chars": 2653,
+      "turtle_chars": 2653,
+      "validation": {
+        "valid": true,
+        "n_triples": 32,
+        "n_classes": 5,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T20:11:00.954172",
+      "success": true,
+      "elapsed_seconds": 9.87,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 864,
+        "total_tokens": 2680
+      },
+      "prompt_tokens_estimate": 1573,
+      "response_chars": 2643,
+      "turtle_chars": 2643,
+      "validation": {
+        "valid": true,
+        "n_triples": 31,
+        "n_classes": 5,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T20:11:09.363882",
+      "success": true,
+      "elapsed_seconds": 7.36,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 886,
+        "total_tokens": 2702
+      },
+      "prompt_tokens_estimate": 1573,
+      "response_chars": 2659,
+      "turtle_chars": 2645,
+      "validation": {
+        "valid": true,
+        "n_triples": 32,
+        "n_classes": 5,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

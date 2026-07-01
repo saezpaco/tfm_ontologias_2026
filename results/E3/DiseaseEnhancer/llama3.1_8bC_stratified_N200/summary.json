@@ -1,0 +1,99 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 183.37333333333333,
+  "total_tokens": 16353,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T21:20:47.511819",
+      "success": true,
+      "elapsed_seconds": 183.71,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1356,
+        "total_tokens": 5451
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 3902,
+      "turtle_chars": 3413,
+      "validation": {
+        "valid": true,
+        "n_triples": 21,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T21:23:53.449883",
+      "success": true,
+      "elapsed_seconds": 183.52,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1356,
+        "total_tokens": 5451
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 3902,
+      "turtle_chars": 3413,
+      "validation": {
+        "valid": true,
+        "n_triples": 21,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T21:26:58.797890",
+      "success": true,
+      "elapsed_seconds": 182.89,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1356,
+        "total_tokens": 5451
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 3902,
+      "turtle_chars": 3413,
+      "validation": {
+        "valid": true,
+        "n_triples": 21,
+        "n_classes": 0,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8bC_stratified_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

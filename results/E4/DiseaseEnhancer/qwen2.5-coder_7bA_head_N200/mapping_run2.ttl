@@ -1,0 +1,360 @@
+```ttl
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:GeneticRegulatoryElement/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:pmid;
+        rr:objectMap [
+            rml:reference "TFs2enh_PMID";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:method;
+        rr:objectMap [
+            rml:reference "TFs2enh_method";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:assemblyVersion;
+        rr:objectMap [
+            rml:reference "current_assembly";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:chromosomeNumber;
+        rr:objectMap [
+            rml:reference "current_chr";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:score;
+        rr:objectMap [
+            rml:reference "score";
+            rr:datatype xsd:float
+        ]
+    ],
+    [
+        rr:predicate greg:startPosition;
+        rr:objectMap [
+            rml:reference "current_start";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:endPosition;
+        rr:objectMap [
+            rml:reference "current_end";
+            rr:datatype xsd:int
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TranscriptionFactorToEnhancerInteraction/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:pmid;
+        rr:objectMap [
+            rml:reference "TFs2enh_PMID";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:method;
+        rr:objectMap [
+            rml:reference "TFs2enh_method";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:assemblyVersion;
+        rr:objectMap [
+            rml:reference "current_assembly";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:chromosomeNumber;
+        rr:objectMap [
+            rml:reference "current_chr";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:score;
+        rr:objectMap [
+            rml:reference "score";
+            rr:datatype xsd:float
+        ]
+    ],
+    [
+        rr:predicate greg:startPosition;
+        rr:objectMap [
+            rml:reference "current_start";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:endPosition;
+        rr:objectMap [
+            rml:reference "current_end";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:template "greg:TranscriptionFactor/{{hgnc_symbol}}{FAIR_URI}";
+        ]
+    ],
+    [
+        rr:predicate greg:hasEnhancer;
+        rr:objectMap [
+            rr:template "greg:Enhancer/{{crm_id}}{FAIR_URI}";
+        ]
+    ].
+
+<#TriplesMapEnhancerToGeneInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:EnhancerToGeneInteraction/{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:pmid;
+        rr:objectMap [
+            rml:reference "TFs2enh_PMID";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:method;
+        rr:objectMap [
+            rml:reference "TFs2enh_method";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:assemblyVersion;
+        rr:objectMap [
+            rml:reference "current_assembly";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:chromosomeNumber;
+        rr:objectMap [
+            rml:reference "current_chr";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:score;
+        rr:objectMap [
+            rml:reference "score";
+            rr:datatype xsd:float
+        ]
+    ],
+    [
+        rr:predicate greg:startPosition;
+        rr:objectMap [
+            rml:reference "current_start";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:endPosition;
+        rr:objectMap [
+            rml:reference "current_end";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:hasEnhancer;
+        rr:objectMap [
+            rr:template "greg:Enhancer/{{crm_id}}{FAIR_URI}";
+        ]
+    ],
+    [
+        rr:predicate greg:hasTargetGene;
+        rr:objectMap [
+            rr:template "greg:TargetGene/{{ensembl_gene_id}}{FAIR_URI}";
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TranscriptionFactor/{{hgnc_symbol}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:symbol;
+        rr:objectMap [
+            rml:reference "hgnc_symbol";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Enhancer/{{crm_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:id;
+        rr:objectMap [
+            rml:reference "crm_id";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:TargetGene/{{ensembl_gene_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:id;
+        rr:objectMap [
+            rml:reference "ensembl_gene_id";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Disease/{{disease_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:id;
+        rr:objectMap [
+            rml:reference "disease_id";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:CellLineOrBiosample/{{cell_line_biosample_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:id;
+        rr:objectMap [
+            rml:reference "cell_line_biosample_id";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:Mutation/{{mutation_id}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:id;
+        rr:objectMap [
+            rml:reference "mutation_id";
+            rr:datatype xsd:string
+        ]
+    ],
+    [
+        rr:predicate greg:name;
+        rr:objectMap [
+            rml:reference "name";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapPubMedArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "greg:PubMedArticle/{{pmid}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate greg:pmid;
+        rr:objectMap [
+            rml:reference "TFs2enh_PMID";
+            rr:datatype xsd:int
+        ]
+    ],
+    [
+        rr:predicate greg:title;
+        rr:objectMap [
+            rml:reference "title";
+            rr:datatype xsd:string
+        ]
+    ].
+```

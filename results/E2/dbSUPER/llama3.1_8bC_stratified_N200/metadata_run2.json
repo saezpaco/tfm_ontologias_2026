@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-29T13:03:31.047872",
+  "success": true,
+  "elapsed_seconds": 128.11,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 953,
+    "total_tokens": 5048
+  },
+  "prompt_tokens_estimate": 3891,
+  "response_chars": 3329,
+  "turtle_chars": 3329,
+  "validation": {
+    "valid": true,
+    "n_triples": 52,
+    "n_classes": 6,
+    "n_properties": 7
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bC_stratified_N200/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bC_stratified_N200/response_raw_run2.txt"
+  }
+}

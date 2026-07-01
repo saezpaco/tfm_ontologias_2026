@@ -1,0 +1,160 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+obo:SO_0000727 rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CRM .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:CellLine rdf:type owl:Class ;
+    rdfs:label "Cell Line" .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+# Properties
+biolink:has_genomic_location rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" .
+
+biolink:has_target_gene rdf:type owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:has_target_gene .
+
+biolink:has_associated_disease rdf:type owl:ObjectProperty ;
+    rdfs:label "has associated disease" .
+
+biolink:expressed_in rdf:type owl:ObjectProperty ;
+    rdfs:label "expressed in" ;
+    skos:exactMatch biolink:expressed_in .
+
+biolink:interacts_with rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with" ;
+    skos:exactMatch biolink:interacts_with .
+
+# Individuals
+hcrm:CRMHS00000005752 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chr1:16039967-16040344" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:expressed_in [
+        a biolink:CellLine ;
+        rdfs:label "MS-1"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "MKL-1"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "NCI-H1770"
+    ] ;
+    biolink:has_target_gene [
+        a biolink:Gene ;
+        rdfs:label "FAM131C"
+    ], [
+        a biolink:Gene ;
+        rdfs:label "HSPB7"
+    ], [
+        a biolink:Gene ;
+        rdfs:label "ZBTB17"
+    ] .
+
+hcrm:CRMHS00000005795 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chr10:62685569-62685884" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:expressed_in [
+        a biolink:CellLine ;
+        rdfs:label "DMS 144"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "NCI-H82"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "PCM6"
+    ] ;
+    biolink:has_target_gene [
+        a biolink:Gene ;
+        rdfs:label "ADO"
+    ] .
+
+hcrm:CRMHS00000006044 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chr6:159102636-159102934" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:expressed_in [
+        a biolink:CellLine ;
+        rdfs:label "Ty-82"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "ACC-MESO-1"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "TCO-1"
+    ] ;
+    biolink:has_target_gene [
+        a biolink:Gene ;
+        rdfs:label "FNDC1"
+    ], [
+        a biolink:Gene ;
+        rdfs:label "RSPH3"
+    ], [
+        a biolink:Gene ;
+        rdfs:label "TAGAP"
+    ] .
+
+hcrm:CRMHS00000006141 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chrX:53256663-53257187" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:expressed_in [
+        a biolink:CellLine ;
+        rdfs:label "MS-1"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "Hs 132.T"
+    ], [
+        a biolink:CellLine ;
+        rdfs:label "NEC15"
+    ] ;
+    biolink:has_target_gene [
+        a biolink:Gene ;
+        rdfs:label "FAM156A"
+    ], [
+        a biolink:Gene ;
+        rdfs:label "IQSEC2"
+    ], [
+        a biolink:Gene ;
+        rdfs:label "KDM5C"
+    ] .
+```

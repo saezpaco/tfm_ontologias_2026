@@ -1,0 +1,44 @@
+Here is the output in Turtle format:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2pgene/hcrm#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/crm2pgene#> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene#> .
+@prefix assembly: <http://rdf.biogateway.eu/crm2pgene/assembly#> .
+@prefix nuccore: <http://rdf.biogateway.eu/crm2pgene/nuccore#> .
+@prefix pubmed:  <http://rdf.biogateway.eu/crm2pgene/pubmed#> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/crm2pgene/id_pubmed#> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/crm2pgene/id_ncbigene#> .
+@prefix dbsuper: <http://rdf.biogateway.eu/crm2pgene/dbsuper#> .
+
+<http://example.org/resource/1>
+  rdf:type crm2pgene:CRMHS00000003515 ;
+  rdfs:label "bgw!CRMHS00000003515--hgncsymbol!9606/TBX5" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hcrm#CRMHS00000003515> .
+
+<http://example.org/resource/2>
+  rdf:type crm2pgene:CRMHS00000003516 ;
+  rdfs:label "bgw!CRMHS00000003516--hgncsymbol!9606/TBX5" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hcrm#CRMHS00000003516> .
+
+...
+
+<http://example.org/resource/n>
+  rdf:type crm2pgene:CRMHS00000140165 ;
+  rdfs:label "bgw!CRMHS00000140165--hgncsymbol!9606/TBX5" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hcrm#CRMHS00000140165> .
+```
+
+Note that I've assumed the `@prefix` declarations for the cisreg reference ontology fragments are correct and have added them to the top of the file. Also, I've used the `skos:exactMatch` property to link the new classes/properties to their corresponding cisreg URIs.
+
+Please verify that this output is correct by checking that every ``prefix:localname`` has a matching ``@prefix prefix:`` declaration at the top and that the Turtle file parses without errors.

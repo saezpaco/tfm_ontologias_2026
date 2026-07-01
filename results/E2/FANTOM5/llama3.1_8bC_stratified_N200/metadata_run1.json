@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-29T12:04:24.137426",
+  "success": true,
+  "elapsed_seconds": 139.34,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 978,
+    "total_tokens": 5073
+  },
+  "prompt_tokens_estimate": 3882,
+  "response_chars": 3281,
+  "turtle_chars": 3281,
+  "validation": {
+    "valid": true,
+    "n_triples": 49,
+    "n_classes": 6,
+    "n_properties": 6
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bC_stratified_N200/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bC_stratified_N200/response_raw_run1.txt"
+  }
+}

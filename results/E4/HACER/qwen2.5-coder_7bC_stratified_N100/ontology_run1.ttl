@@ -1,0 +1,104 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty pmid
+    a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed ID associated with the genetic regulatory element." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty method
+    a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study or interaction." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty chromosomeNumber
+    a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number in the assembly." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:range xsd:int .
+
+owl:DatatypeProperty scoreValue
+    a owl:DatatypeProperty ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "A score associated with the interaction or study." ;
+    rdfs:subPropertyOf rdf:value ;
+    rdfs:range xsd:float .
+
+owl:ObjectProperty hasTranscriptionFactor
+    a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The relationship between a transcription factor and a genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:TranscriptionFactor .
+
+owl:ObjectProperty interactsWithEnhancer
+    a owl:ObjectProperty ;
+    rdfs:label "Interacts With Enhancer" ;
+    rdfs:comment "The relationship between an enhancer and a genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Enhancer .
+
+owl:ObjectProperty associatedWithDisease
+    a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The relationship between a genetic regulatory element and a disease." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:Disease .
+
+owl:ObjectProperty locatedInCellLineOrBiosample
+    a owl:ObjectProperty ;
+    rdfs:label "Located In Cell Line Or Biosample" ;
+    rdfs:comment "The relationship between a genetic regulatory element and a cell line or biosample." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:CellLineOrBiosample .
+
+owl:ObjectProperty hasTargetGene
+    a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The relationship between a genetic regulatory element and a target gene." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range genreg:TargetGene .
+
+owl:Class GeneticRegulatoryElement
+    a owl:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A class representing genetic regulatory elements such as enhancers and super-enhancers." ;
+    rdfs:subClassOf genreg:Entity .
+
+owl:Class TranscriptionFactor
+    a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing transcription factors." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class Enhancer
+    a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing enhancers." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class SuperEnhancer
+    a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A subclass of Enhancer representing super-enhancers." ;
+    rdfs:subClassOf genreg:Enhancer .
+
+owl:Class TargetGene
+    a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing target genes." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class CellLineOrBiosample
+    a owl:Class ;
+    rdfs:label "Cell Line Or Biosample" ;
+    rdfs:comment "A class representing cell lines or biosamples." ;
+    rdfs:subClassOf genreg:Entity .

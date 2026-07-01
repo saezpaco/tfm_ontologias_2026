@@ -1,0 +1,83 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+crm_ID a obo:OBI_0000073 ;  # Unique identifier for CRM
+    rdfs:label "crm/crm_ID" ;
+    skos:prefLabel "crm#crm_ID" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty crm_id_property; owl:someValuesFrom xsd:string ] .
+
+chr_name a obo:OBI_0000074 ;  # Chromosome name
+    rdfs:label "chr_name" ;
+    skos:prefLabel "GRCh38" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty chr_name_property; owl:someValuesFrom xsd:string ] .
+
+start_position a obo:OBI_0000075 ;  # Start position of CRM
+    rdfs:label "start_position" ;
+    skos:prefLabel "start_position" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty start_position_property; owl:someValuesFrom xsd:integer ] .
+
+end_position a obo:OBI_0000076 ;  # End position of CRM
+    rdfs:label "end_position" ;
+    skos:prefLabel "end_position" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty end_position_property; owl:someValuesFrom xsd:integer ] .
+
+database_name a obo:OBI_0000077 ;  # Database name
+    rdfs:label "Database" ;
+    skos:prefLabel "database_name" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty database_name_property; owl:someValuesFrom xsd:string ] .
+
+association a owl:ObjectProperty ;
+    rdfs:label "Association between CRM and gene/disease/transcription factor" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+crm_id_property a owl:ObjectProperty ;
+    rdfs:label "CRM ID property" ;
+    owl:inverseOf association ;
+    owl:onProperty crm_ID .
+
+hgncsymbol a obo:OBI_0000078 ;  # HGNC symbol
+    rdfs:label "gene_symbol" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty hgncsymbol_property; owl:someValuesFrom xsd:string ] .
+
+disease a obo:OBI_0000079 ;  # Disease
+    rdfs:label "Disease" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty disease_property; owl:someValuesFrom xsd:string ] .
+
+uniprot_ID a obo:OBI_0000080 ;  # UniProt ID
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty uniprot_ID_property; owl:someValuesFrom xsd:string ] .
+
+gene a obo:OBI_0000081 ;  # Gene
+    rdfs:label "Gene" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty gene_property; owl:someValuesFrom xsd:string ] .
+
+transcription_factor a obo:OBI_0000082 ;  # Transcription factor
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+    owl:equivalentClass [ rdf:type owl:Restriction; owl:onProperty transcription_factor_property; owl:someValuesFrom xsd:string ] .
+
+skos:exactMatch [
+  rdf:type skos:Concept ;
+  skos:prefLabel "crm/crm_ID" ;
+  a obo:OBI_0000073
+] .
+
+skos:closeMatch [
+  rdf:type skos:Concept ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  a obo:OBI_0000081
+] .

@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/samples_strategies/D_diversity/FANTOM5.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-04T17:01:29.474410+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.018,
+    "plan_s": 3.566,
+    "plan_chars": 2200,
+    "plan_prompt_chars": 5386,
+    "onto_s": 6.186,
+    "onto_chars": 4928,
+    "onto_prompt_chars": 6966,
+    "map_s": 5.086,
+    "map_chars": 4411,
+    "map_prompt_chars": 9797
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-04T17:01:44.331006+00:00",
+  "total_s": 14.856
+}

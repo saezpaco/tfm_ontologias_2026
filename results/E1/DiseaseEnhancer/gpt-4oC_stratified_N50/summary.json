@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 11.030000000000001,
+  "total_tokens": 4291,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:40:36.075633",
+      "success": true,
+      "elapsed_seconds": 12.52,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 1076,
+        "total_tokens": 1464
+      },
+      "prompt_tokens_estimate": 470,
+      "response_chars": 4101,
+      "turtle_chars": 4087,
+      "validation": {
+        "valid": false,
+        "error": "at line 9 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n# Classes\\n'^b':Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n    '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:40:48.184354",
+      "success": true,
+      "elapsed_seconds": 11.07,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 1026,
+        "total_tokens": 1414
+      },
+      "prompt_tokens_estimate": 470,
+      "response_chars": 3902,
+      "turtle_chars": 3888,
+      "validation": {
+        "valid": false,
+        "error": "at line 9 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n# Classes\\n'^b':Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n    '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:40:58.719407",
+      "success": true,
+      "elapsed_seconds": 9.5,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 1025,
+        "total_tokens": 1413
+      },
+      "prompt_tokens_estimate": 470,
+      "response_chars": 3897,
+      "turtle_chars": 3883,
+      "validation": {
+        "valid": false,
+        "error": "at line 9 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n# Classes\\n'^b':Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n    '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

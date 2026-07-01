@@ -1,0 +1,115 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer" ;
+    dc:description "Enhancers asociados a enfermedades" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2phen:Enhancer .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+biolink:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm2tfac:TranscriptionFactor .
+
+### Properties ###
+biolink:has_genomic_location a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2phen:hasGenomicLocation .
+
+biolink:has_target_gene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:hasTargetGene .
+
+biolink:associated_with_disease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+biolink:interacts_with_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    skos:exactMatch crm2tfac:interactsWithTranscriptionFactor .
+
+### Instances ###
+_:CRMHS00027685535 a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chrX:8672161-8672559"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:has_target_gene hgnc:TBL1X ;
+    biolink:associated_with_disease doid:3571 ;
+    dc:identifier "CRMHS00027685535" ;
+    pubmed:27869826 .
+
+_:CRMHS00000005962 a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr3:139237250-139237353"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:has_target_gene hgnc:FOXL2 ;
+    biolink:associated_with_disease doid:10348 ;
+    dc:identifier "CRMHS00000005962" ;
+    pubmed:19543368 .
+
+_:CRMHS00027685822 a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr2:27507935-27508333"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:has_target_gene hgnc:FNDC4 ;
+    biolink:associated_with_disease mesh:D051436 ;
+    dc:identifier "CRMHS00027685822" ;
+    pubmed:29093029 .
+
+_:CRMHS00027685685 a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr20:63331053-63331203"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:has_target_gene hgnc:NKAIN4 ;
+    biolink:associated_with_disease doid:1612 ;
+    dc:identifier "CRMHS00027685685" ;
+    pubmed:27723759 .
+
+_:CRMHS00027685786 a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr20:48068532-48088115"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:has_target_gene hgnc:SULF2 ;
+    biolink:associated_with_disease omim:114480 ;
+    dc:identifier "CRMHS00027685786" ;
+    pubmed:27723759 .
+
+# Additional instances would follow the same pattern...

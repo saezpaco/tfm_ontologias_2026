@@ -1,0 +1,24 @@
+{
+  "run": 1,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/C_stratified/N=50/dbSUPER.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 42,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-26T18:27:39.629305+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.011,
+    "plan_s": 2.532,
+    "plan_chars": 1476,
+    "plan_prompt_chars": 4204,
+    "onto_s": 3.634,
+    "onto_chars": 4212,
+    "onto_prompt_chars": 5060,
+    "map_s": 3.601,
+    "map_chars": 3379,
+    "map_prompt_chars": 8357
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-26T18:27:49.407611+00:00",
+  "total_s": 9.778
+}

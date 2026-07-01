@@ -1,0 +1,107 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A generic class representing genetic elements." ;
+    rdfs:subClassOf ge:Entity ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:hasCellLine ;
+        owl:someValuesFrom ge:CellLine
+    ] ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:locatedOnChromosome ;
+        owl:someValuesFrom ge:Chromosome
+    ] ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:hasRank ;
+        owl:someValuesFrom xsd:integer
+    ] .
+
+ge:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers, which are genetic elements that regulate gene expression." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing super-enhancers, which are highly active enhancers that can drive the transcription of multiple genes." ;
+    rdfs:subClassOf ge:Enhancer ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:containsTargetGene ;
+        owl:someValuesFrom ge:TargetGene
+    ] .
+
+ge:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    rdfs:comment "A class representing cell lines or biosamples." ;
+    rdfs:subClassOf ge:Entity .
+
+ge:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes that are regulated by enhancers and super-enhancers." ;
+    rdfs:subClassOf ge:Entity .
+
+ge:hasCellLine a owl:ObjectProperty ;
+    rdfs:label "Has Cell Line" ;
+    rdfs:comment "An object property indicating the cell line or biosample associated with a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:CellLine .
+
+ge:containsTargetGene a owl:ObjectProperty ;
+    rdfs:label "Contains Target Gene" ;
+    rdfs:comment "An object property indicating the target gene(s) contained within a super-enhancer." ;
+    rdfs:domain ge:SuperEnhancer ;
+    rdfs:range ge:TargetGene .
+
+ge:locatedOnChromosome a owl:ObjectProperty ;
+    rdfs:label "Located On Chromosome" ;
+    rdfs:comment "An object property indicating the chromosome on which a genetic element is located." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:Chromosome .
+
+ge:hasRank a owl:DatatypeProperty ;
+    rdfs:label "Has Rank" ;
+    rdfs:comment "A datatype property indicating the rank or significance score of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer .
+
+ge:cellName a owl:DatatypeProperty ;
+    rdfs:label "Cell Name" ;
+    rdfs:comment "A datatype property representing the name of a cell line or biosample." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string .
+
+ge:chromosome a owl:DatatypeProperty ;
+    rdfs:label "Chromosome" ;
+    rdfs:comment "A datatype property representing the chromosome number." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string .
+
+ge:geneSymbol a owl:DatatypeProperty ;
+    rdfs:label "Gene Symbol" ;
+    rdfs:comment "A datatype property representing the symbol of a target gene." ;
+    rdfs:domain ge:TargetGene ;
+    rdfs:range xsd:string .
+
+ge:seId a owl:DatatypeProperty ;
+    rdfs:label "SE ID" ;
+    rdfs:comment "A datatype property representing the identifier of a super-enhancer." ;
+    rdfs:domain ge:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+ge:start a owl:DatatypeProperty ;
+    rdfs:label "Start" ;
+    rdfs:comment "A datatype property representing the genomic start position of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer .
+
+ge:stop a owl:DatatypeProperty ;
+    rdfs:label "Stop" ;
+    rdfs:comment "A datatype property representing the genomic stop position of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer .

@@ -1,0 +1,168 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+### Data Type Properties
+:pmid a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed identifier for the study." ;
+    rdfs:range xsd:string ;
+    skos:definition "Unique identifier for a scientific publication in the PubMed database." .
+
+:method a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study." ;
+    rdfs:range xsd:string ;
+    skos:definition "A specific procedure or technique employed in an experiment or research." .
+
+:chromosomeNumber a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The number of the chromosome." ;
+    rdfs:range xsd:string ;
+    skos:definition "A numerical identifier for a specific chromosome within a genome." .
+
+:hgncSymbol a owl:DatatypeProperty ;
+    rdfs:label "HGNC Symbol" ;
+    rdfs:comment "The HGNC symbol for a gene or transcription factor." ;
+    rdfs:range xsd:string ;
+    skos:definition "A standardized identifier used by the Human Genome Nomenclature Committee (HGNC) to name and classify genes and their products." .
+
+:scoreValue a owl:DatatypeProperty ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "The score associated with the genetic regulatory element." ;
+    rdfs:range xsd:float ;
+    skos:definition "A numerical value representing the significance or importance of a genetic regulatory element." .
+
+### Object Properties
+:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The transcription factor involved in the interaction." ;
+    rdfs:domain :TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range :TranscriptionFactor .
+
+:hasEnhancer a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer" ;
+    rdfs:comment "The enhancer involved in the interaction." ;
+    rdfs:domain :TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range :Enhancer .
+
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The target gene involved in the interaction." ;
+    rdfs:domain :EnhancerToGeneInteraction ;
+    rdfs:range :TargetGene .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The disease associated with the genetic regulatory element." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :Disease .
+
+:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:label "Occurs In Cell Line Or Biosample" ;
+    rdfs:comment "The cell line or biosample where the genetic regulatory element occurs." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :CellLineOrBiosample .
+
+:involvesMutation a owl:ObjectProperty ;
+    rdfs:label "Involves Mutation" ;
+    rdfs:comment "The mutation involved in the study." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :Mutation .
+
+:partOfChromatinRegulatoryModule a owl:ObjectProperty ;
+    rdfs:label "Part Of Chromatin Regulatory Module" ;
+    rdfs:comment "The chromatin regulatory module that the enhancer is part of." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :ChromatinRegulatoryModule .
+
+### Classes
+:GeneticRegulatoryElement a owl:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A biological element that regulates gene expression or other cellular processes." ;
+    skos:definition "An entity involved in the regulation of genetic information, such as enhancers, super-enhancers, and transcription factors." .
+
+:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A protein that binds to specific DNA sequences and regulates gene expression by controlling the transcription of genes." ;
+    skos:definition "A type of protein that plays a crucial role in the regulation of gene expression by binding to promoter regions of target genes." .
+
+:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A DNA sequence that increases the transcription of adjacent genes without being transcribed itself." ;
+    skos:definition "A type of genetic regulatory element that enhances the transcription of other genes by binding to specific proteins and altering chromatin structure." .
+    rdfs:subClassOf :GeneticRegulatoryElement .
+
+:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A highly active enhancer that can drive the transcription of multiple genes simultaneously." ;
+    skos:definition "A type of enhancer that is particularly potent and capable of driving the expression of multiple genes, often associated with regulatory regions like promoters or insulators." .
+    rdfs:subClassOf :Enhancer .
+
+:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A gene whose transcription is regulated by a genetic regulatory element." ;
+    skos:definition "A type of gene that is affected by the activity of enhancers, super-enhancers, or other genetic regulatory elements in terms of its expression levels." .
+
+:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A condition affecting the normal functioning of an organism." ;
+    skos:definition "An abnormal state that impairs the body's ability to function normally, often resulting from genetic or environmental factors." .
+
+:CellLineOrBiosample a owl:Class ;
+    rdfs:label "Cell Line Or Biosample" ;
+    rdfs:comment "A collection of cells that are maintained in culture or isolated from an organism for study." ;
+    skos:definition "A sample of biological material, such as cells, tissues, or fluids, used for research and analysis." .
+
+:Mutation a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A change in the DNA sequence that can affect the structure or function of proteins." ;
+    skos:definition "An alteration in the genetic material (DNA) that may lead to changes in cellular processes, phenotypes, and sometimes disease states." .
+
+:ChromatinRegulatoryModule a owl:Class ;
+    rdfs:label "Chromatin Regulatory Module" ;
+    rdfs:comment "A group of DNA sequences and associated proteins that regulate chromatin structure and gene expression." ;
+    skos:definition "A complex of DNA elements and proteins that work together to control the accessibility of DNA to transcription factors and other regulatory molecules, thereby influencing gene expression." .
+
+### Restrictions
+TranscriptionFactorToEnhancerInteraction a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :hasTranscriptionFactor ;
+        owl:someValuesFrom :TranscriptionFactor
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty :hasEnhancer ;
+        owl:someValuesFrom :Enhancer
+    ] .
+
+EnhancerToGeneInteraction a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :hasTargetGene ;
+        owl:someValuesFrom :TargetGene
+    ] .
+
+GeneticRegulatoryElement a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :associatedWithDisease ;
+        owl:someValuesFrom :Disease
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty :occursInCellLineOrBiosample ;
+        owl:someValuesFrom :CellLineOrBiosample
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty :involvesMutation ;
+        owl:someValuesFrom :Mutation
+    ] .
+
+Enhancer a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :partOfChromatinRegulatoryModule ;
+        owl:someValuesFrom :ChromatinRegulatoryModule
+    ] .

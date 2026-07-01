@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "run": 1,
+  "timestamp": "2026-06-28T21:45:46.166851",
+  "success": true,
+  "elapsed_seconds": 7.65,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7025,
+    "completion_tokens": 947,
+    "total_tokens": 7972
+  },
+  "prompt_tokens_estimate": 3880,
+  "response_chars": 3111,
+  "turtle_chars": 3111,
+  "validation": {
+    "valid": true,
+    "n_triples": 40,
+    "n_classes": 4,
+    "n_properties": 6
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oB_random_N100/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oB_random_N100/response_raw_run1.txt"
+  }
+}

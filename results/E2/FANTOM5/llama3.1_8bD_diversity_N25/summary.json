@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 293.56666666666666,
+  "total_tokens": 13245,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-27T02:02:28.047560",
+      "success": true,
+      "elapsed_seconds": 293.21,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2155,
+        "completion_tokens": 2260,
+        "total_tokens": 4415
+      },
+      "prompt_tokens_estimate": 1460,
+      "response_chars": 8016,
+      "turtle_chars": 8016,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' for describing cis-regulatory modules in Homo sapiens.\" .\\n\\n'^b'crm\\n  a owl:Class ;\\n  rdfs:label \"Cis-Regulatory Module\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bD_diversity_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bD_diversity_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-27T02:07:22.484559",
+      "success": true,
+      "elapsed_seconds": 293.4,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2155,
+        "completion_tokens": 2260,
+        "total_tokens": 4415
+      },
+      "prompt_tokens_estimate": 1460,
+      "response_chars": 8016,
+      "turtle_chars": 8016,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' for describing cis-regulatory modules in Homo sapiens.\" .\\n\\n'^b'crm\\n  a owl:Class ;\\n  rdfs:label \"Cis-Regulatory Module\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bD_diversity_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bD_diversity_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-27T02:12:17.612521",
+      "success": true,
+      "elapsed_seconds": 294.09,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2155,
+        "completion_tokens": 2260,
+        "total_tokens": 4415
+      },
+      "prompt_tokens_estimate": 1460,
+      "response_chars": 8016,
+      "turtle_chars": 8016,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' for describing cis-regulatory modules in Homo sapiens.\" .\\n\\n'^b'crm\\n  a owl:Class ;\\n  rdfs:label \"Cis-Regulatory Module\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bD_diversity_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/llama3.1_8bD_diversity_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix pubmed:  <http://identifiers.org/pubmed/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix omim:    <http://identifiers.org/omim/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer Ontology" ;
+    dc:description "Ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+### Properties ###
+biolink:has_genomic_location a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2pgene:hasGenomicLocation .
+
+biolink:targets_gene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+biolink:associated_with_disease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+biolink:has_publication a owl:ObjectProperty ;
+    rdfs:label "has publication" ;
+    skos:exactMatch crm2pgene:hasPublication .
+
+### Instances ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685825> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr4:88037770-88039770"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:PIGY ;
+    biolink:associated_with_disease doid:784 ;
+    biolink:has_publication pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685608> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr20:57108146-57109944"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:BRIP1 ;
+    biolink:associated_with_disease doid:1612 ;
+    biolink:has_publication pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685975> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr22:19755479-19757077"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:TBX1 ;
+    biolink:associated_with_disease mesh:D006345 ;
+    biolink:has_publication pubmed:25910213 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005889> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr18:48913832-48948630"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:SMAD7 ;
+    biolink:associated_with_disease mesh:D015179 ;
+    biolink:has_publication pubmed:25375357 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685533> a biolink:Enhancer ;
+    biolink:has_genomic_location [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr3:15558295-15558493"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targets_gene hgnc:BTD ;
+    biolink:associated_with_disease doid:0050939 ;
+    biolink:has_publication pubmed:27869826 .

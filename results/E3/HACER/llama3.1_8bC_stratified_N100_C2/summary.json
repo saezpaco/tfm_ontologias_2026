@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 131.79999999999998,
+  "total_tokens": 15585,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-07-01T10:50:45.626043",
+      "success": true,
+      "elapsed_seconds": 132.38,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1100,
+        "total_tokens": 5195
+      },
+      "prompt_tokens_estimate": 3991,
+      "response_chars": 3246,
+      "turtle_chars": 2568,
+      "validation": {
+        "valid": false,
+        "error": "at line 23 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'per/> .\\n\\n# === RECOMMENDED ONTOLOGIES (semantic search) ===\\n'^b'crm2gene_example a owl:Ontology ;\\n  rdfs:label \"crm2gene_exa'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bC_stratified_N100_C2/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bC_stratified_N100_C2/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-07-01T10:53:00.118135",
+      "success": true,
+      "elapsed_seconds": 132.17,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1100,
+        "total_tokens": 5195
+      },
+      "prompt_tokens_estimate": 3991,
+      "response_chars": 3246,
+      "turtle_chars": 2568,
+      "validation": {
+        "valid": false,
+        "error": "at line 23 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'per/> .\\n\\n# === RECOMMENDED ONTOLOGIES (semantic search) ===\\n'^b'crm2gene_example a owl:Ontology ;\\n  rdfs:label \"crm2gene_exa'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bC_stratified_N100_C2/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bC_stratified_N100_C2/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-07-01T10:55:13.313195",
+      "success": true,
+      "elapsed_seconds": 130.85,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1100,
+        "total_tokens": 5195
+      },
+      "prompt_tokens_estimate": 3991,
+      "response_chars": 3246,
+      "turtle_chars": 2568,
+      "validation": {
+        "valid": false,
+        "error": "at line 23 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'per/> .\\n\\n# === RECOMMENDED ONTOLOGIES (semantic search) ===\\n'^b'crm2gene_example a owl:Ontology ;\\n  rdfs:label \"crm2gene_exa'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bC_stratified_N100_C2/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8bC_stratified_N100_C2/response_raw_run3.txt"
+      }
+    }
+  ]
+}

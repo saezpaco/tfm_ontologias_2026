@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-06-28T21:59:52.040944",
+  "success": true,
+  "elapsed_seconds": 12.41,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 8160,
+    "completion_tokens": 979,
+    "total_tokens": 9139
+  },
+  "prompt_tokens_estimate": 4431,
+  "response_chars": 2986,
+  "turtle_chars": 2972,
+  "validation": {
+    "valid": false,
+    "error": "at line 65 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b';\\n        sio:SIO_000301 \"107496131\"^^xsd:integer ;\\n        '^b'assembly:assembly_version \"hg38\"\\n    ] ;\\n    biolink:has_evi'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N200/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N200/response_raw_run2.txt"
+  }
+}

@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology rdf:about "http://example.com/dbSUPER-ontology" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for cis-regulatory modules, specifically enhancers in the human genome." ;
+
+crm:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:Enhancer a owl:Class ;
+    rdfs:subClassOf crm:CRM ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "An enhancer sequence that modulates the transcription rate of its target genes in the human genome." .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "The genomic coordinates of the cis-regulatory module." .
+
+crm:locatedIn a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001467 ;  # Chromosome
+    skos:prefLabel "located in" ;
+    skos:definition "The chromosome where the cis-regulatory module is located." .
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has cell line activity" ;
+    skos:definition "The cell lines in which the enhancer shows activity." .
+
+crm:targetsGene a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001217 ;  # Gene
+    skos:prefLabel "targets gene" ;
+    skos:definition "The gene that is targeted by the enhancer." .
+
+crm:associatedDisease a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:DOID_0000001 ;  # Disease
+    skos:prefLabel "associated disease" ;
+    skos:definition "The disease associated with the enhancer." .
+
+crm:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range obo:SO_0001468 ;  # Transcription factor
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "The transcription factor that interacts with the enhancer." .
+
+crm:bgwAssociation a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw association" ;
+    skos:definition "An association between a cis-regulatory module and another entity (gene, disease, transcription factor) according to the database." .
+
+crm:bgwAssociationGeneSymbol a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw association gene symbol" ;
+    skos:definition "An association between a cis-regulatory module and a gene symbol according to the database." .
+
+crm:bgwAssociationDisease a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw association disease" ;
+    skos:definition "An association between a cis-regulatory module and a disease according to the database." .
+
+crm:bgwAssociationTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "bgw association transcription factor" ;
+    skos:definition "An association between a cis-regulatory module and a transcription factor according to the database." .

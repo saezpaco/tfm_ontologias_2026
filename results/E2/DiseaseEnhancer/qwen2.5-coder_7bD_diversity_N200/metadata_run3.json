@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "DiseaseEnhancer",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-06-30T07:29:33.008080",
+  "success": true,
+  "elapsed_seconds": 83.92,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 497,
+    "total_tokens": 4592
+  },
+  "prompt_tokens_estimate": 3881,
+  "response_chars": 1363,
+  "turtle_chars": 1349,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm:CRM a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\"'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/qwen2.5-coder_7bD_diversity_N200/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/qwen2.5-coder_7bD_diversity_N200/response_raw_run3.txt"
+  }
+}

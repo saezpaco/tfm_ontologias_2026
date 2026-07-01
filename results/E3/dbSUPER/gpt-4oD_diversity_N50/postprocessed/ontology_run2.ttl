@@ -1,0 +1,67 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# Define the dbSUPER specific class for super-enhancers
+dbsuper:SuperEnhancer rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Super-enhancer as defined in the dbSUPER database" ;
+    skos:prefLabel "Super-enhancer" ;
+    skos:exactMatch hcrm:crm_ID .
+
+# Define properties specific to dbSUPER super-enhancers
+dbsuper:hasGenomicCoordinates rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range nuccore:chr_ID ;
+    skos:definition "Genomic coordinates of the super-enhancer" ;
+    skos:exactMatch obo:GENO_0000895, obo:GENO_0000894 .
+
+dbsuper:activeInCellLine rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range obo:CLO_ID ;
+    skos:definition "Cell line in which the super-enhancer is active" ;
+    skos:exactMatch obo:TXPO_0003500 .
+
+dbsuper:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range biolink:Gene ;
+    skos:definition "Gene targeted by the super-enhancer" ;
+    skos:exactMatch biolink:regulates_expression_of .
+
+dbsuper:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range biolink:Disease ;
+    skos:definition "Disease associated with the super-enhancer" ;
+    skos:exactMatch biolink:associated_with .
+
+dbsuper:interactsWithTranscriptionFactor rdf:type owl:ObjectProperty ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range biolink:GeneProduct ;
+    skos:definition "Transcription factor interacting with the super-enhancer" ;
+    skos:exactMatch biolink:interacts_with .
+
+# Example instance of a super-enhancer
+dbsuper:SE_000001 rdf:type dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinates nuccore:chr1 ;
+    dbsuper:activeInCellLine obo:CLO_0000001 ;
+    dbsuper:targetsGene <http://identifiers.org/ncbigene/1234> ;
+    dbsuper:associatedWithDisease <http://identifiers.org/mesh/D012345> ;
+    dbsuper:interactsWithTranscriptionFactor <http://identifiers.org/uniprot/P12345> ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    schema:evidenceOrigin <http://dbsuper.org/evidence/SE_000001> ;
+    rdfs:isDefinedBy obo:ECO_0000001 ;
+    sio:SIO_000772 id_pubmed:12345678 ;
+    sio:SIO_000253 <http://dbsuper.org> .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-28T02:03:28.098249",
+  "success": true,
+  "elapsed_seconds": 165.74,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3932,
+    "completion_tokens": 1417,
+    "total_tokens": 5349
+  },
+  "prompt_tokens_estimate": 2153,
+  "response_chars": 3800,
+  "turtle_chars": 3786,
+  "validation": {
+    "valid": false,
+    "error": "at line 44 of <>:\nBad syntax (Prefix \"linkml:\" not bound) at ^ in:\n\"...b'bel \"CRM\" ;\\n    skos:altLabel \"cis-regulatory module\" ;\\n    '^b'linkml:is_a biolink:RegulatoryRegion .\\n\\nnuccore:chr_ID rdf:t'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bA_head_N25/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bA_head_N25/response_raw_run1.txt"
+  }
+}

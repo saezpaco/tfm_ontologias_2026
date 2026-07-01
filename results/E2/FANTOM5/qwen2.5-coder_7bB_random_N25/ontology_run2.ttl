@@ -1,0 +1,69 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "CRM" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    rdfs:subClassOf obo:SO_0001765 .
+
+crm:hasGenomicCoordinates a owl:ObjectProperty ;
+    rdfs:label "genomic_coordinates" ;
+    skos:prefLabel "chr_name" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:label "start_position" ;
+    skos:prefLabel "chromStart" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+crm:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:label "end_position" ;
+    skos:prefLabel "chromEnd" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+crm:hasScore a owl:DatatypeProperty ;
+    rdfs:label "score" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer .
+
+crm:hasStrand a owl:DatatypeProperty ;
+    rdfs:label "strand" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string .
+
+crm:hasDatabase a owl:ObjectProperty ;
+    rdfs:label "database" ;
+    skos:prefLabel "database_name" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 .
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "target_gene" ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 .
+
+crm:hasDisease a owl:ObjectProperty ;
+    rdfs:label "disease" ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:DOID_0050124 .
+
+crm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "transcription_factor" ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003824 .
+
+crm:FANTOM5 a owl:Class ;
+    rdfs:label "FANTOM5" ;
+    skos:prefLabel "Database" ;
+    rdfs:subClassOf obo:GO_0008279 .

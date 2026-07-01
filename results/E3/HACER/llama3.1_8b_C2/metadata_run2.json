@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-05T21:08:44.632968",
+  "success": true,
+  "elapsed_seconds": 116.34,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3416,
+    "completion_tokens": 893,
+    "total_tokens": 4309
+  },
+  "prompt_tokens_estimate": 2103,
+  "response_chars": 2845,
+  "turtle_chars": 2489,
+  "validation": {
+    "valid": false,
+    "error": "at line 37 of <>:\nBad syntax (Prefix \"crm2tfac:\" not bound) at ^ in:\n\"...b'    rdfs:label \"Transcription factor\" ;\\n    skos:closeMatch '^b'crm2tfac:TranscriptionFactor .\\n\\n# Properties\\nhcrm:hasEnhance'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_C2/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/llama3.1_8b_C2/response_raw_run2.txt"
+  }
+}

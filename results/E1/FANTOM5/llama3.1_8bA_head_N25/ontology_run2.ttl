@@ -1,0 +1,97 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancers identified by CAGE-seq in FANTOM5 dataset." .
+
+<http://example.org/CRM>
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module (CRM)" ;
+  skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression by binding transcription factors." ;
+  rdfs:subClassOf <obo:SO_0000163> .
+
+<http://example.org/Enhancer>
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A type of CRM that activates gene expression." ;
+  rdfs:subClassOf <obo:SO_0000163> .
+
+<http://example.org/GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome." ;
+  rdfs:subClassOf <obo:SO_0000163> .
+
+<http://example.org/Chrom>
+  a owl:ObjectProperty ;
+  rdfs:label "Chromosome" ;
+  skos:prefLabel "Chromosome" ;
+  skos:definition "The chromosome on which the enhancer is located." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range <obo:SO_0000163> .
+
+<http://example.org/Start>
+  a owl:ObjectProperty ;
+  rdfs:label "Start Coordinate" ;
+  skos:prefLabel "Start Coordinate" ;
+  skos:definition "The start coordinate of the enhancer on its chromosome." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range xsd:int .
+
+<http://example.org/End>
+  a owl:ObjectProperty ;
+  rdfs:label "End Coordinate" ;
+  skos:prefLabel "End Coordinate" ;
+  skos:definition "The end coordinate of the enhancer on its chromosome." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range xsd:int .
+
+<http://example.org/Evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "The experimental evidence supporting the enhancer's activity." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range <obo:SO_0000163> .
+
+<http://example.org/CellLine>
+  a owl:ObjectProperty ;
+  rdfs:label "Cell Line" ;
+  skos:prefLabel "Cell Line" ;
+  skos:definition "The cell line in which the enhancer was active." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range <obo:SO_0000163> .
+
+<http://example.org/TargetGene>
+  a owl:ObjectProperty ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "The gene regulated by the enhancer." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range <obo:SO_0000163> .
+
+<http://example.org/Disease>
+  a owl:ObjectProperty ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "The disease associated with the enhancer's activity." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range <obo:SO_0000163> .
+
+<http://example.org/TranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "The transcription factor interacting with the enhancer." ;
+  rdfs:domain <http://example.org/Enhancer> ;
+  rdfs:range <obo:SO_0000163> .

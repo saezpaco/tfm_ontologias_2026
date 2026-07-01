@@ -1,0 +1,100 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+@prefix pubmed: <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://example.org/dbSUPER_ontology> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    dc:description "Ontology for representing super-enhancers from the dbSUPER database." .
+
+# Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+dbsuper:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    rdfs:subClassOf biolink:GenomicEntity .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    rdfs:subClassOf biolink:BiologicalEntity .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+dbsuper:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+dbsuper:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:bgw!CRMHS00000003515--doid!1682 .
+
+# Properties
+dbsuper:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:GenomicCoordinate .
+
+dbsuper:activeInCellLine a owl:ObjectProperty ;
+    rdfs:label "active in cell line" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:CellLine .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Gene ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+dbsuper:interactsWithTF a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:TranscriptionFactor ;
+    skos:exactMatch crm2tfac:bgw!crm_ID--uniprot!uniprot_ID .
+
+dbsuper:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Disease ;
+    skos:exactMatch crm2phen:bgw!CRMHS00000003515--doid!1682 .
+
+# Example individuals
+dbsuper:CRMHS00000035442 a dbsuper:SuperEnhancer ;
+    rdfs:label "CRMHS00000035442" ;
+    dbsuper:hasGenomicCoordinate [
+        a dbsuper:GenomicCoordinate ;
+        rdfs:label "chr17:42271401-42290073" ;
+        schema:chromosome "chr17" ;
+        schema:startPosition 42271401 ;
+        schema:endPosition 42290073 ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    dbsuper:activeInCellLine [
+        a dbsuper:CellLine ;
+        rdfs:label "CD4 Memory Primary 8pool"
+    ] ;
+    dbsuper:targetsGene [
+        a dbsuper:Gene ;
+        rdfs:label "STAT5B"
+    ] ;
+    dc:source <https://asntech.org/dbsuper/details.php?se_id=SE_15733> ;
+    dc:identifier "SE_15733" ;
+    dc:relation pubmed:24119843 .
+
+# Additional individuals can be added similarly
+```

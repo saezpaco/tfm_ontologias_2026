@@ -1,0 +1,78 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://example.org/dbSUPER_ontology> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    dc:description "Ontology for representing super-enhancers from the dbSUPER database." .
+
+# Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:exactMatch crm2tfac:SuperEnhancer .
+
+dbsuper:GenomicLocation a owl:Class ;
+    rdfs:label "Genomic Location" .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" .
+
+# Properties
+dbsuper:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:GenomicLocation .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Gene ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:activeInCellLine a owl:ObjectProperty ;
+    rdfs:label "active in cell line" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:CellLine .
+
+dbsuper:hasPMID a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+# Individuals (example)
+dbsuper:CRMHS00000009489 a dbsuper:SuperEnhancer ;
+    rdfs:label "CRMHS00000009489" ;
+    dbsuper:hasGenomicLocation [
+        a dbsuper:GenomicLocation ;
+        rdfs:label "chr1:198619325-198685385" ;
+    ] ;
+    dbsuper:targetsGene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000009489--hgncsymbol!9606/PTPRC> ;
+    dbsuper:activeInCellLine <http://example.org/cellline/Ly3> ;
+    dbsuper:hasPMID "24332044"^^xsd:string .
+
+# Example cell line individual
+<http://example.org/cellline/Ly3> a dbsuper:CellLine ;
+    rdfs:label "Ly3" .
+
+# Example gene individual
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000009489--hgncsymbol!9606/PTPRC> a dbsuper:Gene ;
+    rdfs:label "PTPRC" ;
+    skos:exactMatch <http://identifiers.org/hgnc.symbol/PTPRC> .
+```

@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 51.73333333333333,
+  "total_tokens": 4467,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-27T21:24:49.637477",
+      "success": true,
+      "elapsed_seconds": 51.88,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 797,
+        "completion_tokens": 692,
+        "total_tokens": 1489
+      },
+      "prompt_tokens_estimate": 805,
+      "response_chars": 2366,
+      "turtle_chars": 2352,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'epresenting cis-regulatory modules in the human genome.\" .\\n\\n'^b'crm:CRM a owl:Class ;\\n    skos:prefLabel \"Cis-regulatory mod'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/qwen2.5-coder_7bD_diversity_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/qwen2.5-coder_7bD_diversity_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-27T21:25:42.267348",
+      "success": true,
+      "elapsed_seconds": 51.59,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 797,
+        "completion_tokens": 692,
+        "total_tokens": 1489
+      },
+      "prompt_tokens_estimate": 805,
+      "response_chars": 2366,
+      "turtle_chars": 2352,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'epresenting cis-regulatory modules in the human genome.\" .\\n\\n'^b'crm:CRM a owl:Class ;\\n    skos:prefLabel \"Cis-regulatory mod'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/qwen2.5-coder_7bD_diversity_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/qwen2.5-coder_7bD_diversity_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-27T21:26:35.034948",
+      "success": true,
+      "elapsed_seconds": 51.73,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 797,
+        "completion_tokens": 692,
+        "total_tokens": 1489
+      },
+      "prompt_tokens_estimate": 805,
+      "response_chars": 2366,
+      "turtle_chars": 2352,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'epresenting cis-regulatory modules in the human genome.\" .\\n\\n'^b'crm:CRM a owl:Class ;\\n    skos:prefLabel \"Cis-regulatory mod'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/qwen2.5-coder_7bD_diversity_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/qwen2.5-coder_7bD_diversity_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

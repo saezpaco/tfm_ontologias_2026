@@ -1,0 +1,694 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. TFs2enh_PMID: type - PubMed ID for transcription factor to enhancer relationship - string
+2. TFs2enh_method: type - method used in transcription factor to enhancer relationship - string
+3. biosample_name: type - name of the cell line or biosample - string
+4. crm_ID: type - ID of the CRISPR/Cas9 target region - string
+5. crossref: type - reference for the data - string
+6. current_assembly: type - assembly version of the genome - string
+7. current_chr: type - chromosome number - integer
+8. current_end: type - end position of the genomic feature - integer
+9. current_start: type - start position of the genomic feature - integer
+10. disease: type - name of the disease associated with the data - string
+11. disease_PMID: type - PubMed ID for disease information - string
+12. disease_method: type - method used in disease association - string
+13. enh2gene_PMID: type - PubMed ID for enhancer to gene relationship - string
+14. enh2gene_method: type - method used in enhancer to gene relationship - string
+15. enh_PMID: type - PubMed ID for enhancer information - string
+16. enh_method: type - method used in enhancer analysis - string
+17. hgnc_symbol_TFs: type - HGNC symbol of the transcription factors - string
+18. hgnc_symbol_target_genes: type - HGNC symbols of target genes - string
+19. minimum_ratio: type - minimum ratio value - float
+20. mutation_PMID: type - PubMed ID for mutation information - string
+21. mutation_method: type - method used in mutation analysis - string
+22. orig_assembly: type - original assembly version of the genome - string
+23. orig_chr: type - chromosome number from the original assembly - integer
+24. orig_end: type - end position of the genomic feature from the original assembly - integer
+25. orig_start: type - start position of the genomic feature from the original assembly - integer
+26. original_ID: type - ID of the original data - string
+27. refsnp_ID: type - RSID for the genetic variation - string
+28. score: type - score value - float
+29. source: type - source of the data - string
+30. type: type - type of the genomic feature - string
+
+**Classes:**
+1. class_entity
+
+**Subclasses:**
+1. entity_name: subclass of -> class_entity
+
+**Object Properties:**
+1. has_transcription_factor_to_enhancer_relationship: domain - TFs2enh_PMID, range - transcription_factor
+2. has_method_for_transcription_factor_to_enhancer_relationship: domain - TFs2enh_method, range - method
+3. has_biosample: domain - biosample_name, range - biosample
+4. has_CRISPR_Cas9_target_region_ID: domain - crm_ID, range - CRISPR_Cas9_target_region
+5. has_cross_reference: domain - crossref, range - reference
+6. has_assembly_version: domain - current_assembly, range - assembly_version
+7. has_chromosome_number: domain - current_chr, range - chromosome_number
+8. has_end_position: domain - current_end, range - end_position
+9. has_start_position: domain - current_start, range - start_position
+10. has_disease_association: domain - disease, range - disease
+11. has_disease_PMID: domain - disease_PMID, range - disease_PMID
+12. has_method_for_disease_association: domain - disease_method, range - method
+13. has_enhancer_to_gene_relationship: domain - enh2gene_PMID, range - gene
+14. has_method_for_enhancer_to_gene_relationship: domain - enh2gene_method, range - method
+15. has_enhancer_information: domain - enh_PMID, range - enhancer
+16. has_method_for_enhancer_analysis: domain - enh_method, range - method
+17. has_transcription_factor_symbol: domain - hgnc_symbol_TFs, range - transcription_factor_symbol
+18. has_target_gene_symbols: domain - hgnc_symbol_target_genes, range - gene_symbol
+19. has_minimum_ratio: domain - minimum_ratio, range - ratio
+20. has_mutation_information: domain - mutation_PMID, range - mutation
+21. has_method_for_mutation_analysis: domain - mutation_method, range - method
+22. has_original_assembly_version: domain - orig_assembly, range - assembly_version
+23. has_original_chromosome_number: domain - orig_chr, range - chromosome_number
+24. has_original_end_position: domain - orig_end, range - end_position
+25. has_original_start_position: domain - orig_start, range - start_position
+26. has_original_ID: domain - original_ID, range - ID
+27. has_RSID: domain - refsnp_ID, range - RSID
+28. has_score: domain - score, range - score_value
+29. has_source: domain - source, range - source_of_data
+30. has_type_of_genomic_feature: domain - type, range - genomic_feature_type
+
+**Data Type Properties:**
+1. PubMed_ID: domain - TFs2enh_PMID, disease_PMID, enh2gene_PMID, enh_PMID, mutation_PMID, refsnp_ID, original_ID, crm_ID, crossref, source, type, score
+2. Method: domain - TFs2enh_method, disease_method, enh2gene_method, enh_method, mutation_method, source, type
+3. String: domain - biosample_name, hgnc_symbol_TFs, hgnc_symbol_target_genes, disease, crm_ID, crossref, original_ID, refsnp_ID, source, type
+4. Integer: domain - current_chr, orig_chr, current_end, current_start, orig_end, orig_start
+5. Float: domain - minimum_ratio, score
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed ID for a specific piece of genetic data." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_PubMed_ID ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "A method used in genetic data analysis." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_Method ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "String" ;
+    rdfs:comment "A string value." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_String ;
+        owl:someValuesFrom xsd:string ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "Integer" ;
+    rdfs:comment "An integer value." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_Integer ;
+        owl:someValuesFrom xsd:int ] .
+
+owl:DatatypeProperty rdf:type owl:DatatypeProperty ;
+    rdfs:label "Float" ;
+    rdfs:comment "A float value." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_Float ;
+        owl:someValuesFrom xsd:float ] .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_transcription_factor_to_enhancer_relationship" ;
+    rdfs:comment "The PubMed ID for a transcription factor to enhancer relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:transcription_factor .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_transcription_factor_to_enhancer_relationship" ;
+    rdfs:comment "The method used in a transcription factor to enhancer relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_biosample" ;
+    rdfs:comment "The name of the cell line or biosample." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:biosample .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_CRISPR_Cas9_target_region_ID" ;
+    rdfs:comment "The ID of a CRISPR/Cas9 target region." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:CRISPR_Cas9_target_region .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_cross_reference" ;
+    rdfs:comment "A reference for the data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:reference .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_assembly_version" ;
+    rdfs:comment "The assembly version of the genome." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:assembly_version .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_chromosome_number" ;
+    rdfs:comment "The chromosome number." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:chromosome_number .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_end_position" ;
+    rdfs:comment "The end position of the genomic feature." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:end_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_start_position" ;
+    rdfs:comment "The start position of the genomic feature." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:start_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_disease_association" ;
+    rdfs:comment "The name of the disease associated with the data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:disease .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_disease_PMID" ;
+    rdfs:comment "The PubMed ID for disease information." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:disease_PMID .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_disease_association" ;
+    rdfs:comment "The method used in a disease association." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_enhancer_to_gene_relationship" ;
+    rdfs:comment "The PubMed ID for an enhancer to gene relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:gene .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_enhancer_to_gene_relationship" ;
+    rdfs:comment "The method used in an enhancer to gene relationship." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_enhancer_information" ;
+    rdfs:comment "The PubMed ID for enhancer information." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:enhancer .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_enhancer_analysis" ;
+    rdfs:comment "The method used in an enhancer analysis." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_transcription_factor_symbol" ;
+    rdfs:comment "The HGNC symbol of a transcription factor." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:transcription_factor_symbol .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_target_gene_symbols" ;
+    rdfs:comment "The HGNC symbols of target genes." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:gene_symbol .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_minimum_ratio" ;
+    rdfs:comment "The minimum ratio value." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:ratio .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_mutation_information" ;
+    rdfs:comment "The PubMed ID for mutation information." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:mutation .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_method_for_mutation_analysis" ;
+    rdfs:comment "The method used in a mutation analysis." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:method .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_assembly_version" ;
+    rdfs:comment "The original assembly version of the genome." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:assembly_version .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_chromosome_number" ;
+    rdfs:comment "The chromosome number from the original assembly." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:chromosome_number .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_end_position" ;
+    rdfs:comment "The end position of the genomic feature from the original assembly." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:end_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_start_position" ;
+    rdfs:comment "The start position of the genomic feature from the original assembly." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:start_position .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_original_ID" ;
+    rdfs:comment "The ID of the original data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:ID .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_RSID" ;
+    rdfs:comment "The RSID for a genetic variation." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:RSID .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_score" ;
+    rdfs:comment "A score value." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:score_value .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_source" ;
+    rdfs:comment "The source of the genetic data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:source .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_genetic_data_type" ;
+    rdfs:comment "The type of genetic data (e.g., transcription factor, enhancer, disease)." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range gr:genetic_data_type .
+
+owl:ObjectProperty rdf:type owl:ObjectProperty ;
+    rdfs:label "has_genetic_data_value" ;
+    rdfs:comment "The value of the genetic data." ;
+    rdfs:domain gr:class_entity ;
+    rdfs:range xsd:anyURI .
+
+gr:class_entity rdf:type owl:Class ;
+    rdfs:label "Genetic Data Entity" ;
+    rdfs:comment "A class representing a specific piece of genetic data." ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty gr:has_genetic_data_type ;
+        owl:someValuesFrom xsd:string ] .
+
+gr:transcription_factor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing a transcription factor." ;
+
+gr:enhancer rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing an enhancer." ;
+
+gr:disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing a disease." ;
+
+gr:gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:comment "A class representing a gene." ;
+
+gr:transcription_factor_symbol rdf:type owl:Class ;
+    rdfs:label "Transcription Factor Symbol" ;
+    rdfs:comment "A class representing the symbol of a transcription factor." ;
+
+gr:gene_symbol rdf:type owl:Class ;
+    rdfs:label "Gene Symbol" ;
+    rdfs:comment "A class representing the symbol of a gene." ;
+
+gr:ratio rdf:type owl:Class ;
+    rdfs:label "Ratio" ;
+    rdfs:comment "A class representing a ratio value." ;
+
+gr:mutation rdf:type owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing a mutation." ;
+
+gr:score_value rdf:type owl:Class ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "A class representing a score value." ;
+
+gr:ID rdf:type owl:Class ;
+    rdfs:label "ID" ;
+    rdfs:comment "A class representing an ID." ;
+
+gr:RSID rdf:type owl:Class ;
+    rdfs:label "RSID" ;
+    rdfs:comment "A class representing an RSID." ;
+
+gr:biosample rdf:type owl:Class ;
+    rdfs:label "Biosample" ;
+    rdfs:comment "A class representing a biosample." ;
+
+gr:CRISPR_Cas9_target_region rdf:type owl:Class ;
+    rdfs:label "CRISPR Cas9 Target Region" ;
+    rdfs:comment "A class representing a CRISPR Cas9 target region." ;
+
+gr:reference rdf:type owl:Class ;
+    rdfs:label "Reference" ;
+    rdfs:comment "A class representing a reference." ;
+
+gr:assembly_version rdf:type owl:Class ;
+    rdfs:label "Assembly Version" ;
+    rdfs:comment "A class representing an assembly version." ;
+
+gr:chromosome_number rdf:type owl:Class ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "A class representing a chromosome number." ;
+
+gr:end_position rdf:type owl:Class ;
+    rdfs:label "End Position" ;
+    rdfs:comment "A class representing an end position." ;
+
+gr:start_position rdf:type owl:Class ;
+    rdfs:label "Start Position" ;
+    rdfs:comment "A class representing a start position." ;
+
+gr:method rdf:type owl:Class ;
+    rdfs:label "Method" ;
+    rdfs:comment "A class representing a method used in genetic data analysis." .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+@prefix ex: <http://example.org/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://w3id.org/ql#> .
+
+<#TriplesMapEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:GeneticData/{{FAIR_URI}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TranscriptionFactor>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasEnhancer;
+        rr:objectMap [
+            rr:parentTriplesMap <#Enhancer>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#Disease>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#Gene>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasTranscriptionFactorSymbol;
+        rr:objectMap [
+            rr:parentTriplesMap <#TranscriptionFactorSymbol>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasGeneSymbol;
+        rr:objectMap [
+            rr:parentTriplesMap <#GeneSymbol>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasRatio;
+        rr:objectMap [
+            rr:parentTriplesMap <#Ratio>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#Mutation>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasScoreValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#ScoreValue>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasID;
+        rr:objectMap [
+            rr:parentTriplesMap <#ID>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasRSID;
+        rr:objectMap [
+            rr:parentTriplesMap <#RSID>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#Biosample>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasCRISPRCas9TargetRegion;
+        rr:objectMap [
+            rr:parentTriplesMap <#CRISPRCas9TargetRegion>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasReference;
+        rr:objectMap [
+            rr:parentTriplesMap <#Reference>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasAssemblyVersion;
+        rr:objectMap [
+            rr:parentTriplesMap <#AssemblyVersion>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasChromosomeNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <#ChromosomeNumber>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasEndPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#EndPosition>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasStartPosition;
+        rr:objectMap [
+            rr:parentTriplesMap <#StartPosition>;
+        ]
+    ],
+    [
+        rr:predicate ex:hasMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#Method>;
+        ]
+    ].
+
+<#TranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:TranscriptionFactor/{{FAIR_URI}}";
+    ].
+
+<#Enhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Enhancer/{{FAIR_URI}}";
+    ].
+
+<#Disease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Disease/{{FAIR_URI}}";
+    ].
+
+<#Gene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Gene/{{FAIR_URI}}";
+    ].
+
+<#TranscriptionFactorSymbol> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:TranscriptionFactorSymbol/{{FAIR_URI}}";
+    ].
+
+<#GeneSymbol> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:GeneSymbol/{{FAIR_URI}}";
+    ].
+
+<#Ratio> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Ratio/{{FAIR_URI}}";
+    ].
+
+<#Mutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Mutation/{{FAIR_URI}}";
+    ].
+
+<#ScoreValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:ScoreValue/{{FAIR_URI}}";
+    ].
+
+<#ID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:ID/{{FAIR_URI}}";
+    ].
+
+<#RSID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:RSID/{{FAIR_URI}}";
+    ].
+
+<#Biosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Biosample/{{FAIR_URI}}";
+    ].
+
+<#CRISPRCas9TargetRegion> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:CRISPRCas9TargetRegion/{{FAIR_URI}}";
+    ].
+
+<#Reference> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Reference/{{FAIR_URI}}";
+    ].
+
+<#AssemblyVersion> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:AssemblyVersion/{{FAIR_URI}}";
+    ].
+
+<#ChromosomeNumber> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:ChromosomeNumber/{{FAIR_URI}}";
+    ].
+
+<#EndPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:EndPosition/{{FAIR_URI}}";
+    ].
+
+<#StartPosition> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:StartPosition/{{FAIR_URI}}";
+    ].
+
+<#Method> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ex:Method/{{FAIR_URI}}";
+    ].
+```

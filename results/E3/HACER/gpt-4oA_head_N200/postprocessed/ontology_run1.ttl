@@ -1,0 +1,82 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+obo:SO_0000727 rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CRMHS00000003515 .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+# Properties
+biolink:has_genomic_location rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" .
+
+biolink:has_target_gene rdf:type owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_symbol> .
+
+biolink:has_transcription_factor rdf:type owl:ObjectProperty ;
+    rdfs:label "has transcription factor" .
+
+biolink:associated_with_disease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" .
+
+# Individuals
+hcrm:CRMHS00000005752 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chr1:16039967-16040344" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000005752--hgncsymbol!9606/FAM131C> ;
+    biolink:has_transcription_factor <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000005752--hgncsymbol!9606/ZBTB17> ;
+    biolink:associated_with_disease <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000005752--doid!1682> .
+
+hcrm:CRMHS00000005795 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chr10:62685569-62685884" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000005795--hgncsymbol!9606/ADO> .
+
+hcrm:CRMHS00000006044 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chr6:159102636-159102934" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000006044--hgncsymbol!9606/TAGAP> .
+
+hcrm:CRMHS00000006141 rdf:type obo:SO_0000727 ;
+    biolink:has_genomic_location [
+        a schema:Place ;
+        schema:identifier "chrX:53256663-53257187" ;
+        schema:genomeAssembly "hg38"
+    ] ;
+    biolink:has_target_gene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000006141--hgncsymbol!9606/IQSEC2> .

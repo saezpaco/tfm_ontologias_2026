@@ -1,0 +1,29 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-29T01:12:34.619839",
+  "success": true,
+  "elapsed_seconds": 277.2,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 825,
+    "total_tokens": 4920
+  },
+  "prompt_tokens_estimate": 3554,
+  "response_chars": 2757,
+  "turtle_chars": 2757,
+  "validation": {
+    "valid": true,
+    "n_triples": 32,
+    "n_classes": 1,
+    "n_properties": 4
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bC_stratified_N100/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bC_stratified_N100/response_raw_run2.txt"
+  }
+}

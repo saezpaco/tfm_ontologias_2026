@@ -1,0 +1,78 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/HACER> a owl:Ontology ;
+    rdfs:label "HACER Ontology" ;
+    skos:prefLabel "Human Active Cis-regulatory Elements database" .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology/Chromosome> a owl:Class ;
+    skos:prefLabel "chr_name" .
+
+<http://example.org/ontology/GenomeAssembly> a owl:Class ;
+    skos:prefLabel "GRCh38" .
+
+<http://example.org/ontology/Database> a owl:Class ;
+    skos:prefLabel "Database" .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    skos:prefLabel "Gene" .
+
+<http://example.org/ontology/Disease> a owl:Class ;
+    skos:prefLabel "Disease" .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+### Object Properties ###
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Gene> .
+
+<http://example.org/ontology/associatedWithDisease> a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Disease> .
+
+<http://example.org/ontology/interactsWithTF> a owl:ObjectProperty ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasChromosome> a owl:DatatypeProperty ;
+    skos:prefLabel "chr_name" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasStartPosition> a owl:DatatypeProperty ;
+    skos:prefLabel "start_position" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/ontology/hasEndPosition> a owl:DatatypeProperty ;
+    skos:prefLabel "end_position" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/ontology/hasGenomeAssembly> a owl:DatatypeProperty ;
+    skos:prefLabel "GRCh38" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology/hasDatabase> a owl:DatatypeProperty ;
+    skos:prefLabel "database_name" ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string .

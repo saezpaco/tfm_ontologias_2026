@@ -1,0 +1,105 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    rdfs:comment "Ontology for enhancers identified by CAGE-seq in the FANTOM5 database." .
+
+### Classes ###
+obo:CRM a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+obo:GRCh38 a owl:Class ;
+    skos:prefLabel "GRCh38" ;
+    skos:definition "Genome assembly version GRCh38" .
+
+obo:Database a owl:Class ;
+    skos:prefLabel "Database" ;
+    skos:definition "A biological database" .
+
+obo:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene targeted by a cis-regulatory module" .
+
+obo:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor interacting with a cis-regulatory module" .
+
+obo:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with a cis-regulatory module" .
+
+### Object Properties ###
+obo:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Gene ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and target gene" .
+
+obo:interactsWithTF a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:TranscriptionFactor ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor" .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Disease ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease" .
+
+### Datatype Properties ###
+obo:hasChromosome a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "Chromosome where the cis-regulatory module is located" .
+
+obo:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has start position" ;
+    skos:definition "Start position of the cis-regulatory module" .
+
+obo:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has end position" ;
+    skos:definition "End position of the cis-regulatory module" .
+
+obo:hasAssemblyVersion a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:GRCh38 ;
+    skos:prefLabel "has assembly version" ;
+    skos:definition "Genome assembly version of the cis-regulatory module" .
+
+obo:hasScore a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has score" ;
+    skos:definition "Score of the cis-regulatory module" .
+
+obo:hasMethod a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has method" ;
+    skos:definition "Method used to identify the cis-regulatory module" .
+
+obo:hasPMID a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has PMID" ;
+    skos:definition "PubMed ID associated with the cis-regulatory module" .
+
+obo:hasDatabase a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Database ;
+    skos:prefLabel "has database" ;
+    skos:definition "Database where the cis-regulatory module is recorded" .
+```

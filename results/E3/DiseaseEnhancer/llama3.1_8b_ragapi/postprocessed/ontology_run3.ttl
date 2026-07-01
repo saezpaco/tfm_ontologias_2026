@@ -1,0 +1,78 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hcrm#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgene#> .
+@prefix assembly: <http://purl.obolibrary.org/obo/assembly#> .
+@prefix nuccore:  <http://purl.obolibrary.org/obo/nuccore#> .
+@prefix pubmed:   <http://purl.obolibrary.org/obo/pubmed#> .
+@prefix id_pubmed: <http://purl.obolibrary.org/obo/id_pubmed#> .
+@prefix id_ncbigene: <http://purl.obolibrary.org/obo/id_ncbigene#> .
+@prefix dbsuper:  <http://purl.obolibrary.org/obo/dbsuper#> .
+
+# Classes
+hcrm:Crm a owl:Class ;
+    rdfs:label "Crm" ;
+    skos:exactMatch obo:hcrm_0000011 .
+
+hcrm:Assembly a owl:Class ;
+    rdfs:label "Assembly" ;
+    skos:closeMatch assembly:assembly_0000012 .
+
+nuccore:Nuccore a owl:Class ;
+    rdfs:label "Nuccore" ;
+    skos:exactMatch nuccore:nuccore_0000013 .
+
+pubmed:Pubmed a owl:Class ;
+    rdfs:label "Pubmed" ;
+    skos:closeMatch pubmed:pubmed_0000014 .
+
+id_pubmed:Id_Pubmed a owl:Class ;
+    rdfs:label "Id_Pubmed" ;
+    skos:exactMatch id_pubmed:id_pubmed_0000015 .
+
+id_ncbigene:Id_Ncbigene a owl:Class ;
+    rdfs:label "Id_Ncbigene" ;
+    skos:closeMatch id_ncbigene:id_ncbigene_0000016 .
+
+dbsuper:Dbsuper a owl:Class ;
+    rdfs:label "Dbsuper" ;
+    skos:exactMatch dbsuper:dbsuper_0000017 .
+
+# Properties
+hcrm:hasCrmID a rdf:Property ;
+    rdfs:domain hcrm:Crm ;
+    rdfs:range xsd:string .
+
+assembly:hasAssembly a rdf:Property ;
+    rdfs:domain assembly:Assembly ;
+    rdfs:range xsd:string .
+
+nuccore:hasNuccore a rdf:Property ;
+    rdfs:domain nuccore:Nuccore ;
+    rdfs:range xsd:string .
+
+pubmed:hasPubmed a rdf:Property ;
+    rdfs:domain pubmed:Pubmed ;
+    rdfs:range xsd:string .
+
+id_pubmed:hasId_Pubmed a rdf:Property ;
+    rdfs:domain id_pubmed:Id_Pubmed ;
+    rdfs:range xsd:string .
+
+id_ncbigene:hasId_Ncbigene a rdf:Property ;
+    rdfs:domain id_ncbigene:Id_Ncbigene ;
+    rdfs:range xsd:string .
+
+dbsuper:hasDbsuper a rdf:Property ;
+    rdfs:domain dbsuper:Dbsuper ;
+    rdfs:range xsd:string .

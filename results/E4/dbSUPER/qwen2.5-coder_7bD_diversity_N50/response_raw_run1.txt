@@ -1,0 +1,404 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. TFs2enh_PMID: type - PubMed ID for transcription factor to enhancer interaction - range: xsd:string
+2. TFs2enh_method: type - Method used in transcription factor to enhancer interaction study - range: xsd:string
+3. biosample_name: type - Name of the cell line or biosample - range: xsd:string
+4. crm_ID: type - ID of the chromatin regulatory module - range: xsd:string
+5. crossref: type - Cross-reference identifier for the data - range: xsd:string
+6. current_assembly: type - Current genome assembly version - range: xsd:string
+7. current_chr: type - Chromosome number in the current assembly - range: xsd:string
+8. disease: type - Disease associated with the genetic regulatory element - range: xsd:string
+9. disease_PMID: type - PubMed ID for disease study - range: xsd:string
+10. disease_method: type - Method used in disease study - range: xsd:string
+11. enh2gene_PMID: type - PubMed ID for enhancer to gene interaction - range: xsd:string
+12. enh2gene_method: type - Method used in enhancer to gene interaction study - range: xsd:string
+13. enh_PMID: type - PubMed ID for enhancer study - range: xsd:string
+14. enh_method: type - Method used in enhancer study - range: xsd:string
+15. hgnc_symbol_TFs: type - HGNC symbol of the transcription factors - range: xsd:string
+16. hgnc_symbol_target_genes: type - HGNC symbols of target genes - range: xsd:string
+17. minimum_ratio: type - Minimum ratio value - range: xsd:float
+18. mutation_PMID: type - PubMed ID for mutation study - range: xsd:string
+19. mutation_method: type - Method used in mutation study - range: xsd:string
+20. orig_assembly: type - Original genome assembly version - range: xsd:string
+21. orig_chr: type - Chromosome number in the original assembly - range: xsd:string
+22. original_ID: type - Original ID of the genetic regulatory element - range: xsd:string
+23. refsnp_ID: type - Reference SNP identifier - range: xsd:string
+24. source: type - Source of the data - range: xsd:string
+25. type: type - Type of the genetic regulatory element (e.g., enhancer, super-enhancer) - range: xsd:string
+26. current_end: type - End position in the current assembly - range: xsd:integer
+27. current_start: type - Start position in the current assembly - range: xsd:integer
+28. orig_end: type - End position in the original assembly - range: xsd:integer
+29. orig_start: type - Start position in the original assembly - range: xsd:integer
+30. score: type - Score associated with the genetic regulatory element - range: xsd:float
+
+**Classes:**
+1. GeneticRegulatoryElement
+2. TranscriptionFactor
+3. Enhancer
+4. SuperEnhancer
+5. TargetGene
+6. Disease
+7. CellLineOrBiosample
+8. Mutation
+9. ChromatinRegulatoryModule
+
+**Subclasses:**
+1. TranscriptionFactorToEnhancerInteraction (subclass of GeneticRegulatoryElement)
+2. EnhancerToGeneInteraction (subclass of GeneticRegulatoryElement)
+
+**Object Properties:**
+1. hasTranscriptionFactor (domain: TranscriptionFactorToEnhancerInteraction, range: TranscriptionFactor)
+2. hasEnhancer (domain: TranscriptionFactorToEnhancerInteraction, range: Enhancer)
+3. hasTargetGene (domain: EnhancerToGeneInteraction, range: TargetGene)
+4. associatedWithDisease (domain: GeneticRegulatoryElement, range: Disease)
+5. occursInCellLineOrBiosample (domain: GeneticRegulatoryElement, range: CellLineOrBiosample)
+6. involvesMutation (domain: GeneticRegulatoryElement, range: Mutation)
+7. partOfChromatinRegulatoryModule (domain: Enhancer, range: ChromatinRegulatoryModule)
+
+**Data Type Properties:**
+1. pmid (domain: PubMed ID, range: xsd:string)
+2. method (domain: Method, range: xsd:string)
+3. chromosomeNumber (domain: Chromosome Number, range: xsd:string)
+4. hgncSymbol (domain: HGNC Symbol, range: xsd:string)
+5. scoreValue (domain: Score Value, range: xsd:float)
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+### Data Type Properties
+:pmid a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed identifier for the study." ;
+    rdfs:range xsd:string ;
+    skos:definition "Unique identifier for a scientific publication in the PubMed database." .
+
+:method a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study." ;
+    rdfs:range xsd:string ;
+    skos:definition "A specific procedure or technique employed in an experiment or research." .
+
+:chromosomeNumber a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The number of the chromosome." ;
+    rdfs:range xsd:string ;
+    skos:definition "A numerical identifier for a specific chromosome within a genome." .
+
+:hgncSymbol a owl:DatatypeProperty ;
+    rdfs:label "HGNC Symbol" ;
+    rdfs:comment "The HGNC symbol for a gene or transcription factor." ;
+    rdfs:range xsd:string ;
+    skos:definition "A standardized identifier used by the Human Genome Nomenclature Committee (HGNC) to name and classify genes and their products." .
+
+:scoreValue a owl:DatatypeProperty ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "The score associated with the genetic regulatory element." ;
+    rdfs:range xsd:float ;
+    skos:definition "A numerical value representing the significance or importance of a genetic regulatory element." .
+
+### Object Properties
+:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The transcription factor involved in the interaction." ;
+    rdfs:domain :TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range :TranscriptionFactor .
+
+:hasEnhancer a owl:ObjectProperty ;
+    rdfs:label "Has Enhancer" ;
+    rdfs:comment "The enhancer involved in the interaction." ;
+    rdfs:domain :TranscriptionFactorToEnhancerInteraction ;
+    rdfs:range :Enhancer .
+
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The target gene involved in the interaction." ;
+    rdfs:domain :EnhancerToGeneInteraction ;
+    rdfs:range :TargetGene .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The disease associated with the genetic regulatory element." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :Disease .
+
+:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:label "Occurs In Cell Line Or Biosample" ;
+    rdfs:comment "The cell line or biosample where the genetic regulatory element occurs." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :CellLineOrBiosample .
+
+:involvesMutation a owl:ObjectProperty ;
+    rdfs:label "Involves Mutation" ;
+    rdfs:comment "The mutation involved in the study." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :Mutation .
+
+:partOfChromatinRegulatoryModule a owl:ObjectProperty ;
+    rdfs:label "Part Of Chromatin Regulatory Module" ;
+    rdfs:comment "The chromatin regulatory module that the enhancer is part of." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :ChromatinRegulatoryModule .
+
+### Classes
+:GeneticRegulatoryElement a owl:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A biological element that regulates gene expression or other cellular processes." ;
+    skos:definition "An entity involved in the regulation of genetic information, such as enhancers, super-enhancers, and transcription factors." .
+
+:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A protein that binds to specific DNA sequences and regulates gene expression by controlling the transcription of genes." ;
+    skos:definition "A type of protein that plays a crucial role in the regulation of gene expression by binding to promoter regions of target genes." .
+
+:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A DNA sequence that increases the transcription of adjacent genes without being transcribed itself." ;
+    skos:definition "A type of genetic regulatory element that enhances the transcription of other genes by binding to specific proteins and altering chromatin structure." .
+    rdfs:subClassOf :GeneticRegulatoryElement .
+
+:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A highly active enhancer that can drive the transcription of multiple genes simultaneously." ;
+    skos:definition "A type of enhancer that is particularly potent and capable of driving the expression of multiple genes, often associated with regulatory regions like promoters or insulators." .
+    rdfs:subClassOf :Enhancer .
+
+:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A gene whose transcription is regulated by a genetic regulatory element." ;
+    skos:definition "A type of gene that is affected by the activity of enhancers, super-enhancers, or other genetic regulatory elements in terms of its expression levels." .
+
+:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A condition affecting the normal functioning of an organism." ;
+    skos:definition "An abnormal state that impairs the body's ability to function normally, often resulting from genetic or environmental factors." .
+
+:CellLineOrBiosample a owl:Class ;
+    rdfs:label "Cell Line Or Biosample" ;
+    rdfs:comment "A collection of cells that are maintained in culture or isolated from an organism for study." ;
+    skos:definition "A sample of biological material, such as cells, tissues, or fluids, used for research and analysis." .
+
+:Mutation a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A change in the DNA sequence that can affect the structure or function of proteins." ;
+    skos:definition "An alteration in the genetic material (DNA) that may lead to changes in cellular processes, phenotypes, and sometimes disease states." .
+
+:ChromatinRegulatoryModule a owl:Class ;
+    rdfs:label "Chromatin Regulatory Module" ;
+    rdfs:comment "A group of DNA sequences and associated proteins that regulate chromatin structure and gene expression." ;
+    skos:definition "A complex of DNA elements and proteins that work together to control the accessibility of DNA to transcription factors and other regulatory molecules, thereby influencing gene expression." .
+
+### Restrictions
+TranscriptionFactorToEnhancerInteraction a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :hasTranscriptionFactor ;
+        owl:someValuesFrom :TranscriptionFactor
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty :hasEnhancer ;
+        owl:someValuesFrom :Enhancer
+    ] .
+
+EnhancerToGeneInteraction a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :hasTargetGene ;
+        owl:someValuesFrom :TargetGene
+    ] .
+
+GeneticRegulatoryElement a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :associatedWithDisease ;
+        owl:someValuesFrom :Disease
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty :occursInCellLineOrBiosample ;
+        owl:someValuesFrom :CellLineOrBiosample
+    ] , [
+        rdf:type owl:Restriction ;
+        owl:onProperty :involvesMutation ;
+        owl:someValuesFrom :Mutation
+    ] .
+
+Enhancer a owl:Class ;
+    rdfs:subClassOf [
+        rdf:type owl:Restriction ;
+        owl:onProperty :partOfChromatinRegulatoryModule ;
+        owl:someValuesFrom :ChromatinRegulatoryModule
+    ] .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}GeneticRegulatoryElement/{{original_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :GeneticRegulatoryElement;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TranscriptionFactor/{{hgnc_symbol_TFs}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :TranscriptionFactor;
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Enhancer/{{crm_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :Enhancer;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}SuperEnhancer/{{crm_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :SuperEnhancer;
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TargetGene/{{hgnc_symbol_target_genes}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :TargetGene;
+        ]
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Disease/{{disease_name}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :Disease;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}CellLineOrBiosample/{{cell_line_name}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :CellLineOrBiosample;
+        ]
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}Mutation/{{mutation_id}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :Mutation;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}ChromatinRegulatoryModule/{{crm_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :ChromatinRegulatoryModule;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}TranscriptionFactorToEnhancerInteraction/{{original_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :TranscriptionFactorToEnhancerInteraction;
+        ]
+    ].
+
+<#TriplesMapEnhancerToGeneInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{FAIR_URI}EnhancerToGeneInteraction/{{original_ID}}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [
+            rr:constant :EnhancerToGeneInteraction;
+        ]
+    ].
+```

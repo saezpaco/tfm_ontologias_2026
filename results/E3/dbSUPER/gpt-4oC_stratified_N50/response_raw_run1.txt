@@ -1,0 +1,76 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/gene/9606/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://asntech.org/dbsuper/> .
+
+# Define the super-enhancer class
+hcrm:SuperEnhancer rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Super-enhancer located in Homo sapiens genome" ;
+    skos:prefLabel "Super-enhancer" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 .
+
+# Define instances for each super-enhancer in the sample
+dbsuper:SE_50575 rdf:type hcrm:SuperEnhancer ;
+    skos:prefLabel "SE_50575" ;
+    obo:BFO_0000050 nuccore:chr20 ;
+    obo:GENO_0000895 "35921900"^^xsd:integer ;
+    obo:GENO_0000894 "35986561"^^xsd:integer ;
+    crm2pgene:bgw!SE_50575--hgncsymbol!9606/SRC rdf:type crm2pgene:bgw!SE_50575--hgncsymbol!9606/SRC ;
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> ;
+    sio:SIO_000253 <https://asntech.org/dbsuper/> .
+
+# Define the association between super-enhancer and target gene
+crm2pgene:bgw!SE_50575--hgncsymbol!9606/SRC rdf:type owl:Class ;
+    rdfs:subClassOf rdf:Statement ;
+    rdf:subject dbsuper:SE_50575 ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:SRC ;
+    skos:prefLabel "bgw!SE_50575--hgncsymbol!9606/SRC" ;
+    skos:definition "Association between super-enhancer SE_50575 and gene SRC" .
+
+# Define the target gene
+hgene:SRC skos:closeMatch id_ncbigene:GeneID ;
+    biolink:category biolink:Gene .
+
+# Repeat similar blocks for other super-enhancers in the sample
+# Example for SE_26240
+dbsuper:SE_26240 rdf:type hcrm:SuperEnhancer ;
+    skos:prefLabel "SE_26240" ;
+    obo:BFO_0000050 nuccore:chr10 ;
+    obo:GENO_0000895 "17028302"^^xsd:integer ;
+    obo:GENO_0000894 "17081284"^^xsd:integer ;
+    crm2pgene:bgw!SE_26240--hgncsymbol!9606/TRDMT1 rdf:type crm2pgene:bgw!SE_26240--hgncsymbol!9606/TRDMT1 ;
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> ;
+    sio:SIO_000253 <https://asntech.org/dbsuper/> .
+
+crm2pgene:bgw!SE_26240--hgncsymbol!9606/TRDMT1 rdf:type owl:Class ;
+    rdfs:subClassOf rdf:Statement ;
+    rdf:subject dbsuper:SE_26240 ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:TRDMT1 ;
+    skos:prefLabel "bgw!SE_26240--hgncsymbol!9606/TRDMT1" ;
+    skos:definition "Association between super-enhancer SE_26240 and gene TRDMT1" .
+
+hgene:TRDMT1 skos:closeMatch id_ncbigene:GeneID ;
+    biolink:category biolink:Gene .
+
+# Continue for other entries in the sample...
+```

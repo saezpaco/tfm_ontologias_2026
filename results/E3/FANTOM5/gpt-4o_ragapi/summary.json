@@ -1,0 +1,95 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 11.17,
+  "total_tokens": 13002,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-05-08T18:52:53.910594",
+      "success": true,
+      "elapsed_seconds": 13.75,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3269,
+        "completion_tokens": 1077,
+        "total_tokens": 4346
+      },
+      "prompt_tokens_estimate": 2046,
+      "response_chars": 3394,
+      "turtle_chars": 3380,
+      "validation": {
+        "valid": false,
+        "error": "at line 30 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'   rdfs:label \"Cis-Regulatory Module\" ;\\n    skos:exactMatch '^b'crm:CisRegulatoryModule .\\n\\nhcrm:Enhancer a owl:Class ;\\n    r'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-05-08T18:53:28.650273",
+      "success": true,
+      "elapsed_seconds": 9.64,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3269,
+        "completion_tokens": 1047,
+        "total_tokens": 4316
+      },
+      "prompt_tokens_estimate": 2046,
+      "response_chars": 3300,
+      "turtle_chars": 3286,
+      "validation": {
+        "valid": false,
+        "error": "at line 30 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'   rdfs:label \"Cis-Regulatory Module\" ;\\n    skos:exactMatch '^b'crm:CisRegulatoryModule .\\n\\nhcrm:Enhancer a owl:Class ;\\n    r'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-05-08T18:53:52.991146",
+      "success": true,
+      "elapsed_seconds": 10.12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3269,
+        "completion_tokens": 1071,
+        "total_tokens": 4340
+      },
+      "prompt_tokens_estimate": 2046,
+      "response_chars": 3368,
+      "turtle_chars": 3354,
+      "validation": {
+        "valid": true,
+        "n_triples": 49,
+        "n_classes": 3,
+        "n_properties": 5
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/gpt-4o_ragapi/response_raw_run3.txt"
+      }
+    }
+  ]
+}

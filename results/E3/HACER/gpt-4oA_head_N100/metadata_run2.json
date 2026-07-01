@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-06-28T21:58:11.071439",
+  "success": true,
+  "elapsed_seconds": 8.64,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 8293,
+    "completion_tokens": 983,
+    "total_tokens": 9276
+  },
+  "prompt_tokens_estimate": 4430,
+  "response_chars": 3135,
+  "turtle_chars": 3121,
+  "validation": {
+    "valid": true,
+    "n_triples": 56,
+    "n_classes": 5,
+    "n_properties": 5
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N100/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oA_head_N100/response_raw_run2.txt"
+  }
+}

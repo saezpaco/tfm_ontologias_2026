@@ -1,0 +1,24 @@
+{
+  "run": 2,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/B_random/N=100/DiseaseEnhancer.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 43,
+  "mapping_extension": "ttl",
+  "started_at": "2026-07-01T03:50:07.272837+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.056,
+    "plan_s": 78.534,
+    "plan_chars": 3548,
+    "plan_prompt_chars": 9618,
+    "onto_s": 136.943,
+    "onto_chars": 4191,
+    "onto_prompt_chars": 12546,
+    "map_s": 90.496,
+    "map_chars": 3535,
+    "map_prompt_chars": 10416
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-07-01T03:55:13.302411+00:00",
+  "total_s": 306.029
+}

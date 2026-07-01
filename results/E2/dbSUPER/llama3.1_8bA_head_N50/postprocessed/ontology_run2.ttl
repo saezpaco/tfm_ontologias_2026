@@ -1,0 +1,146 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "dbSUPER" ;
+  skos:definition "Super-enhancers con coordenadas, líneas celulares y genes diana" .
+
+:crm
+  a owl:Class ;
+  rdfs:label "CRM" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/dbSUPER#crm>
+  a obo:OBI_0000073 ;
+  rdfs:label "crm/crm_ID" ;
+  skos:prefLabel "crm/crm_ID" ;
+  skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" .
+
+<http://example.org/dbSUPER#crm_ID>
+  a owl:ObjectProperty ;
+  rdfs:label "crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+  skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+
+<http://example.org/dbSUPER#gene_symbol>
+  a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--hgncsymbol!9606/gene_sybmol#database_name" ;
+  skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+  skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+<http://example.org/dbSUPER#disease>
+  a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--doid!doid" ;
+  skos:prefLabel "bgw!crm_ID--doid!doid" ;
+  skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+<http://example.org/dbSUPER#transcription_factor>
+  a owl:ObjectProperty ;
+  rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" ;
+  skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+  skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+<http://example.org/dbSUPER#cell_line>
+  a owl:ObjectProperty ;
+  rdfs:label "Adipose Nuclei" ;
+  skos:prefLabel "Adipose Nuclei" ;
+  skos:definition "Cell line associated with the super-enhancer" .
+
+<http://example.org/dbSUPER#chromosome>
+  a owl:ObjectProperty ;
+  rdfs:label "chr_name" ;
+  skos:prefLabel "chr_name" ;
+  skos:definition "Chromosome where the super-enhancer is located" .
+
+<http://example.org/dbSUPER#start_position>
+  a owl:DatatypeProperty ;
+  rdfs:label "start_position" ;
+  skos:prefLabel "start_position" ;
+  skos:definition "Start position of the super-enhancer on the chromosome" ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#end_position>
+  a owl:DatatypeProperty ;
+  rdfs:label "end_position" ;
+  skos:prefLabel "end_position" ;
+  skos:definition "End position of the super-enhancer on the chromosome" ;
+  rdfs:range xsd:int .
+
+<http://example.org/dbSUPER#super_enhancer>
+  a owl:Class ;
+  rdfs:label "Super-Enhancer" ;
+  skos:prefLabel "Super-Enhancer" ;
+  skos:definition "A super-enhancer is a large enhancer region that regulates the expression of multiple genes." .
+
+<http://example.org/dbSUPER#gene>
+  a owl:Class ;
+  rdfs:label "Gene" ;
+  skos:prefLabel "Gene" ;
+  skos:definition "A gene is a unit of heredity that is passed from one generation to the next. It is a DNA sequence that codes for a functional product, such as a protein or RNA molecule." .
+
+<http://example.org/dbSUPER#disease>
+  a owl:Class ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "Disease" ;
+  skos:definition "A disease is a condition that impairs normal bodily functions and is typically caused by genetic or environmental factors." .
+
+<http://example.org/dbSUPER#transcription_factor>
+  a owl:Class ;
+  rdfs:label "Transcription Factor" ;
+  skos:prefLabel "Transcription Factor" ;
+  skos:definition "A transcription factor is a protein that binds to specific DNA sequences and regulates gene expression by recruiting or blocking the activity of RNA polymerase." .
+
+:crm
+  rdfs:subClassOf <http://example.org/dbSUPER#super_enhancer> .
+<http://example.org/dbSUPER#gene>
+  rdfs:subClassOf <http://example.org/dbSUPER#gene> .
+<http://example.org/dbSUPER#disease>
+  rdfs:subClassOf <http://example.org/dbSUPER#disease> .
+<http://example.org/dbSUPER#transcription_factor>
+  rdfs:subClassOf <http://example.org/dbSUPER#transcription_factor> .
+
+:crm
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range <http://example.org/dbSUPER#gene> .
+<http://example.org/dbSUPER#disease>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range <http://example.org/dbSUPER#disease> .
+<http://example.org/dbSUPER#transcription_factor>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range <http://example.org/dbSUPER#transcription_factor> .
+
+:crm_ID
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range xsd:string .
+:gene_symbol
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range xsd:string .
+:cell_line
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range xsd:string .
+:chromosome
+  a owl:ObjectProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range xsd:string .
+:start_position
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range xsd:int .
+:end_position
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://example.org/dbSUPER#super_enhancer> ;
+  rdfs:range xsd:int .

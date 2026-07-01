@@ -1,0 +1,178 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{original_ID}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate :method;
+        rr:objectMap [
+            rml:reference "disease_method";
+        ]
+    ],
+    [
+        rr:predicate :assemblyVersion;
+        rr:objectMap [
+            rml:reference "current_assembly";
+        ]
+    ],
+    [
+        rr:predicate :chromosomeNumber;
+        rr:objectMap [
+            rml:reference "current_chr";
+        ]
+    ],
+    [
+        rr:predicate :score;
+        rr:objectMap [
+            rml:reference "score";
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactorToEnhancerInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{original_ID}}_TFs2enh{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor>;
+        ]
+    ],
+    [
+        rr:predicate :hasEnhancer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer>;
+        ]
+    ],
+    [
+        rr:predicate :pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate :method;
+        rr:objectMap [
+            rml:reference "TFs2enh_method";
+        ]
+    ],
+    [
+        rr:predicate :assemblyVersion;
+        rr:objectMap [
+            rml:reference "current_assembly";
+        ]
+    ],
+    [
+        rr:predicate :chromosomeNumber;
+        rr:objectMap [
+            rml:reference "current_chr";
+        ]
+    ],
+    [
+        rr:predicate :ratio;
+        rr:objectMap [
+            rml:reference "minimum_ratio";
+        ]
+    ].
+
+<#TriplesMapEnhancerToGeneInteraction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{original_ID}}_enh2gene{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene>;
+        ]
+    ],
+    [
+        rr:predicate :pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPubMedArticle>;
+        ]
+    ],
+    [
+        rr:predicate :method;
+        rr:objectMap [
+            rml:reference "enh2gene_method";
+        ]
+    ],
+    [
+        rr:predicate :assemblyVersion;
+        rr:objectMap [
+            rml:reference "current_assembly";
+        ]
+    ],
+    [
+        rr:predicate :chromosomeNumber;
+        rr:objectMap [
+            rml:reference "current_chr";
+        ]
+    ],
+    [
+        rr:predicate :ratio;
+        rr:objectMap [
+            rml:reference "minimum_ratio";
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{hgnc_symbol_target_genes}}_transcription_factor{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{enh_PMID}}_enhancer{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{hgnc_symbol_target_genes}}_target_gene{FAIR_URI}";
+    ].
+
+<#TriplesMapPubMedArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "DiseaseEnhancer.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template ":{{pmid}}_pubmed_article{FAIR_URI}";
+    ].
+```

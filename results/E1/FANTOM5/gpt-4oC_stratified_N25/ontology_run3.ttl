@@ -1,0 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology#Enhancer> a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that increases the transcription of a target gene." ;
+    skos:exactMatch obo:SO_0000165 .
+
+<http://example.org/ontology#GenomicCoordinate> a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome defined by a start and end position." .
+
+<http://example.org/ontology#Evidence> a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information supporting the existence or activity of a biological entity." .
+
+<http://example.org/ontology#hasGenomicCoordinate> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology#Enhancer> ;
+    rdfs:range <http://example.org/ontology#GenomicCoordinate> ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates an enhancer to its genomic coordinates." .
+
+<http://example.org/ontology#hasEvidence> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology#Enhancer> ;
+    rdfs:range <http://example.org/ontology#Evidence> ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Relates an enhancer to the evidence supporting its activity." .
+
+<http://example.org/ontology#chromosome> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the genomic coordinate is located." .
+
+<http://example.org/ontology#chromStart> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "chromosome start" ;
+    skos:definition "The start position of the genomic coordinate on the chromosome." .
+
+<http://example.org/ontology#chromEnd> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "chromosome end" ;
+    skos:definition "The end position of the genomic coordinate on the chromosome." .
+
+<http://example.org/ontology#score> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#Enhancer> ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "score" ;
+    skos:definition "A numerical value representing the activity level of the enhancer." .
+
+<http://example.org/ontology#strand> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "strand" ;
+    skos:definition "The DNA strand (positive or negative) on which the genomic coordinate is located." .

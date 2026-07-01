@@ -1,0 +1,444 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer" ;
+    dc:description "Enhancers asociados a enfermedades" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+biolink:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/NCIT_C17207> .
+
+### Properties
+biolink:hasGeneTarget a owl:ObjectProperty ;
+    rdfs:label "has gene target" ;
+    rdfs:domain biolink:Enhancer ;
+    rdfs:range biolink:Gene ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+biolink:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain biolink:Enhancer ;
+    rdfs:range biolink:Disease ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+biolink:interactsWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain biolink:Enhancer ;
+    rdfs:range biolink:TranscriptionFactor ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+### Individuals
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685535> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685535" ;
+    biolink:hasGeneTarget hgnc:TBL1X ;
+    biolink:associatedWithDisease doid:3571 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005962> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005962" ;
+    biolink:hasGeneTarget hgnc:FOXL2 ;
+    biolink:associatedWithDisease doid:10348 ;
+    dc:source pubmed:19543368 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685822> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685822" ;
+    biolink:hasGeneTarget hgnc:FNDC4 ;
+    biolink:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685685> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685685" ;
+    biolink:hasGeneTarget hgnc:NKAIN4 ;
+    biolink:associatedWithDisease doid:1612 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685786> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685786" ;
+    biolink:hasGeneTarget hgnc:SULF2 ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685611> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685611" ;
+    biolink:hasGeneTarget hgnc:CCND1 ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685859> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685859" ;
+    biolink:hasGeneTarget hgnc:FAM135B ;
+    biolink:associatedWithDisease doid:5517 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685808> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685808" ;
+    biolink:hasGeneTarget hgnc:SMARCD1 ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685816> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685816" ;
+    biolink:hasGeneTarget hgnc:GATA3 ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685948> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685948" ;
+    biolink:hasGeneTarget hgnc:MSMB ;
+    biolink:associatedWithDisease omim:176807 ;
+    dc:source pubmed:25910213 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006098> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006098" ;
+    biolink:hasGeneTarget hgnc:MYC ;
+    biolink:associatedWithDisease mesh:D011471 ;
+    dc:source pubmed:19767752 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685576> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685576" ;
+    biolink:hasGeneTarget hgnc:ARID1A ;
+    biolink:associatedWithDisease doid:1612 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006026> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006026" ;
+    biolink:hasGeneTarget hgnc:SETD9 ;
+    biolink:associatedWithDisease doid:1612 ;
+    dc:source pubmed:23374354 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685823> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685823" ;
+    biolink:hasGeneTarget hgnc:RUSC1-AS1 ;
+    biolink:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005891> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005891" ;
+    biolink:hasGeneTarget hgnc:ICAM3 ;
+    biolink:associatedWithDisease doid:2377 ;
+    dc:source pubmed:22396755 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005795> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005795" ;
+    biolink:hasGeneTarget hgnc:ADO ;
+    biolink:associatedWithDisease mesh:D003424 ;
+    dc:source pubmed:24196873 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685840> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685840" ;
+    biolink:hasGeneTarget hgnc:CCNI ;
+    biolink:associatedWithDisease doid:784 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006010> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006010" ;
+    biolink:hasGeneTarget hgnc:WFS1 ;
+    biolink:associatedWithDisease doid:9352 ;
+    dc:source pubmed:21035756 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005792> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005792" ;
+    biolink:hasGeneTarget hgnc:IL2RA ;
+    biolink:associatedWithDisease doid:9952 ;
+    dc:source pubmed:28234966 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685828> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685828" ;
+    biolink:hasGeneTarget hgnc:SETDB1 ;
+    biolink:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685533> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685533" ;
+    biolink:hasGeneTarget hgnc:BTD ;
+    biolink:associatedWithDisease omim:114550 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685850> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685850" ;
+    biolink:hasGeneTarget hgnc:PRKAG2 ;
+    biolink:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685545> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685545" ;
+    biolink:hasGeneTarget hgnc:MTHFD1L ;
+    biolink:associatedWithDisease doid:1115 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685696> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685696" ;
+    biolink:hasGeneTarget hgnc:CCND1 ;
+    biolink:associatedWithDisease doid:1612 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685849> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685849" ;
+    biolink:hasGeneTarget hgnc:CCT7 ;
+    biolink:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006102> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006102" ;
+    biolink:hasGeneTarget hgnc:MYC ;
+    biolink:associatedWithDisease omim:176807 ;
+    dc:source pubmed:19680443 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685543> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685543" ;
+    biolink:hasGeneTarget hgnc:KCNQ1 ;
+    biolink:associatedWithDisease doid:3571 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685906> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685906" ;
+    biolink:hasGeneTarget hgnc:TPTE ;
+    biolink:associatedWithDisease omim:211980 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005792> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005792" ;
+    biolink:hasGeneTarget hgnc:PFKFB3 ;
+    biolink:associatedWithDisease omim:180300 ;
+    dc:source pubmed:28854172 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685889> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685889" ;
+    biolink:hasGeneTarget hgnc:NR3C1 ;
+    biolink:associatedWithDisease mesh:D008175 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005792> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005792" ;
+    biolink:hasGeneTarget hgnc:PFKFB3 ;
+    biolink:associatedWithDisease mesh:D002446 ;
+    dc:source pubmed:27876533 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005931> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005931" ;
+    biolink:hasGeneTarget hgnc:RALY ;
+    biolink:associatedWithDisease mesh:D001943 ;
+    dc:source pubmed:22976474 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685527> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685527" ;
+    biolink:hasGeneTarget hgnc:ASMT ;
+    biolink:associatedWithDisease mesh:D000067877 ;
+    dc:source pubmed:25910213 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006029> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006029" ;
+    biolink:hasGeneTarget hgnc:EDN1 ;
+    biolink:associatedWithDisease mesh:D003324 ;
+    dc:source pubmed:25838425 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005827> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005827" ;
+    biolink:hasGeneTarget hgnc:ARL11 ;
+    biolink:associatedWithDisease doid:10283 ;
+    dc:source pubmed:23940804 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005792> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005792" ;
+    biolink:hasGeneTarget hgnc:PFKFB3 ;
+    biolink:associatedWithDisease mesh:D003424 ;
+    dc:source pubmed:24196873 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685623> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685623" ;
+    biolink:hasGeneTarget hgnc:SRCAP ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685715> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685715" ;
+    biolink:hasGeneTarget hgnc:SRCAP ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685823> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685823" ;
+    biolink:hasGeneTarget hgnc:ASH1L ;
+    biolink:associatedWithDisease doid:784 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685567> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685567" ;
+    biolink:hasGeneTarget hgnc:RPL8 ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685734> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685734" ;
+    biolink:hasGeneTarget hgnc:TP53 ;
+    biolink:associatedWithDisease mesh:D001943 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685823> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685823" ;
+    biolink:hasGeneTarget hgnc:FDPS ;
+    biolink:associatedWithDisease doid:784 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005792> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005792" ;
+    biolink:hasGeneTarget hgnc:IL2RA ;
+    biolink:associatedWithDisease doid:8778 ;
+    dc:source pubmed:27876533 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005942> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005942" ;
+    biolink:hasGeneTarget hgnc:ERG ;
+    biolink:associatedWithDisease doid:9119 ;
+    dc:source pubmed:23327922 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006035> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006035" ;
+    biolink:hasGeneTarget hgnc:RMND1 ;
+    biolink:associatedWithDisease mesh:D001943 ;
+    dc:source pubmed:26928228 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006099> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006099" ;
+    biolink:hasGeneTarget hgnc:CCAT1 ;
+    biolink:associatedWithDisease doid:10283 ;
+    dc:source pubmed:20133699 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685743> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685743" ;
+    biolink:hasGeneTarget hgnc:ETV6 ;
+    biolink:associatedWithDisease doid:1612 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685763> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685763" ;
+    biolink:hasGeneTarget hgnc:ESR1 ;
+    biolink:associatedWithDisease mesh:D001943 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006127> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006127" ;
+    biolink:hasGeneTarget hgnc:CDKN2B-AS1 ;
+    biolink:associatedWithDisease mesh:D003324 ;
+    dc:source pubmed:25744911 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005792> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005792" ;
+    biolink:hasGeneTarget hgnc:PFKFB3 ;
+    biolink:associatedWithDisease omim:180300 ;
+    dc:source pubmed:28234966 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685841> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685841" ;
+    biolink:hasGeneTarget hgnc:HINT3 ;
+    biolink:associatedWithDisease doid:784 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685539> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685539" ;
+    biolink:hasGeneTarget hgnc:LIPA ;
+    biolink:associatedWithDisease doid:3744 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000006099> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000006099" ;
+    biolink:hasGeneTarget hgnc:CCAT1 ;
+    biolink:associatedWithDisease mesh:D011471 ;
+    dc:source pubmed:23226612 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005800> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005800" ;
+    biolink:hasGeneTarget hgnc:KCNQ1 ;
+    biolink:associatedWithDisease omim:125853 ;
+    dc:source pubmed:21035756 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005792> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005792" ;
+    biolink:hasGeneTarget hgnc:PFKFB3 ;
+    biolink:associatedWithDisease omim:180300 ;
+    dc:source pubmed:27876533 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685721> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685721" ;
+    biolink:hasGeneTarget hgnc:OCIAD2 ;
+    biolink:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005793> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005793" ;
+    biolink:hasGeneTarget hgnc:IL2RA ;
+    biolink:associatedWithDisease mesh:D009103 ;
+    dc:source pubmed:22396755 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685513> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685513" ;
+    biolink:hasGeneTarget hgnc:STUB1 ;
+    biolink:associatedWithDisease doid:3744 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685828> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685828" ;
+    biolink:hasGeneTarget hgnc:GOLPH3L ;
+    biolink:associatedWithDisease doid:784 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685922> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685922" ;
+    biolink:hasGeneTarget hgnc:PPM1N ;
+    biolink:associatedWithDisease mesh:D008175 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005979> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005979" ;
+    biolink:hasGeneTarget hgnc:BCL6 ;
+    biolink:associatedWithDisease omim:613065 ;
+    dc:source pubmed:26229090 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005888> a biolink:Enhancer ;
+    rdfs:label "CRMHS00000005888" ;
+    biolink:hasGeneTarget hgnc:SMAD2 ;
+    biolink:associatedWithDisease omim:260350 ;
+    dc:source pubmed:27486767 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685838> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685838" ;
+    biolink:hasGeneTarget hgnc:MYNN ;
+    biolink:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685775> a biolink:Enhancer ;
+    rdfs:label "CRMHS00027685775" ;
+    biolink:hasGeneTarget hgnc:TP53 ;
+    biolink:associatedWithDisease mesh:D001943 ;
+    dc:source pubmed:27723759 .

@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 194.35666666666668,
+  "total_tokens": 15204,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-05T13:17:42.077208",
+      "success": true,
+      "elapsed_seconds": 193.96,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3238,
+        "completion_tokens": 1830,
+        "total_tokens": 5068
+      },
+      "prompt_tokens_estimate": 1996,
+      "response_chars": 6014,
+      "turtle_chars": 6014,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'fs:label \"Human Active Cis-regulatory Elements database\" .\\n\\n'^b'crm a owl:Class ;\\n  skos:prefLabel \"CRM\" ;\\n  skos:definition'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-05T13:20:56.851937",
+      "success": true,
+      "elapsed_seconds": 193.74,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3238,
+        "completion_tokens": 1830,
+        "total_tokens": 5068
+      },
+      "prompt_tokens_estimate": 1996,
+      "response_chars": 6014,
+      "turtle_chars": 6014,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'fs:label \"Human Active Cis-regulatory Elements database\" .\\n\\n'^b'crm a owl:Class ;\\n  skos:prefLabel \"CRM\" ;\\n  skos:definition'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-05T13:24:13.260049",
+      "success": true,
+      "elapsed_seconds": 195.37,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3238,
+        "completion_tokens": 1830,
+        "total_tokens": 5068
+      },
+      "prompt_tokens_estimate": 1996,
+      "response_chars": 6014,
+      "turtle_chars": 6014,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'fs:label \"Human Active Cis-regulatory Elements database\" .\\n\\n'^b'crm a owl:Class ;\\n  skos:prefLabel \"CRM\" ;\\n  skos:definition'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

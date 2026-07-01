@@ -1,0 +1,79 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+<http://example.org/ontology#crm2phen_example>
+  a owl:Ontology ;
+  rdfs:seeAlso <http://rdf.biogateway.eu/crm2phen_example.txt> ;
+  skos:prefLabel "CRM2Phen Example Ontology" ;
+  skos:notation "crm2phen_example" .
+
+<http://example.org/ontology#crm2phen>
+  a owl:Ontology ;
+  rdfs:seeAlso <http://rdf.biogateway.eu/crm2phen.txt> ;
+  skos:prefLabel "CRM2Phen Ontology" ;
+  skos:notation "crm2phen" .
+
+<http://example.org/ontology#crm2gene>
+  a owl:Ontology ;
+  rdfs:seeAlso <http://rdf.biogateway.eu/crm2gene.txt> ;
+  skos:prefLabel "CRM2Gene Ontology" ;
+  skos:notation "crm2gene" .
+
+<http://example.org/ontology#crm2tfac>
+  a owl:Ontology ;
+  rdfs:seeAlso <http://rdf.biogateway.eu/crm2tfac.txt> ;
+  skos:prefLabel "CRM2TFAC Ontology" ;
+  skos:notation "crm2tfac" .
+
+<http://example.org/ontology#hgnc_symbol_target_genes>
+  a owl:Class ;
+  rdfs:label "HGNC Symbol Target Genes" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--doid!1682> .
+
+<http://example.org/ontology#hgnc_symbol_target_genes>
+  a owl:Class ;
+  rdfs:label "HGNC Symbol Target Genes" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+<http://example.org/ontology#hgnc_symbol_target_genes>
+  a owl:Class ;
+  rdfs:label "HGNC Symbol Target Genes" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+<http://example.org/ontology#disease_PMID>
+  a owl:Class ;
+  rdfs:label "Disease PMID" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+<http://example.org/ontology#crm_ID>
+  a owl:Class ;
+  rdfs:label "CRM ID" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+<http://example.org/ontology#biosample_name>
+  a owl:Class ;
+  rdfs:label "Biosample Name" ;
+  skos:exactMatch <original_URL_database> .
+
+<http://example.org/ontology#original_ID>
+  a owl:Class ;
+  rdfs:label "Original ID" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .

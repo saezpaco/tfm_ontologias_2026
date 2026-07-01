@@ -1,0 +1,80 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://hugo.cisreg.net/ontology#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix hgene:   <http://www.hugenavigator.net/hgnc/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://dbsuper.org/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:crm2gene a owl:Ontology ;
+  rdfs:label "CRM2Gene" ;
+  skos:prefLabel "CRM2Gene" ;
+  dc:title "CRM2Gene Ontology" .
+hcrm:crm2gene_example a owl:Ontology ;
+  rdfs:label "CRM2Gene Example" ;
+  skos:prefLabel "CRM2Gene Example" ;
+  dc:title "CRM2Gene Example Ontology" .
+hcrm:crm2phen_example a owl:Ontology ;
+  rdfs:label "CRM2Phen Example" ;
+  skos:prefLabel "CRM2Phen Example" ;
+  dc:title "CRM2Phen Example Ontology" .
+hcrm:crm2tfac_example a owl:Ontology ;
+  rdfs:label "CRM2TFAC Example" ;
+  skos:prefLabel "CRM2TFAC Example" ;
+  dc:title "CRM2TFAC Example Ontology" .
+hcrm:crm2tfac a owl:Ontology ;
+  rdfs:label "CRM2TFAC" ;
+  skos:prefLabel "CRM2TFAC" ;
+  dc:title "CRM2TFAC Ontology" .
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+hcrm:crm_ID a hcrm:CrmId ;
+  rdfs:label "Crm ID" ;
+  skos:prefLabel "Crm ID" .
+hcrm:biosample_name a hcrm:BiosampleName ;
+  rdfs:label "Biosample Name" ;
+  skos:prefLabel "Biosample Name" .
+hcrm:hgnc_symbol_target_genes a hcrm:HgncSymbolTargetGenes ;
+  rdfs:label "Hgnc Symbol Target Genes" ;
+  skos:prefLabel "Hgnc Symbol Target Genes" .
+hcrm:orig_end a hcrm:OrigEnd ;
+  rdfs:label "Original End" ;
+  skos:prefLabel "Original End" .
+hcrm:current_end a hcrm:CurrentEnd ;
+  rdfs:label "Current End" ;
+  skos:prefLabel "Current End" .
+hcrm:disease_PMID a hcrm:DiseasePMID ;
+  rdfs:label "Disease PMID" ;
+  skos:prefLabel "Disease PMID" .
+hcrm:original_ID a hcrm:OriginalId ;
+  rdfs:label "Original ID" ;
+  skos:prefLabel "Original ID" .
+hcrm:refsnp_ID a hcrm:RefsnpId ;
+  rdfs:label "RefSNP ID" ;
+  skos:prefLabel "RefSNP ID" .
+
+# === REUSE CISREG CLASSES AND PROPERTIES ===
+hcrm:CrmId owl:sameAs <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+hcrm:BiosampleName owl:sameAs <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/gene_sybmol> .
+hcrm:HgncSymbolTargetGenes owl:sameAs <http://purl.obolibrary.org/obo/NCIT_C17207> .
+hcrm:OrigEnd owl:sameAs <http://www.licpathway.net/ENdb/> .
+hcrm:CurrentEnd owl:sameAs <http://www.licpathway.net/ENdb/> .
+hcrm:DiseasePMID owl:sameAs <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+hcrm:OriginalId owl:sameAs <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+hcrm:RefsnpId owl:sameAs <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# === ADD NEW TERMS ONLY WHERE CISREG DOESN'T COVER THE CONCEPT ===

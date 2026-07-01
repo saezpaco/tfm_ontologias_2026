@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-06-30T00:27:28.598881",
+  "success": true,
+  "elapsed_seconds": 99.5,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 764,
+    "total_tokens": 4859
+  },
+  "prompt_tokens_estimate": 3542,
+  "response_chars": 2632,
+  "turtle_chars": 2618,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7bA_head_N100/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7bA_head_N100/response_raw_run3.txt"
+  }
+}

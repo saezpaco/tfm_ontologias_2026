@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-04T18:34:53.738125",
+  "success": true,
+  "elapsed_seconds": 178.32,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1672,
+    "completion_tokens": 1255,
+    "total_tokens": 2927
+  },
+  "prompt_tokens_estimate": 1047,
+  "response_chars": 4283,
+  "turtle_chars": 4283,
+  "validation": {
+    "valid": false,
+    "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b':Class>\\n\\n<owl:Class rdf:about=\"http://example.org/Enhancer\">'^b'\\n  a owl:Class ;\\n  rdfs:label \"Enhancer\" ;\\n  skos:prefLabel '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b_C_stratified/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8b_C_stratified/response_raw_run2.txt"
+  }
+}

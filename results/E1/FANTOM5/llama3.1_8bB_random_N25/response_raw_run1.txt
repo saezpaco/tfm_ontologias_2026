@@ -1,0 +1,125 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+<owl:Class rdf:about="http://example.org/CRM">
+  a owl:Class ;
+  rdfs:label "Cis-Regulatory Module (CRM)" ;
+  skos:prefLabel "Cis-Regulatory Module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression" .
+  obo:SO_0000163 <owl:equivalentClass> .
+
+<owl:Class rdf:about="http://example.org/GenomicCoordinate">
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" .
+  obo:SO_0000164 <owl:equivalentClass> .
+
+<owl:ObjectProperty rdf:about="http://example.org/targets">
+  a owl:ObjectProperty ;
+  rdfs:label "targets" ;
+  skos:prefLabel "targets" ;
+  skos:definition "A gene targeted by the CRM" .
+  obo:SO_0000165 <owl:equivalentClass> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/chrom">
+  a owl:DatatypeProperty ;
+  rdfs:label "chrom" ;
+  skos:prefLabel "chrom" ;
+  skos:definition "The chromosome where the CRM is located" .
+  xsd:string <owl:domain> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/chromStart">
+  a owl:DatatypeProperty ;
+  rdfs:label "chromStart" ;
+  skos:prefLabel "chromStart" ;
+  skos:definition "The start position of the CRM on the chromosome" .
+  xsd:int <owl:domain> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/chromEnd">
+  a owl:DatatypeProperty ;
+  rdfs:label "chromEnd" ;
+  skos:prefLabel "chromEnd" ;
+  skos:definition "The end position of the CRM on the chromosome" .
+  xsd:int <owl:domain> .
+
+<owl:ObjectProperty rdf:about="http://example.org/evidence">
+  a owl:ObjectProperty ;
+  rdfs:label "evidence" ;
+  skos:prefLabel "evidence" ;
+  skos:definition "Experimental evidence supporting the CRM's activity" .
+  obo:SO_0000166 <owl:equivalentClass> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/score">
+  a owl:DatatypeProperty ;
+  rdfs:label "score" ;
+  skos:prefLabel "score" ;
+  skos:definition "A measure of the CRM's activity" .
+  xsd:int <owl:domain> .
+
+<owl:ObjectProperty rdf:about="http://example.org/interactsWith">
+  a owl:ObjectProperty ;
+  rdfs:label "interactsWith" ;
+  skos:prefLabel "interactsWith" ;
+  skos:definition "A transcription factor that interacts with the CRM" .
+  obo:SO_0000167 <owl:equivalentClass> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/itemRgb">
+  a owl:DatatypeProperty ;
+  rdfs:label "itemRgb" ;
+  skos:prefLabel "itemRgb" ;
+  skos:definition "A color code representing the CRM's activity" .
+  xsd:string <owl:domain> .
+
+<owl:ObjectProperty rdf:about="http://example.org/associatedWith">
+  a owl:ObjectProperty ;
+  rdfs:label "associatedWith" ;
+  skos:prefLabel "associatedWith" ;
+  skos:definition "A disease associated with the CRM's activity" .
+  obo:SO_0000168 <owl:equivalentClass> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/blockCount">
+  a owl:DatatypeProperty ;
+  rdfs:label "blockCount" ;
+  skos:prefLabel "blockCount" ;
+  skos:definition "The number of blocks in the CRM's activity" .
+  xsd:int <owl:domain> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/blockSizes">
+  a owl:DatatypeProperty ;
+  rdfs:label "blockSizes" ;
+  skos:prefLabel "blockSizes" ;
+  skos:definition "The sizes of the blocks in the CRM's activity" .
+  xsd:string <owl:domain> .
+
+<owl:DatatypeProperty rdf:about="http://example.org/blockStarts">
+  a owl:DatatypeProperty ;
+  rdfs:label "blockStarts" ;
+  skos:prefLabel "blockStarts" ;
+  skos:definition "The start positions of the blocks in the CRM's activity" .
+  xsd:string <owl:domain> .
+
+<http://example.org/CRM rdf:type owl:Class> .
+<http://example.org/GenomicCoordinate rdf:type owl:Class> .
+<http://example.org/targets rdf:type owl:ObjectProperty> .
+<http://example.org/chrom rdf:type owl:DatatypeProperty> .
+<http://example.org/chromStart rdf:type owl:DatatypeProperty> .
+<http://example.org/chromEnd rdf:type owl:DatatypeProperty> .
+<http://example.org/evidence rdf:type owl:ObjectProperty> .
+<http://example.org/score rdf:type owl:DatatypeProperty> .
+<http://example.org/interactsWith rdf:type owl:ObjectProperty> .
+<http://example.org/itemRgb rdf:type owl:DatatypeProperty> .
+<http://example.org/associatedWith rdf:type owl:ObjectProperty> .
+<http://example.org/blockCount rdf:type owl:DatatypeProperty> .
+<http://example.org/blockSizes rdf:type owl:DatatypeProperty> .
+<http://example.org/blockStarts rdf:type owl:DatatypeProperty> .

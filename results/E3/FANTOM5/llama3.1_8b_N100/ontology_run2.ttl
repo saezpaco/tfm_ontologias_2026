@@ -1,0 +1,47 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606crm_ID> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/9606crm2pgene_ID> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/9606hgene_ID> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+#   • ontology=hcrm_example  file=hcrm_example.txt  score=0.186
+#   • ontology=hcrm  file=hcrm.txt  score=0.184
+#   • ontology=crm2pgene_example  file=crm2pgene_example.txt  score=0.180
+#   • ontology=crm2pgene  file=crm2pgene.txt  score=0.170
+#   • ontology=crm2phen_example  file=crm2phen_example.txt  score=0.170
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+# Column 'chr1':
+#   - <https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> rdfs:label "chr-12" ; # score=0.707
+#   - <https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> rdfs:label "chr_name" ; # score=0.716
+
+# Column 'chr1:839741-840250':
+#   - <https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> rdfs:label "chr-12" ; # score=0.436
+#   - <https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> rdfs:label "chr_name" ; # score=0.523
+#   - <http://rdf.biogateway.eu/crm/9606crm_ID> rdfs:label "crm/crm_ID" ; # score=0.401
+
+# Reuse cisreg classes and properties where semantically appropriate
+<https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> a <http://rdf.biogateway.eu/crm/9606crm_ID> .
+<https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> a <http://rdf.biogateway.eu/crm/9606crm_ID> .
+
+# Add explicit skos:exactMatch or skos:closeMatch to cisreg URIs for aligned terms
+<https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> skos:exactMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+<https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> skos:closeMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+
+# New classes/properties only where cisreg doesn't cover the concept
+# (no new terms added in this example)

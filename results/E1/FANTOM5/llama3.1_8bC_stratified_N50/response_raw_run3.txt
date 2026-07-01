@@ -1,0 +1,131 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/FANTOM5>
+  a owl:Ontology ;
+  rdfs:label "FANTOM5 Enhancers" ;
+  skos:prefLabel "FANTOM5 Enhancers" ;
+  skos:definition "Enhancer sequences identified by CAGE-seq" .
+
+crm:Enhancer
+  a owl:Class ;
+  rdfs:label "Enhancer" ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A regulatory DNA sequence that modulates gene expression" ;
+  obo:SO_0000163 ; # enhancer
+
+crm:GenomicCoordinate
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A location on the genome" .
+
+crm:Chromosome
+  a crm:GenomicCoordinate ;
+  rdfs:label "Chromosome" ;
+  skos:prefLabel "Chromosome" ;
+  skos:definition "A linear chromosome in an organism's genome" ;
+  obo:SO_0000164 . # chromosome
+
+crm:StartPosition
+  a crm:GenomicCoordinate ;
+  rdfs:label "Start Position" ;
+  skos:prefLabel "Start Position" ;
+  skos:definition "The starting position of a genomic feature" .
+
+crm:EndPosition
+  a crm:GenomicCoordinate ;
+  rdfs:label "End Position" ;
+  skos:prefLabel "End Position" ;
+  skos:definition "The ending position of a genomic feature" .
+
+crm:Evidence
+  a owl:Class ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "Experimental evidence supporting the existence of an enhancer" .
+
+crm:CAGEseqEvidence
+  a crm:Evidence ;
+  rdfs:label "CAGE-seq Evidence" ;
+  skos:prefLabel "CAGE-seq Evidence" ;
+  skos:definition "Evidence from CAGE-seq experiments" ;
+  obo:SO_0000165 . # CAGEseq evidence
+
+crm:TargetGene
+  a owl:Class ;
+  rdfs:label "Target Gene" ;
+  skos:prefLabel "Target Gene" ;
+  skos:definition "A gene regulated by an enhancer" .
+
+crm:DiseaseAssociation
+  a owl:Class ;
+  rdfs:label "Disease Association" ;
+  skos:prefLabel "Disease Association" ;
+  skos:definition "An association between an enhancer and a disease" .
+
+crm:TranscriptionFactorInteraction
+  a owl:Class ;
+  rdfs:label "Transcription Factor Interaction" ;
+  skos:prefLabel "Transcription Factor Interaction" ;
+  skos:definition "An interaction between an enhancer and a transcription factor" .
+
+crm:hasGenomicCoordinate
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate" ;
+  skos:prefLabel "Has Genomic Coordinate" ;
+  skos:definition "A relationship between an enhancer and its genomic coordinates" ;
+  obo:SO_0000166 . # has_genomic_coordinate
+
+crm:hasEvidence
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence" ;
+  skos:prefLabel "Has Evidence" ;
+  skos:definition "A relationship between an enhancer and its experimental evidence" ;
+  obo:SO_0000167 . # has_evidence
+
+crm:regulates
+  a owl:ObjectProperty ;
+  rdfs:label "Regulates" ;
+  skos:prefLabel "Regulates" ;
+  skos:definition "A relationship between an enhancer and its target gene" ;
+  obo:SO_0000168 . # regulates
+
+crm:associatedWithDisease
+  a owl:ObjectProperty ;
+  rdfs:label "Associated with Disease" ;
+  skos:prefLabel "Associated with Disease" ;
+  skos:definition "A relationship between an enhancer and a disease" ;
+  obo:SO_0000169 . # associated_with_disease
+
+crm:interactsWithTranscriptionFactor
+  a owl:ObjectProperty ;
+  rdfs:label "Interacts with Transcription Factor" ;
+  skos:prefLabel "Interacts with Transcription Factor" ;
+  skos:definition "A relationship between an enhancer and a transcription factor" ;
+  obo:SO_0000170 . # interacts_with_transcription_factor
+
+crm:chromosome
+  a owl:ObjectProperty ;
+  rdfs:label "Chromosome" ;
+  skos:prefLabel "Chromosome" ;
+  skos:definition "A relationship between an enhancer and its chromosome" ;
+  obo:SO_0000171 . # chromosome
+
+crm:startPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "Start Position" ;
+  skos:prefLabel "Start Position" ;
+  skos:definition "The starting position of a genomic feature" ;
+  xsd:int .
+
+crm:endPosition
+  a owl:DatatypeProperty ;
+  rdfs:label "End Position" ;
+  skos:prefLabel "End Position" ;
+  skos:definition "The ending position of a genomic feature" ;
+  xsd:int .

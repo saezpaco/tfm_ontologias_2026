@@ -1,0 +1,95 @@
+{
+  "experiment": "E3",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 8.003333333333334,
+  "total_tokens": 27262,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T21:59:04.590826",
+      "success": true,
+      "elapsed_seconds": 7.74,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8160,
+        "completion_tokens": 961,
+        "total_tokens": 9121
+      },
+      "prompt_tokens_estimate": 4431,
+      "response_chars": 2884,
+      "turtle_chars": 2870,
+      "validation": {
+        "valid": false,
+        "error": "at line 65 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b';\\n        sio:SIO_000301 \"107496131\"^^xsd:integer ;\\n        '^b'assembly:GRCh38 \"hg38\"\\n    ] ;\\n    biolink:has_evidence pubm'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T21:59:13.638420",
+      "success": true,
+      "elapsed_seconds": 7.03,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8160,
+        "completion_tokens": 873,
+        "total_tokens": 9033
+      },
+      "prompt_tokens_estimate": 4431,
+      "response_chars": 2647,
+      "turtle_chars": 2632,
+      "validation": {
+        "valid": false,
+        "error": "at line 68 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b';\\n        sio:SIO_000301 \"107496131\"^^xsd:integer ;\\n        '^b'assembly:GRCh38 \"hg38\"\\n    ] ;\\n    pubmed:30247654 \"30247654'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T21:59:24.903747",
+      "success": true,
+      "elapsed_seconds": 9.24,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8160,
+        "completion_tokens": 948,
+        "total_tokens": 9108
+      },
+      "prompt_tokens_estimate": 4431,
+      "response_chars": 2955,
+      "turtle_chars": 2941,
+      "validation": {
+        "valid": true,
+        "n_triples": 59,
+        "n_classes": 6,
+        "n_properties": 10
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/gpt-4oB_random_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+@prefix hcrm: <http://rdf.biogateway.eu/crm/9606> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+hcrm:crm_ID rdf:type obo:SO_0000727 ; # CRM
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:prefLabel "crm/crm_ID" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; #in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; #hg38 assembly as reference
+    obo:BFO_0000050 nuccore:chr_ID ; #chromosome
+    obo:GENO_0000895 "start_position"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+    obo:GENO_0000894 "end_position"^^<http://www.w3.org/2001/XMLSchema#integer> .
+
+nuccore:chr_ID rdf:type obo:NCIT_ID ; #chromosome
+    rdfs:subClassOf obo:SO_0000340 ;
+    skos:prefLabel "chr_name" ;
+    biolink:category biolink:GenomicSequenceLocalization ;
+    skos:closeMatch obo:NCIT_ID .
+
+assembly:GCF_000001405.26 rdf:type obo:SO_0001505 ; #genome assembly
+    rdfs:subClassOf obo:SO_0001505 ;
+    skos:prefLabel "GRCh38" ;
+    skos:altLabel "hg38" ;
+    biolink:category biolink:Genome .
+
+obo:BTO_ID rdf:type owl:Class ; #cell line, cell type or anatomical structure
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:prefLabel "BTO ID" ;
+    biolink:category biolink:CellLine .

@@ -1,0 +1,88 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+@prefix pubmed: <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://example.org/dbSUPER_ontology> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    dc:description "Ontology for representing super-enhancers from the dbSUPER database." .
+
+# Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:exactMatch crm2pgene:SuperEnhancer .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:exactMatch crm2phen:CellLine .
+
+dbsuper:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+dbsuper:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+# Properties
+dbsuper:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+dbsuper:hasCellLine a owl:ObjectProperty ;
+    rdfs:label "has cell line" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:CellLine ;
+    skos:exactMatch crm2phen:hasCellLine .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Gene ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Disease ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+dbsuper:interactsWithTF a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:TranscriptionFactor ;
+    skos:exactMatch crm2tfac:interactsWithTF .
+
+dbsuper:hasPMID a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string ;
+    skos:exactMatch pubmed:PMID .
+
+# Example individual
+dbsuper:CRMHS00000020104 a dbsuper:SuperEnhancer ;
+    dbsuper:hasGenomicCoordinate "chr11:6318004-6322966" ;
+    dbsuper:hasCellLine "HMEC" ;
+    dbsuper:targetsGene <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000020104--hgncsymbol!9606/CAVIN3> ;
+    dbsuper:hasPMID "24119843" ;
+    dbsuper:interactsWithTF <http://rdf.biogateway.eu/crm2tfac/bgw!CRMHS00000020104--uniprot!uniprot_ID> ;
+    dbsuper:associatedWithDisease <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000020104--doid!1682> .
+```

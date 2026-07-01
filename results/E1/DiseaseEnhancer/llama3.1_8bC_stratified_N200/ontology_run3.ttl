@@ -1,0 +1,596 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM> a owl:Class ;
+  rdfs:label "Conserved Regulatory Module"^^xsd:string ;
+  skos:prefLabel "CRM"@en ;
+  skos:definition "A conserved regulatory module is a region of DNA that has been conserved across multiple species and is involved in regulating gene expression."@en .
+
+<http://example.org/Enhancer> a owl:Class ;
+  rdfs:label "Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer"@en ;
+  skos:definition "An enhancer is a region of DNA that increases the transcription rate of a gene."@en .
+
+<http://example.org/GenomicCoordinate> a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"@en ;
+  skos:definition "A genomic coordinate is a specific location on the genome, typically represented as a pair of integers (chromosome and position)."@en .
+
+<http://example.org/Evidence> a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"@en ;
+  skos:definition "Evidence is any information that supports or refutes the existence of a CRM or enhancer."@en .
+
+<http://example.org/hasGenomicCoordinate> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/isEvidenceFor> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/hasEvidence> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/chromosome> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/position> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/evidenceType> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/evidenceSource> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000739> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000738> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000737> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000736> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000735> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000734> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000733> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000732> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000731> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000730> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000729> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000728> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000727> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000726> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000725> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000724> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000723> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000722> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000721> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000720> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000719> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000718> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000717> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000716> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000715> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000714> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000713> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000712> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000711> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000710> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000709> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000708> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000707> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000706> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000705> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000704> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000703> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000702> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000701> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000700> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000699> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000698> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000697> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000696> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000695> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000694> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000693> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000692> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000691> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000690> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000689> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000688> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000687> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000686> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000685> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000684> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000683> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000682> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000681> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000680> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000679> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000678> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000677> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000676> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000675> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000674> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000673> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000672> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000671> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000670> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000669> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000668> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000667> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000666> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000665> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000664> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000663> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000662> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000661> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000660> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000659> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000658> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000657> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000656> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000655> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000654> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000653> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000652> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000651> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000650> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000649> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000648> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000647> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000646> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000645> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000644> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000643> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000642> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000641> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000640> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000639> a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence"@en ;
+  skos:definition "This property indicates that a CRM or enhancer has evidence supporting its existence."@en .
+
+<http://example.org/obo:SO_0000638> a owl:DatatypeProperty ;
+  rdfs:label "Chromosome"^^xsd:string ;
+  skos:prefLabel "Chromosome"@en ;
+  skos:definition "The chromosome on which the genomic coordinate is located."@en .
+
+<http://example.org/obo:SO_0000637> a owl:DatatypeProperty ;
+  rdfs:label "Position"^^xsd:string ;
+  skos:prefLabel "Position"@en ;
+  skos:definition "The position of the genomic coordinate on its chromosome."@en .
+
+<http://example.org/obo:SO_0000636> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type"@en ;
+  skos:definition "The type of evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000635> a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source"@en ;
+  skos:definition "The source of the evidence supporting the existence of a CRM or enhancer."@en .
+
+<http://example.org/obo:SO_0000634> a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate"@en ;
+  skos:definition "This property indicates that a CRM or enhancer is located at a specific genomic coordinate."@en .
+
+<http://example.org/obo:SO_0000633> a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For"@en ;
+  skos:definition "This property indicates that an evidence supports the existence of a CRM or enhancer

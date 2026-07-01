@@ -1,0 +1,80 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology#CRM> a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A genomic region that regulates the expression of a target gene." ;
+    skos:exactMatch obo:SO_0000165 .
+
+<http://example.org/ontology#Enhancer> a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A type of cis-regulatory module that increases the transcription of a gene." ;
+    skos:exactMatch obo:SO_0000165 .
+
+<http://example.org/ontology#GenomicCoordinate> a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome defined by a start and end position." .
+
+<http://example.org/ontology#hasGenomicCoordinate> a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates a CRM to its genomic coordinates." ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range <http://example.org/ontology#GenomicCoordinate> .
+
+<http://example.org/ontology#hasEvidence> a owl:ObjectProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Relates a CRM to the evidence supporting its activity." ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range <http://example.org/ontology#Evidence> .
+
+<http://example.org/ontology#Evidence> a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information supporting the activity of a CRM, such as experimental methods." .
+
+<http://example.org/ontology#hasTargetGene> a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a CRM to its target gene." ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range obo:SO_0000704 ;
+    skos:exactMatch obo:RO_0002436 .
+
+<http://example.org/ontology#hasTranscriptionFactor> a owl:ObjectProperty ;
+    skos:prefLabel "has transcription factor" ;
+    skos:definition "Relates a CRM to a transcription factor that interacts with it." ;
+    rdfs:domain <http://example.org/ontology#CRM> ;
+    rdfs:range obo:GO_0003700 ;
+    skos:exactMatch obo:RO_0002437 .
+
+<http://example.org/ontology#chromosome> a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the CRM is located." ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology#startPosition> a owl:DatatypeProperty ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of the CRM on the chromosome." ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/ontology#endPosition> a owl:DatatypeProperty ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of the CRM on the chromosome." ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/ontology#assembly> a owl:DatatypeProperty ;
+    skos:prefLabel "assembly" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    rdfs:domain <http://example.org/ontology#GenomicCoordinate> ;
+    rdfs:range xsd:string .
+
+<http://example.org/ontology#evidenceMethod> a owl:DatatypeProperty ;
+    skos:prefLabel "evidence method" ;
+    skos:definition "The method used to identify the CRM, such as CAGE-seq." ;
+    rdfs:domain <http://example.org/ontology#Evidence> ;
+    rdfs:range xsd:string .

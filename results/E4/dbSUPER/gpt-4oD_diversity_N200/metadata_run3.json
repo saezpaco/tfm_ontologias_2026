@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=200/dbSUPER.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-28T20:25:48.765838+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.033,
+    "plan_s": 5.771,
+    "plan_chars": 4664,
+    "plan_prompt_chars": 9592,
+    "onto_s": 7.202,
+    "onto_chars": 9113,
+    "onto_prompt_chars": 13636,
+    "map_s": 6.708,
+    "map_chars": 6742,
+    "map_prompt_chars": 16446
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-28T20:26:08.481020+00:00",
+  "total_s": 19.714
+}

@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 163.51333333333332,
+  "total_tokens": 12447,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-27T11:16:37.730396",
+      "success": true,
+      "elapsed_seconds": 164.14,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3198,
+        "completion_tokens": 951,
+        "total_tokens": 4149
+      },
+      "prompt_tokens_estimate": 2224,
+      "response_chars": 3004,
+      "turtle_chars": 2585,
+      "validation": {
+        "valid": false,
+        "error": "at line 19 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b'62 obo:NCBITaxon_9606 ; #in taxon \"human\"\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ; #hg38 assembly as reference\\n    '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-27T11:19:22.215527",
+      "success": true,
+      "elapsed_seconds": 163.44,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3198,
+        "completion_tokens": 951,
+        "total_tokens": 4149
+      },
+      "prompt_tokens_estimate": 2224,
+      "response_chars": 3004,
+      "turtle_chars": 2585,
+      "validation": {
+        "valid": false,
+        "error": "at line 19 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b'62 obo:NCBITaxon_9606 ; #in taxon \"human\"\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ; #hg38 assembly as reference\\n    '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-27T11:22:06.204894",
+      "success": true,
+      "elapsed_seconds": 162.96,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3198,
+        "completion_tokens": 951,
+        "total_tokens": 4149
+      },
+      "prompt_tokens_estimate": 2224,
+      "response_chars": 3004,
+      "turtle_chars": 2585,
+      "validation": {
+        "valid": false,
+        "error": "at line 19 of <>:\nBad syntax (Prefix \"assembly:\" not bound) at ^ in:\n\"...b'62 obo:NCBITaxon_9606 ; #in taxon \"human\"\\n    dc:hasVersion '^b'assembly:GCF_000001405.26 ; #hg38 assembly as reference\\n    '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bB_random_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

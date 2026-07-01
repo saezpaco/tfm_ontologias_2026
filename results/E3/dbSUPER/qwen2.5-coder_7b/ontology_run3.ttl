@@ -1,0 +1,21 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2tfac/hcrm!> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix dbsuper: <http://www.dbsuper.org/ontology/> .
+
+# Example of how to map data to ontology classes and properties
+:CRMHS00000003515 a hcrm:TranscriptionFactor ;
+    rdfs:label "TBX5" ;
+    crm2pgene:hgncsymbol "TBX5" ;
+    dbsuper:disease_PMID "1682" .
+
+# Add more mappings as needed

@@ -1,0 +1,113 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix crm2gene: <http://rdf.biogateway.eu/crm2gene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix pubmed:  <http://identifiers.org/pubmed/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+@prefix mesh:    <http://purl.obolibrary.org/obo/MESH_> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    dc:title "DiseaseEnhancer" ;
+    dc:description "Enhancers asociados a enfermedades" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+crm2pgene:Enhancer rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2gene:Enhancer .
+
+crm2pgene:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2gene:Gene .
+
+crm2phen:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+crm2tfac:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm2tfac:TranscriptionFactor .
+
+### Properties ###
+crm2pgene:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2gene:hasGenomicLocation .
+
+crm2pgene:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch crm2gene:targetsGene .
+
+crm2phen:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+crm2tfac:interactsWithTF rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    skos:exactMatch crm2tfac:interactsWithTF .
+
+### Individuals ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685535> rdf:type crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chrX:8672161-8672559"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    crm2pgene:targetsGene hgnc:TBL1X ;
+    crm2phen:associatedWithDisease doid:3571 ;
+    dc:source pubmed:27869826 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005962> rdf:type crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr3:139237250-139237353"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    crm2pgene:targetsGene hgnc:FOXL2 ;
+    crm2phen:associatedWithDisease doid:10348 ;
+    dc:source pubmed:19543368 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685822> rdf:type crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr2:27507935-27508333"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    crm2pgene:targetsGene hgnc:FNDC4 ;
+    crm2phen:associatedWithDisease mesh:D051436 ;
+    dc:source pubmed:29093029 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685685> rdf:type crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr20:63331053-63331203"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    crm2pgene:targetsGene hgnc:NKAIN4 ;
+    crm2phen:associatedWithDisease doid:1612 ;
+    dc:source pubmed:27723759 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685786> rdf:type crm2pgene:Enhancer ;
+    crm2pgene:hasGenomicLocation [
+        a sio:SIO_000984 ;
+        sio:SIO_000300 "chr20:48068532-48088115"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    crm2pgene:targetsGene hgnc:SULF2 ;
+    crm2phen:associatedWithDisease omim:114480 ;
+    dc:source pubmed:27723759 .
+
+# Additional individuals would follow the same pattern...
+```

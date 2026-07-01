@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 3,
+  "timestamp": "2026-06-27T00:46:44.084969",
+  "success": true,
+  "elapsed_seconds": 89.83,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 397,
+    "completion_tokens": 920,
+    "total_tokens": 1317
+  },
+  "prompt_tokens_estimate": 470,
+  "response_chars": 3194,
+  "turtle_chars": 3194,
+  "validation": {
+    "valid": false,
+    "error": "at line 20 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'inition \"A region of DNA that regulates gene expression.\".\\n\\n'^b'DiseaseEnhancer\\n  a owl:Class ;\\n  rdfs:subClassOf obo:CIS_RE'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8bB_random_N25/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8bB_random_N25/response_raw_run3.txt"
+  }
+}

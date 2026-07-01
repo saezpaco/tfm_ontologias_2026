@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-30T00:05:09.207633",
+  "success": true,
+  "elapsed_seconds": 134.55,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 1062,
+    "total_tokens": 5157
+  },
+  "prompt_tokens_estimate": 3554,
+  "response_chars": 3028,
+  "turtle_chars": 3014,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"CRM Enhancer O'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bC_stratified_N200/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bC_stratified_N200/response_raw_run1.txt"
+  }
+}

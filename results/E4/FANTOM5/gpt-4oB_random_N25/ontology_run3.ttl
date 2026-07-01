@@ -1,0 +1,165 @@
+@prefix base: <https://base_ontology.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+base:blockCount a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "block count" ;
+    skos:definition "Number of blocks in the genomic feature" .
+
+base:chromEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "chromosome end" ;
+    skos:definition "End position of the genomic feature on the chromosome" .
+
+base:chromStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "chromosome start" ;
+    skos:definition "Start position of the genomic feature on the chromosome" .
+
+base:score a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "score" ;
+    skos:definition "Score associated with the genomic feature" .
+
+base:thickEnd a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "thick end" ;
+    skos:definition "End position of the thick part of the feature" .
+
+base:thickStart a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "thick start" ;
+    skos:definition "Start position of the thick part of the feature" .
+
+base:blockSizes a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "block sizes" ;
+    skos:definition "Sizes of the blocks" .
+
+base:blockStarts a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "block starts" ;
+    skos:definition "Start positions of the blocks" .
+
+base:chrom a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "chromosome" ;
+    skos:definition "Chromosome on which the feature is located" .
+
+base:itemRgb a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "item RGB" ;
+    skos:definition "RGB value for the item" .
+
+base:name a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "name" ;
+    skos:definition "Name of the genomic feature" .
+
+base:strand a owl:DatatypeProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range xsd:string ;
+    rdfs:label "strand" ;
+    skos:definition "Strand of the genomic feature" .
+
+base:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Chromosome ;
+    rdfs:label "has chromosome" ;
+    skos:definition "Associates a genomic feature with a chromosome" .
+
+base:hasBlock a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Block ;
+    rdfs:label "has block" ;
+    skos:definition "Associates a genomic feature with a block" .
+
+base:hasScore a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:Score ;
+    rdfs:label "has score" ;
+    skos:definition "Associates a genomic feature with a score" .
+
+base:hasThickRegion a owl:ObjectProperty ;
+    rdfs:domain base:GenomicFeature ;
+    rdfs:range base:ThickRegion ;
+    rdfs:label "has thick region" ;
+    skos:definition "Associates a genomic feature with a thick region" .
+
+base:GenomicFeature a owl:Class ;
+    rdfs:label "Genomic Feature" ;
+    skos:definition "A feature on a genome" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty base:blockCount ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chromEnd ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chromStart ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:score ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:thickEnd ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:thickStart ;
+        owl:allValuesFrom xsd:integer
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:blockSizes ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:blockStarts ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:chrom ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:itemRgb ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:name ;
+        owl:allValuesFrom xsd:string
+    ], [
+        a owl:Restriction ;
+        owl:onProperty base:strand ;
+        owl:allValuesFrom xsd:string
+    ] .
+
+base:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:definition "A subclass of GenomicFeature representing an enhancer" ;
+    rdfs:subClassOf base:GenomicFeature .
+
+base:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:definition "A subclass of GenomicFeature representing a super enhancer" ;
+    rdfs:subClassOf base:GenomicFeature .

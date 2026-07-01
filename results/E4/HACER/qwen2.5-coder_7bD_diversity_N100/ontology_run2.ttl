@@ -1,0 +1,137 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+:GeneticRegulatoryElement a rdfs:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A general class representing genetic regulatory elements." ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A general class representing genetic regulatory elements." .
+
+:Enhancer a rdfs:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing enhancers." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    skos:definition "A subclass of GeneticRegulatoryElement representing enhancers." .
+
+:SuperEnhancer a rdfs:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A subclass of Enhancer representing super enhancers." ;
+    rdfs:subClassOf :Enhancer ;
+    skos:definition "A subclass of Enhancer representing super enhancers." .
+
+:TranscriptionFactor a rdfs:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing transcription factors." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    skos:definition "A subclass of GeneticRegulatoryElement representing transcription factors." .
+
+:TargetGene a rdfs:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing target genes." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    skos:definition "A subclass of GeneticRegulatoryElement representing target genes." .
+
+:Disease a rdfs:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing diseases." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    skos:definition "A subclass of GeneticRegulatoryElement representing diseases." .
+
+:CellLineOrBiosample a rdfs:Class ;
+    rdfs:label "Cell Line or Biosample" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing cell lines or biosamples." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    skos:definition "A subclass of GeneticRegulatoryElement representing cell lines or biosamples." .
+
+:Mutation a rdfs:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing mutations." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    skos:definition "A subclass of GeneticRegulatoryElement representing mutations." .
+
+:ChromatinRegulatoryModule a rdfs:Class ;
+    rdfs:label "Chromatin Regulatory Module" ;
+    rdfs:comment "A subclass of GeneticRegulatoryElement representing chromatin regulatory modules." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    skos:definition "A subclass of GeneticRegulatoryElement representing chromatin regulatory modules." .
+
+:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "has Transcription Factor" ;
+    rdfs:comment "An object property indicating the transcription factor associated with an enhancer or super enhancer." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :TranscriptionFactor .
+
+:hasTargetGene a owl:ObjectProperty ;
+    rdfs:label "has Target Gene" ;
+    rdfs:comment "An object property indicating the target gene associated with an enhancer or super enhancer." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :TargetGene .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "associated With Disease" ;
+    rdfs:comment "An object property indicating the disease associated with an enhancer or super enhancer." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :Disease .
+
+:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:label "occurs In Cell Line or Biosample" ;
+    rdfs:comment "An object property indicating the cell line or biosample in which an enhancer or super enhancer occurs." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :CellLineOrBiosample .
+
+:hasMutation a owl:ObjectProperty ;
+    rdfs:label "has Mutation" ;
+    rdfs:comment "An object property indicating the mutation associated with an enhancer or super enhancer." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :Mutation .
+
+:partOfChromatinRegulatoryModule a owl:ObjectProperty ;
+    rdfs:label "part Of Chromatin Regulatory Module" ;
+    rdfs:comment "An object property indicating the chromatin regulatory module to which an enhancer or super enhancer belongs." ;
+    rdfs:domain :Enhancer ;
+    rdfs:range :ChromatinRegulatoryModule .
+
+:pmid a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A datatype property representing the PubMed ID of a study or resource." ;
+    rdfs:domain :TFs2enh_PMID, :disease_PMID, :enh2gene_PMID, :mutation_PMID ;
+    rdfs:range xsd:string .
+
+:method a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "A datatype property representing the method used in a study or resource." ;
+    rdfs:domain :TFs2enh_method, :disease_method, :enh2gene_method, :mutation_method ;
+    rdfs:range xsd:string .
+
+:hgncSymbol a owl:DatatypeProperty ;
+    rdfs:label "HGNC Symbol" ;
+    rdfs:comment "A datatype property representing the HGNC symbol of a transcription factor or target gene." ;
+    rdfs:domain :hgnc_symbol_TFs, :hgnc_symbol_target_genes ;
+    rdfs:range xsd:string .
+
+:score a owl:DatatypeProperty ;
+    rdfs:label "Score" ;
+    rdfs:comment "A datatype property representing the score value of an enhancer or super enhancer." ;
+    rdfs:domain :score ;
+    rdfs:range xsd:float .
+
+:assemblyVersion a owl:DatatypeProperty ;
+    rdfs:label "Assembly Version" ;
+    rdfs:comment "A datatype property representing the genomic assembly version of an enhancer or super enhancer." ;
+    rdfs:domain :current_assembly, :orig_assembly ;
+    rdfs:range xsd:string .
+
+:chromosomeNumber a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "A datatype property representing the chromosome number of an enhancer or super enhancer." ;
+    rdfs:domain :current_chr, :orig_chr ;
+    rdfs:range xsd:string .
+
+:position a owl:DatatypeProperty ;
+    rdfs:label "Position" ;
+    rdfs:comment "A datatype property representing the start or end position of an enhancer or super enhancer." ;
+    rdfs:domain :current_start, :current_end, :orig_start, :orig_end ;
+    rdfs:range xsd:int .

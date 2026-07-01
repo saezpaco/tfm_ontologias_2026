@@ -1,0 +1,680 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "CRM" ;
+  skos:definition "A chromatin regulatory module is a functional unit of chromatin that regulates gene expression."^^xsd:string .
+
+<http://example.org/Enhancer>
+  a owl:Class ;
+  rdfs:label "Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "A region of DNA that increases the transcription of a particular gene or set of genes."^^xsd:string .
+
+<http://example.org/GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A specific location on the genome, typically represented as a pair of integers (chromosome and position)."^^xsd:string .
+
+<http://example.org/Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "A statement or observation that supports the existence or function of a CRM or enhancer."^^xsd:string .
+
+<http://example.org/hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate" ;
+  skos:definition "A relationship between a CRM/enhancer and its genomic location."^^xsd:string .
+
+<http://example.org/isEvidenceFor>
+  a owl:ObjectProperty ;
+  rdfs:label "Is Evidence For"^^xsd:string ;
+  skos:prefLabel "Is Evidence For" ;
+  skos:definition "A relationship between an evidence statement and the CRM/enhancer it supports."^^xsd:string .
+
+<http://example.org/genomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "The specific location on the genome, typically represented as a pair of integers (chromosome and position)."^^xsd:string .
+
+<http://example.org/evidenceType>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence Type"^^xsd:string ;
+  skos:prefLabel "Evidence Type" ;
+  skos:definition "The type of evidence supporting the existence or function of a CRM/enhancer."^^xsd:string .
+
+<http://example.org/evidenceSource>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence Source"^^xsd:string ;
+  skos:prefLabel "Evidence Source" ;
+  skos:definition "The source of the evidence supporting the existence or function of a CRM/enhancer."^^xsd:string .
+
+<http://example.org/obo/BFO_0000051>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of"^^xsd:string ;
+  skos:prefLabel "Part Of" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000052>
+  a owl:ObjectProperty ;
+  rdfs:label "has_part"^^xsd:string ;
+  skos:prefLabel "Has Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000053>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of"^^xsd:string ;
+  skos:prefLabel "Is Part Of" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000054>
+  a owl:ObjectProperty ;
+  rdfs:label "has_component"^^xsd:string ;
+  skos:prefLabel "Has Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000055>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of"^^xsd:string ;
+  skos:prefLabel "Is Component Of" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000056>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_particular_individual"^^xsd:string ;
+  skos:prefLabel "Part Of Particular Individual" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000057>
+  a owl:ObjectProperty ;
+  rdfs:label "has_particular_individual_as_part"^^xsd:string ;
+  skos:prefLabel "Has Particular Individual As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000058>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_particular_individual"^^xsd:string ;
+  skos:prefLabel "Is Part Of Particular Individual" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000059>
+  a owl:ObjectProperty ;
+  rdfs:label "has_particular_individual_as_component"^^xsd:string ;
+  skos:prefLabel "Has Particular Individual As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000060>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_particular_individual"^^xsd:string ;
+  skos:prefLabel "Is Component Of Particular Individual" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000061>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_group"^^xsd:string ;
+  skos:prefLabel "Part Of Group" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000062>
+  a owl:ObjectProperty ;
+  rdfs:label "has_group_as_part"^^xsd:string ;
+  skos:prefLabel "Has Group As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000063>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_group"^^xsd:string ;
+  skos:prefLabel "Is Part Of Group" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000064>
+  a owl:ObjectProperty ;
+  rdfs:label "has_group_as_component"^^xsd:string ;
+  skos:prefLabel "Has Group As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000065>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_group"^^xsd:string ;
+  skos:prefLabel "Is Component Of Group" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000066>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_collection"^^xsd:string ;
+  skos:prefLabel "Part Of Collection" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000067>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_as_part"^^xsd:string ;
+  skos:prefLabel "Has Collection As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000068>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_collection"^^xsd:string ;
+  skos:prefLabel "Is Part Of Collection" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000069>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_as_component"^^xsd:string ;
+  skos:prefLabel "Has Collection As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000070>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_collection"^^xsd:string ;
+  skos:prefLabel "Is Component Of Collection" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000071>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_set"^^xsd:string ;
+  skos:prefLabel "Part Of Set" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000072>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_as_part"^^xsd:string ;
+  skos:prefLabel "Has Set As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000073>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_set"^^xsd:string ;
+  skos:prefLabel "Is Part Of Set" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000074>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_as_component"^^xsd:string ;
+  skos:prefLabel "Has Set As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000075>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_set"^^xsd:string ;
+  skos:prefLabel "Is Component Of Set" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000076>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_class"^^xsd:string ;
+  skos:prefLabel "Part Of Class" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000077>
+  a owl:ObjectProperty ;
+  rdfs:label "has_class_as_part"^^xsd:string ;
+  skos:prefLabel "Has Class As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000078>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_class"^^xsd:string ;
+  skos:prefLabel "Is Part Of Class" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000079>
+  a owl:ObjectProperty ;
+  rdfs:label "has_class_as_component"^^xsd:string ;
+  skos:prefLabel "Has Class As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000080>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_class"^^xsd:string ;
+  skos:prefLabel "Is Component Of Class" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000081>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_individual"^^xsd:string ;
+  skos:prefLabel "Part Of Individual" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000082>
+  a owl:ObjectProperty ;
+  rdfs:label "has_individual_as_part"^^xsd:string ;
+  skos:prefLabel "Has Individual As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000083>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_individual"^^xsd:string ;
+  skos:prefLabel "Is Part Of Individual" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000084>
+  a owl:ObjectProperty ;
+  rdfs:label "has_individual_as_component"^^xsd:string ;
+  skos:prefLabel "Has Individual As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000085>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_individual"^^xsd:string ;
+  skos:prefLabel "Is Component Of Individual" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000086>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_grouping"^^xsd:string ;
+  skos:prefLabel "Part Of Grouping" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000087>
+  a owl:ObjectProperty ;
+  rdfs:label "has_grouping_as_part"^^xsd:string ;
+  skos:prefLabel "Has Grouping As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000088>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_grouping"^^xsd:string ;
+  skos:prefLabel "Is Part Of Grouping" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000089>
+  a owl:ObjectProperty ;
+  rdfs:label "has_grouping_as_component"^^xsd:string ;
+  skos:prefLabel "Has Grouping As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000090>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_grouping"^^xsd:string ;
+  skos:prefLabel "Is Component Of Grouping" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000091>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_collection_of_individuals"^^xsd:string ;
+  skos:prefLabel "Part Of Collection Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000092>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_of_individuals_as_part"^^xsd:string ;
+  skos:prefLabel "Has Collection Of Individuals As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000093>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_collection_of_individuals"^^xsd:string ;
+  skos:prefLabel "Is Part Of Collection Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000094>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_of_individuals_as_component"^^xsd:string ;
+  skos:prefLabel "Has Collection Of Individuals As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000095>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_collection_of_individuals"^^xsd:string ;
+  skos:prefLabel "Is Component Of Collection Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000096>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_set_of_individuals"^^xsd:string ;
+  skos:prefLabel "Part Of Set Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000097>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_of_individuals_as_part"^^xsd:string ;
+  skos:prefLabel "Has Set Of Individuals As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000098>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_set_of_individuals"^^xsd:string ;
+  skos:prefLabel "Is Part Of Set Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000099>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_of_individuals_as_component"^^xsd:string ;
+  skos:prefLabel "Has Set Of Individuals As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000100>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_set_of_individuals"^^xsd:string ;
+  skos:prefLabel "Is Component Of Set Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000101>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_class_of_individuals"^^xsd:string ;
+  skos:prefLabel "Part Of Class Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000102>
+  a owl:ObjectProperty ;
+  rdfs:label "has_class_of_individuals_as_part"^^xsd:string ;
+  skos:prefLabel "Has Class Of Individuals As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000103>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_class_of_individuals"^^xsd:string ;
+  skos:prefLabel "Is Part Of Class Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000104>
+  a owl:ObjectProperty ;
+  rdfs:label "has_class_of_individuals_as_component"^^xsd:string ;
+  skos:prefLabel "Has Class Of Individuals As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000105>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_class_of_individuals"^^xsd:string ;
+  skos:prefLabel "Is Component Of Class Of Individuals" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000106>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_individual_with_role"^^xsd:string ;
+  skos:prefLabel "Part Of Individual With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000107>
+  a owl:ObjectProperty ;
+  rdfs:label "has_individual_with_role_as_part"^^xsd:string ;
+  skos:prefLabel "Has Individual With Role As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000108>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_individual_with_role"^^xsd:string ;
+  skos:prefLabel "Is Part Of Individual With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000109>
+  a owl:ObjectProperty ;
+  rdfs:label "has_individual_with_role_as_component"^^xsd:string ;
+  skos:prefLabel "Has Individual With Role As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000110>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_individual_with_role"^^xsd:string ;
+  skos:prefLabel "Is Component Of Individual With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000111>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_group_with_role"^^xsd:string ;
+  skos:prefLabel "Part Of Group With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000112>
+  a owl:ObjectProperty ;
+  rdfs:label "has_group_with_role_as_part"^^xsd:string ;
+  skos:prefLabel "Has Group With Role As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000113>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_group_with_role"^^xsd:string ;
+  skos:prefLabel "Is Part Of Group With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000114>
+  a owl:ObjectProperty ;
+  rdfs:label "has_group_with_role_as_component"^^xsd:string ;
+  skos:prefLabel "Has Group With Role As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000115>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_group_with_role"^^xsd:string ;
+  skos:prefLabel "Is Component Of Group With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000116>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_collection_with_role"^^xsd:string ;
+  skos:prefLabel "Part Of Collection With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000117>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_with_role_as_part"^^xsd:string ;
+  skos:prefLabel "Has Collection With Role As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000118>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_collection_with_role"^^xsd:string ;
+  skos:prefLabel "Is Part Of Collection With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000119>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_with_role_as_component"^^xsd:string ;
+  skos:prefLabel "Has Collection With Role As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000120>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_collection_with_role"^^xsd:string ;
+  skos:prefLabel "Is Component Of Collection With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000121>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_set_with_role"^^xsd:string ;
+  skos:prefLabel "Part Of Set With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000122>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_with_role_as_part"^^xsd:string ;
+  skos:prefLabel "Has Set With Role As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000123>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_set_with_role"^^xsd:string ;
+  skos:prefLabel "Is Part Of Set With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000124>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_with_role_as_component"^^xsd:string ;
+  skos:prefLabel "Has Set With Role As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000125>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_set_with_role"^^xsd:string ;
+  skos:prefLabel "Is Component Of Set With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000126>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_class_with_role"^^xsd:string ;
+  skos:prefLabel "Part Of Class With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000127>
+  a owl:ObjectProperty ;
+  rdfs:label "has_class_with_role_as_part"^^xsd:string ;
+  skos:prefLabel "Has Class With Role As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000128>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_class_with_role"^^xsd:string ;
+  skos:prefLabel "Is Part Of Class With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000129>
+  a owl:ObjectProperty ;
+  rdfs:label "has_class_with_role_as_component"^^xsd:string ;
+  skos:prefLabel "Has Class With Role As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000130>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_class_with_role"^^xsd:string ;
+  skos:prefLabel "Is Component Of Class With Role" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000131>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_individual_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Part Of Individual With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000132>
+  a owl:ObjectProperty ;
+  rdfs:label "has_individual_with_role_and_type_as_part"^^xsd:string ;
+  skos:prefLabel "Has Individual With Role And Type As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000133>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_individual_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Part Of Individual With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000134>
+  a owl:ObjectProperty ;
+  rdfs:label "has_individual_with_role_and_type_as_component"^^xsd:string ;
+  skos:prefLabel "Has Individual With Role And Type As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000135>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_individual_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Component Of Individual With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000136>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_group_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Part Of Group With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000137>
+  a owl:ObjectProperty ;
+  rdfs:label "has_group_with_role_and_type_as_part"^^xsd:string ;
+  skos:prefLabel "Has Group With Role And Type As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000138>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_group_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Part Of Group With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000139>
+  a owl:ObjectProperty ;
+  rdfs:label "has_group_with_role_and_type_as_component"^^xsd:string ;
+  skos:prefLabel "Has Group With Role And Type As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000140>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_group_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Component Of Group With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000141>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_collection_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Part Of Collection With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000142>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_with_role_and_type_as_part"^^xsd:string ;
+  skos:prefLabel "Has Collection With Role And Type As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000143>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_collection_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Part Of Collection With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000144>
+  a owl:ObjectProperty ;
+  rdfs:label "has_collection_with_role_and_type_as_component"^^xsd:string ;
+  skos:prefLabel "Has Collection With Role And Type As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000145>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_collection_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Component Of Collection With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000146>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_set_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Part Of Set With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000147>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_with_role_and_type_as_part"^^xsd:string ;
+  skos:prefLabel "Has Set With Role And Type As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000148>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_set_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Part Of Set With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000149>
+  a owl:ObjectProperty ;
+  rdfs:label "has_set_with_role_and_type_as_component"^^xsd:string ;
+  skos:prefLabel "Has Set With Role And Type As Component" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000150>
+  a owl:ObjectProperty ;
+  rdfs:label "is_component_of_set_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Component Of Set With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000151>
+  a owl:ObjectProperty ;
+  rdfs:label "part_of_class_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Part Of Class With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000152>
+  a owl:ObjectProperty ;
+  rdfs:label "has_class_with_role_and_type_as_part"^^xsd:string ;
+  skos:prefLabel "Has Class With Role And Type As Part" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000153>
+  a owl:ObjectProperty ;
+  rdfs:label "is_part_of_class_with_role_and_type"^^xsd:string ;
+  skos:prefLabel "Is Part Of Class With Role And Type" ;
+  skos:definition "A relationship between an entity and its constituent parts."^^xsd:string .
+  
+<http://example.org/obo/BFO_0000154

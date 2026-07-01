@@ -1,0 +1,130 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://genetic_regulatory_elements.com#> .
+
+### owl:DatatypeProperty
+
+:hasPubMedID a rdf:Property ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "The PubMed ID associated with the genetic regulatory element." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+:usesMethod a rdf:Property ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study of the genetic regulatory element." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+:hasAssemblyVersion a rdf:Property ;
+    rdfs:label "Assembly Version" ;
+    rdfs:comment "The genome assembly version associated with the genetic regulatory element." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+:hasChromosomeNumber a rdf:Property ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number in the genome assembly." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+:hasScore a rdf:Property ;
+    rdfs:label "Score" ;
+    rdfs:comment "The score value associated with the genetic regulatory element." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range xsd:float .
+
+:hasStartPosition a rdf:Property ;
+    rdfs:label "Start Position" ;
+    rdfs:comment "The start position in the genome assembly." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+:hasEndPosition a rdf:Property ;
+    rdfs:label "End Position" ;
+    rdfs:comment "The end position in the genome assembly." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+### owl:ObjectProperty
+
+:hasTranscriptionFactor a rdf:Property ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and its associated transcription factor." ;
+    rdfs:domain :Enhancer , :SuperEnhancer ;
+    rdfs:range :TranscriptionFactor .
+
+:hasTargetGene a rdf:Property ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and its associated target gene." ;
+    rdfs:domain :Enhancer , :SuperEnhancer ;
+    rdfs:range :TargetGene .
+
+:associatedWithDisease a rdf:Property ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "A relationship between a genetic regulatory element and the disease it is associated with." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :Disease .
+
+:occursInCellLine a rdf:Property ;
+    rdfs:label "Occurs In Cell Line" ;
+    rdfs:comment "A relationship between a genetic regulatory element and the cell line it occurs in." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :CellLine .
+
+:involvesMutation a rdf:Property ;
+    rdfs:label "Involves Mutation" ;
+    rdfs:comment "A relationship between a genetic regulatory element and the mutation it involves." ;
+    rdfs:domain :GeneticRegulatoryElement ;
+    rdfs:range :Mutation .
+
+### owl:Class
+
+:GeneticRegulatoryElement a rdf:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A general class representing genetic regulatory elements such as enhancers, superenhancers, transcription factors, target genes, diseases, cell lines, and mutations." ;
+    rdfs:subClassOf owl:Thing .
+
+:Enhancer a rdf:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers, which are regions of DNA that can increase the transcription of nearby genes." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticRegulatoryElement ] .
+
+:SuperEnhancer a rdf:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing superenhancers, which are highly active enhancers that can drive the transcription of multiple genes." ;
+    rdfs:subClassOf :Enhancer ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :Enhancer ] .
+
+:TranscriptionFactor a rdf:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing transcription factors, which are proteins that bind to DNA and regulate the transcription of genes." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticRegulatoryElement ] .
+
+:TargetGene a rdf:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes, which are genes that can be regulated by enhancers or transcription factors." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticRegulatoryElement ] .
+
+:Disease a rdf:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing diseases associated with genetic regulatory elements." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticRegulatoryElement ] .
+
+:CellLine a rdf:Class ;
+    rdfs:label "Cell Line" ;
+    rdfs:comment "A class representing cell lines or tissue samples in which genetic regulatory elements occur." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticRegulatoryElement ] .
+
+:Mutation a rdf:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing mutations that can involve genetic regulatory elements." ;
+    rdfs:subClassOf :GeneticRegulatoryElement ;
+    rdfs:equivalentClass [ rdf:type owl:Class ; rdfs:subClassOf :GeneticRegulatoryElement ] .

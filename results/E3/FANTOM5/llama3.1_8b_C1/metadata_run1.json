@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-05T20:26:52.687450",
+  "success": true,
+  "elapsed_seconds": 149.52,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3461,
+    "completion_tokens": 1160,
+    "total_tokens": 4621
+  },
+  "prompt_tokens_estimate": 2158,
+  "response_chars": 3653,
+  "turtle_chars": 3022,
+  "validation": {
+    "valid": true,
+    "n_triples": 54,
+    "n_classes": 9,
+    "n_properties": 0
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_C1/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_C1/response_raw_run1.txt"
+  }
+}

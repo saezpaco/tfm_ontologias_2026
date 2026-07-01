@@ -1,0 +1,54 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+crm:CRM a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." ;
+    skos:prefLabel "crm/crm_ID" ;
+    rdfs:subClassOf obo:SO_0001856 .
+
+crm:Database a owl:Class ;
+    rdfs:label "Database" ;
+    skos:definition "A database containing cis-regulatory modules." ;
+    skos:prefLabel "database_name" .
+
+crm:CisRegulatoryModuleInDatabase a owl:ObjectProperty ;
+    rdfs:label "located in database" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:Database ;
+    skos:definition "The cis-regulatory module is located in the specified database." .
+
+crm:GeneSymbol a owl:Class ;
+    rdfs:label "Gene Symbol" ;
+    skos:prefLabel "hgncsymbol!9606/gene_symbol" .
+
+crm:CisRegulatoryModuleToGene a owl:ObjectProperty ;
+    rdfs:label "associated with gene" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:GeneSymbol ;
+    skos:definition "The cis-regulatory module is associated with the specified gene." .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "doid!doid" .
+
+crm:CisRegulatoryModuleToDisease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:Disease ;
+    skos:definition "The cis-regulatory module is associated with the specified disease." .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "uniprot!uniprot_ID" .
+
+crm:CisRegulatoryModuleToTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "associated with transcription factor" ;
+    rdfs:domain crm:CRM ;
+    rdfs:range crm:TranscriptionFactor ;
+    skos:definition "The cis-regulatory module is associated with the specified transcription factor." .

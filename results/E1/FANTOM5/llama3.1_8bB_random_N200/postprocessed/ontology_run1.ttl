@@ -1,0 +1,76 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "Chromatin Regulatory Module" ;
+  skos:definition "A chromatin regulatory module is a functional unit of chromatin that regulates gene expression." .
+
+<http://example.org/Enhancer>
+  a owl:Class ;
+  rdfs:label "Enhancer"^^xsd:string ;
+  skos:prefLabel "Enhancer" ;
+  skos:definition "An enhancer is a region of DNA that can increase the transcription rate of a gene." .
+
+<http://example.org/genomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A genomic coordinate is a location on a chromosome." .
+
+<http://example.org/evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "Evidence for the existence of a chromatin regulatory module or enhancer." .
+
+<http://example.org/hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Has Genomic Coordinate" ;
+  skos:definition "A chromatin regulatory module or enhancer has one or more genomic coordinates." .
+
+<http://example.org/isLocatedAt>
+  a owl:ObjectProperty ;
+  rdfs:label "Is Located At"^^xsd:string ;
+  skos:prefLabel "Is Located At" ;
+  skos:definition "A chromatin regulatory module or enhancer is located at one or more genomic coordinates." .
+
+<http://example.org/hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "Has Evidence" ;
+  skos:definition "A chromatin regulatory module or enhancer has evidence for its existence." .
+
+<http://example.org/CRM>
+  <http://example.org/hasGenomicCoordinate> 
+    <http://example.org/genomicCoordinate> ;
+  <http://example.org/isLocatedAt> 
+    <http://example.org/genomicCoordinate> ;
+  <http://example.org/hasEvidence> 
+    <http://example.org/evidence> .
+
+<http://example.org/Enhancer>
+  <http://example.org/hasGenomicCoordinate> 
+    <http://example.org/genomicCoordinate> ;
+  <http://example.org/isLocatedAt> 
+    <http://example.org/genomicCoordinate> ;
+  <http://example.org/hasEvidence> 
+    <http://example.org/evidence> .
+
+<http://example.org/genomicCoordinate>
+  a owl:DatatypeProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A genomic coordinate is a location on a chromosome." .
+
+<http://example.org/evidence>
+  a owl:DatatypeProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "Evidence for the existence of a chromatin regulatory module or enhancer." .

@@ -1,0 +1,49 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2tfac/hcrm!> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene!> .
+@prefix assembly:<http://rdf.biogateway.eu/assembly/bgw!> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <http://purl.org/net/pmid#> .
+@prefix id_pubmed:<http://identifiers.org/pubmed/> .
+@prefix id_ncbigene:<http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <https://dbsuper.com/super/> .
+@prefix : <http://example.org/ontology/> .
+
+:crm_ID rdf:type owl:Class ;
+    rdfs:label "CRM ID" ;
+    skos:exactMatch hcrm:crm_ID .
+
+:biosample_name rdf:type owl:Class ;
+    rdfs:label "Biosample Name" ;
+    skos:closeMatch obo:SO_0001217 .  # :Biological :Sample .
+
+:hgnc_symbol_target_genes rdf:type owl:Class ;
+    rdfs:label "HGNC Symbol Target Genes" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606> .
+
+:orig_end rdf:type owl:Property ;
+    rdfs:label "Original End" ;
+    rdfs:domain hcrm:CRM ;
+    rdfs:range xsd:string ;
+    skos:closeMatch assembly:end_position .
+
+:current_end rdf:type owl:Property ;
+    rdfs:label "Current End" ;
+    rdfs:domain hcrm:CRM ;
+    rdfs:range xsd:string ;
+    skos:closeMatch assembly:start_position .
+
+:disease_PMID rdf:type owl:Property ;
+    rdfs:label "Disease PMID" ;
+    rdfs:domain hcrm:CRM ;
+    rdfs:range pubmed:Publication .

@@ -1,0 +1,68 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:CRM a owl:Class ;
+    skos:prefLabel "Cis-Regulatory Module" ;
+    skos:definition "A genomic region that regulates the expression of target genes, often containing multiple binding sites for transcription factors." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A short region of DNA that can increase transcription of genes." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." .
+
+obo:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch obo:SO_0000704 .
+
+obo:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms." .
+
+# Object Properties
+obo:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a CRM or enhancer to its target gene." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Gene .
+
+obo:activeInCellLine a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the CRM or enhancer is active." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:CellLine .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a CRM or enhancer to a disease it is associated with." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Disease .
+
+# Datatype Properties
+obo:hasGenomicCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Specifies the genomic coordinates of a CRM or enhancer." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasExperimentalEvidence a owl:DatatypeProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Describes the experimental method used to identify the CRM or enhancer." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string .
+
+obo:hasScore a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "A numerical score representing the strength or confidence of the CRM or enhancer." ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:float .

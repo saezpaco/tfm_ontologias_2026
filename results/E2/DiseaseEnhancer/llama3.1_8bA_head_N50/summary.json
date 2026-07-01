@@ -1,0 +1,93 @@
+{
+  "experiment": "E2",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 115.55666666666667,
+  "total_tokens": 5304,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-27T10:10:12.650433",
+      "success": true,
+      "elapsed_seconds": 115.91,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 786,
+        "completion_tokens": 982,
+        "total_tokens": 1768
+      },
+      "prompt_tokens_estimate": 808,
+      "response_chars": 3467,
+      "turtle_chars": 3467,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-27T10:12:09.266168",
+      "success": true,
+      "elapsed_seconds": 115.59,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 786,
+        "completion_tokens": 982,
+        "total_tokens": 1768
+      },
+      "prompt_tokens_estimate": 808,
+      "response_chars": 3467,
+      "turtle_chars": 3467,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-27T10:14:05.470245",
+      "success": true,
+      "elapsed_seconds": 115.17,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 786,
+        "completion_tokens": 982,
+        "total_tokens": 1768
+      },
+      "prompt_tokens_estimate": 808,
+      "response_chars": 3467,
+      "turtle_chars": 3467,
+      "validation": {
+        "valid": false,
+        "error": "at line 8 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm a owl:Class ;\\n    rdfs:label \"Cis-regulatory module\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/llama3.1_8bA_head_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

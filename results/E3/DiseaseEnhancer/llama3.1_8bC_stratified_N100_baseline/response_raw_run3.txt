@@ -1,0 +1,487 @@
+Based on the provided information, I will create the output in Turtle format that meets the requirements.
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/crm2pgene#> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene#> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+#   • ontology=crm2phen_example  file=crm2phen_example.txt  score=0.410
+#   • ontology=crm2gene  file=crm2gene.txt  score=0.390
+#   • ontology=crm2phen  file=crm2phen.txt  score=0.387
+#   • ontology=crm2gene_example  file=crm2gene_example.txt  score=0.387
+#   • ontology=crm2tfac  file=crm2tfac.txt  score=0.346
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+# Column 'orig_end':
+hcrm:orig_end rdfs:label "ENdb" .
+hcrm:orig_end skos:exactMatch <http://www.licpathway.net/ENdb/> .
+
+# Column 'current_end':
+hcrm:current_end rdfs:label "ENdb" .
+hcrm:current_end skos:exactMatch <http://www.licpathway.net/ENdb/> .
+
+# Column 'hgnc_symbol_target_genes':
+crm2pgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+crm2pgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+crm2phen:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+crm2phen:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+crm2tfac:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+crm2tfac:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+hgene:crm_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:crm_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'biosample_name':
+assembly:biosample_name rdfs:label "database_name" .
+assembly:biosample_name skos:closeMatch <original_URL_database> .
+
+# Column 'original_ID':
+hgene:original_ID rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" .
+hgene:original_ID skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .
+
+# Column 'hgnc_symbol_target_genes':
+hgene:hgnc_symbol_target_genes rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:hgnc_symbol_target_genes skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+hgene:disease_PMID rdfs:label "bgw!CRMHS00000003515--doid!1682" .
+hgene:disease_PMID skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515

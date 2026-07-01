@@ -1,0 +1,67 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes located on the same chromosome." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters and can function in either orientation and in any location relative to the promoter." ;
+    skos:exactMatch obo:SO_0000167 .
+
+obo:SO_0000991 a owl:Class ;
+    skos:prefLabel "Genomic Location" ;
+    skos:definition "A specific location in the genome defined by its coordinates." .
+
+obo:GO_0006355 a owl:Class ;
+    skos:prefLabel "Regulation of transcription, DNA-templated" ;
+    skos:definition "Any process that modulates the frequency, rate or extent of cellular DNA-templated transcription." ;
+    skos:exactMatch obo:GO_0006355 .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a cis-regulatory module to its target gene." ;
+    skos:exactMatch obo:RO_0002205 .
+
+obo:RO_0002434 a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the enhancer is active." .
+
+obo:RO_0002435 a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a cis-regulatory module to a disease it is associated with." .
+
+obo:RO_0002436 a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Indicates the transcription factor that interacts with the enhancer." .
+
+# Datatype Properties
+obo:SO_0000991:hasStartCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has start coordinate" ;
+    skos:definition "The start coordinate of the genomic location." ;
+    rdfs:range xsd:integer .
+
+obo:SO_0000991:hasEndCoordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has end coordinate" ;
+    skos:definition "The end coordinate of the genomic location." ;
+    rdfs:range xsd:integer .
+
+obo:SO_0000991:hasChromosome a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the genomic location is found." ;
+    rdfs:range xsd:string .
+
+obo:GO_0006355:hasEvidence a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "The type of experimental evidence supporting the regulatory activity." ;
+    rdfs:range xsd:string .
+```

@@ -1,0 +1,241 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. cell_name: type - categorical - short description of the cell line or biosample - possible range: [cell_line_1, cell_line_2, ..., cell_line_n]
+2. chrom: type - text - short description of the chromosome number - possible range: [chr1, chr2, ..., chrX]
+3. gene_symbol: type - text - short description of the target gene symbol - possible range: [gene1, gene2, ..., geneN]
+4. se_id: type - text - short description of the super-enhancer identifier - possible range: [se1, se2, ..., seN]
+5. rank: type - Numerical - short description of the rank or significance score - possible range: [1, 2, ..., n]
+6. start: type - Numerical - short description of the genomic start position - possible range: [0, 1, ..., max_genomic_position]
+7. stop: type - Numerical - short description of the genomic stop position - possible range: [0, 1, ..., max_genomic_position]
+
+**Classes:**
+1. GeneticElement
+2. Enhancer
+3. SuperEnhancer
+4. CellLine
+5. TargetGene
+
+**Subclasses:**
+1. GeneticElement
+   - subclass of -> Entity
+2. Enhancer
+   - subclass of -> GeneticElement
+3. SuperEnhancer
+   - subclass of -> Enhancer
+4. CellLine
+   - subclass of -> Entity
+5. TargetGene
+   - subclass of -> Entity
+
+**Object Properties:**
+1. hasCellLine: domain - GeneticElement, range - CellLine
+2. containsTargetGene: domain - SuperEnhancer, range - TargetGene
+3. locatedOnChromosome: domain - GeneticElement, range - Chromosome
+4. hasRank: domain - GeneticElement, range - xsd:integer
+
+**Data Type Properties:**
+1. cellName: domain - GeneticElement, range - xsd:string
+2. chromosome: domain - GeneticElement, range - xsd:string
+3. geneSymbol: domain - TargetGene, range - xsd:string
+4. seId: domain - SuperEnhancer, range - xsd:string
+5. start: domain - GeneticElement, range - xsd:integer
+6. stop: domain - GeneticElement, range - xsd:integer
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A generic class representing genetic elements." ;
+    rdfs:subClassOf ge:Entity ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:hasCellLine ;
+        owl:someValuesFrom ge:CellLine
+    ] ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:locatedOnChromosome ;
+        owl:someValuesFrom ge:Chromosome
+    ] ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:hasRank ;
+        owl:someValuesFrom xsd:integer
+    ] .
+
+ge:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers, which are genetic elements that regulate gene expression." ;
+    rdfs:subClassOf ge:GeneticElement .
+
+ge:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing super-enhancers, which are highly active enhancers that can drive the transcription of multiple genes." ;
+    rdfs:subClassOf ge:Enhancer ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+        owl:onProperty ge:containsTargetGene ;
+        owl:someValuesFrom ge:TargetGene
+    ] .
+
+ge:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    rdfs:comment "A class representing cell lines or biosamples." ;
+    rdfs:subClassOf ge:Entity .
+
+ge:TargetGene a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes that are regulated by enhancers and super-enhancers." ;
+    rdfs:subClassOf ge:Entity .
+
+ge:hasCellLine a owl:ObjectProperty ;
+    rdfs:label "Has Cell Line" ;
+    rdfs:comment "An object property indicating the cell line or biosample associated with a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:CellLine .
+
+ge:containsTargetGene a owl:ObjectProperty ;
+    rdfs:label "Contains Target Gene" ;
+    rdfs:comment "An object property indicating the target gene(s) contained within a super-enhancer." ;
+    rdfs:domain ge:SuperEnhancer ;
+    rdfs:range ge:TargetGene .
+
+ge:locatedOnChromosome a owl:ObjectProperty ;
+    rdfs:label "Located On Chromosome" ;
+    rdfs:comment "An object property indicating the chromosome on which a genetic element is located." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:Chromosome .
+
+ge:hasRank a owl:DatatypeProperty ;
+    rdfs:label "Has Rank" ;
+    rdfs:comment "A datatype property indicating the rank or significance score of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer .
+
+ge:cellName a owl:DatatypeProperty ;
+    rdfs:label "Cell Name" ;
+    rdfs:comment "A datatype property representing the name of a cell line or biosample." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string .
+
+ge:chromosome a owl:DatatypeProperty ;
+    rdfs:label "Chromosome" ;
+    rdfs:comment "A datatype property representing the chromosome number." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string .
+
+ge:geneSymbol a owl:DatatypeProperty ;
+    rdfs:label "Gene Symbol" ;
+    rdfs:comment "A datatype property representing the symbol of a target gene." ;
+    rdfs:domain ge:TargetGene ;
+    rdfs:range xsd:string .
+
+ge:seId a owl:DatatypeProperty ;
+    rdfs:label "SE ID" ;
+    rdfs:comment "A datatype property representing the identifier of a super-enhancer." ;
+    rdfs:domain ge:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+ge:start a owl:DatatypeProperty ;
+    rdfs:label "Start" ;
+    rdfs:comment "A datatype property representing the genomic start position of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer .
+
+ge:stop a owl:DatatypeProperty ;
+    rdfs:label "Stop" ;
+    rdfs:comment "A datatype property representing the genomic stop position of a genetic element." ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/GeneticElement/{{cell_name}}_{{se_id}}_{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ge:hasCellLine;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLine>;
+        ]
+    ],
+    [
+        rr:predicate ge:locatedOnChromosome;
+        rr:objectMap [
+            rr:template "https://genetic_regulatory_elements.com/Chromosome/{{chrom}}";
+        ]
+    ],
+    [
+        rr:predicate ge:hasRank;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRank>;
+        ]
+    ],
+    [
+        rr:predicate ge:start;
+        rr:objectMap [
+            rr:template "{{start}}";
+        ]
+    ],
+    [
+        rr:predicate ge:stop;
+        rr:objectMap [
+            rr:template "{{stop}}";
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/Enhancer/{{cell_name}}_{{se_id}}_{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/SuperEnhancer/{{cell_name}}_{{se_id}}_{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/CellLine/{{cell_name}}_{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/TargetGene/{{gene_symbol}}_{FAIR_URI}";
+    ].
+
+<#TriplesMapRank> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://genetic_regulatory_elements.com/Rank/{{rank}}_{FAIR_URI}";
+    ].
+```

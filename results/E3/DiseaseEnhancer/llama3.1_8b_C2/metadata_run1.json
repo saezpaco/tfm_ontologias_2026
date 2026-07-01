@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-05T21:12:30.671730",
+  "success": true,
+  "elapsed_seconds": 105.9,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3599,
+    "completion_tokens": 740,
+    "total_tokens": 4339
+  },
+  "prompt_tokens_estimate": 2220,
+  "response_chars": 2369,
+  "turtle_chars": 1992,
+  "validation": {
+    "valid": false,
+    "error": "at line 45 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'rm:CisRegulatoryModule ;\\n    hcrm:hasTargetGene crm2pgene:b '^b'integration!9606/TBX5 ;\\n    hcrm:hasEnhancerSequence <http:/'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_C2/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/llama3.1_8b_C2/response_raw_run1.txt"
+  }
+}

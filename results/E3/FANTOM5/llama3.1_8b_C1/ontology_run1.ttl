@@ -1,0 +1,94 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2gene/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <https://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <https://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+  rdfs:label "Cis-Regulatory Module" ;
+  skos:exactMatch hcrm:Crm2Gene .
+
+crm2pgene:Crm2Gene a owl:Class ;
+  rdfs:label "CRM to Gene" ;
+  skos:closeMatch crm2pgene:BgwCrmIdHgncSymbol9606GeneSybmol .
+
+hgene:Gene a owl:Class ;
+  rdfs:label "Gene" ;
+  skos:exactMatch obo:GENE .
+
+assembly:Assembly a owl:Class ;
+  rdfs:label "Genomic Assembly" ;
+  skos:closeMatch assembly:Hg19 .
+
+nuccore:NucleotideSequence a owl:Class ;
+  rdfs:label "Nucleotide Sequence" ;
+  skos:exactMatch nuccore:ENdb .
+
+pubmed:Publication a owl:Class ;
+  rdfs:label "Publication" ;
+  skos:closeMatch pubmed:PMID .
+
+id_pubmed:PubMedIdentifier a owl:Class ;
+  rdfs:label "PubMed Identifier" ;
+  skos:exactMatch id_pubmed:PMID .
+
+id_ncbigene:NcbiGeneIdentifier a owl:Class ;
+  rdfs:label "NCBI Gene Identifier" ;
+  skos:closeMatch id_ncbigene:HGNC .
+
+dbsuper:DiseaseOntology a owl:Class ;
+  rdfs:label "Disease Ontology" ;
+  skos:exactMatch dbsuper:DOS .
+
+# Properties
+hcrm:CrmId a rdf:Property ;
+  rdfs:label "CRM ID" ;
+  skos:closeMatch hcrm:BgwCrmIdHgncSymbol9606GeneSybmol .
+
+crm2pgene:HgncSymbol a rdf:Property ;
+  rdfs:label "HGNC Symbol" ;
+  skos:exactMatch crm2pgene:BgwCrmIdHgncSymbol9606GeneSybmol .
+
+hgene:Name a rdf:Property ;
+  rdfs:label "Gene Name" ;
+  skos:closeMatch hgene:HgncSymbol .
+
+assembly:AssemblyVersion a rdf:Property ;
+  rdfs:label "Genomic Assembly Version" ;
+  skos:exactMatch assembly:Hg19 .
+
+nuccore:NucleotideSequenceId a rdf:Property ;
+  rdfs:label "Nucleotide Sequence ID" ;
+  skos:closeMatch nuccore:ENdb .
+
+pubmed:Title a rdf:Property ;
+  rdfs:label "Publication Title" ;
+  skos:exactMatch pubmed:PMID .
+
+id_pubmed:Identifier a rdf:Property ;
+  rdfs:label "PubMed Identifier" ;
+  skos:closeMatch id_pubmed:PMID .
+
+id_ncbigene:GeneId a rdf:Property ;
+  rdfs:label "NCBI Gene ID" ;
+  skos:exactMatch id_ncbigene:HGNC .
+
+dbsuper:DiseaseName a rdf:Property ;
+  rdfs:label "Disease Name" ;
+  skos:closeMatch dbsuper:DOS .

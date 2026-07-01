@@ -1,0 +1,129 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "Super-enhancers con coordenadas, líneas celulares y genes diana" ;
+  skos:definition "Database of super-enhancers with genomic coordinates, cell lines and target genes." .
+
+<http://example.org/CRM>
+  a owl:Class ;
+  rdfs:label "Cis-regulatory Module" ;
+  skos:prefLabel "CRM" ;
+  skos:definition "A region of DNA that regulates gene expression by binding transcription factors." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000163> .
+
+<http://example.org/GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate" ;
+  skos:prefLabel "Genomic Coordinate" ;
+  skos:definition "A point or range of points on the genome." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000164> .
+
+<http://example.org/Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "Evidence" ;
+  skos:definition "Data or observations that support a conclusion." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+<http://example.org/CRM_has_GenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "has Genomic Coordinate" ;
+  skos:prefLabel "CRM has Genomic Coordinate" ;
+  skos:definition "A CRM is associated with one or more genomic coordinates." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000166> .
+
+<http://example.org/CRM_has_Evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "has Evidence" ;
+  skos:prefLabel "CRM has Evidence" ;
+  skos:definition "A CRM is supported by one or more pieces of evidence." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+<http://example.org/CRM_has_TargetGene>
+  a owl:ObjectProperty ;
+  rdfs:label "has Target Gene" ;
+  skos:prefLabel "CRM has Target Gene" ;
+  skos:definition "A CRM regulates the expression of one or more target genes." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000168> .
+
+<http://example.org/CRM_has_CellLine>
+  a owl:ObjectProperty ;
+  rdfs:label "has Cell Line" ;
+  skos:prefLabel "CRM has Cell Line" ;
+  skos:definition "A CRM is active in one or more cell lines." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000169> .
+
+<http://example.org/CRM_has_AssociatedDisease>
+  a owl:ObjectProperty ;
+  rdfs:label "has Associated Disease" ;
+  skos:prefLabel "CRM has Associated Disease" ;
+  skos:definition "A CRM is associated with one or more diseases." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000170> .
+
+<http://example.org/CRM_has_InteractingTranscriptionFactor>
+  a owl:ObjectProperty ;
+  rdfs:label "has Interacting Transcription Factor" ;
+  skos:prefLabel "CRM has Interacting Transcription Factor" ;
+  skos:definition "A CRM interacts with one or more transcription factors." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000171> .
+
+<http://example.org/CRM_has_GenomicCoordinate_xsd:int>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Genomic Coordinate (int)" ;
+  skos:prefLabel "CRM has Genomic Coordinate (int)" ;
+  skos:definition "A CRM is associated with one or more genomic coordinates." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000172> .
+
+<http://example.org/CRM_has_Evidence_xsd:string>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Evidence (string)" ;
+  skos:prefLabel "CRM has Evidence (string)" ;
+  skos:definition "A CRM is supported by one or more pieces of evidence." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000173> .
+
+<http://example.org/CRM_has_TargetGene_xsd:string>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Target Gene (string)" ;
+  skos:prefLabel "CRM has Target Gene (string)" ;
+  skos:definition "A CRM regulates the expression of one or more target genes." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000174> .
+
+<http://example.org/CRM_has_CellLine_xsd:string>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Cell Line (string)" ;
+  skos:prefLabel "CRM has Cell Line (string)" ;
+  skos:definition "A CRM is active in one or more cell lines." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000175> .
+
+<http://example.org/CRM_has_AssociatedDisease_xsd:string>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Associated Disease (string)" ;
+  skos:prefLabel "CRM has Associated Disease (string)" ;
+  skos:definition "A CRM is associated with one or more diseases." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000176> .
+
+<http://example.org/CRM_has_InteractingTranscriptionFactor_xsd:string>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Interacting Transcription Factor (string)" ;
+  skos:prefLabel "CRM has Interacting Transcription Factor (string)" ;
+  skos:definition "A CRM interacts with one or more transcription factors." ;
+  obo:skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000177> .
+
+<http://example.org/CRM>
+  rdfs:subClassOf <http://example.org/CRM> ;
+  owl:equivalentClass <http://example.org/CRM> .
+  
+<http://example.org/GenomicCoordinate>
+  rdfs:subClassOf <http://example.org/GenomicCoordinate> ;
+  owl:equivalentClass <http://example.org/GenomicCoordinate> .
+
+<http://example.org/Evidence>
+  rdfs:subClassOf <http://example.org/Evidence> ;
+  owl:equivalentClass <http://example.org/Evidence> .

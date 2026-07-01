@@ -19,13 +19,13 @@ hcrm:CisReg  a owl:Class ;
 
 hcrm:CisRegRegion  a owl:Class ;
     rdfs:label "Cis-Regulatory Region" ;
-    skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+    skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 # Properties
 hcrm:hasRegion  a owl:ObjectProperty ;
     rdfs:domain hcrm:CisReg ;
     rdfs:range hcrm:CisRegRegion ;
-    skos:closeMatch crm2pgene:bgw!CRMHS00000003515--hgncsymbol!9606/TBX5 .
+    skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
 
 hcrm:hasChromosome  a owl:ObjectProperty ;
     rdfs:domain hcrm:CisReg ;

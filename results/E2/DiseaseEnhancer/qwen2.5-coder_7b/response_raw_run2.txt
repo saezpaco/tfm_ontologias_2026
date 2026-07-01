@@ -1,0 +1,550 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that binds to DNA and regulates the transcription of genes." .
+
+crm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A cis-regulatory module located in Homo sapiens chr_name between start_position and end_position." .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A segment of DNA that codes for a protein or RNA molecule." .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A condition affecting the normal functioning of an organism." .
+
+crm:TranscriptionFactorRegulatesGene a owl:ObjectProperty ;
+    rdfs:label "Transcription Factor Regulates Gene" ;
+    skos:prefLabel "Transcription Factor Regulates Gene" ;
+    skos:definition "The relationship between a transcription factor and a gene it regulates." .
+
+crm:CisRegulatoryModuleLocatedIn a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In" ;
+    skos:prefLabel "Cis-regulatory module located in" ;
+    skos:definition "The location of a cis-regulatory module on a chromosome." .
+
+crm:CisRegulatoryModuleAssociatedWithDisease a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Associated With Disease" ;
+    skos:prefLabel "Cis-regulatory module associated with disease" ;
+    skos:definition "The association between a cis-regulatory module and a disease." .
+
+crm:CisRegulatoryModuleAssociatedWithGene a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Associated With Gene" ;
+    skos:prefLabel "Cis-regulatory module associated with gene" ;
+    skos:definition "The association between a cis-regulatory module and a gene." .
+
+crm:CisRegulatoryModuleAssociatedWithTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Associated With Transcription Factor" ;
+    skos:prefLabel "Cis-regulatory module associated with transcription factor" ;
+    skos:definition "The association between a cis-regulatory module and a transcription factor." .
+
+crm:CisRegulatoryModuleLocatedInGRCh38 a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In GRCh38" ;
+    skos:prefLabel "Cis-regulatory module located in GRCh38" ;
+    skos:definition "The location of a cis-regulatory module on the GRCh38 assembly." .
+
+crm:CisRegulatoryModuleLocatedInHGNC a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly." .
+
+crm:CisRegulatoryModuleLocatedInUniprot a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly." .
+
+crm:CisRegulatoryModuleLocatedInDOID a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabase a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbol a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotID a owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." .
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." .
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." .
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." .
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In DOID" ;
+    skos:prefLabel "Cis-regulatory module located in DOID" ;
+    skos:definition "The location of a cis-regulatory module on the DOID assembly." ;
+
+crm:CisRegulatoryModuleLocatedInDatabasea owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Database" ;
+    skos:prefLabel "Cis-regulatory module located in database" ;
+    skos:definition "The location of a cis-regulatory module on a specific database." ;
+
+crm:CisRegulatoryModuleLocatedInHGNCsymbola owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In HGNC Symbol" ;
+    skos:prefLabel "Cis-regulatory module located in HGNC symbol" ;
+    skos:definition "The location of a cis-regulatory module on the HGNC assembly using a gene symbol." ;
+
+crm:CisRegulatoryModuleLocatedInUniprotIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Regulatory Module Located In Uniprot ID" ;
+    skos:prefLabel "Cis-regulatory module located in Uniprot ID" ;
+    skos:definition "The location of a cis-regulatory module on the Uniprot assembly using a protein ID." ;
+
+crm:CisRegulatoryModuleLocatedInDOIDa owl:ObjectProperty ;
+    rdfs:label "Cis-Reg

@@ -1,0 +1,95 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 6.8500000000000005,
+  "total_tokens": 5901,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:26:42.174030",
+      "success": true,
+      "elapsed_seconds": 6.4,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1207,
+        "completion_tokens": 696,
+        "total_tokens": 1903
+      },
+      "prompt_tokens_estimate": 910,
+      "response_chars": 2468,
+      "turtle_chars": 2468,
+      "validation": {
+        "valid": false,
+        "error": "at line 11 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'\\n<http://example.org/dbSUPER> a owl:Ontology .\\n\\n### Classes\\n'^b':SuperEnhancer a owl:Class ;\\n    skos:prefLabel \"Super Enhan'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oA_head_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oA_head_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:26:50.526584",
+      "success": true,
+      "elapsed_seconds": 7.31,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1207,
+        "completion_tokens": 743,
+        "total_tokens": 1950
+      },
+      "prompt_tokens_estimate": 910,
+      "response_chars": 2596,
+      "turtle_chars": 2596,
+      "validation": {
+        "valid": false,
+        "error": "at line 14 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b's:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .\\n\\n'^b':SuperEnhancer a owl:Class ;\\n    skos:prefLabel \"Super Enhan'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oA_head_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oA_head_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:26:58.413321",
+      "success": true,
+      "elapsed_seconds": 6.84,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1207,
+        "completion_tokens": 841,
+        "total_tokens": 2048
+      },
+      "prompt_tokens_estimate": 910,
+      "response_chars": 2983,
+      "turtle_chars": 2983,
+      "validation": {
+        "valid": true,
+        "n_triples": 42,
+        "n_classes": 3,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oA_head_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4oA_head_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

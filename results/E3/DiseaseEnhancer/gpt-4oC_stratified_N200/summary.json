@@ -1,0 +1,97 @@
+{
+  "experiment": "E3",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 13.456666666666669,
+  "total_tokens": 28259,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T22:07:48.376655",
+      "success": true,
+      "elapsed_seconds": 13.89,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8024,
+        "completion_tokens": 1363,
+        "total_tokens": 9387
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 4211,
+      "turtle_chars": 4196,
+      "validation": {
+        "valid": false,
+        "error": "at line 30 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N200/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N200/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T22:08:02.755073",
+      "success": true,
+      "elapsed_seconds": 12.33,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8024,
+        "completion_tokens": 1045,
+        "total_tokens": 9069
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 3327,
+      "turtle_chars": 3313,
+      "validation": {
+        "valid": true,
+        "n_triples": 46,
+        "n_classes": 4,
+        "n_properties": 5
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N200/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N200/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T22:08:18.932726",
+      "success": true,
+      "elapsed_seconds": 14.15,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 8024,
+        "completion_tokens": 1779,
+        "total_tokens": 9803
+      },
+      "prompt_tokens_estimate": 4460,
+      "response_chars": 5525,
+      "turtle_chars": 5510,
+      "validation": {
+        "valid": true,
+        "n_triples": 65,
+        "n_classes": 4,
+        "n_properties": 4
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N200/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/DiseaseEnhancer/gpt-4oC_stratified_N200/response_raw_run3.txt"
+      }
+    }
+  ]
+}

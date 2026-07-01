@@ -1,0 +1,102 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+crm:SuperEnhancer a owl:Class ;
+    rdfs:label "Super-enhancer" ;
+    skos:prefLabel "Super-enhancer" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to dbSUPER" ;
+    rdfs:subClassOf crm:CisRegulatoryModule .
+
+crm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-regulatory Module" ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    rdfs:subClassOf crm:CisRegulatoryElement .
+
+crm:CisRegulatoryElement a owl:Class ;
+    rdfs:label "Cis-regulatory Element" ;
+    skos:prefLabel "crm/crm_ID" ;
+    skos:definition "Cis-regulatory element located in Homo sapiens chr_name between start_position and end_position" .
+
+crm:Chromosome a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Genomic chromosome of Homo sapiens" .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:prefLabel "gene_symbol" ;
+    skos:definition "Transcriptional unit encoding proteins or RNA molecules" .
+
+crm:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:prefLabel "cell_name" ;
+    skos:definition "Culture of cells maintained in vitro for biological research" .
+
+crm:Rank a owl:DatatypeProperty ;
+    rdfs:label "Rank" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "rank" ;
+    skos:definition "Position of the cis-regulatory module in a list or ranking system" .
+
+crm:start a owl:DatatypeProperty ;
+    rdfs:label "Start Position" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start" ;
+    skos:definition "Starting genomic coordinate of the cis-regulatory element" .
+
+crm:end a owl:DatatypeProperty ;
+    rdfs:label "End Position" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "stop" ;
+    skos:definition "Ending genomic coordinate of the cis-regulatory element" .
+
+crm:hasGene a owl:ObjectProperty ;
+    rdfs:label "Has Gene" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Gene ;
+    skos:prefLabel "gene_symbol" ;
+    skos:definition "Association between cis-regulatory module and gene" .
+
+crm:hasCellLine a owl:ObjectProperty ;
+    rdfs:label "Has Cell Line" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:CellLine ;
+    skos:prefLabel "cell_name" ;
+    skos:definition "Association between cis-regulatory module and cell line" .
+
+crm:hasRank a owl:ObjectProperty ;
+    rdfs:label "Has Rank" ;
+    rdfs:domain crm:CisRegulatoryModule ;
+    rdfs:range crm:Rank ;
+    skos:prefLabel "rank" ;
+    skos:definition "Association between cis-regulatory module and its rank" .
+
+crm:hasChromosome a owl:ObjectProperty ;
+    rdfs:label "Has Chromosome" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range crm:Chromosome ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Association between cis-regulatory element and chromosome" .
+
+crm:hasStart a owl:ObjectProperty ;
+    rdfs:label "Has Start Position" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range crm:start ;
+    skos:prefLabel "start" ;
+    skos:definition "Association between cis-regulatory element and its start position" .
+
+crm:hasEnd a owl:ObjectProperty ;
+    rdfs:label "Has End Position" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range crm:end ;
+    skos:prefLabel "stop" ;
+    skos:definition "Association between cis-regulatory element and its end position" .

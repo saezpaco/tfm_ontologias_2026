@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-06-28T05:43:55.908174",
+  "success": true,
+  "elapsed_seconds": 131.56,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1943,
+    "completion_tokens": 1600,
+    "total_tokens": 3543
+  },
+  "prompt_tokens_estimate": 1573,
+  "response_chars": 4479,
+  "turtle_chars": 4465,
+  "validation": {
+    "valid": false,
+    "error": "at line 44 of <>:\nBad syntax (Prefix \"linkml:\" not bound) at ^ in:\n\"...b'bel \"CRM\" ;\\n    skos:altLabel \"cis-regulatory module\" ;\\n    '^b'linkml:is_a biolink:RegulatoryRegion .\\n\\nnuccore:chr_ID rdf:t'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bB_random_N25/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bB_random_N25/response_raw_run2.txt"
+  }
+}

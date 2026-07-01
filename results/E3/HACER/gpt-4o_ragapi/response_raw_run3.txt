@@ -1,0 +1,106 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://bioinfo.vanderbilt.edu/AE/HACER/> .
+@prefix crm:     <http://example.org/ontology/crm#> .
+@prefix pubmed:  <http://identifiers.org/pubmed/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/ontology> a owl:Ontology ;
+    rdfs:label "HACER Ontology" ;
+    dc:description "Ontology for the Human Active Cis-regulatory Elements database" ;
+    owl:imports <http://example.org/ontology/crm> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:subClassOf crm:CisRegulatoryModule ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch crm:CisRegulatoryModule .
+
+hcrm:Enhancer a owl:Class ;
+    rdfs:subClassOf hcrm:CisRegulatoryModule ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm:Enhancer .
+
+hcrm:Gene a owl:Class ;
+    rdfs:subClassOf biolink:Gene ;
+    rdfs:label "Gene" ;
+    skos:exactMatch biolink:Gene .
+
+hcrm:TranscriptionFactor a owl:Class ;
+    rdfs:subClassOf biolink:GeneProduct ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm:TranscriptionFactor .
+
+hcrm:Disease a owl:Class ;
+    rdfs:subClassOf biolink:Disease ;
+    rdfs:label "Disease" ;
+    skos:exactMatch biolink:Disease .
+
+# Properties
+hcrm:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range crm:GenomicLocation ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm:hasGenomicLocation .
+
+hcrm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:Gene ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm:hasTargetGene .
+
+hcrm:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:TranscriptionFactor ;
+    rdfs:label "has transcription factor" ;
+    skos:exactMatch crm:hasTranscriptionFactor .
+
+hcrm:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range hcrm:Disease ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm:associatedWithDisease .
+
+hcrm:hasExperimentalEvidence a owl:DatatypeProperty ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string ;
+    rdfs:label "has experimental evidence" ;
+    skos:exactMatch crm:hasExperimentalEvidence .
+
+hcrm:hasBiosampleName a owl:DatatypeProperty ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range xsd:string ;
+    rdfs:label "has biosample name" ;
+    skos:exactMatch crm:hasBiosampleName .
+
+hcrm:hasPMID a owl:DatatypeProperty ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range pubmed:PMID ;
+    rdfs:label "has PMID" ;
+    skos:exactMatch crm:hasPMID .
+
+# Example individual
+hcrm:CRMHS00000005752 a hcrm:Enhancer ;
+    hcrm:hasGenomicLocation [
+        crm:chromosome "chr1" ;
+        crm:start 16039967 ;
+        crm:end 16040344 ;
+        crm:assembly "hg38"
+    ] ;
+    hcrm:hasExperimentalEvidence "CAGE" ;
+    hcrm:hasBiosampleName "MS-1" ;
+    hcrm:hasPMID pubmed:30247654 ;
+    hcrm:hasTargetGene hcrm:FAM131C .
+
+hcrm:FAM131C a hcrm:Gene ;
+    rdfs:label "FAM131C" .
+```

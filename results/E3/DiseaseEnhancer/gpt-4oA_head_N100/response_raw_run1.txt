@@ -1,0 +1,335 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> a owl:Ontology ;
+    rdfs:label "DiseaseEnhancer" ;
+    dc:description "Enhancers asociados a enfermedades" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+### Classes ###
+biolink:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+biolink:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+biolink:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+### Properties ###
+biolink:has_sequence_location a owl:ObjectProperty ;
+    rdfs:label "has sequence location" ;
+    skos:exactMatch crm2pgene:has_sequence_location .
+
+biolink:has_target_gene a owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2pgene:has_target_gene .
+
+biolink:associated_with_disease a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associated_with_disease .
+
+biolink:interacts_with_transcription_factor a owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    skos:exactMatch crm2pgene:interacts_with_transcription_factor .
+
+### Instances ###
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001594> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr5" ;
+        assembly:start 125315470 ;
+        assembly:end 125318494 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:LMNB1 ;
+    biolink:associated_with_disease obo:OMIM_169500, obo:DOID_0060785 ;
+    dc:source pubmed:25701871 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001595> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr5" ;
+        assembly:start 125372642 ;
+        assembly:end 125374699 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:LMNB1 ;
+    biolink:associated_with_disease obo:OMIM_169500, obo:DOID_0060785 ;
+    dc:source pubmed:25701871 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001596> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr5" ;
+        assembly:start 126008814 ;
+        assembly:end 126010550 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:LMNB1 ;
+    biolink:associated_with_disease obo:OMIM_169500, obo:DOID_0060785 ;
+    dc:source pubmed:25701871 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001610> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr5" ;
+        assembly:start 135433909 ;
+        assembly:end 135436454 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:PITX1 ;
+    biolink:associated_with_disease obo:OMIM_186550 ;
+    dc:source pubmed:23601627 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000002824> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr10" ;
+        assembly:start 43086364 ;
+        assembly:end 43087263 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:RET ;
+    biolink:associated_with_disease obo:DOID_10487, mesh:D006627 ;
+    dc:source pubmed:16269442 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005454> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr14" ;
+        assembly:start 60506709 ;
+        assembly:end 60508712 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:SIX6 ;
+    biolink:associated_with_disease obo:OMIM_137760, obo:DOID_1070, mesh:D005902 ;
+    dc:source pubmed:28717659 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005707> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr8" ;
+        assembly:start 128531703 ;
+        assembly:end 128542048 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:MYC ;
+    biolink:associated_with_disease obo:DOID_0050939 ;
+    dc:source pubmed:26656844 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005745> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 105934 ;
+        assembly:end 107935 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:SHH ;
+    biolink:associated_with_disease obo:OMIM_174500 ;
+    dc:source pubmed:26382709 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005746> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 109250580 ;
+        assembly:end 109282778 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:SORT1 ;
+    biolink:associated_with_disease obo:DOID_3393, mesh:D003327 ;
+    dc:source pubmed:26477595 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005747> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 1162962 ;
+        assembly:end 1164962 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:associated_with_disease obo:DOID_1324, mesh:D008175, obo:OMIM_211980 ;
+    dc:source pubmed:27374108 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005748> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 116553180 ;
+        assembly:end 116566778 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:CD58 ;
+    biolink:associated_with_disease obo:DOID_2377, mesh:D009103 ;
+    dc:source pubmed:22396755 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005749> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 121369191 ;
+        assembly:end 121371191 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:NOTCH2 ;
+    biolink:associated_with_disease mesh:D001943, obo:DOID_1612, obo:OMIM_114480 ;
+    dc:source pubmed:21738711 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005753> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 162050179 ;
+        assembly:end 162052179 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:NOS1AP ;
+    biolink:associated_with_disease obo:DOID_114, mesh:D006331 ;
+    dc:source pubmed:24857694 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005754> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 162050210 ;
+        assembly:end 162052210 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:NOS1AP ;
+    biolink:associated_with_disease obo:DOID_114, mesh:D006331 ;
+    dc:source pubmed:24857694 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005755> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 181050666 ;
+        assembly:end 181051664 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:MR1 ;
+    biolink:associated_with_disease obo:DOID_399, mesh:D014375 ;
+    dc:source pubmed:27881839 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005758> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 192564977 ;
+        assembly:end 192566977 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:RGS1 ;
+    biolink:associated_with_disease obo:DOID_2986, mesh:D005922 ;
+    dc:source pubmed:27804980 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005760> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 209814457 ;
+        assembly:end 209821455 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:IRF6 ;
+    biolink:associated_with_disease obo:DOID_9296, mesh:D002971, obo:DOID_674, mesh:D002972, obo:DOID_0050567 ;
+    dc:source pubmed:26030420, pubmed:18836445, pubmed:25910213 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005763> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 240848902 ;
+        assembly:end 240849900 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:CDKN2A ;
+    biolink:associated_with_disease obo:DOID_3393, mesh:D003324 ;
+    dc:source pubmed:26487755 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005764> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 243469900 ;
+        assembly:end 243478698 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:SDCCAG8 ;
+    biolink:associated_with_disease obo:OMIM_181500, obo:DOID_5419, mesh:D012559 ;
+    dc:source pubmed:25453756 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005767> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 47315320 ;
+        assembly:end 47316552 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:TAL1 ;
+    biolink:associated_with_disease obo:DOID_5603, mesh:D015458 ;
+    dc:source pubmed:26940867 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005769> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 92543645 ;
+        assembly:end 92543843 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:GFI1 ;
+    biolink:associated_with_disease obo:DOID_2377, mesh:D009103 ;
+    dc:source pubmed:21602820 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005770> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 98029246 ;
+        assembly:end 98037044 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:associated_with_disease obo:OMIM_181500, obo:DOID_5419, mesh:D012559 ;
+    dc:source pubmed:25453756 .
+
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000005771> a biolink:Enhancer ;
+    biolink:has_sequence_location [
+        a assembly:GenomicLocation ;
+        assembly:chromosome "chr1" ;
+        assembly:start 98048983 ;
+        assembly:end 98050983 ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_target_gene hgene:MIR137 ;
+    biolink:associated_with_disease obo:DOID_3312, mesh:D001714, obo:OMIM_181500, obo:DOID_5419 ;
+    dc:source pubmed:25434007 .
+```

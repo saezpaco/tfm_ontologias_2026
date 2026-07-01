@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-05-29T01:55:26.420886",
+  "success": true,
+  "elapsed_seconds": 7.34,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3170,
+    "completion_tokens": 880,
+    "total_tokens": 4050
+  },
+  "prompt_tokens_estimate": 1992,
+  "response_chars": 3116,
+  "turtle_chars": 3116,
+  "validation": {
+    "valid": false,
+    "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ed by CAGE-seq in the FANTOM5 database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"Cis-regulatory module'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4o/response_raw_run3.txt"
+  }
+}

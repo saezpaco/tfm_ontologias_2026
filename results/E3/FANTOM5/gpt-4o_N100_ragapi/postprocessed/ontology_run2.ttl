@@ -12,6 +12,7 @@
 @prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
 @prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
 @prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix : <http://example.org/ontology/> .
 
 <http://example.org/ontology/FANTOM5> a owl:Ontology ;
     dc:title "FANTOM5 Enhancer Ontology" ;

@@ -1,0 +1,37 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+# Define new classes and properties
+crm2phen_example:Ontology a owl:Class ;
+    rdfs:label "CRM2 Phenotype Example Ontology" ;
+    skos:definition "An ontology for representing CRM2 phenotype examples." ;
+
+crm2gene:Gene a owl:Class ;
+    rdfs:label "CRM2 Gene" ;
+    skos:definition "A gene associated with CRM2." ;
+
+# Define relationships
+crm2phen_example:hasGene a owl:ObjectProperty ;
+    rdfs:domain crm2phen_example:Ontology ;
+    rdfs:range crm2gene:Gene ;
+    skos:definition "The relationship between an ontology and a gene." ;
+
+crm2phen_example:hasPhenotype a owl:ObjectProperty ;
+    rdfs:domain crm2phen_example:Ontology ;
+    rdfs:range biolink:PhenotypicFeature ;
+    skos:definition "The relationship between an ontology and a phenotypic feature." ;
+
+# Align with cisreg URIs
+crm2phen_example:hasGene skos:exactMatch obo:SO_0001467 ;  # SO term for CRM2 gene
+
+crm2phen_example:hasPhenotype skos:closeMatch obo:HP_0003829 .  # HP term for CRM2-related phenotype
+```

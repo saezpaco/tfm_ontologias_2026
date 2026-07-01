@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "DiseaseEnhancer",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 95.44666666666667,
+  "total_tokens": 11839,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-05T12:58:41.627221",
+      "success": true,
+      "elapsed_seconds": 122.45,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3036,
+        "completion_tokens": 923,
+        "total_tokens": 3959
+      },
+      "prompt_tokens_estimate": 1780,
+      "response_chars": 3242,
+      "turtle_chars": 3242,
+      "validation": {
+        "valid": false,
+        "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'\\n<owl:ObjectProperty rdf:about=\"http://example.org/targets\">'^b'\\n  a owl:ObjectProperty ;\\n  rdfs:label \"targets\" ;\\n  skos:pr'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-05T13:00:03.413369",
+      "success": true,
+      "elapsed_seconds": 80.75,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3036,
+        "completion_tokens": 904,
+        "total_tokens": 3940
+      },
+      "prompt_tokens_estimate": 1780,
+      "response_chars": 3100,
+      "turtle_chars": 3100,
+      "validation": {
+        "valid": false,
+        "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'\\n<owl:ObjectProperty rdf:about=\"http://example.org/targets\">'^b'\\n  a owl:ObjectProperty ;\\n  rdfs:label \"targets\" ;\\n  skos:pr'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-05T13:01:27.594021",
+      "success": true,
+      "elapsed_seconds": 83.14,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3036,
+        "completion_tokens": 904,
+        "total_tokens": 3940
+      },
+      "prompt_tokens_estimate": 1780,
+      "response_chars": 3100,
+      "turtle_chars": 3100,
+      "validation": {
+        "valid": false,
+        "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'\\n<owl:ObjectProperty rdf:about=\"http://example.org/targets\">'^b'\\n  a owl:ObjectProperty ;\\n  rdfs:label \"targets\" ;\\n  skos:pr'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/llama3.1_8b/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgnc#> .
+@prefix assembly: <http://purl.obolibrary.org/obo/assembly#> .
+@prefix nuccore: <http://purl.obolibrary.org/obo/nuccore#> .
+@prefix pubmed:  <http://purl.obolibrary.org/obo/pubmed#> .
+@prefix id_pubmed: <http://purl.obolibrary.org/obo/id_pubmed#> .
+@prefix id_ncbigene: <http://purl.obolibrary.org/obo/id_ncbigene#> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/dbsuper#> .
+
+crm:crm_ID rdf:type owl:Class ;
+           rdfs:label "cis-regulatory module ID" .
+
+crm:orig_chr rdf:type owl:DatatypeProperty ;
+             rdfs:label "original chromosome" ;
+             rdfs:range xsd:string .
+
+crm:orig_start rdf:type owl:DatatypeProperty ;
+               rdfs:label "original start position" ;
+               rdfs:range xsd:integer .
+
+crm:orig_end rdf:type owl:DatatypeProperty ;
+              rdfs:label "original end position" ;
+              rdfs:range xsd:integer .
+
+crm:current_chr rdf:type owl:DatatypeProperty ;
+                 rdfs:label "current chromosome" ;
+                 rdfs:range xsd:string .
+
+crm:current_start rdf:type owl:DatatypeProperty ;
+                   rdfs:label "current start position" ;
+                   rdfs:range xsd:integer .
+
+crm:current_end rdf:type owl:DatatypeProperty ;
+                 rdfs:label "current end position" ;
+                 rdfs:range xsd:integer .
+
+crm:min_ratio rdf:type owl:DatatypeProperty ;
+              rdfs:label "minimum ratio" ;
+              rdfs:range xsd:float .
+
+crm:score rdf:type owl:DatatypeProperty ;
+           rdfs:label "score" ;
+           rdfs:range xsd:float .
+
+crm:original_ID rdf:type owl:DatatypeProperty ;
+                 rdfs:label "original ID" ;
+                 rdfs:range xsd:string .
+
+crm:biosample_name rdf:type owl:DatatypeProperty ;
+                    rdfs:label "biosample name" ;
+                    rdfs:range xsd:string .
+
+crm:enh_PMID rdf:type owl:DatatypeProperty ;
+             rdfs:label "enhancer PMID" ;
+             rdfs:range id_pubmed .
+
+crm:crossref rdf:type owl:DatatypeProperty ;
+              rdfs:label "cross-reference" ;
+              rdfs:range xsd:string .
+
+crm:hgene rdf:type owl:ObjectProperty ;
+           rdfs:label "has gene" ;
+           rdfs:domain crm:crm_ID ;
+           rdfs:range hgene .
+
+crm:c1orf159 rdf:type owl:Class ;
+              rdfs:label "C1orf159" ;
+              skos:exactMatch <http://purl.obolibrary.org/obo/hgnc:12345> .
+
+crm:cdc14a rdf:type owl:Class ;
+            rdfs:label "CDC14A" ;
+            skos:exactMatch <http://purl.obolibrary.org/obo/hgnc:67890> .
+
+crm:agrnrdf rdf:type owl:Class ;
+             rdfs:label "AGRN" ;
+             skos:exactMatch <http://purl.obolibrary.org/obo/hgnc:12345> .

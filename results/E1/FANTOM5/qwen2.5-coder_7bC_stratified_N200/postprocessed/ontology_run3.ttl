@@ -1,0 +1,51 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    skos:definition "An ontology for representing CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    rdfs:subClassOf obo:SO_0001765 ;
+    skos:prefLabel "CRM enhancer" ;
+    skos:definition "A region of DNA that enhances the transcription of a gene or other RNA molecule." .
+
+crm:GenomicCoordinate a owl:Class ;
+    rdfs:subClassOf obo:SO_0001467 ;
+    skos:prefLabel "genomic coordinate" ;
+    skos:definition "A specific location within a genome, defined by chromosome and position." .
+
+crm:StartCoordinate a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start coordinate" ;
+    skos:definition "The starting position of the genomic region." .
+
+crm:EndCoordinate a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end coordinate" ;
+    skos:definition "The ending position of the genomic region." .
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "evidence" ;
+    skos:definition "Information or data supporting the existence or characteristics of an enhancer." .
+
+crm:Supports a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "supports" ;
+    skos:definition "Indicates that evidence supports the enhancer's function or properties." .
+
+crm:Chromosome a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the genomic region is located." .

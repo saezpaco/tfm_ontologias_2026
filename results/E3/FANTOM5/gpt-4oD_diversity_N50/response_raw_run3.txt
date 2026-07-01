@@ -1,0 +1,53 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+
+hcrm:chr3_64147375_64147623 rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr3 between 64147375 and 64147623 according to FANTOM5" ;
+    skos:prefLabel "crm#chr3_64147375_64147623#FANTOM5" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr3 ;
+    obo:GENO_0000895 "64147375"^^xsd:integer ;
+    obo:GENO_0000894 "64147623"^^xsd:integer ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    rdfs:isDefinedBy obo:ECO_0000203 ; # Example evidence code
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr11_102450928_102451243 rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr11 between 102450928 and 102451243 according to FANTOM5" ;
+    skos:prefLabel "crm#chr11_102450928_102451243#FANTOM5" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr11 ;
+    obo:GENO_0000895 "102450928"^^xsd:integer ;
+    obo:GENO_0000894 "102451243"^^xsd:integer ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    rdfs:isDefinedBy obo:ECO_0000203 ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr9_136688455_136688774 rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr9 between 136688455 and 136688774 according to FANTOM5" ;
+    skos:prefLabel "crm#chr9_136688455_136688774#FANTOM5" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr9 ;
+    obo:GENO_0000895 "136688455"^^xsd:integer ;
+    obo:GENO_0000894 "136688774"^^xsd:integer ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    rdfs:isDefinedBy obo:ECO_0000203 ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+# Additional entries would follow the same pattern as above, with unique identifiers and genomic coordinates.
+```

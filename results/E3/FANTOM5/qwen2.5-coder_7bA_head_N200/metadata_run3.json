@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-06-30T07:40:03.581846",
+  "success": true,
+  "elapsed_seconds": 102.99,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 613,
+    "total_tokens": 4708
+  },
+  "prompt_tokens_estimate": 4376,
+  "response_chars": 1730,
+  "turtle_chars": 1716,
+  "validation": {
+    "valid": false,
+    "error": "at line 21 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/bgw!> .\\n\\n'^b'crm_ID rdf:type owl:Class ;\\n    rdfs:label \"CISREG ID\" ;\\n   '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bA_head_N200/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/qwen2.5-coder_7bA_head_N200/response_raw_run3.txt"
+  }
+}

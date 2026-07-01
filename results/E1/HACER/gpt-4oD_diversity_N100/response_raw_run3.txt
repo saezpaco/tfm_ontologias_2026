@@ -1,0 +1,84 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000167> .
+
+obo:GENE a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A locatable region of genomic sequence, corresponding to a unit of inheritance." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+obo:DISEASE a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disorder of structure or function in a human, animal, or plant." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/DOID_4> .
+
+obo:TRANSCRIPTION_FACTOR a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A protein that controls the rate of transcription of genetic information." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/GO_0003700> .
+
+# Object Properties
+obo:has_target_gene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a CRM to its target gene." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:GENE .
+
+obo:associated_with_disease a owl:ObjectProperty ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Relates a CRM to an associated disease." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:DISEASE .
+
+obo:interacts_with_TF a owl:ObjectProperty ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Relates a CRM to a transcription factor it interacts with." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:TRANSCRIPTION_FACTOR .
+
+# Datatype Properties
+obo:has_genomic_coordinate a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Specifies the genomic coordinates of a CRM." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:has_experimental_evidence a owl:DatatypeProperty ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Specifies the experimental evidence supporting the CRM." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:has_cell_line_activity a owl:DatatypeProperty ;
+    skos:prefLabel "has cell line activity" ;
+    skos:definition "Specifies the cell line activity of a CRM." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:has_score a owl:DatatypeProperty ;
+    skos:prefLabel "has score" ;
+    skos:definition "Specifies the score of a CRM based on experimental data." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:float .
+
+obo:has_refsnp_ID a owl:DatatypeProperty ;
+    skos:prefLabel "has RefSNP ID" ;
+    skos:definition "Specifies the RefSNP ID associated with a CRM." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+```

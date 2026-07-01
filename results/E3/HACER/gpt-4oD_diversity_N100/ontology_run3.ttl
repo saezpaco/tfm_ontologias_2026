@@ -1,0 +1,77 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+obo:SO_0000727 rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000727> .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:GenomicEntity rdf:type owl:Class ;
+    rdfs:label "Genomic Entity" .
+
+# Properties
+biolink:has_genomic_location rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:GenomicEntity .
+
+biolink:has_target_gene rdf:type owl:ObjectProperty ;
+    rdfs:label "has target gene" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:Gene ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+biolink:associated_with_disease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:Disease ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+
+biolink:has_evidence rdf:type owl:ObjectProperty ;
+    rdfs:label "has evidence" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range pubmed: .
+
+# Example individual
+hcrm:CRMHS00000078104 rdf:type obo:SO_0000727 ;
+    rdfs:label "CRMHS00000078104" ;
+    biolink:has_genomic_location [
+        a biolink:GenomicEntity ;
+        assembly:orig_chr nuccore:chr1 ;
+        assembly:orig_start "230249347"^^xsd:integer ;
+        assembly:orig_end "230250007"^^xsd:integer ;
+        assembly:current_chr nuccore:chr1 ;
+        assembly:current_start "230113600"^^xsd:integer ;
+        assembly:current_end "230114260"^^xsd:integer ;
+        assembly:orig_assembly "hg19" ;
+        assembly:current_assembly "hg38"
+    ] ;
+    biolink:has_target_gene hgene:GALNT2 ;
+    biolink:has_evidence pubmed:30247654 .

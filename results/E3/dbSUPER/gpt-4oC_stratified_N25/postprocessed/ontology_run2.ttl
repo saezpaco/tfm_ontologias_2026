@@ -1,0 +1,77 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/gene/9606/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://asntech.org/dbsuper/> .
+
+# Define the super-enhancer class
+dbsuper:SuperEnhancer rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:prefLabel "Super-enhancer" ;
+    skos:definition "A super-enhancer is a large cluster of transcriptional enhancers that drive expression of genes involved in cell identity." .
+
+# Define instances for each super-enhancer in the sample
+dbsuper:SE_31797 rdf:type dbsuper:SuperEnhancer ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr3 ;
+    obo:GENO_0000895 "187454355"^^xsd:integer ;
+    obo:GENO_0000894 "187468841"^^xsd:integer ;
+    skos:prefLabel "SE_31797" ;
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> ;
+    sio:SIO_000253 <https://asntech.org/dbsuper/> ;
+    <http://rdf.biogateway.eu/crm2pgene/bgw!SE_31797--hgncsymbol!9606/BCL6> rdf:type <http://rdf.biogateway.eu/crm2pgene/bgw!SE_31797--hgncsymbol!9606/BCL6> ;
+    rdf:subject dbsuper:SE_31797 ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:BCL6 ;
+    skos:prefLabel "bgw!SE_31797--hgncsymbol!9606/BCL6" ;
+    skos:definition "Association between super-enhancer SE_31797 and gene BCL6" ;
+    obo:TXPO_0003500 <http://purl.obolibrary.org/obo/BTO_0001489> ; # Gastric cell line
+    skos:exactMatch hcrm:SE_31797 .
+
+# Define the gene class and instances
+hgene:BCL6 rdf:type biolink:Gene ;
+    skos:prefLabel "BCL6" ;
+    skos:closeMatch id_ncbigene:604 ;
+    biolink:category biolink:Gene .
+
+# Repeat similar blocks for each super-enhancer in the sample
+# Example for SE_15126
+dbsuper:SE_15126 rdf:type dbsuper:SuperEnhancer ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr4 ;
+    obo:GENO_0000895 "49148"^^xsd:integer ;
+    obo:GENO_0000894 "60599"^^xsd:integer ;
+    skos:prefLabel "SE_15126" ;
+    schema:evidenceOrigin <https://asntech.org/dbsuper/> ;
+    sio:SIO_000253 <https://asntech.org/dbsuper/> ;
+    <http://rdf.biogateway.eu/crm2pgene/bgw!SE_15126--hgncsymbol!9606/ZNF718> rdf:type <http://rdf.biogateway.eu/crm2pgene/bgw!SE_15126--hgncsymbol!9606/ZNF718> ;
+    rdf:subject dbsuper:SE_15126 ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:ZNF718 ;
+    skos:prefLabel "bgw!SE_15126--hgncsymbol!9606/ZNF718" ;
+    skos:definition "Association between super-enhancer SE_15126 and gene ZNF718" ;
+    obo:TXPO_0003500 <http://purl.obolibrary.org/obo/BTO_0001489> ; # CD4 Memory Primary 7pool cell line
+    skos:exactMatch hcrm:SE_15126 .
+
+hgene:ZNF718 rdf:type biolink:Gene ;
+    skos:prefLabel "ZNF718" ;
+    skos:closeMatch id_ncbigene:12345 ; # Example GeneID
+    biolink:category biolink:Gene .
+
+# Continue defining instances for each super-enhancer and associated genes

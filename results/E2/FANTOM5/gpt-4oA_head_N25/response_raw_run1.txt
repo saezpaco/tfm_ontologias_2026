@@ -1,0 +1,129 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    rdfs:comment "Ontology for enhancers identified by CAGE-seq in the FANTOM5 database." .
+
+### Classes ###
+:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:Chromosome a owl:Class ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome in the human genome" .
+
+:Database a owl:Class ;
+    skos:prefLabel "Database" ;
+    skos:definition "Database containing information about cis-regulatory modules" .
+
+:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "Protein that binds to specific DNA sequences to regulate transcription" .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "Functional unit of heredity" .
+
+:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "Disorder or abnormal condition affecting an organism" .
+
+### Object Properties ###
+:hasChromosome a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Chromosome ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "Association between a CRM and a chromosome" .
+
+:hasDatabase a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Database ;
+    skos:prefLabel "has database" ;
+    skos:definition "Association between a CRM and a database" .
+
+:associatedWithGene a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "associated with gene" ;
+    skos:definition "Association between a CRM and a gene" .
+
+:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between a CRM and a disease" .
+
+:interactsWithTF a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between a CRM and a transcription factor" .
+
+### Datatype Properties ###
+:chromStart a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "chromosome start" ;
+    skos:definition "Start position of the CRM on the chromosome" .
+
+:chromEnd a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "chromosome end" ;
+    skos:definition "End position of the CRM on the chromosome" .
+
+:score a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "score" ;
+    skos:definition "Score representing the activity level of the CRM" .
+
+:strand a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "strand" ;
+    skos:definition "Strand orientation of the CRM" .
+
+:thickStart a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "thick start" ;
+    skos:definition "Thick start position of the CRM" .
+
+:thickEnd a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "thick end" ;
+    skos:definition "Thick end position of the CRM" .
+
+:itemRgb a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "item RGB" ;
+    skos:definition "RGB color value for the CRM" .
+
+:blockCount a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "block count" ;
+    skos:definition "Number of blocks in the CRM" .
+
+:blockSizes a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "block sizes" ;
+    skos:definition "Sizes of blocks in the CRM" .
+
+:blockStarts a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "block starts" ;
+    skos:definition "Start positions of blocks in the CRM" .
+```

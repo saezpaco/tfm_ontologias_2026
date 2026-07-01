@@ -1,0 +1,87 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+obo:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+obo:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of a cis-regulatory module." .
+
+obo:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line in which the enhancer activity is observed." .
+
+obo:TranscriptionFactor a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor that interacts with a cis-regulatory module." .
+
+obo:Disease a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with a cis-regulatory module." .
+
+### Object Properties ###
+obo:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Gene ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and its target gene." .
+
+obo:activeInCellLine a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:CellLine ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "The cell line in which the enhancer is active." .
+
+obo:interactsWithTF a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:TranscriptionFactor ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor." .
+
+obo:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range obo:Disease ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease." .
+
+### Datatype Properties ###
+obo:hasGenomicCoordinates a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module." .
+
+obo:hasScore a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has score" ;
+    skos:definition "Score representing the confidence or strength of the enhancer." .
+
+obo:hasPMID a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has PMID" ;
+    skos:definition "PubMed ID associated with the enhancer evidence." .
+
+obo:hasMethod a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has method" ;
+    skos:definition "Method used to identify or validate the enhancer." .
+
+obo:hasDatabaseCrossReference a owl:DatatypeProperty ;
+    rdfs:domain obo:CRM ;
+    rdfs:range xsd:anyURI ;
+    skos:prefLabel "has database cross-reference" ;
+    skos:definition "Cross-reference to the database entry for the enhancer." .

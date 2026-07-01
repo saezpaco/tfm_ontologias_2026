@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 167.67666666666665,
+  "total_tokens": 16857,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-29T17:46:26.880715",
+      "success": true,
+      "elapsed_seconds": 161.12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1524,
+        "total_tokens": 5619
+      },
+      "prompt_tokens_estimate": 4376,
+      "response_chars": 4279,
+      "turtle_chars": 3602,
+      "validation": {
+        "valid": false,
+        "error": "at line 60 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'//rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--hgncsymbo'^b'l!9606/TBX5> .\\nhcrm:Crm <http://purl.obolibrary.org/obo/NCIT'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-29T17:49:09.559907",
+      "success": true,
+      "elapsed_seconds": 160.16,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1524,
+        "total_tokens": 5619
+      },
+      "prompt_tokens_estimate": 4376,
+      "response_chars": 4279,
+      "turtle_chars": 3602,
+      "validation": {
+        "valid": false,
+        "error": "at line 60 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'//rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--hgncsymbo'^b'l!9606/TBX5> .\\nhcrm:Crm <http://purl.obolibrary.org/obo/NCIT'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-29T17:52:13.827167",
+      "success": true,
+      "elapsed_seconds": 181.75,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 1524,
+        "total_tokens": 5619
+      },
+      "prompt_tokens_estimate": 4376,
+      "response_chars": 4279,
+      "turtle_chars": 3602,
+      "validation": {
+        "valid": false,
+        "error": "at line 60 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'//rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--hgncsymbo'^b'l!9606/TBX5> .\\nhcrm:Crm <http://purl.obolibrary.org/obo/NCIT'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

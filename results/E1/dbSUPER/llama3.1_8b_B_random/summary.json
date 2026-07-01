@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 166.58333333333334,
+  "total_tokens": 8565,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-04T18:23:05.826431",
+      "success": true,
+      "elapsed_seconds": 171.37,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1070,
+        "completion_tokens": 1785,
+        "total_tokens": 2855
+      },
+      "prompt_tokens_estimate": 821,
+      "response_chars": 5982,
+      "turtle_chars": 5982,
+      "validation": {
+        "valid": false,
+        "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'<owl:Class rdf:about=\"http://example.org/GenomicCoordinate\">'^b'\\n  a owl:Class ;\\n  rdfs:label \"GenomicCoordinate\" ;\\n  skos:p'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b_B_random/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b_B_random/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-04T18:25:51.821436",
+      "success": true,
+      "elapsed_seconds": 164.96,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1070,
+        "completion_tokens": 1785,
+        "total_tokens": 2855
+      },
+      "prompt_tokens_estimate": 821,
+      "response_chars": 5982,
+      "turtle_chars": 5982,
+      "validation": {
+        "valid": false,
+        "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'<owl:Class rdf:about=\"http://example.org/GenomicCoordinate\">'^b'\\n  a owl:Class ;\\n  rdfs:label \"GenomicCoordinate\" ;\\n  skos:p'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b_B_random/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b_B_random/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-04T18:28:36.281090",
+      "success": true,
+      "elapsed_seconds": 163.42,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1070,
+        "completion_tokens": 1785,
+        "total_tokens": 2855
+      },
+      "prompt_tokens_estimate": 821,
+      "response_chars": 5982,
+      "turtle_chars": 5982,
+      "validation": {
+        "valid": false,
+        "error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'<owl:Class rdf:about=\"http://example.org/GenomicCoordinate\">'^b'\\n  a owl:Class ;\\n  rdfs:label \"GenomicCoordinate\" ;\\n  skos:p'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b_B_random/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8b_B_random/response_raw_run3.txt"
+      }
+    }
+  ]
+}

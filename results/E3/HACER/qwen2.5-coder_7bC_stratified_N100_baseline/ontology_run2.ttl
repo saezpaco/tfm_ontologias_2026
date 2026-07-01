@@ -1,0 +1,61 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+# Define new classes and properties
+crm2gene:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm2phen:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch obo:DOID_0050117 .
+
+crm2tfac:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+crm2gene_example:GeneExample rdf:type owl:Class ;
+    rdfs:label "Gene Example" ;
+    skos:closeMatch crm2gene:Gene .
+
+crm2phen_example:DiseaseExample rdf:type owl:Class ;
+    rdfs:label "Disease Example" ;
+    skos:closeMatch crm2phen:Disease .
+
+crm2tfac_example:TranscriptionFactorExample rdf:type owl:Class ;
+    rdfs:label "Transcription Factor Example" ;
+    skos:closeMatch crm2tfac:TranscriptionFactor .
+
+# Define properties
+crm2gene:hasGeneSymbol rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Gene Symbol" ;
+    domain crm2gene:Gene ;
+    range obo:HGNC .
+
+crm2phen:hasDiseasePMID rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Disease PMID" ;
+    domain crm2phen:Disease ;
+    range pubmed:Publication .
+
+crm2tfac:hasTranscriptionFactorSymbol rdf:type owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor Symbol" ;
+    domain crm2tfac:TranscriptionFactor ;
+    range obo:HGNC .
+
+# Define mappings
+crm2gene_example:GeneExample crm2gene:hasGeneSymbol "TBX5" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+crm2phen_example:DiseaseExample crm2phen:hasDiseasePMID "1682" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+crm2tfac_example:TranscriptionFactorExample crm2tfac:hasTranscriptionFactorSymbol "CYTH4" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> .

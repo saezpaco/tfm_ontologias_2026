@@ -1,0 +1,85 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+<http://example.org/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    dc:description "Ontology for super-enhancers with genomic coordinates, cell lines, and target genes" ;
+    dc:source <https://asntech.org/dbsuper/> .
+
+### Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:subClassOf biolink:GenomicEntity ;
+    skos:exactMatch crm2tfac:SuperEnhancer .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    rdfs:subClassOf biolink:BiologicalEntity .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:subClassOf biolink:Gene ;
+    skos:exactMatch crm2pgene:Gene .
+
+### Properties
+dbsuper:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range biolink:GenomicEntity .
+
+dbsuper:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:label "has cell line activity" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:CellLine .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Gene ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:hasExperimentalEvidence a owl:DatatypeProperty ;
+    rdfs:label "has experimental evidence" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string .
+
+dbsuper:hasPMID a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range pubmed:PMID .
+
+### Instances
+dbsuper:CRMHS00000009489 a dbsuper:SuperEnhancer ;
+    rdfs:label "CRMHS00000009489" ;
+    dbsuper:hasGenomicCoordinate [
+        a biolink:GenomicEntity ;
+        biolink:chromosome "chr1" ;
+        biolink:startPosition 198619325 ;
+        biolink:endPosition 198685385 ;
+        biolink:genomeAssembly "hg38"
+    ] ;
+    dbsuper:hasCellLineActivity dbsuper:Ly3 ;
+    dbsuper:targetsGene dbsuper:PTPRC ;
+    dbsuper:hasExperimentalEvidence "H3K27ac" ;
+    dbsuper:hasPMID pubmed:24332044 .
+
+dbsuper:Ly3 a dbsuper:CellLine ;
+    rdfs:label "Ly3" .
+
+dbsuper:PTPRC a dbsuper:Gene ;
+    rdfs:label "PTPRC" ;
+    skos:exactMatch crm2pgene:PTPRC .
+```

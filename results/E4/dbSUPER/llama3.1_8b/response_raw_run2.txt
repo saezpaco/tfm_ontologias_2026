@@ -1,0 +1,883 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://base_ontology.com#, http://www.w3.org/1999/02/22-rdf-syntax-ns#, http://www.w3.org/2000/01/rdf-schema#, http://www.w3.org/2004/02/skos/core#, http://www.w3.org/2001/XMLSchema# and http://www.w3.org/2002/07/owl#
+
+**Data Description:**
+
+1. TFs2enh_PMID
+   - type: categorical
+   - short description: Transcription Factors to Enhancers PMID
+   - possible range: [PMID]
+
+2. TFs2enh_method
+   - type: categorical
+   - short description: Transcription Factors to Enhancers Method
+   - possible range: [Method]
+
+3. biosample_name
+   - type: text
+   - short description: Biosample Name
+   - possible range: [String]
+
+4. crm_ID
+   - type: text
+   - short description: CRM ID
+   - possible range: [String]
+
+5. crossref
+   - type: text
+   - short description: Cross Reference
+   - possible range: [String]
+
+6. current_assembly
+   - type: categorical
+   - short description: Current Assembly
+   - possible range: [Assembly]
+
+7. current_chr
+   - type: categorical
+   - short description: Current Chromosome
+   - possible range: [Chromosome]
+
+8. disease
+   - type: categorical
+   - short description: Disease
+   - possible range: [Disease]
+
+9. disease_PMID
+   - type: categorical
+   - short description: Disease PMID
+   - possible range: [PMID]
+
+10. disease_method
+    - type: categorical
+    - short description: Disease Method
+    - possible range: [Method]
+
+11. enh2gene_PMID
+    - type: categorical
+    - short description: Enhancer to Gene PMID
+    - possible range: [PMID]
+
+12. enh2gene_method
+    - type: categorical
+    - short description: Enhancer to Gene Method
+    - possible range: [Method]
+
+13. enh_PMID
+    - type: categorical
+    - short description: Enhancer PMID
+    - possible range: [PMID]
+
+14. enh_method
+    - type: categorical
+    - short description: Enhancer Method
+    - possible range: [Method]
+
+15. hgnc_symbol_TFs
+    - type: categorical
+    - short description: HGNC Symbol Transcription Factors
+    - possible range: [HGNC Symbol]
+
+16. hgnc_symbol_target_genes
+    - type: text
+    - short description: HGNC Symbol Target Genes
+    - possible range: [String]
+
+17. minimum_ratio
+    - type: categorical
+    - short description: Minimum Ratio
+    - possible range: [Ratio]
+
+18. mutation_PMID
+    - type: categorical
+    - short description: Mutation PMID
+    - possible range: [PMID]
+
+19. mutation_method
+    - type: categorical
+    - short description: Mutation Method
+    - possible range: [Method]
+
+20. orig_assembly
+    - type: categorical
+    - short description: Original Assembly
+    - possible range: [Assembly]
+
+21. orig_chr
+    - type: categorical
+    - short description: Original Chromosome
+    - possible range: [Chromosome]
+
+22. original_ID
+    - type: text
+    - short description: Original ID
+    - possible range: [String]
+
+23. refsnp_ID
+    - type: categorical
+    - short description: RefSNP ID
+    - possible range: [ID]
+
+24. score
+    - type: categorical
+    - short description: Score
+    - possible range: [Score]
+
+25. source
+    - type: categorical
+    - short description: Source
+    - possible range: [Source]
+
+26. type
+    - type: categorical
+    - short description: Type
+    - possible range: [Type]
+
+27. current_end
+    - type: Numerical
+    - short description: Current End Coordinate
+    - possible range: [Integer]
+
+28. current_start
+    - type: Numerical
+    - short description: Current Start Coordinate
+    - possible range: [Integer]
+
+29. orig_end
+    - type: Numerical
+    - short description: Original End Coordinate
+    - possible range: [Integer]
+
+30. orig_start
+    - type: Numerical
+    - short description: Original Start Coordinate
+    - possible range: [Integer]
+
+**classes:**
+
+1. class_entity
+
+**subclasses:**
+
+1. entity_name: subclass of -> class_entity
+
+2. enhancer: subclass of -> class_entity
+
+3. super_enhancer: subclass of -> enhancer
+
+4. transcription_factor: subclass of -> class_entity
+
+5. target_gene: subclass of -> class_entity
+
+6. disease_association: subclass of -> class_entity
+
+7. biosample: subclass of -> class_entity
+
+8. cell_line: subclass of -> biosample
+
+9. gene: subclass of -> class_entity
+
+10. chromosome: subclass of -> class_entity
+
+**Object Properties:**
+
+1. has_PMID: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [PMID]
+
+2. has_method: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Method]
+
+3. has_assembly: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Assembly]
+
+4. has_chromosome: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Chromosome]
+
+5. has_ID: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [ID]
+
+6. has_score: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Score]
+
+7. has_source: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Source]
+
+8. has_type: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Type]
+
+9. has_end_coordinate: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Integer]
+
+10. has_start_coordinate: domain - range
+    - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Integer]
+
+**Data Type Properties:**
+
+1. has_PMID_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [PMID]
+
+2. has_method_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Method]
+
+3. has_assembly_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Assembly]
+
+4. has_chromosome_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Chromosome]
+
+5. has_ID_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [ID]
+
+6. has_score_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Score]
+
+7. has_source_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Source]
+
+8. has_type_value: domain - range
+   - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Type]
+
+9. has_end_coordinate_value: domain - range
+    - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Integer]
+
+10. has_start_coordinate_value: domain - range
+     - enhancer, super_enhancer, transcription_factor, target_gene, disease_association, biosample, cell_line, gene, chromosome - [Integer]
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.org/ontology>
+    a owl:Ontology ;
+    rdfs:label "Example Ontology" ;
+    skos:description "This is an example ontology.".
+
+owl:DatatypeProperty
+    a owl:Class ;
+    rdfs:label "Data Property" ;
+    skos:description "A property that has a data type as its range.".
+
+has_PMID_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has PMID Value" ;
+    skos:description "The value of the PMID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_method_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Method Value" ;
+    skos:description "The value of the method for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_assembly_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Assembly Value" ;
+    skos:description "The value of the assembly for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_chromosome_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Chromosome Value" ;
+    skos:description "The value of the chromosome for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_ID_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has ID Value" ;
+    skos:description "The value of the ID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_score_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Score Value" ;
+    skos:description "The value of the score for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_source_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Source Value" ;
+    skos:description "The value of the source for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_type_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Type Value" ;
+    skos:description "The value of the type for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_end_coordinate_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has End Coordinate Value" ;
+    skos:description "The value of the end coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+has_start_coordinate_value
+    a owl:DatatypeProperty ;
+    rdfs:label "Has Start Coordinate Value" ;
+    skos:description "The value of the start coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+owl:ObjectProperty
+    a owl:Class ;
+    rdfs:label "Object Property" ;
+    skos:description "A property that has an object as its range.".
+
+has_PMID
+    a owl:ObjectProperty ;
+    rdfs:label "Has PMID" ;
+    skos:description "The PMID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_method
+    a owl:ObjectProperty ;
+    rdfs:label "Has Method" ;
+    skos:description "The method for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_assembly
+    a owl:ObjectProperty ;
+    rdfs:label "Has Assembly" ;
+    skos:description "The assembly for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_chromosome
+    a owl:ObjectProperty ;
+    rdfs:label "Has Chromosome" ;
+    skos:description "The chromosome for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_ID
+    a owl:ObjectProperty ;
+    rdfs:label "Has ID" ;
+    skos:description "The ID for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_score
+    a owl:ObjectProperty ;
+    rdfs:label "Has Score" ;
+    skos:description "The score for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_source
+    a owl:ObjectProperty ;
+    rdfs:label "Has Source" ;
+    skos:description "The source for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_type
+    a owl:ObjectProperty ;
+    rdfs:label "Has Type" ;
+    skos:description "The type for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:string .
+
+has_end_coordinate
+    a owl:ObjectProperty ;
+    rdfs:label "Has End Coordinate" ;
+    skos:description "The end coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+has_start_coordinate
+    a owl:ObjectProperty ;
+    rdfs:label "Has Start Coordinate" ;
+    skos:description "The start coordinate for an entity." ;
+    domain <http://example.org/ontology#class_entity> ;
+    range xsd:int .
+
+<http://example.org/ontology#class_entity>
+    a owl:Class ;
+    rdfs:label "Class Entity" ;
+    skos:description "An entity that is a class.".
+
+<http://example.org/ontology#entity_name>
+    a owl:Class ;
+    rdfs:label "Entity Name" ;
+    skos:description "A name for an entity." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#enhancer>
+    a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:description "An enhancer is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#super_enhancer>
+    a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    skos:description "A super enhancer is a type of enhancer that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#enhancer> .
+
+<http://example.org/ontology#transcription_factor>
+    a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:description "A transcription factor is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#target_gene>
+    a owl:Class ;
+    rdfs:label "Target Gene" ;
+    skos:description "A target gene is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#disease_association>
+    a owl:Class ;
+    rdfs:label "Disease Association" ;
+    skos:description "A disease association is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#biosample>
+    a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:description "A biosample is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#cell_line>
+    a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:description "A cell line is a type of biosample that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#biosample> .
+
+<http://example.org/ontology#gene>
+    a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:description "A gene is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+<http://example.org/ontology#chromosome>
+    a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:description "A chromosome is a type of entity that has a specific function." ;
+    rdfs:subClassOf <http://example.org/ontology#class_entity> .
+
+################ MAPPING (OntoMapper) #######################
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://www.w3.org/TR/2011/PR-rdf-sparql-json-20111206#>.
+@prefix ex: <http://example.org/ontology#>.
+
+<#TriplesMapClassEntity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:class;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#class_entity>
+        ]
+    ].
+
+<#TriplesMapClassEntityName> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:name;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClassEntity>;
+            rr:joinCondition [
+                rr:child <ex:class>;
+                rr:parent <ex:name>
+            ]
+        ]
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#enhancer>
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:type>
+            ]
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#transcription_factor>
+        ]
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#target_gene>
+        ]
+    ].
+
+<#TriplesMapDiseaseAssociation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#disease_association>
+        ]
+    ].
+
+<#TriplesMapBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#biosample>
+        ]
+    ].
+
+<#TriplesMapCellLine> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBiosample>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:type>
+            ]
+        ]
+    ].
+
+<#TriplesMapGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#gene>
+        ]
+    ].
+
+<#TriplesMapChromosome> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:type;
+        rr:objectMap [
+            rr:constant <http://example.org/ontology#chromosome>
+        ]
+    ].
+
+<#TriplesMapHasPMID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasPMID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClassEntity>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:hasPMID>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasMethod> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClassEntity>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:hasMethod>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasAssembly> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasAssembly;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClassEntity>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:hasAssembly>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasChromosome> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasChromosome;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClassEntity>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:hasChromosome>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasID> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClassEntity>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:hasID>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapClassEntity>;
+            rr:joinCondition [
+                rr:child <ex:type>;
+                rr:parent <ex:hasScore>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasPMIDValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasPMID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasPMID>;
+            rr:joinCondition [
+                rr:child <ex:hasPMID>;
+                rr:parent <ex:hasPMID>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasMethodValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasMethod;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasMethod>;
+            rr:joinCondition [
+                rr:child <ex:hasMethod>;
+                rr:parent <ex:hasMethod>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasAssemblyValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasAssembly;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasAssembly>;
+            rr:joinCondition [
+                rr:child <ex:hasAssembly>;
+                rr:parent <ex:hasAssembly>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasChromosomeValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasChromosome;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasChromosome>;
+            rr:joinCondition [
+                rr:child <ex:hasChromosome>;
+                rr:parent <ex:hasChromosome>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasIDValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasID;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasID>;
+            rr:joinCondition [
+                rr:child <ex:hasID>;
+                rr:parent <ex:hasID>
+            ]
+        ]
+    ].
+
+<#TriplesMapHasScoreValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "EntityURI/{{Entity}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapHasScore>;
+            rr:joinCondition [
+                rr:child <ex:hasScore>;
+                rr:parent <ex:hasScore>
+            ]
+        ]
+    ].

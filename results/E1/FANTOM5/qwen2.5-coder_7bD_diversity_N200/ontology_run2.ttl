@@ -1,0 +1,546 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    skos:prefLabel "CRM Enhancer Ontology" ;
+    skos:definition "An ontology for representing CRM enhancers and their properties." ;
+}
+
+crm:Enhancer a owl:Class ;
+    rdfs:subClassOf obo:SO_0001765 ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcription of a CRM (Core Regulatory Module)." ;
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate within a genome." ;
+
+crm:start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+
+crm:end a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+
+crm:evidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Supporting evidence for the enhancer function of a CRM." ;
+
+crm:evidenceType a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:GO_0008279 ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the enhancer function of a CRM." ;
+
+crm:evidenceSource a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source of the evidence for the enhancer function of a CRM." ;
+
+crm:evidenceDate a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:date ;
+    skos:prefLabel "Evidence Date" ;
+    skos:definition "The date when the evidence was collected or reported." ;
+
+crm:evidenceConfidence a owl:DatatypeProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Confidence" ;
+    skos:definition "The level of confidence in the evidence supporting the enhancer function of a CRM." ;
+
+crm:evidenceSupports a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supports" ;
+    skos:definition "Indicates that the evidence supports the enhancer function of a CRM." ;
+
+crm:evidenceContradicts a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Contradicts" ;
+    skos:definition "Indicates that the evidence contradicts the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWith a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With" ;
+    skos:definition "Indicates that the evidence conflicts with the enhancer function of a CRM." ;
+
+crm:evidenceComplements a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Complements" ;
+    skos:definition "Indicates that the evidence complements the enhancer function of a CRM." ;
+
+crm:evidenceSupersedes a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes" ;
+    skos:definition "Indicates that the evidence supersedes previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplaces a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces" ;
+    skos:definition "Indicates that the evidence replaces previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOf a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of" ;
+    skos:definition "Indicates that the evidence is part of a larger set of evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFrom a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From" ;
+    skos:definition "Indicates that the evidence is derived from previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOn a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On" ;
+    skos:definition "Indicates that the evidence is based on previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedBy a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By" ;
+    skos:definition "Indicates that the evidence is supported by previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedBy a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By" ;
+    skos:definition "Indicates that the evidence is contradicted by previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous Evidence" ;
+    skos:definition "Indicates that the evidence supersedes previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous Evidence" ;
+    skos:definition "Indicates that the evidence replaces previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous Evidence" ;
+    skos:definition "Indicates that the evidence is part of previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous Evidence" ;
+    skos:definition "Indicates that the evidence is derived from previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Previous Evidence" ;
+    skos:definition "Indicates that the evidence is based on previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Previous Evidence" ;
+    skos:definition "Indicates that the evidence is supported by previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByPreviousEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Previous Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by previous evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Current Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Current Evidence" ;
+    skos:definition "Indicates that the evidence supersedes current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Current Evidence" ;
+    skos:definition "Indicates that the evidence replaces current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Current Evidence" ;
+    skos:definition "Indicates that the evidence is part of current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Current Evidence" ;
+    skos:definition "Indicates that the evidence is derived from current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Current Evidence" ;
+    skos:definition "Indicates that the evidence is based on current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Current Evidence" ;
+    skos:definition "Indicates that the evidence is supported by current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Current Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence supersedes both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence replaces both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence is part of both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence is derived from both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence is based on both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence is supported by both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByPreviousAndCurrentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Previous And Current Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by both previous and current evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence supersedes both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence replaces both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is part of both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is derived from both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is based on both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is supported by both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByPreviousAndCurrentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Previous And Current Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by both previous, current and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence supersedes both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence replaces both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is part of both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is derived from both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is based on both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is supported by both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Previous And Current Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by both previous, current, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence supersedes both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence replaces both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence is part of both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence is derived from both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence is based on both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence is supported by both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by both previous, current, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence supersedes both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence replaces both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is part of both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is derived from both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is based on both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is supported by both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by both previous, current, future, past, present and future evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence supersedes both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence replaces both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is part of both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is derived from both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Based On Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is based on both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsSupportedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Supported By Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is supported by both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsContradictedByPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Contradicted By Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence" ;
+    skos:definition "Indicates that the evidence is contradicted by both previous, current, future, past, present, future and past evidence for the enhancer function of a CRM." ;
+
+crm:evidenceConflictsWithPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Conflicts With Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence conflicts with both previous, current, future, past, present, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceSupersedesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supersedes Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence supersedes both previous, current, future, past, present, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceReplacesPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Replaces Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence replaces both previous, current, future, past, present, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsPartOfPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Part Of Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence is part of both previous, current, future, past, present, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsDerivedFromPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Is Derived From Previous And Current Evidence And Future Evidence And Past Evidence And Present Evidence And Future Evidence And Past Evidence And Present Evidence" ;
+    skos:definition "Indicates that the evidence is derived from both previous, current, future, past, present, future, past and present evidence for the enhancer function of a CRM." ;
+
+crm:evidenceIsBasedOnPreviousAndCurrentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidenceAndFutureEvidenceAndPastEvidenceAndPresentEvidence a owl:ObjectProperty ;

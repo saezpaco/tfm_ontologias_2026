@@ -1,0 +1,104 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+owl:Ontology rdf:about "http://example.com/dbSUPER" ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "An ontology for cis-regulatory modules, specifically enhancers in the human genome." .
+
+# Classes
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that modulates the transcription rate of target genes." ;
+    rdfs:subClassOf obo:SIO_010245 .  # Transcriptional regulation
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A coordinate in the genome that specifies the location of an enhancer." .
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Experimental evidence supporting the presence or function of an enhancer." ;
+
+# Properties
+crm:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Has Genomic Coordinate" ;
+    skos:definition "The genomic coordinate of an enhancer." .
+
+crm:hasEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Has Evidence" ;
+    skos:definition "Experimental evidence supporting the presence or function of an enhancer." ;
+
+crm:hasCellLineActivity a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0008279 ;  # Cell line activity
+    skos:prefLabel "Has Cell Line Activity" ;
+    skos:definition "The cell lines in which an enhancer is active." ;
+
+crm:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 ;  # Gene
+    skos:prefLabel "Has Target Gene" ;
+    skos:definition "The gene(s) regulated by an enhancer." ;
+
+crm:hasAssociatedDisease a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:DOID_0050124 ;  # Disease
+    skos:prefLabel "Has Associated Disease" ;
+    skos:definition "A disease associated with an enhancer." ;
+
+crm:hasInteractingTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:SO_0001217 ;  # Transcription factor
+    skos:prefLabel "Has Interacting Transcription Factor" ;
+    skos:definition "A transcription factor that interacts with an enhancer." ;
+
+crm:chrom a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "The chromosome number of the genomic coordinate." .
+
+crm:start a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Position" ;
+    skos:definition "The start position of the genomic coordinate." ;
+
+crm:stop a owl:DatatypeProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Stop Position" ;
+    skos:definition "The stop position of the genomic coordinate." ;
+
+crm:se_id a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "SE ID" ;
+    skos:definition "A unique identifier for the enhancer." .
+
+crm:gene_symbol a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Gene Symbol" ;
+    skos:definition "The symbol of the target gene." ;
+
+crm:cell_name a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Cell Line Name" ;
+    skos:definition "The name of the cell line." ;
+
+crm:rank a owl:DatatypeProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Rank" ;
+    skos:definition "A rank or score associated with the enhancer." ;

@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-27T02:56:14.098711",
+  "success": true,
+  "elapsed_seconds": 130.52,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1546,
+    "completion_tokens": 1121,
+    "total_tokens": 2667
+  },
+  "prompt_tokens_estimate": 1238,
+  "response_chars": 3296,
+  "turtle_chars": 3296,
+  "validation": {
+    "valid": false,
+    "error": "at line 14 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'hancers con coordenadas, l\\xc3\\xadneas celulares y genes diana\" .\\n'^b'\\ncrm:CRM\\n  a owl:Class ;\\n  rdfs:label \"Cis-regulatory module'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bC_stratified_N25/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/dbSUPER/llama3.1_8bC_stratified_N25/response_raw_run2.txt"
+  }
+}

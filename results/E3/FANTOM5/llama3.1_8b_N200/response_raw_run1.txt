@@ -1,0 +1,53 @@
+Here is the output in valid Turtle format:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606crm_ID> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/9606crm2pgene_ID> .
+@prefix hgene:   <http://rdf.biogateway.eu/hgene/9606hgene_ID> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+<https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> a rdfs:Class ;
+  rdfs:label "chr-12" .
+
+<https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> a rdfs:Class ;
+  rdfs:label "chr_name" .
+
+<http://rdf.biogateway.eu/crm/9606crm_ID> a rdfs:Class ;
+  rdfs:label "crm/crm_ID" .
+
+<https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> skos:exactMatch <https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> .
+<https://www.ncbi.nlm.nih.gov/nuccore/chr_ID> skos:closeMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+
+<#fragment1> a biolink:Region ;
+  rdfs:label "chr1" ;
+  crm2pgene:has_start_position 839741 ;
+  crm2pgene:has_end_position 840250 .
+
+<#fragment1> skos:exactMatch <https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> .
+<#fragment1> skos:closeMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+
+<#fragment2> a biolink:Region ;
+  rdfs:label "chr1:839741-840250" ;
+  crm2pgene:has_start_position 839741 ;
+  crm2pgene:has_end_position 840250 .
+
+<#fragment2> skos:exactMatch <https://www.ncbi.nlm.nih.gov/nuccore/NC_000012.12> .
+<#fragment2> skos:closeMatch <http://rdf.biogateway.eu/crm/9606crm_ID> .
+```
+
+Note that I've added the necessary prefix declarations for the cisreg reference ontology fragments, and reused cisreg classes and properties where semantically appropriate. I've also added explicit `skos:exactMatch` or `skos:closeMatch` to cisreg URIs for aligned terms. New classes/properties have been added only where cisreg doesn't cover the concept.

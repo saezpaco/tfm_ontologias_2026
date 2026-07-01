@@ -1,0 +1,84 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix pubmed:  <http://rdf.ncbi.nlm.nih.gov/pubmed/> .
+@prefix doid:    <http://purl.obolibrary.org/obo/DOID_> .
+@prefix mesh:    <http://id.nlm.nih.gov/mesh/> .
+@prefix omim:    <http://purl.obolibrary.org/obo/OMIM_> .
+
+# Ontology definition
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    rdfs:label "DiseaseEnhancer Ontology" ;
+    dc:description "Ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+# Classes
+biolink:Enhancer rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm2pgene:TranscriptionFactor .
+
+# Properties
+biolink:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    skos:exactMatch crm2pgene:hasGenomicLocation .
+
+biolink:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+biolink:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+biolink:interactsWith rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with" ;
+    skos:exactMatch crm2pgene:interactsWith .
+
+biolink:hasEvidence rdf:type owl:ObjectProperty ;
+    rdfs:label "has evidence" ;
+    skos:exactMatch pubmed:hasEvidence .
+
+# Example individuals
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685535> rdf:type biolink:Enhancer ;
+    biolink:hasGenomicLocation [
+        a sio:SIO_000984 ;  # Genomic Location
+        sio:SIO_000300 "chrX:8672161-8672559"^^xsd:string ;
+        sio:SIO_000221 "hg38"^^xsd:string
+    ] ;
+    biolink:targetsGene <http://rdf.biogateway.eu/crm2pgene/TBL1X> ;
+    biolink:associatedWithDisease doid:3571 ;
+    biolink:hasEvidence pubmed:27869826 .
+
+<http://rdf.biogateway.eu/crm2pgene/TBL1X> rdf:type biolink:Gene ;
+    rdfs:label "TBL1X" .
+
+doid:3571 rdf:type biolink:Disease ;
+    rdfs:label "Disease associated with TBL1X" .
+
+pubmed:27869826 rdf:type owl:NamedIndividual ;
+    rdfs:label "PubMed Article 27869826" ;
+    dc:identifier "27869826"^^xsd:string .
+
+# Additional individuals and properties can be added similarly

@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    skos:prefLabel "Database" ;
+    skos:definition "Super-enhancers with coordinates, cell lines, and target genes" .
+
+### Classes ###
+:CRM a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of a cis-regulatory module" .
+
+:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line in which the cis-regulatory module is active" .
+
+### Properties ###
+:hasChromosome a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "chr_name" ;
+    skos:definition "Chromosome name where the CRM is located" .
+
+:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "start_position" ;
+    skos:definition "Start position of the CRM on the chromosome" .
+
+:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "end_position" ;
+    skos:definition "End position of the CRM on the chromosome" .
+
+:hasGeneTarget a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module and gene" .
+
+:activeInCellLine a owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :CellLine ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "Cell line in which the CRM is active" .
+
+:hasRank a owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "rank" ;
+    skos:definition "Rank of the CRM based on its activity" .
+
+### Instances ###
+:AdiposeNuclei a :CellLine ;
+    skos:prefLabel "Adipose Nuclei" .
+
+:NOTCH2 a :Gene ;
+    skos:prefLabel "NOTCH2" .
+
+:SE_00001 a :CRM ;
+    :hasChromosome "chr1" ;
+    :hasStartPosition 120485363 ;
+    :hasEndPosition 120615071 ;
+    :hasGeneTarget :NOTCH2 ;
+    :activeInCellLine :AdiposeNuclei ;
+    :hasRank 1 ;
+    skos:prefLabel "crm/SE_00001" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr1 between 120485363 and 120615071 according to dbSUPER" .

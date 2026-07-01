@@ -1,0 +1,101 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "CRM Enhancer Ontology" ;
+    rdfs:comment "A formal representation of CRM enhancers and their relationships." ;
+}
+
+crm:Enhancer a owl:Class ;
+    skos:prefLabel "CRM Enhancer" ;
+    skos:definition "A genomic region that enhances the transcriptional activity of a target gene or promoter." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SO_0001764" .
+
+crm:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SO_0000707" .
+
+crm:StartCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SO_0000707" .
+
+crm:EndCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Coordinate" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SO_0000707" .
+
+crm:Evidence a owl:Class ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information supporting the existence or characteristics of an enhancer." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:EvidenceType a owl:Class ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting an enhancer." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:Supports a owl:ObjectProperty ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Supports" ;
+    skos:definition "Indicates that the evidence supports the enhancer." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:HasEvidence a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:Evidence ;
+    skos:prefLabel "Has Evidence" ;
+    skos:definition "Indicates that the enhancer has supporting evidence." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:GenomicRegion a owl:Class ;
+    skos:prefLabel "Genomic Region" ;
+    skos:definition "A specific region of DNA." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SO_0000707" .
+
+crm:HasGenomicRegion a owl:ObjectProperty ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicRegion ;
+    skos:prefLabel "Has Genomic Region" ;
+    skos:definition "Indicates that the enhancer is located in a specific genomic region." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:GenomicRegionType a owl:Class ;
+    skos:prefLabel "Genomic Region Type" ;
+    skos:definition "The type of genomic region." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:IsLocatedOn a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicRegion ;
+    rdfs:range crm:Chromosome ;
+    skos:prefLabel "Is Located On" ;
+    skos:definition "Indicates that the genomic region is located on a chromosome." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:Chromosome a owl:Class ;
+    skos:prefLabel "Chromosome" ;
+    skos:definition "A linear molecule of DNA that contains genes and other genetic material." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:HasChromosome a owl:ObjectProperty ;
+    rdfs:domain crm:GenomicRegion ;
+    rdfs:range crm:Chromosome ;
+    skos:prefLabel "Has Chromosome" ;
+    skos:definition "Indicates that the genomic region is located on a chromosome." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .
+
+crm:ChromosomeType a owl:Class ;
+    skos:prefLabel "Chromosome Type" ;
+    skos:definition "The type of chromosome." ;
+    obo:IAO_0000115 "http://purl.obolibrary.org/obo/SIO_000628" .

@@ -1,0 +1,52 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/crm-enhancer>
+  a owl:Class ;
+  rdfs:label "CRM/Enhancer"^^xsd:string ;
+  skos:prefLabel "CRM/Enhancer"^^xsd:string ;
+  skos:definition "A regulatory element that can interact with transcription factors."^^xsd:string .
+
+<http://example.org/genomic-coordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+  skos:definition "A location on the genome where a regulatory element is found."^^xsd:string .
+
+<http://example.org/evidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "Evidence"^^xsd:string ;
+  skos:definition "The source of information for the CRM/Enhancer annotation."^^xsd:string .
+
+<http://example.org/crm-enhancer>
+  <http://example.org/genomic-coordinate> 
+    a owl:ObjectProperty ;
+    rdfs:label "Located At"^^xsd:string ;
+    skos:prefLabel "Located At"^^xsd:string ;
+    skos:definition "The location on the genome where the CRM/Enhancer is found."^^xsd:string .
+
+<http://example.org/crm-enhancer>
+  <http://example.org/evidence> 
+    a owl:ObjectProperty ;
+    rdfs:label "Supported By"^^xsd:string ;
+    skos:prefLabel "Supported By"^^xsd:string ;
+    skos:definition "The source of information for the CRM/Enhancer annotation."^^xsd:string .
+
+<http://example.org/genomic-coordinate>
+  <obo:SO_0000163> 
+    a owl:ObjectProperty ;
+    rdfs:label "Genomic Coordinate"^^xsd:string ;
+    skos:prefLabel "Genomic Coordinate"^^xsd:string ;
+    skos:definition "A location on the genome where a regulatory element is found."^^xsd:string .
+
+<http://example.org/evidence>
+  <obo:SO_0000313> 
+    a owl:ObjectProperty ;
+    rdfs:label "Evidence Code"^^xsd:string ;
+    skos:prefLabel "Evidence Code"^^xsd:string ;
+    skos:definition "A code indicating the type of evidence for the CRM/Enhancer annotation."^^xsd:string .

@@ -1,0 +1,24 @@
+{
+  "run": 1,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/dbSUPER.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 42,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-03T23:05:32.840640+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.026,
+    "plan_s": 6.196,
+    "plan_chars": 4769,
+    "plan_prompt_chars": 9580,
+    "onto_s": 9.818,
+    "onto_chars": 9895,
+    "onto_prompt_chars": 13729,
+    "map_s": 7.567,
+    "map_chars": 7860,
+    "map_prompt_chars": 17333
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-03T23:05:56.448997+00:00",
+  "total_s": 23.607
+}

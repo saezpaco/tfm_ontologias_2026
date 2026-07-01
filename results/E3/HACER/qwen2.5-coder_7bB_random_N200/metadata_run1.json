@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "run": 1,
+  "timestamp": "2026-06-30T09:48:06.270446",
+  "success": true,
+  "elapsed_seconds": 96.34,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 656,
+    "total_tokens": 4751
+  },
+  "prompt_tokens_estimate": 4431,
+  "response_chars": 1767,
+  "turtle_chars": 1753,
+  "validation": {
+    "valid": false,
+    "error": "at line 22 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'ample of how to map data to ontology classes and properties\\n'^b':example_crm a obo:SO_0000727 ;\\n    hcrm:orig_end \"end_posit'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bB_random_N200/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/HACER/qwen2.5-coder_7bB_random_N200/response_raw_run1.txt"
+  }
+}

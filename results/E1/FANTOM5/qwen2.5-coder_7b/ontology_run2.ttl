@@ -1,0 +1,754 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    skos:prefLabel "FANTOM5 Enhancer Ontology" ;
+    skos:definition "An ontology representing enhancers identified by CAGE-seq in the human genome." ;
+}
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting DNA sequence that increases transcription of a target gene, often located upstream of the gene." ;
+    skos:exactMatch obo:SIO_010246 .
+
+crm:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on the genome." ;
+
+crm:startCoordinate a owl:DatatypeProperty ;
+    rdfs:label "Start Coordinate" ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of the genomic coordinate." ;
+
+crm:endCoordinate a owl:DatatypeProperty ;
+    rdfs:label "End Coordinate" ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Coordinate" ;
+    skos:definition "The ending position of the genomic coordinate." ;
+
+crm:evidence a owl:ObjectProperty ;
+    rdfs:label "Evidence" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range rdf:Resource ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Supporting evidence for the enhancer's function or location." ;
+
+crm:hasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "Has Genomic Coordinate" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Has Genomic Coordinate" ;
+    skos:definition "The genomic coordinate associated with the enhancer." ;
+
+crm:enhances a owl:ObjectProperty ;
+    rdfs:label "Enhances" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range obo:GO_0003725 ;
+    skos:prefLabel "Enhances" ;
+    skos:definition "The gene or process that the enhancer increases transcription of." ;
+
+crm:evidenceType a owl:ObjectProperty ;
+    rdfs:label "Evidence Type" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:GO_0008150 ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the enhancer's function or location." ;
+
+crm:evidenceSource a owl:ObjectProperty ;
+    rdfs:label "Evidence Source" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source of the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceDate a owl:DatatypeProperty ;
+    rdfs:label "Evidence Date" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:date ;
+    skos:prefLabel "Evidence Date" ;
+    skos:definition "The date when the evidence was collected or reported." ;
+
+crm:evidenceDescription a owl:DatatypeProperty ;
+    rdfs:label "Evidence Description" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Description" ;
+    skos:definition "A description of the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceConfidence a owl:DatatypeProperty ;
+    rdfs:label "Evidence Confidence" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Confidence" ;
+    skos:definition "The level of confidence in the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceSupports a owl:ObjectProperty ;
+    rdfs:label "Supports" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:GO_0003725 ;
+    skos:prefLabel "Supports" ;
+    skos:definition "The gene or process that the evidence supports." ;
+
+crm:evidenceContradicts a owl:ObjectProperty ;
+    rdfs:label "Contradicts" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range obo:GO_0003725 ;
+    skos:prefLabel "Contradicts" ;
+    skos:definition "The gene or process that the evidence contradicts." ;
+
+crm:evidenceModifier a owl:ObjectProperty ;
+    rdfs:label "Evidence Modifier" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Modifier" ;
+    skos:definition "A modifier or qualifier for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceQualifier a owl:ObjectProperty ;
+    rdfs:label "Evidence Qualifier" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Qualifier" ;
+    skos:definition "A qualifier for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceComment a owl:DatatypeProperty ;
+    rdfs:label "Evidence Comment" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Comment" ;
+    skos:definition "A comment about the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceReference a owl:ObjectProperty ;
+    rdfs:label "Evidence Reference" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Evidence Reference" ;
+    skos:definition "A reference to the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePubMedID a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "PubMed ID" ;
+    skos:definition "The PubMed identifier for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceDOI a owl:DatatypeProperty ;
+    rdfs:label "DOI" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "DOI" ;
+    skos:definition "The DOI for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceURL a owl:DatatypeProperty ;
+    rdfs:label "URL" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "URL" ;
+    skos:definition "The URL for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceContact a owl:ObjectProperty ;
+    rdfs:label "Contact" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Contact" ;
+    skos:definition "The contact information for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceAffiliation a owl:ObjectProperty ;
+    rdfs:label "Affiliation" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Affiliation" ;
+    skos:definition "The affiliation of the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceFunding a owl:ObjectProperty ;
+    rdfs:label "Funding" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Funding" ;
+    skos:definition "The funding source for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceKeywords a owl:ObjectProperty ;
+    rdfs:label "Keywords" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Keywords" ;
+    skos:definition "Keywords associated with the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceNotes a owl:DatatypeProperty ;
+    rdfs:label "Notes" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Notes" ;
+    skos:definition "Additional notes about the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceStatus a owl:ObjectProperty ;
+    rdfs:label "Status" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Status" ;
+    skos:definition "The status of the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceVersion a owl:DatatypeProperty ;
+    rdfs:label "Version" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Version" ;
+    skos:definition "The version of the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceLicense a owl:ObjectProperty ;
+    rdfs:label "License" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "License" ;
+    skos:definition "The license under which the evidence supporting the enhancer's function or location is distributed." ;
+
+crm:evidenceCopyright a owl:ObjectProperty ;
+    rdfs:label "Copyright" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Copyright" ;
+    skos:definition "The copyright information for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceDisclaimer a owl:ObjectProperty ;
+    rdfs:label "Disclaimer" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Disclaimer" ;
+    skos:definition "The disclaimer for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceAcknowledgments a owl:ObjectProperty ;
+    rdfs:label "Acknowledgments" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Acknowledgments" ;
+    skos:definition "The acknowledgments for the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceConflictsOfInterest a owl:ObjectProperty ;
+    rdfs:label "Conflicts of Interest" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Conflicts of Interest" ;
+    skos:definition "Any conflicts of interest associated with the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceCompetingInterests a owl:ObjectProperty ;
+    rdfs:label "Competing Interests" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Competing Interests" ;
+    skos:definition "Any competing interests associated with the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceDisclosure a owl:ObjectProperty ;
+    rdfs:label "Disclosure" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Disclosure" ;
+    skos:definition "Any disclosure required by the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePublication a owl:ObjectProperty ;
+    rdfs:label "Publication" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Publication" ;
+    skos:definition "The publication containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceArticle a owl:ObjectProperty ;
+    rdfs:label "Article" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Article" ;
+    skos:definition "The article containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceChapter a owl:ObjectProperty ;
+    rdfs:label "Chapter" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Chapter" ;
+    skos:definition "The chapter containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceSection a owl:ObjectProperty ;
+    rdfs:label "Section" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Section" ;
+    skos:definition "The section containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceParagraph a owl:ObjectProperty ;
+    rdfs:label "Paragraph" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Paragraph" ;
+    skos:definition "The paragraph containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceSentence a owl:ObjectProperty ;
+    rdfs:label "Sentence" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Sentence" ;
+    skos:definition "The sentence containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceWord a owl:ObjectProperty ;
+    rdfs:label "Word" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Word" ;
+    skos:definition "The word containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceCharacter a owl:ObjectProperty ;
+    rdfs:label "Character" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Character" ;
+    skos:definition "The character containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBit a owl:ObjectProperty ;
+    rdfs:label "Bit" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Bit" ;
+    skos:definition "The bit containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceByte a owl:ObjectProperty ;
+    rdfs:label "Byte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Byte" ;
+    skos:definition "The byte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceKilobyte a owl:ObjectProperty ;
+    rdfs:label "Kilobyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Kilobyte" ;
+    skos:definition "The kilobyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceMegabyte a owl:ObjectProperty ;
+    rdfs:label "Megabyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Megabyte" ;
+    skos:definition "The megabyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGigabyte a owl:ObjectProperty ;
+    rdfs:label "Gigabyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Gigabyte" ;
+    skos:definition "The gigabyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTerabyte a owl:ObjectProperty ;
+    rdfs:label "Terabyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Terabyte" ;
+    skos:definition "The terabyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetabyte a owl:ObjectProperty ;
+    rdfs:label "Petabyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petabyte" ;
+    skos:definition "The petabyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExabyte a owl:ObjectProperty ;
+    rdfs:label "Exabyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exabyte" ;
+    skos:definition "The exabyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettabyte a owl:ObjectProperty ;
+    rdfs:label "Zettabyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettabyte" ;
+    skos:definition "The zettabyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottabyte a owl:ObjectProperty ;
+    rdfs:label "Yottabyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottabyte" ;
+    skos:definition "The yottabyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontobyte a owl:ObjectProperty ;
+    rdfs:label "Brontobyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontobyte" ;
+    skos:definition "The brontobyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopbyte a owl:ObjectProperty ;
+    rdfs:label "Geopbyte" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopbyte" ;
+    skos:definition "The geopbyte containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty ;
+    rdfs:label "Exaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exaflop" ;
+    skos:definition "The exaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettaflop a owl:ObjectProperty ;
+    rdfs:label "Zettaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettaflop" ;
+    skos:definition "The zettaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottaflop a owl:ObjectProperty ;
+    rdfs:label "Yottaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottaflop" ;
+    skos:definition "The yottaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontaflop a owl:ObjectProperty ;
+    rdfs:label "Brontaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontaflop" ;
+    skos:definition "The brontaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopflop a owl:ObjectProperty ;
+    rdfs:label "Geopflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopflop" ;
+    skos:definition "The geopflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty ;
+    rdfs:label "Exaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exaflop" ;
+    skos:definition "The exaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettaflop a owl:ObjectProperty ;
+    rdfs:label "Zettaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettaflop" ;
+    skos:definition "The zettaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottaflop a owl:ObjectProperty ;
+    rdfs:label "Yottaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottaflop" ;
+    skos:definition "The yottaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontaflop a owl:ObjectProperty ;
+    rdfs:label "Brontaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontaflop" ;
+    skos:definition "The brontaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopflop a owl:ObjectProperty ;
+    rdfs:label "Geopflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopflop" ;
+    skos:definition "The geopflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty ;
+    rdfs:label "Exaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exaflop" ;
+    skos:definition "The exaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettaflop a owl:ObjectProperty ;
+    rdfs:label "Zettaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettaflop" ;
+    skos:definition "The zettaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottaflop a owl:ObjectProperty ;
+    rdfs:label "Yottaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottaflop" ;
+    skos:definition "The yottaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontaflop a owl:ObjectProperty ;
+    rdfs:label "Brontaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontaflop" ;
+    skos:definition "The brontaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopflop a owl:ObjectProperty ;
+    rdfs:label "Geopflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopflop" ;
+    skos:definition "The geopflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty ;
+    rdfs:label "Exaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exaflop" ;
+    skos:definition "The exaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettaflop a owl:ObjectProperty ;
+    rdfs:label "Zettaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettaflop" ;
+    skos:definition "The zettaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottaflop a owl:ObjectProperty ;
+    rdfs:label "Yottaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottaflop" ;
+    skos:definition "The yottaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontaflop a owl:ObjectProperty ;
+    rdfs:label "Brontaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontaflop" ;
+    skos:definition "The brontaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopflop a owl:ObjectProperty ;
+    rdfs:label "Geopflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopflop" ;
+    skos:definition "The geopflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty ;
+    rdfs:label "Exaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exaflop" ;
+    skos:definition "The exaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettaflop a owl:ObjectProperty ;
+    rdfs:label "Zettaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettaflop" ;
+    skos:definition "The zettaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottaflop a owl:ObjectProperty ;
+    rdfs:label "Yottaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottaflop" ;
+    skos:definition "The yottaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontaflop a owl:ObjectProperty ;
+    rdfs:label "Brontaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontaflop" ;
+    skos:definition "The brontaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopflop a owl:ObjectProperty ;
+    rdfs:label "Geopflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopflop" ;
+    skos:definition "The geopflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty ;
+    rdfs:label "Exaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exaflop" ;
+    skos:definition "The exaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettaflop a owl:ObjectProperty ;
+    rdfs:label "Zettaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettaflop" ;
+    skos:definition "The zettaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottaflop a owl:ObjectProperty ;
+    rdfs:label "Yottaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottaflop" ;
+    skos:definition "The yottaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontaflop a owl:ObjectProperty ;
+    rdfs:label "Brontaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontaflop" ;
+    skos:definition "The brontaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopflop a owl:ObjectProperty ;
+    rdfs:label "Geopflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopflop" ;
+    skos:definition "The geopflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty ;
+    rdfs:label "Exaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Exaflop" ;
+    skos:definition "The exaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceZettaflop a owl:ObjectProperty ;
+    rdfs:label "Zettaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Zettaflop" ;
+    skos:definition "The zettaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceYottaflop a owl:ObjectProperty ;
+    rdfs:label "Yottaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Yottaflop" ;
+    skos:definition "The yottaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceBrontaflop a owl:ObjectProperty ;
+    rdfs:label "Brontaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Brontaflop" ;
+    skos:definition "The brontaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceGeopflop a owl:ObjectProperty ;
+    rdfs:label "Geopflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Geopflop" ;
+    skos:definition "The geopflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceTeraflop a owl:ObjectProperty ;
+    rdfs:label "Teraflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Teraflop" ;
+    skos:definition "The teraflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidencePetaflop a owl:ObjectProperty ;
+    rdfs:label "Petaflop" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Petaflop" ;
+    skos:definition "The petaflop containing the evidence supporting the enhancer's function or location." ;
+
+crm:evidenceExaflop a owl:ObjectProperty

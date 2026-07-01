@@ -1,0 +1,82 @@
+{
+  "db": "DiseaseEnhancer",
+  "api_model": "gpt-4o-2024-05-13",
+  "runs": 3,
+  "ok": 3,
+  "errors": 0,
+  "avg_total_s": 18.166,
+  "runs_meta": [
+    {
+      "run": 1,
+      "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=200/DiseaseEnhancer.csv",
+      "api_model": "gpt-4o-2024-05-13",
+      "seed": 42,
+      "mapping_extension": "ttl",
+      "started_at": "2026-06-28T20:56:24.300390+00:00",
+      "steps": {
+        "csv_preprocessing_s": 0.016,
+        "plan_s": 4.098,
+        "plan_chars": 4423,
+        "plan_prompt_chars": 9614,
+        "onto_s": 8.088,
+        "onto_chars": 9611,
+        "onto_prompt_chars": 13417,
+        "map_s": 5.669,
+        "map_chars": 6478,
+        "map_prompt_chars": 16711
+      },
+      "errors": [],
+      "status": "ok",
+      "finished_at": "2026-06-28T20:56:42.171657+00:00",
+      "total_s": 17.871
+    },
+    {
+      "run": 2,
+      "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=200/DiseaseEnhancer.csv",
+      "api_model": "gpt-4o-2024-05-13",
+      "seed": 43,
+      "mapping_extension": "ttl",
+      "started_at": "2026-06-28T20:56:42.172232+00:00",
+      "steps": {
+        "csv_preprocessing_s": 0.033,
+        "plan_s": 3.955,
+        "plan_chars": 4390,
+        "plan_prompt_chars": 9614,
+        "onto_s": 7.632,
+        "onto_chars": 9296,
+        "onto_prompt_chars": 13384,
+        "map_s": 7.589,
+        "map_chars": 9150,
+        "map_prompt_chars": 16363
+      },
+      "errors": [],
+      "status": "ok",
+      "finished_at": "2026-06-28T20:57:01.381608+00:00",
+      "total_s": 19.209
+    },
+    {
+      "run": 3,
+      "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=200/DiseaseEnhancer.csv",
+      "api_model": "gpt-4o-2024-05-13",
+      "seed": 44,
+      "mapping_extension": "ttl",
+      "started_at": "2026-06-28T20:57:01.382520+00:00",
+      "steps": {
+        "csv_preprocessing_s": 0.033,
+        "plan_s": 4.01,
+        "plan_chars": 4336,
+        "plan_prompt_chars": 9614,
+        "onto_s": 7.191,
+        "onto_chars": 9225,
+        "onto_prompt_chars": 13330,
+        "map_s": 6.183,
+        "map_chars": 7327,
+        "map_prompt_chars": 16238
+      },
+      "errors": [],
+      "status": "ok",
+      "finished_at": "2026-06-28T20:57:18.800618+00:00",
+      "total_s": 17.417
+    }
+  ]
+}

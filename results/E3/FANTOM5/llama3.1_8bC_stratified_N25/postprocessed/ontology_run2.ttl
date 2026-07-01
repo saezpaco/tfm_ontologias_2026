@@ -1,0 +1,65 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+
+hcrm:crm_ID rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:prefLabel "crm/crm_ID" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; #in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; #hg38 assembly as reference
+    obo:BFO_0000050 nuccore:chr_ID ; #chromosome
+    obo:GENO_0000895 "start_position"^^xsd:integer ;
+    obo:GENO_0000894 "end_position"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606crm_ID#database_name> rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+    skos:prefLabel "crm#crm_ID#database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+# New classes and properties for the FANTOM5 database sample
+hcrm:FANTOM5 rdf:type owl:Class ;
+    rdfs:subClassOf hcrm:crm_ID ;
+    skos:prefLabel "FANTOM5" .
+
+<http://rdf.biogateway.eu/crm/9606FANTOM5#enhancer_sequence> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:FANTOM5 ;
+    rdfs:range obo:SO_0000340 .
+
+<http://rdf.biogateway.eu/crm/9606FANTOM5#chromosome> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:FANTOM5 ;
+    rdfs:range nuccore:chr_ID .
+
+<http://rdf.biogateway.eu/crm/9606FANTOM5#start_position> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:FANTOM5 ;
+    rdfs:range xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606FANTOM5#end_position> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:FANTOM5 ;
+    rdfs:range xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606FANTOM5#score> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:FANTOM5 ;
+    rdfs:range xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606FANTOM5#evidence_origin> rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:FANTOM5 ;
+    rdfs:range schema:EvidenceOrigin .

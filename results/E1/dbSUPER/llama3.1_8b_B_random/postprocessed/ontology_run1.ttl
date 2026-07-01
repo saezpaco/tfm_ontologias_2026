@@ -1,0 +1,167 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/dbSUPER>
+  a owl:Ontology ;
+  rdfs:label "dbSUPER" ;
+  skos:prefLabel "Super-enhancers database" ;
+  skos:definition "Database of super-enhancers with genomic coordinates, cell lines and target genes." .
+
+<owl:Class rdf:about="http://example.org/Crm">
+  a owl:Class ;
+  rdfs:label "Crm" ;
+  skos:prefLabel "cis-regulatory module (CRM)" ;
+  skos:definition "A region of DNA that regulates gene expression by binding transcription factors." .
+</owl:Class>
+
+<owl:Class rdf:about="http://example.org/GenomicCoordinate">
+  a owl:Class ;
+  rdfs:label "GenomicCoordinate" ;
+  skos:prefLabel "genomic coordinate" ;
+  skos:definition "A location on the genome, typically represented as a pair of integers (chromosome and position)." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasGenomicCoordinate">
+  a owl:ObjectProperty ;
+  rdfs:label "hasGenomicCoordinate" ;
+  skos:prefLabel "has genomic coordinate" ;
+  skos:definition "A CRM is located at this genomic coordinate." .
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/chr">
+  a owl:DatatypeProperty ;
+  rdfs:label "chr" ;
+  skos:prefLabel "chromosome" ;
+  skos:definition "The chromosome on which the CRM is located." ;
+  rdfs:range xsd:string .
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/start">
+  a owl:DatatypeProperty ;
+  rdfs:label "start" ;
+  skos:prefLabel "start position" ;
+  skos:definition "The starting position of the CRM on the chromosome." ;
+  rdfs:range xsd:integer .
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://example.org/stop">
+  a owl:DatatypeProperty ;
+  rdfs:label "stop" ;
+  skos:prefLabel "end position" ;
+  skos:definition "The ending position of the CRM on the chromosome." ;
+  rdfs:range xsd:integer .
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasEvidence">
+  a owl:ObjectProperty ;
+  rdfs:label "hasEvidence" ;
+  skos:prefLabel "has evidence" ;
+  skos:definition "A CRM has this type of evidence supporting its existence." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Evidence">
+  a owl:Class ;
+  rdfs:label "Evidence" ;
+  skos:prefLabel "evidence" ;
+  skos:definition "Data or observations that support the existence of a CRM." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasCellLine">
+  a owl:ObjectProperty ;
+  rdfs:label "hasCellLine" ;
+  skos:prefLabel "has cell line" ;
+  skos:definition "A CRM is active in this cell line." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/CellLine">
+  a owl:Class ;
+  rdfs:label "CellLine" ;
+  skos:prefLabel "cell line" ;
+  skos:definition "A type of cultured cells used in experiments." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasTargetGene">
+  a owl:ObjectProperty ;
+  rdfs:label "hasTargetGene" ;
+  skos:prefLabel "has target gene" ;
+  skos:definition "A CRM regulates the expression of this gene." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Gene">
+  a owl:Class ;
+  rdfs:label "Gene" ;
+  skos:prefLabel "gene" ;
+  skos:definition "A unit of heredity that is passed from one generation to the next." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasDisease">
+  a owl:ObjectProperty ;
+  rdfs:label "hasDisease" ;
+  skos:prefLabel "has disease" ;
+  skos:definition "A CRM is associated with this disease." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/Disease">
+  a owl:Class ;
+  rdfs:label "Disease" ;
+  skos:prefLabel "disease" ;
+  skos:definition "A disorder of structure or function in a living organism." .
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://example.org/hasTranscriptionFactor">
+  a owl:ObjectProperty ;
+  rdfs:label "hasTranscriptionFactor" ;
+  skos:prefLabel "has transcription factor" ;
+  skos:definition "A CRM interacts with this transcription factor." .
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://example.org/TranscriptionFactor">
+  a owl:Class ;
+  rdfs:label "TranscriptionFactor" ;
+  skos:prefLabel "transcription factor" ;
+  skos:definition "A protein that helps control the rate of transcription." .
+</owl:Class>
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001093> <http://example.org/Crm> .
+skos:closeMatch <http://purl.obolibrary.org/obo/BFO_0000050> <http://example.org/GenomicCoordinate> .
+
+<owl:Class rdf:about="http://example.org/CellName">
+  a owl:Class ;
+  rdfs:label "CellName" ;
+  skos:prefLabel "cell name" ;
+  skos:definition "The name of the cell line." .
+</owl:Class>
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001075> <http://example.org/Gene> .
+skos:closeMatch <http://purl.obolibrary.org/obo/BFO_0000051> <http://example.org/Disease> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasCellName">
+  a owl:ObjectProperty ;
+  rdfs:label "hasCellName" ;
+  skos:prefLabel "has cell name" ;
+  skos:definition "A CRM is active in this cell line." .
+</owl:ObjectProperty>
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001076> <http://example.org/TranscriptionFactor> .
+
+<owl:Class rdf:about="http://example.org/Rank">
+  a owl:Class ;
+  rdfs:label "Rank" ;
+  skos:prefLabel "rank" ;
+  skos:definition "The rank of the CRM in the database." .
+</owl:Class>
+
+skos:exactMatch <http://purl.obolibrary.org/obo/SO_0001077> <http://example.org/Evidence> .
+
+<owl:ObjectProperty rdf:about="http://example.org/hasRank">
+  a owl:ObjectProperty ;
+  rdfs:label "hasRank" ;
+  skos:prefLabel "has rank" ;
+  skos:definition "A CRM has this rank in the database." .
+</owl:ObjectProperty>
+
+skos:closeMatch <http://purl.obolibrary.org/obo/BFO_0000052> <http://example.org/Rank> .

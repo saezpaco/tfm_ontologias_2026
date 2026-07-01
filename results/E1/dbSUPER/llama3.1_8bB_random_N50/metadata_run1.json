@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "dbSUPER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-26T22:20:39.291734",
+  "success": true,
+  "elapsed_seconds": 772.1,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 1835,
+    "completion_tokens": 8192,
+    "total_tokens": 10027
+  },
+  "prompt_tokens_estimate": 1245,
+  "response_chars": 28376,
+  "turtle_chars": 28376,
+  "validation": {
+    "valid": false,
+    "error": "at line 728 of <>:\nBad syntax (unterminated URI reference) at ^ in:\n\"b'@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\\n@pref"
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bB_random_N50/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/llama3.1_8bB_random_N50/response_raw_run1.txt"
+  }
+}

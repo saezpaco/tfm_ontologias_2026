@@ -1,0 +1,117 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix hgnc:    <http://identifiers.org/hgnc/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+
+<http://rdf.biogateway.eu/fantom5> a owl:Ontology ;
+    rdfs:label "FANTOM5 Enhancer Ontology" ;
+    dc:description "Ontology for enhancers identified by CAGE-seq in the FANTOM5 project" ;
+    dc:source <https://fantom.gsc.riken.jp/5/> .
+
+### Classes ###
+<http://rdf.biogateway.eu/fantom5/Enhancer> a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2pgene:Enhancer .
+
+<http://rdf.biogateway.eu/fantom5/GenomicLocation> a owl:Class ;
+    rdfs:label "Genomic Location" .
+
+<http://rdf.biogateway.eu/fantom5/Gene> a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+<http://rdf.biogateway.eu/fantom5/Disease> a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2phen:Disease .
+
+### Properties ###
+<http://rdf.biogateway.eu/fantom5/hasGenomicLocation> a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/Enhancer> ;
+    rdfs:range <http://rdf.biogateway.eu/fantom5/GenomicLocation> .
+
+<http://rdf.biogateway.eu/fantom5/targetsGene> a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/Enhancer> ;
+    rdfs:range <http://rdf.biogateway.eu/fantom5/Gene> ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+<http://rdf.biogateway.eu/fantom5/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/Enhancer> ;
+    rdfs:range <http://rdf.biogateway.eu/fantom5/Disease> ;
+    skos:exactMatch crm2phen:associatedWithDisease .
+
+<http://rdf.biogateway.eu/fantom5/hasPMID> a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/Enhancer> ;
+    rdfs:range xsd:string ;
+    skos:exactMatch pubmed:PMID .
+
+<http://rdf.biogateway.eu/fantom5/hasChromosome> a owl:DatatypeProperty ;
+    rdfs:label "has chromosome" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/GenomicLocation> ;
+    rdfs:range xsd:string ;
+    skos:exactMatch assembly:Chromosome .
+
+<http://rdf.biogateway.eu/fantom5/hasStart> a owl:DatatypeProperty ;
+    rdfs:label "has start position" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/GenomicLocation> ;
+    rdfs:range xsd:integer .
+
+<http://rdf.biogateway.eu/fantom5/hasEnd> a owl:DatatypeProperty ;
+    rdfs:label "has end position" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/GenomicLocation> ;
+    rdfs:range xsd:integer .
+
+<http://rdf.biogateway.eu/fantom5/hasAssembly> a owl:DatatypeProperty ;
+    rdfs:label "has assembly" ;
+    rdfs:domain <http://rdf.biogateway.eu/fantom5/GenomicLocation> ;
+    rdfs:range xsd:string ;
+    skos:exactMatch assembly:Assembly .
+
+### Individuals ###
+<http://rdf.biogateway.eu/fantom5/CRMHS00000005752> a <http://rdf.biogateway.eu/fantom5/Enhancer> ;
+    rdfs:label "CRMHS00000005752" ;
+    <http://rdf.biogateway.eu/fantom5/hasGenomicLocation> [
+        a <http://rdf.biogateway.eu/fantom5/GenomicLocation> ;
+        <http://rdf.biogateway.eu/fantom5/hasChromosome> "chr1" ;
+        <http://rdf.biogateway.eu/fantom5/hasStart> 16039967 ;
+        <http://rdf.biogateway.eu/fantom5/hasEnd> 16040344 ;
+        <http://rdf.biogateway.eu/fantom5/hasAssembly> "hg38"
+    ] ;
+    <http://rdf.biogateway.eu/fantom5/targetsGene> hgnc:FAM131C ;
+    <http://rdf.biogateway.eu/fantom5/hasPMID> "24670763" .
+
+hgnc:FAM131C a <http://rdf.biogateway.eu/fantom5/Gene> ;
+    rdfs:label "FAM131C" .
+
+<http://rdf.biogateway.eu/fantom5/CRMHS00000005795> a <http://rdf.biogateway.eu/fantom5/Enhancer> ;
+    rdfs:label "CRMHS00000005795" ;
+    <http://rdf.biogateway.eu/fantom5/hasGenomicLocation> [
+        a <http://rdf.biogateway.eu/fantom5/GenomicLocation> ;
+        <http://rdf.biogateway.eu/fantom5/hasChromosome> "chr10" ;
+        <http://rdf.biogateway.eu/fantom5/hasStart> 62685569 ;
+        <http://rdf.biogateway.eu/fantom5/hasEnd> 62685884 ;
+        <http://rdf.biogateway.eu/fantom5/hasAssembly> "hg38"
+    ] ;
+    <http://rdf.biogateway.eu/fantom5/targetsGene> hgnc:ADO ;
+    <http://rdf.biogateway.eu/fantom5/hasPMID> "24670763" .
+
+hgnc:ADO a <http://rdf.biogateway.eu/fantom5/Gene> ;
+    rdfs:label "ADO" .
+
+# Additional individuals and properties would be defined similarly
+```

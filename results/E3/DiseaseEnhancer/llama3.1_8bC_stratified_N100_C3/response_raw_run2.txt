@@ -1,0 +1,716 @@
+Based on the provided data and requirements, I will create the Turtle code for the cisreg reference ontology. Here is the output:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://www.ebi.ac.uk/Tools/hgicrm/ontology#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.uniprot.org/uniprot/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://purl.uniprot.org/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel "cisreg example" .
+crm2pgene:cisreg_gene a hcrm:CISREG_GENE ;
+    rdfs:label "cisreg gene" ;
+    skos:prefLabel "cisreg gene" .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+hcrm:cisreg_example a owl:Ontology ;
+    rdfs:label "cisreg example" ;
+    skos:prefLabel

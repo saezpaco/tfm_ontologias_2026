@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 105.97666666666667,
+  "total_tokens": 14019,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-06-28T23:20:16.222881",
+      "success": true,
+      "elapsed_seconds": 105.71,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 578,
+        "total_tokens": 4673
+      },
+      "prompt_tokens_estimate": 3545,
+      "response_chars": 2064,
+      "turtle_chars": 2064,
+      "validation": {
+        "valid": false,
+        "error": "at line 42 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'> \\n    [ rdf:type <http://example.org/GenomicLocation> ] .\\n\\n'^b'Note that I have assumed some standard prefixes and ontologi'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bC_stratified_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bC_stratified_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-06-28T23:22:02.174410",
+      "success": true,
+      "elapsed_seconds": 104.91,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 578,
+        "total_tokens": 4673
+      },
+      "prompt_tokens_estimate": 3545,
+      "response_chars": 2064,
+      "turtle_chars": 2064,
+      "validation": {
+        "valid": false,
+        "error": "at line 42 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'> \\n    [ rdf:type <http://example.org/GenomicLocation> ] .\\n\\n'^b'Note that I have assumed some standard prefixes and ontologi'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bC_stratified_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bC_stratified_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-06-28T23:23:50.528771",
+      "success": true,
+      "elapsed_seconds": 107.31,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 578,
+        "total_tokens": 4673
+      },
+      "prompt_tokens_estimate": 3545,
+      "response_chars": 2064,
+      "turtle_chars": 2064,
+      "validation": {
+        "valid": false,
+        "error": "at line 42 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'> \\n    [ rdf:type <http://example.org/GenomicLocation> ] .\\n\\n'^b'Note that I have assumed some standard prefixes and ontologi'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bC_stratified_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bC_stratified_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

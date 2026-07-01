@@ -1,0 +1,76 @@
+Based on the provided information, I will create a sample output in Turtle format that meets the requirements. Please note that this is just an example and may need to be adjusted based on the actual data and ontology mappings.
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/crm2pgene#> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene#> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+#   • ontology=crm2phen_example  file=crm2phen_example.txt  score=0.411
+#   • ontology=crm2gene  file=crm2gene.txt  score=0.388
+#   • ontology=crm2phen  file=crm2phen.txt  score=0.388
+#   • ontology=crm2gene_example  file=crm2gene_example.txt  score=0.386
+#   • ontology=crm2tfac  file=crm2tfac.txt  score=0.346
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+# Column 'orig_end':
+#   - <http://www.licpathway.net/ENdb/> rdfs:label "ENdb" ; # score=0.422
+hcrm:orig_end a skos:Concept ;
+  rdfs:label "ENdb" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2phen/hcrm#orig_end> .
+
+# Column 'current_end':
+#   - <http://www.licpathway.net/ENdb/> rdfs:label "ENdb" ; # score=0.433
+hcrm:current_end a skos:Concept ;
+  rdfs:label "ENdb" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2phen/hcrm#current_end> .
+
+# Column 'hgnc_symbol_target_genes':
+#   - <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> rdfs:label "bgw!CRMHS00000003515--doid!1682" ; # score=0.402
+crm2pgene:hgnc_symbol_target_genes a skos:Concept ;
+  rdfs:label "bgw!CRMHS00000003515--doid!1682" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'disease_PMID':
+#   - <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> rdfs:label "bgw!CRMHS00000003515--doid!1682" ; # score=0.457
+crm2pgene:disease_PMID a skos:Concept ;
+  rdfs:label "bgw!CRMHS00000003515--doid!1682" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+# Column 'crm_ID':
+#   - <original_URL_database> rdfs:label "database_name" ; # score=0.418
+hcrm:crm_ID a skos:Concept ;
+  rdfs:label "database_name" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2phen/hcrm#crm_ID> .
+
+# Column 'biosample_name':
+#   - <original_URL_database> rdfs:label "database_name" ; # score=0.454
+hgene:biosample_name a skos:Concept ;
+  rdfs:label "database_name" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2phen/hgene#biosample_name> .
+
+# Column 'original_ID':
+#   - <http://rdf.biogateway.eu/crm2tfac/bgw!crm_ID--uniprot!uniprot_ID> rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" ; # score=0.448
+hgene:original_ID a skos:Concept ;
+  rdfs:label "bgw!crm_ID--uniprot!uniprot_ID" ;
+  skos:closeMatch <http://rdf.biogateway.eu/crm2phen/hgene#original_ID> .
+```
+
+This output includes the required prefix declarations, and maps each column to a corresponding ontology class using `skos:closeMatch`. Note that this is just an example and may need to be adjusted based on the actual data and ontology mappings.

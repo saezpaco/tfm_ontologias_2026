@@ -1,0 +1,85 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/human-crm#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/human-gene#> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <https://identifiers.org/dbsuper/> .
+
+# Classes
+hcrm:Crm  a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/human-crm#Crm> .
+crm2pgene:Crm2Pgene  a owl:Class ;
+    rdfs:label "Cis-Regulatory Module to Protein Gene Association" ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/crm2pgene#Crm2Pgene> .
+
+hgene:Gene  a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/human-gene#Gene> .
+assembly:Assembly  a owl:Class ;
+    rdfs:label "Genomic Assembly" ;
+    skos:closeMatch <http://purl.uniprot.org/assembly/> .
+
+nuccore:Nuccore  a owl:Class ;
+    rdfs:label "Nucleotide Sequence Core" ;
+    skos:exactMatch <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+pubmed:Pubmed  a owl:Class ;
+    rdfs:label "PubMed Identifier" ;
+    skos:closeMatch <http://www.ncbi.nlm.nih.gov/pubmed/> .
+
+id_pubmed:IdPubmed  a owl:Class ;
+    rdfs:label "PubMed ID" ;
+    skos:exactMatch <http://identifiers.org/pubmed/> .
+id_ncbigene:IdNcbigene  a owl:Class ;
+    rdfs:label "NCBI Gene ID" ;
+    skos:closeMatch <http://identifiers.org/ncbigene/> .
+
+dbsuper:Dbsuper  a owl:Class ;
+    rdfs:label "Databases of Super-Enhancers" ;
+    skos:exactMatch <https://identifiers.org/dbsuper/> .
+
+# Properties
+hcrm:Crm_has_component  a rdf:Property ;
+    rdfs:label "Cis-Regulatory Module has component" ;
+    owl:onProperty hcrm:Crm_component .
+crm2pgene:Crm2Pgene_has_association  a rdf:Property ;
+    rdfs:label "Cis-Regulatory Module to Protein Gene Association has association" ;
+    owl:onProperty crm2pgene:Crm2Pgene_association .
+
+hgene:Gene_has_transcript  a rdf:Property ;
+    rdfs:label "Gene has transcript" ;
+    owl:onProperty hgene:Gene_transcript .
+assembly:Assembly_has_sequence  a rdf:Property ;
+    rdfs:label "Genomic Assembly has sequence" ;
+    owl:onProperty assembly:Assembly_sequence .
+
+nuccore:Nuccore_has_sequence  a rdf:Property ;
+    rdfs:label "Nucleotide Sequence Core has sequence" ;
+    owl:onProperty nuccore:Nuccore_sequence .
+pubmed:Pubmed_has_identifier  a rdf:Property ;
+    rdfs:label "PubMed Identifier has identifier" ;
+    owl:onProperty pubmed:Pubmed_identifier .
+
+id_pubmed:IdPubmed_has_value  a rdf:Property ;
+    rdfs:label "PubMed ID has value" ;
+    owl:onProperty id_pubmed:IdPubmed_value .
+id_ncbigene:IdNcbigene_has_value  a rdf:Property ;
+    rdfs:label "NCBI Gene ID has value" ;
+    owl:onProperty id_ncbigene:IdNcbigene_value .
+
+dbsuper:Dbsuper_has_super-enhancer  a rdf:Property ;
+    rdfs:label "Databases of Super-Enhancers has super-enhancer" ;
+    owl:onProperty dbsuper:Dbsuper_super-enhancer .

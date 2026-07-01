@@ -1,0 +1,413 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix assembly: <https://www.ncbi.nlm.nih.gov/assembly/> .
+
+hcrm:chr11_69250208_69250340 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr11 between 69250208 and 69250340" ;
+    skos:prefLabel "chr11:69250208-69250340" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr11 ;
+    obo:GENO_0000895 "69250208"^^xsd:integer ;
+    obo:GENO_0000894 "69250340"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr11_69250208_69250340#FANTOM5> rdf:type hcrm:chr11_69250208_69250340 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr11 between 69250208 and 69250340 according to FANTOM5" ;
+    skos:prefLabel "chr11:69250208-69250340#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr7_20582388_20582432 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr7 between 20582388 and 20582432" ;
+    skos:prefLabel "chr7:20582388-20582432" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr7 ;
+    obo:GENO_0000895 "20582388"^^xsd:integer ;
+    obo:GENO_0000894 "20582432"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr7_20582388_20582432#FANTOM5> rdf:type hcrm:chr7_20582388_20582432 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr7 between 20582388 and 20582432 according to FANTOM5" ;
+    skos:prefLabel "chr7:20582388-20582432#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr5_138541195_138541588 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr5 between 138541195 and 138541588" ;
+    skos:prefLabel "chr5:138541195-138541588" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr5 ;
+    obo:GENO_0000895 "138541195"^^xsd:integer ;
+    obo:GENO_0000894 "138541588"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr5_138541195_138541588#FANTOM5> rdf:type hcrm:chr5_138541195_138541588 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr5 between 138541195 and 138541588 according to FANTOM5" ;
+    skos:prefLabel "chr5:138541195-138541588#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr1_235242252_235242564 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr1 between 235242252 and 235242564" ;
+    skos:prefLabel "chr1:235242252-235242564" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr1 ;
+    obo:GENO_0000895 "235242252"^^xsd:integer ;
+    obo:GENO_0000894 "235242564"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr1_235242252_235242564#FANTOM5> rdf:type hcrm:chr1_235242252_235242564 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr1 between 235242252 and 235242564 according to FANTOM5" ;
+    skos:prefLabel "chr1:235242252-235242564#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr3_168606249_168606616 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr3 between 168606249 and 168606616" ;
+    skos:prefLabel "chr3:168606249-168606616" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr3 ;
+    obo:GENO_0000895 "168606249"^^xsd:integer ;
+    obo:GENO_0000894 "168606616"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr3_168606249_168606616#FANTOM5> rdf:type hcrm:chr3_168606249_168606616 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr3 between 168606249 and 168606616 according to FANTOM5" ;
+    skos:prefLabel "chr3:168606249-168606616#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr6_52460126_52460529 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr6 between 52460126 and 52460529" ;
+    skos:prefLabel "chr6:52460126-52460529" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr6 ;
+    obo:GENO_0000895 "52460126"^^xsd:integer ;
+    obo:GENO_0000894 "52460529"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr6_52460126_52460529#FANTOM5> rdf:type hcrm:chr6_52460126_52460529 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr6 between 52460126 and 52460529 according to FANTOM5" ;
+    skos:prefLabel "chr6:52460126-52460529#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr12_92471870_92472505 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr12 between 92471870 and 92472505" ;
+    skos:prefLabel "chr12:92471870-92472505" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr12 ;
+    obo:GENO_0000895 "92471870"^^xsd:integer ;
+    obo:GENO_0000894 "92472505"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr12_92471870_92472505#FANTOM5> rdf:type hcrm:chr12_92471870_92472505 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr12 between 92471870 and 92472505 according to FANTOM5" ;
+    skos:prefLabel "chr12:92471870-92472505#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr17_75883563_75884329 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr17 between 75883563 and 75884329" ;
+    skos:prefLabel "chr17:75883563-75884329" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr17 ;
+    obo:GENO_0000895 "75883563"^^xsd:integer ;
+    obo:GENO_0000894 "75884329"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr17_75883563_75884329#FANTOM5> rdf:type hcrm:chr17_75883563_75884329 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr17 between 75883563 and 75884329 according to FANTOM5" ;
+    skos:prefLabel "chr17:75883563-75884329#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr2_200470477_200470965 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr2 between 200470477 and 200470965" ;
+    skos:prefLabel "chr2:200470477-200470965" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr2 ;
+    obo:GENO_0000895 "200470477"^^xsd:integer ;
+    obo:GENO_0000894 "200470965"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr2_200470477_200470965#FANTOM5> rdf:type hcrm:chr2_200470477_200470965 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr2 between 200470477 and 200470965 according to FANTOM5" ;
+    skos:prefLabel "chr2:200470477-200470965#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr18_10894_11221 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr18 between 10894 and 11221" ;
+    skos:prefLabel "chr18:10894-11221" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr18 ;
+    obo:GENO_0000895 "10894"^^xsd:integer ;
+    obo:GENO_0000894 "11221"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr18_10894_11221#FANTOM5> rdf:type hcrm:chr18_10894_11221 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr18 between 10894 and 11221 according to FANTOM5" ;
+    skos:prefLabel "chr18:10894-11221#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr20_32694090_32694253 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr20 between 32694090 and 32694253" ;
+    skos:prefLabel "chr20:32694090-32694253" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr20 ;
+    obo:GENO_0000895 "32694090"^^xsd:integer ;
+    obo:GENO_0000894 "32694253"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr20_32694090_32694253#FANTOM5> rdf:type hcrm:chr20_32694090_32694253 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr20 between 32694090 and 32694253 according to FANTOM5" ;
+    skos:prefLabel "chr20:32694090-32694253#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr14_76343734_76343966 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr14 between 76343734 and 76343966" ;
+    skos:prefLabel "chr14:76343734-76343966" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr14 ;
+    obo:GENO_0000895 "76343734"^^xsd:integer ;
+    obo:GENO_0000894 "76343966"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr14_76343734_76343966#FANTOM5> rdf:type hcrm:chr14_76343734_76343966 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr14 between 76343734 and 76343966 according to FANTOM5" ;
+    skos:prefLabel "chr14:76343734-76343966#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr19_54884057_54884427 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr19 between 54884057 and 54884427" ;
+    skos:prefLabel "chr19:54884057-54884427" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr19 ;
+    obo:GENO_0000895 "54884057"^^xsd:integer ;
+    obo:GENO_0000894 "54884427"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr19_54884057_54884427#FANTOM5> rdf:type hcrm:chr19_54884057_54884427 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr19 between 54884057 and 54884427 according to FANTOM5" ;
+    skos:prefLabel "chr19:54884057-54884427#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr9_20224812_20225090 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr9 between 20224812 and 20225090" ;
+    skos:prefLabel "chr9:20224812-20225090" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr9 ;
+    obo:GENO_0000895 "20224812"^^xsd:integer ;
+    obo:GENO_0000894 "20225090"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr9_20224812_20225090#FANTOM5> rdf:type hcrm:chr9_20224812_20225090 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr9 between 20224812 and 20225090 according to FANTOM5" ;
+    skos:prefLabel "chr9:20224812-20225090#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr15_81579259_81579466 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr15 between 81579259 and 81579466" ;
+    skos:prefLabel "chr15:81579259-81579466" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr15 ;
+    obo:GENO_0000895 "81579259"^^xsd:integer ;
+    obo:GENO_0000894 "81579466"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr15_81579259_81579466#FANTOM5> rdf:type hcrm:chr15_81579259_81579466 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr15 between 81579259 and 81579466 according to FANTOM5" ;
+    skos:prefLabel "chr15:81579259-81579466#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr22_18264097_18264299 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr22 between 18264097 and 18264299" ;
+    skos:prefLabel "chr22:18264097-18264299" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr22 ;
+    obo:GENO_0000895 "18264097"^^xsd:integer ;
+    obo:GENO_0000894 "18264299"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr22_18264097_18264299#FANTOM5> rdf:type hcrm:chr22_18264097_18264299 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr22 between 18264097 and 18264299 according to FANTOM5" ;
+    skos:prefLabel "chr22:18264097-18264299#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr16_49317625_49318405 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr16 between 49317625 and 49318405" ;
+    skos:prefLabel "chr16:49317625-49318405" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr16 ;
+    obo:GENO_0000895 "49317625"^^xsd:integer ;
+    obo:GENO_0000894 "49318405"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr16_49317625_49318405#FANTOM5> rdf:type hcrm:chr16_49317625_49318405 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr16 between 49317625 and 49318405 according to FANTOM5" ;
+    skos:prefLabel "chr16:49317625-49318405#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr4_86410493_86410688 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr4 between 86410493 and 86410688" ;
+    skos:prefLabel "chr4:86410493-86410688" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr4 ;
+    obo:GENO_0000895 "86410493"^^xsd:integer ;
+    obo:GENO_0000894 "86410688"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr4_86410493_86410688#FANTOM5> rdf:type hcrm:chr4_86410493_86410688 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr4 between 86410493 and 86410688 according to FANTOM5" ;
+    skos:prefLabel "chr4:86410493-86410688#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr10_74080430_74080993 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr10 between 74080430 and 74080993" ;
+    skos:prefLabel "chr10:74080430-74080993" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr10 ;
+    obo:GENO_0000895 "74080430"^^xsd:integer ;
+    obo:GENO_0000894 "74080993"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr10_74080430_74080993#FANTOM5> rdf:type hcrm:chr10_74080430_74080993 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr10 between 74080430 and 74080993 according to FANTOM5" ;
+    skos:prefLabel "chr10:74080430-74080993#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr21_45640329_45640509 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr21 between 45640329 and 45640509" ;
+    skos:prefLabel "chr21:45640329-45640509" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr21 ;
+    obo:GENO_0000895 "45640329"^^xsd:integer ;
+    obo:GENO_0000894 "45640509"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr21_45640329_45640509#FANTOM5> rdf:type hcrm:chr21_45640329_45640509 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr21 between 45640329 and 45640509 according to FANTOM5" ;
+    skos:prefLabel "chr21:45640329-45640509#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr8_94003281_94003430 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr8 between 94003281 and 94003430" ;
+    skos:prefLabel "chr8:94003281-94003430" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr8 ;
+    obo:GENO_0000895 "94003281"^^xsd:integer ;
+    obo:GENO_0000894 "94003430"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr8_94003281_94003430#FANTOM5> rdf:type hcrm:chr8_94003281_94003430 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr8 between 94003281 and 94003430 according to FANTOM5" ;
+    skos:prefLabel "chr8:94003281-94003430#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chrX_20281516_20281702 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chrX between 20281516 and 20281702" ;
+    skos:prefLabel "chrX:20281516-20281702" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chrX ;
+    obo:GENO_0000895 "20281516"^^xsd:integer ;
+    obo:GENO_0000894 "20281702"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chrX_20281516_20281702#FANTOM5> rdf:type hcrm:chrX_20281516_20281702 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chrX between 20281516 and 20281702 according to FANTOM5" ;
+    skos:prefLabel "chrX:20281516-20281702#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr13_113377120_113377559 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr13 between 113377120 and 113377559" ;
+    skos:prefLabel "chr13:113377120-113377559" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr13 ;
+    obo:GENO_0000895 "113377120"^^xsd:integer ;
+    obo:GENO_0000894 "113377559"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr13_113377120_113377559#FANTOM5> rdf:type hcrm:chr13_113377120_113377559 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr13 between 113377120 and 113377559 according to FANTOM5" ;
+    skos:prefLabel "chr13:113377120-113377559#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chrY_18611855_18612137 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chrY between 18611855 and 18612137" ;
+    skos:prefLabel "chrY:18611855-18612137" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chrY ;
+    obo:GENO_0000895 "18611855"^^xsd:integer ;
+    obo:GENO_0000894 "18612137"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chrY_18611855_18612137#FANTOM5> rdf:type hcrm:chrY_18611855_18612137 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chrY between 18611855 and 18612137 according to FANTOM5" ;
+    skos:prefLabel "chrY:18611855-18612137#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .
+
+hcrm:chr17_16375722_16375971 rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr17 between 16375722 and 16375971" ;
+    skos:prefLabel "chr17:16375722-16375971" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ;
+    dc:hasVersion assembly:GCF_000001405.26 ;
+    obo:BFO_0000050 nuccore:chr17 ;
+    obo:GENO_0000895 "16375722"^^xsd:integer ;
+    obo:GENO_0000894 "16375971"^^xsd:integer .
+
+<http://rdf.biogateway.eu/crm/9606chr17_16375722_16375971#FANTOM5> rdf:type hcrm:chr17_16375722_16375971 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr17 between 16375722 and 16375971 according to FANTOM5" ;
+    skos:prefLabel "chr17:16375722-16375971#FANTOM5" ;
+    schema:evidenceOrigin <https://fantom.gsc.riken.jp/5/> ;
+    sio:SIO_000253 <https://fantom.gsc.riken.jp/5/> .

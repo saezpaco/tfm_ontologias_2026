@@ -1,0 +1,120 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm!> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene!> .
+@prefix assembly:<http://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+@prefix id_pubmed:<https://pubmed.ncbi.nlm.nih.gov/?term=> .
+@prefix id_ncbigene:<https://www.ncbi.nlm.nih.gov/gene/> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/SO_0001217> .
+
+# Define classes and properties based on the data
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:closeMatch hcrm:Disease .
+
+crm:Biosample a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:closeMatch hgene:Gene .
+
+crm:CisRegulatoryElement a owl:Class ;
+    rdfs:label "Cis-Regulatory Element" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:Chromosome a owl:Class ;
+    rdfs:label "Chromosome" ;
+    skos:closeMatch assembly:Chromosome .
+
+crm:NucleotideSequence a owl:Class ;
+    rdfs:label "Nucleotide Sequence" ;
+    skos:exactMatch nuccore:NucleotideSequence .
+
+crm:PubMedArticle a owl:Class ;
+    rdfs:label "PubMed Article" ;
+    skos:closeMatch pubmed:Article .
+
+crm:GeneSymbol a owl:Class ;
+    rdfs:label "Gene Symbol" ;
+    skos:closeMatch hgene:GeneSymbol .
+
+crm:DiseasePMID a owl:Property ;
+    rdfs:label "Disease PubMed ID" ;
+    rdfs:domain crm:Disease ;
+    rdfs:range crm:PubMedArticle ;
+    skos:exactMatch id_pubmed:.
+
+crm:BiosampleName a owl:Property ;
+    rdfs:label "Biosample Name" ;
+    rdfs:domain crm:Biosample ;
+    rdfs:range xsd:string ;
+    skos:closeMatch obo:SO_0001217 .
+
+crm:GeneSymbolTargetGenes a owl:Property ;
+    rdfs:label "Gene Symbol Target Genes" ;
+    rdfs:domain crm:TranscriptionFactor ;
+    rdfs:range crm:Gene ;
+    skos:closeMatch hgene:GeneSybmol .
+
+crm:CisRegulatoryElementOrigEnd a owl:Property ;
+    rdfs:label "Cis-Regulatory Element Original End" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range xsd:string ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:CisRegulatoryElementCurrentEnd a owl:Property ;
+    rdfs:label "Cis-Regulatory Element Current End" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range xsd:string ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:CisRegulatoryElementChromosome a owl:Property ;
+    rdfs:label "Cis-Regulatory Element Chromosome" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range crm:Chromosome ;
+    skos:closeMatch assembly:Chromosome .
+
+crm:CisRegulatoryElementNucleotideSequence a owl:Property ;
+    rdfs:label "Cis-Regulatory Element Nucleotide Sequence" ;
+    rdfs:domain crm:CisRegulatoryElement ;
+    rdfs:range crm:NucleotideSequence ;
+    skos:exactMatch nuccore:NucleotideSequence .
+
+# Example instances
+crm:TranscriptionFactor1 a crm:TranscriptionFactor ;
+    rdfs:label "Transcription Factor 1" ;
+    crm:GeneSymbolTargetGenes crm:Gene1, crm:Gene2 .
+
+crm:Disease1 a crm:Disease ;
+    rdfs:label "Disease 1" ;
+    crm:DiseasePMID crm:PubMedArticle1 .
+
+crm:Biosample1 a crm:Biosample ;
+    rdfs:label "Biosample 1" ;
+    crm:BiosampleName "Sample A" .
+
+crm:CisRegulatoryElement1 a crm:CisRegulatoryElement ;
+    rdfs:label "Cis-Regulatory Element 1" ;
+    crm:CisRegulatoryElementOrigEnd "1000" ;
+    crm:CisRegulatoryElementCurrentEnd "2000" ;
+    crm:CisRegulatoryElementChromosome crm:Chromosome1 ;
+    crm:CisRegulatoryElementNucleotideSequence crm:NucleotideSequence1 .
+```

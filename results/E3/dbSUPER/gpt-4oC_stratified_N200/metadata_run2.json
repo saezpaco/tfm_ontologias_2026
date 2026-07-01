@@ -1,0 +1,29 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-06-28T21:56:43.722738",
+  "success": true,
+  "elapsed_seconds": 8.04,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 7276,
+    "completion_tokens": 1064,
+    "total_tokens": 8340
+  },
+  "prompt_tokens_estimate": 4478,
+  "response_chars": 3468,
+  "turtle_chars": 3454,
+  "validation": {
+    "valid": true,
+    "n_triples": 64,
+    "n_classes": 4,
+    "n_properties": 4
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N200/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/gpt-4oC_stratified_N200/response_raw_run2.txt"
+  }
+}

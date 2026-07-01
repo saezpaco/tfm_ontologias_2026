@@ -1,0 +1,106 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://example.org/hcrm#> .
+@prefix crm2gene: <http://example.org/crm2gene#> .
+@prefix hgene:   <http://example.org/hgene#> .
+@prefix assembly: <http://example.org/assembly#> .
+@prefix nuccore: <http://example.org/nuccore#> .
+@prefix pubmed:  <http://example.org/pubmed#> .
+@prefix id_pubmed: <http://example.org/id_pubmed#> .
+@prefix id_ncbigene: <http://example.org/id_ncbigene#> .
+@prefix dbsuper: <http://example.org/dbsuper#> .
+
+# Ontology definition
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    dc:title "Disease Enhancer Ontology" ;
+    dc:description "An ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+# Classes
+hcrm:CisRegulatoryModule rdf:type owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch crm2gene:CisRegulatoryModule .
+
+hcrm:Enhancer rdf:type owl:Class ;
+    rdfs:subClassOf hcrm:CisRegulatoryModule ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch crm2gene:Enhancer .
+
+hcrm:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2gene:Gene .
+
+hcrm:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch crm2gene:Disease .
+
+hcrm:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch crm2gene:TranscriptionFactor .
+
+# Properties
+hcrm:hasGenomicCoordinate rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range assembly:GenomicCoordinate ;
+    rdfs:label "has genomic coordinate" .
+
+hcrm:hasTargetGene rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:Gene ;
+    rdfs:label "has target gene" ;
+    skos:exactMatch crm2gene:hasTargetGene .
+
+hcrm:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:Disease ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch crm2gene:associatedWithDisease .
+
+hcrm:interactsWithTranscriptionFactor rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:TranscriptionFactor ;
+    rdfs:label "interacts with transcription factor" ;
+    skos:exactMatch crm2gene:interactsWithTranscriptionFactor .
+
+hcrm:hasExperimentalEvidence rdf:type owl:DatatypeProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "has experimental evidence" .
+
+hcrm:hasCellLineActivity rdf:type owl:DatatypeProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "has cell line activity" .
+
+hcrm:hasMutation rdf:type owl:DatatypeProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "has mutation" .
+
+# Example individuals
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00027685535> rdf:type hcrm:Enhancer ;
+    hcrm:hasGenomicCoordinate [ 
+        assembly:chromosome "chrX" ;
+        assembly:start 8672161 ;
+        assembly:end 8672559 ;
+        assembly:assemblyVersion "hg38"
+    ] ;
+    hcrm:hasTargetGene <http://example.org/hgene/TBL1X> ;
+    hcrm:associatedWithDisease obo:DOID_3571 ;
+    hcrm:hasExperimentalEvidence "27869826" ;
+    hcrm:hasCellLineActivity "-" ;
+    hcrm:hasMutation "-" .
+
+<http://example.org/hgene/TBL1X> rdf:type hcrm:Gene ;
+    rdfs:label "TBL1X" .
+
+obo:DOID_3571 rdf:type hcrm:Disease ;
+    rdfs:label "Disease associated with DOID:3571" .

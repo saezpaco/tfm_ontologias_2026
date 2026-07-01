@@ -1,0 +1,95 @@
+{
+  "experiment": "E3",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 1,
+  "avg_elapsed": 76.28333333333333,
+  "total_tokens": 12636,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 1,
+      "timestamp": "2026-05-08T22:25:41.163600",
+      "success": true,
+      "elapsed_seconds": 83.18,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3282,
+        "completion_tokens": 952,
+        "total_tokens": 4234
+      },
+      "prompt_tokens_estimate": 2046,
+      "response_chars": 3340,
+      "turtle_chars": 2607,
+      "validation": {
+        "valid": false,
+        "error": "at line 21 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b' dbsuper: <http://purl.uniprot.org/databases/> .\\n\\n# Classes\\n'^b'crm:CisRegulatoryModule a owl:Class ;\\n    rdfs:label \"Cis-Re'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 2,
+      "timestamp": "2026-05-08T22:27:09.603885",
+      "success": true,
+      "elapsed_seconds": 73.21,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3282,
+        "completion_tokens": 798,
+        "total_tokens": 4080
+      },
+      "prompt_tokens_estimate": 2046,
+      "response_chars": 2710,
+      "turtle_chars": 2124,
+      "validation": {
+        "valid": true,
+        "n_triples": 24,
+        "n_classes": 3,
+        "n_properties": 0
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "FANTOM5",
+      "model": "llama3.1:8b",
+      "run": 3,
+      "timestamp": "2026-05-08T22:28:36.644531",
+      "success": true,
+      "elapsed_seconds": 72.46,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3282,
+        "completion_tokens": 1040,
+        "total_tokens": 4322
+      },
+      "prompt_tokens_estimate": 2046,
+      "response_chars": 3626,
+      "turtle_chars": 2904,
+      "validation": {
+        "valid": false,
+        "error": "at line 61 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'ucleotide sequence of a gene\\'s transcript.\".\\n\\n# Individuals\\n'^b'CRMHS00000005752 a hcrm:CisRegulatoryModule ;\\n    hcrm:hasEn'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8b_ragapi/response_raw_run3.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000167 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that increases the transcription of a gene." ;
+    skos:exactMatch obo:SO_0000167 .
+
+# Properties
+obo:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates a CRM to its genomic coordinates." .
+
+obo:hasEvidence a owl:ObjectProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Relates a CRM to the evidence supporting its activity." .
+
+obo:hasTargetGene a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates an enhancer to its target gene." .
+
+obo:hasTranscriptionFactor a owl:ObjectProperty ;
+    skos:prefLabel "has transcription factor" ;
+    skos:definition "Relates an enhancer to a transcription factor that interacts with it." .
+
+obo:hasDiseaseAssociation a owl:ObjectProperty ;
+    skos:prefLabel "has disease association" ;
+    skos:definition "Relates an enhancer to a disease it is associated with." .
+
+obo:chromosome a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the CRM is located." ;
+    rdfs:range xsd:string .
+
+obo:startPosition a owl:DatatypeProperty ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of the CRM on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:endPosition a owl:DatatypeProperty ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of the CRM on the chromosome." ;
+    rdfs:range xsd:integer .
+
+obo:assemblyVersion a owl:DatatypeProperty ;
+    skos:prefLabel "assembly version" ;
+    skos:definition "The genome assembly version used for the genomic coordinates." ;
+    rdfs:range xsd:string .
+
+obo:evidenceMethod a owl:DatatypeProperty ;
+    skos:prefLabel "evidence method" ;
+    skos:definition "The method used to identify the enhancer activity." ;
+    rdfs:range xsd:string .
+
+obo:score a owl:DatatypeProperty ;
+    skos:prefLabel "score" ;
+    skos:definition "The score representing the confidence of the enhancer activity." ;
+    rdfs:range xsd:float .

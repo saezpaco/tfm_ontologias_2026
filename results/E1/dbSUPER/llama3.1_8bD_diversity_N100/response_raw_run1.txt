@@ -1,0 +1,47 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/CRM/enhancer>
+  a owl:Class ;
+  rdfs:label "Chromatin Regulatory Module"^^xsd:string ;
+  skos:prefLabel "CRM" ;
+  skos:definition "A chromatin regulatory module is a functional unit of chromatin that regulates gene expression." .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "has_genomic_coordinate" ;
+  skos:definition "The genomic coordinate of the CRM/enhancer." .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  a owl:ObjectProperty ;
+  rdfs:label "Has Evidence"^^xsd:string ;
+  skos:prefLabel "has_evidence" ;
+  skos:definition "The evidence for the CRM/enhancer." .
+
+<http://example.org/GenomicCoordinate>
+  a owl:Class ;
+  rdfs:label "Genomic Coordinate"^^xsd:string ;
+  skos:prefLabel "genomic_coordinate" ;
+  skos:definition "A genomic coordinate is a location on a chromosome." .
+
+<http://example.org/Evidence>
+  a owl:Class ;
+  rdfs:label "Evidence"^^xsd:string ;
+  skos:prefLabel "evidence" ;
+  skos:definition "The evidence for the CRM/enhancer." .
+
+<http://example.org/CRM/enhancer#hasGenomicCoordinate>
+  rdfs:domain <http://example.org/CRM/enhancer> ;
+  rdfs:range <http://example.org/GenomicCoordinate> .
+
+<http://example.org/CRM/enhancer#hasEvidence>
+  rdfs:domain <http://example.org/CRM/enhancer> ;
+  rdfs:range <http://example.org/Evidence> .
+
+skos:exactMatch <obo:GO:0003677> <http://example.org/GenomicCoordinate> .
+skos:closeMatch <obo:SO:0000113> <http://example.org/CRM/enhancer> .

@@ -1,0 +1,300 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. TFs2enh_PMID: type - PubMed ID for transcription factor to enhancer interaction - string
+2. TFs2enh_method: type - method used in transcription factor to enhancer interaction study - string
+3. biosample_name: type - name of the cell line or biosample - string
+4. crm_ID: type - unique identifier for a cellular region of interest (CRM) - string
+5. crossref: type - reference ID for external resources - string
+6. current_assembly: type - genomic assembly version - string
+7. current_chr: type - chromosome number in the current assembly - string
+8. disease: type - name of the disease associated with the genetic element - string
+9. disease_PMID: type - PubMed ID for disease study - string
+10. disease_method: type - method used in disease study - string
+11. enh2gene_PMID: type - PubMed ID for enhancer to gene interaction study - string
+12. enh2gene_method: type - method used in enhancer to gene interaction study - string
+13. enh_PMID: type - PubMed ID for enhancer study - string
+14. enh_method: type - method used in enhancer study - string
+15. hgnc_symbol_TFs: type - HGNC symbol of the transcription factor - string
+16. hgnc_symbol_target_genes: type - HGNC symbol of the target gene - string
+17. minimum_ratio: type - minimum ratio value - float
+18. mutation_PMID: type - PubMed ID for mutation study - string
+19. mutation_method: type - method used in mutation study - string
+20. orig_assembly: type - original genomic assembly version - string
+21. orig_chr: type - chromosome number in the original assembly - string
+22. original_ID: type - unique identifier for the genetic element - string
+23. refsnp_ID: type - reference SNP ID - string
+24. source: type - source of the data - string
+25. type: type - type of the genetic regulatory element (enhancer, super-enhancer) - string
+26. current_end: type - end position in the current assembly - integer
+27. current_start: type - start position in the current assembly - integer
+28. orig_end: type - end position in the original assembly - integer
+29. orig_start: type - start position in the original assembly - integer
+30. score: type - score of the genetic regulatory element - float
+
+**Classes:**
+1. GeneticElement
+2. Enhancer
+3. SuperEnhancer
+4. TranscriptionFactor
+5. TargetGene
+6. Disease
+7. CellLineOrBiosample
+
+**Subclasses:**
+1. Enhancer subclass of -> GeneticElement
+2. SuperEnhancer subclass of -> Enhancer
+3. TranscriptionFactor subclass of -> GeneticElement
+4. TargetGene subclass of -> GeneticElement
+5. Disease subclass of -> GeneticElement
+6. CellLineOrBiosample subclass of -> GeneticElement
+
+**Object Properties:**
+1. hasTranscriptionFactor: domain - TranscriptionFactor, range - Enhancer or SuperEnhancer
+2. hasTargetGene: domain - TargetGene, range - Enhancer or SuperEnhancer
+3. associatedWithDisease: domain - Disease, range - Enhancer or SuperEnhancer
+4. occursInCellLineOrBiosample: domain - CellLineOrBiosample, range - Enhancer or SuperEnhancer
+
+**Data Type Properties:**
+1. hasPubMedID: domain - GeneticElement, range - xsd:string
+2. hasMethod: domain - GeneticElement, range - xsd:string
+3. hasHGNCsymbol: domain - TranscriptionFactor or TargetGene, range - xsd:string
+4. hasChromosomeNumber: domain - Enhancer or SuperEnhancer, range - xsd:string
+5. hasScore: domain - Enhancer or SuperEnhancer, range - xsd:float
+6. hasStartPosition: domain - Enhancer or SuperEnhancer, range - xsd:int
+7. hasEndPosition: domain - Enhancer or SuperEnhancer, range - xsd:int
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GeneticElement a rdfs:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A general class representing genetic regulatory elements." ;
+    skos:definition "A general class representing genetic regulatory elements." ;
+
+ge:Enhancer a ge:GeneticElement, rdfs:Class ;
+    rdfs:subClassOf ge:GeneticElement ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A subclass of Genetic Element representing enhancers." ;
+    skos:definition "A subclass of Genetic Element representing enhancers." ;
+
+ge:SuperEnhancer a ge:Enhancer, rdfs:Class ;
+    rdfs:subClassOf ge:Enhancer ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A subclass of Enhancer representing super-enhancers." ;
+    skos:definition "A subclass of Enhancer representing super-enhancers." ;
+
+ge:TranscriptionFactor a ge:GeneticElement, rdfs:Class ;
+    rdfs:subClassOf ge:GeneticElement ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A subclass of Genetic Element representing transcription factors." ;
+    skos:definition "A subclass of Genetic Element representing transcription factors." ;
+
+ge:TargetGene a ge:GeneticElement, rdfs:Class ;
+    rdfs:subClassOf ge:GeneticElement ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A subclass of Genetic Element representing target genes." ;
+    skos:definition "A subclass of Genetic Element representing target genes." ;
+
+ge:Disease a ge:GeneticElement, rdfs:Class ;
+    rdfs:subClassOf ge:GeneticElement ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A subclass of Genetic Element representing diseases." ;
+    skos:definition "A subclass of Genetic Element representing diseases." ;
+
+ge:CellLineOrBiosample a ge:GeneticElement, rdfs:Class ;
+    rdfs:subClassOf ge:GeneticElement ;
+    rdfs:label "Cell Line or Biosample" ;
+    rdfs:comment "A subclass of Genetic Element representing cell lines or biosamples." ;
+    skos:definition "A subclass of Genetic Element representing cell lines or biosamples." ;
+
+ge:hasTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:TranscriptionFactor ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "An object property indicating the transcription factor associated with an enhancer or super-enhancer." ;
+    skos:definition "An object property indicating the transcription factor associated with an enhancer or super-enhancer." ;
+
+ge:hasTargetGene a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:TargetGene ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "An object property indicating the target gene associated with an enhancer or super-enhancer." ;
+    skos:definition "An object property indicating the target gene associated with an enhancer or super-enhancer." ;
+
+ge:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:Disease ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "An object property indicating the disease associated with an enhancer or super-enhancer." ;
+    skos:definition "An object property indicating the disease associated with an enhancer or super-enhancer." ;
+
+ge:occursInCellLineOrBiosample a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer ;
+    rdfs:range ge:CellLineOrBiosample ;
+    rdfs:label "Occurs In Cell Line or Biosample" ;
+    rdfs:comment "An object property indicating the cell line or biosample in which an enhancer or super-enhancer occurs." ;
+    skos:definition "An object property indicating the cell line or biosample in which an enhancer or super-enhancer occurs." ;
+
+ge:hasPubMedID a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has PubMed ID" ;
+    rdfs:comment "A datatype property indicating the PubMed ID associated with a genetic element." ;
+    skos:definition "A datatype property indicating the PubMed ID associated with a genetic element." ;
+
+ge:hasMethod a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Method" ;
+    rdfs:comment "A datatype property indicating the method used in studies related to a genetic element." ;
+    skos:definition "A datatype property indicating the method used in studies related to a genetic element." ;
+
+ge:hasHGNCsymbol a owl:DatatypeProperty ;
+    rdfs:domain ge:TranscriptionFactor, ge:TargetGene ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has HGNC Symbol" ;
+    rdfs:comment "A datatype property indicating the HGNC symbol of a transcription factor or target gene." ;
+    skos:definition "A datatype property indicating the HGNC symbol of a transcription factor or target gene." ;
+
+ge:hasChromosomeNumber a owl:DatatypeProperty ;
+    rdfs:domain ge:Enhancer, ge:SuperEnhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "Has Chromosome Number" ;
+    rdfs:comment "A datatype property indicating the chromosome number associated with an enhancer or super-enhancer." ;
+    skos:definition "A datatype property indicating the chromosome number associated with an enhancer or super-enhancer." ;
+
+ge:hasScore a owl:DatatypeProperty ;
+    rdfs:domain ge:Enhancer, ge:SuperEnhancer ;
+    rdfs:range xsd:float ;
+    rdfs:label "Has Score" ;
+    rdfs:comment "A datatype property indicating the score of an enhancer or super-enhancer." ;
+    skos:definition "A datatype property indicating the score of an enhancer or super-enhancer." ;
+
+ge:hasStartPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:Enhancer, ge:SuperEnhancer ;
+    rdfs:range xsd:int ;
+    rdfs:label "Has Start Position" ;
+    rdfs:comment "A datatype property indicating the start position of an enhancer or super-enhancer in the current assembly." ;
+    skos:definition "A datatype property indicating the start position of an enhancer or super-enhancer in the current assembly." ;
+
+ge:hasEndPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:Enhancer, ge:SuperEnhancer ;
+    rdfs:range xsd:int ;
+    rdfs:label "Has End Position" ;
+    rdfs:comment "A datatype property indicating the end position of an enhancer or super-enhancer in the current assembly." ;
+    skos:definition "A datatype property indicating the end position of an enhancer or super-enhancer in the current assembly." ;
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancerTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancerTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancerDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancerCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "dbSUPER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "ge:{{original_ID}}{FAIR_URI}";
+    ].
+```

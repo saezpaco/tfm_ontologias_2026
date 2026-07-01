@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "HACER",
+  "model": "llama3.1:8b",
+  "run": 1,
+  "timestamp": "2026-06-29T13:33:34.008790",
+  "success": true,
+  "elapsed_seconds": 806.79,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 8192,
+    "total_tokens": 12287
+  },
+  "prompt_tokens_estimate": 3879,
+  "response_chars": 29590,
+  "turtle_chars": 29590,
+  "validation": {
+    "valid": false,
+    "error": "at line 677 of <>:\nBad syntax (unterminated string literal) at ^ in:\n\"...b'\\n  rdfs:label \"gene symbol association\" ;\\n  skos:prefLabel \"'^b''\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bA_head_N100/ontology_run1.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/llama3.1_8bA_head_N100/response_raw_run1.txt"
+  }
+}

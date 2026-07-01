@@ -1,0 +1,129 @@
+Based on the provided CISREG reference ontology and the requirements for reusing cisreg classes and properties where semantically appropriate, adding explicit skos:exactMatch or skos:closeMatch to cisreg URIs for aligned terms, and only adding new classes/properties when cisreg doesn't cover the concept, I will provide a step-by-step solution.
+
+**Step 1: Identify main concepts/classes in the data**
+
+From the provided CISREG reference ontology fragments, we can identify the following main concepts/classes:
+
+* `hcrm:crm_ID` (Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position)
+* `nuccore:chr_ID` (chromosome)
+* `assembly:GCF_000001405.26` (GRCh38 assembly as reference)
+* `obo:CL_ID`, `obo:CLO_ID`, `obo:UBERON_ID` (cell line, cell type or anatomical structure)
+* `id_pubmed:pubmed_ID` (PubMed ID)
+
+**Step 2: Find corresponding classes and properties in the CISREG reference ontology**
+
+Based on the main concepts/classes identified in Step 1, we can find the corresponding classes and properties in the CISREG reference ontology:
+
+* `hcrm:crm_ID` corresponds to `obo:SO_0000727` (CRM)
+* `nuccore:chr_ID` corresponds to `obo:NCIT_ID` (chromosome)
+* `assembly:GCF_000001405.26` corresponds to `obo:SO_0001505` (genome assembly)
+* `obo:CL_ID`, `obo:CLO_ID`, `obo:UBERON_ID` correspond to `obo:BTO_ID` (cell line, cell type or anatomical structure)
+* `id_pubmed:pubmed_ID` corresponds to `pubmed:pubmed_ID` (PubMed ID)
+
+**Step 3: Reuse CISREG classes and properties where semantically appropriate**
+
+We can reuse the CISREG classes and properties where semantically appropriate:
+
+```turtle
+@prefix hcrm: <http://rdf.biogateway.eu/crm/9606> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+
+hcrm:crm_ID rdf:type obo:SO_0000727 ; # CRM
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:prefLabel "crm/crm_ID" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; #in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; #hg38 assembly as reference
+    obo:BFO_0000050 nuccore:chr_ID ; #chromosome
+    obo:GENO_0000895 "start_position"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+    obo:GENO_0000894 "end_position"^^<http://www.w3.org/2001/XMLSchema#integer> .
+
+nuccore:chr_ID rdf:type obo:NCIT_ID ; #chromosome
+    rdfs:subClassOf obo:SO_0000340 ;
+    skos:prefLabel "chr_name" ;
+    biolink:category biolink:GenomicSequenceLocalization ;
+    skos:closeMatch obo:NCIT_ID .
+
+assembly:GCF_000001405.26 rdf:type obo:SO_0001505 ; #genome assembly
+    rdfs:subClassOf obo:SO_0001505 ;
+    skos:prefLabel "GRCh38" ;
+    skos:altLabel "hg38" ;
+    biolink:category biolink:Genome .
+
+obo:BTO_ID rdf:type owl:Class ; #cell line, cell type or anatomical structure
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:prefLabel "BTO ID" ;
+    biolink:category biolink:CellLine .
+```
+
+**Step 4: Add explicit skos:exactMatch or skos:closeMatch to CISREG URIs for aligned terms**
+
+We can add explicit skos:exactMatch or skos:closeMatch to CISREG URIs for aligned terms:
+
+```turtle
+hcrm:crm_ID skos:exactMatch obo:SO_0000727 .
+nuccore:chr_ID skos:closeMatch obo:NCIT_ID .
+assembly:GCF_000001405.26 skos:exactMatch obo:SO_0001505 .
+```
+
+**Step 5: Add new classes/properties only when CISREG doesn't cover the concept**
+
+We can add new classes/properties only when CISREG doesn't cover the concept:
+
+```turtle
+id_pubmed:pubmed_ID rdf:type owl:Class ; #PubMed ID
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:prefLabel "PubMed ID" ;
+    biolink:category biolink:Article .
+```
+
+The final output in Turtle format is:
+
+```turtle
+@prefix hcrm: <http://rdf.biogateway.eu/crm/9606> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+
+hcrm:crm_ID rdf:type obo:SO_0000727 ; # CRM
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+    skos:prefLabel "crm/crm_ID" ;
+    obo:RO_0002162 obo:NCBITaxon_9606 ; #in taxon "human"
+    dc:hasVersion assembly:GCF_000001405.26 ; #hg38 assembly as reference
+    obo:BFO_0000050 nuccore:chr_ID ; #chromosome
+    obo:GENO_0000895 "start_position"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+    obo:GENO_0000894 "end_position"^^<http://www.w3.org/2001/XMLSchema#integer> .
+
+nuccore:chr_ID rdf:type obo:NCIT_ID ; #chromosome
+    rdfs:subClassOf obo:SO_0000340 ;
+    skos:prefLabel "chr_name" ;
+    biolink:category biolink:GenomicSequenceLocalization ;
+    skos:closeMatch obo:NCIT_ID .
+
+assembly:GCF_000001405.26 rdf:type obo:SO_0001505 ; #genome assembly
+    rdfs:subClassOf obo:SO_0001505 ;
+    skos:prefLabel "GRCh38" ;
+    skos:altLabel "hg38" ;
+    biolink:category biolink:Genome .
+
+obo:BTO_ID rdf:type owl:Class ; #cell line, cell type or anatomical structure
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:prefLabel "BTO ID" ;
+    biolink:category biolink:CellLine .
+
+id_pubmed:pubmed_ID rdf:type owl:Class ; #PubMed ID
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:prefLabel "PubMed ID" ;
+    biolink:category biolink:Article .
+
+hcrm:crm_ID skos:exactMatch obo:SO_0000727 .
+nuccore:chr_ID skos:closeMatch obo:NCIT_ID .
+assembly:GCF_000001405.26 skos:exactMatch obo:SO_0001505 .
+```

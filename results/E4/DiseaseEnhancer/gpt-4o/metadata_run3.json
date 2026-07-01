@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/DiseaseEnhancer.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-03T23:08:36.534291+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.021,
+    "plan_s": 4.698,
+    "plan_chars": 4369,
+    "plan_prompt_chars": 9563,
+    "onto_s": 8.165,
+    "onto_chars": 9175,
+    "onto_prompt_chars": 13312,
+    "map_s": 7.453,
+    "map_chars": 7322,
+    "map_prompt_chars": 16221
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-03T23:08:56.872628+00:00",
+  "total_s": 20.337
+}

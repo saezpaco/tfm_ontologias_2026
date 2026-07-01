@@ -1,0 +1,91 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+owl:Ontology {
+    rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements Database Ontology" ;
+    skos:prefLabel "HACER Ontology" ;
+    skos:definition "An ontology for representing and linking data from the Human Active Cis-regulatory Elements (HACER) database." ;
+}
+
+crm:Enhancer a owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A DNA sequence that can increase the transcription of adjacent genes." ;
+    skos:exactMatch obo:SIO_010245 .
+
+crm:GenomicCoordinate a owl:Class ;
+    rdfs:label "Genomic Coordinate" ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome." ;
+    skos:exactMatch obo:SIO_010246 .
+
+crm:StartCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "Start Coordinate" ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Start Coordinate" ;
+    skos:definition "The starting position of a genomic coordinate." ;
+    skos:exactMatch obo:SIO_010247 .
+
+crm:EndCoordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "End Coordinate" ;
+    rdfs:domain crm:GenomicCoordinate ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "End Coordinate" ;
+    skos:definition "The ending position of a genomic coordinate." ;
+    skos:exactMatch obo:SIO_010248 .
+
+crm:Evidence a owl:Class ;
+    rdfs:label "Evidence" ;
+    skos:prefLabel "Evidence" ;
+    skos:definition "Information or data supporting the presence or function of an enhancer." ;
+    skos:exactMatch obo:SIO_010249 .
+
+crm:EvidenceType a owl:Class ;
+    rdfs:label "Evidence Type" ;
+    skos:prefLabel "Evidence Type" ;
+    skos:definition "The type of evidence supporting the presence or function of an enhancer." ;
+    skos:exactMatch obo:SIO_010250 .
+
+crm:EvidenceSource a owl:Class ;
+    rdfs:label "Evidence Source" ;
+    skos:prefLabel "Evidence Source" ;
+    skos:definition "The source of evidence supporting the presence or function of an enhancer." ;
+    skos:exactMatch obo:SIO_010251 .
+
+crm:EnhancerHasGenomicCoordinate a owl:ObjectProperty ;
+    rdfs:label "Enhancer Has Genomic Coordinate" ;
+    rdfs:domain crm:Enhancer ;
+    rdfs:range crm:GenomicCoordinate ;
+    skos:prefLabel "Enhancer Has Genomic Coordinate" ;
+    skos:definition "The relationship between an enhancer and its genomic coordinate." ;
+    skos:exactMatch obo:SIO_010252 .
+
+crm:EvidenceHasType a owl:ObjectProperty ;
+    rdfs:label "Evidence Has Type" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:EvidenceType ;
+    skos:prefLabel "Evidence Has Type" ;
+    skos:definition "The relationship between evidence and its type." ;
+    skos:exactMatch obo:SIO_010253 .
+
+crm:EvidenceHasSource a owl:ObjectProperty ;
+    rdfs:label "Evidence Has Source" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:EvidenceSource ;
+    skos:prefLabel "Evidence Has Source" ;
+    skos:definition "The relationship between evidence and its source." ;
+    skos:exactMatch obo:SIO_010254 .
+
+crm:EvidenceSupportsEnhancer a owl:ObjectProperty ;
+    rdfs:label "Evidence Supports Enhancer" ;
+    rdfs:domain crm:Evidence ;
+    rdfs:range crm:Enhancer ;
+    skos:prefLabel "Evidence Supports Enhancer" ;
+    skos:definition "The relationship between evidence and the enhancer it supports." ;
+    skos:exactMatch obo:SIO_010255 .

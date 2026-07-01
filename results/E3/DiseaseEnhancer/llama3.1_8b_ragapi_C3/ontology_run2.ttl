@@ -1,0 +1,46 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://biocc.hrbmu.edu.cn/DiseaseEnhancer#> .
+@prefix crm2pgene: <https://w3id.org/crm2pgene#> .
+@prefix hgene:   <http://identifiers.org/hgnc.symbol/> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <https://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <https://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <https://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://purl.uniprot.org/databases/> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch obo:CRISPR_000001.
+
+hcrm:EnhancerSequence a owl:Class ;
+    rdfs:label "Enhancer Sequence" ;
+    skos:closeMatch biolink:Transcriptional_regulatory_region.
+
+hcrm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch obo:DOID_0060785.
+
+# Properties
+hcrm:hasTargetGene a rdf:Property ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range crm2pgene:Gene.
+
+hcrm:hasEnhancerSequence a rdf:Property ;
+    rdfs:domain hcrm:Disease ;
+    rdfs:range hcrm:EnhancerSequence.
+
+hcrm:hasDiseaseAssociation a rdf:Property ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range hcrm:Disease.

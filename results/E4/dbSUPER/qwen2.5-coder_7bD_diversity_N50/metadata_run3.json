@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/D_diversity/N=50/dbSUPER.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-30T15:16:12.287387+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.032,
+    "plan_s": 98.299,
+    "plan_chars": 3840,
+    "plan_prompt_chars": 9561,
+    "onto_s": 242.915,
+    "onto_chars": 7753,
+    "onto_prompt_chars": 12781,
+    "map_s": 176.711,
+    "map_chars": 4316,
+    "map_prompt_chars": 14262
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-30T15:24:50.245425+00:00",
+  "total_s": 517.957
+}

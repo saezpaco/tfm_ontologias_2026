@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-06-30T08:53:37.153537",
+  "success": true,
+  "elapsed_seconds": 106.33,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 657,
+    "total_tokens": 4752
+  },
+  "prompt_tokens_estimate": 4473,
+  "response_chars": 1895,
+  "turtle_chars": 1881,
+  "validation": {
+    "valid": false,
+    "error": "at line 21 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'bigene/> .\\n@prefix dbsuper: <https://dbsuper.com/super/> .\\n\\n'^b'crm_ID rdf:type owl:Class ;\\n    rdfs:label \"CRM ID\" ;\\n    sk'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bA_head_N100/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bA_head_N100/response_raw_run2.txt"
+  }
+}

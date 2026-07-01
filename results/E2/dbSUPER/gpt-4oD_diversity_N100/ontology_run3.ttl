@@ -1,0 +1,81 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology/CellLine> a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell line in which the super-enhancer is active." .
+
+<http://example.org/ontology/Gene> a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A gene that is a target of the super-enhancer." .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" ;
+    skos:definition "A transcription factor that interacts with the super-enhancer." .
+
+<http://example.org/ontology/Disease> a owl:Class ;
+    skos:prefLabel "Disease" ;
+    skos:definition "A disease associated with the super-enhancer." .
+
+### Object Properties ###
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Gene> ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and its target gene." .
+
+<http://example.org/ontology/activeInCellLine> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/CellLine> ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "The cell line in which the super-enhancer is active." .
+
+<http://example.org/ontology/interactsWithTF> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor." .
+
+<http://example.org/ontology/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/Disease> ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease." .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasGenomicCoordinates> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "Genomic coordinates of the super-enhancer." .
+
+<http://example.org/ontology/hasScore> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has score" ;
+    skos:definition "Score of the super-enhancer." .
+
+<http://example.org/ontology/hasPMID> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has PMID" ;
+    skos:definition "PubMed ID associated with the super-enhancer." .
+
+<http://example.org/ontology/hasSource> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has source" ;
+    skos:definition "Source of the super-enhancer data." .

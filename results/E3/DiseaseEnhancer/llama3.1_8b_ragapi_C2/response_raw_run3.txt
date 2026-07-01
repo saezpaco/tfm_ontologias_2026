@@ -1,0 +1,96 @@
+Here is the formal OWL ontology schema in Turtle format based on the provided database sample and cisreg reference ontology fragments:
+
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://infohub.siemens-energy.com/supplier/CRM> .
+@prefix crm2pgene: <http://infohub.siemens-energy.com/supplier/CRM2PGENE> .
+@prefix hgene:   <http://infohub.siemens-energy.com/supplier/HGENE> .
+@prefix assembly: <http://purl.uniprot.org/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix dbsuper: <http://purl.uniprot.org/databases/supersite/> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+  rdfs:label "Cis-Regulatory Module" .
+
+hgene:Gene a owl:Class ;
+  rdfs:label "Gene" .
+
+assembly:Assembly a owl:Class ;
+  rdfs:label "Genomic Assembly" .
+
+nuccore:NucleotideSequence a owl:Class ;
+  rdfs:label "Nucleotide Sequence" .
+
+pubmed:Publication a owl:Class ;
+  rdfs:label "Scientific Publication" .
+
+id_pubmed:PubMedIdentifier a owl:Class ;
+  rdfs:label "PubMed Identifier" .
+
+id_ncbigene:NCGeneIdentifier a owl:Class ;
+  rdfs:label "NCBI Gene Identifier" .
+
+dbsuper:DiseaseSuperSite a owl:Class ;
+  rdfs:label "Disease Super Site" .
+
+# Properties
+hcrm:CisRegulatoryModule_has_gene a rdf:type owl:ObjectProperty ;
+  rdfs:domain hcrm:CisRegulatoryModule ;
+  rdfs:range hgene:Gene ;
+  rdfs:label "has gene" .
+
+assembly:Assembly_has_sequence a rdf:type owl:ObjectProperty ;
+  rdfs:domain assembly:Assembly ;
+  rdfs:range nuccore:NucleotideSequence ;
+  rdfs:label "has sequence" .
+
+pubmed:Publication_has_identifier a rdf:type owl:ObjectProperty ;
+  rdfs:domain pubmed:Publication ;
+  rdfs:range id_pubmed:PubMedIdentifier ;
+  rdfs:label "has identifier" .
+
+id_ncbigene:NCGeneIdentifier_has_gene a rdf:type owl:ObjectProperty ;
+  rdfs:domain id_ncbigene:NCGeneIdentifier ;
+  rdfs:range hgene:Gene ;
+  rdfs:label "has gene" .
+
+dbsuper:DiseaseSuperSite_has_associated_genes a rdf:type owl:ObjectProperty ;
+  rdfs:domain dbsuper:DiseaseSuperSite ;
+  rdfs:range biolink:Association ;
+  rdfs:label "has associated genes" .
+
+# Alignments
+hcrm:CisRegulatoryModule skos:exactMatch <http://infohub.siemens-energy.com/supplier/CRM> .
+hgene:Gene skos:closeMatch <http://purl.obolibrary.org/obo/GENE_000001> .
+assembly:Assembly skos:closeMatch <http://purl.uniprot.org/assembly/> .
+nuccore:NucleotideSequence skos:closeMatch <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+pubmed:Publication skos:closeMatch <http://www.ncbi.nlm.nih.gov/pubmed/> .
+id_pubmed:PubMedIdentifier skos:exactMatch <http://identifiers.org/pubmed/> .
+id_ncbigene:NCGeneIdentifier skos:exactMatch <http://identifiers.org/ncbigene/> .
+dbsuper:DiseaseSuperSite skos:closeMatch <http://purl.uniprot.org/databases/supersite/> .
+
+# New classes and properties
+hcrm:CisRegulatoryModule_has_associated_diseases a rdf:type owl:ObjectProperty ;
+  rdfs:domain hcrm:CisRegulatoryModule ;
+  rdfs:range dbsuper:DiseaseSuperSite ;
+  rdfs:label "has associated diseases" .
+```
+
+Note that I have only included the classes and properties that are relevant to the provided database sample. The output must start with the required prefix declarations, which are included above.
+
+Also note that I have used the `skos:exactMatch` and `skos:closeMatch` predicates to align the new classes and properties with existing ontologies where possible. This is in accordance with the requirements specified in the problem statement.
+
+Please verify that every "prefix:localname" written has a matching "@prefix prefix:" declaration at the top, as required by the problem statement.

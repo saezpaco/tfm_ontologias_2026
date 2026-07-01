@@ -1,0 +1,54 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://purl.obolibrary.org/obo/hcrm#> .
+@prefix crm2pgene: <http://purl.obolibrary.org/obo/crm2pgene#> .
+@prefix hgene:   <http://purl.obolibrary.org/obo/hgene#> .
+@prefix assembly: <http://purl.obolibrary.org/obo/assembly#> .
+@prefix nuccore: <http://purl.obolibrary.org/obo/nuccore#> .
+@prefix pubmed:  <http://purl.obolibrary.org/obo/pubmed#> .
+@prefix id_pubmed: <http://purl.obolibrary.org/obo/id_pubmed#> .
+@prefix id_ncbigene: <http://purl.obolibrary.org/obo/id_ncbigene#> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/dbsuper#> .
+
+# Classes
+hcrm:CisRegulatoryModule a owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CisRegulatoryModule .
+
+hcrm:EnhancerSequence a owl:Class ;
+    rdfs:label "Enhancer sequence" ;
+    skos:closeMatch nuccore:sequence .
+
+hgene:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch hgene:Gene .
+
+assembly:Assembly a owl:Class ;
+    rdfs:label "Genomic assembly" ;
+    skos:exactMatch assembly:Assembly .
+
+# Properties
+crm2pgene:hasTargetGene a rdf:Property ;
+    rdfs:label "Has target gene" ;
+    skos:closeMatch crm2pgene:hasTargetGene .
+
+hgene:hasTranscript a rdf:Property ;
+    rdfs:label "Has transcript" ;
+    skos:exactMatch hgene:hasTranscript .
+
+# Individuals
+CRMHS00000005752 a hcrm:CisRegulatoryModule ;
+    rdfs:comment "Example CRM ID" ;
+    crm2pgene:hasTargetGene CRMHS00000005752_target_gene .
+
+CRMHS00000074849 a hcrm:CisRegulatoryModule ;
+    rdfs:comment "Example CRM ID" ;
+    crm2pgene:hasTargetGene CRMHS00000074849_target_gene .

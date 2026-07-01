@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-26T20:39:44.941258",
+  "success": true,
+  "elapsed_seconds": 106.43,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1770,
+    "completion_tokens": 1459,
+    "total_tokens": 3229
+  },
+  "prompt_tokens_estimate": 1119,
+  "response_chars": 4826,
+  "turtle_chars": 4826,
+  "validation": {
+    "valid": false,
+    "error": "at line 19 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'es gene expression\" .\\n  obo:SO_0000163 <owl:equivalentClass>'^b' .\\n\\n<owl:Class rdf:about=\"http://example.org/GenomicCoordina'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bB_random_N25/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/llama3.1_8bB_random_N25/response_raw_run2.txt"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "db": "FANTOM5",
+  "api_model": "gpt-4o-2024-05-13",
+  "runs": 3,
+  "ok": 3,
+  "errors": 0,
+  "avg_total_s": 15.12,
+  "runs_meta": [
+    {
+      "run": 1,
+      "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/A_head/N=50/FANTOM5.csv",
+      "api_model": "gpt-4o-2024-05-13",
+      "seed": 42,
+      "mapping_extension": "ttl",
+      "started_at": "2026-06-26T18:19:13.117828+00:00",
+      "steps": {
+        "csv_preprocessing_s": 0.013,
+        "plan_s": 2.776,
+        "plan_chars": 2086,
+        "plan_prompt_chars": 5384,
+        "onto_s": 7.911,
+        "onto_chars": 5512,
+        "onto_prompt_chars": 6850,
+        "map_s": 5.787,
+        "map_chars": 5502,
+        "map_prompt_chars": 10267
+      },
+      "errors": [],
+      "status": "ok",
+      "finished_at": "2026-06-26T18:19:29.605152+00:00",
+      "total_s": 16.487
+    },
+    {
+      "run": 2,
+      "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/A_head/N=50/FANTOM5.csv",
+      "api_model": "gpt-4o-2024-05-13",
+      "seed": 43,
+      "mapping_extension": "ttl",
+      "started_at": "2026-06-26T18:19:29.605853+00:00",
+      "steps": {
+        "csv_preprocessing_s": 0.023,
+        "plan_s": 3.154,
+        "plan_chars": 2129,
+        "plan_prompt_chars": 5384,
+        "onto_s": 5.397,
+        "onto_chars": 5001,
+        "onto_prompt_chars": 6893,
+        "map_s": 6.264,
+        "map_chars": 7632,
+        "map_prompt_chars": 9799
+      },
+      "errors": [],
+      "status": "ok",
+      "finished_at": "2026-06-26T18:19:44.444981+00:00",
+      "total_s": 14.838
+    },
+    {
+      "run": 3,
+      "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/grid/A_head/N=50/FANTOM5.csv",
+      "api_model": "gpt-4o-2024-05-13",
+      "seed": 44,
+      "mapping_extension": "ttl",
+      "started_at": "2026-06-26T18:19:44.445629+00:00",
+      "steps": {
+        "csv_preprocessing_s": 0.023,
+        "plan_s": 2.912,
+        "plan_chars": 2228,
+        "plan_prompt_chars": 5384,
+        "onto_s": 5.216,
+        "onto_chars": 5780,
+        "onto_prompt_chars": 6992,
+        "map_s": 5.884,
+        "map_chars": 6967,
+        "map_prompt_chars": 10677
+      },
+      "errors": [],
+      "status": "ok",
+      "finished_at": "2026-06-26T18:19:58.482037+00:00",
+      "total_s": 14.035
+    }
+  ]
+}

@@ -324,21 +324,45 @@ def test_calibration_llama(df: pd.DataFrame) -> dict:
 
 
 def gpt_gap_close_llama(df: pd.DataFrame) -> dict:
-    """Cierre del gap respecto a gpt-4o (4.20). Ejecución informativa, sin test."""
+    """Cierre del gap respecto a gpt-4o (4.20). Ejecución informativa, sin test.
+
+    Si existe la variante ``llama3.1_8b_legacy`` en los datos, se usa como baseline
+    para calcular qué porcentaje del gap cierra cada otra variante. Si no existe
+    (caso del re-banco determinista en el que sólo se ejecutó annotationRAG), se
+    cae al baseline ``llama3.1_8b_ragapi`` o, si tampoco está, se omite el
+    cálculo del porcentaje.
+    """
     df = df[df["load_ok"] == 1].copy()
     df["oquare_global"] = pd.to_numeric(df["oquare_global"])
     GPT_BASELINE = 4.20  # citado en el TFM
     means = (df.groupby("model")["oquare_global"]
                .agg(["mean", "std", "count"]).round(3))
     means["gap_to_gpt"] = (GPT_BASELINE - means["mean"]).round(3)
-    means["pct_closed_vs_legacy"] = ""
-    base_legacy_gap = GPT_BASELINE - means.loc["llama3.1_8b_legacy", "mean"]
-    for m in means.index:
-        gap = means.loc[m, "gap_to_gpt"]
-        if base_legacy_gap > 0:
-            pct = 100 * (1 - gap / base_legacy_gap)
-            means.loc[m, "pct_closed_vs_legacy"] = f"{pct:.1f}%"
-    return {"summary_vs_gpt_4_20": means.reset_index().to_dict("records")}
+
+    # Detectar baseline disponible
+    baseline_key = None
+    pct_col = ""
+    for candidate in ("llama3.1_8b_legacy",
+                      "llama3.1_8b_ragapi",
+                      "llama3.1_8b"):
+        if candidate in means.index:
+            baseline_key = candidate
+            pct_col = f"pct_closed_vs_{candidate.replace('llama3.1_8b_', '')}"
+            break
+
+    means[pct_col or "pct_closed"] = ""
+    if baseline_key is not None and pct_col:
+        base_gap = GPT_BASELINE - means.loc[baseline_key, "mean"]
+        if base_gap > 0:
+            for m in means.index:
+                gap = means.loc[m, "gap_to_gpt"]
+                pct = 100 * (1 - gap / base_gap)
+                means.loc[m, pct_col] = f"{pct:.1f}%"
+
+    return {
+        "summary_vs_gpt_4_20": means.reset_index().to_dict("records"),
+        "baseline_used": baseline_key,
+    }
 
 
 # ---------- power analysis ----------

@@ -1,0 +1,85 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://example.org/ontology/crm#> .
+@prefix crm2pgene: <http://example.org/ontology/crm2pgene#> .
+@prefix hgene:   <http://example.org/ontology/gene#> .
+@prefix assembly: <http://example.org/ontology/assembly#> .
+@prefix nuccore: <http://example.org/ontology/nuccore#> .
+@prefix pubmed:  <http://example.org/ontology/pubmed#> .
+@prefix id_pubmed: <http://example.org/ontology/id_pubmed#> .
+@prefix id_ncbigene: <http://example.org/ontology/id_ncbigene#> .
+@prefix dbsuper: <http://example.org/ontology/dbsuper#> .
+
+# Ontology definition
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> rdf:type owl:Ontology ;
+    dc:title "Disease Enhancer Ontology" ;
+    dc:description "Ontology for enhancers associated with diseases" ;
+    dc:source <http://biocc.hrbmu.edu.cn/DiseaseEnhancer/> .
+
+# Classes
+hcrm:CisRegulatoryModule rdf:type owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch <http://infohub.siemens-energy.com/supplier/CRM> .
+
+hcrm:Enhancer rdf:type owl:Class ;
+    rdfs:subClassOf hcrm:CisRegulatoryModule ;
+    rdfs:label "Enhancer" .
+
+hgene:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+obo:DOID_4 rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+# Properties
+hcrm:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range assembly:GenomicLocation ;
+    rdfs:label "has genomic location" .
+
+hcrm:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hgene:Gene ;
+    rdfs:label "targets gene" ;
+    skos:exactMatch biolink:gene .
+
+hcrm:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range obo:DOID_4 ;
+    rdfs:label "associated with disease" ;
+    skos:exactMatch biolink:has_disease .
+
+hcrm:hasEvidence rdf:type owl:ObjectProperty ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range pubmed:Publication ;
+    rdfs:label "has evidence" .
+
+# Individuals
+<http://biocc.hrbmu.edu.cn/DiseaseEnhancer/CRMHS00000001594> rdf:type hcrm:Enhancer ;
+    hcrm:hasGenomicLocation [ 
+        rdf:type assembly:GenomicLocation ;
+        assembly:chromosome "chr5" ;
+        assembly:start 125315470 ;
+        assembly:end 125318494 ;
+        assembly:assemblyVersion "hg38" 
+    ] ;
+    hcrm:targetsGene <http://example.org/ontology/gene/LMNB1> ;
+    hcrm:associatedWithDisease obo:OMIM_169500 ;
+    hcrm:hasEvidence id_pubmed:25701871 .
+
+<http://example.org/ontology/gene/LMNB1> rdf:type hgene:Gene ;
+    rdfs:label "LMNB1" .
+
+obo:OMIM_169500 rdf:type obo:DOID_4 ;
+    rdfs:label "Disease associated with OMIM:169500" .
+
+id_pubmed:25701871 rdf:type pubmed:Publication ;
+    rdfs:label "Publication with PMID 25701871" .

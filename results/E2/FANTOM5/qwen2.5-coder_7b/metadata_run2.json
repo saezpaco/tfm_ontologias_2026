@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "FANTOM5",
+  "model": "qwen2.5-coder:7b",
+  "run": 2,
+  "timestamp": "2026-06-05T15:18:22.886737",
+  "success": true,
+  "elapsed_seconds": 621.02,
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 4096,
+    "completion_tokens": 8192,
+    "total_tokens": 12288
+  },
+  "prompt_tokens_estimate": 1992,
+  "response_chars": 36122,
+  "turtle_chars": 36112,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b'chema#> .\\n@prefix obo: <http://purl.obolibrary.org/obo/> .\\n\\n'^b'crm:Transcription_Factor a owl:Class ;\\n    rdfs:label \"Trans'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7b/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/qwen2.5-coder_7b/response_raw_run2.txt"
+  }
+}

@@ -1,0 +1,85 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix : <http://example.org/ontology/> .
+
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "HACER Ontology" ;
+    skos:prefLabel "HACER" .
+
+### Classes ###
+:CRM rdf:type owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+:Gene rdf:type owl:Class ;
+    skos:prefLabel "Gene" .
+
+:TranscriptionFactor rdf:type owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+:Disease rdf:type owl:Class ;
+    skos:prefLabel "Disease" .
+
+:CellLine rdf:type owl:Class ;
+    skos:prefLabel "Cell Line" .
+
+### Object Properties ###
+:hasTargetGene rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Gene ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Association between cis-regulatory module and target gene" .
+
+:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :Disease ;
+    skos:prefLabel "associated with disease" ;
+    skos:definition "Association between cis-regulatory module and disease" .
+
+:interactsWithTF rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :TranscriptionFactor ;
+    skos:prefLabel "interacts with transcription factor" ;
+    skos:definition "Association between cis-regulatory module and transcription factor" .
+
+:activeInCellLine rdf:type owl:ObjectProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range :CellLine ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Cis-regulatory module activity in specific cell line" .
+
+### Datatype Properties ###
+:hasGenomicCoordinates rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has genomic coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module" .
+
+:hasExperimentalEvidence rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has experimental evidence" ;
+    skos:definition "Experimental evidence supporting the cis-regulatory module" .
+
+:hasScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has score" ;
+    skos:definition "Score indicating the confidence of the cis-regulatory module" .
+
+:hasMinimumRatio rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CRM ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "has minimum ratio" ;
+    skos:definition "Minimum ratio of activity for the cis-regulatory module" .
+
+### Individuals ###
+:GRCh38 rdf:type :GenomeAssembly ;
+    skos:prefLabel "GRCh38" .
+
+:HACER rdf:type :Database ;
+    skos:prefLabel "HACER" .

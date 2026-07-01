@@ -1,0 +1,118 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ge: <https://genetic_regulatory_elements.com#> .
+
+ge:GeneticElement a owl:Class ;
+    rdfs:label "Genetic Element" ;
+    rdfs:comment "A general class representing genetic elements." ;
+    skos:definition "A general class representing genetic elements." ;
+
+ge:Enhancer a owl:Class, owl:SubClassOf ge:GeneticElement ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A subclass of GeneticElement representing enhancers." ;
+    skos:definition "A subclass of GeneticElement representing enhancers." ;
+
+ge:SuperEnhancer a owl:Class, owl:SubClassOf ge:Enhancer ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A subclass of Enhancer representing super-enhancers." ;
+    skos:definition "A subclass of Enhancer representing super-enhancers." ;
+
+ge:CellLine a owl:Class, owl:SubClassOf ge:GeneticElement ;
+    rdfs:label "Cell Line" ;
+    rdfs:comment "A subclass of GeneticElement representing cell lines or biosamples." ;
+    skos:definition "A subclass of GeneticElement representing cell lines or biosamples." ;
+
+ge:TargetGene a owl:Class, owl:SubClassOf ge:GeneticElement ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A subclass of GeneticElement representing target genes." ;
+    skos:definition "A subclass of GeneticElement representing target genes." ;
+
+ge:TranscriptionFactor a owl:Class, owl:SubClassOf ge:GeneticElement ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A subclass of GeneticElement representing transcription factors." ;
+    skos:definition "A subclass of GeneticElement representing transcription factors." ;
+
+ge:DiseaseAssociation a owl:Class, owl:SubClassOf ge:GeneticElement ;
+    rdfs:label "Disease Association" ;
+    rdfs:comment "A subclass of GeneticElement representing disease associations." ;
+    skos:definition "A subclass of GeneticElement representing disease associations." ;
+
+ge:hasCellLine a owl:ObjectProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:CellLine ;
+    rdfs:label "Has Cell Line" ;
+    rdfs:comment "An object property indicating the cell line associated with a genetic element." ;
+    skos:definition "An object property indicating the cell line associated with a genetic element." ;
+
+ge:targetsGene a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer, ge:SuperEnhancer ;
+    rdfs:range ge:TargetGene ;
+    rdfs:label "Targets Gene" ;
+    rdfs:comment "An object property indicating the target gene associated with an enhancer or super-enhancer." ;
+    skos:definition "An object property indicating the target gene associated with an enhancer or super-enhancer." ;
+
+ge:regulatedByTranscriptionFactor a owl:ObjectProperty ;
+    rdfs:domain ge:Enhancer, ge:SuperEnhancer ;
+    rdfs:range ge:TranscriptionFactor ;
+    rdfs:label "Regulated By Transcription Factor" ;
+    rdfs:comment "An object property indicating the transcription factor regulating an enhancer or super-enhancer." ;
+    skos:definition "An object property indicating the transcription factor regulating an enhancer or super-enhancer." ;
+
+ge:associatedWithDisease a owl:ObjectProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range ge:DiseaseAssociation ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "An object property indicating the disease associated with a genetic element." ;
+    skos:definition "An object property indicating the disease associated with a genetic element." ;
+
+ge:cellName a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Cell Name" ;
+    rdfs:comment "A data property representing the name of a cell line or biosample." ;
+    skos:definition "A data property representing the name of a cell line or biosample." ;
+
+ge:chromosome a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Chromosome" ;
+    rdfs:comment "A data property representing the chromosome number." ;
+    skos:definition "A data property representing the chromosome number." ;
+
+ge:geneSymbol a owl:DatatypeProperty ;
+    rdfs:domain ge:TargetGene ;
+    rdfs:range xsd:string ;
+    rdfs:label "Gene Symbol" ;
+    rdfs:comment "A data property representing the gene symbol of a target gene." ;
+    skos:definition "A data property representing the gene symbol of a target gene." ;
+
+ge:superEnhancerID a owl:DatatypeProperty ;
+    rdfs:domain ge:SuperEnhancer ;
+    rdfs:range xsd:string ;
+    rdfs:label "Super Enhancer ID" ;
+    rdfs:comment "A data property representing the unique identifier of a super-enhancer." ;
+    skos:definition "A data property representing the unique identifier of a super-enhancer." ;
+
+ge:rankValue a owl:DatatypeProperty ;
+    rdfs:domain ge:Enhancer, ge:SuperEnhancer ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Rank Value" ;
+    rdfs:comment "A data property representing the rank value of an enhancer or super-enhancer." ;
+    skos:definition "A data property representing the rank value of an enhancer or super-enhancer." ;
+
+ge:startPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Start Position" ;
+    rdfs:comment "A data property representing the genomic start position of a genetic element." ;
+    skos:definition "A data property representing the genomic start position of a genetic element." ;
+
+ge:stopPosition a owl:DatatypeProperty ;
+    rdfs:domain ge:GeneticElement ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Stop Position" ;
+    rdfs:comment "A data property representing the genomic stop position of a genetic element." ;
+    skos:definition "A data property representing the genomic stop position of a genetic element." ;

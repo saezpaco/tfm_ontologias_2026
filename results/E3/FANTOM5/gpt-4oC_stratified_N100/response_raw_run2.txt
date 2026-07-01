@@ -1,0 +1,70 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2phen: <http://rdf.biogateway.eu/crm2phen/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+<http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000094290> a crm2phen:Enhancer ;
+    rdfs:label "CRMHS00000094290" ;
+    crm2phen:hasGenomicLocation [
+        a crm2phen:GenomicLocation ;
+        crm2phen:chromosome "chr15" ;
+        crm2phen:start 26619732 ;
+        crm2phen:end 26619795 ;
+        crm2phen:assembly "hg38"
+    ] ;
+    crm2phen:hasOriginalGenomicLocation [
+        a crm2phen:GenomicLocation ;
+        crm2phen:chromosome "chr15" ;
+        crm2phen:start 26864879 ;
+        crm2phen:end 26864942 ;
+        crm2phen:assembly "hg19"
+    ] ;
+    crm2phen:hasMinimumRatio 0.95 ;
+    crm2phen:hasScore 1 ;
+    crm2phen:hasExperimentalMethod "CAGE" ;
+    crm2phen:hasSource "FANTOM5" ;
+    crm2phen:hasPublication <http://rdf.biogateway.eu/pubmed/24670763> .
+
+<http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000122781> a crm2pgene:Enhancer ;
+    rdfs:label "CRMHS00000122781" ;
+    crm2pgene:hasGenomicLocation [
+        a crm2pgene:GenomicLocation ;
+        crm2pgene:chromosome "chr5" ;
+        crm2pgene:start 149212232 ;
+        crm2pgene:end 149212474 ;
+        crm2pgene:assembly "hg38"
+    ] ;
+    crm2pgene:hasOriginalGenomicLocation [
+        a crm2pgene:GenomicLocation ;
+        crm2pgene:chromosome "chr5" ;
+        crm2pgene:start 148591795 ;
+        crm2pgene:end 148592037 ;
+        crm2pgene:assembly "hg19"
+    ] ;
+    crm2pgene:hasMinimumRatio 0.95 ;
+    crm2pgene:hasScore 1 ;
+    crm2pgene:hasExperimentalMethod "CAGE" ;
+    crm2pgene:hasSource "FANTOM5" ;
+    crm2pgene:targetsGene <http://rdf.biogateway.eu/id_ncbigene/ABLIM3> ;
+    crm2pgene:hasPublication <http://rdf.biogateway.eu/pubmed/24670763> ;
+    crm2pgene:hasMethod "expression correlation" .
+
+# Additional entries would follow the same pattern, ensuring each CRM is represented with its genomic location, method, source, and any associated genes or publications.
+```

@@ -1,0 +1,99 @@
+{
+  "experiment": "E1",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 3,
+  "avg_elapsed": 9.166666666666666,
+  "total_tokens": 22472,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-28T21:30:31.286512",
+      "success": true,
+      "elapsed_seconds": 9.48,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6679,
+        "completion_tokens": 814,
+        "total_tokens": 7493
+      },
+      "prompt_tokens_estimate": 3546,
+      "response_chars": 2942,
+      "turtle_chars": 2942,
+      "validation": {
+        "valid": true,
+        "n_triples": 50,
+        "n_classes": 5,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-28T21:30:41.658907",
+      "success": true,
+      "elapsed_seconds": 9.32,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6679,
+        "completion_tokens": 806,
+        "total_tokens": 7485
+      },
+      "prompt_tokens_estimate": 3546,
+      "response_chars": 2846,
+      "turtle_chars": 2846,
+      "validation": {
+        "valid": true,
+        "n_triples": 50,
+        "n_classes": 5,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "DiseaseEnhancer",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-28T21:30:51.401989",
+      "success": true,
+      "elapsed_seconds": 8.7,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6679,
+        "completion_tokens": 815,
+        "total_tokens": 7494
+      },
+      "prompt_tokens_estimate": 3546,
+      "response_chars": 2894,
+      "turtle_chars": 2894,
+      "validation": {
+        "valid": true,
+        "n_triples": 50,
+        "n_classes": 5,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/DiseaseEnhancer/gpt-4oC_stratified_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

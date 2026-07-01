@@ -1,0 +1,122 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix greg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty hasPubMedID rdf:type owl:DatatypeProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "The PubMed ID associated with a genetic element." .
+
+owl:DatatypeProperty hasMethod rdf:type owl:DatatypeProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range xsd:string ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study of a genetic element." .
+
+owl:DatatypeProperty hasChromosomeNumber rdf:type owl:DatatypeProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range xsd:int ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The chromosome number associated with a genetic element." .
+
+owl:DatatypeProperty hasGenomicRegionStart rdf:type owl:DatatypeProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range xsd:int ;
+    rdfs:label "Genomic Region Start" ;
+    rdfs:comment "The start position of the genomic region associated with a genetic element." .
+
+owl:DatatypeProperty hasGenomicRegionEnd rdf:type owl:DatatypeProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range xsd:int ;
+    rdfs:label "Genomic Region End" ;
+    rdfs:comment "The end position of the genomic region associated with a genetic element." .
+
+owl:DatatypeProperty hasScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range xsd:float ;
+    rdfs:label "Score" ;
+    rdfs:comment "The score value associated with a genetic element." .
+
+owl:ObjectProperty hasTranscriptionFactor rdf:type owl:ObjectProperty ;
+    rdfs:domain greg:TranscriptionFactorToEnhancerRelationship ;
+    rdfs:range greg:TranscriptionFactor ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "The transcription factor involved in a transcription factor to enhancer relationship." .
+
+owl:ObjectProperty hasEnhancer rdf:type owl:ObjectProperty ;
+    rdfs:domain greg:TranscriptionFactorToEnhancerRelationship ;
+    rdfs:range greg:Enhancer ;
+    rdfs:label "Has Enhancer" ;
+    rdfs:comment "The enhancer involved in a transcription factor to enhancer relationship." .
+
+owl:ObjectProperty hasTargetGene rdf:type owl:ObjectProperty ;
+    rdfs:domain greg:EnhancerToGeneRelationship ;
+    rdfs:range greg:TargetGene ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "The target gene involved in an enhancer to gene relationship." .
+
+owl:ObjectProperty associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range greg:Disease ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "The disease associated with a genetic element." .
+
+owl:ObjectProperty occursInCellLineOrBiosample rdf:type owl:ObjectProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range greg:CellLineOrBiosample ;
+    rdfs:label "Occurs In Cell Line Or Biosample" ;
+    rdfs:comment "The cell line or biosample in which a genetic element occurs." .
+
+owl:ObjectProperty involvesMutation rdf:type owl:ObjectProperty ;
+    rdfs:domain greg:GeneticElement ;
+    rdfs:range greg:Mutation ;
+    rdfs:label "Involves Mutation" ;
+    rdfs:comment "The mutation involved in a genetic element." .
+
+greg:TranscriptionFactorToEnhancerRelationship rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Transcription Factor To Enhancer Relationship" ;
+    rdfs:comment "A relationship between a transcription factor and an enhancer." .
+
+greg:EnhancerToGeneRelationship rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Enhancer To Gene Relationship" ;
+    rdfs:comment "A relationship between an enhancer and a target gene." .
+
+greg:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A protein that binds to DNA and regulates the transcription of genes." .
+
+greg:Enhancer rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A region of DNA that increases the transcription of a nearby gene." .
+
+greg:SuperEnhancer rdf:type owl:Class ;
+    rdfs:subClassOf greg:Enhancer ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A highly active enhancer that can drive the expression of multiple genes." .
+
+greg:TargetGene rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A gene whose transcription is regulated by a transcription factor or enhancer." .
+
+greg:Disease rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A condition that affects the normal functioning of an organism." .
+
+greg:CellLineOrBiosample rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Cell Line Or Biosample" ;
+    rdfs:comment "A collection of cells or a single cell that can be cultured in vitro." .
+
+greg:Mutation rdf:type owl:Class ;
+    rdfs:subClassOf greg:GeneticElement ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A change in the DNA sequence of an organism." .

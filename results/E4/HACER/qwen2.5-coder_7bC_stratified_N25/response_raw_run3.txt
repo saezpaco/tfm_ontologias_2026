@@ -1,0 +1,4985 @@
+################ DATA DESCRIPTION (PlanSage) ################
+**Foundational Prefix:**
+https://genetic_regulatory_elements.com#
+
+**Data Description:**
+1. TFs2enh_PMID: type - PubMed ID for transcription factor to enhancer interaction - string
+2. TFs2enh_method: type - method used in transcription factor to enhancer interaction study - string
+3. biosample_name: type - name of the cell line or biosample - string
+4. crm_ID: type - ID of the chromatin regulatory module - string
+5. crossref: type - reference for the data - string
+6. current_assembly: type - current genome assembly version - string
+7. current_chr: type - chromosome number in the current assembly - string
+8. disease: type - name of the disease associated with the enhancer - string
+9. disease_PMID: type - PubMed ID for disease study - string
+10. disease_method: type - method used in disease study - string
+11. enh2gene_PMID: type - PubMed ID for enhancer to gene interaction - string
+12. enh2gene_method: type - method used in enhancer to gene interaction study - string
+13. enh_PMID: type - PubMed ID for enhancer study - integer
+14. enh_method: type - method used in enhancer study - string
+15. hgnc_symbol_TFs: type - HGNC symbol of the transcription factors - string
+16. hgnc_symbol_target_genes: type - HGNC symbols of the target genes - string
+17. minimum_ratio: type - minimum ratio value - float
+18. mutation_PMID: type - PubMed ID for mutation study - string
+19. mutation_method: type - method used in mutation study - string
+20. orig_assembly: type - original genome assembly version - string
+21. orig_chr: type - chromosome number in the original assembly - string
+22. original_ID: type - original ID of the enhancer - string
+23. refsnp_ID: type - RSID for the reference SNP - string
+24. score: type - score value - float
+25. source: type - source of the data - string
+26. type: type - type of genetic regulatory element - string
+27. current_end: type - end position in the current assembly - integer
+28. current_start: type - start position in the current assembly - integer
+29. orig_end: type - end position in the original assembly - integer
+30. orig_start: type - start position in the original assembly - integer
+
+**Classes:**
+1. GeneticRegulatoryElement
+2. Enhancer
+3. SuperEnhancer
+4. TranscriptionFactor
+5. TargetGene
+6. Disease
+7. CellLineOrBiosample
+8. Mutation
+9. ChromatinRegulatoryModule
+
+**Subclasses:**
+1. Enhancer subclass of -> GeneticRegulatoryElement
+2. SuperEnhancer subclass of -> Enhancer
+3. TranscriptionFactor subclass of -> GeneticRegulatoryElement
+4. TargetGene subclass of -> GeneticRegulatoryElement
+5. Disease subclass of -> GeneticRegulatoryElement
+6. CellLineOrBiosample subclass of -> GeneticRegulatoryElement
+7. Mutation subclass of -> GeneticRegulatoryElement
+8. ChromatinRegulatoryModule subclass of -> GeneticRegulatoryElement
+
+**Object Properties:**
+1. hasTranscriptionFactor: domain - Enhancer or SuperEnhancer, range - TranscriptionFactor
+2. hasTargetGene: domain - Enhancer or SuperEnhancer, range - TargetGene
+3. associatedWithDisease: domain - Enhancer or SuperEnhancer, range - Disease
+4. occursInCellLineOrBiosample: domain - Enhancer or SuperEnhancer, range - CellLineOrBiosample
+5. hasMutation: domain - Enhancer or SuperEnhancer, range - Mutation
+6. partOfChromatinRegulatoryModule: domain - Enhancer or SuperEnhancer, range - ChromatinRegulatoryModule
+
+**Data Type Properties:**
+1. pmid: domain - PubMed ID (TFs2enh_PMID, disease_PMID, enh2gene_PMID, mutation_PMID), range - xsd:string
+2. method: domain - Method (TFs2enh_method, disease_method, enh2gene_method, mutation_method), range - xsd:string
+3. hgncSymbol: domain - HGNC Symbol (hgnc_symbol_TFs, hgnc_symbol_target_genes), range - xsd:string
+4. assemblyVersion: domain - Assembly Version (current_assembly, orig_assembly), range - xsd:string
+5. chromosomeNumber: domain - Chromosome Number (current_chr, orig_chr), range - xsd:string
+6. scoreValue: domain - Score Value (score), range - xsd:float
+7. ratioValue: domain - Ratio Value (minimum_ratio), range - xsd:float
+8. position: domain - Position (current_start, current_end, orig_start, orig_end), range - xsd:int
+
+################ ONTOLOGY (OntoBuilder) #####################
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+owl:DatatypeProperty pmid
+    a owl:DatatypeProperty ;
+    rdfs:label "PubMed ID" ;
+    rdfs:comment "A PubMed ID associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty method
+    a owl:DatatypeProperty ;
+    rdfs:label "Method" ;
+    rdfs:comment "The method used in the study of the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty hgncSymbol
+    a owl:DatatypeProperty ;
+    rdfs:label "HGNC Symbol" ;
+    rdfs:comment "The HGNC symbol of the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty assemblyVersion
+    a owl:DatatypeProperty ;
+    rdfs:label "Assembly Version" ;
+    rdfs:comment "The version of the genome assembly used." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty chromosomeNumber
+    a owl:DatatypeProperty ;
+    rdfs:label "Chromosome Number" ;
+    rdfs:comment "The number of the chromosome in the genome assembly." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:string .
+
+owl:DatatypeProperty scoreValue
+    a owl:DatatypeProperty ;
+    rdfs:label "Score Value" ;
+    rdfs:comment "A numerical score associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty ratioValue
+    a owl:DatatypeProperty ;
+    rdfs:label "Ratio Value" ;
+    rdfs:comment "A numerical ratio associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:float .
+
+owl:DatatypeProperty position
+    a owl:DatatypeProperty ;
+    rdfs:label "Position" ;
+    rdfs:comment "A numerical position associated with the genetic regulatory element." ;
+    rdfs:domain genreg:GeneticRegulatoryElement ;
+    rdfs:range xsd:int .
+
+owl:ObjectProperty hasTranscriptionFactor
+    a owl:ObjectProperty ;
+    rdfs:label "Has Transcription Factor" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and its associated transcription factor." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:TranscriptionFactor .
+
+owl:ObjectProperty hasTargetGene
+    a owl:ObjectProperty ;
+    rdfs:label "Has Target Gene" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and its associated target gene." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:TargetGene .
+
+owl:ObjectProperty associatedWithDisease
+    a owl:ObjectProperty ;
+    rdfs:label "Associated With Disease" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and the disease it is associated with." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:Disease .
+
+owl:ObjectProperty occursInCellLineOrBiosample
+    a owl:ObjectProperty ;
+    rdfs:label "Occurs In Cell Line Or Biosample" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and the cell line or biosample it occurs in." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:CellLineOrBiosample .
+
+owl:ObjectProperty hasMutation
+    a owl:ObjectProperty ;
+    rdfs:label "Has Mutation" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and the mutation it is associated with." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:Mutation .
+
+owl:ObjectProperty partOfChromatinRegulatoryModule
+    a owl:ObjectProperty ;
+    rdfs:label "Part Of Chromatin Regulatory Module" ;
+    rdfs:comment "A relationship between an enhancer or superenhancer and the chromatin regulatory module it is part of." ;
+    rdfs:domain genreg:Enhancer ;
+    rdfs:range genreg:ChromatinRegulatoryModule .
+
+owl:Class GeneticRegulatoryElement
+    a owl:Class ;
+    rdfs:label "Genetic Regulatory Element" ;
+    rdfs:comment "A general class representing genetic regulatory elements." ;
+    rdfs:subClassOf genreg:Enhancer , genreg:SuperEnhancer , genreg:TranscriptionFactor , genreg:TargetGene , genreg:Disease , genreg:CellLineOrBiosample , genreg:Mutation , genreg:ChromatinRegulatoryModule .
+
+owl:Class Enhancer
+    a owl:Class ;
+    rdfs:label "Enhancer" ;
+    rdfs:comment "A class representing enhancers, which are genetic regulatory elements that increase the transcription of target genes." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class SuperEnhancer
+    a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:comment "A class representing superenhancers, which are highly active enhancers that can regulate multiple genes." ;
+    rdfs:subClassOf genreg:Enhancer .
+
+owl:Class TranscriptionFactor
+    a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    rdfs:comment "A class representing transcription factors, which are proteins that bind to DNA and control the transcription of genes." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class TargetGene
+    a owl:Class ;
+    rdfs:label "Target Gene" ;
+    rdfs:comment "A class representing target genes, which are genes that are regulated by enhancers or transcription factors." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class Disease
+    a owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A class representing diseases associated with genetic regulatory elements." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class CellLineOrBiosample
+    a owl:Class ;
+    rdfs:label "Cell Line Or Biosample" ;
+    rdfs:comment "A class representing cell lines or biosamples where genetic regulatory elements occur." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class Mutation
+    a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "A class representing mutations associated with genetic regulatory elements." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+owl:Class ChromatinRegulatoryModule
+    a owl:Class ;
+    rdfs:label "Chromatin Regulatory Module" ;
+    rdfs:comment "A class representing chromatin regulatory modules, which are complexes of DNA and proteins that regulate gene expression." ;
+    rdfs:subClassOf genreg:GeneticRegulatoryElement .
+
+################ MAPPING (OntoMapper) #######################
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix genreg: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticRegulatoryElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapSuperEnhancer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+
+<#TriplesMapTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+
+<#TriplesMapDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+
+<#TriplesMapCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+
+<#TriplesMapMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+
+<#TriplesMapChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_pmid> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_pmid>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_pmid> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_pmid>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_pmid> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:pmid;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_pmid>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_symbol> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:symbol;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_symbol>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_symbol> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:symbol;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_symbol>;
+        ]
+    ].
+
+<#TriplesMapDisease_name> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:name;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_name>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_name> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:name;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_name>;
+        ]
+    ].
+
+<#TriplesMapMutation_id> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:id;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_id>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_id> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:id;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_id>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:GeneticRegulatoryElement;
+        ]
+    ].
+
+<#TriplesMapEnhancer_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:Enhancer;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:SuperEnhancer;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:TranscriptionFactor;
+        ]
+    ].
+
+<#TriplesMapTargetGene_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:TargetGene;
+        ]
+    ].
+
+<#TriplesMapDisease_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:Disease;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:CellLineOrBiosample;
+        ]
+    ].
+
+<#TriplesMapMutation_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:Mutation;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_type> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:type;
+        rr:objectMap [
+            rr:constant genreg:ChromatinRegulatoryModule;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_description>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_description>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_description>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_description>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_description>;
+        ]
+    ].
+
+<#TriplesMapDisease_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_description>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_description>;
+        ]
+    ].
+
+<#TriplesMapMutation_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_description>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_description> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:description;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_description>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_associated_with>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_associated_with>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_associated_with>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_associated_with>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_associated_with>;
+        ]
+    ].
+
+<#TriplesMapDisease_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_associated_with>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_associated_with>;
+        ]
+    ].
+
+<#TriplesMapMutation_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_associated_with>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_associated_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:associated_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_associated_with>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_regulates>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_regulates>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_regulates>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_regulates>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_regulates>;
+        ]
+    ].
+
+<#TriplesMapDisease_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_regulates>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_regulates>;
+        ]
+    ].
+
+<#TriplesMapMutation_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_regulates>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_regulates>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapDisease_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapMutation_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_expressed_in> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expressed_in;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_expressed_in>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_localized_to>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_localized_to>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_localized_to>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_localized_to>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_localized_to>;
+        ]
+    ].
+
+<#TriplesMapDisease_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_localized_to>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_localized_to>;
+        ]
+    ].
+
+<#TriplesMapMutation_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_localized_to>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_localized_to> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:localized_to;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_localized_to>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_has_function>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_has_function>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_has_function>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_has_function>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_has_function>;
+        ]
+    ].
+
+<#TriplesMapDisease_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_has_function>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_has_function>;
+        ]
+    ].
+
+<#TriplesMapMutation_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_has_function>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_has_function> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:has_function;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_has_function>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapDisease_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapMutation_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_interacts_with> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:interacts_with;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_interacts_with>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_regulates>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_regulates>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_regulates>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_regulates>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_regulates>;
+        ]
+    ].
+
+<#TriplesMapDisease_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_regulates>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_regulates>;
+        ]
+    ].
+
+<#TriplesMapMutation_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_regulates>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_regulates> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:regulates;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_regulates>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_expresses>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_expresses>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_expresses>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_expresses>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_expresses>;
+        ]
+    ].
+
+<#TriplesMapDisease_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_expresses>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_expresses>;
+        ]
+    ].
+
+<#TriplesMapMutation_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_expresses>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_expresses> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:expresses;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_expresses>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasRole>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasRole>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasRole>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasRole>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasRole>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasRole>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasRole>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasRole>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasRole> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRole;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasRole>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapDisease_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapMutation_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_isPartOf> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isPartOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_isPartOf>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasProperty> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasProperty;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasProperty>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapDisease_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapMutation_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_isLocatedIn> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:isLocatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_isLocatedIn>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasRelationship> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasRelationship;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasRelationship>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasAttribute> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasAttribute;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasAttribute>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasValue>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasValue>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasValue>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasValue>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasValue>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasValue>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasValue>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasValue>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasValue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasValue;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasValue>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasLabel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasLabel;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasLabel>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDescription;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasDescription>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasSynonym> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasSynonym;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasSynonym>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasXref>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasXref>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasXref>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasXref>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasXref>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasXref>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasXref>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasXref>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasXref> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasXref;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasXref>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasComment>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasComment>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasComment>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasComment>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasComment>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasComment>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasComment>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasComment>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasComment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasComment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasComment>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasPublication> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasPublication;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasPublication>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasExperiment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasExperiment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasExperiment>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasGene>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasGene>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasGene>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasGene>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasGene>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasGene>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasGene>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasGene>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasGene>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasMutation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasMutation;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasMutation>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasChromatinRegulatoryModule> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasChromatinRegulatoryModule;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasChromatinRegulatoryModule>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasTranscriptionFactor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTranscriptionFactor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasTranscriptionFactor>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasTargetGene> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasTargetGene;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasTargetGene>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapDisease_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Disease/{{disease}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDisease_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapCellLineOrBiosample_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:CellLineOrBiosample/{{biosample_name}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCellLineOrBiosample_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapMutation_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Mutation/{{refsnp_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapMutation_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapChromatinRegulatoryModule_hasDisease> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:ChromatinRegulatoryModule/{{crm_id}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasDisease;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromatinRegulatoryModule_hasDisease>;
+        ]
+    ].
+
+<#TriplesMapGeneticRegulatoryElement_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:GeneticRegulatoryElement/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapGeneticRegulatoryElement_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapEnhancer_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:Enhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapEnhancer_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapSuperEnhancer_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:SuperEnhancer/{{TFs2enh_PMID}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSuperEnhancer_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapTranscriptionFactor_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TranscriptionFactor/{{hgnc_symbol_TFs}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTranscriptionFactor_hasCellLineOrBiosample>;
+        ]
+    ].
+
+<#TriplesMapTargetGene_hasCellLineOrBiosample> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "HACER.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "genreg:TargetGene/{{hgnc_symbol_target_genes}}{FAIR_URI}";
+    ].
+    rr:predicateObjectMap [
+        rr:predicate genreg:hasCellLineOrBiosample;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTargetGene_hasCellLineOrBios

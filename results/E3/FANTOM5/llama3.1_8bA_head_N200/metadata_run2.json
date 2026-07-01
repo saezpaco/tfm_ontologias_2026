@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "FANTOM5",
+  "model": "llama3.1:8b",
+  "run": 2,
+  "timestamp": "2026-06-29T17:56:10.057263",
+  "success": true,
+  "elapsed_seconds": 113.38,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 759,
+    "total_tokens": 4854
+  },
+  "prompt_tokens_estimate": 4376,
+  "response_chars": 2622,
+  "turtle_chars": 1898,
+  "validation": {
+    "valid": false,
+    "error": "at line 20 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b'prefix id_ncbigene: <http://identifiers.org/id_ncbigene/> .\\n'^b'@dbsuper: <http://identifiers.org/dbsuper/> .\\n\\n# === RECOMME'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N200/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/FANTOM5/llama3.1_8bA_head_N200/response_raw_run2.txt"
+  }
+}

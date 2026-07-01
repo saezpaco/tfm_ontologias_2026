@@ -1,0 +1,93 @@
+{
+  "experiment": "E3",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 106.08666666666666,
+  "total_tokens": 14360,
+  "runs": [
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-30T09:22:10.665165",
+      "success": true,
+      "elapsed_seconds": 113.77,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 829,
+        "total_tokens": 4924
+      },
+      "prompt_tokens_estimate": 4475,
+      "response_chars": 2042,
+      "turtle_chars": 2028,
+      "validation": {
+        "valid": false,
+        "error": "at line 22 of <>:\nBad syntax (EOF found in middle of path syntax) at ^ in:\n\"b'@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\\n@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .\\n@prefix owl:     <http://www.w3.org/2002/07/owl#> .\\n@prefix xsd:     <http://www.w3.org/2001/XM"
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bD_diversity_N100/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bD_diversity_N100/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-30T09:23:56.288718",
+      "success": true,
+      "elapsed_seconds": 103.02,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 623,
+        "total_tokens": 4718
+      },
+      "prompt_tokens_estimate": 4475,
+      "response_chars": 1686,
+      "turtle_chars": 1672,
+      "validation": {
+        "valid": false,
+        "error": "at line 22 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' dbsuper: <https://dbsuper.com/super/> .\\n\\n# Example mapping\\n'^b'crm_ID skos:exactMatch hcrm:crm_ID--uniprot!uniprot_ID ;\\n   '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bD_diversity_N100/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bD_diversity_N100/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E3",
+      "experiment_name": "Con RAG (ontología cisreg)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-30T09:25:40.349000",
+      "success": true,
+      "elapsed_seconds": 101.47,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4095,
+        "completion_tokens": 623,
+        "total_tokens": 4718
+      },
+      "prompt_tokens_estimate": 4475,
+      "response_chars": 1686,
+      "turtle_chars": 1672,
+      "validation": {
+        "valid": false,
+        "error": "at line 22 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' dbsuper: <https://dbsuper.com/super/> .\\n\\n# Example mapping\\n'^b'crm_ID skos:exactMatch hcrm:crm_ID--uniprot!uniprot_ID ;\\n   '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bD_diversity_N100/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bD_diversity_N100/response_raw_run3.txt"
+      }
+    }
+  ]
+}

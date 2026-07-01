@@ -1,0 +1,94 @@
+```turtle
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2phen/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+biolink:CisRegulatoryModule rdf:type owl:Class ;
+    rdfs:label "Cis-Regulatory Module" ;
+    skos:exactMatch crm2pgene:CRMHS00000003515--hgncsymbol!9606/TBX5 .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+biolink:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch hgene:bgw!CRMHS00000003515--doid!1682 .
+
+# Properties
+biolink:hasGenomicLocation rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range assembly:GenomicLocation .
+
+biolink:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range biolink:Gene ;
+    skos:exactMatch crm2pgene:bgw!crm_ID--hgncsymbol!9606/gene_sybmol .
+
+biolink:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range biolink:Disease ;
+    skos:exactMatch hgene:bgw!CRMHS00000003515--doid!1682 .
+
+biolink:interactsWithTranscriptionFactor rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range biolink:TranscriptionFactor ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+biolink:hasExperimentalEvidence rdf:type owl:DatatypeProperty ;
+    rdfs:label "has experimental evidence" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+biolink:hasCellLineActivity rdf:type owl:DatatypeProperty ;
+    rdfs:label "has cell line activity" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range xsd:string .
+
+biolink:hasGenomicCoordinate rdf:type owl:DatatypeProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range xsd:string ;
+    skos:exactMatch <http://www.licpathway.net/ENdb/> .
+
+biolink:hasPMID rdf:type owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range xsd:string ;
+    skos:exactMatch pubmed:30247654 .
+
+biolink:hasSNPID rdf:type owl:DatatypeProperty ;
+    rdfs:label "has SNP ID" ;
+    rdfs:domain biolink:CisRegulatoryModule ;
+    rdfs:range xsd:string ;
+    skos:exactMatch hcrm:bgw!crm_ID--uniprot!uniprot_ID .
+```

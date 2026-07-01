@@ -1,0 +1,63 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2pgene/hcrm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene/> .
+@prefix assembly: <http://rdf.biogateway.eu/crm2pgene/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/crm2pgene/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/crm2pgene/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/crm2pgene/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/crm2pgene/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/crm2pgene/dbsuper/> .
+
+# === RECOMMENDED ONTOLOGIES (semantic search) ===
+crm2gene_example a owl:Ontology ;
+  rdfs:label "crm2gene_example" ;
+  crm2pgene:score "0.509"^^xsd:float .
+
+crm2gene a owl:Ontology ;
+  rdfs:label "crm2gene" ;
+  crm2pgene:score "0.503"^^xsd:float .
+
+crm2phen_example a owl:Ontology ;
+  rdfs:label "crm2phen_example" ;
+  crm2pgene:score "0.494"^^xsd:float .
+
+crm2tfac_example a owl:Ontology ;
+  rdfs:label "crm2tfac_example" ;
+  crm2pgene:score "0.488"^^xsd:float .
+
+crm2tfac a owl:Ontology ;
+  rdfs:label "crm2tfac" ;
+  crm2pgene:score "0.481"^^xsd:float .
+
+# === COLUMN → ONTOLOGY CLASS MAPPINGS ===
+hgnc_symbol_target_genes a owl:Class ;
+  rdfs:label "bgw!CRMHS00000003515--hgncsymbol!9606/TBX5" ;
+  crm2pgene:score "0.615"^^xsd:float .
+
+# === REUSE CISREG CLASSES AND PROPERTIES ===
+crm2gene_example a owl:Ontology ;
+  rdfs:label "crm2gene_example" ;
+  crm2pgene:score "0.509"^^xsd:float .
+crm2gene a owl:Ontology ;
+  rdfs:label "crm2gene" ;
+  crm2pgene:score "0.503"^^xsd:float .
+
+# === ADD EXPLICIT SKOS MATCHES FOR ALIGNED TERMS ===
+crm2gene_example skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/hcrm/CRMHS00000003515> .
+crm2gene skos:closeMatch <http://rdf.biogateway.eu/crm2pgene/hgene/HGNC:9606> .
+
+# === NEW CLASSES/PROPERTIES ONLY WHERE CISREG DOESN'T COVER THE CONCEPT ===
+hgnc_symbol_target_genes a owl:Class ;
+  rdfs:label "bgw!CRMHS00000003515--hgncsymbol!9606/TBX5" ;
+  crm2pgene:score "0.615"^^xsd:float .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "DiseaseEnhancer",
+  "model": "gpt-4o",
+  "run": 2,
+  "timestamp": "2026-06-28T21:47:41.001284",
+  "success": true,
+  "elapsed_seconds": 6.17,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 6945,
+    "completion_tokens": 830,
+    "total_tokens": 7775
+  },
+  "prompt_tokens_estimate": 3881,
+  "response_chars": 2937,
+  "turtle_chars": 2937,
+  "validation": {
+    "valid": false,
+    "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'seases in the DiseaseEnhancer database.\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oD_diversity_N100/ontology_run2.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/DiseaseEnhancer/gpt-4oD_diversity_N100/response_raw_run2.txt"
+  }
+}

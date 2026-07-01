@@ -1,0 +1,93 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 0,
+  "avg_elapsed": 85.58999999999999,
+  "total_tokens": 7836,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 1,
+      "timestamp": "2026-06-27T16:40:10.694442",
+      "success": true,
+      "elapsed_seconds": 96.74,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1609,
+        "completion_tokens": 1003,
+        "total_tokens": 2612
+      },
+      "prompt_tokens_estimate": 910,
+      "response_chars": 3355,
+      "turtle_chars": 3341,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b' database containing information about super-enhancers.\" ;\\n\\n'^b'crm:Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N25/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N25/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 2,
+      "timestamp": "2026-06-27T16:41:31.697617",
+      "success": true,
+      "elapsed_seconds": 79.96,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1609,
+        "completion_tokens": 1003,
+        "total_tokens": 2612
+      },
+      "prompt_tokens_estimate": 910,
+      "response_chars": 3355,
+      "turtle_chars": 3341,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b' database containing information about super-enhancers.\" ;\\n\\n'^b'crm:Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N25/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N25/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "qwen2.5-coder:7b",
+      "run": 3,
+      "timestamp": "2026-06-27T16:42:52.801714",
+      "success": true,
+      "elapsed_seconds": 80.07,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1609,
+        "completion_tokens": 1003,
+        "total_tokens": 2612
+      },
+      "prompt_tokens_estimate": 910,
+      "response_chars": 3355,
+      "turtle_chars": 3341,
+      "validation": {
+        "valid": false,
+        "error": "at line 12 of <>:\nBad syntax (Prefix \"crm:\" not bound) at ^ in:\n\"...b' database containing information about super-enhancers.\" ;\\n\\n'^b'crm:Enhancer a owl:Class ;\\n    skos:prefLabel \"Enhancer\" ;\\n '...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N25/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/qwen2.5-coder_7bA_head_N25/response_raw_run3.txt"
+      }
+    }
+  ]
+}

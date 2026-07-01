@@ -1,0 +1,70 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Cis-regulatory module" ;
+    skos:definition "A region of DNA that regulates the expression of genes." ;
+    skos:exactMatch obo:SO_0000165 .
+
+obo:SO_0000178 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-acting sequence that increases the utilization of some eukaryotic promoters." ;
+    skos:exactMatch obo:SO_0000178 .
+
+# Object Properties
+obo:RO_0002205 a owl:ObjectProperty ;
+    skos:prefLabel "has target gene" ;
+    skos:definition "Relates a regulatory region to its target gene." ;
+    skos:exactMatch obo:RO_0002205 ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range obo:SO_0000704 .
+
+# Datatype Properties
+obo:GENO_0000890 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic start" ;
+    skos:definition "The start position of a genomic feature." ;
+    skos:exactMatch obo:GENO_0000890 ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000891 a owl:DatatypeProperty ;
+    skos:prefLabel "has genomic end" ;
+    skos:definition "The end position of a genomic feature." ;
+    skos:exactMatch obo:GENO_0000891 ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:integer .
+
+obo:GENO_0000892 a owl:DatatypeProperty ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which a genomic feature is located." ;
+    skos:exactMatch obo:GENO_0000892 ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:GENO_0000893 a owl:DatatypeProperty ;
+    skos:prefLabel "has assembly" ;
+    skos:definition "The genome assembly version for a genomic feature." ;
+    skos:exactMatch obo:GENO_0000893 ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+obo:ECO_0000000 a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "Evidence supporting the existence of a genomic feature." ;
+    skos:exactMatch obo:ECO_0000000 ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+
+# Example Individual
+<http://example.org/CRMHS00000021421> a obo:SO_0000178 ;
+    obo:GENO_0000890 "85525212"^^xsd:integer ;
+    obo:GENO_0000891 "85543151"^^xsd:integer ;
+    obo:GENO_0000892 "chr11" ;
+    obo:GENO_0000893 "hg38" ;
+    obo:ECO_0000000 "H3K27ac" ;
+    obo:RO_0002205 <http://example.org/DLG2> .

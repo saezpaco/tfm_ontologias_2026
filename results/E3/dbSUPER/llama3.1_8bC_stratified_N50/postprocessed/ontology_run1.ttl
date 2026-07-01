@@ -1,0 +1,349 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/9606/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/gene/9606/> .
+@prefix assembly: <http://assembly.ncbi.nlm.nih.gov/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nucleotide/> .
+@prefix pubmed:  <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix id_pubmed: <http://identifiers.org/pubmed/> .
+@prefix id_ncbigene: <http://identifiers.org/ncbigene/> .
+
+hcrm:crm_ID
+    rdf:type owl:Class ;
+    rdfs:subClassOf obo:SO_0000727 ;
+    skos:prefLabel "Cis-regulatory module" ;
+    biolink:category biolink:RegulatoryRegion ;
+
+<http://rdf.biogateway.eu/crm/9606/crm_ID#database_name>
+    rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+    skos:prefLabel "Crm#CrmId#DatabaseName" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/crm_ID#dbsuper>
+    rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+    skos:prefLabel "Crm#CrmId#Dbsuper" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/crm_ID#dbsuper#cell_line>
+    rdf:type hcrm:crm_ID ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+    skos:prefLabel "Crm#CrmId#Dbsuper#CellLine" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol>
+    rdf:type owl:Class ;
+    rdfs:subClassOf rdf:Statement ;
+    rdf:subject hcrm:crm_ID ;
+    rdf:predicate obo:RO_0002429 ;
+    rdf:object hgene:gene_sybmol ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol" ;
+    skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" ;
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#DatabaseName" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type#gene_biotype>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType#GeneBiotype" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type#gene_biotype#isoform_id>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType#GeneBiotype#IsoformId" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type#gene_biotype#isoform_id#variant_id>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType#GeneBiotype#IsoformId#VariantId" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type#gene_biotype#isoform_id#variant_id#allele_frequency>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType#GeneBiotype#IsoformId#VariantId#AlleleFrequency" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type#gene_biotype#isoform_id#variant_id#allele_frequency#genomic_region>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType#GeneBiotype#IsoformId#VariantId#AlleleFrequency#GenomicRegion" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type#gene_biotype#isoform_id#variant_id#allele_frequency#genomic_region#variant_effect>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType#GeneBiotype#IsoformId#VariantId#AlleleFrequency#GenomicRegion#VariantEffect" ;
+    skos:definition "Association between cis-regulatory module crm_id and gene gene_symbol according to database_name" ;
+    obo:TXPO_0003500 obo:BTO_ID ; #Cell line, cell type or anatomical structure
+    obo:TXPO_0003500 obo:CL_ID ; #Cell type
+    obo:TXPO_0003500 obo:CLO_ID ; #Cell line
+    obo:TXPO_0003500 obo:UBERON_ID ; #Anatomical structure
+    schema:evidenceOrigin <original_URL_crossreference> ; #Crossreference
+    rdfs:isDefinedBy obo:ECO_ID ; #Experimental evidence
+    sio:SIO_000772 id_pubmed:pubmed_ID ; #Article
+    sio:SIO_000253 <original_URL_database> . #Original Database
+
+<http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol#dbsuper#cell_line#start_position#end_position#transcript_id#gene_name#strand#exon_number#cds_start#cds_end#exon_id#intron_id#splice_site#transcript_type#gene_biotype#isoform_id#variant_id#allele_frequency#genomic_region#variant_effect#protein_change>
+    rdf:type <http://rdf.biogateway.eu/crm/9606/bgw!crm_ID--hgncsymbol!9606/gene_symbol> ;
+    skos:prefLabel "bgw!CrmId--HgncSymbol!9606/GeneSymbol#Dbsuper#CellLine#StartPosition#EndPosition#TranscriptId#GeneName#Strand#ExonNumber#CdSStart#CdSEnd#ExonId#IntronId#SpliceSite#TranscriptType#GeneBiotype#IsoformId#VariantId#AlleleFrequency#GenomicRegion#VariantEffect#ProteinChange"

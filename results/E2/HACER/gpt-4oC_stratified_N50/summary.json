@@ -1,0 +1,97 @@
+{
+  "experiment": "E2",
+  "db_name": "HACER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 10.416666666666666,
+  "total_tokens": 4647,
+  "runs": [
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-06-26T19:55:28.004981",
+      "success": true,
+      "elapsed_seconds": 8.74,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 777,
+        "completion_tokens": 676,
+        "total_tokens": 1453
+      },
+      "prompt_tokens_estimate": 805,
+      "response_chars": 2300,
+      "turtle_chars": 2286,
+      "validation": {
+        "valid": false,
+        "error": "at line 13 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'Active Cis-regulatory Elements database\" .\\n\\n### Classes ###\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"CRM\" ;\\n    skos:defin'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oC_stratified_N50/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oC_stratified_N50/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-06-26T19:55:40.721456",
+      "success": true,
+      "elapsed_seconds": 11.67,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 777,
+        "completion_tokens": 820,
+        "total_tokens": 1597
+      },
+      "prompt_tokens_estimate": 805,
+      "response_chars": 2749,
+      "turtle_chars": 2749,
+      "validation": {
+        "valid": true,
+        "n_triples": 43,
+        "n_classes": 7,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oC_stratified_N50/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oC_stratified_N50/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E2",
+      "experiment_name": "Con vocabulario controlado",
+      "db_name": "HACER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-06-26T19:55:52.595220",
+      "success": true,
+      "elapsed_seconds": 10.84,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 777,
+        "completion_tokens": 820,
+        "total_tokens": 1597
+      },
+      "prompt_tokens_estimate": 805,
+      "response_chars": 2737,
+      "turtle_chars": 2737,
+      "validation": {
+        "valid": true,
+        "n_triples": 43,
+        "n_classes": 7,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oC_stratified_N50/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/HACER/gpt-4oC_stratified_N50/response_raw_run3.txt"
+      }
+    }
+  ]
+}

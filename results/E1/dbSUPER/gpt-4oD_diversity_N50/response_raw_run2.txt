@@ -1,0 +1,71 @@
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+# Classes
+obo:SO_0000165 a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory region of DNA that enhances the transcription of an associated gene." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000165> .
+
+:GenomicCoordinate a owl:Class ;
+    skos:prefLabel "Genomic Coordinate" ;
+    skos:definition "A specific location on a chromosome, defined by a start and end position." .
+
+:CellLine a owl:Class ;
+    skos:prefLabel "Cell Line" ;
+    skos:definition "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup." .
+
+:Gene a owl:Class ;
+    skos:prefLabel "Gene" ;
+    skos:definition "A sequence of DNA that contains the necessary information to produce a functional product, typically a protein." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/SO_0000704> .
+
+# Object Properties
+:hasGenomicCoordinate a owl:ObjectProperty ;
+    skos:prefLabel "has genomic coordinate" ;
+    skos:definition "Relates an enhancer to its genomic coordinates." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :GenomicCoordinate .
+
+:activeInCellLine a owl:ObjectProperty ;
+    skos:prefLabel "active in cell line" ;
+    skos:definition "Indicates the cell line in which the enhancer is active." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :CellLine .
+
+:targetsGene a owl:ObjectProperty ;
+    skos:prefLabel "targets gene" ;
+    skos:definition "Indicates the gene that is regulated by the enhancer." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range :Gene .
+
+# Datatype Properties
+:chromosome a owl:DatatypeProperty ;
+    skos:prefLabel "chromosome" ;
+    skos:definition "The chromosome on which the genomic coordinate is located." ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:string .
+
+:startPosition a owl:DatatypeProperty ;
+    skos:prefLabel "start position" ;
+    skos:definition "The start position of the genomic coordinate on the chromosome." ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+:endPosition a owl:DatatypeProperty ;
+    skos:prefLabel "end position" ;
+    skos:definition "The end position of the genomic coordinate on the chromosome." ;
+    rdfs:domain :GenomicCoordinate ;
+    rdfs:range xsd:integer .
+
+:hasEvidence a owl:DatatypeProperty ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "The type of experimental evidence supporting the enhancer's activity." ;
+    rdfs:domain obo:SO_0000165 ;
+    rdfs:range xsd:string .
+```

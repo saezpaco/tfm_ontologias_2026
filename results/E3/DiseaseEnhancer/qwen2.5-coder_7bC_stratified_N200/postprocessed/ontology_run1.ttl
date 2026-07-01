@@ -1,0 +1,89 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2phen/hcrm!> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/bgw!> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene!> .
+@prefix assembly:<http://www.ncbi.nlm.nih.gov/assembly/> .
+@prefix nuccore: <http://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+@prefix id_pubmed:<https://pubmed.ncbi.nlm.nih.gov/?term=> .
+@prefix id_ncbigene:<https://www.ncbi.nlm.nih.gov/gene/> .
+@prefix dbsuper: <http://purl.obolibrary.org/obo/SO_0001217> .
+@prefix crm: <http://rdf.biogateway.eu/crm/> .
+
+# Define classes and properties based on the data
+crm:TranscriptionFactor a owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+crm:Disease a owl:Class ;
+    rdfs:label "Disease" ;
+    skos:closeMatch hcrm:Disease .
+
+crm:Biosample a owl:Class ;
+    rdfs:label "Biosample" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:closeMatch hgene:Gene .
+
+crm:CisRegulatoryElement a owl:Class ;
+    rdfs:label "Cis-Regulatory Element" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:ExpressionPattern a owl:Class ;
+    rdfs:label "Expression Pattern" ;
+    skos:closeMatch hcrm:ExpressionPattern .
+
+crm:Interaction a owl:Class ;
+    rdfs:label "Interaction" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:Regulation a owl:Class ;
+    rdfs:label "Regulation" ;
+    skos:closeMatch hcrm:Regulation .
+
+crm:ExpressionLevel a owl:Class ;
+    rdfs:label "Expression Level" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:Location a owl:Class ;
+    rdfs:label "Location" ;
+    skos:closeMatch hcrm:Location .
+
+crm:Function a owl:Class ;
+    rdfs:label "Function" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:ExpressionPattern a owl:Class ;
+    rdfs:label "Expression Pattern" ;
+    skos:closeMatch hcrm:ExpressionPattern .
+
+crm:Interaction a owl:Class ;
+    rdfs:label "Interaction" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:Regulation a owl:Class ;
+    rdfs:label "Regulation" ;
+    skos:closeMatch hcrm:Regulation .
+
+crm:ExpressionLevel a owl:Class ;
+    rdfs:label "Expression Level" ;
+    skos:exactMatch obo:SO_0001217 .
+
+crm:Location a owl:Class ;
+    rdfs:label "Location" ;
+    skos:closeMatch hcrm:Location .
+
+crm:Function a owl:Class ;
+    rdfs:label "Function" ;
+    skos:exactMatch obo:SO_0001217 .

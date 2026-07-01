@@ -1,0 +1,24 @@
+{
+  "run": 3,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/HACER.csv",
+  "api_model": "gpt-4o-2024-05-13",
+  "seed": 44,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-03T23:07:25.973156+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.02,
+    "plan_s": 5.828,
+    "plan_chars": 4768,
+    "plan_prompt_chars": 9550,
+    "onto_s": 10.105,
+    "onto_chars": 11297,
+    "onto_prompt_chars": 13698,
+    "map_s": 8.571,
+    "map_chars": 9334,
+    "map_prompt_chars": 18732
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-03T23:07:50.498986+00:00",
+  "total_s": 24.524
+}

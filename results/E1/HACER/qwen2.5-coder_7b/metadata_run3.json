@@ -1,0 +1,27 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "HACER",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-06-05T14:52:50.275199",
+  "success": true,
+  "elapsed_seconds": 122.99,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 3918,
+    "completion_tokens": 1113,
+    "total_tokens": 5031
+  },
+  "prompt_tokens_estimate": 1658,
+  "response_chars": 3696,
+  "turtle_chars": 3682,
+  "validation": {
+    "valid": false,
+    "error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'efix obo: <http://purl.obolibrary.org/obo/> .\\n\\nowl:Ontology '^b'{\\n    rdf:type owl:Ontology ;\\n    rdfs:label \"Human Active C'...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/HACER/qwen2.5-coder_7b/response_raw_run3.txt"
+  }
+}

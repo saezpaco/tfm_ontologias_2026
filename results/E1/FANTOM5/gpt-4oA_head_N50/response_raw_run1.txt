@@ -1,0 +1,89 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/FANTOM5> a owl:Ontology ;
+    rdfs:comment "Ontology for FANTOM5 database of active enhancers identified by CAGE-seq." .
+
+### Classes
+:Enhancer a owl:Class ;
+    skos:prefLabel "Enhancer" ;
+    skos:definition "A cis-regulatory module that increases the transcription of a target gene." ;
+    skos:exactMatch obo:SO_0000165 .
+
+### Properties
+:hasChromosome a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has chromosome" ;
+    skos:definition "The chromosome on which the enhancer is located." .
+
+:hasChromStart a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has chromosome start" ;
+    skos:definition "The starting position of the enhancer on the chromosome." .
+
+:hasChromEnd a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has chromosome end" ;
+    skos:definition "The ending position of the enhancer on the chromosome." .
+
+:hasScore a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has score" ;
+    skos:definition "The score representing the activity level of the enhancer." .
+
+:hasStrand a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has strand" ;
+    skos:definition "The DNA strand on which the enhancer is located." .
+
+:hasThickStart a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has thick start" ;
+    skos:definition "The start position of the thick part of the enhancer." .
+
+:hasThickEnd a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has thick end" ;
+    skos:definition "The end position of the thick part of the enhancer." .
+
+:hasBlockCount a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "has block count" ;
+    skos:definition "The number of blocks in the enhancer." .
+
+:hasBlockSizes a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has block sizes" ;
+    skos:definition "The sizes of the blocks in the enhancer." .
+
+:hasBlockStarts a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has block starts" ;
+    skos:definition "The start positions of the blocks in the enhancer." .
+
+:hasItemRgb a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has item RGB" ;
+    skos:definition "The RGB color value associated with the enhancer." .
+
+:hasEvidence a owl:DatatypeProperty ;
+    rdfs:domain :Enhancer ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "has evidence" ;
+    skos:definition "The experimental evidence supporting the enhancer's activity." ;
+    skos:exactMatch obo:ECO_0000205 .

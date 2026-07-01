@@ -1,0 +1,29 @@
+{
+  "experiment": "E1",
+  "experiment_name": "Base (zero-shot)",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:17:35.353246",
+  "success": true,
+  "elapsed_seconds": 7.69,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 6923,
+    "completion_tokens": 828,
+    "total_tokens": 7751
+  },
+  "prompt_tokens_estimate": 3539,
+  "response_chars": 2907,
+  "turtle_chars": 2907,
+  "validation": {
+    "valid": true,
+    "n_triples": 47,
+    "n_classes": 5,
+    "n_properties": 6
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oA_head_N200/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/FANTOM5/gpt-4oA_head_N200/response_raw_run3.txt"
+  }
+}

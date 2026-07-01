@@ -1,0 +1,29 @@
+{
+  "experiment": "E2",
+  "experiment_name": "Con vocabulario controlado",
+  "db_name": "FANTOM5",
+  "model": "gpt-4o",
+  "run": 3,
+  "timestamp": "2026-06-28T21:36:44.608179",
+  "success": true,
+  "elapsed_seconds": 8.07,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 6986,
+    "completion_tokens": 935,
+    "total_tokens": 7921
+  },
+  "prompt_tokens_estimate": 3879,
+  "response_chars": 3224,
+  "turtle_chars": 3224,
+  "validation": {
+    "valid": true,
+    "n_triples": 50,
+    "n_classes": 3,
+    "n_properties": 8
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oD_diversity_N200/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E2/FANTOM5/gpt-4oD_diversity_N200/response_raw_run3.txt"
+  }
+}

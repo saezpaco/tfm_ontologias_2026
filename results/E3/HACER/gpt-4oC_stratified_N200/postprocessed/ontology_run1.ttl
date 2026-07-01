@@ -1,0 +1,107 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2phen/> .
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix nuccore: <http://rdf.biogateway.eu/nuccore/> .
+@prefix pubmed:  <http://rdf.biogateway.eu/pubmed/> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/id_pubmed/> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/id_ncbigene/> .
+@prefix dbsuper: <http://rdf.biogateway.eu/dbsuper/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "Human Active Cis-regulatory Elements database" .
+
+# Classes
+hcrm:CisRegulatoryModule rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory Module" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+hcrm:Enhancer rdf:type owl:Class ;
+    rdfs:label "Enhancer" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/CRMHS00000003515--hgncsymbol!9606/gene_sybmol> .
+
+hcrm:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/CRMHS00000003515--hgncsymbol!9606/gene_sybmol> .
+
+hcrm:TranscriptionFactor rdf:type owl:Class ;
+    rdfs:label "Transcription Factor" ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+hcrm:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/CRMHS00000003515--doid!1682> .
+
+# Properties
+hcrm:hasGenomicCoordinate rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic coordinate" ;
+    rdfs:domain hcrm:CisRegulatoryModule ;
+    rdfs:range assembly:GenomicCoordinate .
+
+hcrm:targetsGene rdf:type owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:Gene ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/CRMHS00000003515--hgncsymbol!9606/gene_sybmol> .
+
+hcrm:associatedWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with disease" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:Disease ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2phen/CRMHS00000003515--doid!1682> .
+
+hcrm:interactsWithTranscriptionFactor rdf:type owl:ObjectProperty ;
+    rdfs:label "interacts with transcription factor" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range hcrm:TranscriptionFactor ;
+    skos:exactMatch obo:NCIT_C17207 .
+
+hcrm:hasExperimentalEvidence rdf:type owl:DatatypeProperty ;
+    rdfs:label "has experimental evidence" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:string .
+
+hcrm:activeInCellLine rdf:type owl:DatatypeProperty ;
+    rdfs:label "active in cell line" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:string .
+
+hcrm:hasScore rdf:type owl:DatatypeProperty ;
+    rdfs:label "has score" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:float .
+
+hcrm:hasMinimumRatio rdf:type owl:DatatypeProperty ;
+    rdfs:label "has minimum ratio" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:float .
+
+hcrm:hasReferenceSNP rdf:type owl:DatatypeProperty ;
+    rdfs:label "has reference SNP" ;
+    rdfs:domain hcrm:Enhancer ;
+    rdfs:range xsd:string ;
+    skos:exactMatch <http://rdf.biogateway.eu/crm2tfac/CRMHS00000003515--uniprot!uniprot_ID> .
+
+# Example individual
+<http://bioinfo.vanderbilt.edu/AE/HACER/CRMHS00000122370> rdf:type hcrm:Enhancer ;
+    hcrm:hasGenomicCoordinate [ assembly:chromosome "chr5" ;
+                                assembly:start 139643432 ;
+                                assembly:end 139643755 ;
+                                assembly:assemblyVersion "hg38" ] ;
+    hcrm:targetsGene <http://rdf.biogateway.eu/id_ncbigene/CXXC5> ;
+    hcrm:hasExperimentalEvidence "CAGE" ;
+    hcrm:activeInCellLine "JHUCS-1" ;
+    hcrm:hasScore 1.0 ;
+    hcrm:hasMinimumRatio 0.95 ;
+    hcrm:hasReferenceSNP "rs3131056" .

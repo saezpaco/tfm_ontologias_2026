@@ -1,0 +1,71 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.org/ontology/dbSUPER> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    rdfs:comment "Ontology for representing super-enhancers from the dbSUPER database." .
+
+### Classes ###
+<http://example.org/ontology/CRM> a owl:Class ;
+    skos:prefLabel "CRM" ;
+    skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" .
+
+<http://example.org/ontology/Database> a owl:Class ;
+    skos:prefLabel "Database" .
+
+<http://example.org/ontology/TranscriptionFactor> a owl:Class ;
+    skos:prefLabel "Transcription Factor" .
+
+### Object Properties ###
+<http://example.org/ontology/hasTargetGene> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range obo:SO_0000704 ;
+    skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol" ;
+    skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" .
+
+<http://example.org/ontology/hasTranscriptionFactor> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range <http://example.org/ontology/TranscriptionFactor> ;
+    skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+    skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" .
+
+<http://example.org/ontology/associatedWithDisease> a owl:ObjectProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range obo:DOID_4 ;
+    skos:prefLabel "bgw!crm_ID--doid!doid" ;
+    skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" .
+
+### Datatype Properties ###
+<http://example.org/ontology/hasGenomicCoordinates> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Genomic Coordinates" ;
+    skos:definition "Genomic coordinates of the cis-regulatory module in the human genome." .
+
+<http://example.org/ontology/hasScore> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:float ;
+    skos:prefLabel "Score" ;
+    skos:definition "Score representing the confidence or strength of the super-enhancer." .
+
+<http://example.org/ontology/hasBiosampleName> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Biosample Name" ;
+    skos:definition "Name of the biosample in which the super-enhancer was identified." .
+
+<http://example.org/ontology/hasEnhancerMethod> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Enhancer Method" ;
+    skos:definition "Method used to identify the super-enhancer." .
+
+<http://example.org/ontology/hasCrossReference> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.org/ontology/CRM> ;
+    rdfs:range xsd:anyURI ;
+    skos:prefLabel "Cross Reference" ;
+    skos:definition "Cross-reference URL for additional information about the super-enhancer." .

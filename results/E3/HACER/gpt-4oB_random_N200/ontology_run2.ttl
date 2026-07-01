@@ -1,0 +1,83 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix hcrm:    <http://rdf.biogateway.eu/crm/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix nuccore: <https://www.ncbi.nlm.nih.gov/nuccore/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://bioinfo.vanderbilt.edu/AE/HACER/> rdf:type owl:Ontology ;
+    rdfs:label "HACER Ontology" ;
+    dc:description "Ontology for the Human Active Cis-regulatory Elements database" .
+
+# Classes
+obo:SO_0000727 rdf:type owl:Class ;
+    rdfs:label "Cis-regulatory module" ;
+    skos:exactMatch hcrm:CRM .
+
+biolink:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" .
+
+biolink:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" .
+
+biolink:GenomicEntity rdf:type owl:Class ;
+    rdfs:label "Genomic Entity" .
+
+# Properties
+biolink:has_genomic_location rdf:type owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:GenomicEntity .
+
+biolink:regulates_expression_of rdf:type owl:ObjectProperty ;
+    rdfs:label "regulates expression of" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:Gene ;
+    skos:exactMatch crm2pgene:regulates_expression_of .
+
+biolink:associated_with rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range biolink:Disease .
+
+biolink:has_evidence rdf:type owl:ObjectProperty ;
+    rdfs:label "has evidence" ;
+    rdfs:domain obo:SO_0000727 ;
+    rdfs:range pubmed: .
+
+# Example individuals
+hcrm:CRMHS00000129723 rdf:type obo:SO_0000727 ;
+    rdfs:label "CRMHS00000129723" ;
+    biolink:has_genomic_location [
+        rdf:type biolink:GenomicEntity ;
+        nuccore:chr_ID "chr7" ;
+        sio:SIO_000300 "107495680"^^xsd:integer ;
+        sio:SIO_000301 "107496131"^^xsd:integer ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:has_evidence pubmed:30247654 .
+
+hcrm:CRMHS00000095290 rdf:type obo:SO_0000727 ;
+    rdfs:label "CRMHS00000095290" ;
+    biolink:has_genomic_location [
+        rdf:type biolink:GenomicEntity ;
+        nuccore:chr_ID "chr15" ;
+        sio:SIO_000300 "66842110"^^xsd:integer ;
+        sio:SIO_000301 "66842590"^^xsd:integer ;
+        assembly:assembly_version "hg38"
+    ] ;
+    biolink:regulates_expression_of hgene:SMAD6 ;
+    biolink:has_evidence pubmed:30247654 .
+
+# Additional prefixes
+@prefix assembly: <http://rdf.biogateway.eu/assembly/> .
+@prefix hgene: <http://rdf.biogateway.eu/hgene/> .

@@ -1,0 +1,27 @@
+{
+  "experiment": "E3",
+  "experiment_name": "Con RAG (ontología cisreg)",
+  "db_name": "dbSUPER",
+  "model": "qwen2.5-coder:7b",
+  "run": 3,
+  "timestamp": "2026-07-01T13:20:38.062745",
+  "success": true,
+  "elapsed_seconds": 85.37,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4095,
+    "completion_tokens": 625,
+    "total_tokens": 4720
+  },
+  "prompt_tokens_estimate": 4478,
+  "response_chars": 1765,
+  "turtle_chars": 1751,
+  "validation": {
+    "valid": false,
+    "error": "at line 22 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"...b' dbsuper: <https://dbsuper.com/super/> .\\n\\n# Example mapping\\n'^b'crm_ID skos:exactMatch hcrm:crm_ID--uniprot--uniprot_ID ;\\n  '...\""
+  },
+  "output_files": {
+    "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bC_stratified_N100_baseline/ontology_run3.ttl",
+    "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E3/dbSUPER/qwen2.5-coder_7bC_stratified_N100_baseline/response_raw_run3.txt"
+  }
+}

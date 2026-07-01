@@ -1,0 +1,97 @@
+{
+  "experiment": "E1",
+  "db_name": "dbSUPER",
+  "model": "gpt-4o",
+  "n_runs": 3,
+  "n_success": 3,
+  "n_valid_turtle": 2,
+  "avg_elapsed": 10.706666666666665,
+  "total_tokens": 13109,
+  "runs": [
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 1,
+      "timestamp": "2026-05-28T16:36:41.023908",
+      "success": true,
+      "elapsed_seconds": 12.45,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3374,
+        "completion_tokens": 995,
+        "total_tokens": 4369
+      },
+      "prompt_tokens_estimate": 2146,
+      "response_chars": 3743,
+      "turtle_chars": 3743,
+      "validation": {
+        "valid": false,
+        "error": "at line 11 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b'example.org/ontology/dbSUPER> a owl:Ontology .\\n\\n### Classes\\n'^b':CRM a owl:Class ;\\n    skos:prefLabel \"Cis-Regulatory Module'...\""
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/ontology_run1.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/response_raw_run1.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 2,
+      "timestamp": "2026-05-28T16:36:51.155447",
+      "success": true,
+      "elapsed_seconds": 9.1,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3374,
+        "completion_tokens": 839,
+        "total_tokens": 4213
+      },
+      "prompt_tokens_estimate": 2146,
+      "response_chars": 3036,
+      "turtle_chars": 3036,
+      "validation": {
+        "valid": true,
+        "n_triples": 55,
+        "n_classes": 6,
+        "n_properties": 6
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/ontology_run2.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/response_raw_run2.txt"
+      }
+    },
+    {
+      "experiment": "E1",
+      "experiment_name": "Base (zero-shot)",
+      "db_name": "dbSUPER",
+      "model": "gpt-4o",
+      "run": 3,
+      "timestamp": "2026-05-28T16:37:02.752293",
+      "success": true,
+      "elapsed_seconds": 10.57,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3374,
+        "completion_tokens": 1153,
+        "total_tokens": 4527
+      },
+      "prompt_tokens_estimate": 2146,
+      "response_chars": 4203,
+      "turtle_chars": 4203,
+      "validation": {
+        "valid": true,
+        "n_triples": 63,
+        "n_classes": 5,
+        "n_properties": 9
+      },
+      "output_files": {
+        "turtle": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/ontology_run3.ttl",
+        "raw": "/Users/franciscosaez/Documents/Claude/Projects/TFM/results/E1/dbSUPER/gpt-4o/response_raw_run3.txt"
+      }
+    }
+  ]
+}

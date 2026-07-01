@@ -1,0 +1,238 @@
+```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gr: <https://genetic_regulatory_elements.com#> .
+
+<#TriplesMapGeneticElement> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "gr:GeneticElement/{{name}}{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockCount;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockCount>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasChromEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromEnd>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasChromStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChromStart>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasScore;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapScore>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasThickEnd;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapThickEnd>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasThickStart;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapThickStart>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasBlockSizes;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockSizes>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasBlockStarts;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBlockStarts>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasChrom;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapChrom>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasItemRgb;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapItemRgb>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasName;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapName>;
+        ]
+    ],
+    [
+        rr:predicate gr:hasStrand;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapStrand>;
+        ]
+    ].
+
+<#TriplesMapBlockCount> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockCount;
+        rr:objectMap [
+            rr:template "{{blockCount}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapChromEnd> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasChromEnd;
+        rr:objectMap [
+            rr:template "{{chromEnd}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapChromStart> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasChromStart;
+        rr:objectMap [
+            rr:template "{{chromStart}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapScore> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasScore;
+        rr:objectMap [
+            rr:template "{{score}}",
+            rr:datatype xsd:float
+        ]
+    ].
+
+<#TriplesMapThickEnd> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasThickEnd;
+        rr:objectMap [
+            rr:template "{{thickEnd}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapThickStart> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasThickStart;
+        rr:objectMap [
+            rr:template "{{thickStart}}",
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#TriplesMapBlockSizes> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockSizes;
+        rr:objectMap [
+            rr:template "{{blockSizes}}"
+        ]
+    ].
+
+<#TriplesMapBlockStarts> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasBlockStarts;
+        rr:objectMap [
+            rr:template "{{blockStarts}}"
+        ]
+    ].
+
+<#TriplesMapChrom> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasChrom;
+        rr:objectMap [
+            rr:template "{{chrom}}"
+        ]
+    ].
+
+<#TriplesMapItemRgb> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasItemRgb;
+        rr:objectMap [
+            rr:template "{{itemRgb}}"
+        ]
+    ].
+
+<#TriplesMapName> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasName;
+        rr:objectMap [
+            rr:template "{{name}}"
+        ]
+    ].
+
+<#TriplesMapStrand> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "FANTOM5.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gr:hasStrand;
+        rr:objectMap [
+            rr:template "{{strand}}"
+        ]
+    ].
+```

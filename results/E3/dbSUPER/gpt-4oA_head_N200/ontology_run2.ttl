@@ -1,0 +1,85 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix crm2tfac: <http://rdf.biogateway.eu/crm2tfac/> .
+@prefix dbsuper: <https://asntech.org/dbsuper/> .
+@prefix pubmed:  <https://pubmed.ncbi.nlm.nih.gov/> .
+
+# Ontology definition
+<http://example.org/dbSUPER_ontology> a owl:Ontology ;
+    rdfs:label "dbSUPER Ontology" ;
+    dc:description "Ontology for representing super-enhancers from the dbSUPER database." .
+
+# Classes
+dbsuper:SuperEnhancer a owl:Class ;
+    rdfs:label "Super Enhancer" ;
+    rdfs:subClassOf biolink:Enhancer ;
+    skos:exactMatch crm2tfac:SuperEnhancer .
+
+dbsuper:GenomicLocation a owl:Class ;
+    rdfs:label "Genomic Location" ;
+    skos:exactMatch obo:SO_0000704 .
+
+dbsuper:CellLine a owl:Class ;
+    rdfs:label "Cell Line" ;
+    skos:exactMatch obo:NCIT_C17021 .
+
+dbsuper:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    skos:exactMatch crm2pgene:Gene .
+
+# Properties
+dbsuper:hasGenomicLocation a owl:ObjectProperty ;
+    rdfs:label "has genomic location" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:GenomicLocation ;
+    skos:exactMatch crm2tfac:hasGenomicLocation .
+
+dbsuper:activeInCellLine a owl:ObjectProperty ;
+    rdfs:label "active in cell line" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:CellLine ;
+    skos:exactMatch crm2tfac:activeInCellLine .
+
+dbsuper:targetsGene a owl:ObjectProperty ;
+    rdfs:label "targets gene" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range dbsuper:Gene ;
+    skos:exactMatch crm2pgene:targetsGene .
+
+dbsuper:hasPMID a owl:DatatypeProperty ;
+    rdfs:label "has PMID" ;
+    rdfs:domain dbsuper:SuperEnhancer ;
+    rdfs:range xsd:string ;
+    skos:exactMatch pubmed:PMID .
+
+# Example individuals
+dbsuper:CRMHS00000005972 a dbsuper:SuperEnhancer ;
+    rdfs:label "CRMHS00000005972" ;
+    dbsuper:hasGenomicLocation [ a dbsuper:GenomicLocation ;
+        rdfs:label "chr3:187725358-187750675" ] ;
+    dbsuper:activeInCellLine [ a dbsuper:CellLine ;
+        rdfs:label "Adipose Nuclei" ] ;
+    dbsuper:targetsGene [ a dbsuper:Gene ;
+        rdfs:label "BCL6" ;
+        skos:exactMatch crm2pgene:BCL6 ] ;
+    dbsuper:hasPMID "24119843" .
+
+dbsuper:CRMHS00000005984 a dbsuper:SuperEnhancer ;
+    rdfs:label "CRMHS00000005984" ;
+    dbsuper:hasGenomicLocation [ a dbsuper:GenomicLocation ;
+        rdfs:label "chr3:188083088-188124088" ] ;
+    dbsuper:activeInCellLine [ a dbsuper:CellLine ;
+        rdfs:label "DHL6" ] ;
+    dbsuper:targetsGene [ a dbsuper:Gene ;
+        rdfs:label "LPP" ;
+        skos:exactMatch crm2pgene:LPP ] ;
+    dbsuper:hasPMID "24332044" .

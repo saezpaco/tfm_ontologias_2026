@@ -1,0 +1,40 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix biolink: <https://w3id.org/biolink/vocab/> .
+@prefix schema:  <http://schema.org/> .
+@prefix sio:     <http://semanticscience.org/resource/> .
+
+@prefix hcrm:    <http://rdf.biogateway.eu/crm2gene/hcrm#> .
+@prefix crm2pgene: <http://rdf.biogateway.eu/crm2pgene/> .
+@prefix hgene:   <http://rdf.biogateway.eu/crm2pgene/hgene#> .
+@prefix assembly: <http://rdf.biogateway.eu/crm2pgene/assembly#> .
+@prefix nuccore: <http://rdf.biogateway.eu/crm2pgene/nuccore#> .
+@prefix pubmed:  <http://rdf.biogateway.eu/crm2phen/pubmed#> .
+@prefix id_pubmed: <http://rdf.biogateway.eu/crm2phen/id_pubmed#> .
+@prefix id_ncbigene: <http://rdf.biogateway.eu/crm2pgene/id_ncbigene#> .
+@prefix dbsuper: <http://rdf.biogateway.eu/crm2phen/dbsuper#> .
+
+<http://example.org/ontology#crm_ID>
+  a rdfs:Class ;
+  rdfs:label "CRM ID" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!crm_ID--hgncsymbol!9606/gene_sybmol> .
+
+<http://example.org/ontology#hgnc_symbol_target_genes>
+  a rdfs:Class ;
+  rdfs:label "HGNC Symbol Target Genes" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2pgene/bgw!CRMHS00000003515--hgncsymbol!9606/TBX5> .
+
+<http://example.org/ontology#disease_PMID>
+  a rdfs:Class ;
+  rdfs:label "Disease PMID" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!CRMHS00000003515--doid!1682> .
+
+<http://example.org/ontology#refsnp_ID>
+  a rdfs:Class ;
+  rdfs:label "RefSNP ID" ;
+  skos:exactMatch <http://rdf.biogateway.eu/crm2phen/bgw!crm_ID--doid!doid> .

@@ -1,0 +1,24 @@
+{
+  "run": 1,
+  "dataset_csv": "/Users/franciscosaez/Documents/Claude/Projects/TFM/data/csv_for_ontogenix/FANTOM5.csv",
+  "api_model": "qwen2.5-coder:7b",
+  "seed": 42,
+  "mapping_extension": "ttl",
+  "started_at": "2026-06-05T16:58:29.484059+00:00",
+  "steps": {
+    "csv_preprocessing_s": 0.047,
+    "plan_s": 98.918,
+    "plan_chars": 3721,
+    "plan_prompt_chars": 9559,
+    "onto_s": 167.399,
+    "onto_chars": 7219,
+    "onto_prompt_chars": 12660,
+    "map_s": 134.284,
+    "map_chars": 4685,
+    "map_prompt_chars": 13609
+  },
+  "errors": [],
+  "status": "ok",
+  "finished_at": "2026-06-05T17:05:10.133778+00:00",
+  "total_s": 400.648
+}
