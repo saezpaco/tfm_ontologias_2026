@@ -1,0 +1,35 @@
+# Vocabulario controlado — materialización del `{vocab_terms}` de E2
+# Generado a partir de scripts/run_gpt_experiments.py::load_vocabulary()
+# aplicado sobre los cuatro esquemas cisreg de referencia:
+#   data/samples/schemas/{crm,crm2gene,crm2phen,crm2tfac}.txt
+# El procedimiento (i) recopila cada línea que contiene skos:prefLabel o
+# skos:definition, (ii) deduplica por igualdad exacta de cadena y (iii)
+# aplica un tope máximo de 80 entradas. En el banco ejecutado el tope
+# nunca se alcanzó: la deduplicación produce exactamente 22 entradas.
+#
+# Este fichero es la salida literal que el LLM recibe en el prompt E2.
+# Ver §3.5.1 y Anexo F de la memoria del TFM.
+# Total entradas materializadas: 22
+
+01. skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position" ;
+02. skos:prefLabel "crm/crm_ID" ;
+03. skos:definition "Cis-regulatory module located in Homo sapiens chr_name between start_position and end_position according to database_name" ;
+04. skos:prefLabel "crm#crm_ID#database_name" ;
+05. skos:prefLabel "CRM" ;
+06. skos:prefLabel "chr_name" ;
+07. skos:prefLabel "GRCh38" ;
+08. skos:prefLabel "database_name" ;
+09. skos:prefLabel "Database" .
+10. skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_sybmol" ;
+11. skos:definition "Association between cis-regulatory module CRMHS00000003515 and gene TBX5" .
+12. skos:prefLabel "bgw!crm_ID--hgncsymbol!9606/gene_symbol#database_name" ;
+13. skos:definition "Association between cis-regulatory module crm_ID and gene gene_symbol according to database_name" ;
+14. skos:prefLabel "bgw!crm_ID--doid!doid" ;
+15. skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid" ;
+16. skos:prefLabel "bgw!crm_ID--doid!doid#database_name" ;
+17. skos:definition "Association between cis-regulatory module crm_ID and disease DOID:doid according to database_name" ;
+18. skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID" ;
+19. skos:definition> "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID" ;
+20. skos:prefLabel "Transcription Factor" ;
+21. skos:prefLabel "bgw!crm_ID--uniprot!uniprot_ID#database_name" ;
+22. skos:definition "Association between cis-regulatory module crm_ID and transcription factor uniprot_ID according to database_name" ;
