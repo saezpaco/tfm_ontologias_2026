@@ -1,0 +1,23 @@
+Analyze the following biological database sample and generate a formal OWL ontology schema in Turtle format.
+
+DATABASE: {db_name}
+DESCRIPTION: {db_description}
+
+DATABASE SAMPLE (TSV format, '-' means missing value):
+{db_sample}
+
+Think step by step:
+1. Identify the main concepts/classes present in the data
+2. Identify the relationships (object properties) and attributes (datatype properties)
+3. Map concepts to standard biological ontologies where possible (SO, GO, BioLink)
+4. Generate the formal Turtle schema
+
+Requirements for the output schema:
+- Use these standard prefixes: rdf:, rdfs:, owl:, skos:, xsd:, obo: (http://purl.obolibrary.org/obo/)
+- Add skos:prefLabel and skos:definition to all classes and properties
+- Include at least: class for CRM/enhancer, genomic coordinate properties, evidence properties
+- Use owl:Class for all main concepts
+- Use owl:ObjectProperty for relationships and owl:DatatypeProperty for literals
+- Include skos:exactMatch or skos:closeMatch mappings to standard biological ontologies where appropriate
+
+Output ONLY valid Turtle code. No explanations, no markdown code blocks.
